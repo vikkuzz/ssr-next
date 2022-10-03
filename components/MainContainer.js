@@ -26,8 +26,18 @@ function MainContainer({ children, keywords }) {
   return (
     <>
       <Head>
-        <meta keywords={"ulbi tv, nextjs" + keywords}></meta>
-        <title>Главная страница</title>
+        <meta
+          keywords={
+            "royalfut, FIFA 23, FIFA 23 монеты, FIFA 23 игроки" + keywords
+          }
+        ></meta>
+        <meta
+          name="description"
+          content={
+            "Продажа монет ФИФА 22 для PS4, XBOX ONE, PS4, PS5 | Доставка монет FIFA 23 за 15 минут | Максимально низкие цены, быстрые и безопасные платежи, Онлайн поддержка 24/7 | ROYALFUT"
+          }
+        ></meta>
+        <title>Главная страница Royalfut.com</title>
       </Head>
 
       <div

@@ -7,7 +7,7 @@ const Index = () => {
   return (
     <>
       <div className="body__backgr"></div>
-      <MainContainer keywords={"main page"}></MainContainer>
+      <MainContainer keywords={", main page"}></MainContainer>
     </>
   );
 };
