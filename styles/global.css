@@ -108,4 +108,7 @@
     stroke-width:inherit;
     fill:inherit;
   }
+  .error_page{
+    background-color: transparent;
+  }
   

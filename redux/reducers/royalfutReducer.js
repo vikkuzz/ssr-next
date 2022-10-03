@@ -1,5 +1,6 @@
 const initialState = {
   loginModal: false,
+  isAuth: false,
 };
 
 const royalfutReducer = (state = initialState, action) => {

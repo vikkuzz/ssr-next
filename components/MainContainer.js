@@ -11,7 +11,7 @@ import styles from "../styles/App.module.scss";
 import Header from "./Header";
 import BurgerMenu from "./BurgerMenu";
 
-function MainContainer({ children, keywords }) {
+function MainContainer({ children, keywords, description, title }) {
   const wrapperModalRef = React.createRef();
   const modal = useSelector((state) => state.royalfutReducer.loginModal);
   const dispatch = useDispatch();
@@ -34,10 +34,11 @@ function MainContainer({ children, keywords }) {
         <meta
           name="description"
           content={
+            description ||
             "Продажа монет ФИФА 22 для PS4, XBOX ONE, PS4, PS5 | Доставка монет FIFA 23 за 15 минут | Максимально низкие цены, быстрые и безопасные платежи, Онлайн поддержка 24/7 | ROYALFUT"
           }
         ></meta>
-        <title>Главная страница Royalfut.com</title>
+        <title>{title || "Главная страница Royalfut.com"}</title>
       </Head>
 
       <div
