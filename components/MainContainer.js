@@ -11,7 +11,7 @@ import styles from "../styles/App.module.scss";
 import Header from "./Header";
 import BurgerMenu from "./BurgerMenu";
 
-function App({ children, keywords }) {
+function MainContainer({ children, keywords }) {
   const wrapperModalRef = React.createRef();
   const modal = useSelector((state) => state.royalfutReducer.loginModal);
   const dispatch = useDispatch();
@@ -44,4 +44,4 @@ function App({ children, keywords }) {
   );
 }
 
-export default App;
+export default MainContainer;
