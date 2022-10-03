@@ -1,0 +1,111 @@
+.header{
+    position: fixed;
+    top: 0;
+    padding: 22px 24px;
+    height: auto;
+    background: transparent;
+    z-index: 10;
+    align-items:flex-start;
+    @media(min-width:1024){
+        padding: 28px 48px;
+    }
+}
+.header::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 96px;
+    background: linear-gradient(180deg,rgba(8,12,31,.8),rgba(8,12,31,.79) 6.7%,rgba(8,12,31,.77) 13.3%,rgba(8,12,31,.73) 20%,rgba(8,12,31,.68) 26.7%,rgba(8,12,31,.62) 33.3%,rgba(8,12,31,.54) 40%,rgba(8,12,31,.45) 46.7%,rgba(8,12,31,.35) 53.3%,rgba(8,12,31,.27) 60%,rgba(8,12,31,.19) 66.7%,rgba(8,12,31,.12) 73.3%,rgba(8,12,31,.07) 80%,rgba(8,12,31,.03) 86.7%,rgba(8,12,31,.007) 93.3%,rgba(8,12,31,0));
+    pointer-events: none;
+}
+.header__left{
+    background: transparent;
+    justify-content: flex-start;
+}
+.header__right{
+    justify-content: flex-end;
+}
+.header__logo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: 'BebasNeue';
+    font-style: normal;
+    font-size: 24px;
+    line-height: 24px;
+    width: auto;
+    @media(min-width: 1024px){
+        font-family: 'BebasNeue';
+        font-style: normal;
+        font-size: 36px;
+        line-height: 36px;
+    }    
+
+    &:hover{
+        opacity: 0.7;
+    }
+}
+.header__sublogo{
+    font-family: 'Montserrat',helvetica,arial,sans-serif;
+    white-space: nowrap;
+    text-transform: none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFFFFF;
+    opacity: 0.6;
+    justify-content: flex-start;
+}
+
+.header__burger{
+    position: relative;
+    flex-direction: column;
+    width: auto;
+    padding: 0;
+    border: none;
+    min-width: 30px;
+    min-height: 30px;
+
+    &:hover{
+        opacity: 0.7;
+    }
+}
+.header__divider{
+    width:30px;
+    height: 2px;
+    background: white;
+}
+.header__burger_center{
+    margin: 4px 0;
+}
+.header__login{
+    font-family: 'BebasNeue';
+    font-style: normal;
+    font-size: 18px;
+    line-height: 18px;
+    padding: 8px 16px;
+    width: auto;
+    border: 1px solid #eab11f;
+    border-radius: 2px;
+    background-color: #12142b;
+}
+.header__login:hover{
+    background: #eab11f;
+}
+.header__top_divider_x{
+    position: absolute;
+    transform: rotate(45deg);
+}
+.header__bottom_divider_x{
+    position: absolute;
+    transform: rotate(-45deg);
+}
+.header__center_divider_x{
+    transform: rotate(360deg);
+    width: 0;
+}

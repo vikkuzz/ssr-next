@@ -1,31 +1,47 @@
 import A from "./A";
 import Head from "next/head";
 
-const MainContainer = ({children, keywords}) => {
-    return (
-        <>
-            <Head>
-                <meta keywords={"ulbi tv, nextjs" + keywords}></meta>
-                <title>Главная страница</title>
-            </Head>
-            <div className="navbar">
-                <A href={'/'} text="Главная"/>
-                <A href={'/users'} text="Пользователи"/>
-            </div>
-            <div>
-                {children}
-            </div>
-            <style jsx>
-                {`
-                    .navbar {
-                        background: orange;
-                        padding: 15px;
-                    }
-                   
-                `}
-            </style>
-        </>
-    );
-};
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-export default MainContainer;
+import { loginModal } from "../redux/actions/royalfutActions";
+
+import styles from "../styles/App.module.scss";
+
+import Header from "./Header";
+import BurgerMenu from "./BurgerMenu";
+
+function App({ children, keywords }) {
+  const wrapperModalRef = React.createRef();
+  const modal = useSelector((state) => state.royalfutReducer.loginModal);
+  const dispatch = useDispatch();
+
+  const isOutsideClick = (event, ref) => {
+    console.log("click", ref.current, event.target);
+    if (!ref.current.contains(event.target) && modal) {
+      dispatch(loginModal(false));
+    }
+  };
+
+  return (
+    <>
+      <Head>
+        <meta keywords={"ulbi tv, nextjs" + keywords}></meta>
+        <title>Главная страница</title>
+      </Head>
+
+      <div
+        className={styles.App}
+        onClick={(e) => isOutsideClick(e, wrapperModalRef)}
+      >
+        <Header />
+        <div className={styles.app__burgerwrapper} ref={wrapperModalRef}>
+          <BurgerMenu />
+        </div>
+        <div className={styles.app_container_content}>{children}</div>
+      </div>
+    </>
+  );
+}
+
+export default App;

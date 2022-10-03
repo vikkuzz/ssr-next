@@ -1,0 +1,20 @@
+.App {
+  display:flex;
+  flex-direction: column;
+  padding: 24px;
+  z-index: 1;
+  
+  &__title{
+    margin-top: 64px; 
+    font-family: 'BebasNeue';
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 48px;
+  }
+}
+.app__burgerwrapper{
+  width: fit-content;
+}
+.app_container_content{
+  position: relative;
+}
