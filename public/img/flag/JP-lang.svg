@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="20" fill="none" viewBox="0 0 28 20">
+	<rect width="27.5" height="19.5" x=".25" y=".25" fill="#fff" stroke="#F5F5F5" stroke-width=".5" rx="1.75"/>
+	<mask id="JP-lang-a" width="28" height="20" x="0" y="0" maskUnits="userSpaceOnUse">
+		<rect width="27.5" height="19.5" x=".25" y=".25" fill="#fff" stroke="#fff" stroke-width=".5" rx="1.75"/>
+	</mask>
+	<g mask="url(#JP-lang-a)">
+		<path fill="url(#paint0_linear)" fill-rule="evenodd" d="M14 16a6 6 0 100-12 6 6 0 000 12z" clip-rule="evenodd"/>
+	</g>
+	<defs>
+		<linearGradient id="paint0_linear" x1="8" x2="8" y1="4" y2="16" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#D81441"/>
+			<stop offset="1" stop-color="#BB0831"/>
+		</linearGradient>
+	</defs>
+</svg>

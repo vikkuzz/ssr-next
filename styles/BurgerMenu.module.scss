@@ -32,4 +32,49 @@
 .auth_tab{
     border: none;
     height: auto;
+    font-size: 48px;
+    line-height: 48px;
+}
+.burger_auth_wrapper{
+    height: auto;
+}
+.auth_container{
+    padding: 172px 32px 48px;
+    flex-direction: column;
+}
+.auth_content_wrapper{
+    flex-direction: column;
+}
+.auth{
+    flex-direction: column;
+}
+.auth_text{
+    font-family: 'Montserrat',helvetica,arial,sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 16px;
+}
+.auth_btns_wrapper{
+    gap: 8px;
+}
+.auth_fb{
+    height: 42px;
+    padding: 10px;
+    background: hsla(0,0%,100%,.1);
+    border-radius: 8px;
+    border: none;
+}
+.auth_fb:hover{
+    background: hsla(0,0%,100%,.2);
+}
+.auth_fb:hover img{
+    transform: scale(1.1);
+}
+.auth_fb_img{
+    background: transparent;
+}
+@media(min-width: 1024px){
+    .burger_menu{
+        width: 50%;
+    }
 }

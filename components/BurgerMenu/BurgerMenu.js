@@ -17,6 +17,7 @@ import { twitter } from "../../data-svg/twitter";
 import { whatsapp } from "../../data-svg/whatsapp";
 import { insta } from "../../data-svg/insta";
 import { youtube } from "../../data-svg/youtube";
+import Auth from "../Auth";
 
 const BurgerMenu = () => {
   const modal = useSelector((state) => state.royalfutReducer.loginModal);
@@ -87,28 +88,34 @@ const BurgerMenu = () => {
     menu = (
       <div className={styles.burger_menu}>
         <div className={styles.burger_menu__wrapper}>
-          <div className={styles.burger_auth_wrapper}>
-            <div className={styles.burger_btn_wrapper}>
-              <button
-                onClick={onHandleClickRegistration}
-                className={`${styles.burger_registration} ${styles.auth_tab}`}
-                type="button"
-              >
-                Регистрация
-              </button>
+          <div className={styles.auth_container}>
+            <div className={styles.burger_auth_wrapper}>
+              <div className={styles.burger_btn_wrapper}>
+                <button
+                  onClick={onHandleClickRegistration}
+                  className={`${styles.auth_tab} ${
+                    loginMenu.registration ? "" : "color_gray"
+                  }`}
+                  type="button"
+                >
+                  Регистрация
+                </button>
+              </div>
+              <div className={styles.burger_btn_wrapper}>
+                <button
+                  onClick={onHandleClickLogin}
+                  className={`${styles.auth_tab} ${
+                    !loginMenu.registration ? "" : "color_gray"
+                  }`}
+                  type="button"
+                >
+                  Вход
+                </button>
+              </div>
             </div>
-            <div className={styles.burger_btn_wrapper}>
-              <button
-                onClick={onHandleClickLogin}
-                className={`${styles.burger_login} ${styles.auth_tab}`}
-                type="button"
-              >
-                Вход
-              </button>
+            <div className={styles.auth_content_wrapper}>
+              {loginMenu.registration ? <Auth /> : "login"}
             </div>
-          </div>
-          <div className={styles.auth_content_wrapper}>
-            {loginMenu.registration ? "registration" : "login"}
           </div>
         </div>
       </div>
