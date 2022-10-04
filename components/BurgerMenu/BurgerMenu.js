@@ -2,8 +2,14 @@ import React, { useEffect } from "react";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 
+import {
+  loginClick,
+  registrationClick,
+} from "../../redux/actions/royalfutActions";
+
 import MenuItem from "../MenuItem";
 import SvgContainer from "../SvgContainer";
+import A from "../A";
 
 import styles from "../../styles/BurgerMenu.module.scss";
 
@@ -14,9 +20,21 @@ import { youtube } from "../../data-svg/youtube";
 
 const BurgerMenu = () => {
   const modal = useSelector((state) => state.royalfutReducer.loginModal);
+  const auth = useSelector((state) => state.royalfutReducer.isAuth);
+  const loginMenu = useSelector((state) => state.royalfutReducer.loginMenu);
 
-  let menu =
-    modal === true ? (
+  const dispatch = useDispatch();
+
+  const onHandleClickLogin = () => {
+    dispatch(loginClick());
+  };
+  const onHandleClickRegistration = () => {
+    dispatch(registrationClick());
+  };
+
+  let menu = null;
+  if (modal === true && auth === true) {
+    menu = (
       <div className={styles.burger_menu}>
         <div className={styles.burger_menu__wrapper}>
           <Link href={"/login"}>
@@ -64,7 +82,38 @@ const BurgerMenu = () => {
           </div>
         </div>
       </div>
-    ) : null;
+    );
+  } else if (modal === true && auth !== true) {
+    menu = (
+      <div className={styles.burger_menu}>
+        <div className={styles.burger_menu__wrapper}>
+          <div className={styles.burger_auth_wrapper}>
+            <div className={styles.burger_btn_wrapper}>
+              <button
+                onClick={onHandleClickRegistration}
+                className={`${styles.burger_registration} ${styles.auth_tab}`}
+                type="button"
+              >
+                Регистрация
+              </button>
+            </div>
+            <div className={styles.burger_btn_wrapper}>
+              <button
+                onClick={onHandleClickLogin}
+                className={`${styles.burger_login} ${styles.auth_tab}`}
+                type="button"
+              >
+                Вход
+              </button>
+            </div>
+          </div>
+          <div className={styles.auth_content_wrapper}>
+            {loginMenu.registration ? "registration" : "login"}
+          </div>
+        </div>
+      </div>
+    );
+  }
   return menu;
 };
 
