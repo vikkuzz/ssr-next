@@ -1,3 +1,4 @@
+import { useSession, signIn, signOut } from "next-auth/react";
 import styles from "../../styles/BurgerMenu.module.scss";
 
 import Facebook from "../SvgComponents/Facebook";
@@ -14,7 +15,9 @@ const Auth = () => {
             <img className={styles.auth_fb_img} src="/img/fb-color.svg" />
           </button>
         </div>
-        <div></div>
+        <div>
+          <button onClick={() => signIn()}>Sign in</button>
+        </div>
       </div>
     </div>
   );
