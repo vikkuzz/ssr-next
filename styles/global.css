@@ -114,3 +114,17 @@
   .color_gray{
     color: #686878;
   }
+  input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:focus-visible, input:-webkit-autofill:hover, select:-webkit-autofill, select:-webkit-autofill:focus, select:-webkit-autofill:hover, textarea:-webkit-autofill, textarea:-webkit-autofill:focus, textarea:-webkit-autofill:hover {
+    border: 0;
+    -webkit-text-fill-color: #fff;
+    color: #fff;
+    -webkit-box-shadow: 0 0 0 1000px #12142b inset;
+    box-shadow: inset 0 0 0 1000px #12142b;
+    -webkit-transition: background-color 9999s ease-in-out 0s;
+    transition: background-color 9999s ease-in-out 0s;
+    outline: none !important;
+    caret-color: white;
+  }
+*:focus-visible{
+  outline: none!important;
+}

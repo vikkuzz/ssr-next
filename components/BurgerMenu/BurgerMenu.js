@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -24,13 +24,35 @@ const BurgerMenu = () => {
   const auth = useSelector((state) => state.royalfutReducer.isAuth);
   const loginMenu = useSelector((state) => state.royalfutReducer.loginMenu);
 
+  const viewPassBtn = React.createRef();
+  const password = React.createRef();
+  const eye = "/img/eye.svg";
+  const eyeClosed = "/img/eye-close.svg";
+
   const dispatch = useDispatch();
+
+  const [svgEye, setSvgEye] = useState(eye);
+  const [passLength, setPassLength] = useState();
 
   const onHandleClickLogin = () => {
     dispatch(loginClick());
   };
   const onHandleClickRegistration = () => {
     dispatch(registrationClick());
+  };
+  const onHandleClickViewPass = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    if (password.current.type == "text") {
+      password.current.type = "password";
+      setSvgEye(eyeClosed);
+    } else {
+      password.current.type = "text";
+      setSvgEye(eye);
+    }
+  };
+  const onHandleChangePass = () => {
+    setPassLength(password.current.value.length);
   };
 
   let menu = null;
@@ -115,6 +137,48 @@ const BurgerMenu = () => {
             </div>
             <div className={styles.auth_content_wrapper}>
               {loginMenu.registration ? <Auth /> : "login"}
+            </div>
+            {loginMenu.registration && (
+              <div className={styles.auth_or}>Или</div>
+            )}
+            <div className={styles.fieldset_wrapper}>
+              <form className={styles.auth_form}>
+                <fieldset
+                  className={`${styles.auth_fieldset} ${styles.email_fieldset}`}
+                >
+                  <legend className={styles.auth_legend}>Почта</legend>
+                  <input
+                    className={styles.auth_userdata}
+                    type="e-mail"
+                    placeholder={"почта"}
+                  ></input>
+                </fieldset>
+                <fieldset className={styles.auth_fieldset}>
+                  <legend className={styles.auth_legend}>Пароль</legend>
+                  <input
+                    onChange={onHandleChangePass}
+                    ref={password}
+                    className={styles.auth_userdata}
+                    type="password"
+                    placeholder={"пароль"}
+                  ></input>
+                  <button
+                    ref={viewPassBtn}
+                    onClick={onHandleClickViewPass}
+                    className={styles.auth_view_pass}
+                    type="button"
+                    title={"посмотреть пароль"}
+                  >
+                    <img src={svgEye} />
+                  </button>
+                </fieldset>
+                <div className={styles.num_simbols_wrapper}>
+                  <div className={`${styles.ok_pic} `}></div>
+                </div>
+                <div>
+                  <button type="submit">Зарегистрироваться</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
