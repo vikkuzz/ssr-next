@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: column;
     font-size: 50px;
-    padding: 65px 0px 50px;
+    padding: 65px 0px 0px;
 }
 .burger_menu__footer{
     border-top: 1px solid hsla(0,0%,76.9%,.2);
@@ -128,7 +128,7 @@
     font-family: 'Oswald',sans-serif;
     font-size: 6.4vmin;
     line-height: 6.4vmin;
-    height: 36px;
+    height: 45px;
 }
 .auth_view_pass{
     position: absolute;
@@ -154,16 +154,60 @@
 .ok_pic{
     width: auto;
     height: auto;
-    height: 15px;
-    width: 15px;
-    border: 1px solid white;
-    border-radius: 50%;
+    height: 25px;
+    width: 25px;
 }
 .email_fieldset{
     margin-bottom: 35px;
 }
+.cancel{
+    background-image: url('../public/img/cancel.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.ok{
+    background-image: url('../public/img/okay.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.simbols_text{
+    font-family: 'Montserrat',helvetica,arial,sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 16px;
+    justify-content: flex-start;
+    padding-left: 12px;
+}
+.submit_wrapper{
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+.submit_btn{
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-family: 'BebasRu';
+    font-weight: 600;
+    font-size: 30px;
+    background-color: #eab11f;
+    padding: 30px;
+}
+.disabled{
+    pointer-events: none;
+    opacity: 0.5;
+}
 @media(min-width: 1024px){
     .burger_menu{
         width: 50%;
+    }
+    .submit_btn{
+        font-size: 48px;
+        padding: 40px;
+    }
+    .submit_wrapper{
+        padding-top: 100px;
     }
 }

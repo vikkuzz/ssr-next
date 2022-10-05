@@ -7,6 +7,7 @@ import A from "../A";
 
 function Header() {
   const modal = useSelector((state) => state.royalfutReducer.loginModal);
+  const user = useSelector((state) => state.royalfutReducer.user);
   // const topDivider = React.createRef();
   // const centerDivider = React.createRef();
   // const bottomDivider = React.createRef();
@@ -29,6 +30,14 @@ function Header() {
       </div>
       <div className={styles.header__center}></div>
       <div className={styles.header__right}>
+        <div className={styles.login_mail}>
+          {user.email ? (
+            <div>
+              {user.email}
+              <button>выйти</button>
+            </div>
+          ) : null}
+        </div>
         <button
           onClick={burgerToX}
           className={`${styles.header__burger} from-375-to-1024`}

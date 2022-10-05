@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   loginClick,
   registrationClick,
+  user,
 } from "../../redux/actions/royalfutActions";
 
 import MenuItem from "../MenuItem";
@@ -18,6 +19,8 @@ import { whatsapp } from "../../data-svg/whatsapp";
 import { insta } from "../../data-svg/insta";
 import { youtube } from "../../data-svg/youtube";
 import Auth from "../Auth";
+import Api from "../../Api/Api";
+const api = new Api();
 
 const BurgerMenu = () => {
   const modal = useSelector((state) => state.royalfutReducer.loginModal);
@@ -26,13 +29,30 @@ const BurgerMenu = () => {
 
   const viewPassBtn = React.createRef();
   const password = React.createRef();
+  const email = React.createRef();
+  const submit = React.createRef();
   const eye = "/img/eye.svg";
   const eyeClosed = "/img/eye-close.svg";
 
   const dispatch = useDispatch();
 
   const [svgEye, setSvgEye] = useState(eye);
-  const [passLength, setPassLength] = useState();
+  const [passLength, setPassLength] = useState("");
+
+  useEffect(() => {
+    if (modal) {
+      console.log(password);
+      setPassLength(password.current.value.length);
+    }
+  }, [modal]);
+  useEffect(() => {
+    console.log(passLength);
+    if (modal) {
+      passLength <= 7
+        ? (submit.current.disabled = true)
+        : (submit.current.disabled = false);
+    }
+  }, [passLength]);
 
   const onHandleClickLogin = () => {
     dispatch(loginClick());
@@ -54,6 +74,15 @@ const BurgerMenu = () => {
   const onHandleChangePass = () => {
     setPassLength(password.current.value.length);
   };
+
+  function registration(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    console.log("apireg");
+    api
+      .registration(email.current.value, password.current.value)
+      .then((res) => dispatch(user(res.user)));
+  }
 
   let menu = null;
   if (modal === true && auth === true) {
@@ -136,7 +165,7 @@ const BurgerMenu = () => {
               </div>
             </div>
             <div className={styles.auth_content_wrapper}>
-              {loginMenu.registration ? <Auth /> : "login"}
+              {loginMenu.registration && <Auth />}
             </div>
             {loginMenu.registration && (
               <div className={styles.auth_or}>Или</div>
@@ -148,8 +177,9 @@ const BurgerMenu = () => {
                 >
                   <legend className={styles.auth_legend}>Почта</legend>
                   <input
+                    ref={email}
                     className={styles.auth_userdata}
-                    type="e-mail"
+                    type="email"
                     placeholder={"почта"}
                   ></input>
                 </fieldset>
@@ -173,10 +203,26 @@ const BurgerMenu = () => {
                   </button>
                 </fieldset>
                 <div className={styles.num_simbols_wrapper}>
-                  <div className={`${styles.ok_pic} `}></div>
+                  <div
+                    className={`${styles.ok_pic} ${
+                      passLength <= 7 ? styles.cancel : styles.ok
+                    }`}
+                  ></div>
+                  <span className={styles.simbols_text}>
+                    не менее 8 символов!
+                  </span>
                 </div>
-                <div>
-                  <button type="submit">Зарегистрироваться</button>
+                <div className={styles.submit_wrapper}>
+                  <button
+                    ref={submit}
+                    onClick={(e) => registration(e)}
+                    className={`${styles.submit_btn} ${
+                      passLength <= 7 ? styles.disabled : ""
+                    }`}
+                    type="button"
+                  >
+                    {loginMenu.login ? "Войти" : "Зарегистрироваться"}
+                  </button>
                 </div>
               </form>
             </div>

@@ -17,7 +17,6 @@ function MainContainer({ children, keywords, description, title }) {
   const dispatch = useDispatch();
 
   const isOutsideClick = (event, ref) => {
-    console.log("click", ref.current, event.target);
     if (!ref.current.contains(event.target) && modal) {
       dispatch(loginModal(false));
     }
