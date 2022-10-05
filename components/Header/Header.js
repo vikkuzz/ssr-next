@@ -8,6 +8,8 @@ import A from "../A";
 function Header() {
   const modal = useSelector((state) => state.royalfutReducer.loginModal);
   const user = useSelector((state) => state.royalfutReducer.user);
+  const isAuth = useSelector((state) => state.royalfutReducer.isAuth);
+
   // const topDivider = React.createRef();
   // const centerDivider = React.createRef();
   // const bottomDivider = React.createRef();
@@ -20,6 +22,23 @@ function Header() {
   const burgerToX = () => {
     dispatch(loginModal(!loginModalState));
   };
+
+  const enter = isAuth ? (
+    <div>
+      <div
+        className={`${styles.header__burger_top} ${styles.header__divider} ${styles.header__top_divider_x}`}
+      ></div>
+      <div
+        className={`${styles.header__burger_center} ${styles.header__divider} ${styles.header__center_divider_x}`}
+      ></div>
+      <div
+        className={`${styles.header__burger_bottom} ${styles.header__divider} ${styles.header__bottom_divider_x}`}
+      ></div>
+    </div>
+  ) : (
+    "Войти"
+  );
+
   return (
     <div className={styles.header}>
       <div className={styles.header__left}>
@@ -80,7 +99,7 @@ function Header() {
               ></div>
             </div>
           ) : (
-            "Log in"
+            enter
           )}
         </button>
       </div>

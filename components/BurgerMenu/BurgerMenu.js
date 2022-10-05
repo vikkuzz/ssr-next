@@ -41,8 +41,9 @@ const BurgerMenu = () => {
 
   useEffect(() => {
     if (modal) {
-      console.log(password);
-      setPassLength(password.current.value.length);
+      if (typeof password.current != "object") {
+        setPassLength(password.current.value.length);
+      }
     }
   }, [modal]);
   useEffect(() => {
@@ -65,10 +66,10 @@ const BurgerMenu = () => {
     e.preventDefault();
     if (password.current.type == "text") {
       password.current.type = "password";
-      setSvgEye(eyeClosed);
+      setSvgEye(eye);
     } else {
       password.current.type = "text";
-      setSvgEye(eye);
+      setSvgEye(eyeClosed);
     }
   };
   const onHandleChangePass = () => {
@@ -81,6 +82,14 @@ const BurgerMenu = () => {
     console.log("apireg");
     api
       .registration(email.current.value, password.current.value)
+      .then((res) => dispatch(user(res.user)));
+  }
+  function login(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    console.log("apilogin");
+    api
+      .login(email.current.value, password.current.value)
       .then((res) => dispatch(user(res.user)));
   }
 
@@ -215,7 +224,13 @@ const BurgerMenu = () => {
                 <div className={styles.submit_wrapper}>
                   <button
                     ref={submit}
-                    onClick={(e) => registration(e)}
+                    onClick={(e) => {
+                      if (loginMenu.login) {
+                        login(e);
+                      } else {
+                        registration(e);
+                      }
+                    }}
                     className={`${styles.submit_btn} ${
                       passLength <= 7 ? styles.disabled : ""
                     }`}

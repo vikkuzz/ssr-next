@@ -21,7 +21,7 @@ const royalfutReducer = (state = initialState, action) => {
       return { ...state, loginMenu: { registration: true, login: false } };
     case "USER":
       console.log(action.data);
-      return { ...state, user: { ...action.data } };
+      return { ...state, isAuth: true, user: { ...action.data } };
 
     default:
       return { ...state };
