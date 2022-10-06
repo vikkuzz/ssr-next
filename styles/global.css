@@ -101,6 +101,7 @@
     }
     .from-1025-to-1900{
         display: flex;
+        width: auto;
     }
   }
   svg path {
@@ -127,4 +128,17 @@
   }
 *:focus-visible{
   outline: none!important;
+}
+.logout{
+  border: 1px solid #eab11f;
+  border-radius: 2px;
+  padding: 9px 15px;
+  color: #fff;
+  background-color: #12142b;
+  font-size: 18px;
+  line-height: 18px;
+  width: auto;
+}
+.logout:hover{
+  background-color: #eab11f;
 }

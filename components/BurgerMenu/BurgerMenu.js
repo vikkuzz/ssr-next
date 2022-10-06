@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
+import SecureLS from "secure-ls";
 
 import {
   loginClick,
   registrationClick,
   user,
+  userlogout,
 } from "../../redux/actions/royalfutActions";
 
 import MenuItem from "../MenuItem";
@@ -26,11 +28,13 @@ const BurgerMenu = () => {
   const modal = useSelector((state) => state.royalfutReducer.loginModal);
   const auth = useSelector((state) => state.royalfutReducer.isAuth);
   const loginMenu = useSelector((state) => state.royalfutReducer.loginMenu);
+  const userData = useSelector((state) => state.royalfutReducer.user);
 
   const viewPassBtn = React.createRef();
   const password = React.createRef();
   const email = React.createRef();
   const submit = React.createRef();
+
   const eye = "/img/eye.svg";
   const eyeClosed = "/img/eye-close.svg";
 
@@ -39,8 +43,13 @@ const BurgerMenu = () => {
   const [svgEye, setSvgEye] = useState(eye);
   const [passLength, setPassLength] = useState("");
 
+  let ls = null;
   useEffect(() => {
-    if (modal) {
+    ls = new SecureLS();
+  }, []);
+
+  useEffect(() => {
+    if ((modal && loginMenu.login) || (modal && loginMenu.registration)) {
       if (typeof password.current != "object") {
         setPassLength(password.current.value.length);
       }
@@ -48,7 +57,7 @@ const BurgerMenu = () => {
   }, [modal]);
   useEffect(() => {
     console.log(passLength);
-    if (modal) {
+    if ((modal && loginMenu.login) || (modal && loginMenu.registration)) {
       passLength <= 7
         ? (submit.current.disabled = true)
         : (submit.current.disabled = false);
@@ -82,27 +91,52 @@ const BurgerMenu = () => {
     console.log("apireg");
     api
       .registration(email.current.value, password.current.value)
-      .then((res) => dispatch(user(res.user)));
+      .then((res) => {
+        ls = new SecureLS();
+        ls.set("user", res.user);
+        dispatch(user(res.user));
+      });
   }
   function login(e) {
     e.stopPropagation();
     e.preventDefault();
     console.log("apilogin");
-    api
-      .login(email.current.value, password.current.value)
-      .then((res) => dispatch(user(res.user)));
+    api.login(email.current.value, password.current.value).then((res) => {
+      ls = new SecureLS();
+      ls.set("user", res.user);
+      dispatch(user(res.user));
+    });
   }
+  const logout = () => {
+    ls = new SecureLS();
+    ls.removeAll();
+    dispatch(userlogout());
+  };
 
   let menu = null;
   if (modal === true && auth === true) {
     menu = (
       <div className={styles.burger_menu}>
         <div className={styles.burger_menu__wrapper}>
-          <Link href={"/login"}>
-            <a>
-              <MenuItem text={"LOG IN"} />
-            </a>
-          </Link>
+          {auth ? (
+            <div className={styles.login_mobile}>
+              <Link href="/profile">
+                <a className={styles.header_mail}>{userData.email}</a>
+              </Link>
+              <button
+                onClick={logout}
+                className={`logout ${styles.logout_menu}`}
+              >
+                Выйти
+              </button>
+            </div>
+          ) : (
+            <Link href={"/login"}>
+              <a>
+                <MenuItem text={"LOG IN"} />
+              </a>
+            </Link>
+          )}
           <MenuItem text={"PRESET ORDERS"} color={"burger_orange_"} />
           <MenuItem text={"BUY COINS"} color={"burger_yellow_"} />
           <MenuItem text={"DELIVERY"} />
@@ -192,7 +226,9 @@ const BurgerMenu = () => {
                     placeholder={"почта"}
                   ></input>
                 </fieldset>
-                <fieldset className={styles.auth_fieldset}>
+                <fieldset
+                  className={`${styles.auth_fieldset} ${styles.fieldset_pass}`}
+                >
                   <legend className={styles.auth_legend}>Пароль</legend>
                   <input
                     onChange={onHandleChangePass}

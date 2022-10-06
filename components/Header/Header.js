@@ -1,18 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginModal } from "../../redux/actions/royalfutActions";
+import SecureLS from "secure-ls";
+import Link from "next/link";
+
+import {
+  loginClick,
+  registrationClick,
+  user,
+} from "../../redux/actions/royalfutActions";
 
 import styles from "../../styles/Header.module.scss";
 import A from "../A";
 
 function Header() {
   const modal = useSelector((state) => state.royalfutReducer.loginModal);
-  const user = useSelector((state) => state.royalfutReducer.user);
+  const userData = useSelector((state) => state.royalfutReducer.user);
   const isAuth = useSelector((state) => state.royalfutReducer.isAuth);
 
   // const topDivider = React.createRef();
   // const centerDivider = React.createRef();
   // const bottomDivider = React.createRef();
+
   const dispatch = useDispatch();
 
   const loginModalState = useSelector(
@@ -22,6 +31,15 @@ function Header() {
   const burgerToX = () => {
     dispatch(loginModal(!loginModalState));
   };
+
+  let ls = null;
+
+  useEffect(() => {
+    ls = new SecureLS();
+    if (ls.get("user")) {
+      dispatch(user(ls.get("user")));
+    }
+  }, []);
 
   const enter = isAuth ? (
     <div>
@@ -49,14 +67,14 @@ function Header() {
       </div>
       <div className={styles.header__center}></div>
       <div className={styles.header__right}>
-        <div className={styles.login_mail}>
-          {user.email ? (
+        {/* <div className={styles.login_mail}>
+          {isAuth && (
             <div>
-              {user.email}
+              {userData.email}
               <button>выйти</button>
             </div>
-          ) : null}
-        </div>
+          )}
+        </div> */}
         <button
           onClick={burgerToX}
           className={`${styles.header__burger} from-375-to-1024`}
@@ -82,26 +100,20 @@ function Header() {
           ></div>
         </button>
 
-        <button
-          onClick={burgerToX}
-          className={`${styles.header__login} from-1025-to-1900`}
-        >
-          {loginModalState ? (
-            <div>
-              <div
-                className={`${styles.header__burger_top} ${styles.header__divider} ${styles.header__top_divider_x}`}
-              ></div>
-              <div
-                className={`${styles.header__burger_center} ${styles.header__divider} ${styles.header__center_divider_x}`}
-              ></div>
-              <div
-                className={`${styles.header__burger_bottom} ${styles.header__divider} ${styles.header__bottom_divider_x}`}
-              ></div>
-            </div>
+        <div className={`from-1025-to-1900`}>
+          {isAuth ? (
+            <Link href="/profile">
+              <a className={styles.header_mail}>{userData.email}</a>
+            </Link>
           ) : (
-            enter
+            <button onClick={burgerToX} className={`${styles.header__burger}`}>
+              Войти
+            </button>
           )}
-        </button>
+        </div>
+        {isAuth && (
+          <button className={`logout from-1025-to-1900`}>Выйти</button>
+        )}
       </div>
     </div>
   );

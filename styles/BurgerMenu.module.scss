@@ -40,9 +40,11 @@
     padding-bottom: 80px;
 }
 .auth_container{
-    padding: 172px 32px 48px;
+    padding: 100px 32px 48px;
     flex-direction: column;
     overflow: auto;
+    justify-content: flex-start;
+
     &::-webkit-scrollbar {
         width: 4px;
         transition: opacity 0.5s ease-out;
@@ -132,7 +134,7 @@
 }
 .auth_view_pass{
     position: absolute;
-    right: -0.5vmin;
+    right: -18px;
     top: 40%;
     z-index: 99;
     width: 45px;
@@ -198,6 +200,18 @@
 .disabled{
     pointer-events: none;
     opacity: 0.5;
+}
+.fieldset_pass{
+    padding-right: 50px;
+}
+.login_mobile{
+    gap: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-right: 60px;
+}
+.logout_menu{
+    font-size: 36px;
+    padding: 24px;
 }
 @media(min-width: 1024px){
     .burger_menu{
