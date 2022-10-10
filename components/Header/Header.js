@@ -1,17 +1,19 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loginModal } from "../../redux/actions/royalfutActions";
 import SecureLS from "secure-ls";
 import Link from "next/link";
 
 import {
+  loginModal,
   loginClick,
   registrationClick,
   user,
+  userlogout,
 } from "../../redux/actions/royalfutActions";
 
 import styles from "../../styles/Header.module.scss";
 import A from "../A";
+import Dropdown from "../Dropdown";
 
 function Header() {
   const modal = useSelector((state) => state.royalfutReducer.loginModal);
@@ -41,6 +43,13 @@ function Header() {
     }
   }, []);
 
+  const logout = () => {
+    ls = new SecureLS();
+    ls.removeAll();
+    dispatch(userlogout());
+    dispatch(loginModal(false));
+  };
+
   const enter = isAuth ? (
     <div>
       <div
@@ -65,7 +74,9 @@ function Header() {
           <div className={styles.header__sublogo}>FIFA 22 coins</div>
         </a>
       </div>
-      <div className={styles.header__center}></div>
+      <div className={styles.header__center}>
+        <Dropdown />
+      </div>
       <div className={styles.header__right}>
         {/* <div className={styles.login_mail}>
           {isAuth && (
@@ -112,7 +123,9 @@ function Header() {
           )}
         </div>
         {isAuth && (
-          <button className={`logout from-1025-to-1900`}>Выйти</button>
+          <button onClick={logout} className={`logout from-1025-to-1900`}>
+            Выйти
+          </button>
         )}
       </div>
     </div>

@@ -8,6 +8,8 @@ import {
   registrationClick,
   user,
   userlogout,
+  loginModal,
+  catcherror,
 } from "../../redux/actions/royalfutActions";
 
 import MenuItem from "../MenuItem";
@@ -85,32 +87,41 @@ const BurgerMenu = () => {
     setPassLength(password.current.value.length);
   };
 
-  function registration(e) {
+  async function registration(e) {
     e.stopPropagation();
     e.preventDefault();
     console.log("apireg");
-    api
+    await api
       .registration(email.current.value, password.current.value)
       .then((res) => {
+        if (res?.errors) {
+          if (res.errors.email) {
+            dispatch(catcherror(res.errors.email[0]));
+            return;
+          }
+        }
         ls = new SecureLS();
         ls.set("user", res.user);
         dispatch(user(res.user));
+        dispatch(loginModal(false));
       });
   }
-  function login(e) {
+  async function login(e) {
     e.stopPropagation();
     e.preventDefault();
     console.log("apilogin");
-    api.login(email.current.value, password.current.value).then((res) => {
+    await api.login(email.current.value, password.current.value).then((res) => {
       ls = new SecureLS();
       ls.set("user", res.user);
       dispatch(user(res.user));
+      dispatch(loginModal(false));
     });
   }
   const logout = () => {
     ls = new SecureLS();
     ls.removeAll();
     dispatch(userlogout());
+    dispatch(loginModal(false));
   };
 
   let menu = null;

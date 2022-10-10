@@ -3,6 +3,8 @@
   flex-direction: column;
   padding: 24px;
   z-index: 1;
+  width: 100vw;
+  padding-top: 200px;
   
   &__title{
     margin-top: 64px; 
@@ -12,6 +14,10 @@
     line-height: 48px;
   }
 }
+.App h1{
+  flex-direction: column;
+  background-color: transparent;
+}
 .app__burgerwrapper{
   width: fit-content;
   height: 0;
@@ -19,4 +25,17 @@
 .app_container_content{
   position: relative;
   background-color: transparent;
+}
+.showError{
+  border:1px solid red;
+  border-radius: 4px;
+
+  z-index: 9999;
+  color: white;
+  font-family: 'BebasRu';
+  font-weight: 600;
+  font-size: 36px;
+  padding: 12px;
+  transition: all 0.5s;
+  width: fit-content;
 }

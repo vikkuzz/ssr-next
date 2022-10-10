@@ -1,0 +1,223 @@
+.countries{
+    //border: 1px solid red;
+    user-select: none; 
+}
+.dropdown__hide{
+    display:none;
+}
+.dropdown_selects{
+    position: relative;
+    cursor: pointer;
+}
+.dropdown__content{
+    width: 100%;
+    min-width: max-content;
+    position: absolute;
+    top: 100%;
+    background: #545666;
+    border: 1px solid #989aa3;
+    border-radius: 4px;
+    padding: 12px 0;
+    align-items: flex-start;
+    height: 300px;
+}
+.dropdown__scroll{
+    max-height: 260px;
+    overflow-y: auto;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    flex-direction: column;
+    height: 300px;
+    justify-content: flex-start;
+    &::-webkit-scrollbar {
+        width: 4px;
+        transition: opacity 0.5s ease-out;
+        border: none;
+    }
+    &::-webkit-scrollbar-thumb {
+        border: 4px solid rgba(255, 255, 255, 0.4);
+        transition: opacity 0.5s ease-out;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+}
+.dropdown__content_item{
+    display: flex;
+    border: none;
+    align-items: center;
+    min-height: 40px;
+    padding: 0 12px;
+    justify-content: flex-start;
+    &:hover{
+        background: rgba(255, 255, 255, 0.2);
+    }
+}
+.dropdown__content_item_img{
+    margin-right: 20px;
+    width: auto;
+    height: auto;
+}
+.dropdown__content_item_title_country{
+    font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 15px;
+        color: rgba(255, 255, 255, 1);
+        text-transform: none;
+        background: transparent;
+}
+.dropdown_currency{
+    position: relative;
+    cursor: pointer;
+    padding: 0 6px;
+}
+.dropdown__wrapper_content{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    //top: 100%;
+    width: 100%;    
+    height: auto;  
+    padding: 20px;
+    background: #414355;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+}
+.dropdown__wrapper_language{
+    margin-bottom:16px;
+    flex-direction: column;
+}
+.dropdown__content_language{
+    width: 100%;
+    z-index: 2;
+}
+.dropdown__title_language{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: none;
+    margin-bottom: 8px;
+    justify-content: flex-start;
+}
+.dropdown__title_currency{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: none;
+    justify-content: flex-start;
+    padding-bottom: 8px;
+}
+.dropdown__wrapper_dropdown_lang{
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+    padding: 0px 8px;
+}
+.dropdown__country_img{
+    padding: 6px;
+    background: transparent;
+    width: 90px;
+}
+.dropdown__country_name{
+    padding: 6px;
+}
+.dropdown__country_name_mobile{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    text-transform: none;
+    background: transparent;
+}
+.dropdown__arrow{
+    background: url('../img/whitearrow.svg');
+    width: 15px;
+    height: 15px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: auto;   
+    min-width: 15px;     
+    margin: 0 8px;
+}
+.dropdown__wrapper_mobile_dropdown{
+    position: relative;
+    padding-top: 4px;
+    
+    img{
+        width: 20px
+    }
+}
+.dropdown__wrapper_currency{
+    flex-direction: column;
+}
+.dropdown__wrapper_dropdown_curr{
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+    padding: 0px 8px;
+}
+.dropdown__currency_name{
+    padding: 6px;
+    background-color: transparent;
+    font-size: 38px;
+    width: auto;
+}
+.dropdown__currency_icon{
+    font-size: 38px;
+    background-color: transparent;
+}
+.dropdown__wrapper_content_mobile{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;    
+    height: auto;  
+    padding: 20px;
+    background: #545666;
+    border-radius: 6px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+}
+.remove_back{
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    min-width: 200px;
+}
+.locale{
+    width: 45px;
+}
+.countries{
+    width: auto;
+    gap: 12px;
+}
+.currency{gap: 4px;}
+
+@media(min-width:1025px){
+    .locale{
+        width: 90px;
+    }
+}

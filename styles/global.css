@@ -142,3 +142,16 @@
 .logout:hover{
   background-color: #eab11f;
 }
+.error{
+  width: 0;
+  height: auto;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  background: red;
+  padding: 0;
+  transition: all 0.5s;
+}
+.hide{
+  display: none;
+}
