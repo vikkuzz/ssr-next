@@ -1,3 +1,13 @@
+import SecureLS from "secure-ls";
+import currency from "../../data-elements/currency";
+import flagLangs from "../../data-elements/countries";
+
+const ISSERVER = typeof window === "undefined"; //чтоб не было ошибки на сервере об отсутствии локалстора
+let ls = null;
+
+if (!ISSERVER) {
+  ls = new SecureLS();
+}
 const initialState = {
   loginModal: false,
   isAuth: false,
@@ -129,43 +139,114 @@ const initialState = {
 
 const royalfutReducer = (state = initialState, action) => {
   console.log(action);
+
+  let localState = null;
+  if (ls?.get("localState")) {
+    localState = ls.get("localState");
+  }
+
   switch (action.type) {
     case "CURRENT_CURRENCY":
       console.log(action.data);
-      return { ...state, currency: action.data };
+      let userCurrency = currency.filter(
+        (el) => el.title.toLowerCase() == action.data.toLowerCase()
+      )[0];
+      ls.set("localState", { ...state, ...localState, currency: userCurrency });
+      return { ...state, ...localState, currency: userCurrency };
+
+    case "CURRENT_LANG":
+      console.log(action.data);
+      let currentLang = flagLangs.filter(
+        (el) => el.title.toLowerCase() === action.data.toLowerCase()
+      )[0];
+      ls.set("localState", { ...state, ...localState, locale: currentLang });
+      return { ...state, ...localState, locale: currentLang };
+
     case "LOGIN_MODAL":
       console.log(action.data);
       return { ...state, loginModal: action.data };
+
     case "GET_STOCK":
-      console.log(action.data);
-      return { ...state, stock: action.data };
+      console.log("GET_STOCK: ", action.data);
+      if (Object.keys(state.locale).length === 0) {
+        localState = {
+          ...state,
+          locale: flagLangs.filter(
+            (el) => el.title == action.data.locale.toLowerCase()
+          )[0] || {
+            url: "img/flag/UK-lang.svg",
+            title: "en",
+            id: "0",
+            country: "English",
+          },
+          currency: currency.filter(
+            (el) => el.title.toUpperCase() == action.data.currency.toUpperCase()
+          )[0] || {
+            currency: "$",
+            title: "USD",
+            id: "0",
+            country: "",
+          },
+          ...localState,
+          stock: action.data,
+        };
+      }
+      ls.set("localState", localState);
+      return { ...state, ...localState };
 
     case "LOGIN":
       return { ...state, loginMenu: { registration: false, login: true } };
+
     case "REGISTRATION":
       console.log(action.data);
       return { ...state, loginMenu: { registration: true, login: false } };
+
     case "USER":
       console.log(action.data);
+      ls.set("localState", {
+        ...state,
+        isAuth: true,
+        user: { ...action.data },
+        loginModal: false,
+        loginMenu: {
+          registration: false,
+          login: false,
+        },
+      });
       return {
         ...state,
         isAuth: true,
         user: { ...action.data },
+        loginModal: false,
         loginMenu: {
           registration: false,
           login: false,
         },
       };
+
     case "USER_LOGOUT":
+      ls.set("localState", {
+        ...state,
+        isAuth: false,
+        user: {},
+        loginModal: false,
+        loginMenu: {
+          registration: false,
+          login: true,
+        },
+      });
+
       return {
         ...state,
         isAuth: false,
         user: {},
+        loginModal: false,
         loginMenu: {
           registration: false,
           login: true,
         },
       };
+
     case "CATCH_ERROR":
       console.log(action.data);
       return { ...state, errorMessage: action.data };

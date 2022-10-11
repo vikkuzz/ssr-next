@@ -5,11 +5,14 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { translates } from "../locales/locales";
+import SecureLS from "secure-ls";
 
 import {
   loginModal,
   catcherror,
   stock,
+  currentCurrency,
+  user,
 } from "../redux/actions/royalfutActions";
 
 import styles from "../styles/App.module.scss";
@@ -17,6 +20,7 @@ import styles from "../styles/App.module.scss";
 import Header from "./Header";
 import BurgerMenu from "./BurgerMenu";
 import Api from "../Api/Api";
+import currency from "../data-elements/currency";
 
 const api = new Api();
 
@@ -24,12 +28,15 @@ function MainContainer({ children, keywords, description, title }) {
   const wrapperModalRef = React.createRef();
   const modal = useSelector((state) => state.royalfutReducer.loginModal);
   const error = useSelector((state) => state.royalfutReducer.errorMessage);
-  let currentstock = useSelector((state) => state.royalfutReducer.stock);
+  const currentStock = useSelector((state) => state.royalfutReducer.stock);
+  const t = useSelector((state) => state.royalfutReducer.locale.title) || "en";
+  const currentCurrencyState = useSelector(
+    (state) => state.royalfutReducer.currency
+  );
+  const currentUserState = useSelector((state) => state.royalfutReducer.user);
   const dispatch = useDispatch();
 
   const router = useRouter();
-  const t = router.locale === "en" ? "en" : "ru";
-  console.log(router);
 
   const isOutsideClick = (event, ref) => {
     if (!ref.current.contains(event.target) && modal) {
@@ -52,6 +59,32 @@ function MainContainer({ children, keywords, description, title }) {
       dispatch(stock(result));
     });
   }, []);
+  // useEffect(() => {
+  //   if (Object.keys(currentStock).length != 0) {
+  //     //если сток не пуст
+
+  //     let ls = new SecureLS();
+  //     console.log("mainContainer: ", ls.get("localState"));
+  //     if (
+  //       ls.get("localState").length != 0 &&
+  //       Object.keys(ls.get("localState").currency).length != 0 &&
+  //       Object.keys(currentCurrencyState).length == 0
+  //     ) {
+  //       // если локалстейт есть и он не пустой и пустой стор валюты
+  //       console.log("если локалстейт есть и он не пустой и пустой стор валюты");
+  //       dispatch(currentCurrency(ls.get("localState").currency)); // забираем данные из локалстейта и кладем в стор
+  //     }
+  //     if (
+  //       ls.get("localState") &&
+  //       Object.keys(ls.get("localState").user).length != 0 &&
+  //       Object.keys(currentUserState).length == 0
+  //     ) {
+  //       // если локалстейт есть и он не пустой и пустой стор
+  //       console.log("если локалстейт есть и он не пустой и пустой стор");
+  //       dispatch(user(ls.get("localState").user)); // забираем данные из локалстейта и кладем в стор
+  //     }
+  //   }
+  // }, [currentStock]);
 
   return (
     <>

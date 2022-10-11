@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
-import SecureLS from "secure-ls";
 
 import {
   loginClick,
@@ -44,11 +43,6 @@ const BurgerMenu = () => {
 
   const [svgEye, setSvgEye] = useState(eye);
   const [passLength, setPassLength] = useState("");
-
-  let ls = null;
-  useEffect(() => {
-    ls = new SecureLS();
-  }, []);
 
   useEffect(() => {
     if ((modal && loginMenu.login) || (modal && loginMenu.registration)) {
@@ -100,10 +94,7 @@ const BurgerMenu = () => {
             return;
           }
         }
-        ls = new SecureLS();
-        ls.set("user", res.user);
         dispatch(user(res.user));
-        dispatch(loginModal(false));
       });
   }
   async function login(e) {
@@ -111,17 +102,11 @@ const BurgerMenu = () => {
     e.preventDefault();
     console.log("apilogin");
     await api.login(email.current.value, password.current.value).then((res) => {
-      ls = new SecureLS();
-      ls.set("user", res.user);
       dispatch(user(res.user));
-      dispatch(loginModal(false));
     });
   }
   const logout = () => {
-    ls = new SecureLS();
-    ls.removeAll();
     dispatch(userlogout());
-    dispatch(loginModal(false));
   };
 
   let menu = null;

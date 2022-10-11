@@ -6,15 +6,20 @@ import { useOutsideAlerter, useOutsideClick } from "../../utils/hooks";
 
 import styles from "../../styles/Dropdown.module.scss";
 import Link from "next/link";
-import { stock, currentCurrency } from "../../redux/actions/royalfutActions";
+import {
+  stock,
+  currentLang,
+  currentCurrency,
+} from "../../redux/actions/royalfutActions";
+import { isOutsideClick } from "../../utils/functions";
 
 const DropdownContent = ({ data }) => {
   const dispatch = useDispatch();
-  const currentStock = useSelector((state) => state.royalfutReducer.stock);
+
   const changeLang = (e) => {
-    let myStock = { ...currentStock, locale: e.target.id.toUpperCase() };
-    dispatch(stock(myStock));
+    dispatch(currentLang(e.target.id));
   };
+
   return (
     <div className={`${styles.dropdown__scroll}`}>
       {data.map((el) => {
@@ -44,15 +49,15 @@ const DropdownContent = ({ data }) => {
     </div>
   );
 };
+
 const DropdownCurrencyContent = ({ data }) => {
   const dispatch = useDispatch();
 
   const changeCurrency = (e) => {
-    e.stopPropagation();
-    dispatch(
-      currentCurrency(currency.filter((el) => el.title === e.target.id)[0])
-    );
+    //e.stopPropagation();
+    dispatch(currentCurrency(e.target.id));
   };
+
   return (
     <div className={`${styles.dropdown__scroll}`}>
       {data.map((el) => {
@@ -78,29 +83,32 @@ const DropdownCurrencyContent = ({ data }) => {
 
 const DropdownLang = () => {
   const stock = useSelector((state) => state.royalfutReducer.stock);
+  const lang = useSelector((state) => state.royalfutReducer.locale);
+  const currentCurrency = useSelector(
+    (state) => state.royalfutReducer.currency
+  );
   const [localeIcon, setLocaleIcon] = useState(
-    flagLangs.filter((el) => el.title === stock.locale.toLowerCase())
+    flagLangs.filter((el) => el.title === stock.locale.toLowerCase())[0]
   );
 
   useEffect(() => {
-    setLocaleIcon(
-      flagLangs.filter((el) => el.title === stock.locale.toLowerCase())
-    );
-  }, [stock]);
+    setLocaleIcon(lang);
+  }, [lang]);
 
   return (
     <div className={`${styles.countries}`}>
       <div className={`${styles.locale}`}>
         <img
           className={`${styles.dropdown__country_img}`}
-          src={`${localeIcon[0].url}`}
+          src={`${lang.url || "img/flag/UK-lang.svg"}`}
         />
-        {stock?.locale || "EN"}
+        <span className={`from-375-to-1024`}>{lang.title || "EN"}</span>
+        <span className={`from-1025-to-1900`}>{lang.country || "ENGLISH"}</span>
         <div className={`${styles.dropdown__arrow} from-1025-to-1900`} />
       </div>
       <div className={`${styles.divider} from-375-to-1024`}>|</div>
       <div className={`${styles.currency} from-375-to-1024`}>
-        {stock?.currency || "USD"}
+        {currentCurrency.currency || "USD"}
         <div className={`${styles.dropdown__arrow}`} />
       </div>
     </div>
@@ -110,6 +118,7 @@ const DropdownLang = () => {
 const DropdownMobile = () => {
   const stock = useSelector((state) => state.royalfutReducer.stock);
   const currencyUser = useSelector((state) => state.royalfutReducer.currency);
+  const localeUser = useSelector((state) => state.royalfutReducer.locale);
   const contentMobileRef = React.createRef();
   const langMobile = React.createRef();
   const langRefMobile = React.createRef();
@@ -119,20 +128,20 @@ const DropdownMobile = () => {
   useOutsideAlerter(langMobile, langRefMobile, "hide");
   useOutsideAlerter(currMobile, currencyRefMobile, "hide");
 
-  const [localeIcon, setLocaleIcon] = useState(
-    flagLangs.filter((el) => el.title === stock.locale.toLowerCase())
-  );
-  const [localeCurrency, setLocaleCurrency] = useState(
-    currency.filter((el) => el.title === stock.currency)[0]
-  );
+  // const [localeIcon, setLocaleIcon] = useState(
+  //   flagLangs.filter((el) => el.title === stock.locale.toLowerCase())
+  // );
+  // const [localeCurrency, setLocaleCurrency] = useState(
+  //   currency.filter((el) => el.title === stock.currency)[0]
+  // );
 
-  useEffect(() => {
-    setLocaleCurrency(currencyUser);
-  }, [currencyUser]);
+  // useEffect(() => {
+  //   setLocaleCurrency(currencyUser);
+  // }, [currencyUser]);
 
-  useEffect(() => {
-    setLocaleCurrency(currency.filter((el) => el.title === stock.currency)[0]);
-  }, [stock]);
+  // useEffect(() => {
+  //   setLocaleCurrency(currency.filter((el) => el.title === stock.currency)[0]);
+  // }, [stock]);
 
   function hideContent(ref) {
     ref.current.classList.toggle("hide");
@@ -154,12 +163,12 @@ const DropdownMobile = () => {
         >
           <img
             className={`${styles.dropdown__country_img}`}
-            src={`${localeIcon[0].url}`}
+            src={`${localeUser.url || "/img/flag/UK-lang.svg"}`}
           />
           <div
             className={`${styles.dropdown__country_name} ${styles.dropdown__country_name_mobile}`}
           >
-            {localeIcon[0].country}
+            {localeUser.country || "English"}
           </div>
           <div className={`${styles.dropdown__arrow}`} />
         </div>
@@ -182,10 +191,10 @@ const DropdownMobile = () => {
           }}
         >
           <div className={`${styles.dropdown__currency_name}`}>
-            {localeCurrency?.title}
+            {currencyUser.title || "USD"}
           </div>
           <div className={`${styles.dropdown__currency_icon}`}>
-            {localeCurrency?.currency}
+            {currencyUser.currency || "$"}
           </div>
           <div className={`${styles.dropdown__arrow}`} />
         </div>
@@ -204,6 +213,9 @@ const DropdownMobile = () => {
 
 const Dropdown = () => {
   const stock = useSelector((state) => state.royalfutReducer.stock);
+  const currentCurrency = useSelector(
+    (state) => state.royalfutReducer.currency
+  );
   const countryRef = React.createRef();
   const currencyRef = React.createRef();
   const countryCurrencyRef = React.createRef();
@@ -219,15 +231,18 @@ const Dropdown = () => {
     console.log("click");
     hideContent(ref);
   };
+
   const onMouseEnterBlock = (e, ref) => {
     e.stopPropagation();
     console.log("enter");
     hideContent(ref);
   };
+
   const onMouseLeaveBlock = (e, ref) => {
     e.stopPropagation();
     hideContent(ref);
   };
+
   return (
     <div className={`${styles.dropdown_container}`}>
       <div
@@ -249,7 +264,7 @@ const Dropdown = () => {
           <DropdownLang />
         </div>
         <div className={`${styles.dropdown__content} hide`} ref={countryRef}>
-          <DropdownContent data={flagLangs} />
+          <DropdownContent data={flagLangs} container={countryRef} />
         </div>
         <div
           className={`${styles.dropdown__content} ${styles.remove_back} hide`}
@@ -269,7 +284,7 @@ const Dropdown = () => {
         }}
         className={`${styles.dropdown_currency} from-1025-to-1900`}
       >
-        {stock?.currency || "USD"}
+        {currentCurrency.title || "USD"}
         <div className={`${styles.dropdown__arrow}`} />
         <div className={`${styles.dropdown__content} hide`} ref={currencyRef}>
           <DropdownCurrencyContent data={currency} />

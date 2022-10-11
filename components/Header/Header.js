@@ -19,6 +19,7 @@ function Header() {
   const modal = useSelector((state) => state.royalfutReducer.loginModal);
   const userData = useSelector((state) => state.royalfutReducer.user);
   const isAuth = useSelector((state) => state.royalfutReducer.isAuth);
+  const currentStock = useSelector((state) => state.royalfutReducer.stock);
 
   // const topDivider = React.createRef();
   // const centerDivider = React.createRef();
@@ -36,18 +37,11 @@ function Header() {
 
   let ls = null;
 
-  useEffect(() => {
-    ls = new SecureLS();
-    if (ls.get("user")) {
-      dispatch(user(ls.get("user")));
-    }
-  }, []);
-
   const logout = () => {
     ls = new SecureLS();
     ls.removeAll();
     dispatch(userlogout());
-    dispatch(loginModal(false));
+    localStorage.clear();
   };
 
   const enter = isAuth ? (
