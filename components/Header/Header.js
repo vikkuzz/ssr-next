@@ -66,76 +66,80 @@ function Header() {
       </div>
       <div className={styles.header__center}>
         <Dropdown />
-        <div className={`${styles.header__preset_orders} from-1025-to-1900`}>
-          <Link href={"/coins"} locale={locale.title}>
-            <span
-              className={`${styles.header_presetorders} ${styles.header__links}`}
-            >
-              Preset orders
-            </span>
-          </Link>
-        </div>
-        <div className={`${styles.header__buy_coins} from-1025-to-1900`}>
-          <Link href={"/order"} locale={locale.title}>
-            <button
-              className={`${styles.header_buycoins} ${styles.header__links}`}
-            >
-              Buy coins
-            </button>
-          </Link>
-          <div className={`dropdown__arrow`} />
-        </div>
-        <div
-          className={`${styles.header__delivery_container} from-1025-to-1900`}
-        >
-          <Link href={"/delivery"} locale={locale.title}>
-            <span
-              className={`${styles.header_delivery} ${styles.header__links}`}
-            >
-              Delivery
-            </span>
-          </Link>
-        </div>
-        <div className={`${styles.header__faq_container} from-1025-to-1900`}>
-          <Link href={"/faq"} locale={locale.title}>
-            <span className={`${styles.header_faq} ${styles.header__links}`}>
-              FAQ
-            </span>
-          </Link>
-        </div>
-        <div className={`${styles.header__social_container} from-1025-to-1900`}>
-          <div className={styles.header_menu__icon_wrapper}>
-            <SvgContainer
-              item={whatsapp}
-              color={"white"}
-              hover={"gold"}
-              classStyle={styles.header_menu__icon}
-            />
+        <div className={`${styles.header_links_wrapper}`}>
+          <div className={`${styles.header__preset_orders} from-1025-to-1900`}>
+            <Link href={"/coins"} locale={locale.title}>
+              <span
+                className={`${styles.header_presetorders} ${styles.header__links}`}
+              >
+                Preset orders
+              </span>
+            </Link>
           </div>
-          <div className="divider"></div>
-          <div className={styles.header_menu__icon_wrapper}>
-            <SvgContainer
-              item={twitter}
-              color={"white"}
-              hover={"gold"}
-              classStyle={styles.header_menu__icon}
-            />
+          <div className={`${styles.header__buy_coins} from-1025-to-1900`}>
+            <Link href={"/order"} locale={locale.title}>
+              <button
+                className={`${styles.header_buycoins} ${styles.header__links}`}
+              >
+                Buy coins
+              </button>
+            </Link>
+            <div className={`dropdown__arrow`} />
           </div>
-          <div className={styles.header_menu__icon_wrapper}>
-            <SvgContainer
-              item={insta}
-              color={"white"}
-              hover={"gold"}
-              classStyle={styles.header_menu__icon}
-            />
+          <div
+            className={`${styles.header__delivery_container} from-1025-to-1900`}
+          >
+            <Link href={"/delivery"} locale={locale.title}>
+              <span
+                className={`${styles.header_delivery} ${styles.header__links}`}
+              >
+                Delivery
+              </span>
+            </Link>
           </div>
-          <div className={styles.header_menu__icon_wrapper}>
-            <SvgContainer
-              item={youtube}
-              color={"white"}
-              hover={"gold"}
-              classStyle={styles.header_menu__icon}
-            />
+          <div className={`${styles.header__faq_container} from-1025-to-1900`}>
+            <Link href={"/faq"} locale={locale.title}>
+              <span className={`${styles.header_faq} ${styles.header__links}`}>
+                FAQ
+              </span>
+            </Link>
+          </div>
+          <div
+            className={`${styles.header__social_container} from-1025-to-1900`}
+          >
+            <div className={styles.header_menu__icon_wrapper}>
+              <SvgContainer
+                item={whatsapp}
+                color={"white"}
+                hover={"gold"}
+                classStyle={styles.header_menu__icon}
+              />
+            </div>
+            <div className="divider"></div>
+            <div className={styles.header_menu__icon_wrapper}>
+              <SvgContainer
+                item={twitter}
+                color={"white"}
+                hover={"gold"}
+                classStyle={styles.header_menu__icon}
+              />
+            </div>
+            <div className={styles.header_menu__icon_wrapper}>
+              <SvgContainer
+                item={insta}
+                color={"white"}
+                hover={"gold"}
+                classStyle={styles.header_menu__icon}
+              />
+            </div>
+            <div className={styles.header_menu__icon_wrapper}>
+              <SvgContainer
+                item={youtube}
+                color={"white"}
+                hover={"gold"}
+                classStyle={styles.header_menu__icon}
+              />
+            </div>
           </div>
         </div>
       </div>

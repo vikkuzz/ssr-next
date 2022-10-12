@@ -143,8 +143,8 @@
     white-space: nowrap;
 }
 .header__center{
-    width: auto;
-    gap: 6px;
+    width: 1000px;
+    //gap: 6px;
 }
 .header_buycoins{
     color: #FFFFFF;
@@ -175,4 +175,8 @@
 .header_menu__icon_wrapper{
     padding: 0 11px;
     cursor: pointer;
+}
+.header_links_wrapper{
+    flex: 2;
+    gap: 6px;
 }
