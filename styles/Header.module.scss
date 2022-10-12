@@ -180,3 +180,12 @@
     flex: 2;
     gap: 6px;
 }
+.header__buy_coins{
+    position: relative;
+}
+.buycoins_content{
+    position: absolute;
+    flex-direction: column;
+    gap: 6px;
+    top: 0;
+}

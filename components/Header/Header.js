@@ -23,6 +23,23 @@ function Header() {
 
   const dispatch = useDispatch();
 
+  const buycoinsRef = React.createRef();
+  const buycoinsBtnRef = React.createRef();
+
+  function hideContent(ref) {
+    ref.current.classList.toggle("hide");
+  }
+  const onMouseEnterBlock = (e, ref) => {
+    e.stopPropagation();
+    console.log("enter");
+    hideContent(ref);
+  };
+
+  const onMouseLeaveBlock = (e, ref) => {
+    e.stopPropagation();
+    hideContent(ref);
+  };
+
   const loginModalState = useSelector(
     (state) => state.royalfutReducer.loginModal
   );
@@ -77,14 +94,43 @@ function Header() {
             </Link>
           </div>
           <div className={`${styles.header__buy_coins} from-1025-to-1900`}>
-            <Link href={"/order"} locale={locale.title}>
-              <button
-                className={`${styles.header_buycoins} ${styles.header__links}`}
-              >
-                Buy coins
-              </button>
-            </Link>
+            <div
+              ref={buycoinsBtnRef}
+              onMouseEnter={(e) => {
+                e.stopPropagation();
+                onMouseEnterBlock(e, buycoinsRef);
+              }}
+              onMouseLeave={(e) => {
+                e.stopPropagation();
+                onMouseLeaveBlock(e, buycoinsRef);
+              }}
+            >
+              <Link href={"/order"} locale={locale.title}>
+                <button
+                  className={`${styles.header_buycoins} ${styles.header__links}`}
+                >
+                  Buy coins
+                </button>
+              </Link>
+            </div>
             <div className={`dropdown__arrow`} />
+            <div
+              ref={buycoinsRef}
+              className={`${styles.buycoins_content} hide`}
+            >
+              <Link href={"/order/ps4"} locale={locale.title}>
+                {"PS 4"}
+              </Link>
+              <Link href={"/order/ps5"} locale={locale.title}>
+                {"PS 5"}
+              </Link>
+              <Link href={"/order/xbox-one"} locale={locale.title}>
+                {"XBOX ONE"}
+              </Link>
+              <Link href={"/order/xbox-xs"} locale={locale.title}>
+                {"XBOX XS"}
+              </Link>
+            </div>
           </div>
           <div
             className={`${styles.header__delivery_container} from-1025-to-1900`}
