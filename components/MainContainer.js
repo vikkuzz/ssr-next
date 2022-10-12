@@ -119,7 +119,7 @@ function MainContainer({ children, keywords, description, title }) {
         <Header />
         <h1 className={styles.title}>
           {translates[t].title}
-          <a href="https://nextjs.org">Next.js!</a>
+          Next.js!
         </h1>
         <div className={styles.app__burgerwrapper} ref={wrapperModalRef}>
           <BurgerMenu />
