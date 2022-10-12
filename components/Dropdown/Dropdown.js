@@ -102,8 +102,12 @@ const DropdownLang = () => {
           className={`${styles.dropdown__country_img}`}
           src={`${lang.url || "img/flag/UK-lang.svg"}`}
         />
-        <span className={`from-375-to-1024`}>{lang.title || "EN"}</span>
-        <span className={`from-1025-to-1900`}>{lang.country || "ENGLISH"}</span>
+        <span className={`from-375-to-1024 bcgr-transparent`}>
+          {lang.title || "EN"}
+        </span>
+        <span className={`from-1025-to-1900 bcgr-transparent`}>
+          {lang.country || "ENGLISH"}
+        </span>
         <div className={`${styles.dropdown__arrow} from-1025-to-1900`} />
       </div>
       <div className={`${styles.divider} from-375-to-1024`}>|</div>

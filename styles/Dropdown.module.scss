@@ -8,6 +8,8 @@
 .dropdown_selects{
     position: relative;
     cursor: pointer;
+    max-width: 250px;
+    width: auto;
 }
 .dropdown__content{
     width: 100%;
@@ -215,6 +217,10 @@
     gap: 12px;
 }
 .currency{gap: 4px;}
+.dropdown_container{
+    
+    gap:12px;
+}
 
 @media(min-width:1025px){
     .locale{

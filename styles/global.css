@@ -129,6 +129,10 @@
 *:focus-visible{
   outline: none!important;
 }
+a:focus-visible, button:focus-visible{
+  outline:-webkit-focus-ring-color auto 1px;
+}
+
 .logout{
   border: 1px solid #eab11f;
   border-radius: 2px;
@@ -154,4 +158,24 @@
 }
 .hide{
   display: none;
+}
+.bcgr-transparent{
+  background-color: transparent;
+}
+.dropdown__arrow{
+  background: url('../img/whitearrow.svg');
+  width: 15px;
+  height: 15px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: auto;   
+  min-width: 15px;     
+  margin: 0 8px;
+  cursor: pointer;
+}
+.divider{
+  border: 1px solid rgba(255,255,255,0.2);
+  margin: 0 8px;
+  height: 18px;
 }

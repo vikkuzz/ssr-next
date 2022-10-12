@@ -3,27 +3,23 @@ import { useDispatch, useSelector } from "react-redux";
 import SecureLS from "secure-ls";
 import Link from "next/link";
 
-import {
-  loginModal,
-  loginClick,
-  registrationClick,
-  user,
-  userlogout,
-} from "../../redux/actions/royalfutActions";
+import { loginModal, userlogout } from "../../redux/actions/royalfutActions";
 
 import styles from "../../styles/Header.module.scss";
 import A from "../A";
 import Dropdown from "../Dropdown";
+import SvgContainer from "../SvgContainer";
+
+import { twitter } from "../../data-svg/twitter";
+import { whatsapp } from "../../data-svg/whatsapp";
+import { insta } from "../../data-svg/insta";
+import { youtube } from "../../data-svg/youtube";
 
 function Header() {
   const modal = useSelector((state) => state.royalfutReducer.loginModal);
   const userData = useSelector((state) => state.royalfutReducer.user);
   const isAuth = useSelector((state) => state.royalfutReducer.isAuth);
-  const currentStock = useSelector((state) => state.royalfutReducer.stock);
-
-  // const topDivider = React.createRef();
-  // const centerDivider = React.createRef();
-  // const bottomDivider = React.createRef();
+  const locale = useSelector((state) => state.royalfutReducer.locale);
 
   const dispatch = useDispatch();
 
@@ -47,13 +43,13 @@ function Header() {
   const enter = isAuth ? (
     <div>
       <div
-        className={`${styles.header__burger_top} ${styles.header__divider} ${styles.header__top_divider_x}`}
+        className={`${styles.header__header_top} ${styles.header__divider} ${styles.header__top_divider_x}`}
       ></div>
       <div
-        className={`${styles.header__burger_center} ${styles.header__divider} ${styles.header__center_divider_x}`}
+        className={`${styles.header__header_center} ${styles.header__divider} ${styles.header__center_divider_x}`}
       ></div>
       <div
-        className={`${styles.header__burger_bottom} ${styles.header__divider} ${styles.header__bottom_divider_x}`}
+        className={`${styles.header__header_bottom} ${styles.header__divider} ${styles.header__bottom_divider_x}`}
       ></div>
     </div>
   ) : (
@@ -70,36 +66,97 @@ function Header() {
       </div>
       <div className={styles.header__center}>
         <Dropdown />
+        <div className={`${styles.header__preset_orders} from-1025-to-1900`}>
+          <Link href={"/coins"} locale={locale.title}>
+            <span
+              className={`${styles.header_presetorders} ${styles.header__links}`}
+            >
+              Preset orders
+            </span>
+          </Link>
+        </div>
+        <div className={`${styles.header__buy_coins} from-1025-to-1900`}>
+          <Link href={"/order"} locale={locale.title}>
+            <button
+              className={`${styles.header_buycoins} ${styles.header__links}`}
+            >
+              Buy coins
+            </button>
+          </Link>
+          <div className={`dropdown__arrow`} />
+        </div>
+        <div
+          className={`${styles.header__delivery_container} from-1025-to-1900`}
+        >
+          <Link href={"/delivery"} locale={locale.title}>
+            <span
+              className={`${styles.header_delivery} ${styles.header__links}`}
+            >
+              Delivery
+            </span>
+          </Link>
+        </div>
+        <div className={`${styles.header__faq_container} from-1025-to-1900`}>
+          <Link href={"/faq"} locale={locale.title}>
+            <span className={`${styles.header_faq} ${styles.header__links}`}>
+              FAQ
+            </span>
+          </Link>
+        </div>
+        <div className={`${styles.header__social_container} from-1025-to-1900`}>
+          <div className={styles.header_menu__icon_wrapper}>
+            <SvgContainer
+              item={whatsapp}
+              color={"white"}
+              hover={"gold"}
+              classStyle={styles.header_menu__icon}
+            />
+          </div>
+          <div className="divider"></div>
+          <div className={styles.header_menu__icon_wrapper}>
+            <SvgContainer
+              item={twitter}
+              color={"white"}
+              hover={"gold"}
+              classStyle={styles.header_menu__icon}
+            />
+          </div>
+          <div className={styles.header_menu__icon_wrapper}>
+            <SvgContainer
+              item={insta}
+              color={"white"}
+              hover={"gold"}
+              classStyle={styles.header_menu__icon}
+            />
+          </div>
+          <div className={styles.header_menu__icon_wrapper}>
+            <SvgContainer
+              item={youtube}
+              color={"white"}
+              hover={"gold"}
+              classStyle={styles.header_menu__icon}
+            />
+          </div>
+        </div>
       </div>
       <div className={styles.header__right}>
-        {/* <div className={styles.login_mail}>
-          {isAuth && (
-            <div>
-              {userData.email}
-              <button>выйти</button>
-            </div>
-          )}
-        </div> */}
         <button
           onClick={burgerToX}
           className={`${styles.header__burger} from-375-to-1024`}
         >
           <div
-            //ref={topDivider}
-            className={`${styles.header__burger_top} ${
+            className={`${styles.header__header_top} ${
               styles.header__divider
             } ${modal && styles.header__top_divider_x}
             `}
           ></div>
           <div
-            //ref={centerDivider}
-            className={`${styles.header__burger_center} ${
+            className={`${styles.header__header_center} ${
               styles.header__divider
             } ${modal && styles.header__center_divider_x}`}
           ></div>
           <div
-            //ref={bottomDivider}
-            className={`${styles.header__burger_bottom} ${
+            className={`${styles.header__header_bottom} ${
               styles.header__divider
             } ${modal && styles.header__bottom_divider_x}`}
           ></div>

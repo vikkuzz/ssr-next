@@ -7,6 +7,7 @@
     background: transparent;
     z-index: 10;
     align-items:flex-start;
+    justify-content: space-between;
     @media(min-width:1024){
         padding: 28px 48px;
     }
@@ -25,9 +26,11 @@
 .header__left{
     background: transparent;
     justify-content: flex-start;
+    width: auto;
 }
 .header__right{
     justify-content: flex-end;
+    width: auto;
 }
 .header__logo{
     display: flex;
@@ -71,6 +74,7 @@
     border: none;
     min-width: 30px;
     min-height: 30px;
+    gap: 6px;
 
     &:hover{
         opacity: 0.7;
@@ -113,4 +117,62 @@
 .header_mail{
     padding: 0 12px;
     width: auto;
+}
+.header_presetorders{
+    font-size: 18px;
+    font-weight: 400;
+    color:#ff5c00;
+    cursor: pointer;
+    background-color: transparent;
+}
+.header__links{
+    font-size: 18px;
+    font-weight: 400;
+    color:#ff5c00;
+    cursor: pointer;
+    background-color: transparent;
+}
+.header__links:hover{
+    color: #e5b713;
+}
+.header_presetorders:hover{
+    color: #e5b713;
+}
+.header__preset_orders{
+    width: auto;
+    white-space: nowrap;
+}
+.header__center{
+    width: auto;
+    gap: 6px;
+}
+.header_buycoins{
+    color: #FFFFFF;
+    border: none;
+    white-space: nowrap;
+    font-size: 18px;
+    font-weight: 400;
+    padding-right: 0;
+}
+.header_buycoins:hover{
+    color: #e5b713;
+}
+.header__buy_coins{
+    padding: 0 6px;
+}
+.header_delivery{
+    color: #FFFFFF;
+}
+.header_faq{
+    color: #FFFFFF;
+    padding: 0 6px;
+}
+.header_menu__icon{
+    width: 18px;
+    height: 23px;
+    background-color: transparent;
+}
+.header_menu__icon_wrapper{
+    padding: 0 11px;
+    cursor: pointer;
 }
