@@ -21,6 +21,7 @@ import Header from "./Header";
 import BurgerMenu from "./BurgerMenu";
 import Api from "../Api/Api";
 import currency from "../data-elements/currency";
+import Footer from "./Footer";
 
 const api = new Api();
 
@@ -113,6 +114,7 @@ function MainContainer({ children, keywords, description, title }) {
           <BurgerMenu />
         </div>
         <div className={styles.app_container_content}>{children}</div>
+        <Footer />
       </div>
     </>
   );

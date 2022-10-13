@@ -30,7 +30,7 @@ const BurgerMenu = () => {
   const auth = useSelector((state) => state.royalfutReducer.isAuth);
   const loginMenu = useSelector((state) => state.royalfutReducer.loginMenu);
   const userData = useSelector((state) => state.royalfutReducer.user);
-  const width = useSelector((state) => state.royalfutReducer.width);
+  const locale = useSelector((state) => state.royalfutReducer.locale);
 
   const viewPassBtn = React.createRef();
   const password = React.createRef();
@@ -336,13 +336,6 @@ const BurgerMenu = () => {
                 </div>
                 {loginMenu.registration && (
                   <fieldset className="social-login__forgot">
-                    {/* <input
-                      className="social-login__check"
-                      type="checkbox"
-                      id="signUpCheck"
-                      name="signUpCheck"
-                      ref={signUpCheck}
-                    /> */}
                     <div
                       id="signUpCheck"
                       onClick={() => setIsChecked(!isChecked)}
@@ -357,34 +350,49 @@ const BurgerMenu = () => {
                     >
                       Я принимаю
                     </label>
-                    <a
+                    <Link
                       className={`social-login__link-check ${
                         isChecked && "gold_font"
                       }`}
                       href="/terms/"
-                      title="Условия и положения"
+                      locale={locale.title}
                     >
-                      Условия и положения
-                    </a>
+                      <a
+                        className={`social-login__link-check ${
+                          isChecked && "gold_font"
+                        }`}
+                      >
+                        Условия и положения
+                      </a>
+                    </Link>
                   </fieldset>
                 )}
                 <div className={styles.submit_wrapper}>
-                  <button
-                    ref={submit}
-                    onClick={(e) => {
-                      if (loginMenu.login) {
+                  {loginMenu.login ? (
+                    <button
+                      ref={submit}
+                      onClick={(e) => {
                         login(e);
-                      } else {
+                      }}
+                      className={`${styles.submit_btn}`}
+                      type="button"
+                    >
+                      Войти
+                    </button>
+                  ) : (
+                    <button
+                      ref={submit}
+                      onClick={(e) => {
                         registration(e);
-                      }
-                    }}
-                    className={`${styles.submit_btn} ${
-                      passLength <= 7 || !isChecked ? styles.disabled : ""
-                    }`}
-                    type="button"
-                  >
-                    {loginMenu.login ? "Войти" : "Зарегистрироваться"}
-                  </button>
+                      }}
+                      className={`${styles.submit_btn} ${
+                        passLength <= 7 || !isChecked ? styles.disabled : ""
+                      }`}
+                      type="button"
+                    >
+                      Зарегистрироваться
+                    </button>
+                  )}
                 </div>
               </form>
             </div>
