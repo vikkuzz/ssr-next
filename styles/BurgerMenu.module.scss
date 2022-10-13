@@ -1,12 +1,12 @@
 .burger_menu{
     position: absolute;
     display: flex;
-    z-index: 1;
+    z-index: 10;
     background-color: #12142b;
     width: 100%;
     height: 100vh;
     flex-direction: column;
-    max-width: 640px;
+    //max-width: 640px;
     right: 0;
     top: 0;
 }
@@ -213,6 +213,19 @@
     font-size: 36px;
     padding: 24px;
     height: auto;
+}
+.close_menu{
+    cursor: pointer;
+    width: 38px;
+    height: 38px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    border: 1px solid #e5b713;
+    border-radius: 50%;
+}
+.close_menu:hover{
+    background-color: #e5b713;
 }
 @media(min-width: 1024px){
     .burger_menu{

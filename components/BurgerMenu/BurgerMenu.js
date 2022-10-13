@@ -30,6 +30,7 @@ const BurgerMenu = () => {
   const auth = useSelector((state) => state.royalfutReducer.isAuth);
   const loginMenu = useSelector((state) => state.royalfutReducer.loginMenu);
   const userData = useSelector((state) => state.royalfutReducer.user);
+  const width = useSelector((state) => state.royalfutReducer.width);
 
   const viewPassBtn = React.createRef();
   const password = React.createRef();
@@ -43,13 +44,7 @@ const BurgerMenu = () => {
 
   const [svgEye, setSvgEye] = useState(eye);
   const [passLength, setPassLength] = useState("");
-  const [menuContent, setMenuContent] = useState();
-
-  useEffect(() => {
-    window.innerWidth < 1025
-      ? setMenuContent("mobile")
-      : setMenuContent("desktop");
-  }, []);
+  const [menuContent, setMenuContent] = useState("mobile");
 
   useEffect(() => {
     if ((modal && loginMenu.login) || (modal && loginMenu.registration)) {
@@ -57,10 +52,12 @@ const BurgerMenu = () => {
         setPassLength(password.current.value.length);
       }
     }
-    if (modal == false) {
-      setMenuContent("mobile");
-    }
+    console.log(window.innerWidth);
+    window.innerWidth > 1025
+      ? setMenuContent("desktop")
+      : setMenuContent("mobile");
   }, [modal]);
+
   useEffect(() => {
     if (submit?.current != null) {
       if ((modal && loginMenu.login) || (modal && loginMenu.registration)) {
@@ -123,7 +120,13 @@ const BurgerMenu = () => {
   let menu = null;
   if (modal === true && auth === true) {
     menu = (
-      <div className={styles.burger_menu}>
+      <div className={styles.burger_menu} ref={menu}>
+        <button
+          onClick={() => dispatch(loginModal(false))}
+          className={`${styles.close_menu}`}
+        >
+          X
+        </button>
         <div className={styles.burger_menu__wrapper}>
           {auth ? (
             <div className={styles.login_mobile}>
@@ -185,9 +188,15 @@ const BurgerMenu = () => {
         </div>
       </div>
     );
-  } else if (modal === true && auth !== true && menuContent === "mobile") {
+  } else if (modal === true && auth !== true && menuContent == "mobile") {
     menu = (
       <div className={styles.burger_menu}>
+        <button
+          onClick={() => dispatch(loginModal(false))}
+          className={`${styles.close_menu}`}
+        >
+          X
+        </button>
         <div className={styles.burger_menu__wrapper}>
           <div onClick={() => setMenuContent("desktop")}>
             <MenuItem text={"LOG IN"} />
@@ -233,9 +242,16 @@ const BurgerMenu = () => {
         </div>
       </div>
     );
-  } else if (modal === true && auth !== true && menuContent === "desktop") {
+  } else if (modal === true && auth !== true && menuContent == "desktop") {
+    console.log("wtf: ", menuContent);
     menu = (
       <div className={styles.burger_menu}>
+        <button
+          onClick={() => dispatch(loginModal(false))}
+          className={`${styles.close_menu}`}
+        >
+          X
+        </button>
         <div className={styles.burger_menu__wrapper}>
           <div className={styles.auth_container}>
             <div className={styles.burger_auth_wrapper}>
@@ -337,6 +353,7 @@ const BurgerMenu = () => {
       </div>
     );
   }
+  console.log("modal: ", modal, "isAuth: ", auth, "menuContent: ", menuContent);
   return menu;
 };
 

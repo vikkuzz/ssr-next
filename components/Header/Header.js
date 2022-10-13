@@ -184,7 +184,10 @@ function Header() {
               <a className={styles.header_mail}>{userData.email}</a>
             </Link>
           ) : (
-            <button onClick={burgerToX} className={`${styles.header__burger}`}>
+            <button
+              onClick={burgerToX}
+              className={`${styles.header__burger_login}`}
+            >
               Войти
             </button>
           )}

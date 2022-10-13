@@ -75,13 +75,24 @@
     min-width: 30px;
     min-height: 30px;
     gap: 6px;
+    
+}
+.header__burger:hover{
+    opacity: 0.5;
+}
+.header__burger_login{
+    position: relative;
+    flex-direction: column;
+    width: auto;
+    min-width: 30px;
+    min-height: 30px;
     font-size: 18px;
     border: 1px solid #e5b713;
     border-radius: 2px;
     padding: 9px 15px;
     line-height: .9;
 }
-.header__burger:hover{
+.header__burger_login:hover{
     background-color: #e5b713;
 }
 .header__divider{

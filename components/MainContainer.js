@@ -26,6 +26,7 @@ const api = new Api();
 
 function MainContainer({ children, keywords, description, title }) {
   const wrapperModalRef = React.createRef();
+  const shadowModalRef = React.createRef();
   const modal = useSelector((state) => state.royalfutReducer.loginModal);
   const error = useSelector((state) => state.royalfutReducer.errorMessage);
   const currentStock = useSelector((state) => state.royalfutReducer.stock);
@@ -40,6 +41,11 @@ function MainContainer({ children, keywords, description, title }) {
 
   const isOutsideClick = (event, ref) => {
     if (!ref.current.contains(event.target) && modal) {
+      dispatch(loginModal(false));
+    }
+  };
+  const isOutsideClickContains = (event, ref) => {
+    if (ref.current.contains(event.target) && modal) {
       dispatch(loginModal(false));
     }
   };
@@ -89,7 +95,10 @@ function MainContainer({ children, keywords, description, title }) {
 
       <div
         className={styles.App}
-        onClick={(e) => isOutsideClick(e, wrapperModalRef)}
+        onClick={(e) => {
+          isOutsideClick(e, wrapperModalRef);
+          isOutsideClickContains(e, shadowModalRef);
+        }}
       >
         <Header />
         <h1 className={styles.title}>
@@ -97,6 +106,10 @@ function MainContainer({ children, keywords, description, title }) {
           Next.js!
         </h1>
         <div className={styles.app__burgerwrapper} ref={wrapperModalRef}>
+          <div
+            ref={shadowModalRef}
+            className={`${styles.app__burger_bckgr} ${modal ? "" : "hide"}`}
+          ></div>
           <BurgerMenu />
         </div>
         <div className={styles.app_container_content}>{children}</div>

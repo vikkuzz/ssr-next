@@ -46,11 +46,7 @@ const Auth = () => {
             <img className={styles.auth_fb_img} src="/img/fb-color.svg" />
           </button>
         </div>
-        <div className={styles.auth_fb_wrapper}>
-          <button className={styles.auth_fb}>
-            <img className={styles.auth_fb_img} src="/img/google-16.svg" />
-          </button>
-        </div>
+
         <div ref={containergoogle}></div>
       </div>
     </div>
