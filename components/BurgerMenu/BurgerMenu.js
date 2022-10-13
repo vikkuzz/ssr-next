@@ -294,7 +294,7 @@ const BurgerMenu = () => {
                     ref={email}
                     className={styles.auth_userdata}
                     type="email"
-                    placeholder={"почта"}
+                    placeholder={"email@address.com"}
                   ></input>
                 </fieldset>
                 <fieldset
@@ -306,7 +306,7 @@ const BurgerMenu = () => {
                     ref={password}
                     className={styles.auth_userdata}
                     type="password"
-                    placeholder={"пароль"}
+                    placeholder={"Пароль"}
                   ></input>
                   <button
                     ref={viewPassBtn}
