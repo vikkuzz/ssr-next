@@ -9,6 +9,7 @@ import styles from "../../styles/Header.module.scss";
 import A from "../A";
 import Dropdown from "../Dropdown";
 import SvgContainer from "../SvgContainer";
+import BuyCoinsDropdown from "../BuyCoinsDropdown";
 
 import { twitter } from "../../data-svg/twitter";
 import { whatsapp } from "../../data-svg/whatsapp";
@@ -78,7 +79,7 @@ function Header() {
       <div className={styles.header__left}>
         <a className={styles.header__logo} href="/">
           ROYALFUT
-          <div className={styles.header__sublogo}>FIFA 22 coins</div>
+          <div className={styles.header__sublogo}>FIFA 23 Items</div>
         </a>
       </div>
       <div className={styles.header__center}>
@@ -94,43 +95,8 @@ function Header() {
             </Link>
           </div>
           <div className={`${styles.header__buy_coins} from-1025-to-1900`}>
-            <div
-              ref={buycoinsBtnRef}
-              onMouseEnter={(e) => {
-                e.stopPropagation();
-                onMouseEnterBlock(e, buycoinsRef);
-              }}
-              onMouseLeave={(e) => {
-                e.stopPropagation();
-                onMouseLeaveBlock(e, buycoinsRef);
-              }}
-            >
-              <Link href={"/order"} locale={locale.title}>
-                <button
-                  className={`${styles.header_buycoins} ${styles.header__links}`}
-                >
-                  Buy coins
-                </button>
-              </Link>
-            </div>
+            <BuyCoinsDropdown />
             <div className={`dropdown__arrow`} />
-            <div
-              ref={buycoinsRef}
-              className={`${styles.buycoins_content} hide`}
-            >
-              <Link href={"/order/ps4"} locale={locale.title}>
-                {"PS 4"}
-              </Link>
-              <Link href={"/order/ps5"} locale={locale.title}>
-                {"PS 5"}
-              </Link>
-              <Link href={"/order/xbox-one"} locale={locale.title}>
-                {"XBOX ONE"}
-              </Link>
-              <Link href={"/order/xbox-xs"} locale={locale.title}>
-                {"XBOX XS"}
-              </Link>
-            </div>
           </div>
           <div
             className={`${styles.header__delivery_container} from-1025-to-1900`}

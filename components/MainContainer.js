@@ -59,32 +59,6 @@ function MainContainer({ children, keywords, description, title }) {
       dispatch(stock(result));
     });
   }, []);
-  // useEffect(() => {
-  //   if (Object.keys(currentStock).length != 0) {
-  //     //если сток не пуст
-
-  //     let ls = new SecureLS();
-  //     console.log("mainContainer: ", ls.get("localState"));
-  //     if (
-  //       ls.get("localState").length != 0 &&
-  //       Object.keys(ls.get("localState").currency).length != 0 &&
-  //       Object.keys(currentCurrencyState).length == 0
-  //     ) {
-  //       // если локалстейт есть и он не пустой и пустой стор валюты
-  //       console.log("если локалстейт есть и он не пустой и пустой стор валюты");
-  //       dispatch(currentCurrency(ls.get("localState").currency)); // забираем данные из локалстейта и кладем в стор
-  //     }
-  //     if (
-  //       ls.get("localState") &&
-  //       Object.keys(ls.get("localState").user).length != 0 &&
-  //       Object.keys(currentUserState).length == 0
-  //     ) {
-  //       // если локалстейт есть и он не пустой и пустой стор
-  //       console.log("если локалстейт есть и он не пустой и пустой стор");
-  //       dispatch(user(ls.get("localState").user)); // забираем данные из локалстейта и кладем в стор
-  //     }
-  //   }
-  // }, [currentStock]);
 
   return (
     <>
@@ -108,6 +82,7 @@ function MainContainer({ children, keywords, description, title }) {
           defer
         ></script>
       </Head>
+      <div className="body__backgr"></div>
       <div className={`error ${error == "" ? "" : styles.showError}`}>
         {error}
       </div>
@@ -118,7 +93,7 @@ function MainContainer({ children, keywords, description, title }) {
       >
         <Header />
         <h1 className={styles.title}>
-          {translates[t].title}
+          {translates[t]?.title || translates.en.title}
           Next.js!
         </h1>
         <div className={styles.app__burgerwrapper} ref={wrapperModalRef}>

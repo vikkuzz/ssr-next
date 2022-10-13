@@ -1,5 +1,0 @@
-export const isOutsideClick = (event, ref) => {
-  if (!ref.current.contains(event.target)) {
-    ref.current.classList.add("hide");
-  }
-};

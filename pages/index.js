@@ -7,7 +7,7 @@ import MainContainer from "../components/MainContainer";
 const Index = () => {
   return (
     <>
-      <div className="body__backgr"></div>
+      {/* <div className="body__backgr"></div> */}
       <MainContainer keywords={", main page"}></MainContainer>
     </>
   );

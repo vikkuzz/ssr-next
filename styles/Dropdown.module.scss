@@ -134,6 +134,7 @@
     padding: 6px;
     background: transparent;
     width: 60px;
+    padding-right: 12px;
 }
 .dropdown__country_name{
     padding: 6px;
@@ -220,6 +221,34 @@
 .dropdown_container{
     flex:1;
     gap:12px;
+    cursor: pointer;
+    max-width: 270px;
+    justify-content: space-around;
+}
+.dropdown__links{
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    background-color: transparent;
+    white-space: nowrap;
+}
+.dropdown__links:hover{
+    color: #e5b713;
+}
+.dropdown__buycoins_content{
+    min-width: max-content;
+    position: absolute;
+    top: 100%;
+    background: #545666;
+    border: 1px solid #989aa3;
+    border-radius: 4px;
+    padding: 12px 0;
+    align-items: flex-start;
+    height: auto;
+    flex-direction: column;
+}
+.buycoins_item:hover{
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 @media(min-width:1025px){

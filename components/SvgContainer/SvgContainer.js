@@ -24,6 +24,7 @@ const SvgContainer = ({ item, color, hover, classStyle }) => {
       viewBox={item.viewBox}
     >
       <path d={item.d} />
+      <path d={item.d2} />
     </svg>
   );
 };

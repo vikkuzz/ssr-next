@@ -11,7 +11,6 @@ import {
   currentLang,
   currentCurrency,
 } from "../../redux/actions/royalfutActions";
-import { isOutsideClick } from "../../utils/functions";
 
 const DropdownContent = ({ data }) => {
   const dispatch = useDispatch();
@@ -100,7 +99,7 @@ const DropdownLang = () => {
       <div className={`${styles.locale}`}>
         <img
           className={`${styles.dropdown__country_img}`}
-          src={`${lang.url || "img/flag/UK-lang.svg"}`}
+          src={`${lang.url || "/img/flag/UK-lang.svg"}`}
         />
         <span className={`from-375-to-1024 bcgr-transparent`}>
           {lang.title || "EN"}
@@ -288,7 +287,7 @@ const Dropdown = () => {
         }}
         className={`${styles.dropdown_currency} from-1025-to-1900`}
       >
-        {currentCurrency.title || "USD"}
+        {currentCurrency.currency || "$"}
         <div className={`${styles.dropdown__arrow}`} />
         <div className={`${styles.dropdown__content} hide`} ref={currencyRef}>
           <DropdownCurrencyContent data={currency} />

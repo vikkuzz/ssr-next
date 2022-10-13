@@ -53,7 +53,7 @@
   }
   .body__backgr{
     position: fixed;
-    background:  url('../img/bg-.jpg') center;
+    background:  url('/img/bg-.jpg') center;
     background-repeat: no-repeat;
     background-size: 1000px;
     background-position: 57% 14%;
@@ -72,7 +72,7 @@
       z-index: 1;
       width: 65vmin;
       height: 95vmin;
-      background-image: url('../img/treangle.svg');
+      background-image: url('/img/treangle2.svg');
       -moz-background-size: contain;
       background-size: contain;
       background-repeat: no-repeat;
