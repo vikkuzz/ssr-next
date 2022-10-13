@@ -43,6 +43,13 @@ const BurgerMenu = () => {
 
   const [svgEye, setSvgEye] = useState(eye);
   const [passLength, setPassLength] = useState("");
+  const [menuContent, setMenuContent] = useState();
+
+  useEffect(() => {
+    window.innerWidth < 1025
+      ? setMenuContent("mobile")
+      : setMenuContent("desktop");
+  }, []);
 
   useEffect(() => {
     if ((modal && loginMenu.login) || (modal && loginMenu.registration)) {
@@ -50,13 +57,17 @@ const BurgerMenu = () => {
         setPassLength(password.current.value.length);
       }
     }
+    if (modal == false) {
+      setMenuContent("mobile");
+    }
   }, [modal]);
   useEffect(() => {
-    console.log(passLength);
-    if ((modal && loginMenu.login) || (modal && loginMenu.registration)) {
-      passLength <= 7
-        ? (submit.current.disabled = true)
-        : (submit.current.disabled = false);
+    if (submit?.current != null) {
+      if ((modal && loginMenu.login) || (modal && loginMenu.registration)) {
+        passLength <= 7
+          ? (submit.current.disabled = true)
+          : (submit.current.disabled = false);
+      }
     }
   }, [passLength]);
 
@@ -174,7 +185,55 @@ const BurgerMenu = () => {
         </div>
       </div>
     );
-  } else if (modal === true && auth !== true) {
+  } else if (modal === true && auth !== true && menuContent === "mobile") {
+    menu = (
+      <div className={styles.burger_menu}>
+        <div className={styles.burger_menu__wrapper}>
+          <div onClick={() => setMenuContent("desktop")}>
+            <MenuItem text={"LOG IN"} />
+          </div>
+          <MenuItem text={"PRESET ORDERS"} color={"burger_orange_"} />
+          <MenuItem text={"BUY COINS"} color={"burger_yellow_"} />
+          <MenuItem text={"DELIVERY"} />
+          <MenuItem text={"FAQ"} />
+        </div>
+        <div className={styles.burger_menu__footer}>
+          <div className={styles.burger_menu__icon_wrapper}>
+            <SvgContainer
+              item={twitter}
+              color={"white"}
+              hover={"gold"}
+              classStyle={styles.burger_menu__icon}
+            />
+          </div>
+          <div className={styles.burger_menu__icon_wrapper}>
+            <SvgContainer
+              item={whatsapp}
+              color={"white"}
+              hover={"gold"}
+              classStyle={styles.burger_menu__icon}
+            />
+          </div>
+          <div className={styles.burger_menu__icon_wrapper}>
+            <SvgContainer
+              item={insta}
+              color={"white"}
+              hover={"gold"}
+              classStyle={styles.burger_menu__icon}
+            />
+          </div>
+          <div className={styles.burger_menu__icon_wrapper}>
+            <SvgContainer
+              item={youtube}
+              color={"white"}
+              hover={"gold"}
+              classStyle={styles.burger_menu__icon}
+            />
+          </div>
+        </div>
+      </div>
+    );
+  } else if (modal === true && auth !== true && menuContent === "desktop") {
     menu = (
       <div className={styles.burger_menu}>
         <div className={styles.burger_menu__wrapper}>
