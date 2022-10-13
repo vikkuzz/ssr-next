@@ -36,6 +36,7 @@ const BurgerMenu = () => {
   const password = React.createRef();
   const email = React.createRef();
   const submit = React.createRef();
+  const signUpCheck = React.createRef();
 
   const eye = "/img/eye.svg";
   const eyeClosed = "/img/eye-close.svg";
@@ -45,6 +46,11 @@ const BurgerMenu = () => {
   const [svgEye, setSvgEye] = useState(eye);
   const [passLength, setPassLength] = useState("");
   const [menuContent, setMenuContent] = useState("mobile");
+  const [isChecked, setIsChecked] = useState(false);
+
+  useEffect(() => {
+    console.log(signUpCheck);
+  }, [signUpCheck]);
 
   useEffect(() => {
     if ((modal && loginMenu.login) || (modal && loginMenu.registration)) {
@@ -328,6 +334,40 @@ const BurgerMenu = () => {
                     не менее 8 символов!
                   </span>
                 </div>
+                {loginMenu.registration && (
+                  <fieldset className="social-login__forgot">
+                    {/* <input
+                      className="social-login__check"
+                      type="checkbox"
+                      id="signUpCheck"
+                      name="signUpCheck"
+                      ref={signUpCheck}
+                    /> */}
+                    <div
+                      id="signUpCheck"
+                      onClick={() => setIsChecked(!isChecked)}
+                      className={`checkbox_area ${isChecked ? "approove" : ""}`}
+                    ></div>
+                    <label
+                      onClick={() => setIsChecked(!isChecked)}
+                      className={`social-login__label ${
+                        isChecked && "gold_font"
+                      }`}
+                      htmlFor="signUpCheck"
+                    >
+                      Я принимаю
+                    </label>
+                    <a
+                      className={`social-login__link-check ${
+                        isChecked && "gold_font"
+                      }`}
+                      href="/terms/"
+                      title="Условия и положения"
+                    >
+                      Условия и положения
+                    </a>
+                  </fieldset>
+                )}
                 <div className={styles.submit_wrapper}>
                   <button
                     ref={submit}
@@ -339,7 +379,7 @@ const BurgerMenu = () => {
                       }
                     }}
                     className={`${styles.submit_btn} ${
-                      passLength <= 7 ? styles.disabled : ""
+                      passLength <= 7 || !isChecked ? styles.disabled : ""
                     }`}
                     type="button"
                   >
@@ -348,6 +388,13 @@ const BurgerMenu = () => {
                 </div>
               </form>
             </div>
+            {loginMenu.login && (
+              <div>
+                <div>
+                  <Auth login={true} />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

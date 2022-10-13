@@ -4,7 +4,7 @@ import { useState } from "react";
 import { fbAuth } from "../../utils/auth";
 import styles from "../../styles/BurgerMenu.module.scss";
 
-const Auth = () => {
+const Auth = ({ login }) => {
   const containergoogle = React.createRef();
   const [show, setShow] = useState(false);
 
@@ -39,7 +39,9 @@ const Auth = () => {
   }
   return (
     <div className={styles.auth}>
-      <div className={styles.auth_text}>Зарегистрируйтесь через:</div>
+      <div className={styles.auth_text}>
+        {!login ? "Зарегистрируйтесь через:" : "Войдите через:"}
+      </div>
       <div className={styles.auth_btns_wrapper}>
         <div className={styles.auth_fb_wrapper}>
           <button onClick={() => fbAuth()} className={styles.auth_fb}>
