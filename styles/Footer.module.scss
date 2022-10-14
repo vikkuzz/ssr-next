@@ -2,4 +2,39 @@
     border-top: 1px solid hsla(0,0%,76.9%,.2);
     margin-top: 100px;
     padding: 88px 0 23px;
+    justify-content: space-between;
+}
+.footer_header{
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 24px;
+    padding-bottom: 24px;
+}
+.footer_firstcolumn{
+    flex-direction: column;
+    
+}
+.footer_secondcolumn{
+    flex-direction: column;
+    padding-bottom: 24px;
+}
+.footer_thirdcolumn{
+    flex-direction: column;
+    padding-bottom: 24px;
+}   
+.footer_info_font{
+    font-family: 'Montserrat',helvetica,arial,sans-serif;
+    font-weight: 600;
+    font-size: 3.2vmin;
+    line-height: 4vmin;
+    letter-spacing: -.01em;
+    color: hsla(0,0%,100%,.6);
+    font-size: 12px;
+    line-height: 15px;
+}
+.footer_infowrapper{
+    flex-direction: column;
+}
+.footer_info_item{
+    padding-bottom: 12px;
 }
