@@ -164,6 +164,9 @@ const royalfutReducer = (state = initialState, action) => {
 
     case "LOGIN_MODAL":
       console.log(action.data);
+      action.data
+        ? (document.querySelector("body").style.overflowY = "hidden")
+        : (document.querySelector("body").style.overflowY = "auto");
       return { ...state, loginModal: action.data };
 
     case "GET_STOCK":

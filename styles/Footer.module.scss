@@ -3,20 +3,25 @@
     margin-top: 100px;
     padding: 88px 0 23px;
     justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 .footer_header{
     font-family: 'Montserrat';
     font-weight: 700;
     font-size: 24px;
     padding-bottom: 24px;
+    height: auto;
+    justify-content: flex-start;
 }
 .footer_firstcolumn{
     flex-direction: column;
-    
+    padding-bottom: 24px;
 }
 .footer_secondcolumn{
     flex-direction: column;
     padding-bottom: 24px;
+    align-items: flex-start;
 }
 .footer_thirdcolumn{
     flex-direction: column;
@@ -24,17 +29,82 @@
 }   
 .footer_info_font{
     font-family: 'Montserrat',helvetica,arial,sans-serif;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 3.2vmin;
     line-height: 4vmin;
     letter-spacing: -.01em;
     color: hsla(0,0%,100%,.6);
     font-size: 12px;
     line-height: 15px;
+
 }
 .footer_infowrapper{
     flex-direction: column;
 }
 .footer_info_item{
     padding-bottom: 12px;
+    justify-content: flex-start;
+}
+.footer__mastercard{
+    background-image: url('/img/mastercardgray.svg');
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.footer__veryvisa{
+    background-image: url('/img/verivisagray.svg');
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.footer__visa{
+    background-image: url('/img/visa.svg');
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.footer__master{
+    background-image: url('/img/master.svg');
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.footer__apple{
+    background-image: url('/img/applepay-grey.svg');
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.footer__svg_wrapper{
+    margin-bottom: 12px;
+    //margin-bottom: 62px;
+    min-height: 25px;
+}
+.footer_svg{
+    justify-content: flex-start;
+    min-height: 25px;
+}
+.footer_flexstart{
+    justify-content: flex-start;
+}
+.footer_center_wrapper{
+    width: auto;
+    flex-direction: column;
+
+}
+@media(min-width:1025px){
+  
+  .footer_firstcolumn{
+    max-width: 340px;
+  }
+  .footer_secondcolumn{
+    max-width: 340px;
+    align-items: center;
+  }
+  .footer_thirdcolumn{
+    max-width: 340px;
+  }
+  .footer__svg_wrapper{
+    margin-bottom: 62px;
+  }
 }
