@@ -137,7 +137,9 @@ const BurgerMenu = () => {
           {auth ? (
             <div className={styles.login_mobile}>
               <Link href="/profile">
-                <a className={styles.header_mail}>{userData.email}</a>
+                <a className={`${styles.header_mail} ${styles.burger_mail}`}>
+                  {userData.email}
+                </a>
               </Link>
               <button
                 onClick={logout}

@@ -46,6 +46,9 @@
     height: 100%;
     box-sizing: border-box;
   }
+  body,html,#__next{
+    height: auto;
+  }
   body{
     position:relative;
     background-color: transparent;

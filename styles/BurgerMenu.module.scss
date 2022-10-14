@@ -221,10 +221,11 @@
     gap: 8px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     padding-right: 60px;
+
 }
 .logout_menu{
-    font-size: 36px;
-    padding: 24px;
+    font-size: 6.4vmin;
+    padding: 12px;
     height: auto;
 }
 .close_menu{
@@ -240,7 +241,15 @@
 .close_menu:hover{
     background-color: #e5b713;
 }
+.burger_mail{
+    font-size: 6.4vmin;
+}
 @media(min-width: 1024px){
+    .logout_menu{
+        font-size: 36px;
+        padding: 24px;
+        height: auto;
+    }
     .burger_menu{
         width: 50%;
     }
