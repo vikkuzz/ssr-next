@@ -130,9 +130,7 @@ const BurgerMenu = () => {
         <button
           onClick={() => dispatch(loginModal(false))}
           className={`${styles.close_menu}`}
-        >
-          X
-        </button>
+        ></button>
         <div className={styles.burger_menu__wrapper}>
           {auth ? (
             <div className={styles.login_mobile}>
@@ -202,9 +200,7 @@ const BurgerMenu = () => {
         <button
           onClick={() => dispatch(loginModal(false))}
           className={`${styles.close_menu}`}
-        >
-          X
-        </button>
+        ></button>
         <div className={styles.burger_menu__wrapper}>
           <div onClick={() => setMenuContent("desktop")}>
             <MenuItem text={"LOG IN"} />
@@ -257,9 +253,7 @@ const BurgerMenu = () => {
         <button
           onClick={() => dispatch(loginModal(false))}
           className={`${styles.close_menu}`}
-        >
-          X
-        </button>
+        ></button>
         <div className={styles.burger_menu__wrapper}>
           <div className={styles.auth_container}>
             <div className={styles.burger_auth_wrapper}>
