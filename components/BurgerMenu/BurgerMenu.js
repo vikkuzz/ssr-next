@@ -47,6 +47,7 @@ const BurgerMenu = () => {
   const [passLength, setPassLength] = useState("");
   const [menuContent, setMenuContent] = useState("mobile");
   const [isChecked, setIsChecked] = useState(false);
+  const [validate, setValidate] = useState(false);
 
   useEffect(() => {
     console.log(signUpCheck);
@@ -122,6 +123,11 @@ const BurgerMenu = () => {
   const logout = () => {
     dispatch(userlogout());
   };
+  function validateEmail(email) {
+    return email.match(
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+  }
 
   let menu = null;
   if (modal === true && auth === true) {
@@ -297,6 +303,9 @@ const BurgerMenu = () => {
                     className={styles.auth_userdata}
                     type="email"
                     placeholder={"email@address.com"}
+                    onChange={() =>
+                      setValidate(validateEmail(email.current.value))
+                    }
                   ></input>
                 </fieldset>
                 <fieldset
@@ -382,7 +391,9 @@ const BurgerMenu = () => {
                         registration(e);
                       }}
                       className={`${styles.submit_btn} ${
-                        passLength <= 7 || !isChecked ? styles.disabled : ""
+                        passLength <= 7 || !isChecked || !validate
+                          ? styles.disabled
+                          : ""
                       }`}
                       type="button"
                     >
