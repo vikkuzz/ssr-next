@@ -269,8 +269,9 @@
         justify-content: space-around;
     }
 }
-@media(min-width:1025), (max-width:1150px){
+@media(min-width:1025), (max-width:1250px){
     .dropdown_container{
         padding: 0 0 0 20px;
+        justify-content: center;
     }
 }
