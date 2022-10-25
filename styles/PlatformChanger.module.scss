@@ -1,0 +1,77 @@
+.platform_changer__wrapper{
+    display: flex;
+    align-items: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    background-color: transparent;
+}
+.platform_changer__title{
+    padding-right: 23px;
+    white-space: nowrap;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+}
+.platform_changer__buttons_wrapper{
+    width:100%;
+    display: flex;
+    flex-grow: 1;
+    border: 1px solid hsla(0,0%,100%,.2);
+    border-radius: 2px;
+}
+.platform_changer__btn{
+    font-family: 'BebasNeue';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+    width: 50%;
+    height: 48px;
+    background: transparent;
+    //border: 1px solid hsla(0,0%,100%,.2);
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    font-size: 24px;
+    line-height: 24px;
+    color: white;
+    gap: 8px;
+    transition: all 0.3s linear;
+    // &:hover{
+    //     background-color: hsla(0,0%,100%,.1);
+    // }
+}
+.calculator_block__method{
+    display: flex;
+    align-items: center;
+}
+.platform_changer__wrapper_btns{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.platform_changer__img{
+    width: 35px;
+    height: 27px;
+    background-color: transparent;
+}
+.platform_changer__btn_ps_active{
+    background: #003087;
+}
+.platform_changer__btn_xbox_active{
+    background: #36B23B;
+}
+.platform_changer__btn_notactive:hover{
+    background-color: hsla(0,0%,100%,.1);
+}
+
+@media(min-width:1025px){
+    .platform_changer__wrapper_btns{
+        flex-direction: row;
+    }
+}

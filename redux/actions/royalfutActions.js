@@ -7,3 +7,5 @@ export const catcherror = (data) => ({ type: "CATCH_ERROR", data });
 export const stock = (data) => ({ type: "GET_STOCK", data });
 export const currentCurrency = (data) => ({ type: "CURRENT_CURRENCY", data });
 export const currentLang = (data) => ({ type: "CURRENT_LANG", data });
+export const changePlatform = (data) => ({ type: "CHANGE_PLATFORM", data });
+export const changeMethod = (data) => ({ type: "CHANGE_METHOD", data });

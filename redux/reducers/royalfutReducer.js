@@ -135,6 +135,14 @@ const initialState = {
     reviews: "212",
     provider: "Fairtobot",
   },
+  platform: {
+    xbox: false,
+    ps: true,
+  },
+  method: {
+    easy: true,
+    manual: false,
+  },
 };
 
 const royalfutReducer = (state = initialState, action) => {
@@ -153,6 +161,38 @@ const royalfutReducer = (state = initialState, action) => {
       )[0];
       ls.set("localState", { ...state, ...localState, currency: userCurrency });
       return { ...state, ...localState, currency: userCurrency };
+
+    case "CHANGE_PLATFORM":
+      let platform = state.platform;
+      if (action.data == "ps") {
+        platform = {
+          ps: true,
+          xbox: false,
+        };
+      } else {
+        platform = {
+          ps: false,
+          xbox: true,
+        };
+      }
+      ls.set("localState", { ...state, ...localState, platform: platform });
+      return { ...state, ...localState, platform: platform };
+
+    case "CHANGE_METHOD":
+      let method = state.method;
+      if (action.data == "easy") {
+        method = {
+          easy: true,
+          manual: false,
+        };
+      } else {
+        method = {
+          easy: false,
+          manual: true,
+        };
+      }
+      ls.set("localState", { ...state, ...localState, method: method });
+      return { ...state, ...localState, method: method };
 
     case "CURRENT_LANG":
       console.log(action.data);

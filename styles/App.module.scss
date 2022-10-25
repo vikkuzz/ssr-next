@@ -5,7 +5,7 @@
   z-index: 1;
   width: 100vw;
   //height: auto;
-  padding-top: 200px;
+  padding-top: 90px;
   
   min-height: 100%;
   justify-content: space-between;
@@ -30,6 +30,8 @@
 .app_container_content{
   position: relative;
   background-color: transparent;
+  justify-content: flex-start;
+  flex-direction: row;
 }
 .showError{
   border:1px solid red;
@@ -50,4 +52,14 @@
   top: 0;
   z-index: 10;
   height: 100%;
+}
+.app_h1{
+  padding: 30px 0;
+
+}
+.app_main{
+  flex-direction: column;
+  @media(min-width:1025px) {
+    max-width: 50%;
+  }
 }

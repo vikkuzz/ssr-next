@@ -1,6 +1,14 @@
 import React, { useEffect } from "react";
 
-const SvgContainer = ({ item, color, hover, classStyle }) => {
+const SvgContainer = ({
+  item,
+  color,
+  hover,
+  classStyle,
+  opacity,
+  fillRule,
+  clipRule,
+}) => {
   const svg = React.createRef();
 
   useEffect(() => {
@@ -23,7 +31,12 @@ const SvgContainer = ({ item, color, hover, classStyle }) => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox={item.viewBox}
     >
-      <path d={item.d} />
+      <path
+        d={item.d}
+        opacity={opacity}
+        fill-rule={fillRule}
+        clip-rule={clipRule}
+      />
       <path d={item.d2} />
     </svg>
   );
