@@ -102,10 +102,10 @@ function MainContainer({ children, keywords, description, title }) {
         }}
       >
         <Header />
-        <h1 className={styles.title}>
+        {/* <h1 className={styles.title}>
           {translates[t]?.title || translates.en.title}
           Next.js!
-        </h1>
+        </h1> */}
         <div className={styles.app__burgerwrapper} ref={wrapperModalRef}>
           <div
             ref={shadowModalRef}

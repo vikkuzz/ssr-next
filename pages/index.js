@@ -1,14 +1,12 @@
-import Link from "next/link";
-
-import A from "../components/A";
-import Head from "next/head";
 import MainContainer from "../components/MainContainer";
+import Calculator from "../components/Calculator";
 
 const Index = () => {
   return (
     <>
-      {/* <div className="body__backgr"></div> */}
-      <MainContainer keywords={", main page"}></MainContainer>
+      <MainContainer keywords={", main page"}>
+        <Calculator />
+      </MainContainer>
     </>
   );
 };

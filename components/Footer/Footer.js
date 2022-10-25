@@ -86,8 +86,60 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <div className={`${styles.footer_thirdcolumn} from-375-to-1024`}>
+          <div className={`${styles.footer_header}`}>
+            ЮРИДИЧЕСКАЯ ИНФОРМАЦИЯ
+          </div>
+          <div className={`${styles.footer_infowrapper}`}>
+            <div className={`${styles.footer_platform_item}`}>
+              <Link href={`/contact`} locale={locale.title}>
+                <a
+                  className={`${styles.footer_info_font} ${styles.footer_flexstart}`}
+                >
+                  Контакты
+                </a>
+              </Link>
+            </div>
+            <div className={`${styles.footer_platform_item} `}>
+              <Link href={`/delivery`} locale={locale.title}>
+                <a
+                  className={`${styles.footer_info_font} ${styles.footer_flexstart}`}
+                >
+                  Доставка
+                </a>
+              </Link>
+            </div>
+            <div className={`${styles.footer_platform_item}`}>
+              <Link href={`/payment`} locale={locale.title}>
+                <a
+                  className={`${styles.footer_info_font} ${styles.footer_flexstart}`}
+                >
+                  Платежи
+                </a>
+              </Link>
+            </div>
+            <div className={`${styles.footer_platform_item}`}>
+              <Link href={`/terms`} locale={locale.title}>
+                <a
+                  className={`${styles.footer_info_font} ${styles.footer_flexstart}`}
+                >
+                  Условия и положения
+                </a>
+              </Link>
+            </div>
+            <div className={`${styles.footer_platform_item}`}>
+              <Link href={`/privacy-policy`} locale={locale.title}>
+                <a
+                  className={`${styles.footer_info_font} ${styles.footer_flexstart}`}
+                >
+                  Политика конфиденциальности
+                </a>
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className={`${styles.footer_thirdcolumn}`}>
+      <div className={`${styles.footer_thirdcolumn} from-1025-to-1900`}>
         <div className={`${styles.footer_header}`}>ЮРИДИЧЕСКАЯ ИНФОРМАЦИЯ</div>
         <div className={`${styles.footer_infowrapper}`}>
           <div className={`${styles.footer_platform_item}`}>
