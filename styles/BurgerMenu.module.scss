@@ -15,6 +15,8 @@
     flex-direction: column;
     font-size: 50px;
     padding: 65px 0px 0px;
+    height: 100%;
+    justify-content: flex-start;
 }
 .burger_menu__footer{
     border-top: 1px solid hsla(0,0%,76.9%,.2);
@@ -32,15 +34,15 @@
 .auth_tab{
     border: none;
     height: auto;
-    font-size: 48px;
+    font-size: 40px;
     line-height: 48px;
 }
 .burger_auth_wrapper{
     height: auto;
-    padding-bottom: 80px;
+    padding-bottom: 48px;
 }
 .auth_container{
-    padding: 100px 32px 48px;
+    padding: 70px 24px 48px;
     flex-direction: column;
     overflow: auto;
     justify-content: flex-start;
@@ -123,8 +125,9 @@
 .auth_fieldset{
     position: relative;
     border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 4px;
+    border-radius: 2px;
     height: auto;
+    padding-bottom: 12px;
 }
 .auth_fieldset:hover legend{
    opacity: 1;
@@ -138,9 +141,9 @@
     background-color: transparent !important;
     color: white !important;
     font-family: 'Oswald',sans-serif;
-    font-size: 36px;
-    line-height: 38px;
-    height: 45px;
+    font-size: 24px;
+    line-height: 28px;
+    height: 30px;
 }
 .auth_userdata::placeholder{
     font-family: 'Oswald';
@@ -202,13 +205,17 @@
 }
 .submit_btn{
     border: none;
-    border-radius: 4px;
+    border-radius: 2px;
     color: white;
     font-family: 'BebasRu';
     font-weight: 600;
-    font-size: 30px;
+    //font-size: 30px;
     background-color: #eab11f;
-    padding: 30px;
+    padding: 20px;
+	width: 100%;
+	font-size: 24px;
+	line-height: 28px;
+	letter-spacing: 0.6px;
 }
 .disabled{
     pointer-events: none;
@@ -221,10 +228,11 @@
     gap: 8px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     padding-right: 60px;
-
+    height: 100%;
 }
 .logout_menu{
     font-size: 6.4vmin;
+    line-height: 6.4vmin;
     padding: 12px;
     height: auto;
 }
@@ -249,6 +257,9 @@
 .burger_mail{
     font-size: 6.4vmin;
 }
+.burger_mail:hover{
+    color: #eab11f;
+}
 @media(min-width: 1024px){
     .logout_menu{
         font-size: 36px;
@@ -257,12 +268,26 @@
     }
     .burger_menu{
         width: 50%;
+        max-width: 580px;
     }
     .submit_btn{
-        font-size: 48px;
-        padding: 40px;
+        padding: 22px 20px 18px 38px;
+        font-size: 24px;
+        line-height: 24px;
+        letter-spacing: .6px;
     }
     .submit_wrapper{
         //padding-top: 100px;
+    }
+    .auth_fieldset{
+        padding-bottom: auto;
+    }
+    .auth_userdata{
+        font-size: 36px;
+        line-height: 38px;
+        height: 45px;
+    }
+    .auth_container {
+        padding: 100px 32px 48px;
     }
 }

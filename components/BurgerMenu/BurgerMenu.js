@@ -286,9 +286,11 @@ const BurgerMenu = () => {
                 </button>
               </div>
             </div>
-            <div className={styles.auth_content_wrapper}>
-              {loginMenu.registration && <Auth />}
-            </div>
+            {loginMenu.registration && (
+              <div className={styles.auth_content_wrapper}>
+                <Auth />
+              </div>
+            )}
             {loginMenu.registration && (
               <div className={styles.auth_or}>Или</div>
             )}
