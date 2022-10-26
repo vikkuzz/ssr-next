@@ -1,10 +1,15 @@
 .method{
     width: 100%;
     padding-top: 32px;
-    gap: 16px;
-    max-width: 375px;
+    gap: 10px;
+    max-width: 100%;
     flex-direction: column;
     background-color: transparent;
+
+    @media(min-width:1025px) {
+        flex-direction: row;
+        padding-bottom: 16px;
+    }
 }
 .method_check{
     white-space: nowrap;
@@ -29,6 +34,7 @@
     width: auto;
     padding-left: 12px;
     font-size: 18px;
+    white-space: nowrap;
 }
 .method_check{
     width: 12px;
@@ -41,12 +47,15 @@
     box-shadow: 0 0 0 1px inset #eab11f, 0 0 0 2px inset black;
     background-color: #eab11f;
 }
+.method_radio:hover + .method_check{
+    box-shadow: 0 0 0 1px inset #eab11f, 0 0 0 2px inset black;
+}
 .wrapper_radiogroup{
     justify-content: flex-start;
 }
 .info_svg{
     width: auto;
-    height: 24px;
+    height: 22px;
     background-color: transparent;
 }
 .info_text{
@@ -61,5 +70,5 @@
     background-color: transparent;
 }
 .info_text:hover{
-    color: #eab11f;
+    color: white;
 }

@@ -7,3 +7,83 @@
         background-color: hsla(0,0%,100%,.1);
     }
 }
+.arrow_info{
+    background-color: transparent;
+    width: 49px;
+    height: 20px;
+    margin: 0 12px;
+}
+.calc_wrapper_submit{
+    background-color: transparent;
+    flex-direction: column;
+    @media (min-width:1025px) {
+        flex-direction: row;
+        padding-top: 8px;
+    }
+}
+.calc_information_wrapper{
+    background-color: transparent;
+    align-items: flex-start;
+
+    @media (min-width:1025px) {
+        align-items: center;
+    }
+}
+.calc_info__text{
+    background-color: transparent;
+    justify-content: flex-start;
+}
+.info_text_wrapper{
+    background-color: transparent;
+    flex-direction: column;
+    padding: 12px 0;
+    width: auto;
+
+    @media (min-width:1025px) {
+        padding: 0;
+    }
+}
+.calc_info__text{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    color: #ffcf25;
+    font-size: 2.5vmin;
+    line-height: 3vmin;
+
+    @media (min-width:1025px) {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+.circlearrow_info{
+    background-color: transparent;
+    width: 60px;
+    height: 47px;
+    margin: 0 12px;
+    transform: rotate(367deg);
+}
+.calc__buy_coins_btn{
+    border-radius: 2px;
+    padding: 4vmin 1.3333333333vmin;
+    font-size: 6.4vmin;
+    line-height: 6.4vmin;
+    text-align: center;
+    color: #fff;
+    background-color: #eab11f;
+    border: none;
+
+    @media (min-width:1025px) {
+        padding: 14px 5px;
+        min-width: 47%;
+        font-size: 36px;
+        line-height: 36px;
+    }
+}
+.calc_submit{
+    padding-top: 16px;
+
+    @media (min-width:1025px) {
+        padding-top: 0;
+    }
+}

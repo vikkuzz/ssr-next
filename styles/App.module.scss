@@ -18,6 +18,10 @@
     font-size: 48px;
     line-height: 48px;
   }
+  @media(min-width:1025px) {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
 }
 .App h1{
   flex-direction: column;
@@ -60,6 +64,9 @@
 .app_main{
   flex-direction: column;
   @media(min-width:1025px) {
+    max-width: 58%;
+  }
+  @media(min-width:1440px) {
     max-width: 50%;
   }
 }

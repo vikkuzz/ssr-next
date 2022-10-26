@@ -253,6 +253,7 @@ a:focus-visible, button:focus-visible{
 .gold_font{
   color: #eab11f;
 }
+
 @media(min-width:1025px){
   .from-375-to-1024{
     display: none;

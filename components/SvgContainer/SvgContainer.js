@@ -34,8 +34,8 @@ const SvgContainer = ({
       <path
         d={item.d}
         opacity={opacity}
-        fill-rule={fillRule}
-        clip-rule={clipRule}
+        fillRule={fillRule}
+        clipRule={clipRule}
       />
       <path d={item.d2} />
     </svg>

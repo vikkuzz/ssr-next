@@ -62,9 +62,11 @@
 }
 .platform_changer__btn_ps_active{
     background: #003087;
+    border: 1px solid hsla(0,0%,100%,0.1);
 }
 .platform_changer__btn_xbox_active{
     background: #36B23B;
+    border: 1px solid hsla(0,0%,100%,0.1);
 }
 .platform_changer__btn_notactive:hover{
     background-color: hsla(0,0%,100%,.1);

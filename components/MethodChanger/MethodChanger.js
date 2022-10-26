@@ -54,7 +54,7 @@ const MethodChanger = () => {
           <SvgContainer
             item={what}
             color="white"
-            hover="#eab11f"
+            hover="white"
             classStyle={`${styles.info_svg}`}
             opacity="0.5"
             fillRule="evenodd"
