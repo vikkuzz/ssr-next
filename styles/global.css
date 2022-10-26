@@ -280,4 +280,8 @@ a:focus-visible, button:focus-visible{
     width: 240px;
     height: 387px;
   }
+  h1{
+    font-size: 72px;
+    line-height: 72px;
+  }
 }
