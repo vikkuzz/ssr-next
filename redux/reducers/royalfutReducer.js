@@ -256,6 +256,7 @@ const royalfutReducer = (state = initialState, action) => {
           login: false,
         },
       });
+      document.querySelector("body").style.overflowY = "auto";
       return {
         ...state,
         isAuth: true,

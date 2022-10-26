@@ -4,6 +4,7 @@ export default class Api {
   getStock = async () => {
     let urlForStock =
       window.location.origin.indexOf("localhost") >= 0 ||
+      window.location.origin.indexOf("vercel") >= 0 ||
       window.location.origin.indexOf("192.168") >= 0 ||
       window.location.origin.indexOf("linestest.com") >= 0 ||
       window.location.origin.indexOf("ngrok.io") >= 0 ||
