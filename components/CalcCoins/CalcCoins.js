@@ -10,7 +10,9 @@ const CalcCoins = () => {
   return (
     <div className={`${styles.calccoins}`}>
       <div className={`${styles.coins_wrapper}`}>
-        <fieldset className={`${styles.coins_fieldset}`}>
+        <fieldset
+          className={`${styles.coins_fieldset} ${styles.calc_coins__border}`}
+        >
           <legend className={`${styles.coins_legend}`}>Монеты</legend>
 
           <input className={`${styles.coins_input}`} type={"text"}></input>
@@ -41,7 +43,9 @@ const CalcCoins = () => {
           })}
         </div>
       </div>
-      <fieldset className={`${styles.coins_fieldset}`}>
+      <fieldset
+        className={`${styles.coins_fieldset} ${styles.calc_coins__border2}`}
+      >
         <legend className={`${styles.coins_legend}`}>Цена</legend>
         <input className={`${styles.coins_input}`} type={"text"}></input>
       </fieldset>
