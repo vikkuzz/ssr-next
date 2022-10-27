@@ -51,15 +51,7 @@ const MethodChanger = () => {
       <div className={`${styles.info_method}`}>
         <a href="#deliveryMain" className={`${styles.method_info}`}>
           <span className={`${styles.info_text}`}>Как это работает?</span>
-          <SvgContainer
-            item={what}
-            color="white"
-            hover="white"
-            classStyle={`${styles.info_svg}`}
-            opacity="0.5"
-            fillRule="evenodd"
-            clipRule="evenodd"
-          />
+          <img src="/img/what-question.svg" />
         </a>
       </div>
     </div>

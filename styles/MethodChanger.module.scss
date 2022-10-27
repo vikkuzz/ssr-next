@@ -60,7 +60,7 @@
 }
 .info_text{
     width: auto;
-    font-family: Montserrat,helvetica,arial,sans-serif;
+    font-family: 'Montserrat',helvetica,arial,sans-serif;
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
@@ -69,6 +69,11 @@
     padding-right: 12px;
     background-color: transparent;
 }
-.info_text:hover{
+.method_info img{
+    background-color: transparent;
+    width: 22px;
+}
+.method_info:hover .info_text{
     color: white;
+    transition: all 0.3s linear;
 }

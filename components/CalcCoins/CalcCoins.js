@@ -1,12 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 import styles from "../../styles/CalcCoins.module.scss";
 
 const CalcCoins = () => {
-  let discounts = useSelector((state) => state.royalfutReducer.stock.discount);
+  const discounts = useSelector(
+    (state) => state.royalfutReducer.stock.discount
+  );
+  const method = useSelector((state) => state.royalfutReducer.method);
+  let sortedDiscounts = [...discounts].sort(
+    (a, b) => a.limitSumCoins - b.limitSumCoins
+  );
 
-  discounts = [...discounts].sort((a, b) => a.limitSumCoins - b.limitSumCoins);
+  let [currentDisc, setCurrentDisc] = useState(sortedDiscounts);
+
+  useEffect(() => {
+    if (method.manual) {
+      setCurrentDisc(
+        sortedDiscounts.filter((elem) => elem.limitSumCoins <= 1000000)
+      );
+    } else {
+      setCurrentDisc(
+        sortedDiscounts.filter((elem) => elem.limitSumCoins <= 20000000)
+      );
+    }
+  }, [method]);
+
   return (
     <div className={`${styles.calccoins}`}>
       <div className={`${styles.coins_wrapper}`}>
@@ -27,7 +46,7 @@ const CalcCoins = () => {
           <button id={500000} className={`${styles.pack}`}>
             500k
           </button>
-          {discounts.map((elem) => {
+          {currentDisc.map((elem) => {
             return (
               <button
                 key={elem.limitSumCoins}
