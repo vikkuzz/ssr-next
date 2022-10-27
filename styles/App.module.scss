@@ -5,7 +5,7 @@
   z-index: 1;
   width: 100vw;
   //height: auto;
-  padding-top: 90px;
+  padding-top: 137px;
   
   min-height: 100%;
   justify-content: space-between;
@@ -26,6 +26,10 @@
 .App h1{
   flex-direction: column;
   background-color: transparent;
+  align-items: flex-start;
+  @media (min-width:1025px) {
+    padding-bottom: 51px;
+  }
 }
 .app__burgerwrapper{
   width: fit-content;
@@ -36,6 +40,10 @@
   background-color: transparent;
   justify-content: flex-start;
   flex-direction: row;
+
+  @media (min-width:1440px) {
+    padding-left: 8.5%;
+  }
 }
 .showError{
   border:1px solid red;
@@ -68,5 +76,6 @@
   }
   @media(min-width:1440px) {
     max-width: 50%;
+    align-items: flex-start;
   }
 }

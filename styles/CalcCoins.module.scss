@@ -17,7 +17,10 @@
     flex-direction: column;
     background-color: transparent;
     padding-bottom: 0;
-    //z-index: -1;
+    height: auto;
+    @media (min-width:1025px) {
+        height: 71px;
+    }
 }
 .coins_pack{
     position: relative;
@@ -41,7 +44,7 @@
     line-height: 9.6vmin;
 
     @media (min-width:1025px) {
-        height: 64px;
+        height: auto;
         font-size: 36px;
         line-height: 36px;
     }
@@ -88,6 +91,10 @@
         min-width: auto;
         font-size: 11px;
         height: auto;
+    }
+    @media (min-width:1440px) {
+        width: 50px;
+        font-size: 12px;
     }
 }
 .discount{

@@ -110,9 +110,6 @@
   a{
     text-decoration: none;
   }
-  a:focus-visible{
-    border: 1px solid #eab11f;
-  }
   button{
     cursor: pointer;
   }
@@ -147,9 +144,6 @@
   }
 *:focus-visible{
   outline: none!important;
-}
-a:focus-visible, button:focus-visible{
-  outline:-webkit-focus-ring-color auto 1px;
 }
 
 .logout{

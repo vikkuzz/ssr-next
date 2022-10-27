@@ -18,7 +18,12 @@ const initialState = {
   user: {},
   errorMessage: "",
   locale: {},
-  currency: {},
+  currency: {
+    currency: "$",
+    title: "USD",
+    id: "0",
+    country: "",
+  },
   stock: {
     deliveryMethods: [
       {

@@ -9,7 +9,8 @@ const Index = () => {
       <MainContainer keywords={", main page"}>
         <div className={`${styles.app_main}`}>
           <h1 className={`${styles.app_h1}`}>
-            Самые безопасные монеты FIFA 23 тут!
+            Самые безопасные <br />
+            монеты FIFA 23 тут!
           </h1>
           <Calculator />
         </div>

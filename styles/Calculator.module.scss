@@ -6,6 +6,9 @@
         border-radius: 4px;
         background-color: hsla(0,0%,100%,.1);
     }
+    @media (min-width:1440px) {
+        width: 704px;
+    }
 }
 .arrow_info{
     background-color: transparent;
