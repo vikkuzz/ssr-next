@@ -94,6 +94,10 @@ const CalcCoins = () => {
     setCurrentCoins(result);
   };
 
+  const onCoinsButtonClick = (e) => {
+    setCurrentCoins(e.target.id);
+  };
+
   const handleChangePrice = (e) => {
     setCurrentPrice(e.target.value);
   };
@@ -115,18 +119,31 @@ const CalcCoins = () => {
           ></input>
         </fieldset>
         <div className={`${styles.coins_pack}`}>
-          <button id={100000} className={`${styles.pack}`}>
+          <button
+            onClick={onCoinsButtonClick}
+            id={100000}
+            className={`${styles.pack}`}
+          >
             100k
           </button>
-          <button id={300000} className={`${styles.pack}`}>
+          <button
+            onClick={onCoinsButtonClick}
+            id={300000}
+            className={`${styles.pack}`}
+          >
             300k
           </button>
-          <button id={500000} className={`${styles.pack}`}>
+          <button
+            onClick={onCoinsButtonClick}
+            id={500000}
+            className={`${styles.pack}`}
+          >
             500k
           </button>
           {currentDisc.map((elem) => {
             return (
               <button
+                onClick={onCoinsButtonClick}
                 key={elem.limitSumCoins}
                 id={elem.limitSumCoins}
                 className={`${styles.pack}`}
@@ -146,7 +163,7 @@ const CalcCoins = () => {
       >
         <legend className={`${styles.coins_legend}`}>Цена</legend>
         <input
-          value={Math.round(+currentPrice)}
+          value={(+currentPrice).toFixed(2)}
           className={`${styles.coins_input}`}
           onChange={handleChangePrice}
           type={"text"}
