@@ -18,6 +18,9 @@ const CalcCoins = () => {
     (state) => state.royalfutReducer.stock.discount
   );
   const currency = useSelector((state) => state.royalfutReducer.currency.title);
+  const currencyLabel = useSelector(
+    (state) => state.royalfutReducer.currency.currency
+  );
   const currentMethod = useSelector((state) =>
     state.royalfutReducer.method.easy ? "easy" : "manual"
   );
@@ -162,9 +165,10 @@ const CalcCoins = () => {
         className={`${styles.coins_fieldset} ${styles.calc_coins__border2}`}
       >
         <legend className={`${styles.coins_legend}`}>Цена</legend>
+        <span className={`${styles.currency_label}`}>{currencyLabel}</span>
         <input
           value={(+currentPrice).toFixed(2)}
-          className={`${styles.coins_input}`}
+          className={`${styles.coins_input} ${styles.coins_input__currency}`}
           onChange={handleChangePrice}
           type={"text"}
         ></input>
