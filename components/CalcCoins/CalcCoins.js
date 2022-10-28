@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import styles from "../../styles/CalcCoins.module.scss";
 
-import { getCoef } from "../../utils/functions";
+import { getCoef, getDiscCoef } from "../../utils/functions";
 
 const CalcCoins = () => {
   const border1 = React.createRef();
@@ -40,21 +40,33 @@ const CalcCoins = () => {
     getCoef(currency, currentMethod, platform, data) * minLimit
   );
   let [currentCoins, setCurrentCoins] = useState(minLimit);
-
-  useEffect(() => {
-    console.log(
-      getCoef(currency, currentMethod, platform, data) * minLimit,
-      currency,
-      currentMethod,
-      platform,
-      data
-    );
-  }, []);
+  let [disc, setDisc] = useState("");
+  let [discCoef, setDiscCoef] = useState("");
 
   useEffect(() => {
     setCurrentPrice(
       getCoef(currency, currentMethod, platform, data) * currentCoins
     );
+
+    for (let i = 0; i < currentDisc.length; i++) {
+      if (currentDisc[i].limitSumCoins <= currentCoins) {
+        console.log(currentDisc[i].limitSumCoins, currentCoins);
+        let discount =
+          ((getCoef(currency, currentMethod, platform, data) * currentCoins) /
+            100) *
+          currentDisc[i].discountPercent;
+
+        setDisc(
+          getCoef(currency, currentMethod, platform, data) * currentCoins -
+            discount
+        );
+        let coef = getCoef(currency, currentMethod, platform, data);
+        console.log(coef, getDiscCoef(currentCoins, currentDisc, coef));
+        break;
+      } else {
+        setDisc("");
+      }
+    }
   }, [currency, currentMethod, platform, currentCoins]);
 
   useEffect(() => {
@@ -116,9 +128,10 @@ const CalcCoins = () => {
 
           <input
             onChange={handleChangeCoins}
-            value={Math.round(+currentCoins)}
+            value={Math.round(+currentCoins).toLocaleString()}
             className={`${styles.coins_input}`}
             type={"tel"}
+            maxLength={8}
           ></input>
         </fieldset>
         <div className={`${styles.coins_pack}`}>
@@ -165,13 +178,20 @@ const CalcCoins = () => {
         className={`${styles.coins_fieldset} ${styles.calc_coins__border2}`}
       >
         <legend className={`${styles.coins_legend}`}>Цена</legend>
-        <span className={`${styles.currency_label}`}>{currencyLabel}</span>
-        <input
-          value={(+currentPrice).toFixed(2)}
-          className={`${styles.coins_input} ${styles.coins_input__currency}`}
-          onChange={handleChangePrice}
-          type={"text"}
-        ></input>
+        <label className={`${styles.coins_input_wrapper}`}>
+          <span className={`${styles.currency_label}`}>{currencyLabel}</span>
+          <input
+            value={(+currentPrice).toFixed(2).toLocaleString()}
+            className={`${styles.coins_input} ${styles.coins_input__currency}`}
+            onChange={handleChangePrice}
+            type={"text"}
+            size={(+currentPrice).toFixed(2).length - 1.5}
+            maxLength={8}
+          ></input>
+          <span className={`${styles.coins_input__disc}`}>
+            {disc && `${currencyLabel} ${Number(disc).toFixed(2)}`}
+          </span>
+        </label>
       </fieldset>
     </div>
   );

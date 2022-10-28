@@ -126,12 +126,12 @@
 }
 .currency_label{
     background-color: transparent;
-    position: absolute;
+    //position: absolute;
     top: 0%;
     left: 0;
     height: 12vmin;
-    padding-top: 10px;
-    width: 15%;
+    //padding-top: 10px;
+    width: auto;
     font-size: 9.6vmin;
     line-height: 9.6vmin;
 
@@ -139,10 +139,35 @@
         height: auto;
         font-size: 36px;
         line-height: 36px;
-        padding-top: 11px;
-        padding-left: 8px;
+        //padding-top: 11px;
+        //padding-left: 8px;
     }
 }
 .coins_input__currency{
-    padding-left: 15%;
+    padding-left: 5px;
+}
+.coins_input_wrapper{
+    width: max-content;
+    background-color: transparent;
+
+    justify-content: flex-start;
+    @media (min-width:1025px) {
+        position: absolute;
+    }
+}
+.coins_input__disc{
+    width: auto;
+    white-space: nowrap;
+    background-color: transparent;
+    color: #616172;
+    text-decoration: line-through;
+    font-weight: 500;
+    font-size: 9.6vmin;
+    line-height: 9.6vmin;
+
+    @media (min-width:1025px) {
+        font-size: 32px;
+        line-height: 32px;
+    }
+    
 }
