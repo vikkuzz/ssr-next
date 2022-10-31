@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import styles from "../../styles/CalcCoins.module.scss";
 
-import { getCoef, getDiscCoef } from "../../utils/functions";
+import { getCoef, getDiscCoef, getDiscount } from "../../utils/functions";
 
 const CalcCoins = () => {
   const border1 = React.createRef();
@@ -44,28 +44,15 @@ const CalcCoins = () => {
   let [discCoef, setDiscCoef] = useState("");
 
   useEffect(() => {
-    setCurrentPrice(
-      getCoef(currency, currentMethod, platform, data) * currentCoins
-    );
+    const coef = getCoef(currency, currentMethod, platform, data);
+    const percentDisc = getDiscount(currentDisc, currentCoins);
 
-    for (let i = 0; i < currentDisc.length; i++) {
-      if (currentDisc[i].limitSumCoins <= currentCoins) {
-        console.log(currentDisc[i].limitSumCoins, currentCoins);
-        let discount =
-          ((getCoef(currency, currentMethod, platform, data) * currentCoins) /
-            100) *
-          currentDisc[i].discountPercent;
-
-        setDisc(
-          getCoef(currency, currentMethod, platform, data) * currentCoins -
-            discount
-        );
-        let coef = getCoef(currency, currentMethod, platform, data);
-        console.log(coef, getDiscCoef(currentCoins, currentDisc, coef));
-        break;
-      } else {
-        setDisc("");
-      }
+    if (percentDisc > 1) {
+      setCurrentPrice(getDiscCoef(coef, percentDisc) * currentCoins);
+      setDisc(coef * currentCoins);
+    } else {
+      setCurrentPrice(coef * currentCoins);
+      setDisc("");
     }
   }, [currency, currentMethod, platform, currentCoins]);
 
@@ -98,9 +85,10 @@ const CalcCoins = () => {
   }, [calcCoins]);
 
   useEffect(() => {
-    setCurrentCoins(
-      currentPrice / getCoef(currency, currentMethod, platform, data)
-    );
+    const coef = getCoef(currency, currentMethod, platform, data);
+    const percentDisc = getDiscount(currentDisc, currentCoins);
+
+    setCurrentCoins(currentPrice / getDiscCoef(coef, percentDisc));
   }, [currentPrice]);
 
   const handleChangeCoins = (e) => {
@@ -131,7 +119,7 @@ const CalcCoins = () => {
             value={Math.round(+currentCoins).toLocaleString()}
             className={`${styles.coins_input}`}
             type={"tel"}
-            maxLength={8}
+            maxLength={10}
           ></input>
         </fieldset>
         <div className={`${styles.coins_pack}`}>

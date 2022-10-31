@@ -5,17 +5,33 @@ export function getCoef(currency, method, platform, data) {
   return coef;
 }
 
-export function getDiscCoef(currentCoins, currentDisc, coef) {
-  let discount = 1;
-  let currentCoef;
-  for (let i = 0; i < currentDisc.length; i++) {
-    if (currentDisc[i].limitSumCoins <= currentCoins) {
-      discount = currentDisc[i].discountPercent;
-      currentCoef = coef - (coef / 100) * discount;
-      break;
-    } else {
-      currentCoef = coef;
-    }
+export function getDiscCoef(coef, percentDiscount) {
+  let currentCoef = 1;
+
+  if (percentDiscount > 1) {
+    currentCoef = coef - (coef / 100) * percentDiscount;
+  } else {
+    currentCoef = coef;
   }
+
+  console.log(currentCoef);
+
   return currentCoef;
+}
+
+export function getDiscount(arr, value) {
+  let percentDisc = 1;
+  let result = arr.filter((el) => el.limitSumCoins <= value);
+  result = result[result.length - 1];
+  console.log(result);
+  if (value >= 20000000) {
+    percentDisc = 15;
+  } else if (value < 800000) {
+    percentDisc = 1;
+  } else {
+    percentDisc = result.discountPercent;
+  }
+
+  console.log(percentDisc);
+  return percentDisc;
 }

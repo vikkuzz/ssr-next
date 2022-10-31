@@ -1,0 +1,80 @@
+.mainorder{
+    flex-direction: column;
+}
+.mainorder_wrapper_options{
+    position: relative;
+    flex-direction: column;
+}
+.mainorder_svg{
+    stroke: inherit;
+    width: 6.5vmin;
+    height: 4.5vmin;
+    background-color: transparent;
+    stroke-width: 2;
+    fill: inherit;
+    color: inherit;
+}
+.mainorder_svg_platform{
+    //stroke: inherit;
+    width: 8.2vmin;
+    height: 8.2vmin;
+    background-color: transparent;
+    //stroke-width: 2;
+    fill: inherit;
+    color: inherit;
+}
+.mainorder_option_text{
+    stroke: inherit;
+    color: inherit;
+    fill: inherit;
+    justify-content: flex-start;
+    width: auto;
+    gap: 2.6vmin;
+}
+.mainorder_option_btn{
+    color: white;
+    stroke: white;
+    fill: white;
+    border: none;
+    padding: 4.2vmin 0;
+}
+.mainorder_option_btn:hover{
+    color: #e5b713;
+    stroke:#e5b713;
+    fill:#e5b713;
+    transition: all 0.3s linear;
+}
+.mainorder_option_name{
+    color: inherit;
+    font-size: 6.4vmin;
+    line-height: 6.4vmin;
+    background-color: transparent;
+
+    @media (min-width:1025px) {
+        
+    }
+}
+.mainorder_option_props{
+    gap:2vmin;
+    fill: inherit;
+    color: inherit;
+    justify-content: flex-end;
+}
+.mainorder_svg_done{
+    fill:none;
+    background-color: transparent;
+    width: 6.4vmin;
+    height: 6.4vmin;
+    stroke: white;
+    stroke-width: 2;
+}
+.mainorder_backgr_done{
+    width: 6.4vmin;
+    height: 6.4vmin;
+    border-radius: 50%;
+    background-color: #36b23b;
+}
+.mainorder_open_property{
+    background-color: rgba(255,255,255,0.2);
+    flex-direction: column;
+}

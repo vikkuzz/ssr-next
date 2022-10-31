@@ -8,6 +8,7 @@ const SvgContainer = ({
   opacity,
   fillRule,
   clipRule,
+  stroke,
 }) => {
   const svg = React.createRef();
 
@@ -36,8 +37,20 @@ const SvgContainer = ({
         opacity={opacity}
         fillRule={fillRule}
         clipRule={clipRule}
+        stroke={stroke}
+        strokeLinejoin={item.strokeLinejoin}
+        strokeLinecap={item.strokeLinecap}
+        strokeWidth={item.strokeWidth}
       />
-      <path d={item.d2} />
+      {item.d2 && <path d={item.d2} />}
+      {item.circle && (
+        <circle
+          cx={item.circle.cx}
+          cy={item.circle.cy}
+          r={item.circle.r}
+          fill={item.circle.fill}
+        />
+      )}
     </svg>
   );
 };

@@ -77,10 +77,12 @@ function Header() {
   return (
     <div className={styles.header}>
       <div className={styles.header__left}>
-        <a className={styles.header__logo} href="/">
-          ROYALFUT
-          <div className={styles.header__sublogo}>FIFA 23 Items</div>
-        </a>
+        <Link href="/">
+          <a className={styles.header__logo}>
+            ROYALFUT
+            <div className={styles.header__sublogo}>FIFA 23 Items</div>
+          </a>
+        </Link>
       </div>
       <div className={styles.header__center}>
         <Dropdown />

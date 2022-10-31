@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import styles from "../../styles/Calculator.module.scss";
 
@@ -6,8 +7,21 @@ import PlatformChanger from "../PlatformChanger";
 import MethodChanger from "../MethodChanger";
 import CalcCoins from "../CalcCoins";
 import SvgContainer from "../SvgContainer";
+import { loginModal } from "../../redux/actions/royalfutActions";
+import Link from "next/link";
 
 const Calculator = () => {
+  const isAuth = useSelector((state) => state.royalfutReducer.isAuth);
+
+  const dispatch = useDispatch();
+
+  const submitBuyCoins = (e) => {
+    if (isAuth) {
+      console.log("isAuth");
+    } else {
+      dispatch(loginModal(true));
+    }
+  };
   return (
     <div className={`${styles.calculator}`}>
       <PlatformChanger />
@@ -15,9 +29,14 @@ const Calculator = () => {
       <CalcCoins />
       <div className={`${styles.calc_wrapper_submit}`}>
         <div className={`${styles.calc_submit}`}>
-          <button className={`${styles.calc__buy_coins_btn}`} type="button">
-            купить монеты
-          </button>
+          <Link href={isAuth ? "/order" : ""}>
+            <a
+              className={`${styles.calc__buy_coins_btn}`}
+              onClick={submitBuyCoins}
+            >
+              купить монеты
+            </a>
+          </Link>
         </div>
         <div className={`${styles.calc_information_wrapper}`}>
           <img
