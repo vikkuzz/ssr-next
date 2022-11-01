@@ -97,14 +97,6 @@
     max-height: 1000px;
     overflow: hidden;
 }
-.mainorder_content_hide{
-    height: 0;
-    max-height: 0;
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-    border: none;    
-}
 .mainorder_content{
     height: auto;
     flex-direction: column;
@@ -174,4 +166,60 @@
     font-size: 3.2vmin;
     line-height: 4vmin;
     color: inherit;
+}
+.mainorder_method_container{
+    padding: 0 4.2vmin;
+    gap: 3.2vmin;
+}
+.mainorder_method_btn{
+    flex-direction: column;
+    padding: 4.2vmin;
+    gap: 4.2vmin;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 4px;
+    height: 100%;
+    justify-content: flex-start;
+;
+}
+.mainorder_recomend{
+    justify-content: flex-start;
+    font-family: 'Montserrat',helvetica,arial,sans-serif;
+    font-weight: 600;
+    font-size: 3.2vmin;
+    line-height: 4vmin;
+}
+.mainorder_method_info_wrapper{
+    flex-direction: column;
+    gap: 4.2vmin;
+}
+.mainorder_method_name{
+    font-size: 4.8vmin;
+    line-height: 4.8vmin;
+}
+.mainorder_method_info{
+    font-family: 'Montserrat',helvetica,arial,sans-serif;
+    font-weight: 400;
+    font-size: 3.2vmin;
+    line-height: 4vmin;
+    flex-direction: column;
+}
+.mainorder_method_info strong{
+    background-color: transparent;
+}
+.mainorder_container_content_delivery{
+    flex-direction: column;
+    background-color: transparent;
+    padding-bottom: 6.4vmin;
+    transition: all .3s ease-out;
+    height: 80vmin;
+    max-height: 1000px;
+    overflow: hidden;
+}
+.mainorder_content_hide{
+    height: 0;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    border: none;    
 }
