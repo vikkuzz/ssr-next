@@ -4,6 +4,7 @@
 .mainorder_wrapper_options{
     position: relative;
     flex-direction: column;
+    padding-top: 4.2vmin;
 }
 .mainorder_svg{
     stroke: inherit;
@@ -36,7 +37,10 @@
     stroke: white;
     fill: white;
     border: none;
-    padding: 4.2vmin 0;
+    padding: 0 0 4.2vmin;
+    //transition: all .3s linear;
+    background-color: transparent;
+    justify-content: flex-start;
 }
 .mainorder_option_btn:hover{
     color: #e5b713;
@@ -77,4 +81,77 @@
 .mainorder_open_property{
     background-color: rgba(255,255,255,0.2);
     flex-direction: column;
+}
+.mainorder_container_content{
+    flex-direction: column;
+    background-color: transparent;
+    padding-bottom: 6.4vmin;
+    transition: all .5s linear;
+}
+.mainorder_content_hide{
+    height: 0;
+    transform: scale(0);
+    //transition: all 0.3s linear;
+    flex-direction: column;
+    border: 1px solid hsla(0,0%,100%,.2);
+    border-radius: 4px;
+    gap: 5vmin;
+    padding: 7vmin 5vmin;
+}
+.mainorder_content{
+    height: auto;
+    transform: scale(1);
+    //transition: all 0.3s linear;
+    font-size: 4.8vmin;
+    line-height: 4.8vmin;
+}
+.mainorder_mobile{
+    padding-left: 0;
+    padding-right: 0;
+}
+.mainorder_platform_wrapper{
+    flex-direction: row;
+    padding: 1vmin;
+    gap: 1vmin;
+}
+.mainorder_padding_0{
+    padding: 0;
+    gap: 0;
+    height: 0;
+}
+.mainorder_divider{
+    height: 1px;
+    background-color: rgba(255,255,255,0.2);
+}
+.mainorder_svg_platform__btn{
+    width: 12.2vmin;
+    background-color: transparent;
+    fill: inherit;
+    color: inherit;    
+}
+.mainorder_btn_wrapper{
+    padding-top: 4.2vmin;
+}
+.mainorder_continue_btn{
+    border-radius: 2px;
+    padding: 3.7333333333vmin 16vmin;
+    font-size: 6.4vmin;
+    line-height: 6.4vmin;
+    text-align: center;
+    color: #fff;
+    background-color: #eab11f;
+    border: none;
+    width: auto;
+}
+.mainorder__btn_notactive:hover{
+    background-color: hsla(0,0%,100%,.1);
+}
+.mainorder_btn_ps_active{
+    background: #003087;
+}
+.mainorder_btn_xbox_active{
+    background: #36B23B;
+}
+.mainorder__btn_notactive{
+    background-color: transparent;
 }

@@ -25,7 +25,13 @@ import Footer from "./Footer";
 
 const api = new Api();
 
-function MainContainer({ children, keywords, description, title }) {
+function MainContainer({
+  children,
+  keywords,
+  description,
+  title,
+  customStyle,
+}) {
   const wrapperModalRef = React.createRef();
   const shadowModalRef = React.createRef();
   const modal = useSelector((state) => state.royalfutReducer.loginModal);
@@ -95,7 +101,7 @@ function MainContainer({ children, keywords, description, title }) {
       </div>
 
       <div
-        className={styles.App}
+        className={`${styles.App} ${customStyle}`}
         onClick={(e) => {
           isOutsideClick(e, wrapperModalRef);
           isOutsideClickContains(e, shadowModalRef);
