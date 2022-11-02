@@ -13,6 +13,7 @@ import MethodChanger from '../MethodChanger';
 import CalcCoins from '../CalcCoins';
 import Link from 'next/link';
 import SvgContainer from '../SvgContainer';
+import Payment from '../Payment';
 
 import { getCoef, getDiscCoef, getDiscount } from '../../utils/functions';
 
@@ -34,6 +35,7 @@ const MainOrder = () => {
         platform: true,
         coins: true,
         delivery: true,
+        payment: true,
     });
     let [activePlatform, setActivePlatfom] = useState({
         ps4: platform.ps ? true : false,
@@ -118,6 +120,7 @@ const MainOrder = () => {
                             coins: true,
                             delivery: true,
                             platform: false,
+                            payment: true,
                         })
                     }
                 >
@@ -277,7 +280,11 @@ const MainOrder = () => {
                         </button>
                     </div>
                 </div>
-                <div className={`${styles.mainorder_divider}`} />
+                <div
+                    className={`${styles.mainorder_divider} ${
+                        !hide.platform || !hide.coins ? 'hide' : ''
+                    }`}
+                />
             </div>
             <div
                 className={`${styles.mainorder_wrapper_options} ${
@@ -291,6 +298,7 @@ const MainOrder = () => {
                             coins: false,
                             delivery: true,
                             platform: true,
+                            payment: true,
                         })
                     }
                 >
@@ -344,7 +352,11 @@ const MainOrder = () => {
                         </button>
                     </div>
                 </div>
-                <div className={`${styles.mainorder_divider}`} />
+                <div
+                    className={`${styles.mainorder_divider} ${
+                        !hide.coins || !hide.delivery ? 'hide' : ''
+                    }`}
+                />
             </div>
             <div
                 className={`${styles.mainorder_wrapper_options} ${
@@ -358,6 +370,7 @@ const MainOrder = () => {
                             coins: true,
                             delivery: false,
                             platform: true,
+                            payment: true,
                         })
                     }
                 >
@@ -477,7 +490,69 @@ const MainOrder = () => {
                         </button>
                     </div>
                 </div>
-                <div className={`${styles.mainorder_divider}`} />
+                <div
+                    className={`${styles.mainorder_divider} ${
+                        !hide.delivery || !hide.payment ? 'hide' : ''
+                    }`}
+                />
+            </div>
+            <div
+                className={`${styles.mainorder_wrapper_options} ${
+                    !hide.payment && styles.mainorder_open_property
+                }`}
+            >
+                <button
+                    className={`${styles.mainorder_option_btn} `}
+                    onClick={() =>
+                        onClickOption({
+                            coins: true,
+                            delivery: true,
+                            platform: true,
+                            payment: false,
+                        })
+                    }
+                >
+                    <div className={`${styles.mainorder_option_text}`}>
+                        <span className={`${styles.mainorder_option_name}`}>
+                            Payment
+                        </span>
+                        <SvgContainer
+                            item={whitearrow}
+                            color={'none'}
+                            stroke="white"
+                            classStyle={`${styles.mainorder_svg}`}
+                        />
+                    </div>
+                    <div
+                        className={`${styles.mainorder_option_props} ${
+                            !hide.payment && 'hide'
+                        }`}
+                    ></div>
+                </button>
+                <div
+                    className={`${styles.mainorder_container_content} ${
+                        hide.payment && styles.mainorder_content_hide
+                    }`}
+                >
+                    <div className={`${styles.mainorder_platform_wrapper} `}>
+                        <Payment />
+                    </div>
+                    <div className={`${styles.mainorder_btn_wrapper} `}>
+                        <button
+                            onClick={() =>
+                                onClickOption({ ...hide, payment: true })
+                            }
+                            className={`${styles.mainorder_continue_btn} `}
+                        >
+                            к оплате
+                        </button>
+                    </div>
+                </div>
+                <div
+                    className={`${styles.mainorder_divider} ${
+                        !hide.payment ? 'hide' : ''
+                    }`}
+                />
             </div>
         </div>
     );
