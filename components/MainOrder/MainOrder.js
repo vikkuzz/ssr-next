@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { order } from '../../redux/actions/royalfutActions';
+import {
+    changeMethod,
+    changePlatform,
+    order,
+} from '../../redux/actions/royalfutActions';
 
 import styles from '../../styles/MainOrder.module.scss';
 
@@ -22,8 +26,9 @@ const MainOrder = () => {
         (state) => state.royalfutReducer.stock.deliveryMethods
     );
     const platform = useSelector((state) => state.royalfutReducer.platform);
-    const currentOrder = useSelector((state) => state.royalfutReducer.order);
+    const coins = useSelector((state) => state.royalfutReducer.coins);
     const currency = useSelector((state) => state.royalfutReducer.currency);
+    const method = useSelector((state) => state.royalfutReducer.method);
 
     let [hide, setHide] = useState({
         platform: true,
@@ -37,6 +42,19 @@ const MainOrder = () => {
         xboxxs: false,
     });
     let [manualPrice, setManualPrice] = useState();
+    let [deliveryMethod, setDeliveryMethod] = useState();
+    let [currentOrder, setCurrentOrder] = useState();
+    let [currentCoins, setCurrentCoins] = useState();
+
+    useEffect(() => {
+        let mainOrder = {
+            coins: coins,
+            currency: currency,
+            platform: platform.ps ? 'ps' : 'xbox',
+            method: method.easy ? 'easy' : 'manual',
+        };
+        setCurrentOrder(mainOrder);
+    }, [platform, currency, method, currentCoins]);
 
     useEffect(() => {
         //dispatch(order({ ...currentOrder, currency: currency }));
@@ -58,8 +76,10 @@ const MainOrder = () => {
             data
         );
         setManualPrice(
-            (currentOrder?.coins?.amount * coefManual).toFixed(2) -
+            (
+                (currentOrder?.coins?.amount * coefManual).toFixed(2) -
                 (currentOrder?.coins?.amount * coefEasy).toFixed(2)
+            ).toFixed(2)
         );
     }, [currentOrder]);
 
@@ -145,14 +165,15 @@ const MainOrder = () => {
                             className={`${styles.mainorder_platform_wrapper} `}
                         >
                             <button
-                                onClick={() =>
+                                onClick={() => {
                                     handleClickActivePlatform({
                                         ps4: true,
                                         ps5: false,
                                         xboxone: false,
                                         xboxxs: false,
-                                    })
-                                }
+                                    });
+                                    dispatch(changePlatform('ps'));
+                                }}
                                 className={`${styles.mainorder_content} ${
                                     !activePlatform.ps4
                                         ? styles.mainorder__btn_notactive
@@ -168,14 +189,15 @@ const MainOrder = () => {
                                 Playstation 4
                             </button>
                             <button
-                                onClick={() =>
+                                onClick={() => {
                                     handleClickActivePlatform({
                                         ps4: false,
                                         ps5: true,
                                         xboxone: false,
                                         xboxxs: false,
-                                    })
-                                }
+                                    });
+                                    dispatch(changePlatform('ps'));
+                                }}
                                 className={`${styles.mainorder_content} ${
                                     !activePlatform.ps5
                                         ? styles.mainorder__btn_notactive
@@ -195,14 +217,15 @@ const MainOrder = () => {
                             className={`${styles.mainorder_platform_wrapper} `}
                         >
                             <button
-                                onClick={() =>
+                                onClick={() => {
                                     handleClickActivePlatform({
                                         ps4: false,
                                         ps5: false,
                                         xboxone: true,
                                         xboxxs: false,
-                                    })
-                                }
+                                    });
+                                    dispatch(changePlatform('xbox'));
+                                }}
                                 className={`${styles.mainorder_content} ${
                                     !activePlatform.xboxone
                                         ? styles.mainorder__btn_notactive
@@ -218,14 +241,15 @@ const MainOrder = () => {
                                 XBOX ONE
                             </button>
                             <button
-                                onClick={() =>
+                                onClick={() => {
                                     handleClickActivePlatform({
                                         ps4: false,
                                         ps5: false,
                                         xboxone: false,
                                         xboxxs: true,
-                                    })
-                                }
+                                    });
+                                    dispatch(changePlatform('xbox'));
+                                }}
                                 className={`${styles.mainorder_content} ${
                                     !activePlatform.xboxxs
                                         ? styles.mainorder__btn_notactive
@@ -354,7 +378,7 @@ const MainOrder = () => {
                         }`}
                     >
                         <div className={`${styles.mainorder_current_info}`}>
-                            {currentOrder.method === 'easy'
+                            {currentOrder?.method === 'easy'
                                 ? 'Comfort trade'
                                 : 'Player auction'}
                         </div>
@@ -375,7 +399,17 @@ const MainOrder = () => {
                     <div className={`${styles.mainorder_method_container}`}>
                         <button
                             type="button"
-                            className={`${styles.mainorder_method_btn}`}
+                            className={`${styles.mainorder_method_btn} ${
+                                styles.mainorder_method_btn_bcgr
+                            } ${
+                                deliveryMethod != 'easy'
+                                    ? styles.mainorder__btn_notactive
+                                    : styles.mainorder_btn_xbox_active
+                            }`}
+                            onClick={() => {
+                                setDeliveryMethod('easy');
+                                dispatch(changeMethod('easy'));
+                            }}
                         >
                             <div className={`${styles.mainorder_recomend}`}>
                                 recomended
@@ -398,7 +432,15 @@ const MainOrder = () => {
                         </button>
                         <button
                             type="button"
-                            className={`${styles.mainorder_method_btn}`}
+                            className={`${styles.mainorder_method_btn} ${
+                                deliveryMethod != 'manual'
+                                    ? styles.mainorder__btn_notactive
+                                    : styles.mainorder_btn_ps_active
+                            }`}
+                            onClick={() => {
+                                setDeliveryMethod('manual');
+                                dispatch(changeMethod('manual'));
+                            }}
                         >
                             <div className={`${styles.mainorder_recomend}`}>
                                 + {currentOrder?.currency?.currency}{' '}
@@ -417,9 +459,9 @@ const MainOrder = () => {
                                 >
                                     You will need to follow the instructions we
                                     provide. Fast but manual.{' '}
-                                    <strong>
+                                    <span>
                                         Doesn't work with orders above 1m coins
-                                    </strong>
+                                    </span>
                                 </div>
                             </div>
                         </button>

@@ -4,10 +4,14 @@
 .mainorder_wrapper_options{
     position: relative;
     flex-direction: column;
+    padding: 0 24px;
+    width: 100vw;
     padding-top: 4.2vmin;
+    transition: all .3s linear;
 
     @media (min-width:1025px) {
-        padding: 32px 16px 0;
+        padding: 32px 0 0;
+        width: 100%;
     }
 }
 .mainorder_svg{
@@ -112,6 +116,12 @@
 .mainorder_open_property{
     background-color: rgba(255,255,255,0.2);
     flex-direction: column;
+    transition: all .3s linear;
+
+    @media (min-width:1025px) {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
 }
 .mainorder_container_content{
     flex-direction: column;
@@ -267,6 +277,7 @@
     }
 }
 .mainorder_method_btn{
+    position: relative;
     flex-direction: column;
     padding: 4.2vmin;
     gap: 4.2vmin;
@@ -286,15 +297,30 @@
     font-weight: 600;
     font-size: 3.2vmin;
     line-height: 4vmin;
+    background-color: transparent;
 
     @media (min-width:1025px) {
         font-size: 12px;
         line-height: 15px;
     }
 }
+.mainorder_method_btn_bcgr::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 8vmin;
+    height: 12vmin;
+    background: url('../img/gradient.svg');
+    background-repeat: no-repeat;
+    background-position: -2px -2px;
+    background-size: contain;
+    opacity: .6;
+}
 .mainorder_method_info_wrapper{
     flex-direction: column;
     gap: 4.2vmin;
+    background-color: transparent;
 
     @media (min-width:1025px) {
         gap: 8px;
@@ -303,6 +329,7 @@
 .mainorder_method_name{
     font-size: 4.8vmin;
     line-height: 4.8vmin;
+    background-color: transparent;
 
     @media (min-width:1025px) {
         font-size: 18px;
@@ -315,13 +342,18 @@
     font-size: 3.2vmin;
     line-height: 4vmin;
     flex-direction: column;
+    background-color: transparent;
 
     @media (min-width:1025px) {
         font-size: 12px;
         line-height: 15px;
     }
 }
-.mainorder_method_info strong{
+.mainorder_method_info span{
+    font-family: 'Montserrat',helvetica,arial,sans-serif;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 600;
     background-color: transparent;
 }
 .mainorder_container_content_delivery{
