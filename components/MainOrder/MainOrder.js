@@ -140,101 +140,107 @@ const MainOrder = () => {
                         hide.platform && styles.mainorder_content_hide
                     }`}
                 >
-                    <div className={`${styles.mainorder_platform_wrapper} `}>
-                        <button
-                            onClick={() =>
-                                handleClickActivePlatform({
-                                    ps4: true,
-                                    ps5: false,
-                                    xboxone: false,
-                                    xboxxs: false,
-                                })
-                            }
-                            className={`${styles.mainorder_content} ${
-                                !activePlatform.ps4
-                                    ? styles.mainorder__btn_notactive
-                                    : styles.mainorder_btn_ps_active
-                            }`}
+                    <div className={`${styles.mainorder_wrapper_row}`}>
+                        <div
+                            className={`${styles.mainorder_platform_wrapper} `}
                         >
-                            <SvgContainer
-                                item={ps4}
-                                color="white"
-                                classStyle={`${styles.mainorder_svg_platform__btn}`}
-                                stroke="transparent"
-                            />
-                            Playstation 4
-                        </button>
-                        <button
-                            onClick={() =>
-                                handleClickActivePlatform({
-                                    ps4: false,
-                                    ps5: true,
-                                    xboxone: false,
-                                    xboxxs: false,
-                                })
-                            }
-                            className={`${styles.mainorder_content} ${
-                                !activePlatform.ps5
-                                    ? styles.mainorder__btn_notactive
-                                    : styles.mainorder_btn_ps_active
-                            }`}
+                            <button
+                                onClick={() =>
+                                    handleClickActivePlatform({
+                                        ps4: true,
+                                        ps5: false,
+                                        xboxone: false,
+                                        xboxxs: false,
+                                    })
+                                }
+                                className={`${styles.mainorder_content} ${
+                                    !activePlatform.ps4
+                                        ? styles.mainorder__btn_notactive
+                                        : styles.mainorder_btn_ps_active
+                                }`}
+                            >
+                                <SvgContainer
+                                    item={ps4}
+                                    color="white"
+                                    classStyle={`${styles.mainorder_svg_platform__btn}`}
+                                    stroke="transparent"
+                                />
+                                Playstation 4
+                            </button>
+                            <button
+                                onClick={() =>
+                                    handleClickActivePlatform({
+                                        ps4: false,
+                                        ps5: true,
+                                        xboxone: false,
+                                        xboxxs: false,
+                                    })
+                                }
+                                className={`${styles.mainorder_content} ${
+                                    !activePlatform.ps5
+                                        ? styles.mainorder__btn_notactive
+                                        : styles.mainorder_btn_ps_active
+                                }`}
+                            >
+                                <SvgContainer
+                                    item={ps4}
+                                    color="white"
+                                    classStyle={`${styles.mainorder_svg_platform__btn}`}
+                                    stroke="transparent"
+                                />
+                                Playstation 5
+                            </button>
+                        </div>
+                        <div
+                            className={`${styles.mainorder_platform_wrapper} `}
                         >
-                            <SvgContainer
-                                item={ps4}
-                                color="white"
-                                classStyle={`${styles.mainorder_svg_platform__btn}`}
-                                stroke="transparent"
-                            />
-                            Playstation 5
-                        </button>
-                    </div>
-                    <div className={`${styles.mainorder_platform_wrapper} `}>
-                        <button
-                            onClick={() =>
-                                handleClickActivePlatform({
-                                    ps4: false,
-                                    ps5: false,
-                                    xboxone: true,
-                                    xboxxs: false,
-                                })
-                            }
-                            className={`${styles.mainorder_content} ${
-                                !activePlatform.xboxone
-                                    ? styles.mainorder__btn_notactive
-                                    : styles.mainorder_btn_xbox_active
-                            }`}
-                        >
-                            <SvgContainer
-                                item={xbox}
-                                color="white"
-                                classStyle={`${styles.mainorder_svg_platform__btn}`}
-                                stroke="transparent"
-                            />
-                            XBOX ONE
-                        </button>
-                        <button
-                            onClick={() =>
-                                handleClickActivePlatform({
-                                    ps4: false,
-                                    ps5: false,
-                                    xboxone: false,
-                                    xboxxs: true,
-                                })
-                            }
-                            className={`${styles.mainorder_content} ${
-                                !activePlatform.xboxxs
-                                    ? styles.mainorder__btn_notactive
-                                    : styles.mainorder_btn_xbox_active
-                            }`}
-                        >
-                            <SvgContainer
-                                item={xbox}
-                                color="white"
-                                classStyle={`${styles.mainorder_svg_platform__btn}`}
-                                stroke="transparent"
-                            />
-                            XBOX XS
-                        </button>
+                            <button
+                                onClick={() =>
+                                    handleClickActivePlatform({
+                                        ps4: false,
+                                        ps5: false,
+                                        xboxone: true,
+                                        xboxxs: false,
+                                    })
+                                }
+                                className={`${styles.mainorder_content} ${
+                                    !activePlatform.xboxone
+                                        ? styles.mainorder__btn_notactive
+                                        : styles.mainorder_btn_xbox_active
+                                }`}
+                            >
+                                <SvgContainer
+                                    item={xbox}
+                                    color="white"
+                                    classStyle={`${styles.mainorder_svg_platform__btn}`}
+                                    stroke="transparent"
+                                />
+                                XBOX ONE
+                            </button>
+                            <button
+                                onClick={() =>
+                                    handleClickActivePlatform({
+                                        ps4: false,
+                                        ps5: false,
+                                        xboxone: false,
+                                        xboxxs: true,
+                                    })
+                                }
+                                className={`${styles.mainorder_content} ${
+                                    !activePlatform.xboxxs
+                                        ? styles.mainorder__btn_notactive
+                                        : styles.mainorder_btn_xbox_active
+                                }`}
+                            >
+                                <SvgContainer
+                                    item={xbox}
+                                    color="white"
+                                    classStyle={`${styles.mainorder_svg_platform__btn}`}
+                                    stroke="transparent"
+                                />
+                                XBOX XS
+                            </button>
+                        </div>
                     </div>
                     <div className={`${styles.mainorder_btn_wrapper} `}>
                         <button

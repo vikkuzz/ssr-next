@@ -5,6 +5,10 @@
     position: relative;
     flex-direction: column;
     padding-top: 4.2vmin;
+
+    @media (min-width:1025px) {
+        padding: 32px 16px 0;
+    }
 }
 .mainorder_svg{
     stroke: inherit;
@@ -14,6 +18,11 @@
     stroke-width: 2;
     fill: inherit;
     color: inherit;
+
+    @media (min-width:1025px) {
+        width: 26px;
+        height: 34px;
+    }
 }
 .mainorder_svg_platform{
     width: 8.2vmin;
@@ -21,6 +30,11 @@
     background-color: transparent;
     fill: inherit;
     color: inherit;
+
+    @media (min-width:1025px) {
+        width: 38px;
+        height: auto;
+    }
 }
 .mainorder_option_text{
     stroke: inherit;
@@ -29,6 +43,10 @@
     justify-content: flex-start;
     width: auto;
     gap: 2.6vmin;
+
+    @media (min-width:1025px) {
+        gap:10px;
+    }
 }
 .mainorder_option_btn{
     color: white;
@@ -38,6 +56,10 @@
     padding: 0 0 4.2vmin;
     background-color: transparent;
     justify-content: flex-start;
+
+    @media (min-width:1025px) {
+        padding: 0 0 24px;
+    }
 }
 .mainorder_option_btn:hover{
     color: #e5b713;
@@ -52,7 +74,9 @@
     background-color: transparent;
 
     @media (min-width:1025px) {
-        
+        font-size: 36px;
+        line-height: 36px;
+        white-space: nowrap;
     }
 }
 .mainorder_option_props{
@@ -68,12 +92,22 @@
     height: 6.4vmin;
     stroke: white;
     stroke-width: 2;
+
+    @media (min-width:1025px) {
+        width: 24px;
+        height: 24px;
+    }
 }
 .mainorder_backgr_done{
     width: 6.4vmin;
     height: 6.4vmin;
     border-radius: 50%;
     background-color: #36b23b;
+
+    @media (min-width:1025px) {
+        width: 24px;
+        height: 24px;
+    }
 }
 .mainorder_open_property{
     background-color: rgba(255,255,255,0.2);
@@ -87,6 +121,20 @@
     height: 110vmin;
     max-height: 1000px;
     overflow: hidden;
+
+    @media (min-width:1025px) {
+        height: 290px;
+        padding-bottom: 16px;
+    }
+}
+.mainorder_wrapper_row{
+    flex-direction: column;
+
+    @media (min-width:1025px) {
+        flex-direction: row;
+        padding: 16px 8px;
+        gap: 16px;
+    }
 }
 .mainorder_container_content_coins{
     flex-direction: column;
@@ -96,6 +144,11 @@
     height: 78vmin;
     max-height: 1000px;
     overflow: hidden;
+
+    @media (min-width:1025px) {
+        padding-bottom: 32px;
+        height: 275px;
+    }
 }
 .mainorder_content{
     height: auto;
@@ -107,6 +160,15 @@
     padding: 7vmin 5vmin; 
     border-radius: 4px;
     border: 1px solid hsla(0,0%,100%,.2);
+
+    @media (min-width:1025px) {
+        font-size: 18px;
+        line-height: 18px;
+        gap: 24px;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
 }
 .mainorder_mobile{
     padding-left: 0;
@@ -116,6 +178,12 @@
     flex-direction: row;
     padding: 1vmin;
     gap: 1vmin;
+
+    @media (min-width:1025px) {
+        height: 150px;
+        gap: 16px;
+        padding: 0;
+    }
 }
 .mainorder_padding_0{
     padding: 0;
@@ -133,9 +201,19 @@
     background-color: transparent;
     fill: inherit;
     color: inherit;    
+
+    @media (min-width:1025px) {
+        width: 66px;
+    }
 }
 .mainorder_btn_wrapper{
     padding-top: 4.2vmin;
+    justify-content: flex-end;
+
+    @media (min-width:1025px) {
+        padding-top: 24px;
+
+    }
 }
 .mainorder_continue_btn{
     border-radius: 2px;
@@ -147,6 +225,12 @@
     background-color: #eab11f;
     border: none;
     width: auto;
+
+    @media (min-width:1025px) {
+        font-size: 20px;
+        line-height: 20px;
+        padding: 14px 93px;
+    }
 }
 .mainorder__btn_notactive:hover{
     background-color: hsla(0,0%,100%,.1);
@@ -166,10 +250,21 @@
     font-size: 3.2vmin;
     line-height: 4vmin;
     color: inherit;
+    width: auto;
+
+    @media (min-width:1025px) {
+        font-size: 12px;
+        line-height: 15px;
+    }
 }
 .mainorder_method_container{
     padding: 0 4.2vmin;
     gap: 3.2vmin;
+
+    @media (min-width:1025px) {
+        padding: 0;
+        gap: 16px;
+    }
 }
 .mainorder_method_btn{
     flex-direction: column;
@@ -179,6 +274,10 @@
     border-radius: 4px;
     height: 100%;
     justify-content: flex-start;
+
+    @media (min-width:1025px) {
+        padding: 16px;
+    }
 ;
 }
 .mainorder_recomend{
@@ -187,14 +286,28 @@
     font-weight: 600;
     font-size: 3.2vmin;
     line-height: 4vmin;
+
+    @media (min-width:1025px) {
+        font-size: 12px;
+        line-height: 15px;
+    }
 }
 .mainorder_method_info_wrapper{
     flex-direction: column;
     gap: 4.2vmin;
+
+    @media (min-width:1025px) {
+        gap: 8px;
+    }
 }
 .mainorder_method_name{
     font-size: 4.8vmin;
     line-height: 4.8vmin;
+
+    @media (min-width:1025px) {
+        font-size: 18px;
+        line-height: 18px;
+    }
 }
 .mainorder_method_info{
     font-family: 'Montserrat',helvetica,arial,sans-serif;
@@ -202,6 +315,11 @@
     font-size: 3.2vmin;
     line-height: 4vmin;
     flex-direction: column;
+
+    @media (min-width:1025px) {
+        font-size: 12px;
+        line-height: 15px;
+    }
 }
 .mainorder_method_info strong{
     background-color: transparent;
@@ -214,6 +332,11 @@
     height: 80vmin;
     max-height: 1000px;
     overflow: hidden;
+
+    @media (min-width:1025px) {
+        height: 270px;
+        padding-bottom: 32px;
+    }
 }
 .mainorder_content_hide{
     height: 0;
