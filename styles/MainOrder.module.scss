@@ -190,7 +190,7 @@
     gap: 1vmin;
 
     @media (min-width:1025px) {
-        height: 150px;
+        height: 350px;
         gap: 16px;
         padding: 0;
     }
@@ -367,6 +367,24 @@
 
     @media (min-width:1025px) {
         height: 285px;
+        padding-bottom: 32px;
+    }
+}
+.mainorder_container_content_payment{
+    flex-direction: column;
+    background-color: transparent;
+    padding-bottom: 6.4vmin;
+    transition: all .3s ease-out;
+    height: 135vmin;
+    max-height: 1000px;
+    overflow: hidden;
+
+    @media (min-width:574px) {
+        height: 105vmin;
+    }
+
+    @media (min-width:1025px) {
+        height: 455px;
         padding-bottom: 32px;
     }
 }

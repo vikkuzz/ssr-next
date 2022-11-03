@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import styles from '../../styles/PriceCoupon.module.scss';
 
 const PriceCoupon = () => {
-    const stateCoins = useSelector((state=>state.royalfutReducer.coins)) || 100000;
+    const stateCoins = useSelector((state=>state.royalfutReducer.coins));
     const stateCurrency = useSelector((state=>state.royalfutReducer.currency.currency))
 
     let [hide,setHide] = useState(true);
@@ -18,7 +18,7 @@ const PriceCoupon = () => {
         <button className={`${styles.coupon}`} onClick={()=>setHide(!hide)}>
             Have a coupon
         </button>
-        <div className={`${styles.coupon_container_content} ${hide && styles.coupon_content_hide}`}>
+        <div className={`${styles.coupon_container_content} ${hide && styles.coupon_content_hide} from-375-to-1024`}>
             <fieldset className={`${styles.coupon_fieldset}`}>
                 <legend className={`${styles.coupon_legend}`}>Coupon</legend>
                 <input className={`${styles.coupon_input}`} type={'text'}></input>

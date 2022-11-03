@@ -530,7 +530,7 @@ const MainOrder = () => {
                     ></div>
                 </button>
                 <div
-                    className={`${styles.mainorder_container_content} ${
+                    className={`${styles.mainorder_container_content_payment} ${
                         hide.payment && styles.mainorder_content_hide
                     }`}
                 >
