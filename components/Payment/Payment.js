@@ -1,6 +1,7 @@
 import React from 'react';
 
 import styles from '../../styles/Payment.module.scss';
+import PriceCoupon from '../PriceCoupon';
 
 const Payment = () => {
     return (
@@ -33,6 +34,8 @@ const Payment = () => {
                     <span>100% secure payments</span>
                 </div>
             </div>
+            <div className={`${styles.payment_price_wrapper} from-375-to-1024`}><PriceCoupon/></div>
+            
         </div>
     );
 };
