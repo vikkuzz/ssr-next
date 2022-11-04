@@ -1,12 +1,12 @@
-import SecureLS from 'secure-ls'
-import currency from '../../data-elements/currency'
-import flagLangs from '../../data-elements/countries'
+import SecureLS from 'secure-ls';
+import currency from '../../data-elements/currency';
+import flagLangs from '../../data-elements/countries';
 
-const ISSERVER = typeof window === 'undefined' //чтоб не было ошибки на сервере об отсутствии локалстора
-let ls = null
+const ISSERVER = typeof window === 'undefined'; //чтоб не было ошибки на сервере об отсутствии локалстора
+let ls = null;
 
 if (!ISSERVER) {
-    ls = new SecureLS()
+    ls = new SecureLS();
 }
 const initialState = {
     loginModal: false,
@@ -155,14 +155,15 @@ const initialState = {
         fullprice: '',
     },
     order: {},
-}
+    cryptoLimits: {},
+};
 
 const royalfutReducer = (state = initialState, action) => {
-    console.log(action)
+    console.log(action);
 
-    let localState = null
+    let localState = null;
     if (ls?.get('localState')) {
-        localState = ls.get('localState')
+        localState = ls.get('localState');
     }
 
     switch (action.type) {
@@ -171,81 +172,89 @@ const royalfutReducer = (state = initialState, action) => {
                 ...state,
                 ...localState,
                 order: action.data,
-            })
-            return { ...state, ...localState, order: action.data }
+            });
+            return { ...state, ...localState, order: action.data };
 
         case 'CURRENT_CURRENCY':
             let userCurrency = currency.filter(
                 (el) => el.title.toLowerCase() == action.data.toLowerCase()
-            )[0]
+            )[0];
             ls.set('localState', {
                 ...state,
                 ...localState,
                 currency: userCurrency,
-            })
-            return { ...state, ...localState, currency: userCurrency }
+            });
+            return { ...state, ...localState, currency: userCurrency };
+
+        case 'CURRENT_CURRENCY':
+            ls.set('localState', {
+                ...state,
+                ...localState,
+                cryptoLimits: action.data,
+            });
+            return { ...state, ...localState, cryptoLimits: action.data };
 
         case 'CHANGE_PLATFORM':
-            let platform = state.platform
+            let platform = state.platform;
             if (action.data == 'ps') {
                 platform = {
                     ps: true,
                     xbox: false,
-                }
+                };
             } else {
                 platform = {
                     ps: false,
                     xbox: true,
-                }
+                };
             }
             ls.set('localState', {
                 ...state,
                 ...localState,
                 platform: platform,
-            })
-            return { ...state, ...localState, platform: platform }
+            });
+            return { ...state, ...localState, platform: platform };
 
         case 'CHANGE_METHOD':
-            let method = state.method
+            let method = state.method;
             if (action.data == 'easy') {
                 method = {
                     easy: true,
                     manual: false,
-                }
+                };
             } else {
                 method = {
                     easy: false,
                     manual: true,
-                }
+                };
             }
-            ls.set('localState', { ...state, ...localState, method: method })
-            return { ...state, ...localState, method: method }
+            ls.set('localState', { ...state, ...localState, method: method });
+            return { ...state, ...localState, method: method };
 
         case 'CURRENT_LANG':
-            console.log(action.data)
+            console.log(action.data);
             let currentLang = flagLangs.filter(
                 (el) => el.title.toLowerCase() === action.data.toLowerCase()
-            )[0]
+            )[0];
             ls.set('localState', {
                 ...state,
                 ...localState,
                 locale: currentLang,
-            })
-            return { ...state, ...localState, locale: currentLang }
+            });
+            return { ...state, ...localState, locale: currentLang };
 
         case 'LOGIN_MODAL':
             action.data
                 ? (document.querySelector('body').style.overflowY = 'hidden')
-                : (document.querySelector('body').style.overflowY = 'auto')
-            return { ...state, loginModal: action.data }
+                : (document.querySelector('body').style.overflowY = 'auto');
+            return { ...state, loginModal: action.data };
 
         case 'COINS':
             ls.set('localState', {
                 ...state,
                 ...localState,
                 coins: action.data,
-            })
-            return { ...state, ...localState, coins: action.data }
+            });
+            return { ...state, ...localState, coins: action.data };
 
         case 'GET_STOCK':
             if (Object.keys(state.locale).length === 0) {
@@ -271,17 +280,23 @@ const royalfutReducer = (state = initialState, action) => {
                     },
                     ...localState,
                     stock: action.data,
-                }
+                };
             }
-            ls.set('localState', localState)
-            return { ...state, ...localState }
+            ls.set('localState', localState);
+            return { ...state, ...localState };
 
         case 'LOGIN':
-            return { ...state, loginMenu: { registration: false, login: true } }
+            return {
+                ...state,
+                loginMenu: { registration: false, login: true },
+            };
 
         case 'REGISTRATION':
-            console.log(action.data)
-            return { ...state, loginMenu: { registration: true, login: false } }
+            console.log(action.data);
+            return {
+                ...state,
+                loginMenu: { registration: true, login: false },
+            };
 
         case 'USER':
             ls.set('localState', {
@@ -293,8 +308,8 @@ const royalfutReducer = (state = initialState, action) => {
                     registration: false,
                     login: false,
                 },
-            })
-            document.querySelector('body').style.overflowY = 'auto'
+            });
+            document.querySelector('body').style.overflowY = 'auto';
             return {
                 ...state,
                 isAuth: true,
@@ -304,7 +319,7 @@ const royalfutReducer = (state = initialState, action) => {
                     registration: false,
                     login: false,
                 },
-            }
+            };
 
         case 'USER_LOGOUT':
             ls.set('localState', {
@@ -316,7 +331,7 @@ const royalfutReducer = (state = initialState, action) => {
                     registration: false,
                     login: true,
                 },
-            })
+            });
 
             return {
                 ...state,
@@ -327,14 +342,14 @@ const royalfutReducer = (state = initialState, action) => {
                     registration: false,
                     login: true,
                 },
-            }
+            };
 
         case 'CATCH_ERROR':
-            return { ...state, errorMessage: action.data }
+            return { ...state, errorMessage: action.data };
 
         default:
-            return { ...state }
+            return { ...state };
     }
-}
+};
 
-export default royalfutReducer
+export default royalfutReducer;

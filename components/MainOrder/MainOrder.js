@@ -534,18 +534,46 @@ const MainOrder = () => {
                         hide.payment && styles.mainorder_content_hide
                     }`}
                 >
-                    <div className={`${styles.mainorder_platform_wrapper} `}>
+                    <div className={`${styles.mainorder_payment_wrapper} `}>
                         <Payment />
                     </div>
-                    <div className={`${styles.mainorder_btn_wrapper} `}>
-                        <button
-                            onClick={() =>
-                                onClickOption({ ...hide, payment: true })
-                            }
-                            className={`${styles.mainorder_continue_btn} `}
-                        >
-                            к оплате
-                        </button>
+                    <div className={`${styles.mainorder_submit_wrapper}`}>
+                        <div className={`${styles.crypto_info_wrapper}`}>
+                            <div className={`${styles.info_svg_wrapper}`}>
+                                <img
+                                    className={`${styles.crypto_message}`}
+                                    src="/img/message.svg"
+                                ></img>
+                            </div>
+                            <div className={`${styles.info_text_wrapper}`}>
+                                <span
+                                    className={`${styles.info_text1} ${styles.info_text}`}
+                                >
+                                    The minimum order amount to pay with{' '}
+                                    <span
+                                        className={`${styles.info_text2} ${styles.info_text}`}
+                                    >
+                                        BTC, ETH or USDT are
+                                    </span>
+                                    <span
+                                        className={`${styles.info_text3} ${styles.info_text}`}
+                                    >
+                                        {' '}
+                                        $ 20
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div className={`${styles.mainorder_btn_wrapper} `}>
+                            <button
+                                onClick={() =>
+                                    onClickOption({ ...hide, payment: true })
+                                }
+                                className={`${styles.mainorder_continue_btn} `}
+                            >
+                                к оплате
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div

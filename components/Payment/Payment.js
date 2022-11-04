@@ -154,7 +154,7 @@ const Payment = () => {
                             <fieldset
                                 ref={apple}
                                 data-id={'apple'}
-                                className={`${styles.payment_fieldset}`}
+                                className={`${styles.payment_fieldset} ${styles.payment_fieldset_apple}`}
                                 onClick={handleClickmethod}
                             >
                                 <label
@@ -173,7 +173,7 @@ const Payment = () => {
                                     ></div>
                                     <div
                                         data-id={'apple'}
-                                        className={`${styles.payment_wrapper_logo}`}
+                                        className={`${styles.payment_wrapper_logo} ${styles.payment_wrapper_logo_apple}`}
                                     >
                                         <img
                                             className={`${styles.payment_method__card_apple}`}
@@ -183,6 +183,11 @@ const Payment = () => {
                                     </div>
                                 </label>
                             </fieldset>
+                            <div
+                                className={`${styles.price_coupon_wrapper} from-1025-to-1900`}
+                            >
+                                <PriceCoupon />
+                            </div>
                         </div>
                     </div>
                 </div>

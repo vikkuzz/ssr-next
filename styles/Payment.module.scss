@@ -100,6 +100,10 @@
     flex-direction: column;
     align-items: flex-start;
     padding-top: 3vmin;
+
+    @media (min-width:1025px) {
+        padding-top: 20px;
+    }
 }
 .payment_fieldset{
     background-color: transparent;
@@ -194,7 +198,7 @@
 .payment_label_apple{
     position: relative;
     min-width: 26vmin;
-    height: 9.5vmin;
+    //height: 9.5vmin;
     background-color: transparent;
     cursor: pointer;
     width: auto;
@@ -212,4 +216,14 @@
     background-color: transparent;
     width: auto;
     position: absolute;
+}
+.payment_fieldset_apple{
+    width: auto;
+    flex-grow: 1;
+}
+.payment_wrapper_logo_apple{
+    height: 19px;
+}
+.price_coupon_wrapper{
+    width: 100%;
 }

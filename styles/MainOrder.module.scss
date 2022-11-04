@@ -190,7 +190,8 @@
     gap: 1vmin;
 
     @media (min-width:1025px) {
-        height: 350px;
+        height: 147px;
+        //height: 350px;
         gap: 16px;
         padding: 0;
     }
@@ -218,11 +219,11 @@
 }
 .mainorder_btn_wrapper{
     padding-top: 4.2vmin;
-    justify-content: flex-end;
+    justify-content: center;
 
     @media (min-width:1025px) {
         padding-top: 24px;
-
+        justify-content: flex-end;
     }
 }
 .mainorder_continue_btn{
@@ -375,17 +376,28 @@
     background-color: transparent;
     padding-bottom: 6.4vmin;
     transition: all .3s ease-out;
-    height: 135vmin;
+    height: 165vmin;
     max-height: 1000px;
     overflow: hidden;
 
     @media (min-width:574px) {
-        height: 105vmin;
+        height: 113vmin;
     }
 
     @media (min-width:1025px) {
-        height: 455px;
+        height: 610px;
         padding-bottom: 32px;
+    }
+}
+.mainorder_payment_wrapper{
+    flex-direction: row;
+    padding: 1vmin;
+    gap: 1vmin;
+
+    @media (min-width:1025px) {
+        height: 520px;
+        gap: 16px;
+        padding: 0;
     }
 }
 .mainorder_content_hide{
@@ -395,4 +407,33 @@
     padding: 0;
     margin: 0;
     border: none;    
+}
+.mainorder_submit_wrapper{
+    background-color: transparent;
+}
+.info_text{
+    background-color: transparent;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    display: initial;
+}
+.info_svg_wrapper{
+    width: auto;
+}
+.mainorder_submit_wrapper{
+    flex-direction: column;
+
+    @media (min-width:1025px) {
+        flex-direction: row;
+    }
+}
+.crypto_info_wrapper{
+    padding: 1vmin;
+    gap:13px;
+}
+.crypto_message{
+    background-color: transparent;
 }
