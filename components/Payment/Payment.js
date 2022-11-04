@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import royalfutReducer from '../../redux/reducers/royalfutReducer';
 
 import styles from '../../styles/Payment.module.scss';
 import PriceCoupon from '../PriceCoupon';
@@ -21,6 +23,11 @@ const Payment = () => {
     const eth = React.createRef();
     const usdt = React.createRef();
 
+    const stateCrypto = useSelector(
+        (state) => state.royalfutReducer.cryptoLimits
+    );
+    const stateCoins = useSelector((state) => state.royalfutReducer.coins);
+
     let [methodPayment, setMethodPayment] = useState({
         card: true,
         apple: false,
@@ -28,6 +35,24 @@ const Payment = () => {
         eth: false,
         usdt: false,
     });
+
+    let [crypto, setCrypto] = useState();
+
+    useEffect(() => {
+        let limits = Object.entries(stateCrypto);
+        let filterLimitsOk = limits.filter((el) => stateCoins.price >= el[1]);
+        let filterLimitsNok = limits.filter((el) => stateCoins.price <= el[1]);
+
+        let cryptoData = {
+            cryptoMin: [...limits].sort((a, b) => a[1] - b[1])[0],
+            cryptoNameOk: filterLimitsOk,
+            cryptoNameNok: filterLimitsNok,
+        };
+
+        console.log(limits, cryptoData);
+
+        //if(stateCoins.price)
+    }, [stateCrypto]);
 
     useEffect(() => {
         if (methodPayment.card) {
@@ -123,7 +148,7 @@ const Payment = () => {
                                         name="payment"
                                         className={`${styles.payment_input}`}
                                         type={'radio'}
-                                        checked={methodPayment.card}
+                                        defaultChecked={methodPayment.card}
                                     ></input>
                                     <div
                                         data-id={'card'}

@@ -175,6 +175,14 @@ const royalfutReducer = (state = initialState, action) => {
             });
             return { ...state, ...localState, order: action.data };
 
+        case 'GET_CRYPTO_LIMITS':
+            ls.set('localState', {
+                ...state,
+                ...localState,
+                cryptoLimits: action.data,
+            });
+            return { ...state, ...localState, cryptoLimits: action.data };
+
         case 'CURRENT_CURRENCY':
             let userCurrency = currency.filter(
                 (el) => el.title.toLowerCase() == action.data.toLowerCase()

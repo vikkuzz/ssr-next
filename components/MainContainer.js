@@ -79,7 +79,7 @@ function MainContainer({
         api.getCriptorates(currentCurrencyState.title).then((res) =>
             dispatch(getCriptoLimits(res))
         );
-    }, [currentCurrencyState]);
+    }, [currentCurrencyState.title]);
 
     return (
         <>

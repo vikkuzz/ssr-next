@@ -140,6 +140,7 @@
     user-select: none;
     gap: 8px;
     padding: 3vmin 6vmin;
+    flex-grow: 1;
 
     @media (min-width:1025px) {
         padding: 25px 38px;
