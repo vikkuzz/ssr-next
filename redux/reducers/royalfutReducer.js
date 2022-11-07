@@ -292,7 +292,12 @@ const royalfutReducer = (state = initialState, action) => {
                 createOrder: {},
                 coins: action.data,
             });
-            return { ...state, ...localState, coins: action.data };
+            return {
+                ...state,
+                ...localState,
+                coins: action.data,
+                order: { coins: action.data },
+            };
 
         case 'GET_STOCK':
             if (Object.keys(state.locale).length === 0) {

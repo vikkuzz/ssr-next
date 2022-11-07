@@ -15,7 +15,7 @@ const PriceCoupon = () => {
     return (
         <div className={`${styles.price}`}>
             <div className={`${styles.price_wrapper}`}>
-                {stateCurrency} {stateCoins.price}
+                {stateCurrency} {stateCoins?.price}
             </div>
             <button
                 className={`${styles.coupon}`}

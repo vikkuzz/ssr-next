@@ -14,6 +14,7 @@ import {
     currentCurrency,
     user,
     getCriptoLimits,
+    order,
 } from '../redux/actions/royalfutActions';
 
 import styles from '../styles/App.module.scss';
@@ -44,6 +45,9 @@ function MainContainer({
         (state) => state.royalfutReducer.currency
     );
     const currentUserState = useSelector((state) => state.royalfutReducer.user);
+    const stateCoins = useSelector((state) => state.royalfutReducer.coins);
+    const stateOrder = useSelector((state) => state.royalfutReducer.order);
+
     const dispatch = useDispatch();
 
     const router = useRouter();
@@ -58,6 +62,10 @@ function MainContainer({
             dispatch(loginModal(false));
         }
     };
+
+    useEffect(() => {
+        //dispatch(order({ ...stateOrder, coins: stateCoins }));
+    }, [stateCoins]);
     useEffect(() => {
         if (error != '') {
             setTimeout(() => dispatch(catcherror('')), 3000);

@@ -44,10 +44,10 @@ const Payment = () => {
     useEffect(() => {
         let limits = Object.entries(stateCrypto);
         let filterLimitsOk = Object.fromEntries(
-            limits.filter((el) => stateCoins.price >= el[1])
+            limits.filter((el) => stateCoins?.price >= el[1])
         );
         let filterLimitsNok = Object.fromEntries(
-            limits.filter((el) => stateCoins.price <= el[1])
+            limits.filter((el) => stateCoins?.price <= el[1])
         );
 
         let cryptoData = {

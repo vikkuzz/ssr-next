@@ -1,63 +1,67 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { coins } from '../../redux/actions/royalfutActions'
+import { coins } from '../../redux/actions/royalfutActions';
 
-import styles from '../../styles/CalcCoins.module.scss'
+import styles from '../../styles/CalcCoins.module.scss';
 
-import { getCoef, getDiscCoef, getDiscount } from '../../utils/functions'
+import { getCoef, getDiscCoef, getDiscount } from '../../utils/functions';
 
 const CalcCoins = () => {
-    const border1 = React.createRef()
-    const border2 = React.createRef()
-    const calcCoins = React.createRef()
+    const border1 = React.createRef();
+    const border2 = React.createRef();
+    const calcCoins = React.createRef();
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
-    const method = useSelector((state) => state.royalfutReducer.method)
+    const method = useSelector((state) => state.royalfutReducer.method);
     const minLimit = useSelector(
         (state) => state.royalfutReducer.stock.minLimitSumCoins
-    )
+    );
     const discounts = useSelector(
         (state) => state.royalfutReducer.stock.discount
-    )
+    );
     const currency = useSelector(
         (state) => state.royalfutReducer.currency.title
-    )
+    );
     const currencyLabel = useSelector(
         (state) => state.royalfutReducer.currency.currency
-    )
+    );
     const currentMethod = useSelector((state) =>
         state.royalfutReducer.method.easy ? 'easy' : 'manual'
-    )
+    );
     const platform = useSelector((state) =>
         state.royalfutReducer.platform.ps ? 'ps4' : 'xbox'
-    )
+    );
     const data = useSelector(
         (state) => state.royalfutReducer.stock.deliveryMethods
-    )
+    );
+    const stateCoins = useSelector((state) => state.royalfutReducer.coins);
 
     let sortedDiscounts = [...discounts].sort(
         (a, b) => a.limitSumCoins - b.limitSumCoins
-    )
+    );
 
-    let [currentDisc, setCurrentDisc] = useState(sortedDiscounts)
+    let [currentDisc, setCurrentDisc] = useState(sortedDiscounts);
     let [currentPrice, setCurrentPrice] = useState(
-        getCoef(currency, currentMethod, platform, data) * minLimit
-    )
-    let [currentCoins, setCurrentCoins] = useState(minLimit)
-    let [disc, setDisc] = useState('')
+        stateCoins?.price ||
+            getCoef(currency, currentMethod, platform, data) * minLimit
+    );
+    let [currentCoins, setCurrentCoins] = useState(
+        stateCoins?.amount || minLimit
+    );
+    let [disc, setDisc] = useState('');
 
     useEffect(() => {
-        const coef = getCoef(currency, currentMethod, platform, data)
-        const percentDisc = getDiscount(currentDisc, currentCoins)
+        const coef = getCoef(currency, currentMethod, platform, data);
+        const percentDisc = getDiscount(currentDisc, currentCoins);
 
         if (percentDisc > 1) {
-            setCurrentPrice(getDiscCoef(coef, percentDisc) * currentCoins)
-            setDisc(coef * currentCoins)
+            setCurrentPrice(getDiscCoef(coef, percentDisc) * currentCoins);
+            setDisc(coef * currentCoins);
         } else {
-            setCurrentPrice(coef * currentCoins)
-            setDisc('')
+            setCurrentPrice(coef * currentCoins);
+            setDisc('');
         }
         dispatch(
             coins({
@@ -66,20 +70,20 @@ const CalcCoins = () => {
                 fullprice: Number(disc).toFixed(2),
                 amount: Math.round(currentCoins),
             })
-        )
-    }, [currency, currentMethod, platform, currentCoins])
+        );
+    }, [currency, currentMethod, platform, currentCoins]);
 
     useEffect(() => {
         if (method.manual) {
             setCurrentDisc(
                 sortedDiscounts.filter((elem) => elem.limitSumCoins <= 1000000)
-            )
+            );
         } else {
             setCurrentDisc(
                 sortedDiscounts.filter((elem) => elem.limitSumCoins <= 20000000)
-            )
+            );
         }
-    }, [method])
+    }, [method]);
 
     useEffect(() => {
         if (calcCoins.current) {
@@ -88,20 +92,20 @@ const CalcCoins = () => {
                     .getComputedStyle(calcCoins.current)
                     .getPropertyValue('flex-direction') === 'row'
             ) {
-                border1.current.style.borderRadius = '4px 0 0 4px'
-                border2.current.style.borderRadius = '0px 4px 4px 0'
+                border1.current.style.borderRadius = '4px 0 0 4px';
+                border2.current.style.borderRadius = '0px 4px 4px 0';
             } else {
-                border1.current.style.borderRadius = '4px 4px 4px 4px'
-                border2.current.style.borderRadius = '4px 4px 4px 4px'
+                border1.current.style.borderRadius = '4px 4px 4px 4px';
+                border2.current.style.borderRadius = '4px 4px 4px 4px';
             }
         }
-    }, [calcCoins])
+    }, [calcCoins]);
 
     useEffect(() => {
-        const coef = getCoef(currency, currentMethod, platform, data)
-        const percentDisc = getDiscount(currentDisc, currentCoins)
+        const coef = getCoef(currency, currentMethod, platform, data);
+        const percentDisc = getDiscount(currentDisc, currentCoins);
 
-        setCurrentCoins(currentPrice / getDiscCoef(coef, percentDisc))
+        setCurrentCoins(currentPrice / getDiscCoef(coef, percentDisc));
         dispatch(
             coins({
                 coef: coef,
@@ -109,22 +113,22 @@ const CalcCoins = () => {
                 fullprice: Number(disc).toFixed(2),
                 amount: Math.round(currentCoins),
             })
-        )
-    }, [currentPrice])
+        );
+    }, [currentPrice]);
 
     const handleChangeCoins = (e) => {
-        const result = e.target.value.replace(/[^0-9]/g, '')
-        console.log(result)
-        setCurrentCoins(result)
-    }
+        const result = e.target.value.replace(/[^0-9]/g, '');
+        console.log(result);
+        setCurrentCoins(result);
+    };
 
     const onCoinsButtonClick = (e) => {
-        setCurrentCoins(e.target.id)
-    }
+        setCurrentCoins(e.target.id);
+    };
 
     const handleChangePrice = (e) => {
-        setCurrentPrice(e.target.value)
-    }
+        setCurrentPrice(e.target.value);
+    };
 
     return (
         <div ref={calcCoins} className={`${styles.calccoins}`}>
@@ -181,7 +185,7 @@ const CalcCoins = () => {
                                     -{elem.discountPercent}%
                                 </div>
                             </button>
-                        )
+                        );
                     })}
                 </div>
             </div>
@@ -208,7 +212,7 @@ const CalcCoins = () => {
                 </label>
             </fieldset>
         </div>
-    )
-}
+    );
+};
 
-export default CalcCoins
+export default CalcCoins;

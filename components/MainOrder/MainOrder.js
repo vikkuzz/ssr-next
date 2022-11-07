@@ -5,6 +5,7 @@ import {
     changePlatform,
     order,
     userCreateOrder,
+    coins,
 } from '../../redux/actions/royalfutActions';
 
 import styles from '../../styles/MainOrder.module.scss';
@@ -31,13 +32,16 @@ const MainOrder = () => {
         (state) => state.royalfutReducer.stock.deliveryMethods
     );
     const platform = useSelector((state) => state.royalfutReducer.platform);
-    const coins = useSelector((state) => state.royalfutReducer.coins);
+    const stateCoins = useSelector((state) => state.royalfutReducer.coins);
     const currency = useSelector((state) => state.royalfutReducer.currency);
     const method = useSelector((state) => state.royalfutReducer.method);
     const stateUser = useSelector((state) => state.royalfutReducer.user);
+    const stateOrder = useSelector((state) => state.royalfutReducer.order);
+    const stateLocale = useSelector((state) => state.royalfutReducer.locale);
     const namePaymentMethod = useSelector(
         (state) => state.royalfutReducer.paymentMethod
     );
+
     const stateCreateOrder = useSelector(
         (state) => state.royalfutReducer.createOrder
     );
@@ -59,12 +63,35 @@ const MainOrder = () => {
     });
     let [manualPrice, setManualPrice] = useState();
     let [deliveryMethod, setDeliveryMethod] = useState();
-    let [currentOrder, setCurrentOrder] = useState();
+    let [currentOrder, setCurrentOrder] = useState(stateOrder);
     let [currentCoins, setCurrentCoins] = useState();
+    let [crypto, setCrypto] = useState();
+
+    useEffect(() => {
+        dispatch(coins(stateOrder.coins));
+    }, []);
+
+    useEffect(() => {
+        let limits = Object.entries(stateCrypto);
+        let filterLimitsOk = Object.fromEntries(
+            limits.filter((el) => stateCoins?.price >= el[1])
+        );
+        let filterLimitsNok = Object.fromEntries(
+            limits.filter((el) => stateCoins?.price <= el[1])
+        );
+
+        let cryptoData = {
+            cryptoMin: [...limits].sort((a, b) => a[1] - b[1])[0],
+            cryptoNameOk: filterLimitsOk,
+            cryptoNameNok: filterLimitsNok,
+        };
+        console.log(cryptoData);
+        setCrypto(cryptoData);
+    }, [stateCrypto]);
 
     useEffect(() => {
         let mainOrder = {
-            coins: coins,
+            coins: stateCoins,
             currency: currency,
             platform: platform.ps ? 'ps' : 'xbox',
             method: method.easy ? 'easy' : 'manual',
@@ -144,7 +171,7 @@ const MainOrder = () => {
             platform.ps ? 'ps4' : 'xbox',
             method.easy ? 'Easy' : 'Manual',
             currency.title,
-            coins.amount
+            stateCoins.amount
         );
         console.log(currentOrder);
         dispatch(userCreateOrder(currentOrder));
@@ -584,33 +611,106 @@ const MainOrder = () => {
                     <div className={`${styles.mainorder_submit_wrapper}`}>
                         <div className={`${styles.crypto_info_wrapper}`}>
                             <div className={`${styles.info_svg_wrapper}`}>
-                                <img
-                                    className={`${styles.crypto_message}`}
-                                    src="/img/message.svg"
-                                ></img>
+                                {crypto?.cryptoNameNok &&
+                                    Object.entries(crypto?.cryptoNameNok)
+                                        .length > 0 && (
+                                        <img
+                                            className={`${styles.crypto_message}`}
+                                            src="/img/message.svg"
+                                        ></img>
+                                    )}
                             </div>
-                            <div className={`${styles.info_text_wrapper}`}>
-                                <span
-                                    className={`${styles.info_text1} ${styles.info_text}`}
-                                >
-                                    The minimum order amount to pay with{' '}
-                                    <span
-                                        className={`${styles.info_text2} ${styles.info_text}`}
+                            {crypto?.cryptoNameNok &&
+                                Object.entries(crypto?.cryptoNameNok).length >
+                                    0 && (
+                                    <div
+                                        className={`${styles.info_text_wrapper}`}
                                     >
-                                        BTC, ETH or USDT are
-                                    </span>
-                                    <span
-                                        className={`${styles.info_text3} ${styles.info_text}`}
-                                    >
-                                        {' '}
-                                        {currency.currency}
-                                        {stateCrypto.btcSum &&
-                                            Object.entries(stateCrypto).sort(
-                                                (a, b) => a[1] - b[1]
-                                            )[0][1]}
-                                    </span>
-                                </span>
-                            </div>
+                                        {stateLocale.title === 'en' ? (
+                                            <span
+                                                className={`${styles.info_text1} ${styles.info_text}`}
+                                            >
+                                                The minimum order amount to pay
+                                                with{' '}
+                                                <span
+                                                    className={`${styles.info_text2} ${styles.info_text}`}
+                                                >
+                                                    {Object.keys(
+                                                        crypto.cryptoNameNok
+                                                    ).map((el) => (
+                                                        <span
+                                                            className={`${styles.info_text2} ${styles.info_text}`}
+                                                        >
+                                                            {el === 'btcSum' &&
+                                                                'BTC'}
+                                                            {el === 'ethSum' &&
+                                                                'ETH'}
+                                                            {el === 'usdtSum' &&
+                                                                'USDT'}{' '}
+                                                        </span>
+                                                    ))}
+                                                    {Object.entries(
+                                                        crypto?.cryptoNameNok
+                                                    ).length > 1
+                                                        ? 'are '
+                                                        : 'is '}
+                                                </span>
+                                                <span
+                                                    className={`${styles.info_text3} ${styles.info_text}`}
+                                                >
+                                                    {' '}
+                                                    {currency.currency}
+                                                    {stateCrypto.btcSum &&
+                                                        Object.entries(
+                                                            stateCrypto
+                                                        ).sort(
+                                                            (a, b) =>
+                                                                a[1] - b[1]
+                                                        )[0][1]}
+                                                </span>
+                                            </span>
+                                        ) : (
+                                            <span
+                                                className={`${styles.info_text1} ${styles.info_text}`}
+                                            >
+                                                The minimum order amount to pay
+                                                with{' '}
+                                                <span
+                                                    className={`${styles.info_text2} ${styles.info_text}`}
+                                                >
+                                                    {/* BTC, ETH or USDT are{' '} */}
+                                                    {Object.keys(
+                                                        crypto.cryptoNameNok
+                                                    ).map((el) => (
+                                                        <span
+                                                            className={`${styles.info_text2} ${styles.info_text}`}
+                                                        >
+                                                            {el === 'btcSum' &&
+                                                                'BTC'}
+                                                            {el === 'ethSum' &&
+                                                                'ETH'}
+                                                            {el === 'usdtSum' &&
+                                                                'USDT'}{' '}
+                                                        </span>
+                                                    ))}
+                                                </span>
+                                                <span
+                                                    className={`${styles.info_text3} ${styles.info_text}`}
+                                                >
+                                                    {' '}
+                                                    {currency.currency}
+                                                    {stateCrypto.btcSum &&
+                                                        Object.entries(
+                                                            stateCrypto
+                                                        ).sort(
+                                                            (a, b) =>
+                                                                a[1] - b[1]
+                                                        )[0][1]}
+                                                </span>
+                                            </span>
+                                        )}
+                                    </div>
+                                )}
                         </div>
                         <div className={`${styles.mainorder_btn_wrapper} `}>
                             <button
