@@ -156,6 +156,7 @@ const initialState = {
     },
     order: {},
     cryptoLimits: {},
+    createOrder: {},
 };
 
 const royalfutReducer = (state = initialState, action) => {
@@ -171,14 +172,33 @@ const royalfutReducer = (state = initialState, action) => {
             ls.set('localState', {
                 ...state,
                 ...localState,
+                createOrder: {},
                 order: action.data,
             });
             return { ...state, ...localState, order: action.data };
+
+        case 'NAME_PAYMENT_METHOD':
+            ls.set('localState', {
+                ...state,
+                ...localState,
+                createOrder: {},
+            });
+            return { ...state, ...localState, paymentMethod: action.data };
+
+        case 'USER_CREATE_ORDER':
+            ls.set('localState', {
+                ...state,
+                ...localState,
+                createOrder: {},
+                createOrder: action.data,
+            });
+            return { ...state, ...localState, createOrder: action.data };
 
         case 'GET_CRYPTO_LIMITS':
             ls.set('localState', {
                 ...state,
                 ...localState,
+                createOrder: {},
                 cryptoLimits: action.data,
             });
             return { ...state, ...localState, cryptoLimits: action.data };
@@ -190,6 +210,7 @@ const royalfutReducer = (state = initialState, action) => {
             ls.set('localState', {
                 ...state,
                 ...localState,
+                createOrder: {},
                 currency: userCurrency,
             });
             return { ...state, ...localState, currency: userCurrency };
@@ -198,6 +219,7 @@ const royalfutReducer = (state = initialState, action) => {
             ls.set('localState', {
                 ...state,
                 ...localState,
+                createOrder: {},
                 cryptoLimits: action.data,
             });
             return { ...state, ...localState, cryptoLimits: action.data };
@@ -218,6 +240,7 @@ const royalfutReducer = (state = initialState, action) => {
             ls.set('localState', {
                 ...state,
                 ...localState,
+                createOrder: {},
                 platform: platform,
             });
             return { ...state, ...localState, platform: platform };
@@ -235,7 +258,12 @@ const royalfutReducer = (state = initialState, action) => {
                     manual: true,
                 };
             }
-            ls.set('localState', { ...state, ...localState, method: method });
+            ls.set('localState', {
+                ...state,
+                ...localState,
+                createOrder: {},
+                method: method,
+            });
             return { ...state, ...localState, method: method };
 
         case 'CURRENT_LANG':
@@ -246,6 +274,7 @@ const royalfutReducer = (state = initialState, action) => {
             ls.set('localState', {
                 ...state,
                 ...localState,
+                createOrder: {},
                 locale: currentLang,
             });
             return { ...state, ...localState, locale: currentLang };
@@ -260,6 +289,7 @@ const royalfutReducer = (state = initialState, action) => {
             ls.set('localState', {
                 ...state,
                 ...localState,
+                createOrder: {},
                 coins: action.data,
             });
             return { ...state, ...localState, coins: action.data };
@@ -287,6 +317,7 @@ const royalfutReducer = (state = initialState, action) => {
                         country: '',
                     },
                     ...localState,
+                    createOrder: {},
                     stock: action.data,
                 };
             }

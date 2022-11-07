@@ -23,6 +23,155 @@ export default class Api {
         return result;
     };
 
+    prePay = async (
+        paymentMethod = '',
+        token,
+        orderId,
+        locale,
+        platform,
+        deliveryMethod,
+        price,
+        amount,
+        coupon = null,
+        email
+    ) => {
+        let urlForOrder = 'https://royalfut.com/api/order';
+        let currentUrl = window.location.href;
+        let localeLang = locale;
+        const analytic = {
+            id: orderId,
+            platform: platform, // ps or xbox
+            method: deliveryMethod, // комфортный или па
+            price: price, // цена за 1 монету в евро//deliveryMethods[platform==='Easy'?0:1].data[1].pricePerCurrencyMap.EUR
+            amount: amount, // количество монет
+            coupon: coupon, // купон
+            email: email,
+        };
+
+        //analytics.sendPayment(analytic);
+
+        let settings = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Token ${token}`,
+            },
+            data: JSON.stringify({
+                paymentMethod: paymentMethod,
+            }),
+        };
+
+        let url = `${urlForOrder}/${orderId}/prepay`;
+
+        let suburl = `/${paymentMethod}`;
+
+        switch (paymentMethod) {
+            case 'acquiring':
+                suburl = '';
+                settings.data = JSON.stringify({
+                    successUrl: `${window.location.origin}${localeLang}/profile/?id=${orderId}#orders`,
+                    failUrl: currentUrl,
+                });
+                break;
+            case 'payop':
+                settings.data = JSON.stringify({
+                    paymentMethod: null,
+                });
+                break;
+            case 'apple':
+                break;
+            case 'bitcoin':
+                suburl = '/bitcoin';
+                settings.data = JSON.stringify({
+                    successUrl: `${window.location.origin}${localeLang}/profile/?id=${orderId}#orders`,
+                    failUrl: currentUrl,
+                });
+                break;
+            case 'usdt':
+                suburl = '/usdtether';
+                settings.data = JSON.stringify({
+                    successUrl: `${window.location.origin}${localeLang}/profile/?id=${orderId}#orders`,
+                    failUrl: currentUrl,
+                });
+                break;
+            case 'etherium':
+                suburl = '/etherium';
+                settings.data = JSON.stringify({
+                    successUrl: `${window.location.origin}${localeLang}/profile/?id=${orderId}#orders`,
+                    failUrl: currentUrl,
+                });
+                break;
+
+            default:
+                break;
+        }
+
+        settings.url = `${url}${suburl}`;
+
+        const res = await fetch(`${settings.url}`, {
+            method: 'POST',
+            headers: settings.headers,
+            body: settings.data,
+        });
+        const result = await res.json();
+        return result;
+    };
+
+    createOrder = async (
+        token,
+        platform,
+        method,
+        currency,
+        coinCount,
+        clientId
+    ) => {
+        let urlForCreateOrder =
+            window.location.origin.indexOf('localhost') >= 0 ||
+            window.location.origin.indexOf('vercel') >= 0 ||
+            window.location.origin.indexOf('192.168') >= 0 ||
+            window.location.origin.indexOf('linestest.com') >= 0 ||
+            window.location.origin.indexOf('ngrok.io') >= 0 ||
+            window.location.origin.indexOf('bs-local.com') >= 0
+                ? 'https://test-royalfut.com'
+                : window.location.origin;
+
+        const getCookie = (name) => {
+            let nameEQ = `${name}=`;
+            let ca = document.cookie.split(';');
+
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+
+                while (c.charAt(0) === ' ') {
+                    c = c.substring(1, c.length);
+                }
+
+                if (c.indexOf(nameEQ) === 0) {
+                    return c.substring(nameEQ.length, c.length);
+                }
+            }
+
+            return null;
+        };
+
+        const res = await fetch(`https://royalfut.com/api/order`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Token ${token}`,
+            },
+            body: JSON.stringify({
+                platform: platform,
+                deliveryMethod: method,
+                currency: currency,
+                coinCount: coinCount,
+                client_id: getCookie('_ga'),
+            }),
+        });
+        const result = await res.json();
+        return result;
+    };
+
     getCriptorates = async (currency) => {
         let urlForStock = 'https://royalfut.com/api/cryptorates/';
 

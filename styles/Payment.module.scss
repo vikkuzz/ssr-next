@@ -228,3 +228,7 @@
 .price_coupon_wrapper{
     width: 100%;
 }
+.payment_disabled{
+    pointer-events: none;
+    opacity: .2;
+}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import royalfutReducer from '../../redux/reducers/royalfutReducer';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { namePaymentMethod } from '../../redux/actions/royalfutActions';
 
 import styles from '../../styles/Payment.module.scss';
 import PriceCoupon from '../PriceCoupon';
@@ -23,6 +24,8 @@ const Payment = () => {
     const eth = React.createRef();
     const usdt = React.createRef();
 
+    const dispatch = useDispatch();
+
     const stateCrypto = useSelector(
         (state) => state.royalfutReducer.cryptoLimits
     );
@@ -40,43 +43,49 @@ const Payment = () => {
 
     useEffect(() => {
         let limits = Object.entries(stateCrypto);
-        let filterLimitsOk = limits.filter((el) => stateCoins.price >= el[1]);
-        let filterLimitsNok = limits.filter((el) => stateCoins.price <= el[1]);
+        let filterLimitsOk = Object.fromEntries(
+            limits.filter((el) => stateCoins.price >= el[1])
+        );
+        let filterLimitsNok = Object.fromEntries(
+            limits.filter((el) => stateCoins.price <= el[1])
+        );
 
         let cryptoData = {
             cryptoMin: [...limits].sort((a, b) => a[1] - b[1])[0],
             cryptoNameOk: filterLimitsOk,
             cryptoNameNok: filterLimitsNok,
         };
-
-        console.log(limits, cryptoData);
-
-        //if(stateCoins.price)
+        setCrypto(cryptoData);
     }, [stateCrypto]);
 
     useEffect(() => {
         if (methodPayment.card) {
             card.current.style.borderColor = '#eab11f';
+            dispatch(namePaymentMethod('acquiring'));
         } else {
             card.current.style.borderColor = 'rgba(255,255,255,0.2)';
         }
         if (methodPayment.apple) {
             apple.current.style.borderColor = '#eab11f';
+            dispatch(namePaymentMethod('apple'));
         } else {
             apple.current.style.borderColor = 'rgba(255,255,255,0.2)';
         }
         if (methodPayment.btc) {
             btc.current.style.borderColor = '#eab11f';
+            dispatch(namePaymentMethod('bitcoin'));
         } else {
             btc.current.style.borderColor = 'rgba(255,255,255,0.2)';
         }
         if (methodPayment.eth) {
             eth.current.style.borderColor = '#eab11f';
+            dispatch(namePaymentMethod('etherium'));
         } else {
             eth.current.style.borderColor = 'rgba(255,255,255,0.2)';
         }
         if (methodPayment.usdt) {
             usdt.current.style.borderColor = '#eab11f';
+            dispatch(namePaymentMethod('usdt'));
         } else {
             usdt.current.style.borderColor = 'rgba(255,255,255,0.2)';
         }
@@ -225,7 +234,10 @@ const Payment = () => {
                             <fieldset
                                 ref={btc}
                                 data-id={'btc'}
-                                className={`${styles.payment_fieldset}`}
+                                className={`${styles.payment_fieldset} ${
+                                    crypto?.cryptoNameNok.btcSum &&
+                                    styles.payment_disabled
+                                }`}
                                 onClick={handleClickmethod}
                             >
                                 <label
@@ -263,7 +275,10 @@ const Payment = () => {
                             <fieldset
                                 ref={eth}
                                 data-id={'eth'}
-                                className={`${styles.payment_fieldset}`}
+                                className={`${styles.payment_fieldset} ${
+                                    crypto?.cryptoNameNok.ethSum &&
+                                    styles.payment_disabled
+                                }`}
                                 onClick={handleClickmethod}
                             >
                                 <label
@@ -300,7 +315,10 @@ const Payment = () => {
                             <fieldset
                                 ref={usdt}
                                 data-id={'usdt'}
-                                className={`${styles.payment_fieldset}`}
+                                className={`${styles.payment_fieldset} ${
+                                    crypto?.cryptoNameNok.usdtSum &&
+                                    styles.payment_disabled
+                                }`}
                                 onClick={handleClickmethod}
                             >
                                 <label

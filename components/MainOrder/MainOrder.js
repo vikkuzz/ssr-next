@@ -4,6 +4,7 @@ import {
     changeMethod,
     changePlatform,
     order,
+    userCreateOrder,
 } from '../../redux/actions/royalfutActions';
 
 import styles from '../../styles/MainOrder.module.scss';
@@ -21,6 +22,9 @@ import { whitearrow } from '../../data-svg/whitearrow';
 import { ps4 } from '../../data-svg/ps4';
 import { xbox } from '../../data-svg/xbox';
 import { done } from '../../data-svg/done';
+import Api from '../../Api/Api';
+
+const api = new Api();
 
 const MainOrder = () => {
     const data = useSelector(
@@ -30,6 +34,16 @@ const MainOrder = () => {
     const coins = useSelector((state) => state.royalfutReducer.coins);
     const currency = useSelector((state) => state.royalfutReducer.currency);
     const method = useSelector((state) => state.royalfutReducer.method);
+    const stateUser = useSelector((state) => state.royalfutReducer.user);
+    const namePaymentMethod = useSelector(
+        (state) => state.royalfutReducer.paymentMethod
+    );
+    const stateCreateOrder = useSelector(
+        (state) => state.royalfutReducer.createOrder
+    );
+    const stateCrypto = useSelector(
+        (state) => state.royalfutReducer.cryptoLimits
+    );
 
     let [hide, setHide] = useState({
         platform: true,
@@ -56,11 +70,7 @@ const MainOrder = () => {
             method: method.easy ? 'easy' : 'manual',
         };
         setCurrentOrder(mainOrder);
-    }, [platform, currency, method, currentCoins]);
-
-    useEffect(() => {
-        //dispatch(order({ ...currentOrder, currency: currency }));
-    }, [currency]);
+    }, [platform, currency, method]);
 
     useEffect(() => {
         const currentPlatform =
@@ -83,7 +93,28 @@ const MainOrder = () => {
                 (currentOrder?.coins?.amount * coefEasy).toFixed(2)
             ).toFixed(2)
         );
+        setCurrentCoins(currentOrder?.coins?.amount);
     }, [currentOrder]);
+
+    useEffect(async () => {
+        if (stateCreateOrder.order?.id) {
+            await api
+                .prePay(
+                    namePaymentMethod,
+                    stateUser.token,
+                    stateCreateOrder.order.id,
+                    stateUser.userLocale,
+                    platform.ps ? 'ps4' : 'xbox',
+                    method.easy ? 'Easy' : 'Manual',
+                    data[platform === 'Easy' ? 0 : 1].data[1]
+                        .pricePerCurrencyMap.EUR,
+                    coins.amount,
+                    null,
+                    stateUser.email
+                )
+                .then((res) => (document.location.href = res.acquiringLink));
+        }
+    }, [stateCreateOrder]);
 
     const dispatch = useDispatch();
 
@@ -106,6 +137,19 @@ const MainOrder = () => {
     } else {
         platformText = 'XBOX XS';
     }
+
+    const paymentOrder = async () => {
+        const currentOrder = await api.createOrder(
+            stateUser.token,
+            platform.ps ? 'ps4' : 'xbox',
+            method.easy ? 'Easy' : 'Manual',
+            currency.title,
+            coins.amount
+        );
+        console.log(currentOrder);
+        dispatch(userCreateOrder(currentOrder));
+    };
+
     return (
         <div className={`${styles.mainorder}`}>
             <div
@@ -559,7 +603,11 @@ const MainOrder = () => {
                                         className={`${styles.info_text3} ${styles.info_text}`}
                                     >
                                         {' '}
-                                        $ 20
+                                        {currency.currency}
+                                        {stateCrypto.btcSum &&
+                                            Object.entries(stateCrypto).sort(
+                                                (a, b) => a[1] - b[1]
+                                            )[0][1]}
                                     </span>
                                 </span>
                             </div>
@@ -567,7 +615,8 @@ const MainOrder = () => {
                         <div className={`${styles.mainorder_btn_wrapper} `}>
                             <button
                                 onClick={() =>
-                                    onClickOption({ ...hide, payment: true })
+                                    //onClickOption({ ...hide, payment: true })
+                                    paymentOrder()
                                 }
                                 className={`${styles.mainorder_continue_btn} `}
                             >
