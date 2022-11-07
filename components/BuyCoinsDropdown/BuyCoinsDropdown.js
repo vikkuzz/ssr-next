@@ -1,12 +1,15 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Link from 'next/link';
 
 import styles from '../../styles/Dropdown.module.scss';
+import { changePlatform, order } from '../../redux/actions/royalfutActions';
 
 const BuyCoinsDropdown = () => {
     const locale = useSelector((state) => state.royalfutReducer.locale.title);
     const buycoinsRef = React.createRef();
+
+    const dispatch = useDispatch();
 
     function hideContent(ref) {
         ref.current.classList.toggle('hide');
@@ -50,22 +53,50 @@ const BuyCoinsDropdown = () => {
                 >
                     <div className={`${styles.buycoins_item}`}>
                         <Link href={`/order/ps4`} locale={locale}>
-                            ps4
+                            <a
+                                onClick={() => {
+                                    dispatch(order({}));
+                                    dispatch(changePlatform('ps'));
+                                }}
+                            >
+                                ps4
+                            </a>
                         </Link>
                     </div>
                     <div className={`${styles.buycoins_item}`}>
                         <Link href={`/order/ps5`} locale={locale}>
-                            ps5
+                            <a
+                                onClick={() => {
+                                    dispatch(order({}));
+                                    dispatch(changePlatform('ps'));
+                                }}
+                            >
+                                ps5
+                            </a>
                         </Link>
                     </div>
                     <div className={`${styles.buycoins_item}`}>
                         <Link href={`/order/xbox_one`} locale={locale}>
-                            Xbox One
+                            <a
+                                onClick={() => {
+                                    dispatch(order({}));
+                                    dispatch(changePlatform('xbox'));
+                                }}
+                            >
+                                Xbox One
+                            </a>
                         </Link>
                     </div>
                     <div className={`${styles.buycoins_item}`}>
                         <Link href={`/order/xbox_series_x`} locale={locale}>
-                            Xbox Series X|S
+                            <a
+                                onClick={() => {
+                                    dispatch(order({}));
+                                    dispatch(changePlatform('xbox'));
+                                }}
+                            >
+                                Xbox Series X|S
+                            </a>
                         </Link>
                     </div>
                 </div>

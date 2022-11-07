@@ -66,10 +66,79 @@ const MainOrder = () => {
     let [currentOrder, setCurrentOrder] = useState(stateOrder);
     let [currentCoins, setCurrentCoins] = useState();
     let [crypto, setCrypto] = useState();
+    let [allSteps, setAllSteps] = useState(
+        stateOrder?.coins
+            ? {
+                  platform: true,
+                  coins: true,
+                  delivery: true,
+                  payment: true,
+              }
+            : {
+                  platform: true,
+                  coins: false,
+                  delivery: false,
+                  payment: false,
+              }
+    );
 
     useEffect(() => {
-        dispatch(coins(stateOrder.coins));
+        console.log(stateOrder.coins);
+        if (stateOrder.coins) {
+            console.log('DOONE');
+            setAllSteps({
+                platform: true,
+                coins: true,
+                delivery: true,
+                payment: true,
+            });
+        } else {
+            setAllSteps({
+                platform: true,
+                coins: false,
+                delivery: false,
+                payment: false,
+            });
+        }
     }, []);
+
+    useEffect(() => {
+        console.log(allSteps);
+        if (!allSteps.platform || !allSteps.delivery || !allSteps.coins) {
+            console.log(allSteps);
+            if (!allSteps.platform) {
+                setHide({
+                    platform: false,
+                    coins: true,
+                    delivery: true,
+                    payment: true,
+                });
+            } else if (!allSteps.coins) {
+                setHide({
+                    platform: true,
+                    coins: false,
+                    delivery: true,
+                    payment: true,
+                });
+            } else if (!allSteps.delivery) {
+                setHide({
+                    platform: true,
+                    coins: true,
+                    delivery: false,
+                    payment: true,
+                });
+            }
+        } else if (allSteps.platform && allSteps.delivery && allSteps.coins) {
+            //setAllSteps({ ...allSteps, payment: true });
+            console.log('wtf');
+            setHide({
+                platform: true,
+                coins: true,
+                delivery: true,
+                payment: false,
+            });
+        }
+    }, [allSteps]);
 
     useEffect(() => {
         let limits = Object.entries(stateCrypto);
@@ -97,15 +166,6 @@ const MainOrder = () => {
             method: method.easy ? 'easy' : 'manual',
         };
         setCurrentOrder(mainOrder);
-
-        setHide({
-            platform: true,
-            coins: true,
-            delivery: true,
-            payment: false,
-        });
-
-        console.log(mainOrder);
     }, [platform, currency, method]);
 
     useEffect(() => {
@@ -351,9 +411,10 @@ const MainOrder = () => {
                     </div>
                     <div className={`${styles.mainorder_btn_wrapper} `}>
                         <button
-                            onClick={() =>
-                                onClickOption({ ...hide, platform: true })
-                            }
+                            onClick={() => {
+                                onClickOption({ ...hide, platform: true });
+                                setAllSteps({ ...allSteps, platform: true });
+                            }}
                             className={`${styles.mainorder_continue_btn} `}
                         >
                             continue
@@ -423,9 +484,10 @@ const MainOrder = () => {
                     </div>
                     <div className={`${styles.mainorder_btn_wrapper} `}>
                         <button
-                            onClick={() =>
-                                onClickOption({ ...hide, coins: true })
-                            }
+                            onClick={() => {
+                                onClickOption({ ...hide, coins: true });
+                                setAllSteps({ ...allSteps, coins: true });
+                            }}
                             className={`${styles.mainorder_continue_btn} `}
                         >
                             continue
@@ -561,9 +623,10 @@ const MainOrder = () => {
                     </div>
                     <div className={`${styles.mainorder_btn_wrapper} `}>
                         <button
-                            onClick={() =>
-                                onClickOption({ ...hide, delivery: true })
-                            }
+                            onClick={() => {
+                                onClickOption({ ...hide, delivery: true });
+                                setAllSteps({ ...allSteps, delivery: true });
+                            }}
                             className={`${styles.mainorder_continue_btn} `}
                         >
                             continue
@@ -579,6 +642,11 @@ const MainOrder = () => {
             <div
                 className={`${styles.mainorder_wrapper_options} ${
                     !hide.payment && styles.mainorder_open_property
+                } ${
+                    (!allSteps.platform ||
+                        !allSteps.delivery ||
+                        !allSteps.coins) &&
+                    styles.mainorder_disabled
                 }`}
             >
                 <button
@@ -646,8 +714,9 @@ const MainOrder = () => {
                                                 >
                                                     {Object.keys(
                                                         crypto.cryptoNameNok
-                                                    ).map((el) => (
+                                                    ).map((el, i) => (
                                                         <span
+                                                            key={el[i]}
                                                             className={`${styles.info_text2} ${styles.info_text}`}
                                                         >
                                                             {el === 'btcSum' &&
@@ -690,8 +759,9 @@ const MainOrder = () => {
                                                     {/* BTC, ETH or USDT are{' '} */}
                                                     {Object.keys(
                                                         crypto.cryptoNameNok
-                                                    ).map((el) => (
+                                                    ).map((el, i) => (
                                                         <span
+                                                            key={el[i]}
                                                             className={`${styles.info_text2} ${styles.info_text}`}
                                                         >
                                                             {el === 'btcSum' &&

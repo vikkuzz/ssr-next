@@ -437,3 +437,7 @@
 .crypto_message{
     background-color: transparent;
 }
+.mainorder_disabled{
+    pointer-events: none;
+    opacity: 0.3;
+}
