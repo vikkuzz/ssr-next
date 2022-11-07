@@ -97,6 +97,15 @@ const MainOrder = () => {
             method: method.easy ? 'easy' : 'manual',
         };
         setCurrentOrder(mainOrder);
+
+        setHide({
+            platform: true,
+            coins: true,
+            delivery: true,
+            payment: false,
+        });
+
+        console.log(mainOrder);
     }, [platform, currency, method]);
 
     useEffect(() => {

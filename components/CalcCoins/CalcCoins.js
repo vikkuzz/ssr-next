@@ -41,15 +41,19 @@ const CalcCoins = () => {
     let sortedDiscounts = [...discounts].sort(
         (a, b) => a.limitSumCoins - b.limitSumCoins
     );
-
     let [currentDisc, setCurrentDisc] = useState(sortedDiscounts);
-    let [currentPrice, setCurrentPrice] = useState(
-        stateCoins?.price ||
-            getCoef(currency, currentMethod, platform, data) * minLimit
-    );
+    const coef = getCoef(currency, currentMethod, platform, data);
+
     let [currentCoins, setCurrentCoins] = useState(
         stateCoins?.amount || minLimit
     );
+    const percentDisc = getDiscount(currentDisc, currentCoins);
+    let [currentPrice, setCurrentPrice] = useState(
+        stateCoins?.price || percentDisc > 1
+            ? getDiscCoef(coef, percentDisc) * currentCoins
+            : getCoef(currency, currentMethod, platform, data) * currentCoins
+    );
+
     let [disc, setDisc] = useState('');
 
     useEffect(() => {
