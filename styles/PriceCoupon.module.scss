@@ -34,6 +34,7 @@
         padding-bottom: 3px;
     }
 }
+
 .coupon_container_content{
     background-color: transparent;
     transition: all .3s ease-out;
@@ -41,6 +42,10 @@
     max-height: 1000px;
     overflow: hidden;
     position: relative;
+
+    @media (min-width:1025px) {
+        height: 75px;
+    }
 }
 .coupon_content_hide{
     height: 0;
@@ -66,6 +71,11 @@
     line-height: 4vmin;
     letter-spacing: -.01em;
     color: #eab11f;
+
+    @media (min-width:1025px) {
+        font-size: 15px;
+        line-height: 15px;
+    }
 }
 .coupon_input{
     font-family: Oswald,sans-serif;
@@ -75,6 +85,11 @@
     outline: none;
     font-size: 5.4vmin;
     line-height: 5.4vmin;
+
+    @media (min-width:1025px) {
+        font-size: 37px;
+        line-height: 40px;
+    }
 }
 .coupon_btn{
     position: absolute;
@@ -92,7 +107,84 @@
     right: 0;
     bottom: 0;
     border-radius: 0 3px 3px;
+
+    @media (min-width:1025px) {
+        font-size: 35px;
+        line-height: 35px;
+        height: 90%;
+        padding: 0;
+        width: 50%;
+    }
 }
 .price_coupon_wrapper{
     width: 100%;
+}
+
+.payment_method__total_coupon_title {
+    width: auto;
+        display: inline-block;
+        border-bottom: 1vmin dashed #eab11f;
+        padding-bottom: 1vmin;
+        font-family: 'Montserrat';
+        font-weight: 600;
+        font-size: 11vmin;
+        line-height: 15vmin;
+        text-transform: none;
+        color: #eab11f;
+
+        @media (min-width:1025px) {
+            border-bottom-width: 1px;
+            padding-bottom: 1px;
+            font-weight: 600;
+            font-size: 11px;
+            line-height: 15px;
+        }
+}
+
+.payment_method__total_coupon_addon {
+    position: relative;
+    width: auto;
+    top: 1vmin;
+    display: inline-flex;
+    align-items: center;
+    margin-left: 8vmin;
+    white-space: nowrap;
+    color: rgba(#eab11f, 0.5);
+
+    span {
+        margin-right: 14vmin;
+        background-color: transparent;
+        color: rgba(#eab11f, 0.5);
+
+        @media(min-width:1025px) {
+            margin-right: 14px;
+        }
+    }
+    @media(min-width: 1025px){
+        top: 1px;
+        margin-left: 8px;
+    }
+
+}
+.promo_wrapper{
+    justify-content: flex-end;
+    width: auto;
+    align-items: baseline;
+}
+.close_coupon{
+    width: 25px;
+    height: 25px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    background-image: url('/img/cross.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 0;
+    background-position: center;
+}
+.close_coupon:hover{
+    transform: rotate(720deg) scale(1.2);
+    
+    transition: all 1s ease-in-out;
 }

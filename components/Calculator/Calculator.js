@@ -1,23 +1,23 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import styles from '../../styles/Calculator.module.scss'
+import styles from '../../styles/Calculator.module.scss';
 
-import PlatformChanger from '../PlatformChanger'
-import MethodChanger from '../MethodChanger'
-import CalcCoins from '../CalcCoins'
-import SvgContainer from '../SvgContainer'
-import { loginModal, order } from '../../redux/actions/royalfutActions'
-import Link from 'next/link'
+import PlatformChanger from '../PlatformChanger';
+import MethodChanger from '../MethodChanger';
+import CalcCoins from '../CalcCoins';
+import SvgContainer from '../SvgContainer';
+import { loginModal, order } from '../../redux/actions/royalfutActions';
+import Link from 'next/link';
 
 const Calculator = () => {
-    const isAuth = useSelector((state) => state.royalfutReducer.isAuth)
-    const coins = useSelector((state) => state.royalfutReducer.coins)
-    const currency = useSelector((state) => state.royalfutReducer.currency)
-    const platform = useSelector((state) => state.royalfutReducer.currency)
-    const method = useSelector((state) => state.royalfutReducer.method)
+    const isAuth = useSelector((state) => state.royalfutReducer.isAuth);
+    const coins = useSelector((state) => state.royalfutReducer.coins);
+    const currency = useSelector((state) => state.royalfutReducer.currency);
+    const platform = useSelector((state) => state.royalfutReducer.currency);
+    const method = useSelector((state) => state.royalfutReducer.method);
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     const submitBuyCoins = (e) => {
         if (isAuth) {
@@ -26,12 +26,12 @@ const Calculator = () => {
                 currency: currency,
                 platform: platform.ps ? 'ps' : 'xbox',
                 method: method.easy ? 'easy' : 'manual',
-            }
-            dispatch(order(currentOrder))
+            };
+            dispatch(order(currentOrder));
         } else {
-            dispatch(loginModal(true))
+            dispatch(loginModal(true));
         }
-    }
+    };
     return (
         <div className={`${styles.calculator}`}>
             <PlatformChanger />
@@ -70,7 +70,7 @@ const Calculator = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Calculator
+export default Calculator;

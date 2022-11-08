@@ -193,23 +193,23 @@ const MainOrder = () => {
     }, [currentOrder]);
 
     useEffect(async () => {
-        if (stateCreateOrder.order?.id) {
-            await api
-                .prePay(
-                    namePaymentMethod,
-                    stateUser.token,
-                    stateCreateOrder.order.id,
-                    stateUser.userLocale,
-                    platform.ps ? 'ps4' : 'xbox',
-                    method.easy ? 'Easy' : 'Manual',
-                    data[platform === 'Easy' ? 0 : 1].data[1]
-                        .pricePerCurrencyMap.EUR,
-                    coins.amount,
-                    null,
-                    stateUser.email
-                )
-                .then((res) => (document.location.href = res.acquiringLink));
-        }
+        // if (stateCreateOrder.order?.id) {
+        //     await api
+        //         .prePay(
+        //             namePaymentMethod,
+        //             stateUser.token,
+        //             stateCreateOrder.order.id,
+        //             stateUser.userLocale,
+        //             platform.ps ? 'ps4' : 'xbox',
+        //             method.easy ? 'Easy' : 'Manual',
+        //             data[platform === 'Easy' ? 0 : 1].data[1]
+        //                 .pricePerCurrencyMap.EUR,
+        //             coins.amount,
+        //             null,
+        //             stateUser.email
+        //         )
+        //         .then((res) => (document.location.href = res.acquiringLink));
+        // }
     }, [stateCreateOrder]);
 
     const dispatch = useDispatch();
@@ -235,15 +235,31 @@ const MainOrder = () => {
     }
 
     const paymentOrder = async () => {
-        const currentOrder = await api.createOrder(
+        const currentOrder = await api.updateOrder(
+            stateCreateOrder.order.id,
             stateUser.token,
             platform.ps ? 'ps4' : 'xbox',
             method.easy ? 'Easy' : 'Manual',
+            stateCoins.amount,
             currency.title,
-            stateCoins.amount
+            stateCreateOrder.order.promoCode || null
         );
-        console.log(currentOrder);
         dispatch(userCreateOrder(currentOrder));
+        await api
+            .prePay(
+                namePaymentMethod,
+                stateUser.token,
+                stateCreateOrder?.order?.id,
+                stateUser.userLocale,
+                platform.ps ? 'ps4' : 'xbox',
+                method.easy ? 'Easy' : 'Manual',
+                data[platform === 'Easy' ? 0 : 1].data[1].pricePerCurrencyMap
+                    .EUR,
+                stateCoins.amount,
+                stateCreateOrder?.order?.promoCode || null,
+                stateUser.email
+            )
+            .then((res) => (document.location.href = res.acquiringLink));
     };
 
     return (

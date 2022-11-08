@@ -15,6 +15,7 @@ import {
     user,
     getCriptoLimits,
     order,
+    userCreateOrder,
 } from '../redux/actions/royalfutActions';
 
 import styles from '../styles/App.module.scss';
@@ -44,9 +45,13 @@ function MainContainer({
     const currentCurrencyState = useSelector(
         (state) => state.royalfutReducer.currency
     );
-    const currentUserState = useSelector((state) => state.royalfutReducer.user);
+    const stateUser = useSelector((state) => state.royalfutReducer.user);
     const stateCoins = useSelector((state) => state.royalfutReducer.coins);
     const stateOrder = useSelector((state) => state.royalfutReducer.order);
+    const statePlatform = useSelector(
+        (state) => state.royalfutReducer.platform
+    );
+    const stateMethod = useSelector((state) => state.royalfutReducer.method);
 
     const dispatch = useDispatch();
 

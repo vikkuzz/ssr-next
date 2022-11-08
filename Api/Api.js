@@ -9,7 +9,7 @@ export default class Api {
             window.location.origin.indexOf('linestest.com') >= 0 ||
             window.location.origin.indexOf('ngrok.io') >= 0 ||
             window.location.origin.indexOf('bs-local.com') >= 0
-                ? 'https://test-royalfut.com'
+                ? 'https://royalfut.com'
                 : window.location.origin;
 
         const res = await fetch(`${urlForStock}/api/stock`, {
@@ -18,6 +18,35 @@ export default class Api {
                 'Content-Type': 'application/json',
             },
             body: '{"ip": ""}',
+        });
+        const result = await res.json();
+        return result;
+    };
+
+    updateOrder = async (
+        orderId,
+        token,
+        platform,
+        method,
+        amount,
+        currency,
+        promoCode = null
+    ) => {
+        let urlForCoupon = 'https://royalfut.com';
+
+        const res = await fetch(`${urlForCoupon}/api/order/${orderId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Token ${token}`,
+            },
+            body: JSON.stringify({
+                platform: platform,
+                deliveryMethod: method,
+                coinCount: amount,
+                currency: currency,
+                promoCode: promoCode,
+            }),
         });
         const result = await res.json();
         return result;
