@@ -247,6 +247,9 @@
 .gold_font{
   color: #eab11f;
 }
+.right_0{
+  right: 0!important;
+}
 
 @media(min-width:1025px){
   .from-375-to-1024{
