@@ -167,6 +167,7 @@ export default class Api {
         const getCookie = (name) => {
             let nameEQ = `${name}=`;
             let ca = document.cookie.split(';');
+            console.log(ca);
 
             for (let i = 0; i < ca.length; i++) {
                 let c = ca[i];
@@ -194,7 +195,8 @@ export default class Api {
                 deliveryMethod: method,
                 currency: currency,
                 coinCount: coinCount,
-                client_id: getCookie('_ga'),
+                client_id: 'GA1.1.210202207.1667893297',
+                //client_id: getCookie('_ga'),
             }),
         });
         const result = await res.json();
