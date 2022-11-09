@@ -7,6 +7,19 @@
     height: 100vh;
     flex-direction: column;
     //max-width: 640px;
+    //right: -30%;
+    transition: all .3s linear;
+    top: 0;
+}
+.burger_menu_desk{
+    position: fixed;
+    display: flex;
+    z-index: 10;
+    background-color: #12142b;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    //max-width: 640px;
     right: -30%;
     transition: all .3s linear;
     top: 0;

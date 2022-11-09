@@ -263,7 +263,9 @@ const BurgerMenu = () => {
     } else if (modal === true && auth !== true && menuContent == 'desktop') {
         console.log('wtf: ', menuContent);
         menu = (
-            <div className={`${styles.burger_menu} ${animate && 'right_0'}`}>
+            <div
+                className={`${styles.burger_menu_desk} ${animate && 'right_0'}`}
+            >
                 <button
                     onClick={() => dispatch(loginModal(false))}
                     className={`${styles.close_menu}`}
