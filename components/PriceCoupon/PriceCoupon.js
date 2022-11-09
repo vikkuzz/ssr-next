@@ -149,7 +149,11 @@ const PriceCoupon = () => {
                         type={'text'}
                         onChange={handleChangePromo}
                     ></input>
-                    <button className={`${styles.coupon_btn}`} type="button">
+                    <button
+                        onClick={sendPromo}
+                        className={`${styles.coupon_btn}`}
+                        type="button"
+                    >
                         APPLY coupon
                     </button>
                 </fieldset>
