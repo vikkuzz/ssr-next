@@ -1,5 +1,5 @@
 export default class Api {
-    baseAddress = 'https://test-royalfut.com/';
+    baseAddress = 'https://royalfut.com/';
 
     getStock = async () => {
         let urlForStock =
@@ -154,16 +154,6 @@ export default class Api {
         coinCount,
         clientId
     ) => {
-        let urlForCreateOrder =
-            window.location.origin.indexOf('localhost') >= 0 ||
-            window.location.origin.indexOf('vercel') >= 0 ||
-            window.location.origin.indexOf('192.168') >= 0 ||
-            window.location.origin.indexOf('linestest.com') >= 0 ||
-            window.location.origin.indexOf('ngrok.io') >= 0 ||
-            window.location.origin.indexOf('bs-local.com') >= 0
-                ? 'https://test-royalfut.com'
-                : window.location.origin;
-
         const getCookie = (name) => {
             let nameEQ = `${name}=`;
             let ca = document.cookie.split(';');
