@@ -250,6 +250,15 @@
 .right_0{
   right: 0!important;
 }
+#delivery:target{
+  scroll-margin-top:65vh;
+}
+#coins:target{
+  scroll-margin-top:60vh;
+}
+#platform:target{
+  scroll-margin-top:55vh;
+}
 
 @media(min-width:1025px){
   .from-375-to-1024{

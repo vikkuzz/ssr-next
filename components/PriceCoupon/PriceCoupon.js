@@ -37,7 +37,6 @@ const PriceCoupon = () => {
                 ).toFixed(2) *
                     100, // размер скидки
         };
-        console.log(data);
 
         return (
             <>

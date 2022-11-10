@@ -317,6 +317,7 @@
     background-position: -2px -2px;
     background-size: contain;
     opacity: .6;
+    z-index: -1;
 }
 .mainorder_method_info_wrapper{
     flex-direction: column;
@@ -367,7 +368,7 @@
     overflow: hidden;
 
     @media (min-width:1025px) {
-        height: 285px;
+        height: 300px;
         padding-bottom: 32px;
     }
 }
@@ -440,4 +441,16 @@
 .mainorder_disabled{
     pointer-events: none;
     opacity: 0.3;
+}
+.mainorder_nobackgr{
+    border: 1px solid white;
+    border-radius: 50%;
+    background-color: transparent;
+    width: 6.4vmin;
+    height: 6.4vmin;
+
+    @media (min-width:1025px) {
+        width: 24px;
+        height: 24px;
+    }
 }

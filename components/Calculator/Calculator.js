@@ -39,7 +39,7 @@ const Calculator = () => {
             <CalcCoins />
             <div className={`${styles.calc_wrapper_submit}`}>
                 <div className={`${styles.calc_submit}`}>
-                    <Link href={isAuth ? '/order' : ''}>
+                    <Link href={isAuth ? '/order#order' : ''}>
                         <a
                             className={`${styles.calc__buy_coins_btn}`}
                             onClick={submitBuyCoins}

@@ -81,17 +81,22 @@ const MainOrder = () => {
                   payment: false,
               }
     );
+    let [step, setStep] = useState({ step1: '', step2: '', step3: '' });
+    let [option, setOption] = useState({
+        platform: true,
+        coins: false,
+        delivery: false,
+    });
 
     useEffect(() => {
-        console.log(stateOrder.coins);
         if (stateOrder.coins) {
-            console.log('DOONE');
             setAllSteps({
                 platform: true,
                 coins: true,
                 delivery: true,
                 payment: true,
             });
+            setStep({ step1: '#order', step2: '#order', step3: '#order' });
         } else {
             setAllSteps({
                 platform: true,
@@ -99,6 +104,7 @@ const MainOrder = () => {
                 delivery: false,
                 payment: false,
             });
+            setStep({ step1: '#order', step2: '#delivery', step3: '#coins' });
         }
     }, []);
 
@@ -265,6 +271,7 @@ const MainOrder = () => {
     return (
         <div className={`${styles.mainorder}`}>
             <div
+                id="platform"
                 className={`${styles.mainorder_wrapper_options} ${
                     !hide.platform && styles.mainorder_open_property
                 }`}
@@ -426,7 +433,12 @@ const MainOrder = () => {
                         </div>
                     </div>
                     <div className={`${styles.mainorder_btn_wrapper} `}>
-                        <button
+                        <a
+                            href={
+                                allSteps.coins && allSteps.delivery
+                                    ? '#order'
+                                    : '#coins'
+                            }
                             onClick={() => {
                                 onClickOption({ ...hide, platform: true });
                                 setAllSteps({ ...allSteps, platform: true });
@@ -434,7 +446,7 @@ const MainOrder = () => {
                             className={`${styles.mainorder_continue_btn} `}
                         >
                             continue
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div
@@ -444,6 +456,7 @@ const MainOrder = () => {
                 />
             </div>
             <div
+                id="coins"
                 className={`${styles.mainorder_wrapper_options} ${
                     !hide.coins && styles.mainorder_open_property
                 }`}
@@ -480,8 +493,13 @@ const MainOrder = () => {
                             for {currentOrder?.currency?.currency}{' '}
                             {currentOrder?.coins?.price}
                         </div>
-
-                        <div className={`${styles.mainorder_backgr_done} `}>
+                        <div
+                            className={`${
+                                allSteps.coins
+                                    ? styles.mainorder_backgr_done
+                                    : styles.mainorder_nobackgr
+                            } `}
+                        >
                             <SvgContainer
                                 item={done}
                                 stroke="white"
@@ -499,15 +517,17 @@ const MainOrder = () => {
                         <CalcCoins />
                     </div>
                     <div className={`${styles.mainorder_btn_wrapper} `}>
-                        <button
+                        <a
+                            href={allSteps.delivery ? '#order' : '#delivery'}
                             onClick={() => {
                                 onClickOption({ ...hide, coins: true });
                                 setAllSteps({ ...allSteps, coins: true });
+                                //setOption({ ...option, coins: true });
                             }}
                             className={`${styles.mainorder_continue_btn} `}
                         >
                             continue
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div
@@ -517,6 +537,7 @@ const MainOrder = () => {
                 />
             </div>
             <div
+                id="delivery"
                 className={`${styles.mainorder_wrapper_options} ${
                     !hide.delivery && styles.mainorder_open_property
                 }`}
@@ -553,7 +574,13 @@ const MainOrder = () => {
                                 ? 'Comfort trade'
                                 : 'Player auction'}
                         </div>
-                        <div className={`${styles.mainorder_backgr_done} `}>
+                        <div
+                            className={`${
+                                allSteps.delivery
+                                    ? styles.mainorder_backgr_done
+                                    : styles.mainorder_nobackgr
+                            } `}
+                        >
                             <SvgContainer
                                 item={done}
                                 stroke="white"
@@ -638,15 +665,17 @@ const MainOrder = () => {
                         </button>
                     </div>
                     <div className={`${styles.mainorder_btn_wrapper} `}>
-                        <button
+                        <a
+                            href={allSteps.coins ? '#order' : '#coins'}
                             onClick={() => {
                                 onClickOption({ ...hide, delivery: true });
                                 setAllSteps({ ...allSteps, delivery: true });
+                                //setOption({ ...option, delivery: true });
                             }}
                             className={`${styles.mainorder_continue_btn} `}
                         >
                             continue
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div
@@ -698,7 +727,10 @@ const MainOrder = () => {
                         hide.payment && styles.mainorder_content_hide
                     }`}
                 >
-                    <div className={`${styles.mainorder_payment_wrapper} `}>
+                    <div
+                        id="order"
+                        className={`${styles.mainorder_payment_wrapper} `}
+                    >
                         <Payment />
                     </div>
                     <div className={`${styles.mainorder_submit_wrapper}`}>
