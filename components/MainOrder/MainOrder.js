@@ -6,6 +6,7 @@ import {
     order,
     userCreateOrder,
     coins,
+    loginModal,
 } from '../../redux/actions/royalfutActions';
 
 import styles from '../../styles/MainOrder.module.scss';
@@ -38,6 +39,7 @@ const MainOrder = () => {
     const stateUser = useSelector((state) => state.royalfutReducer.user);
     const stateOrder = useSelector((state) => state.royalfutReducer.order);
     const stateLocale = useSelector((state) => state.royalfutReducer.locale);
+    const stateIsAuth = useSelector((state) => state.royalfutReducer.isAuth);
     const namePaymentMethod = useSelector(
         (state) => state.royalfutReducer.paymentMethod
     );
@@ -841,10 +843,14 @@ const MainOrder = () => {
                         </div>
                         <div className={`${styles.mainorder_btn_wrapper} `}>
                             <button
-                                onClick={() =>
+                                onClick={() => {
                                     //onClickOption({ ...hide, payment: true })
-                                    paymentOrder()
-                                }
+                                    if (stateIsAuth) {
+                                        paymentOrder();
+                                    } else {
+                                        dispatch(loginModal(true));
+                                    }
+                                }}
                                 className={`${styles.mainorder_continue_btn} `}
                             >
                                 к оплате
