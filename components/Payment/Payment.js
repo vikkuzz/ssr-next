@@ -228,7 +228,9 @@ const Payment = ({ deliveryTime }) => {
                                     </div>
                                 </label>
                             </fieldset>
-                            <div className="from-1025-to-1900">
+                            <div
+                                className={`${styles.payment_price} from-1025-to-1900`}
+                            >
                                 <PriceCoupon />
                             </div>
                             {/* <div

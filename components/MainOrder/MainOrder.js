@@ -95,10 +95,6 @@ const MainOrder = () => {
     let [scrolltop, setScrolltop] = useState();
 
     useEffect(() => {
-        console.log(scrolltop);
-    }, [scrolltop]);
-
-    useEffect(() => {
         if (stateOrder.coins) {
             setAllSteps({
                 platform: true,
@@ -233,6 +229,32 @@ const MainOrder = () => {
                 setScrolltop(descScrolltop);
             }
         });
+
+        if (stateOrder.coins && window.innerWidth <= 1024) {
+            setScrolltop(mobileScrolltop);
+            window.scrollTo({
+                top: 346,
+                behavior: 'smooth',
+            });
+        } else if (stateOrder.coins && window.innerWidth > 1024) {
+            setScrolltop(descScrolltop);
+            window.scrollTo({
+                top: 504,
+                behavior: 'smooth',
+            });
+        } else if (!stateOrder.coins && window.innerWidth <= 1024) {
+            setScrolltop(mobileScrolltop);
+            window.scrollTo({
+                top: 40,
+                behavior: 'smooth',
+            });
+        } else if (!stateOrder.coins && window.innerWidth > 1024) {
+            setScrolltop(descScrolltop);
+            window.scrollTo({
+                top: 312,
+                behavior: 'smooth',
+            });
+        }
         return () => {
             document.addEventListener('scroll', (e) => {
                 if (window.pageYOffset < 1024) {
