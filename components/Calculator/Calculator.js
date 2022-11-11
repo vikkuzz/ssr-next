@@ -9,6 +9,7 @@ import CalcCoins from '../CalcCoins';
 import SvgContainer from '../SvgContainer';
 import { loginModal, order } from '../../redux/actions/royalfutActions';
 import Link from 'next/link';
+import { getDeliveryTime } from '../../utils/functions';
 
 const Calculator = () => {
     const isAuth = useSelector((state) => state.royalfutReducer.isAuth);
@@ -26,6 +27,11 @@ const Calculator = () => {
                 currency: currency,
                 platform: platform.ps ? 'ps' : 'xbox',
                 method: method.easy ? 'easy' : 'manual',
+                deliveryTime: getDeliveryTime(
+                    coins.amount,
+                    method.easy ? 'easy' : 'manual',
+                    platform.ps ? 'ps4' : 'xbox'
+                ),
             };
             dispatch(order(currentOrder));
         } else {

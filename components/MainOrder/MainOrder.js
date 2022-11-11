@@ -11,14 +11,17 @@ import {
 
 import styles from '../../styles/MainOrder.module.scss';
 
-import PlatformChanger from '../PlatformChanger';
-import MethodChanger from '../MethodChanger';
 import CalcCoins from '../CalcCoins';
 import Link from 'next/link';
 import SvgContainer from '../SvgContainer';
 import Payment from '../Payment';
 
-import { getCoef, getDiscCoef, getDiscount } from '../../utils/functions';
+import {
+    getCoef,
+    getDeliveryTime,
+    getDiscCoef,
+    getDiscount,
+} from '../../utils/functions';
 
 import { whitearrow } from '../../data-svg/whitearrow';
 import { ps4 } from '../../data-svg/ps4';
@@ -172,6 +175,11 @@ const MainOrder = () => {
             currency: currency,
             platform: platform.ps ? 'ps' : 'xbox',
             method: method.easy ? 'easy' : 'manual',
+            deliveryTime: getDeliveryTime(
+                stateCoins.amount,
+                method.easy ? 'easy' : 'manual',
+                platform.ps ? 'ps4' : 'xbox'
+            ),
         };
         setCurrentOrder(mainOrder);
     }, [platform, currency, method]);
@@ -733,7 +741,7 @@ const MainOrder = () => {
                         id="order"
                         className={`${styles.mainorder_payment_wrapper} `}
                     >
-                        <Payment />
+                        <Payment deliveryTime={currentOrder.deliveryTime} />
                     </div>
                     <div className={`${styles.mainorder_submit_wrapper}`}>
                         <div className={`${styles.crypto_info_wrapper}`}>

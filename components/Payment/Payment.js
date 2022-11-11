@@ -17,7 +17,7 @@ const Info = ({ color, text, textColor }) => {
     );
 };
 
-const Payment = () => {
+const Payment = ({ deliveryTime }) => {
     const card = React.createRef();
     const apple = React.createRef();
     const btc = React.createRef();
@@ -30,6 +30,7 @@ const Payment = () => {
         (state) => state.royalfutReducer.cryptoLimits
     );
     const stateCoins = useSelector((state) => state.royalfutReducer.coins);
+    const stateOrder = useSelector((state) => state.royalfutReducer.order);
 
     let [methodPayment, setMethodPayment] = useState({
         card: true,
@@ -114,7 +115,17 @@ const Payment = () => {
                         className={`${styles.payment_time_svg} ${styles.payment_svg}`}
                     ></div>
                     <span className={`${styles.payment_method_set_delivery}`}>
-                        3-5h Delivery Time
+                        {deliveryTime
+                            ? `${
+                                  deliveryTime.time[0] +
+                                  '-' +
+                                  deliveryTime.time[1]
+                              }${
+                                  deliveryTime.type === 'deliveryMinutes'
+                                      ? 'm'
+                                      : 'h'
+                              } Delivery Time`
+                            : '3-5h Delivery Time'}
                     </span>
                 </div>
                 <div
