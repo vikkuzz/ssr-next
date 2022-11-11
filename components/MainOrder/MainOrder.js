@@ -305,14 +305,19 @@ const MainOrder = () => {
                 <button
                     ref={platformOption}
                     className={`${styles.mainorder_option_btn} `}
-                    onClick={() =>
+                    onClick={() => {
                         onClickOption({
                             coins: true,
                             delivery: true,
                             platform: false,
                             payment: true,
-                        })
-                    }
+                        });
+
+                        window.scrollTo({
+                            top: scrolltop.platform,
+                            behavior: 'smooth',
+                        });
+                    }}
                 >
                     <div className={`${styles.mainorder_option_text}`}>
                         <span className={`${styles.mainorder_option_name}`}>
@@ -498,14 +503,18 @@ const MainOrder = () => {
                 <button
                     ref={coinsOption}
                     className={`${styles.mainorder_option_btn} `}
-                    onClick={() =>
+                    onClick={() => {
                         onClickOption({
                             coins: false,
                             delivery: true,
                             platform: true,
                             payment: true,
-                        })
-                    }
+                        });
+                        window.scrollTo({
+                            top: scrolltop.coins,
+                            behavior: 'smooth',
+                        });
+                    }}
                 >
                     <div className={`${styles.mainorder_option_text}`}>
                         <span className={`${styles.mainorder_option_name}`}>
@@ -596,6 +605,10 @@ const MainOrder = () => {
                             delivery: false,
                             platform: true,
                             payment: true,
+                        });
+                        window.scrollTo({
+                            top: scrolltop.delivery,
+                            behavior: 'smooth',
                         });
                     }}
                 >
@@ -757,14 +770,18 @@ const MainOrder = () => {
             >
                 <button
                     className={`${styles.mainorder_option_btn} `}
-                    onClick={() =>
+                    onClick={() => {
                         onClickOption({
                             coins: true,
                             delivery: true,
                             platform: true,
                             payment: false,
-                        })
-                    }
+                        });
+                        window.scrollTo({
+                            top: scrolltop.payment,
+                            behavior: 'smooth',
+                        });
+                    }}
                 >
                     <div className={`${styles.mainorder_option_text}`}>
                         <span className={`${styles.mainorder_option_name}`}>
