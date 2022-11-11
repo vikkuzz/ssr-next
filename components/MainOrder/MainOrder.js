@@ -32,6 +32,10 @@ import Api from '../../Api/Api';
 const api = new Api();
 
 const MainOrder = () => {
+    const coinsOption = React.useRef();
+    const deliveryOption = React.useRef();
+    const paymentOption = React.useRef();
+    const platformOption = React.useRef();
     const data = useSelector(
         (state) => state.royalfutReducer.stock.deliveryMethods
     );
@@ -87,11 +91,12 @@ const MainOrder = () => {
               }
     );
     let [step, setStep] = useState({ step1: '', step2: '', step3: '' });
-    let [option, setOption] = useState({
-        platform: true,
-        coins: false,
-        delivery: false,
-    });
+
+    let [scrolltop, setScrolltop] = useState();
+
+    useEffect(() => {
+        console.log(scrolltop);
+    }, [scrolltop]);
 
     useEffect(() => {
         if (stateOrder.coins) {
@@ -208,25 +213,36 @@ const MainOrder = () => {
         setCurrentCoins(currentOrder?.coins?.amount);
     }, [currentOrder]);
 
-    useEffect(async () => {
-        // if (stateCreateOrder.order?.id) {
-        //     await api
-        //         .prePay(
-        //             namePaymentMethod,
-        //             stateUser.token,
-        //             stateCreateOrder.order.id,
-        //             stateUser.userLocale,
-        //             platform.ps ? 'ps4' : 'xbox',
-        //             method.easy ? 'Easy' : 'Manual',
-        //             data[platform === 'Easy' ? 0 : 1].data[1]
-        //                 .pricePerCurrencyMap.EUR,
-        //             coins.amount,
-        //             null,
-        //             stateUser.email
-        //         )
-        //         .then((res) => (document.location.href = res.acquiringLink));
-        // }
-    }, [stateCreateOrder]);
+    useEffect(() => {
+        let mobileScrolltop = {
+            platform: 120,
+            coins: 40,
+            delivery: 240,
+            payment: 346,
+        };
+        let descScrolltop = {
+            platform: 260,
+            coins: 312,
+            delivery: 410,
+            payment: 504,
+        };
+        document.addEventListener('scroll', (e) => {
+            if (window.innerWidth < 1024) {
+                setScrolltop(mobileScrolltop);
+            } else if (window.innerWidth > 1024) {
+                setScrolltop(descScrolltop);
+            }
+        });
+        return () => {
+            document.addEventListener('scroll', (e) => {
+                if (window.pageYOffset < 1024) {
+                    setScrolltop(mobileScrolltop);
+                } else if (window.pageYOffset > 1024) {
+                    setScrolltop(descScrolltop);
+                }
+            });
+        };
+    }, []);
 
     const dispatch = useDispatch();
 
@@ -287,6 +303,7 @@ const MainOrder = () => {
                 }`}
             >
                 <button
+                    ref={platformOption}
                     className={`${styles.mainorder_option_btn} `}
                     onClick={() =>
                         onClickOption({
@@ -414,7 +431,7 @@ const MainOrder = () => {
                                     classStyle={`${styles.mainorder_svg_platform__btn}`}
                                     stroke="transparent"
                                 />
-                                XBOX ONE
+                                Xbox One
                             </button>
                             <button
                                 onClick={() => {
@@ -438,25 +455,31 @@ const MainOrder = () => {
                                     classStyle={`${styles.mainorder_svg_platform__btn}`}
                                     stroke="transparent"
                                 />
-                                XBOX XS
+                                Xbox Series X|S
                             </button>
                         </div>
                     </div>
                     <div className={`${styles.mainorder_btn_wrapper} `}>
-                        <a
-                            href={
-                                allSteps.coins && allSteps.delivery
-                                    ? '#order'
-                                    : '#coins'
-                            }
+                        <button
                             onClick={() => {
                                 onClickOption({ ...hide, platform: true });
                                 setAllSteps({ ...allSteps, platform: true });
+                                if (allSteps.coins && allSteps.delivery) {
+                                    window.scrollTo({
+                                        top: scrolltop.payment,
+                                        behavior: 'smooth',
+                                    });
+                                } else if (!allSteps.coins) {
+                                    window.scrollTo({
+                                        top: scrolltop.coins,
+                                        behavior: 'smooth',
+                                    });
+                                }
                             }}
                             className={`${styles.mainorder_continue_btn} `}
                         >
                             continue
-                        </a>
+                        </button>
                     </div>
                 </div>
                 <div
@@ -466,12 +489,14 @@ const MainOrder = () => {
                 />
             </div>
             <div
+                ref={coinsOption}
                 id="coins"
                 className={`${styles.mainorder_wrapper_options} ${
                     !hide.coins && styles.mainorder_open_property
                 }`}
             >
                 <button
+                    ref={coinsOption}
                     className={`${styles.mainorder_option_btn} `}
                     onClick={() =>
                         onClickOption({
@@ -527,17 +552,27 @@ const MainOrder = () => {
                         <CalcCoins />
                     </div>
                     <div className={`${styles.mainorder_btn_wrapper} `}>
-                        <a
-                            href={allSteps.delivery ? '#order' : '#delivery'}
+                        <button
+                            //href={allSteps.delivery ? '#order' : '#delivery'}
                             onClick={() => {
                                 onClickOption({ ...hide, coins: true });
                                 setAllSteps({ ...allSteps, coins: true });
-                                //setOption({ ...option, coins: true });
+                                if (allSteps.delivery) {
+                                    window.scrollTo({
+                                        top: scrolltop.payment,
+                                        behavior: 'smooth',
+                                    });
+                                } else {
+                                    window.scrollTo({
+                                        top: scrolltop.delivery,
+                                        behavior: 'smooth',
+                                    });
+                                }
                             }}
                             className={`${styles.mainorder_continue_btn} `}
                         >
                             continue
-                        </a>
+                        </button>
                     </div>
                 </div>
                 <div
@@ -553,15 +588,16 @@ const MainOrder = () => {
                 }`}
             >
                 <button
+                    ref={deliveryOption}
                     className={`${styles.mainorder_option_btn} `}
-                    onClick={() =>
+                    onClick={() => {
                         onClickOption({
                             coins: true,
                             delivery: false,
                             platform: true,
                             payment: true,
-                        })
-                    }
+                        });
+                    }}
                 >
                     <div className={`${styles.mainorder_option_text}`}>
                         <span className={`${styles.mainorder_option_name}`}>
@@ -675,17 +711,32 @@ const MainOrder = () => {
                         </button>
                     </div>
                     <div className={`${styles.mainorder_btn_wrapper} `}>
-                        <a
-                            href={allSteps.coins ? '#order' : '#coins'}
+                        <button
+                            //href={allSteps.coins ? '#order' : '#coins'}
                             onClick={() => {
                                 onClickOption({ ...hide, delivery: true });
                                 setAllSteps({ ...allSteps, delivery: true });
-                                //setOption({ ...option, delivery: true });
+                                console.log(
+                                    deliveryOption.current.offsetTop,
+                                    coinsOption.current.offsetTop,
+                                    paymentOption.current.offsetTop
+                                );
+                                if (allSteps.coins) {
+                                    window.scrollTo({
+                                        top: scrolltop.payment,
+                                        behavior: 'smooth',
+                                    });
+                                } else {
+                                    window.scrollTo({
+                                        top: scrolltop.coins,
+                                        behavior: 'smooth',
+                                    });
+                                }
                             }}
                             className={`${styles.mainorder_continue_btn} `}
                         >
                             continue
-                        </a>
+                        </button>
                     </div>
                 </div>
                 <div
@@ -738,6 +789,7 @@ const MainOrder = () => {
                     }`}
                 >
                     <div
+                        ref={paymentOption}
                         id="order"
                         className={`${styles.mainorder_payment_wrapper} `}
                     >

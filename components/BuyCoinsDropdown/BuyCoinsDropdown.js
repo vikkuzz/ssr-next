@@ -52,7 +52,7 @@ const BuyCoinsDropdown = () => {
                     ref={buycoinsRef}
                 >
                     <div className={`${styles.buycoins_item}`}>
-                        <Link href={`/order/ps4`} locale={locale}>
+                        <Link href={`/order/ps4#coins`} locale={locale}>
                             <a
                                 onClick={() => {
                                     dispatch(order({}));
@@ -64,7 +64,7 @@ const BuyCoinsDropdown = () => {
                         </Link>
                     </div>
                     <div className={`${styles.buycoins_item}`}>
-                        <Link href={`/order/ps5`} locale={locale}>
+                        <Link href={`/order/ps5#coins`} locale={locale}>
                             <a
                                 onClick={() => {
                                     dispatch(order({}));
@@ -76,7 +76,7 @@ const BuyCoinsDropdown = () => {
                         </Link>
                     </div>
                     <div className={`${styles.buycoins_item}`}>
-                        <Link href={`/order/xbox_one`} locale={locale}>
+                        <Link href={`/order/xbox_one#coins`} locale={locale}>
                             <a
                                 onClick={() => {
                                     dispatch(order({}));
@@ -88,7 +88,10 @@ const BuyCoinsDropdown = () => {
                         </Link>
                     </div>
                     <div className={`${styles.buycoins_item}`}>
-                        <Link href={`/order/xbox_series_x`} locale={locale}>
+                        <Link
+                            href={`/order/xbox_series_x#coins`}
+                            locale={locale}
+                        >
                             <a
                                 onClick={() => {
                                     dispatch(order({}));

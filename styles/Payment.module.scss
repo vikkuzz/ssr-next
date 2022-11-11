@@ -114,6 +114,7 @@
     margin: 0;
     position: relative;
     max-width: 253px;
+    width: auto;
 
 
     @media (min-width:1025px) {
@@ -147,6 +148,8 @@
     gap: 8px;
     padding: 3vmin 6vmin;
     flex-grow: 1;
+    min-width: 150px;
+    min-height: 56px;
 
     @media (min-width:1025px) {
         padding: 0px 30px;
@@ -182,19 +185,24 @@
 .payment_method__card{
     //height: 17px;
     background-color: transparent;
-    width: 69px;
+    width: 45px;
 }
 .payment_method__card_master{
     background-color: transparent;
-    width: 125px;
+    width: 92px;
 }
 .payment_method__crypto{
-    width: 120px;
+    width: 80px;
 }
 .payment_wrapper_logo{
-    gap: 8px;
+    flex-direction: column;
     height: 100%;
     width: auto;
+
+    @media (min-width:1025px) {
+        gap: 8px;
+        flex-direction: row;
+    }
 }
 .payment_fieldset:hover{
     background-color: rgba(255,255,255,0.1);
@@ -222,11 +230,14 @@
     user-select: none;
     gap: 8px;
     padding: 3vmin 6vmin;
+    min-width: 150px;
+    min-height: 56px;
 
     @media (min-width:1025px) {
         padding: 0;
         height: 100%;
         width: 150px;
+        
     }    
 
 }
