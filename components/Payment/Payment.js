@@ -203,7 +203,7 @@ const Payment = () => {
                                     ></input>
                                     <div
                                         data-id={'apple'}
-                                        className={`${styles.payment_fake_input}`}
+                                        className={`${styles.payment_fake_input} ${styles.payment_fake_input__apple}`}
                                     ></div>
                                     <div
                                         data-id={'apple'}
@@ -217,11 +217,12 @@ const Payment = () => {
                                     </div>
                                 </label>
                             </fieldset>
-                            <div
+                            <PriceCoupon />
+                            {/* <div
                                 className={`${styles.price_coupon_wrapper} from-1025-to-1900`}
                             >
                                 <PriceCoupon />
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
@@ -260,7 +261,7 @@ const Payment = () => {
                                     >
                                         <img
                                             data-id={'btc'}
-                                            className={`${styles.payment_method__card}`}
+                                            className={`${styles.payment_method__card} ${styles.payment_method__crypto}`}
                                             src="/img/btc.svg"
                                             alt="btc"
                                         ></img>
@@ -300,7 +301,7 @@ const Payment = () => {
                                         className={`${styles.payment_wrapper_logo}`}
                                     >
                                         <img
-                                            className={`${styles.payment_method__card}`}
+                                            className={`${styles.payment_method__card} ${styles.payment_method__crypto}`}
                                             src="/img/eth.svg"
                                             alt="eth"
                                         ></img>
@@ -340,7 +341,7 @@ const Payment = () => {
                                         className={`${styles.payment_wrapper_logo}`}
                                     >
                                         <img
-                                            className={`${styles.payment_method__card}`}
+                                            className={`${styles.payment_method__card} ${styles.payment_method__crypto}`}
                                             src="/img/usdt.svg"
                                             alt="usdt"
                                         ></img>

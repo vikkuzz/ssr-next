@@ -386,7 +386,8 @@
     }
 
     @media (min-width:1025px) {
-        height: 610px;
+        //height: 610px;
+        height: auto;
         padding-bottom: 32px;
     }
 }
@@ -396,7 +397,8 @@
     gap: 1vmin;
 
     @media (min-width:1025px) {
-        height: 520px;
+        height: auto;
+        //height: 520px;
         gap: 16px;
         padding: 0;
     }

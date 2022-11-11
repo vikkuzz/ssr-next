@@ -1,6 +1,11 @@
 .price{
     flex-direction: column;
     align-items: flex-end;
+    width: auto;
+
+    @media (min-width:1025px) {
+        margin-left: auto;
+    }
 }
 .price_wrapper{
     font-size: 9.6vmin;
@@ -12,7 +17,7 @@
     @media (min-width:1025px) {
         font-size: 36px;
         line-height: 36px;
-        padding-top: 24px;
+        //padding-top: 24px;
     }
 }
 .coupon{
@@ -54,6 +59,7 @@
     padding: 0;
     margin: 0;
     border: none;    
+    width: 0;
 }
 .coupon_fieldset{
     background-color: transparent;
