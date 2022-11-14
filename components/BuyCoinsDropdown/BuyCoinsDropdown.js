@@ -54,6 +54,7 @@ const BuyCoinsDropdown = () => {
                     <div className={`${styles.buycoins_item}`}>
                         <Link href={`/order/ps4`} locale={locale}>
                             <a
+                                className={`${styles.buycoins_link}`}
                                 onClick={() => {
                                     dispatch(changePlatform('ps'));
                                     dispatch(order({}));
@@ -66,6 +67,7 @@ const BuyCoinsDropdown = () => {
                     <div className={`${styles.buycoins_item}`}>
                         <Link href={`/order/ps5`} locale={locale}>
                             <a
+                                className={`${styles.buycoins_link}`}
                                 onClick={() => {
                                     dispatch(order({}));
                                     dispatch(changePlatform('ps'));
@@ -78,6 +80,7 @@ const BuyCoinsDropdown = () => {
                     <div className={`${styles.buycoins_item}`}>
                         <Link href={`/order/xbox_one`} locale={locale}>
                             <a
+                                className={`${styles.buycoins_link}`}
                                 onClick={() => {
                                     dispatch(order({}));
                                     dispatch(changePlatform('xbox'));
@@ -90,6 +93,7 @@ const BuyCoinsDropdown = () => {
                     <div className={`${styles.buycoins_item}`}>
                         <Link href={`/order/xbox_series_x`} locale={locale}>
                             <a
+                                className={`${styles.buycoins_link}`}
                                 onClick={() => {
                                     dispatch(order({}));
                                     dispatch(changePlatform('xbox'));

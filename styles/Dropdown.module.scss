@@ -250,6 +250,10 @@
 .buycoins_item:hover{
     background-color: rgba(255, 255, 255, 0.2);
 }
+.buycoins_link{
+    padding-left: 10px;
+    justify-content: flex-start;
+}
 
 @media(max-width:600px){
     .dropdown_container{
