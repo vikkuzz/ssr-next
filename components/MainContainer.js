@@ -86,6 +86,7 @@ function MainContainer({
             }
             dispatch(stock(result));
         });
+        console.log(document.referrer);
     }, []);
 
     useEffect(() => {

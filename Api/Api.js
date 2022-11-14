@@ -100,7 +100,7 @@ export default class Api {
                 suburl = '';
                 settings.data = JSON.stringify({
                     successUrl: `${window.location.origin}${localeLang}/profile/?id=${orderId}#orders`,
-                    failUrl: currentUrl,
+                    failUrl: currentUrl + '#from-acquiring',
                 });
                 break;
             case 'payop':
@@ -114,21 +114,21 @@ export default class Api {
                 suburl = '/bitcoin';
                 settings.data = JSON.stringify({
                     successUrl: `${window.location.origin}${localeLang}/profile/?id=${orderId}#orders`,
-                    failUrl: currentUrl,
+                    failUrl: currentUrl + '#from-acquiring',
                 });
                 break;
             case 'usdt':
                 suburl = '/usdtether';
                 settings.data = JSON.stringify({
                     successUrl: `${window.location.origin}${localeLang}/profile/?id=${orderId}#orders`,
-                    failUrl: currentUrl,
+                    failUrl: currentUrl + '#from-acquiring',
                 });
                 break;
             case 'etherium':
                 suburl = '/etherium';
                 settings.data = JSON.stringify({
                     successUrl: `${window.location.origin}${localeLang}/profile/?id=${orderId}#orders`,
-                    failUrl: currentUrl,
+                    failUrl: currentUrl + '#from-acquiring',
                 });
                 break;
 

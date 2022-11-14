@@ -107,7 +107,28 @@ const MainOrder = () => {
                 payment: false,
             });
         }
+        if (window.location.href.indexOf('from-acquiring') >= 0) {
+            //setCurrentOrder(JSON.parse(localStorage.getItem('mainOrder')));
+            let mainOrder = JSON.parse(localStorage.getItem('mainOrder'));
+            let saveCoins = mainOrder.coins;
+            setTimeout(() => {
+                dispatch(coins(saveCoins));
+                timeoutOption(
+                    {
+                        coins: true,
+                        delivery: true,
+                        platform: true,
+                        payment: false,
+                    },
+                    scrolltop.payment
+                );
+            }, 500);
+        }
     }, []);
+
+    useEffect(() => {
+        console.log(currentOrder);
+    }, [currentOrder]);
 
     useEffect(() => {
         console.log(allSteps);
@@ -856,19 +877,6 @@ const MainOrder = () => {
             >
                 <button
                     className={`${styles.mainorder_option_btn} `}
-                    // onClick={() => {
-                    //     onClickOption({
-                    //         coins: true,
-                    //         delivery: true,
-                    //         platform: true,
-                    //         payment: false,
-                    //     });
-                    //     window.scrollTo({
-                    //         top: scrolltop.payment,
-                    //         behavior: 'smooth',
-                    //     });
-                    // }}
-
                     onClick={() => {
                         if (hide.payment) {
                             timeoutOption(
@@ -1024,6 +1032,10 @@ const MainOrder = () => {
                                     //onClickOption({ ...hide, payment: true })
                                     if (stateIsAuth) {
                                         paymentOrder();
+                                        localStorage.setItem(
+                                            'mainOrder',
+                                            JSON.stringify(currentOrder)
+                                        );
                                     } else {
                                         dispatch(loginModal(true));
                                     }
