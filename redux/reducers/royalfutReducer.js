@@ -210,7 +210,7 @@ const royalfutReducer = (state = initialState, action) => {
             });
             return { ...state, ...localState, currency: userCurrency };
 
-        case 'CURRENT_CURRENCY':
+        case 'GET_CRYPTO_LIMITS':
             ls.set('localState', {
                 ...state,
                 ...localState,
