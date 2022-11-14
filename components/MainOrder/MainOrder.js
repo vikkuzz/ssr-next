@@ -116,23 +116,23 @@ const MainOrder = () => {
 
     useEffect(() => {
         console.log(allSteps);
-        if (!allSteps.platform || !allSteps.delivery || !allSteps.coins) {
+        if (!allSteps?.platform || !allSteps?.delivery || !allSteps?.coins) {
             console.log(allSteps);
-            if (!allSteps.platform) {
+            if (!allSteps?.platform) {
                 setHide({
                     platform: false,
                     coins: true,
                     delivery: true,
                     payment: true,
                 });
-            } else if (!allSteps.coins) {
+            } else if (!allSteps?.coins) {
                 setHide({
                     platform: true,
                     coins: false,
                     delivery: true,
                     payment: true,
                 });
-            } else if (!allSteps.delivery) {
+            } else if (!allSteps?.delivery) {
                 setHide({
                     platform: true,
                     coins: true,
@@ -140,7 +140,11 @@ const MainOrder = () => {
                     payment: true,
                 });
             }
-        } else if (allSteps.platform && allSteps.delivery && allSteps.coins) {
+        } else if (
+            allSteps?.platform &&
+            allSteps?.delivery &&
+            allSteps?.coins
+        ) {
             //setAllSteps({ ...allSteps, payment: true });
             console.log('wtf');
             setHide({
@@ -289,6 +293,7 @@ const MainOrder = () => {
     }
 
     const paymentOrder = async () => {
+        console.log(namePaymentMethod);
         const currentOrder = await api.updateOrder(
             stateCreateOrder.order.id,
             stateUser.token,
@@ -316,6 +321,24 @@ const MainOrder = () => {
             .then((res) => (document.location.href = res.acquiringLink));
     };
 
+    const timeoutOption = async (openOption, scrollTo, checkedStep) => {
+        onClickOption({
+            coins: true,
+            delivery: true,
+            platform: true,
+            payment: true,
+        });
+
+        setTimeout(() => {
+            window.scrollTo({
+                top: scrollTo,
+                behavior: 'smooth',
+            });
+            onClickOption(openOption);
+            setAllSteps(checkedStep);
+        }, 700);
+    };
+
     return (
         <div className={`${styles.mainorder}`}>
             <div
@@ -327,19 +350,17 @@ const MainOrder = () => {
                 <button
                     ref={platformOption}
                     className={`${styles.mainorder_option_btn} `}
-                    onClick={() => {
-                        onClickOption({
-                            coins: true,
-                            delivery: true,
-                            platform: false,
-                            payment: true,
-                        });
-
-                        window.scrollTo({
-                            top: scrolltop.platform,
-                            behavior: 'smooth',
-                        });
-                    }}
+                    onClick={() =>
+                        timeoutOption(
+                            {
+                                coins: true,
+                                delivery: true,
+                                platform: false,
+                                payment: true,
+                            },
+                            scrolltop.platform
+                        )
+                    }
                 >
                     <div className={`${styles.mainorder_option_text}`}>
                         <span className={`${styles.mainorder_option_name}`}>
@@ -489,19 +510,30 @@ const MainOrder = () => {
                     <div className={`${styles.mainorder_btn_wrapper} `}>
                         <button
                             onClick={() => {
-                                onClickOption({ ...hide, platform: true });
-                                setAllSteps({ ...allSteps, platform: true });
-                                if (allSteps.coins && allSteps.delivery) {
-                                    window.scrollTo({
-                                        top: scrolltop.payment,
-                                        behavior: 'smooth',
-                                    });
-                                } else if (!allSteps.coins) {
-                                    window.scrollTo({
-                                        top: scrolltop.coins,
-                                        behavior: 'smooth',
-                                    });
+                                if (allSteps?.coins && allSteps?.delivery) {
+                                    timeoutOption(
+                                        {
+                                            payment: false,
+                                            coins: true,
+                                            delivery: true,
+                                            platform: true,
+                                        },
+                                        scrolltop.payment,
+                                        { ...allSteps, platform: true }
+                                    );
+                                } else if (!allSteps?.coins) {
+                                    timeoutOption(
+                                        {
+                                            payment: true,
+                                            coins: false,
+                                            delivery: true,
+                                            platform: true,
+                                        },
+                                        scrolltop.coins,
+                                        { ...allSteps, platform: true }
+                                    );
                                 }
+                                //setAllSteps({ ...allSteps, platform: true });
                             }}
                             className={`${styles.mainorder_continue_btn} `}
                         >
@@ -525,18 +557,29 @@ const MainOrder = () => {
                 <button
                     ref={coinsOption}
                     className={`${styles.mainorder_option_btn} `}
-                    onClick={() => {
-                        onClickOption({
-                            coins: false,
-                            delivery: true,
-                            platform: true,
-                            payment: true,
-                        });
-                        window.scrollTo({
-                            top: scrolltop.coins,
-                            behavior: 'smooth',
-                        });
-                    }}
+                    // onClick={() => {
+                    //     onClickOption({
+                    //         coins: false,
+                    //         delivery: true,
+                    //         platform: true,
+                    //         payment: true,
+                    //     });
+                    //     window.scrollTo({
+                    //         top: scrolltop.coins,
+                    //         behavior: 'smooth',
+                    //     });
+                    // }}
+                    onClick={() =>
+                        timeoutOption(
+                            {
+                                coins: false,
+                                delivery: true,
+                                platform: true,
+                                payment: true,
+                            },
+                            scrolltop.coins
+                        )
+                    }
                 >
                     <div className={`${styles.mainorder_option_text}`}>
                         <span className={`${styles.mainorder_option_name}`}>
@@ -561,7 +604,7 @@ const MainOrder = () => {
                         </div>
                         <div
                             className={`${
-                                allSteps.coins
+                                allSteps?.coins
                                     ? styles.mainorder_backgr_done
                                     : styles.mainorder_nobackgr
                             } `}
@@ -585,20 +628,46 @@ const MainOrder = () => {
                     <div className={`${styles.mainorder_btn_wrapper} `}>
                         <button
                             //href={allSteps.delivery ? '#order' : '#delivery'}
+                            // onClick={() => {
+                            //     onClickOption({ ...hide, coins: true });
+                            //     setAllSteps({ ...allSteps, coins: true });
+                            //     if (allSteps.delivery) {
+                            //         window.scrollTo({
+                            //             top: scrolltop.payment,
+                            //             behavior: 'smooth',
+                            //         });
+                            //     } else {
+                            //         window.scrollTo({
+                            //             top: scrolltop.delivery,
+                            //             behavior: 'smooth',
+                            //         });
+                            //     }
+                            // }}
                             onClick={() => {
-                                onClickOption({ ...hide, coins: true });
-                                setAllSteps({ ...allSteps, coins: true });
-                                if (allSteps.delivery) {
-                                    window.scrollTo({
-                                        top: scrolltop.payment,
-                                        behavior: 'smooth',
-                                    });
-                                } else {
-                                    window.scrollTo({
-                                        top: scrolltop.delivery,
-                                        behavior: 'smooth',
-                                    });
+                                if (allSteps?.delivery) {
+                                    timeoutOption(
+                                        {
+                                            payment: false,
+                                            coins: true,
+                                            delivery: true,
+                                            platform: true,
+                                        },
+                                        scrolltop.payment,
+                                        { ...allSteps, coins: true }
+                                    );
+                                } else if (!allSteps?.delivery) {
+                                    timeoutOption(
+                                        {
+                                            payment: true,
+                                            coins: true,
+                                            delivery: false,
+                                            platform: true,
+                                        },
+                                        scrolltop.delivery,
+                                        { ...allSteps, coins: true }
+                                    );
                                 }
+                                //setAllSteps({ ...allSteps, coins: true });
                             }}
                             className={`${styles.mainorder_continue_btn} `}
                         >
@@ -621,18 +690,29 @@ const MainOrder = () => {
                 <button
                     ref={deliveryOption}
                     className={`${styles.mainorder_option_btn} `}
-                    onClick={() => {
-                        onClickOption({
-                            coins: true,
-                            delivery: false,
-                            platform: true,
-                            payment: true,
-                        });
-                        window.scrollTo({
-                            top: scrolltop.delivery,
-                            behavior: 'smooth',
-                        });
-                    }}
+                    // onClick={() => {
+                    //     onClickOption({
+                    //         coins: true,
+                    //         delivery: false,
+                    //         platform: true,
+                    //         payment: true,
+                    //     });
+                    //     window.scrollTo({
+                    //         top: scrolltop.delivery,
+                    //         behavior: 'smooth',
+                    //     });
+                    // }}
+                    onClick={() =>
+                        timeoutOption(
+                            {
+                                coins: true,
+                                delivery: false,
+                                platform: true,
+                                payment: true,
+                            },
+                            scrolltop.delivery
+                        )
+                    }
                 >
                     <div className={`${styles.mainorder_option_text}`}>
                         <span className={`${styles.mainorder_option_name}`}>
@@ -657,7 +737,7 @@ const MainOrder = () => {
                         </div>
                         <div
                             className={`${
-                                allSteps.delivery
+                                allSteps?.delivery
                                     ? styles.mainorder_backgr_done
                                     : styles.mainorder_nobackgr
                             } `}
@@ -748,25 +828,46 @@ const MainOrder = () => {
                     <div className={`${styles.mainorder_btn_wrapper} `}>
                         <button
                             //href={allSteps.coins ? '#order' : '#coins'}
-                            onClick={() => {
-                                onClickOption({ ...hide, delivery: true });
-                                setAllSteps({ ...allSteps, delivery: true });
-                                console.log(
-                                    deliveryOption.current.offsetTop,
-                                    coinsOption.current.offsetTop,
-                                    paymentOption.current.offsetTop
-                                );
-                                if (allSteps.coins) {
-                                    window.scrollTo({
-                                        top: scrolltop.payment,
-                                        behavior: 'smooth',
-                                    });
-                                } else {
-                                    window.scrollTo({
-                                        top: scrolltop.coins,
-                                        behavior: 'smooth',
-                                    });
+                            // onClick={() => {
+                            //     onClickOption({ ...hide, delivery: true });
+                            //     setAllSteps({ ...allSteps, delivery: true });
+                            //     if (allSteps.coins) {
+                            //         window.scrollTo({
+                            //             top: scrolltop.payment,
+                            //             behavior: 'smooth',
+                            //         });
+                            //     } else {
+                            //         window.scrollTo({
+                            //             top: scrolltop.coins,
+                            //             behavior: 'smooth',
+                            //         });
+                            //     }
+                            // }}
+                            onClick={async () => {
+                                if (allSteps?.coins) {
+                                    await timeoutOption(
+                                        {
+                                            payment: false,
+                                            coins: true,
+                                            delivery: true,
+                                            platform: true,
+                                        },
+                                        scrolltop.payment,
+                                        { ...allSteps, delivery: true }
+                                    );
+                                } else if (!allSteps?.coins) {
+                                    await timeoutOption(
+                                        {
+                                            payment: true,
+                                            coins: false,
+                                            delivery: true,
+                                            platform: true,
+                                        },
+                                        scrolltop.coins,
+                                        { ...allSteps, delivery: true }
+                                    );
                                 }
+                                //setAllSteps({ ...allSteps, delivery: true });
                             }}
                             className={`${styles.mainorder_continue_btn} `}
                         >
@@ -784,26 +885,37 @@ const MainOrder = () => {
                 className={`${styles.mainorder_wrapper_options} ${
                     !hide.payment && styles.mainorder_open_property
                 } ${
-                    (!allSteps.platform ||
-                        !allSteps.delivery ||
-                        !allSteps.coins) &&
+                    (!allSteps?.platform ||
+                        !allSteps?.delivery ||
+                        !allSteps?.coins) &&
                     styles.mainorder_disabled
                 }`}
             >
                 <button
                     className={`${styles.mainorder_option_btn} `}
-                    onClick={() => {
-                        onClickOption({
-                            coins: true,
-                            delivery: true,
-                            platform: true,
-                            payment: false,
-                        });
-                        window.scrollTo({
-                            top: scrolltop.payment,
-                            behavior: 'smooth',
-                        });
-                    }}
+                    // onClick={() => {
+                    //     onClickOption({
+                    //         coins: true,
+                    //         delivery: true,
+                    //         platform: true,
+                    //         payment: false,
+                    //     });
+                    //     window.scrollTo({
+                    //         top: scrolltop.payment,
+                    //         behavior: 'smooth',
+                    //     });
+                    // }}
+                    onClick={() =>
+                        timeoutOption(
+                            {
+                                coins: true,
+                                delivery: true,
+                                platform: true,
+                                payment: false,
+                            },
+                            scrolltop.payment
+                        )
+                    }
                 >
                     <div className={`${styles.mainorder_option_text}`}>
                         <span className={`${styles.mainorder_option_name}`}>

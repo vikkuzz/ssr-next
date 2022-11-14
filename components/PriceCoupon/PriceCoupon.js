@@ -120,20 +120,22 @@ const PriceCoupon = () => {
 
     return (
         <div className={`${styles.price}`}>
-            <div className={`${styles.price_wrapper}`}>
-                {stateCurrency.currency}{' '}
-                {stateOrder?.promoCode
-                    ? stateOrder.overallPrice
-                    : stateCoins?.price}
+            <div className={`${styles.price_payment_wrapper}`}>
+                <div className={`${styles.price_wrapper}`}>
+                    {stateCurrency.currency}{' '}
+                    {stateOrder?.promoCode
+                        ? stateOrder.overallPrice
+                        : stateCoins?.price}
+                </div>
+                <button
+                    className={`${styles.coupon} ${
+                        stateOrder?.promoCode && 'hide'
+                    }`}
+                    onClick={() => setHide(!hide)}
+                >
+                    Have a coupon
+                </button>
             </div>
-            <button
-                className={`${styles.coupon} ${
-                    stateOrder?.promoCode && 'hide'
-                }`}
-                onClick={() => setHide(!hide)}
-            >
-                Have a coupon
-            </button>
             <div
                 className={`${styles.coupon_container_content} ${
                     hide && styles.coupon_content_hide

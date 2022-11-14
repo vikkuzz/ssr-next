@@ -60,6 +60,7 @@
 
     @media (min-width:1025px) {
         gap: 7px;
+        //align-items: flex-end;
     }
 }
 
@@ -262,4 +263,5 @@
 }
 .payment_price{
     margin-left: auto;
+    align-self: flex-end;
 }

@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { changePlatform, order } from '../../redux/actions/royalfutActions';
 
 import styles from '../../styles/Footer.module.scss';
 
 const Footer = () => {
     const locale = useSelector((state) => state.royalfutReducer.locale);
+    const dispatch = useDispatch();
 
     return (
         <div className={`${styles.footer}`}>
@@ -54,6 +56,10 @@ const Footer = () => {
                             <Link href={`/order/ps4`} locale={locale.title}>
                                 <a
                                     className={`${styles.footer_info_font} ${styles.footer_flexstart}`}
+                                    onClick={() => {
+                                        dispatch(order({}));
+                                        dispatch(changePlatform('ps'));
+                                    }}
                                 >
                                     PS4
                                 </a>
@@ -63,6 +69,10 @@ const Footer = () => {
                             <Link href={`/order/ps5`} locale={locale.title}>
                                 <a
                                     className={`${styles.footer_info_font} ${styles.footer_flexstart}`}
+                                    onClick={() => {
+                                        dispatch(order({}));
+                                        dispatch(changePlatform('ps'));
+                                    }}
                                 >
                                     PS5
                                 </a>
@@ -75,6 +85,10 @@ const Footer = () => {
                             >
                                 <a
                                     className={`${styles.footer_info_font} ${styles.footer_flexstart}`}
+                                    onClick={() => {
+                                        dispatch(order({}));
+                                        dispatch(changePlatform('xbox'));
+                                    }}
                                 >
                                     Xbox One
                                 </a>
@@ -87,6 +101,10 @@ const Footer = () => {
                             >
                                 <a
                                     className={`${styles.footer_info_font} ${styles.footer_flexstart}`}
+                                    onClick={() => {
+                                        dispatch(order({}));
+                                        dispatch(changePlatform('xbox'));
+                                    }}
                                 >
                                     Xbox Series X|S
                                 </a>

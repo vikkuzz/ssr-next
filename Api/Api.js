@@ -64,6 +64,7 @@ export default class Api {
         coupon = null,
         email
     ) => {
+        console.log(paymentMethod);
         let urlForOrder = 'https://royalfut.com/api/order';
         let currentUrl = window.location.href;
         let localeLang = locale;

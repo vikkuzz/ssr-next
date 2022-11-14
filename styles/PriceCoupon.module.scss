@@ -2,6 +2,7 @@
     flex-direction: column;
     align-items: flex-end;
     width: auto;
+    position: relative;
 
     @media (min-width:1025px) {
         margin-left: auto;
@@ -13,11 +14,13 @@
     color: #eab11f;
     justify-content: flex-end;
     width: auto;
+    white-space: nowrap;
 
     @media (min-width:1025px) {
         font-size: 36px;
         line-height: 36px;
         //padding-top: 24px;
+
     }
 }
 .coupon{
@@ -31,6 +34,7 @@
     line-height: 4vmin;
     text-transform: none;
     color: #eab11f;
+    white-space: nowrap;
 
     @media (min-width:1025px) {
         font-size: 11px;
@@ -193,4 +197,14 @@
     transform: rotate(720deg) scale(1.2);
     
     transition: all 1s ease-in-out;
+}
+.price_payment_wrapper{
+    flex-direction: column;
+    align-items: flex-end;
+
+    @media (min-width:1025px) {
+        position: absolute;
+        width: auto;
+        top: -50px;         
+    }
 }
