@@ -93,6 +93,7 @@ const MainOrder = () => {
 
     useEffect(() => {
         if (stateOrder.coins) {
+            console.log('TRUEE');
             setAllSteps({
                 platform: true,
                 coins: true,
@@ -106,23 +107,6 @@ const MainOrder = () => {
                 delivery: false,
                 payment: false,
             });
-        }
-        if (window.location.href.indexOf('from-acquiring') >= 0) {
-            //setCurrentOrder(JSON.parse(localStorage.getItem('mainOrder')));
-            let mainOrder = JSON.parse(localStorage.getItem('mainOrder'));
-            let saveCoins = mainOrder.coins;
-            setTimeout(() => {
-                dispatch(coins(saveCoins));
-                timeoutOption(
-                    {
-                        coins: true,
-                        delivery: true,
-                        platform: true,
-                        payment: false,
-                    },
-                    scrolltop.payment
-                );
-            }, 500);
         }
     }, []);
 
@@ -172,12 +156,19 @@ const MainOrder = () => {
     }, [allSteps]);
 
     useEffect(() => {
-        setAllSteps({
-            platform: true,
-            coins: false,
-            delivery: false,
-            payment: false,
-        });
+        if (
+            window.location.href.indexOf('ps4') >= 0 ||
+            window.location.href.indexOf('ps5') >= 0 ||
+            window.location.href.indexOf('xbox_one') >= 0 ||
+            window.location.href.indexOf('xbox_series_x') >= 0
+        ) {
+            setAllSteps({
+                platform: true,
+                coins: false,
+                delivery: false,
+                payment: false,
+            });
+        }
     }, [platform.ps]);
 
     useEffect(() => {
@@ -276,11 +267,37 @@ const MainOrder = () => {
                 behavior: 'smooth',
             });
         } else if (!stateOrder.coins && window.innerWidth > 1024) {
+            console.log(312);
             setScrolltop(descScrolltop);
             window.scrollTo({
                 top: 312,
                 behavior: 'smooth',
             });
+        }
+        if (window.location.href.indexOf('from-acquiring') >= 0) {
+            let mainOrder = JSON.parse(localStorage.getItem('mainOrder'));
+            let saveCoins = mainOrder.coins;
+            setTimeout(() => {
+                dispatch(coins(saveCoins));
+
+                setAllSteps({
+                    platform: true,
+                    coins: true,
+                    delivery: true,
+                    payment: true,
+                });
+
+                // setHide({
+                //     coins: true,
+                //     delivery: true,
+                //     platform: true,
+                //     payment: false,
+                // });
+                window.scrollTo({
+                    top: window.innerWidth > 1024 ? 504 : 346,
+                    behavior: 'smooth',
+                });
+            }, 500);
         }
         return () => {
             document.addEventListener('scroll', (e) => {
@@ -362,6 +379,7 @@ const MainOrder = () => {
                 behavior: 'smooth',
             });
             onClickOption(openOption);
+            console.log('IM_HERE');
             setAllSteps(checkedStep);
         }, 200);
     };
