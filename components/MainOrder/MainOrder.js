@@ -321,7 +321,11 @@ const MainOrder = () => {
             .then((res) => (document.location.href = res.acquiringLink));
     };
 
-    const timeoutOption = async (openOption, scrollTo, checkedStep) => {
+    const timeoutOption = async (
+        openOption,
+        scrollTo,
+        checkedStep = allSteps
+    ) => {
         onClickOption({
             coins: true,
             delivery: true,
