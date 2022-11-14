@@ -340,7 +340,7 @@ const MainOrder = () => {
             });
             onClickOption(openOption);
             setAllSteps(checkedStep);
-        }, 400);
+        }, 200);
     };
 
     return (
