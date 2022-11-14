@@ -70,7 +70,7 @@ const CalcCoins = () => {
         dispatch(
             coins({
                 coef: coef,
-                price: +currentPrice.toFixed(2),
+                price: Number(currentPrice).toFixed(2),
                 fullprice: Number(disc).toFixed(2),
                 amount: Math.round(currentCoins),
             })
@@ -113,7 +113,7 @@ const CalcCoins = () => {
         dispatch(
             coins({
                 coef: coef,
-                price: +currentPrice.toFixed(2),
+                price: Number(currentPrice).toFixed(2),
                 fullprice: Number(disc).toFixed(2),
                 amount: Math.round(currentCoins),
             })
