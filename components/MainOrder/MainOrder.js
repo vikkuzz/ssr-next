@@ -93,7 +93,6 @@ const MainOrder = () => {
 
     useEffect(() => {
         if (stateOrder.coins) {
-            console.log('TRUEE');
             setAllSteps({
                 platform: true,
                 coins: true,
@@ -111,11 +110,6 @@ const MainOrder = () => {
     }, []);
 
     useEffect(() => {
-        console.log(currentOrder);
-    }, [currentOrder]);
-
-    useEffect(() => {
-        console.log(allSteps);
         if (!allSteps?.platform || !allSteps?.delivery || !allSteps?.coins) {
             if (!allSteps?.platform) {
                 setHide({
@@ -131,6 +125,18 @@ const MainOrder = () => {
                     delivery: true,
                     payment: true,
                 });
+                if (window.innerWidth <= 1024) {
+                    console.log('scroll');
+                    window.scrollTo({
+                        top: 40,
+                        behavior: 'smooth',
+                    });
+                } else if (window.innerWidth > 1024) {
+                    window.scrollTo({
+                        top: 312,
+                        behavior: 'smooth',
+                    });
+                }
             } else if (!allSteps?.delivery) {
                 setHide({
                     platform: true,
@@ -267,7 +273,6 @@ const MainOrder = () => {
                 behavior: 'smooth',
             });
         } else if (!stateOrder.coins && window.innerWidth > 1024) {
-            console.log(312);
             setScrolltop(descScrolltop);
             window.scrollTo({
                 top: 312,
@@ -286,13 +291,6 @@ const MainOrder = () => {
                     delivery: true,
                     payment: true,
                 });
-
-                // setHide({
-                //     coins: true,
-                //     delivery: true,
-                //     platform: true,
-                //     payment: false,
-                // });
                 window.scrollTo({
                     top: window.innerWidth > 1024 ? 504 : 346,
                     behavior: 'smooth',
@@ -379,7 +377,6 @@ const MainOrder = () => {
                 behavior: 'smooth',
             });
             onClickOption(openOption);
-            console.log('IM_HERE');
             setAllSteps(checkedStep);
         }, 200);
     };
