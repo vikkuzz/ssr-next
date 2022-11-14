@@ -153,7 +153,7 @@
 .coins_input_wrapper{
     width: 100%;
     background-color: transparent;
-    border: 1px solid tomato;
+    //border: 1px solid tomato;
 
     justify-content: flex-start;
     @media (min-width:1025px) {
@@ -161,7 +161,7 @@
     }
 }
 .coins_input__disc{
-    width: auto;
+    width: 100%;
     white-space: nowrap;
     background-color: transparent;
     color: #616172;
@@ -169,6 +169,7 @@
     font-weight: 500;
     font-size: 9.6vmin;
     line-height: 9.6vmin;
+    justify-content: flex-start;
 
     @media (min-width:1025px) {
         font-size: 32px;
