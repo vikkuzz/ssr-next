@@ -7,7 +7,7 @@
     padding: 0 24px;
     width: 100vw;
     padding-top: 4.2vmin;
-    transition: all .6s ease-in-out;
+    transition: all .3s ease-in-out;
 
     @media (min-width:1025px) {
         padding: 32px 0 0;
@@ -116,7 +116,7 @@
 .mainorder_open_property{
     background-color: rgba(255,255,255,0.2);
     flex-direction: column;
-    transition: all .6s ease-in-out;
+    transition: all .3s ease-in-out;
 
     @media (min-width:1025px) {
         padding-left: 16px;
@@ -127,7 +127,7 @@
     flex-direction: column;
     background-color: transparent;
     padding-bottom: 6.4vmin;
-    transition: all .6s ease-out;
+    transition: all .3s ease-out;
     height: 110vmin;
     max-height: 1000px;
     overflow: hidden;
@@ -150,7 +150,7 @@
     flex-direction: column;
     background-color: transparent;
     padding-bottom: 6.4vmin;
-    transition: all .6s ease-out;
+    transition: all .3s ease-out;
     height: 78vmin;
     max-height: 1000px;
     overflow: hidden;
@@ -201,7 +201,7 @@
     gap: 0;
     height: 0;
     max-height: 0;
-    transition: all .6s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 .mainorder_divider{
     height: 1px;
@@ -362,7 +362,7 @@
     flex-direction: column;
     background-color: transparent;
     padding-bottom: 6.4vmin;
-    transition: all .6s ease-out;
+    transition: all .3s ease-out;
     height: 84vmin;
     max-height: 1000px;
     overflow: hidden;
@@ -376,7 +376,7 @@
     flex-direction: column;
     background-color: transparent;
     padding-bottom: 6.4vmin;
-    transition: all .6s ease-out;
+    transition: all .3s ease-out;
     //height: 165vmin;
     height: auto;
     max-height: 165vmin;

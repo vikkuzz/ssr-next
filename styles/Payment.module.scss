@@ -233,9 +233,11 @@
     padding: 3vmin 6vmin;
     min-width: 150px;
     min-height: 56px;
+    justify-content: flex-start;
+
 
     @media (min-width:1025px) {
-        padding: 0;
+        padding: 0 30px;
         height: 100%;
         width: 150px;
         
