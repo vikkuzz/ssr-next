@@ -40,8 +40,8 @@
     background-color: transparent;
     font-family: 'BebasNeue';
     font-weight: 500;
-    font-size: 9.6vmin;
-    line-height: 9.6vmin;
+    font-size: 9vmin;
+    line-height: 9vmin;
 
     @media (min-width:1025px) {
         height: auto;
@@ -146,11 +146,11 @@
 .coins_input__currency{
     padding-left: 5px;
     padding-right: 15px;
-    min-width: fit-content;
+    min-width: 80px;
     border: 1px solid tomato;
 }
 .coins_input_wrapper{
-    width: max-content;
+    width: auto;
     background-color: transparent;
 
     justify-content: flex-start;
