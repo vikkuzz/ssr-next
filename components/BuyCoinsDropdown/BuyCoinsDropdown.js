@@ -55,8 +55,8 @@ const BuyCoinsDropdown = () => {
                         <Link href={`/order/ps4`} locale={locale}>
                             <a
                                 onClick={() => {
-                                    dispatch(order({}));
                                     dispatch(changePlatform('ps'));
+                                    dispatch(order({}));
                                 }}
                             >
                                 ps4

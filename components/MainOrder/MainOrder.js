@@ -73,7 +73,6 @@ const MainOrder = () => {
     let [manualPrice, setManualPrice] = useState();
     let [deliveryMethod, setDeliveryMethod] = useState();
     let [currentOrder, setCurrentOrder] = useState(stateOrder);
-    let [currentCoins, setCurrentCoins] = useState();
     let [crypto, setCrypto] = useState();
     let [allSteps, setAllSteps] = useState(
         stateOrder?.coins
@@ -90,7 +89,6 @@ const MainOrder = () => {
                   payment: false,
               }
     );
-    let [step, setStep] = useState({ step1: '', step2: '', step3: '' });
 
     let [scrolltop, setScrolltop] = useState();
 
@@ -102,7 +100,6 @@ const MainOrder = () => {
                 delivery: true,
                 payment: true,
             });
-            setStep({ step1: '#order', step2: '#order', step3: '#order' });
         } else {
             setAllSteps({
                 platform: true,
@@ -110,14 +107,12 @@ const MainOrder = () => {
                 delivery: false,
                 payment: false,
             });
-            setStep({ step1: '#order', step2: '#delivery', step3: '#coins' });
         }
     }, []);
 
     useEffect(() => {
         console.log(allSteps);
         if (!allSteps?.platform || !allSteps?.delivery || !allSteps?.coins) {
-            console.log(allSteps);
             if (!allSteps?.platform) {
                 setHide({
                     platform: false,
@@ -210,7 +205,6 @@ const MainOrder = () => {
                 (currentOrder?.coins?.amount * coefEasy).toFixed(2)
             ).toFixed(2)
         );
-        setCurrentCoins(currentOrder?.coins?.amount);
     }, [currentOrder]);
 
     useEffect(() => {
@@ -531,6 +525,17 @@ const MainOrder = () => {
                                             payment: true,
                                             coins: false,
                                             delivery: true,
+                                            platform: true,
+                                        },
+                                        scrolltop.coins,
+                                        { ...allSteps, platform: true }
+                                    );
+                                } else if (!allSteps?.delivery) {
+                                    timeoutOption(
+                                        {
+                                            payment: true,
+                                            coins: true,
+                                            delivery: false,
                                             platform: true,
                                         },
                                         scrolltop.coins,
