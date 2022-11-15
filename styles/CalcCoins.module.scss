@@ -138,6 +138,9 @@
     width: auto;
     font-size: 9.6vmin;
     line-height: 9.6vmin;
+    @media (max-width:1024px) {
+        padding-left: 8px;
+    }
 
     @media (min-width:1025px) {
         height: auto;

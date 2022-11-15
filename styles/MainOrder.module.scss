@@ -369,7 +369,7 @@
     background-color: transparent;
     padding-bottom: 6.4vmin;
     transition: all .3s ease-out;
-    height: 84vmin;
+    height: 95vmin;
     max-height: 1000px;
     overflow: hidden;
 
@@ -462,5 +462,31 @@
     @media (min-width:1025px) {
         width: 24px;
         height: 24px;
+    }
+}
+.method_info img{
+    background-color: transparent;
+    width: 22px;
+}
+
+.method_info:hover .info_text{
+    color: white;
+    transition: all 0.3s linear;
+}
+.info_method{
+    margin:4vmin auto 4.5vmin;
+
+}
+.info_method_title{
+    margin-left: auto;
+}
+.hide{
+    display: none;
+}
+.info_text{
+    padding: 0 8px;
+    @media (max-width:1024px) {
+        font-size: 3.2vmin;
+        line-height: 4vmin;
     }
 }

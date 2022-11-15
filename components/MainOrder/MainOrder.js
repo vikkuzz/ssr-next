@@ -742,6 +742,21 @@ const MainOrder = () => {
                         />
                     </div>
                     <div
+                        className={`${
+                            styles.info_method_title
+                        } from-1025-to-1900 ${hide.delivery && styles.hide}`}
+                    >
+                        <a
+                            href="#deliveryMain"
+                            className={`${styles.method_info}`}
+                        >
+                            <span className={`${styles.info_text}`}>
+                                Как это работает?
+                            </span>
+                            <img src="/img/what-question.svg" />
+                        </a>
+                    </div>
+                    <div
                         className={`${styles.mainorder_option_props} ${
                             !hide.delivery && 'hide'
                         }`}
@@ -771,6 +786,17 @@ const MainOrder = () => {
                         styles.mainorder_container_content_delivery
                     } ${hide.delivery && styles.mainorder_content_hide}`}
                 >
+                    <div className={`${styles.info_method} from-375-to-1024`}>
+                        <a
+                            href="#deliveryMain"
+                            className={`${styles.method_info}`}
+                        >
+                            <span className={`${styles.info_text}`}>
+                                Как это работает?
+                            </span>
+                            <img src="/img/what-question.svg" />
+                        </a>
+                    </div>
                     <div className={`${styles.mainorder_method_container}`}>
                         <button
                             type="button"
