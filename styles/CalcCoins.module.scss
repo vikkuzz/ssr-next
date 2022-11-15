@@ -43,7 +43,6 @@
     font-size: 9vmin;
     line-height: 9vmin;
     justify-content: flex-start;
-    border: 1px solid red;
 
     @media (min-width:1025px) {
         height: auto;
@@ -122,6 +121,9 @@
 }
 .calc_coins__border{
     border-radius: 4px 0 0 4px;
+    @media (max-width:1024px) {
+        padding-left: 4px;
+    }
 }
 .calc_coins__border2{
     border-radius: 0 4px 4px 0;
