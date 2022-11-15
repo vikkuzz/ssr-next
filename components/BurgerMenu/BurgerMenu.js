@@ -208,60 +208,60 @@ const BurgerMenu = () => {
                 </div>
             </div>
         );
-    } else if (modal === true && auth !== true && menuContent == 'mobile') {
-        menu = (
-            <div className={styles.burger_menu}>
-                <button
-                    onClick={() => dispatch(loginModal(false))}
-                    className={`${styles.close_menu}`}
-                ></button>
-                <div className={styles.burger_menu__wrapper}>
-                    <div onClick={() => setMenuContent('desktop')}>
-                        <MenuItem text={'LOG IN'} />
-                    </div>
-                    <MenuItem text={'PRESET ORDERS'} color={'burger_orange_'} />
-                    <MenuItem text={'BUY COINS'} color={'burger_yellow_'} />
-                    <MenuItem text={'DELIVERY'} />
-                    <MenuItem text={'FAQ'} />
-                </div>
-                <div className={styles.burger_menu__footer}>
-                    <div className={styles.burger_menu__icon_wrapper}>
-                        <SvgContainer
-                            item={twitter}
-                            color={'white'}
-                            hover={'gold'}
-                            classStyle={styles.burger_menu__icon}
-                        />
-                    </div>
-                    <div className={styles.burger_menu__icon_wrapper}>
-                        <SvgContainer
-                            item={whatsapp}
-                            color={'white'}
-                            hover={'gold'}
-                            classStyle={styles.burger_menu__icon}
-                        />
-                    </div>
-                    <div className={styles.burger_menu__icon_wrapper}>
-                        <SvgContainer
-                            item={insta}
-                            color={'white'}
-                            hover={'gold'}
-                            classStyle={styles.burger_menu__icon}
-                        />
-                    </div>
-                    <div className={styles.burger_menu__icon_wrapper}>
-                        <SvgContainer
-                            item={youtube}
-                            color={'white'}
-                            hover={'gold'}
-                            classStyle={styles.burger_menu__icon}
-                        />
-                    </div>
-                </div>
-            </div>
-        );
-    } else if (modal === true && auth !== true && menuContent == 'desktop') {
-        console.log('wtf: ', menuContent);
+        // } else if (modal === true && auth !== true && menuContent == 'mobile') {
+        //     menu = (
+        //         <div className={styles.burger_menu}>
+        //             <button
+        //                 onClick={() => dispatch(loginModal(false))}
+        //                 className={`${styles.close_menu}`}
+        //             ></button>
+        //             <div className={styles.burger_menu__wrapper}>
+        //                 <div onClick={() => setMenuContent('desktop')}>
+        //                     <MenuItem text={'LOG IN'} />
+        //                 </div>
+        //                 <MenuItem text={'PRESET ORDERS'} color={'burger_orange_'} />
+        //                 <MenuItem text={'BUY COINS'} color={'burger_yellow_'} />
+        //                 <MenuItem text={'DELIVERY'} />
+        //                 <MenuItem text={'FAQ'} />
+        //             </div>
+        //             <div className={styles.burger_menu__footer}>
+        //                 <div className={styles.burger_menu__icon_wrapper}>
+        //                     <SvgContainer
+        //                         item={twitter}
+        //                         color={'white'}
+        //                         hover={'gold'}
+        //                         classStyle={styles.burger_menu__icon}
+        //                     />
+        //                 </div>
+        //                 <div className={styles.burger_menu__icon_wrapper}>
+        //                     <SvgContainer
+        //                         item={whatsapp}
+        //                         color={'white'}
+        //                         hover={'gold'}
+        //                         classStyle={styles.burger_menu__icon}
+        //                     />
+        //                 </div>
+        //                 <div className={styles.burger_menu__icon_wrapper}>
+        //                     <SvgContainer
+        //                         item={insta}
+        //                         color={'white'}
+        //                         hover={'gold'}
+        //                         classStyle={styles.burger_menu__icon}
+        //                     />
+        //                 </div>
+        //                 <div className={styles.burger_menu__icon_wrapper}>
+        //                     <SvgContainer
+        //                         item={youtube}
+        //                         color={'white'}
+        //                         hover={'gold'}
+        //                         classStyle={styles.burger_menu__icon}
+        //                     />
+        //                 </div>
+        //             </div>
+        //         </div>
+        //     );
+    } else if (modal === true && auth !== true) {
+        //} else if (modal === true && auth !== true && menuContent == 'desktop') {
         menu = (
             <div
                 className={`${styles.burger_menu_desk} ${animate && 'right_0'}`}
@@ -449,14 +449,6 @@ const BurgerMenu = () => {
             </div>
         );
     }
-    console.log(
-        'modal: ',
-        modal,
-        'isAuth: ',
-        auth,
-        'menuContent: ',
-        menuContent
-    );
     return menu;
 };
 
