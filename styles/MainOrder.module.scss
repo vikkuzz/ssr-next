@@ -76,6 +76,8 @@
     font-size: 6.4vmin;
     line-height: 6.4vmin;
     background-color: transparent;
+    text-align: start;
+    white-space: nowrap;
 
     @media (min-width:1025px) {
         font-size: 36px;
@@ -262,6 +264,10 @@
     line-height: 4vmin;
     color: inherit;
     width: auto;
+
+    @media (max-width:1024px) {
+        padding-left: 55px;
+    }
 
     @media (min-width:1025px) {
         font-size: 12px;
