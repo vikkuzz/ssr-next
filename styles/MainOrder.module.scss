@@ -464,6 +464,10 @@
         height: 24px;
     }
 }
+.method_info{
+    color: inherit;
+    width: auto;
+}
 .method_info img{
     background-color: transparent;
     width: 22px;
@@ -475,18 +479,27 @@
 }
 .info_method{
     margin:4vmin auto 4.5vmin;
-
+    color: hsla(0,0%,100%,.5);
 }
 .info_method_title{
     margin-left: auto;
+    color: hsla(0,0%,100%,.5);
+}
+.mainorder_option_btn:hover .info_method_title{
+    color: white;
+    transition: all 0.3s linear;
 }
 .hide{
     display: none;
 }
 .info_text{
+    color: inherit;
     padding: 0 8px;
     @media (max-width:1024px) {
         font-size: 3.2vmin;
         line-height: 4vmin;
     }
+}
+.info_text:hover{
+    color: rgb(255, 255, 255);
 }
