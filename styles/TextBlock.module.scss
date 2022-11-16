@@ -1,30 +1,63 @@
 .textblock{
     position: relative;
     flex-direction: column;
+    padding: 0 2vmin;
 }
 .textblock_decor{
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
-    max-width: 7.4666666667vmin;
+    max-width: 9.5vmin;
     background-color: transparent;
     object-position: 0vmin -2vmin;
     object-fit: contain;
+
+    @media (min-width:1025px) {
+        max-width: 55px;
+    }
 }
 .textblock_container{
     flex-direction: column;
     padding-top: 15vmin;
+
+    @media (min-width:1025px) {
+        padding-top: 60px;
+    }
 }
 .textblock_text{
     background-color: transparent;
+    font-family: 'Montserrat',helvetica,arial,sans-serif;
+    font-weight: 600;
+    font-size: 3.2vmin;
+    line-height: 4vmin;
+    letter-spacing: -.01em;
+    color: hsla(0,0%,100%,.6);
+
+    @media (min-width:1025px) {
+        font-size: 12px;
+        line-height: 15px;
+    }
 }
 .textblock_title{
     background-color: transparent;
     padding-bottom: 1.6vmin;
     font-size: 6.4vmin;
     line-height: 6.4vmin;
+    font-weight: 400;
+    justify-content: flex-start;
+    padding-top: 2vmin;
+
+    @media (min-width:1025px) {
+        font-size: 36px;
+        line-height: 36px;
+    }
 }
 .textblock_row{
     padding-bottom:12.8vmin;
+    align-items: flex-start;
+
+    @media (min-width:1025px) {
+        padding-bottom: 60px;
+    }
 }

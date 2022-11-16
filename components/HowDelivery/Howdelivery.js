@@ -71,7 +71,7 @@ const Howdelivery = () => {
         }
     }, []);
     useEffect(() => {
-        if (howDelivery.manual && player.seekTo) {
+        if (howDelivery.manual && player?.seekTo) {
             if (step == 1) {
                 player.seekTo(0, true);
             } else if (step == 2) {
@@ -81,7 +81,7 @@ const Howdelivery = () => {
             } else if (step == 4) {
                 player.seekTo(114, true);
             }
-        } else if (howDelivery.easy && player.seekTo) {
+        } else if (howDelivery.easy && player?.seekTo) {
             if (step == 1) {
                 player.seekTo(0, true);
             } else if (step == 2) {
@@ -96,7 +96,7 @@ const Howdelivery = () => {
 
     useEffect(() => {
         setStep(1);
-        if (player.loadVideoById) {
+        if (player?.loadVideoById) {
             if (howDelivery.manual) {
                 player.loadVideoById('5IxIFgx_src');
             } else if (howDelivery.easy) {
