@@ -117,6 +117,11 @@ function MainContainer({
                     async
                     defer
                 ></script>
+                <script
+                    src="https://www.youtube.com/iframe_api"
+                    async
+                    defer
+                ></script>
             </Head>
             <div className="body__backgr"></div>
             <div className={`error ${error == '' ? '' : styles.showError}`}>

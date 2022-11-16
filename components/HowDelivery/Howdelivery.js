@@ -42,63 +42,67 @@ let deliveryData = {
         },
     },
 };
-
+let player = null;
 const Howdelivery = () => {
     const easy = useRef(null);
     const manual = useRef(null);
     let [howDelivery, setHowDelivery] = useState({ easy: true, manual: false });
     let [step, setStep] = useState(1);
 
-    // useEffect(() => {
-    //     let player = new YTPlayer('#player', {
-    //         height: 320,
-    //         width: 540,
-    //     });
-    //     player.load('tYVjCOjLlZQ');
-    // }, []);
     useEffect(() => {
-        console.log(step);
-        //let player = new YTPlayer('#player');
-        if (howDelivery.manual) {
-            //console.log('manual', player.videoId);
-            //player.destroy();
-            document.querySelector('#player').style.display = 'none';
-            document.querySelector('#player2').style.display = 'block';
-            //easy.current.style.display = 'none';
-            let player = new YTPlayer('#player2');
-            player.load('5IxIFgx_src');
-            player.play();
-            //console.log('manual', player.videoId);
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                videoId: 'tYVjCOjLlZQ',
+                playerVars: {
+                    playsinline: 1,
+                    autoplay: 1,
+                },
+            });
+        }
+        if (typeof YT != 'undefined') {
+            onYouTubeIframeAPIReady();
+        } else {
+            let interval = setInterval(() => {
+                if (typeof YT != 'undefined') {
+                    clearInterval(interval);
+                }
+                onYouTubeIframeAPIReady();
+            }, 300);
+        }
+    }, []);
+    useEffect(() => {
+        if (howDelivery.manual && player.seekTo) {
             if (step == 1) {
-                player.seek(0);
+                player.seekTo(0, true);
             } else if (step == 2) {
-                console.log('step2');
-                player.seek(57);
+                player.seekTo(57, true);
             } else if (step == 3) {
-                player.seek(105);
+                player.seekTo(105, true);
             } else if (step == 4) {
-                player.seek(114);
+                player.seekTo(114, true);
             }
-        } else if (howDelivery.easy) {
-            console.log(howDelivery);
-            document.querySelector('#player2').style.display = 'none';
-            document.querySelector('#player').style.display = 'block';
-            let player = new YTPlayer('#player');
-            player.load('tYVjCOjLlZQ');
-            player.play();
+        } else if (howDelivery.easy && player.seekTo) {
             if (step == 1) {
-                player.seek(0);
+                player.seekTo(0, true);
             } else if (step == 2) {
-                player.seek(19);
+                player.seekTo(19, true);
             } else if (step == 3) {
-                player.seek(39);
+                player.seekTo(39, true);
             } else if (step == 4) {
-                player.seek(42);
+                player.seekTo(42, true);
             }
         }
+    }, [step]);
 
-        //player.load('5IxIFgx_src');
-    }, [howDelivery, step]);
+    useEffect(() => {
+        if (player.loadVideoById) {
+            if (howDelivery.manual) {
+                player.loadVideoById('5IxIFgx_src');
+            } else if (howDelivery.easy) {
+                player.loadVideoById('tYVjCOjLlZQ');
+            }
+        }
+    }, [howDelivery]);
 
     const onHandleClickTab = (e) => {
         if (e.target.id === 'easy') {
@@ -119,7 +123,7 @@ const Howdelivery = () => {
         setStep(currStep);
     };
     return (
-        <div className={`${styles.how_container}`}>
+        <div id="deliveryMain" className={`${styles.how_container}`}>
             <div className={`${styles.how_title}`}>HOW DOES DELIVERY WORK?</div>
             <div className={`${styles.how_container_content}`}>
                 <div className={`${styles.how_tabs_wrapper}`}>
@@ -196,12 +200,6 @@ const Howdelivery = () => {
                 <div
                     id="player"
                     ref={easy}
-                    className={`${styles.how_yt_wrapper}`}
-                    autoPlay={1}
-                ></div>
-                <div
-                    id="player2"
-                    ref={manual}
                     className={`${styles.how_yt_wrapper}`}
                     autoPlay={1}
                 ></div>
