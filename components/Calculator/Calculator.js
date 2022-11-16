@@ -7,7 +7,11 @@ import PlatformChanger from '../PlatformChanger';
 import MethodChanger from '../MethodChanger';
 import CalcCoins from '../CalcCoins';
 import SvgContainer from '../SvgContainer';
-import { loginModal, order } from '../../redux/actions/royalfutActions';
+import {
+    loginModal,
+    order,
+    loginModalFromMain,
+} from '../../redux/actions/royalfutActions';
 import Link from 'next/link';
 import { getDeliveryTime } from '../../utils/functions';
 
@@ -36,6 +40,7 @@ const Calculator = () => {
             dispatch(order(currentOrder));
         } else {
             dispatch(loginModal(true));
+            dispatch(loginModalFromMain(true));
         }
     };
     return (

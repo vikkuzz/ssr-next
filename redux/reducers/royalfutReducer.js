@@ -10,6 +10,7 @@ if (!ISSERVER) {
 }
 const initialState = {
     loginModal: false,
+    loginModalFromMain: false,
     isAuth: false,
     loginMenu: {
         registration: true,
@@ -182,6 +183,9 @@ const royalfutReducer = (state = initialState, action) => {
                 ...localState,
             });
             return { ...state, ...localState, paymentMethod: action.data };
+
+        case 'LOGIN_MODAL_FROM_MAIN':
+            return { ...state, loginModalFromMain: action.data };
 
         case 'USER_CREATE_ORDER':
             ls.set('localState', {

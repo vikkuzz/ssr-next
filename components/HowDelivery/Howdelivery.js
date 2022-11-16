@@ -51,13 +51,15 @@ const Howdelivery = () => {
 
     useEffect(() => {
         function onYouTubeIframeAPIReady() {
-            player = new YT.Player('player', {
-                videoId: 'tYVjCOjLlZQ',
-                playerVars: {
-                    playsinline: 1,
-                    autoplay: 1,
-                },
-            });
+            if (typeof YT != 'undefined' && YT.Player) {
+                player = new YT.Player('player', {
+                    videoId: 'tYVjCOjLlZQ',
+                    playerVars: {
+                        playsinline: 1,
+                        autoplay: 1,
+                    },
+                });
+            }
         }
         if (typeof YT != 'undefined' && YT.Player) {
             onYouTubeIframeAPIReady();
@@ -70,6 +72,7 @@ const Howdelivery = () => {
             }, 300);
         }
     }, []);
+
     useEffect(() => {
         if (howDelivery.manual && player?.seekTo) {
             if (step == 1) {

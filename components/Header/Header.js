@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 import {
     loginModal,
+    loginModalFromMain,
     userCreateOrder,
     userlogout,
 } from '../../redux/actions/royalfutActions';
@@ -193,7 +194,9 @@ function Header() {
             </div>
             <div className={styles.header__right}>
                 <button
-                    onClick={burgerToX}
+                    onClick={() => {
+                        burgerToX();
+                    }}
                     className={`${styles.header__burger} from-375-to-1024`}
                 >
                     <div

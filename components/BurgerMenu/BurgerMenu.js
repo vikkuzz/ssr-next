@@ -9,6 +9,7 @@ import {
     userlogout,
     loginModal,
     catcherror,
+    loginModalFromMain,
 } from '../../redux/actions/royalfutActions';
 
 import MenuItem from '../MenuItem';
@@ -27,6 +28,9 @@ const api = new Api();
 
 const BurgerMenu = () => {
     const modal = useSelector((state) => state.royalfutReducer.loginModal);
+    const modalFromMain = useSelector(
+        (state) => state.royalfutReducer.loginModalFromMain
+    );
     const auth = useSelector((state) => state.royalfutReducer.isAuth);
     const loginMenu = useSelector((state) => state.royalfutReducer.loginMenu);
     const userData = useSelector((state) => state.royalfutReducer.user);
@@ -64,7 +68,13 @@ const BurgerMenu = () => {
         window.innerWidth > 1025
             ? setMenuContent('desktop')
             : setMenuContent('mobile');
-    }, [modal]);
+        modalFromMain === true && setMenuContent('desktop');
+        !modal && dispatch(loginModalFromMain(false));
+    }, [modal, modalFromMain]);
+
+    // useEffect(()=>{
+    //     modalFromMain===true&&setMenuContent('desktop')
+    // },[modalFromMain])
 
     useEffect(() => {
         if (submit?.current != null) {
@@ -208,60 +218,61 @@ const BurgerMenu = () => {
                 </div>
             </div>
         );
-        // } else if (modal === true && auth !== true && menuContent == 'mobile') {
-        //     menu = (
-        //         <div className={styles.burger_menu}>
-        //             <button
-        //                 onClick={() => dispatch(loginModal(false))}
-        //                 className={`${styles.close_menu}`}
-        //             ></button>
-        //             <div className={styles.burger_menu__wrapper}>
-        //                 <div onClick={() => setMenuContent('desktop')}>
-        //                     <MenuItem text={'LOG IN'} />
-        //                 </div>
-        //                 <MenuItem text={'PRESET ORDERS'} color={'burger_orange_'} />
-        //                 <MenuItem text={'BUY COINS'} color={'burger_yellow_'} />
-        //                 <MenuItem text={'DELIVERY'} />
-        //                 <MenuItem text={'FAQ'} />
-        //             </div>
-        //             <div className={styles.burger_menu__footer}>
-        //                 <div className={styles.burger_menu__icon_wrapper}>
-        //                     <SvgContainer
-        //                         item={twitter}
-        //                         color={'white'}
-        //                         hover={'gold'}
-        //                         classStyle={styles.burger_menu__icon}
-        //                     />
-        //                 </div>
-        //                 <div className={styles.burger_menu__icon_wrapper}>
-        //                     <SvgContainer
-        //                         item={whatsapp}
-        //                         color={'white'}
-        //                         hover={'gold'}
-        //                         classStyle={styles.burger_menu__icon}
-        //                     />
-        //                 </div>
-        //                 <div className={styles.burger_menu__icon_wrapper}>
-        //                     <SvgContainer
-        //                         item={insta}
-        //                         color={'white'}
-        //                         hover={'gold'}
-        //                         classStyle={styles.burger_menu__icon}
-        //                     />
-        //                 </div>
-        //                 <div className={styles.burger_menu__icon_wrapper}>
-        //                     <SvgContainer
-        //                         item={youtube}
-        //                         color={'white'}
-        //                         hover={'gold'}
-        //                         classStyle={styles.burger_menu__icon}
-        //                     />
-        //                 </div>
-        //             </div>
-        //         </div>
-        //     );
-    } else if (modal === true && auth !== true) {
-        //} else if (modal === true && auth !== true && menuContent == 'desktop') {
+    } else if (modal === true && auth !== true && menuContent == 'mobile') {
+        console.log('modalfrommain');
+        menu = (
+            <div className={styles.burger_menu}>
+                <button
+                    onClick={() => dispatch(loginModal(false))}
+                    className={`${styles.close_menu}`}
+                ></button>
+                <div className={styles.burger_menu__wrapper}>
+                    <div onClick={() => setMenuContent('desktop')}>
+                        <MenuItem text={'LOG IN'} />
+                    </div>
+                    <MenuItem text={'PRESET ORDERS'} color={'burger_orange_'} />
+                    <MenuItem text={'BUY COINS'} color={'burger_yellow_'} />
+                    <MenuItem text={'DELIVERY'} />
+                    <MenuItem text={'FAQ'} />
+                </div>
+                <div className={styles.burger_menu__footer}>
+                    <div className={styles.burger_menu__icon_wrapper}>
+                        <SvgContainer
+                            item={twitter}
+                            color={'white'}
+                            hover={'gold'}
+                            classStyle={styles.burger_menu__icon}
+                        />
+                    </div>
+                    <div className={styles.burger_menu__icon_wrapper}>
+                        <SvgContainer
+                            item={whatsapp}
+                            color={'white'}
+                            hover={'gold'}
+                            classStyle={styles.burger_menu__icon}
+                        />
+                    </div>
+                    <div className={styles.burger_menu__icon_wrapper}>
+                        <SvgContainer
+                            item={insta}
+                            color={'white'}
+                            hover={'gold'}
+                            classStyle={styles.burger_menu__icon}
+                        />
+                    </div>
+                    <div className={styles.burger_menu__icon_wrapper}>
+                        <SvgContainer
+                            item={youtube}
+                            color={'white'}
+                            hover={'gold'}
+                            classStyle={styles.burger_menu__icon}
+                        />
+                    </div>
+                </div>
+            </div>
+        );
+        //} else if (modal === true && auth !== true) {
+    } else if (modal === true && auth !== true && menuContent == 'desktop') {
         menu = (
             <div
                 className={`${styles.burger_menu_desk} ${animate && 'right_0'}`}
