@@ -108,7 +108,7 @@ const Howdelivery = () => {
         }
     };
     const onHandleChangeStep = (e) => {
-        let currStep = e.target.id === '-' ? step - 1 : step + 1;
+        let currStep = e.target.id == '-' ? step - 1 : step + 1;
         if (currStep === 5) {
             currStep = 1;
         }
@@ -171,6 +171,7 @@ const Howdelivery = () => {
                             onClick={onHandleChangeStep}
                         >
                             <img
+                                id="-"
                                 className={`${styles.how_step_img}`}
                                 alt="back"
                                 src="/img/arrow-left.svg"
@@ -184,8 +185,9 @@ const Howdelivery = () => {
                             onClick={onHandleChangeStep}
                         >
                             <img
+                                id="+"
                                 className={`${styles.how_step_img}`}
-                                alt="back"
+                                alt="front"
                                 src="/img/arrow-right-white.svg"
                             ></img>
                         </button>
