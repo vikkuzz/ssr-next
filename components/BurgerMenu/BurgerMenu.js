@@ -72,10 +72,6 @@ const BurgerMenu = () => {
         !modal && dispatch(loginModalFromMain(false));
     }, [modal, modalFromMain]);
 
-    // useEffect(()=>{
-    //     modalFromMain===true&&setMenuContent('desktop')
-    // },[modalFromMain])
-
     useEffect(() => {
         if (submit?.current != null) {
             if (

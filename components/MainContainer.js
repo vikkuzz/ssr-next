@@ -16,6 +16,7 @@ import {
     getCriptoLimits,
     order,
     userCreateOrder,
+    currentLang,
 } from '../redux/actions/royalfutActions';
 
 import styles from '../styles/App.module.scss';
@@ -25,6 +26,7 @@ import BurgerMenu from './BurgerMenu';
 import Api from '../Api/Api';
 import currency from '../data-elements/currency';
 import Footer from './Footer';
+import flagLangs from '../data-elements/countries';
 
 const api = new Api();
 
@@ -48,6 +50,7 @@ function MainContainer({
     const stateUser = useSelector((state) => state.royalfutReducer.user);
     const stateCoins = useSelector((state) => state.royalfutReducer.coins);
     const stateOrder = useSelector((state) => state.royalfutReducer.order);
+    const stateLocale = useSelector((state) => state.royalfutReducer.locale);
     const statePlatform = useSelector(
         (state) => state.royalfutReducer.platform
     );
@@ -85,8 +88,13 @@ function MainContainer({
                 }
             }
             dispatch(stock(result));
+            let lang = flagLangs.filter(
+                (el) => el.title === result.locale.toLowerCase()
+            )[0];
+            if (!stateLocale?.title) {
+                dispatch(currentLang(lang.title));
+            }
         });
-        console.log(document.referrer);
     }, []);
 
     useEffect(() => {

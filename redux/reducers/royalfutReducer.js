@@ -18,7 +18,12 @@ const initialState = {
     },
     user: {},
     errorMessage: '',
-    locale: {},
+    locale: {
+        url: '/img/flag/UK-lang.svg',
+        title: 'en',
+        id: '0',
+        country: 'English',
+    },
     currency: {
         currency: '$',
         title: 'USD',

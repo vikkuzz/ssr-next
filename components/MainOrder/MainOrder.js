@@ -990,15 +990,25 @@ const MainOrder = () => {
                                                 >
                                                     {Object.keys(
                                                         crypto.cryptoNameNok
-                                                    ).map((el, i) => (
+                                                    ).map((el, i, arr) => (
                                                         <span
                                                             key={el[i]}
                                                             className={`${styles.info_text2} ${styles.info_text}`}
                                                         >
                                                             {el === 'btcSum' &&
-                                                                'BTC'}
+                                                                `BTC${
+                                                                    arr.length >
+                                                                    1
+                                                                        ? ','
+                                                                        : ''
+                                                                }`}
                                                             {el === 'ethSum' &&
-                                                                'ETH'}
+                                                                `ETH${
+                                                                    arr.length >
+                                                                    2
+                                                                        ? ','
+                                                                        : ''
+                                                                }`}
                                                             {el === 'usdtSum' &&
                                                                 'USDT'}{' '}
                                                         </span>
