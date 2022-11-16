@@ -190,7 +190,12 @@ const royalfutReducer = (state = initialState, action) => {
             return { ...state, ...localState, paymentMethod: action.data };
 
         case 'LOGIN_MODAL_FROM_MAIN':
-            return { ...state, loginModalFromMain: action.data };
+            ls.set('localState', {
+                ...state,
+                ...localState,
+                loginModalFromMain: action.data,
+            });
+            return { ...state, ...localState, loginModalFromMain: action.data };
 
         case 'USER_CREATE_ORDER':
             ls.set('localState', {
@@ -283,6 +288,11 @@ const royalfutReducer = (state = initialState, action) => {
             action.data
                 ? (document.querySelector('body').style.overflowY = 'hidden')
                 : (document.querySelector('body').style.overflowY = 'auto');
+            ls.set('localState', {
+                ...state,
+                ...localState,
+                loginModal: action.data,
+            });
             return { ...state, loginModal: action.data };
 
         case 'COINS':

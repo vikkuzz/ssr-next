@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
+import Router, { useRouter } from 'next/router';
 
 import {
     loginClick,
@@ -46,6 +47,7 @@ const BurgerMenu = () => {
     const eyeClosed = '/img/eye-close.svg';
 
     const dispatch = useDispatch();
+    const router = useRouter();
 
     const [svgEye, setSvgEye] = useState(eye);
     const [passLength, setPassLength] = useState('');
@@ -125,12 +127,17 @@ const BurgerMenu = () => {
     async function login(e) {
         e.stopPropagation();
         e.preventDefault();
-        console.log('apilogin');
         await api
             .login(email.current.value, password.current.value)
             .then((res) => {
                 dispatch(user(res.user));
-            });
+                console.log(modalFromMain);
+                if (modalFromMain == true) {
+                    console.log('DONE');
+                    router.push('/order');
+                }
+            })
+            .catch((er) => dispatch(catcherror(res.errors)));
     }
     const logout = () => {
         dispatch(userlogout());
