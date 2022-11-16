@@ -6,6 +6,7 @@ import MainContainer from '../components/MainContainer';
 import styles from '../styles/App.module.scss';
 import MainOrder from '../components/MainOrder';
 import Howdelivery from '../components/HowDelivery';
+import TextBlockContainer from '../components/TextBlockContainer';
 
 const Order = () => {
     return (
@@ -17,6 +18,7 @@ const Order = () => {
                 </h1>
                 <MainOrder />
                 <Howdelivery />
+                <TextBlockContainer />
             </div>
         </MainContainer>
     );

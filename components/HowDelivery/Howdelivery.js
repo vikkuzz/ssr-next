@@ -59,11 +59,11 @@ const Howdelivery = () => {
                 },
             });
         }
-        if (typeof YT != 'undefined') {
+        if (typeof YT != 'undefined' && YT.Player) {
             onYouTubeIframeAPIReady();
         } else {
             let interval = setInterval(() => {
-                if (typeof YT != 'undefined') {
+                if (typeof YT != 'undefined' && YT.Player) {
                     clearInterval(interval);
                 }
                 onYouTubeIframeAPIReady();
@@ -95,6 +95,7 @@ const Howdelivery = () => {
     }, [step]);
 
     useEffect(() => {
+        setStep(1);
         if (player.loadVideoById) {
             if (howDelivery.manual) {
                 player.loadVideoById('5IxIFgx_src');

@@ -1,0 +1,30 @@
+.textblock{
+    position: relative;
+    flex-direction: column;
+}
+.textblock_decor{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    max-width: 7.4666666667vmin;
+    background-color: transparent;
+    object-position: 0vmin -2vmin;
+    object-fit: contain;
+}
+.textblock_container{
+    flex-direction: column;
+    padding-top: 15vmin;
+}
+.textblock_text{
+    background-color: transparent;
+}
+.textblock_title{
+    background-color: transparent;
+    padding-bottom: 1.6vmin;
+    font-size: 6.4vmin;
+    line-height: 6.4vmin;
+}
+.textblock_row{
+    padding-bottom:12.8vmin;
+}
