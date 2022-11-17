@@ -77,7 +77,7 @@
     gap: 20px;
 }
 .auth_container{
-    padding: 70px 24px 48px;
+    padding: 37.3vmin 24px 48px;
     flex-direction: column;
     overflow: auto;
     justify-content: flex-start;
@@ -144,7 +144,11 @@
     font-size: 13px;
     line-height: 16px;
     justify-content: flex-start;
-    margin: 40px 0 30px;
+    margin: 6.4vmin 0 4.2vmin;
+    
+    @media (min-width:1025px) {
+        margin: 40px 0 30px;
+    }
 }
 .auth_form{
     flex-direction: column;
@@ -232,7 +236,7 @@
     width: 25px;
 }
 .email_fieldset{
-    margin-bottom: 35px;
+    margin-bottom: 6.4vmin;
     
     @media (min-width:1025px) {
         margin-bottom: 24px;
@@ -261,8 +265,10 @@
 }
 .submit_wrapper{
     height: auto;
-    padding-top: 50px;
-    padding-bottom: 40px;
+    padding-top: 12vmin;
+    //padding-top: 50px;
+    padding-bottom: 6.4vmin;
+    //padding-bottom: 40;
 
     @media (min-width:1025px) {
         padding-top: 24px;
@@ -328,6 +334,11 @@
 }
 .burger_menu_mobile{
     padding-top: 100px;
+}
+.reg_text{
+    @media (max-width:1024px) {
+        padding-bottom: 4.2vmin;
+    }
 }
 @media(min-width: 1024px){
     .logout_menu{
