@@ -371,6 +371,7 @@ const royalfutReducer = (state = initialState, action) => {
                 },
             });
             document.querySelector('body').style.overflowY = 'auto';
+            bodyUnfixPosition();
             return {
                 ...state,
                 isAuth: true,

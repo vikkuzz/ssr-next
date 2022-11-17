@@ -39,6 +39,18 @@ const Calculator = () => {
             };
             dispatch(order(currentOrder));
         } else {
+            let currentOrder = {
+                coins: coins,
+                currency: currency,
+                platform: platform.ps ? 'ps' : 'xbox',
+                method: method.easy ? 'easy' : 'manual',
+                deliveryTime: getDeliveryTime(
+                    coins.amount,
+                    method.easy ? 'easy' : 'manual',
+                    platform.ps ? 'ps4' : 'xbox'
+                ),
+            };
+            dispatch(order(currentOrder));
             dispatch(loginModal(true));
             dispatch(loginModalFromMain(true));
         }
