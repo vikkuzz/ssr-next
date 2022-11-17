@@ -156,7 +156,9 @@ const BurgerMenu = () => {
                     onClick={() => dispatch(loginModal(false))}
                     className={`${styles.close_menu}`}
                 ></button>
-                <div className={styles.burger_menu__wrapper}>
+                <div
+                    className={`${styles.burger_menu__wrapper} ${styles.burger_menu_mobile}`}
+                >
                     {auth ? (
                         <div className={styles.login_mobile}>
                             <Link href="/profile">
@@ -222,14 +224,15 @@ const BurgerMenu = () => {
             </div>
         );
     } else if (modal === true && auth !== true && menuContent == 'mobile') {
-        console.log('modalfrommain');
         menu = (
             <div className={styles.burger_menu}>
                 <button
                     onClick={() => dispatch(loginModal(false))}
                     className={`${styles.close_menu}`}
                 ></button>
-                <div className={styles.burger_menu__wrapper}>
+                <div
+                    className={`${styles.burger_menu__wrapper} ${styles.burger_menu_mobile}`}
+                >
                     <div onClick={() => setMenuContent('desktop')}>
                         <MenuItem text={'LOG IN'} />
                     </div>
