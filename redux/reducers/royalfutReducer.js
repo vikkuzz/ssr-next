@@ -1,6 +1,7 @@
 import SecureLS from 'secure-ls';
 import currency from '../../data-elements/currency';
 import flagLangs from '../../data-elements/countries';
+import { bodyFixPosition, bodyUnfixPosition } from '../../utils/functions';
 
 const ISSERVER = typeof window === 'undefined'; //чтоб не было ошибки на сервере об отсутствии локалстора
 let ls = null;
@@ -285,9 +286,17 @@ const royalfutReducer = (state = initialState, action) => {
             return { ...state, ...localState, locale: currentLang };
 
         case 'LOGIN_MODAL':
-            action.data
-                ? (document.querySelector('body').style.overflowY = 'hidden')
-                : (document.querySelector('body').style.overflowY = 'auto');
+            // action.data
+            //     ? (document.querySelector('body').style.overflowY = 'hidden')
+            //     : (document.querySelector('body').style.overflowY = 'auto');
+
+            if (action.data) {
+                document.querySelector('body').style.overflowY = 'hidden';
+                bodyFixPosition();
+            } else {
+                document.querySelector('body').style.overflowY = 'auto';
+                bodyUnfixPosition();
+            }
             ls.set('localState', {
                 ...state,
                 ...localState,
