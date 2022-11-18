@@ -81,25 +81,32 @@ const DropdownCurrencyContent = ({ data }) => {
 };
 
 const DropdownLang = () => {
-    const stock = useSelector((state) => state.royalfutReducer.stock);
+    //const stock = useSelector((state) => state.royalfutReducer.stock);
     const lang = useSelector((state) => state.royalfutReducer.locale);
     const currentCurrency = useSelector(
         (state) => state.royalfutReducer.currency
     );
-    const [localeIcon, setLocaleIcon] = useState(
-        flagLangs.filter((el) => el.title === stock.locale.toLowerCase())[0]
-    );
 
+    const dispatch = useDispatch();
     useEffect(() => {
-        setLocaleIcon(lang);
-    }, [lang]);
+        let browserLanguage =
+            window.navigator.userLanguage || window.navigator.language;
+        browserLanguage = browserLanguage.split('-')[0];
+        console.log(browserLanguage);
+        let lang = flagLangs.filter(
+            (el) => el.title === browserLanguage.toLowerCase()
+        )[0];
+
+        dispatch(currentLang(lang.title));
+    }, []);
 
     return (
         <div className={`${styles.countries}`}>
+            {console.log(lang)}
             <div className={`${styles.locale}`}>
                 <img
                     className={`${styles.dropdown__country_img}`}
-                    src={`${lang.url || '/img/flag/UK-lang.svg'}`}
+                    src={`${lang.url}` || localeIcon}
                 />
                 <span className={`from-375-to-1024 bcgr-transparent`}>
                     {lang.title || 'EN'}
@@ -132,21 +139,6 @@ const DropdownMobile = () => {
 
     useOutsideAlerter(langMobile, langRefMobile, 'hide');
     useOutsideAlerter(currMobile, currencyRefMobile, 'hide');
-
-    // const [localeIcon, setLocaleIcon] = useState(
-    //   flagLangs.filter((el) => el.title === stock.locale.toLowerCase())
-    // );
-    // const [localeCurrency, setLocaleCurrency] = useState(
-    //   currency.filter((el) => el.title === stock.currency)[0]
-    // );
-
-    // useEffect(() => {
-    //   setLocaleCurrency(currencyUser);
-    // }, [currencyUser]);
-
-    // useEffect(() => {
-    //   setLocaleCurrency(currency.filter((el) => el.title === stock.currency)[0]);
-    // }, [stock]);
 
     function hideContent(ref) {
         ref.current.classList.toggle('hide');
