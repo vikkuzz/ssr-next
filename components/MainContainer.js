@@ -88,8 +88,11 @@ function MainContainer({
                 }
             }
             dispatch(stock(result));
+            let browserLanguage =
+                window.navigator.userLanguage || window.navigator.language;
+            browserLanguage = browserLanguage.split('-')[0];
             let lang = flagLangs.filter(
-                (el) => el.title === result.locale.toLowerCase()
+                (el) => el.title === browserLanguage.toLowerCase()
             )[0];
             if (!stateLocale?.title) {
                 dispatch(currentLang(lang.title));
