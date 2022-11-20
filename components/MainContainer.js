@@ -27,6 +27,7 @@ import Api from '../Api/Api';
 import currency from '../data-elements/currency';
 import Footer from './Footer';
 import flagLangs from '../data-elements/countries';
+import Aside from './Aside';
 
 const api = new Api();
 
@@ -164,6 +165,7 @@ function MainContainer({
                     <BurgerMenu />
                 </div>
                 <div className={styles.app_container_content}>{children}</div>
+
                 <Footer />
             </div>
         </>

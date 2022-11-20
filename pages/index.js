@@ -4,6 +4,7 @@ import Calculator from '../components/Calculator';
 import styles from '../styles/App.module.scss';
 import Howdelivery from '../components/HowDelivery';
 import TextBlockContainer from '../components/TextBlockContainer';
+import Aside from '../components/Aside';
 
 const Index = () => {
     return (
@@ -18,6 +19,7 @@ const Index = () => {
                     <Howdelivery />
                     <TextBlockContainer />
                 </div>
+                <Aside />
             </MainContainer>
         </>
     );
