@@ -35,7 +35,7 @@ const Aside = () => {
     ]);
     let [scroll, setScroll] = useState();
     let [loop, setLoop] = useState([...reviews]);
-    //let [loop, setLoop] = useState([...reviews]);
+    let [children, setChildren] = useState(0);
 
     useEffect(() => {
         let result = [];
@@ -74,24 +74,44 @@ const Aside = () => {
     useEffect(() => {
         console.log(slide.current, slide.current.scrollHeight);
         slideWrapper.current.style.height = `${
-            slide.current.scrollHeight + 24
+            slider.current.children[children].scrollHeight + 24
         }px`;
-    }, [slide?.current?.scrollHeight]);
+
+        const interval = setInterval(() => {
+            slideWrapper.current.scrollLeft =
+                slideWrapper.current.scrollLeft + 428;
+            setChildren((prevState) => prevState + 1);
+        }, 5000);
+
+        if (children % 17 == 0) {
+            setLoop((prevState) => [...prevState, ...reviews]);
+        }
+        // if (loop.length == 180) {
+        //     setLoop(reviews);
+        //     setChildren(0)
+        // }
+        return () => {
+            clearInterval(interval);
+        };
+    }, [children]);
 
     useEffect(() => {
         console.log(loop);
+
+        console.log(slider.current.children[0].scrollHeight);
     }, [loop]);
     let count = 0;
 
     const clickLeft = () => {
-        //slideWrapper.current.scrollLeft = slideWrapper.current.scrollLeft + 428;
-        setTimeout(() => {
-            //slideWrapper.current.scrollLeft = 0;
-            setLoop((prevState) => [
-                ...prevState.slice(1),
-                ...prevState.slice(0, 1),
-            ]);
-        }, 0);
+        slideWrapper.current.scrollLeft = slideWrapper.current.scrollLeft + 428;
+        setChildren((prevState) => prevState + 1);
+        //setTimeout(() => {
+        //slideWrapper.current.scrollLeft = 0;
+        // setLoop((prevState) => [
+        //     ...prevState.slice(1),
+        //     ...prevState.slice(0, 1),
+        // ]);
+        //}, 0);
 
         //slideWrapper.current.style.maxHeight = 'auto';
     };
@@ -150,9 +170,9 @@ const Aside = () => {
                                     ref={i == 0 ? slide : null}
                                     key={(count += 1)}
                                     style={{ left: `${i * 428}px` }}
-                                    className={`${styles.aside_slide} ${
-                                        i == 0 && styles.aside_static
-                                    }`}
+                                    className={`${styles.aside_slide} 
+                                   
+                                    `}
                                 >
                                     <span
                                         className={`${styles.aside_slide_title}`}
@@ -184,10 +204,10 @@ const Aside = () => {
                         })}
                     </div>
                 </div>
-                <div>
+                {/* <div>
                     <button onClick={clickLeft}>left</button>
                     <button onClick={clickRight}>right</button>
-                </div>
+                </div> */}
             </div>
         </aside>
     );
