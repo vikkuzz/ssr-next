@@ -211,10 +211,10 @@ const royalfutReducer = (state = initialState, action) => {
         case 'GET_CRYPTO_LIMITS':
             ls.set('localState', {
                 ...state,
-                ...localState,
+                //...localState,
                 cryptoLimits: action.data,
             });
-            return { ...state, ...localState, cryptoLimits: action.data };
+            return { ...state, cryptoLimits: action.data };
 
         case 'CURRENT_CURRENCY':
             let userCurrency = currency.filter(
@@ -226,14 +226,6 @@ const royalfutReducer = (state = initialState, action) => {
                 currency: userCurrency,
             });
             return { ...state, ...localState, currency: userCurrency };
-
-        case 'GET_CRYPTO_LIMITS':
-            ls.set('localState', {
-                ...state,
-                ...localState,
-                cryptoLimits: action.data,
-            });
-            return { ...state, ...localState, cryptoLimits: action.data };
 
         case 'CHANGE_PLATFORM':
             let platform = state.platform;
@@ -346,7 +338,7 @@ const royalfutReducer = (state = initialState, action) => {
                 };
             }
             ls.set('localState', localState);
-            return { ...state, ...localState };
+            return { ...state, ...localState, stock: action.data };
 
         case 'LOGIN':
             return {

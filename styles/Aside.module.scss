@@ -57,6 +57,10 @@
         padding-bottom: 11px;
     }
 }
+.aside_rate_text b{
+    width: auto;
+    background-color: transparent;
+}
 .aside_reviews{
     width: auto;
     white-space: nowrap;
@@ -65,6 +69,8 @@
     line-height: 4.5333333333vmin;
     letter-spacing: -.02em;
     text-align: center;
+    padding-bottom: 1px;
+    border-bottom: 1px solid white;
 
     @media (min-width: 1024px) {
         font-size: 15px;
@@ -102,7 +108,7 @@
     background-color: transparent;
     width: 7704px;
     align-items: flex-start;
-    //transition: all .5s linear;
+    transition: all .5s linear;
     min-height: 50px;
     max-height: 500px;
     height: 100%;
@@ -156,6 +162,10 @@
     line-height: 16px;
     font-family:'Helvetica Neue',arial,sans-serif;
 }
+.aside_rate_text b{
+    font-family:'Helvetica Neue',arial,sans-serif;
+    padding-top: 2px;
+}
 .out5{
     background-color: transparent;
     white-space: nowrap;
@@ -169,6 +179,7 @@
     flex-direction: column;
     width: auto;
     background-color: rgba(255, 255, 255, 0.2);
+    padding-bottom: 16px;
 }
 .aside_avatar{
     width: 32px;
@@ -178,4 +189,53 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+}
+.aside_ab{
+    font-family:inherit;
+    //text-decoration: underline;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    background-color: transparent;
+}
+.mask{
+    display: none;
+    background-color: rgb(65 67 85);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 428px;
+    height: 100%;
+    z-index: 99;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.aside_pagination{
+    height: 18px;
+    background-color: transparent;
+    gap: 14px;
+
+}
+.aside_bull_wrapper{
+    height: auto;
+    width: auto;
+}
+.aside_bullet{
+    //max-width: 6px;
+    width: 6px;
+    height: 6px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0;
+    margin: 0;
+}
+.aside_bullet_active{
+    background-color: #51b37f;
+}
+.aside_protect{
+    padding-top: 47px;
+}
+.aside_protect_img{
+    width: 245px;
 }
