@@ -19,9 +19,8 @@ const Index = () => {
                     <Howdelivery />
                     <TextBlockContainer />
                 </div>
-                <div className="from-1025-to-1900">
-                    <Aside />
-                </div>
+
+                <Aside />
             </MainContainer>
         </>
     );

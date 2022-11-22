@@ -1,16 +1,33 @@
 .aside{
-    position: sticky;
-    left: 100%;
-    top: 130px;
+    position: relative;
+    //left:-47px;    
     margin: 0;
     padding-bottom: 0;
     width: 399px;
-    padding: 0 35px;
+    align-self: center;
+    
     background-color: transparent;
     flex-direction: column;
 
+    // @media (min-width:393px) {
+        
+    //     left: -16px;
+    // }    
+    // @media (min-width:415px) {
+        
+    //     left: 0px;
+    //     padding: 0 35px;
+    // }    
+    // @media (min-width:450px) {
+    //     left: auto;
+    // }    
     @media (min-width:1025px) {
         width: auto;
+        position: sticky;
+        left: 100%;
+        top: 130px;
+        padding: 0 35px;
+        align-self: flex-start;
     }    
 }
 .aside_content{
@@ -50,6 +67,8 @@
     gap: 4px;
     padding-bottom: 3vmin;
     border-bottom: 1px solid rgba(129,129,148,.2);
+    font-size: 18px;
+    line-height: 18px;
 
     @media (min-width: 1024px) {
         font-size: 15px;
@@ -165,6 +184,8 @@
 .aside_rate_text b{
     font-family:'Helvetica Neue',arial,sans-serif;
     padding-top: 2px;
+    font-size: 18px;
+    line-height: 18px;
 }
 .out5{
     background-color: transparent;
@@ -177,8 +198,9 @@
 }
 .aside_wrapper{
     flex-direction: column;
-    width: auto;
-    background-color: rgba(255, 255, 255, 0.2);
+    width: 100%;
+    //background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgb(65 67 85);
     padding-bottom: 16px;
 }
 .aside_avatar{
@@ -209,6 +231,14 @@
     z-index: 99;
     justify-content: flex-start;
     align-items: flex-start;
+    // @media (min-width:415px) {
+    //     padding: 0 35px 0 0;
+    //     width: 329px;
+    // }  
+    @media (min-width:450px) {
+        padding: 0 ;
+        width: 428px;
+    }  
 }
 .aside_pagination{
     height: 18px;
@@ -238,4 +268,5 @@
 }
 .aside_protect_img{
     width: 245px;
+    background-color: transparent;
 }

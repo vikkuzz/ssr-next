@@ -162,6 +162,9 @@ const Aside = () => {
         setDown(false);
         setMove(false);
     };
+    const isTouch = (e) => {
+        console.log(e.touches[0].clientX);
+    };
 
     return (
         <aside className={`${styles.aside}`}>
@@ -205,6 +208,9 @@ const Aside = () => {
                         onMouseDown={isDown}
                         onMouseMove={isMove}
                         onMouseUp={isUp}
+                        // onTouchStart={isTouch}
+                        // onTouchMove={isTouch}
+                        // onTouchEnd={isTouch}
                         ref={mask}
                         className={`${styles.mask}`}
                     >
