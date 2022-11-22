@@ -31,7 +31,7 @@ export const reviews = [
         image: 'Laffe.png',
         name: 'Mark',
         title: 'Royalfut',
-        text: `ROYALFUT always operates very professional, exceedingly reliable FUT coin store<br>First thing you will notice after visiting their website is prices, very low prices, already a good start, isn't it? After placing an order you'll notice the next positive sign - the speed, transfers are incredibly fast, not to mention the other fast thing, which you'll find out about if you'll need some help from customer support, because it would be a understatement if I'll say that they respond less than in a minute. And finally, the safety, at this point I'm not even concerNetherlands about it anymore, because I've already had a bunch orders at ROYALFUT and not even once I had any problems related to safety of my account. Just try it yourself!`,
+        text: `ROYALFUT always operates very professional, exceedingly reliable FUT coin store. First thing you will notice after visiting their website is prices, very low prices, already a good start, isn't it? After placing an order you'll notice the next positive sign - the speed, transfers are incredibly fast, not to mention the other fast thing, which you'll find out about if you'll need some help from customer support, because it would be a understatement if I'll say that they respond less than in a minute. And finally, the safety, at this point I'm not even concerNetherlands about it anymore, because I've already had a bunch orders at ROYALFUT and not even once I had any problems related to safety of my account. Just try it yourself!`,
         reviews: '267',
     },
 
@@ -79,7 +79,7 @@ export const reviews = [
         image: 'emustafa.png',
         name: 'Ahmed Alzarouni',
         title: 'the best as always 🙏🏼🙏🏼',
-        text: '"the best as always 🙏🏼🙏🏼<br>im have and comfortable with ROYALFUT ..<br>just one thing i hope you guys sort it out , is the delay of the coins transfer.. it takes a long time .. otherwise everything is perfect and easy .. <br>thanks…',
+        text: '"the best as always 🙏🏼🙏🏼. im have and comfortable with ROYALFUT ... just one thing i hope you guys sort it out , is the delay of the coins transfer.. it takes a long time .. otherwise everything is perfect and easy .. . thanks…',
         reviews: '267',
     },
 
@@ -95,7 +95,7 @@ export const reviews = [
         image: 'emustafa.png',
         name: 'Mansour',
         title: 'This web-store is amazing',
-        text: 'This web-store is amazing. Highly recommended for everyone who play FIFA<br>TOP FUT coins service!',
+        text: 'This web-store is amazing. Highly recommended for everyone who play FIFA. TOP FUT coins service!',
         reviews: '267',
     },
 
@@ -111,7 +111,7 @@ export const reviews = [
         image: 'emustafa.png',
         name: 'Jason Recht',
         title: 'Best source of fifa coins 100%',
-        text: 'Best source of fifa coins 100%<br>Bought from this guys many times, never dissapointed, very good quality service with top speed delivery',
+        text: 'Best source of fifa coins 100%. Bought from this guys many times, never dissapointed, very good quality service with top speed delivery',
         reviews: '267',
     },
 
