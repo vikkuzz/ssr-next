@@ -190,6 +190,10 @@
     //background-color: rgba(255, 255, 255, 0.2);
     background-color: rgb(65 67 85);
     padding-bottom: 16px;
+
+    @media (min-width:1025px) {
+        width: 428px;
+    }
 }
 .aside_avatar{
     width: 32px;

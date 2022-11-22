@@ -41,6 +41,8 @@ const Aside = () => {
     const [down, setDown] = useState(false);
     const [move, setMove] = useState(false);
     const [up, setUp] = useState(false);
+    const [downX, setDownX] = useState(null);
+    const [moveX, setMoveX] = useState(null);
 
     useEffect(() => {
         setTimeout(() => {
@@ -85,21 +87,27 @@ const Aside = () => {
 
     useEffect(() => {
         console.log(slide.current, slide.current.scrollHeight);
-        slideWrapper.current.style.height = `${slider.current.children[1].scrollHeight}px`;
-        mask.current.style.display = 'none';
-        interval = setInterval(() => {
-            slider.current.style.transform = 'translateX(-420px)';
+        slideWrapper.current.style.height = `${slider.current.children[children].scrollHeight}px`;
+        slider.current.style.transform = `translateX(-${
+            slider.current.children[1].scrollWidth * children
+        }px)`;
 
+        if (children === 0) {
             setTimeout(() => {
-                mask.current.style.left = `${slideWrapper.current.scrollLeft}px`;
-                mask.current.style.display = 'flex';
-                slider.current.style.transform = 'translateX(0px)';
-                setLoop((prevState) => [
-                    ...prevState.slice(1),
-                    ...prevState.slice(0, 1),
-                ]);
+                slider.current.style.transition = 'all 0.5s linear';
+                slider.current.style.transform = `translateX(-${
+                    slider.current.children[1].scrollWidth * children
+                }px)`;
             }, 500);
+        }
 
+        if (children === 17) {
+            slider.current.style.transition = 'all 0s linear';
+            setChildren(0);
+        }
+
+        console.log(slider);
+        interval = setInterval(() => {
             setChildren((prevState) => prevState + 1);
         }, 5000);
         return () => {
@@ -127,40 +135,60 @@ const Aside = () => {
     };
     useEffect(() => {
         if (down == true && move == true) {
-            clearInterval(interval);
-            slideWrapper.current.style.height = `${slider.current.children[1].scrollHeight}px`;
-            mask.current.style.display = 'none';
-            slider.current.style.transform = 'translateX(-428px)';
-
-            setTimeout(() => {
-                mask.current.style.left = `${slideWrapper.current.scrollLeft}px`;
-                mask.current.style.display = 'flex';
-                slider.current.style.transform = 'translateX(0px)';
-                setLoop((prevState) => [
-                    ...prevState.slice(1),
-                    ...prevState.slice(0, 1),
-                ]);
-            }, 500);
-            setDown(false);
-            setMove(false);
         }
         console.log('down:', down, 'move:', move);
     }, [down, move]);
 
-    const isDown = () => {
+    const isDown = (e) => {
         setDown(true);
+        setDownX(e.clientX);
+        console.log(downX);
     };
-    const isMove = () => {
+    const isMove = (e) => {
         if (!down) {
             setMove(false);
         }
         if (down) {
             setMove(true);
+            console.log(e.clientX);
+            setMoveX(e.clientX);
         }
     };
-    const isUp = () => {
+    const isUp = (e) => {
         setDown(false);
         setMove(false);
+        console.log(downX, moveX);
+        if (downX > moveX) {
+            if (downX - moveX > 100) {
+                setChildren((prev) => prev + 1);
+                if (children <= 1) {
+                    slider.current.style.transition = 'all 0s linear';
+                    setChildren(16);
+                    setTimeout(
+                        () =>
+                            (slider.current.style.transition =
+                                'all 0.5s linear'),
+                        200
+                    );
+                }
+            }
+        } else if (downX < moveX) {
+            if (moveX - downX > 100) {
+                setChildren((prev) => prev - 1);
+                if (children >= 16) {
+                    slider.current.style.transition = 'all 0s linear';
+                    setChildren(0);
+                    setTimeout(
+                        () =>
+                            (slider.current.style.transition =
+                                'all 0.5s linear'),
+                        200
+                    );
+                }
+            }
+            //setChildren((prev) => prevState + 1);
+        }
+        console.log('up');
     };
     const isTouch = (e) => {
         console.log(e.touches[0].clientX);
@@ -204,7 +232,7 @@ const Aside = () => {
                     </div>
                 </div>
                 <div ref={slideWrapper} className={`${styles.aside_slider}`}>
-                    <div
+                    {/* <div
                         onMouseDown={isDown}
                         onMouseMove={isMove}
                         onMouseUp={isUp}
@@ -250,7 +278,7 @@ const Aside = () => {
                                 </div>
                             );
                         })}
-                    </div>
+                    </div> */}
                     <div
                         ref={slider}
                         id={'slider'}
@@ -262,9 +290,10 @@ const Aside = () => {
                                     ref={i == 0 ? slide : null}
                                     key={(count += 1)}
                                     style={{ left: `${i * 428}px` }}
-                                    className={`${styles.aside_slide} 
-                                   
-                                    `}
+                                    className={`${styles.aside_slide}`}
+                                    onMouseDown={isDown}
+                                    onMouseMove={isMove}
+                                    onMouseUp={isUp}
                                 >
                                     <span
                                         className={`${styles.aside_slide_title}`}
@@ -303,75 +332,37 @@ const Aside = () => {
                             type={'button'}
                             onClick={() => {
                                 clearInterval(interval);
-                                slideWrapper.current.style.height = `${slider.current.children[2].scrollHeight}px`;
-                                mask.current.style.display = 'none';
-                                slider.current.style.transform =
-                                    'translateX(-856px)';
-
-                                setTimeout(() => {
-                                    mask.current.style.left = `${slideWrapper.current.scrollLeft}px`;
-                                    mask.current.style.display = 'flex';
-                                    slider.current.style.transform =
-                                        'translateX(0px)';
-                                    setLoop((prevState) => [
-                                        ...prevState.slice(2),
-                                        ...prevState.slice(0, 2),
-                                    ]);
-                                }, 500);
+                                setChildren((prevState) => prevState - 2);
+                                if (children <= 1) {
+                                    slider.current.style.transition =
+                                        'all 0s linear';
+                                    setChildren(16);
+                                    setTimeout(
+                                        () =>
+                                            (slider.current.style.transition =
+                                                'all 0.5s linear'),
+                                        200
+                                    );
+                                }
                             }}
                         ></button>
                     </div>
                     <div className={`${styles.aside_bull_wrapper}`}>
                         <button
-                            // onClick={() => {
-                            //     clearInterval(interval);
-                            //     mask.current.style.display = 'flex';
-                            //     setLoop((prevState) => [
-                            //         ...prevState.slice(0, 1),
-                            //         ...prevState.slice(1),
-                            //     ]);
-                            //     slideWrapper.current.style.height = `${slider.current.children[17].scrollHeight}px`;
-                            //     slider.current.style.transform =
-                            //         'translateX(-7276px)';
-                            //     setTimeout(() => {
-                            //         mask.current.style.display = 'none';
-                            //         slider.current.style.transform =
-                            //             'translateX(428px)';
-                            //     }, 500);
-
-                            //     setTimeout(() => {
-                            //         mask.current.style.left = `${slideWrapper.current.scrollLeft}px`;
-                            //         mask.current.style.display = 'flex';
-                            //         slider.current.style.transform =
-                            //             'translateX(0px)';
-                            //         setLoop((prevState) => [
-                            //             ...prevState.slice(
-                            //                 prevState.length - 1
-                            //             ),
-                            //             ...prevState.slice(
-                            //                 0,
-                            //                 prevState.length - 1
-                            //             ),
-                            //         ]);
-                            //     }, 1000);
-                            // }}
                             onClick={() => {
                                 clearInterval(interval);
-                                slideWrapper.current.style.height = `${slider.current.children[1].scrollHeight}px`;
-                                mask.current.style.display = 'none';
-                                slider.current.style.transform =
-                                    'translateX(-428px)';
-
-                                setTimeout(() => {
-                                    mask.current.style.left = `${slideWrapper.current.scrollLeft}px`;
-                                    mask.current.style.display = 'flex';
-                                    slider.current.style.transform =
-                                        'translateX(0px)';
-                                    setLoop((prevState) => [
-                                        ...prevState.slice(1),
-                                        ...prevState.slice(0, 1),
-                                    ]);
-                                }, 500);
+                                setChildren((prevState) => prevState - 1);
+                                if (children <= 1) {
+                                    slider.current.style.transition =
+                                        'all 0s linear';
+                                    setChildren(16);
+                                    setTimeout(
+                                        () =>
+                                            (slider.current.style.transition =
+                                                'all 0.5s linear'),
+                                        200
+                                    );
+                                }
                             }}
                             className={`${styles.aside_bullet}`}
                             type={'button'}
@@ -387,21 +378,18 @@ const Aside = () => {
                         <button
                             onClick={() => {
                                 clearInterval(interval);
-                                slideWrapper.current.style.height = `${slider.current.children[1].scrollHeight}px`;
-                                mask.current.style.display = 'none';
-                                slider.current.style.transform =
-                                    'translateX(-428px)';
-
-                                setTimeout(() => {
-                                    mask.current.style.left = `${slideWrapper.current.scrollLeft}px`;
-                                    mask.current.style.display = 'flex';
-                                    slider.current.style.transform =
-                                        'translateX(0px)';
-                                    setLoop((prevState) => [
-                                        ...prevState.slice(1),
-                                        ...prevState.slice(0, 1),
-                                    ]);
-                                }, 500);
+                                setChildren((prevState) => prevState + 1);
+                                if (children >= 15) {
+                                    slider.current.style.transition =
+                                        'all 0s linear';
+                                    setChildren(0);
+                                    setTimeout(
+                                        () =>
+                                            (slider.current.style.transition =
+                                                'all 0.5s linear'),
+                                        200
+                                    );
+                                }
                             }}
                             className={`${styles.aside_bullet} `}
                             type={'button'}
@@ -411,21 +399,18 @@ const Aside = () => {
                         <button
                             onClick={() => {
                                 clearInterval(interval);
-                                slideWrapper.current.style.height = `${slider.current.children[2].scrollHeight}px`;
-                                mask.current.style.display = 'none';
-                                slider.current.style.transform =
-                                    'translateX(-856px)';
-
-                                setTimeout(() => {
-                                    mask.current.style.left = `${slideWrapper.current.scrollLeft}px`;
-                                    mask.current.style.display = 'flex';
-                                    slider.current.style.transform =
-                                        'translateX(0px)';
-                                    setLoop((prevState) => [
-                                        ...prevState.slice(2),
-                                        ...prevState.slice(0, 2),
-                                    ]);
-                                }, 500);
+                                setChildren((prevState) => prevState + 2);
+                                if (children >= 15) {
+                                    slider.current.style.transition =
+                                        'all 0s linear';
+                                    setChildren(0);
+                                    setTimeout(
+                                        () =>
+                                            (slider.current.style.transition =
+                                                'all 0.5s linear'),
+                                        200
+                                    );
+                                }
                             }}
                             className={`${styles.aside_bullet} `}
                             type={'button'}
