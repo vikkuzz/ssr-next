@@ -170,6 +170,10 @@ const Aside = () => {
                                 'all 0.5s linear'),
                         200
                     );
+                    setTimeout(
+                        () => setChildren((prevState) => prevState + 1),
+                        200
+                    );
                 }
             }
         } else if (downX < moveX) {
@@ -182,6 +186,10 @@ const Aside = () => {
                         () =>
                             (slider.current.style.transition =
                                 'all 0.5s linear'),
+                        200
+                    );
+                    setTimeout(
+                        () => setChildren((prevState) => prevState - 1),
                         200
                     );
                 }
@@ -343,6 +351,13 @@ const Aside = () => {
                                                 'all 0.5s linear'),
                                         200
                                     );
+                                    setTimeout(
+                                        () =>
+                                            setChildren(
+                                                (prevState) => prevState - 2
+                                            ),
+                                        200
+                                    );
                                 }
                             }}
                         ></button>
@@ -360,6 +375,13 @@ const Aside = () => {
                                         () =>
                                             (slider.current.style.transition =
                                                 'all 0.5s linear'),
+                                        200
+                                    );
+                                    setTimeout(
+                                        () =>
+                                            setChildren(
+                                                (prevState) => prevState - 1
+                                            ),
                                         200
                                     );
                                 }
@@ -389,6 +411,13 @@ const Aside = () => {
                                                 'all 0.5s linear'),
                                         200
                                     );
+                                    setTimeout(
+                                        () =>
+                                            setChildren(
+                                                (prevState) => prevState + 1
+                                            ),
+                                        200
+                                    );
                                 }
                             }}
                             className={`${styles.aside_bullet} `}
@@ -408,6 +437,13 @@ const Aside = () => {
                                         () =>
                                             (slider.current.style.transition =
                                                 'all 0.5s linear'),
+                                        200
+                                    );
+                                    setTimeout(
+                                        () =>
+                                            setChildren(
+                                                (prevState) => prevState + 2
+                                            ),
                                         200
                                     );
                                 }
