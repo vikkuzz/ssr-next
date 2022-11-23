@@ -4,10 +4,13 @@ import Link from 'next/link';
 
 import styles from '../../styles/Dropdown.module.scss';
 import { changePlatform, order } from '../../redux/actions/royalfutActions';
+import { translates } from '../../locales/locales';
+import { Router, useRouter } from 'next/router';
 
 const BuyCoinsDropdown = () => {
     const locale = useSelector((state) => state.royalfutReducer.locale.title);
     const buycoinsRef = React.createRef();
+    const router = useRouter();
 
     const dispatch = useDispatch();
 
@@ -45,7 +48,7 @@ const BuyCoinsDropdown = () => {
                 <div
                     className={`${styles.dropdown_countries} ${styles.dropdown__links}`}
                 >
-                    buy coins
+                    {translates[router.locale].menuLinkOrder}
                 </div>
                 <div
                     className={`${styles.dropdown__buycoins_content} hide`}

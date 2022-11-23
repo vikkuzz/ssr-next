@@ -14,6 +14,8 @@ import {
 } from '../../redux/actions/royalfutActions';
 import Link from 'next/link';
 import { getDeliveryTime } from '../../utils/functions';
+import { translates } from '../../locales/locales';
+import { Router, useRouter } from 'next/router';
 
 const Calculator = () => {
     const isAuth = useSelector((state) => state.royalfutReducer.isAuth);
@@ -23,6 +25,7 @@ const Calculator = () => {
     const method = useSelector((state) => state.royalfutReducer.method);
 
     const dispatch = useDispatch();
+    const router = useRouter();
 
     const submitBuyCoins = (e) => {
         if (isAuth) {
@@ -67,7 +70,7 @@ const Calculator = () => {
                             className={`${styles.calc__buy_coins_btn}`}
                             onClick={submitBuyCoins}
                         >
-                            купить монеты
+                            {translates[router.locale].menuLinkOrder}
                         </a>
                     </Link>
                 </div>
@@ -84,10 +87,10 @@ const Calculator = () => {
                     />
                     <div className={`${styles.info_text_wrapper}`}>
                         <span className={`${styles.calc_info__text}`}>
-                            Наша система полностью автоматизирована,{' '}
+                            {translates[router.locale].menuLinkDesc}
                         </span>
                         <span className={`${styles.calc_info__text}`}>
-                            поэтому мы доставляем монеты в любое время, 24/7
+                            {translates[router.locale].menuLinkDesc2}
                         </span>
                     </div>
                 </div>

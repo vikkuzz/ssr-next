@@ -213,6 +213,9 @@
 .locale{
     width: auto;
 }
+.locale span{
+    white-space: nowrap;
+}
 .countries{
     width: auto;
     gap: 12px;
@@ -263,7 +266,7 @@
 
 @media(min-width:1025px){
     .locale{
-        width: 90px;
+        width: 110px;
     }
     .dropdown_container{
         flex:1;

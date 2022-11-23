@@ -25,6 +25,7 @@ import { insta } from '../../data-svg/insta';
 import { youtube } from '../../data-svg/youtube';
 import Auth from '../Auth';
 import Api from '../../Api/Api';
+import { translates } from '../../locales/locales';
 const api = new Api();
 
 const BurgerMenu = () => {
@@ -172,20 +173,30 @@ const BurgerMenu = () => {
                                 onClick={logout}
                                 className={`logout ${styles.logout_menu}`}
                             >
-                                Выйти
+                                {translates[router.locale].logOut}
                             </button>
                         </div>
                     ) : (
                         <Link href={'/login'}>
                             <a>
-                                <MenuItem text={'LOG IN'} />
+                                <MenuItem
+                                    text={translates[router.locale].menuSignIn}
+                                />
                             </a>
                         </Link>
                     )}
-                    <MenuItem text={'PRESET ORDERS'} color={'burger_orange_'} />
-                    <MenuItem text={'BUY COINS'} color={'burger_yellow_'} />
-                    <MenuItem text={'DELIVERY'} />
-                    <MenuItem text={'FAQ'} />
+                    <MenuItem
+                        text={translates[router.locale].pageCoinsOffers}
+                        color={'burger_orange_'}
+                    />
+                    <MenuItem
+                        text={translates[router.locale].menuLinkOrder}
+                        color={'burger_yellow_'}
+                    />
+                    <MenuItem
+                        text={translates[router.locale].menuLinkDelivery}
+                    />
+                    <MenuItem text={translates[router.locale].menuLinkFaq} />
                 </div>
                 <div className={styles.burger_menu__footer}>
                     <div className={styles.burger_menu__icon_wrapper}>
@@ -234,12 +245,20 @@ const BurgerMenu = () => {
                     className={`${styles.burger_menu__wrapper} ${styles.burger_menu_mobile}`}
                 >
                     <div onClick={() => setMenuContent('desktop')}>
-                        <MenuItem text={'LOG IN'} />
+                        <MenuItem text={translates[router.locale].menuSignIn} />
                     </div>
-                    <MenuItem text={'PRESET ORDERS'} color={'burger_orange_'} />
-                    <MenuItem text={'BUY COINS'} color={'burger_yellow_'} />
-                    <MenuItem text={'DELIVERY'} />
-                    <MenuItem text={'FAQ'} />
+                    <MenuItem
+                        text={translates[router.locale].pageCoinsOffers}
+                        color={'burger_orange_'}
+                    />
+                    <MenuItem
+                        text={translates[router.locale].menuLinkOrder}
+                        color={'burger_yellow_'}
+                    />
+                    <MenuItem
+                        text={translates[router.locale].menuLinkDelivery}
+                    />
+                    <MenuItem text={translates[router.locale].menuLinkFaq} />
                 </div>
                 <div className={styles.burger_menu__footer}>
                     <div className={styles.burger_menu__icon_wrapper}>
@@ -300,7 +319,7 @@ const BurgerMenu = () => {
                                     }`}
                                     type="button"
                                 >
-                                    Регистрация
+                                    {translates[router.locale].modalTabSignUp}
                                 </button>
                             </div>
                             <div className={styles.burger_btn_wrapper}>
@@ -313,7 +332,7 @@ const BurgerMenu = () => {
                                     }`}
                                     type="button"
                                 >
-                                    Вход
+                                    {translates[router.locale].modalTabSignIn}
                                 </button>
                             </div>
                         </div>
@@ -323,7 +342,9 @@ const BurgerMenu = () => {
                             </div>
                         )}
                         {loginMenu.registration && (
-                            <div className={styles.auth_or}>Или</div>
+                            <div className={styles.auth_or}>
+                                {translates[router.locale].modalSocialOr}
+                            </div>
                         )}
                         <div className={styles.fieldset_wrapper}>
                             <form className={styles.auth_form}>
@@ -331,7 +352,10 @@ const BurgerMenu = () => {
                                     className={`${styles.auth_fieldset} ${styles.email_fieldset}`}
                                 >
                                     <legend className={styles.auth_legend}>
-                                        Почта
+                                        {
+                                            translates[router.locale]
+                                                .modalSignEmail
+                                        }
                                     </legend>
                                     <input
                                         ref={email}
@@ -351,21 +375,30 @@ const BurgerMenu = () => {
                                     className={`${styles.auth_fieldset} ${styles.fieldset_pass}`}
                                 >
                                     <legend className={styles.auth_legend}>
-                                        Пароль
+                                        {
+                                            translates[router.locale]
+                                                .modalSignPassword
+                                        }
                                     </legend>
                                     <input
                                         onChange={onHandleChangePass}
                                         ref={password}
                                         className={styles.auth_userdata}
                                         type="password"
-                                        placeholder={'Пароль'}
+                                        placeholder={
+                                            translates[router.locale]
+                                                .modalSignPassword
+                                        }
                                     ></input>
                                     <button
                                         ref={viewPassBtn}
                                         onClick={onHandleClickViewPass}
                                         className={styles.auth_view_pass}
                                         type="button"
-                                        title={'посмотреть пароль'}
+                                        title={
+                                            translates[router.locale]
+                                                .seePassword
+                                        }
                                     >
                                         <img src={svgEye} />
                                     </button>
@@ -379,7 +412,10 @@ const BurgerMenu = () => {
                                         }`}
                                     ></div>
                                     <span className={styles.simbols_text}>
-                                        не менее 8 символов!
+                                        {
+                                            translates[router.locale]
+                                                .modalSignSymbols8
+                                        }
                                     </span>
                                 </div>
                                 {loginMenu.registration && (
@@ -402,7 +438,10 @@ const BurgerMenu = () => {
                                             }`}
                                             htmlFor="signUpCheck"
                                         >
-                                            Я принимаю
+                                            {
+                                                translates[router.locale]
+                                                    .modalSocialForgot
+                                            }
                                         </label>
                                         <Link
                                             className={`social-login__link-check ${
@@ -416,7 +455,10 @@ const BurgerMenu = () => {
                                                     isChecked && 'gold_font'
                                                 }`}
                                             >
-                                                Условия и положения
+                                                {
+                                                    translates[router.locale]
+                                                        .modalSocialLoginCheck
+                                                }
                                             </a>
                                         </Link>
                                     </fieldset>
@@ -431,7 +473,10 @@ const BurgerMenu = () => {
                                             className={`${styles.submit_btn}`}
                                             type="button"
                                         >
-                                            Войти
+                                            {
+                                                translates[router.locale]
+                                                    .menuSignIn
+                                            }
                                         </button>
                                     ) : (
                                         <button
@@ -448,7 +493,10 @@ const BurgerMenu = () => {
                                             }`}
                                             type="button"
                                         >
-                                            Зарегистрироваться
+                                            {
+                                                translates[router.locale]
+                                                    .modalSignBtnUp
+                                            }
                                         </button>
                                     )}
                                 </div>

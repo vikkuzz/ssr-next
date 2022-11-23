@@ -1,5 +1,7 @@
+import { Router, useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { translates } from '../../locales/locales';
 
 import { coins } from '../../redux/actions/royalfutActions';
 
@@ -13,6 +15,7 @@ const CalcCoins = () => {
     const calcCoins = React.createRef();
 
     const dispatch = useDispatch();
+    const router = useRouter();
 
     const method = useSelector((state) => state.royalfutReducer.method);
     const minLimit = useSelector(
@@ -141,7 +144,9 @@ const CalcCoins = () => {
                     ref={border1}
                     className={`${styles.coins_fieldset} ${styles.calc_coins__border}`}
                 >
-                    <legend className={`${styles.coins_legend}`}>Монеты</legend>
+                    <legend className={`${styles.coins_legend}`}>
+                        {translates[router.locale].pageAmountCoinsLabel}
+                    </legend>
 
                     <input
                         onChange={handleChangeCoins}
@@ -197,7 +202,9 @@ const CalcCoins = () => {
                 ref={border2}
                 className={`${styles.coins_fieldset} ${styles.calc_coins__border2}`}
             >
-                <legend className={`${styles.coins_legend}`}>Цена</legend>
+                <legend className={`${styles.coins_legend}`}>
+                    {translates[router.locale].pageCoinsPrice}
+                </legend>
                 <label className={`${styles.coins_input_wrapper}`}>
                     <span className={`${styles.currency_label}`}>
                         {currencyLabel}

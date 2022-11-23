@@ -3,10 +3,14 @@ import { useSession, signIn, signOut } from 'next-auth/react';
 import { useState } from 'react';
 import { fbAuth } from '../../utils/auth';
 import styles from '../../styles/BurgerMenu.module.scss';
+import { translates } from '../../locales/locales';
+import { Router, useRouter } from 'next/router';
 
 const Auth = ({ login }) => {
     const containergoogle = React.createRef();
     const [show, setShow] = useState(false);
+
+    const router = useRouter();
 
     useEffect(() => {
         setTimeout(googleAuth, 1000);
@@ -40,7 +44,9 @@ const Auth = ({ login }) => {
     return (
         <div className={styles.auth}>
             <div className={`${styles.auth_text} ${styles.reg_text}`}>
-                {!login ? 'Зарегистрируйтесь через:' : 'Войдите через:'}
+                {!login
+                    ? translates[router.locale].modalSocialSigin
+                    : translates[router.locale].modalSocialLogin}
             </div>
             <div className={styles.auth_btns_wrapper}>
                 <div className={styles.auth_fb_wrapper}>

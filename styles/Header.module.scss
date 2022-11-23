@@ -29,8 +29,9 @@
     width: auto;
 }
 .header__right{
-    justify-content: flex-end;
+    //justify-content: flex-end;
     width: auto;
+    flex-wrap: wrap;
 }
 .header__logo{
     display: flex;
@@ -91,6 +92,7 @@
     border-radius: 2px;
     padding: 9px 15px;
     line-height: .9;
+    white-space: nowrap;
 }
 .header__burger_login:hover{
     background-color: #e5b713;
@@ -179,6 +181,7 @@
     color: #FFFFFF;
 }
 .header_faq{
+    white-space: nowrap;
     color: #FFFFFF;
     padding: 0 6px;
 }

@@ -21,6 +21,8 @@ import { whatsapp } from '../../data-svg/whatsapp';
 import { insta } from '../../data-svg/insta';
 import { youtube } from '../../data-svg/youtube';
 import Api from '../../Api/Api';
+import { translates } from '../../locales/locales';
+import { useRouter } from 'next/router';
 
 const api = new Api();
 
@@ -29,6 +31,8 @@ function Header() {
     const userData = useSelector((state) => state.royalfutReducer.user);
     const isAuth = useSelector((state) => state.royalfutReducer.isAuth);
     const locale = useSelector((state) => state.royalfutReducer.locale);
+
+    const router = useRouter();
 
     const currentCurrencyState = useSelector(
         (state) => state.royalfutReducer.currency
@@ -106,7 +110,7 @@ function Header() {
                     <a className={styles.header__logo}>
                         ROYALFUT
                         <div className={styles.header__sublogo}>
-                            FIFA 23 Items
+                            {translates[router.locale].sublogo2}
                         </div>
                     </a>
                 </Link>
@@ -121,7 +125,7 @@ function Header() {
                             <span
                                 className={`${styles.header_presetorders} ${styles.header__links}`}
                             >
-                                Preset orders
+                                {translates[router.locale].pageCoinsOffers}
                             </span>
                         </Link>
                     </div>
@@ -138,7 +142,7 @@ function Header() {
                             <span
                                 className={`${styles.header_delivery} ${styles.header__links}`}
                             >
-                                Delivery
+                                {translates[router.locale].menuLinkDelivery}
                             </span>
                         </Link>
                     </div>
@@ -149,7 +153,7 @@ function Header() {
                             <span
                                 className={`${styles.header_faq} ${styles.header__links}`}
                             >
-                                FAQ
+                                {translates[router.locale].menuLinkFaq}
                             </span>
                         </Link>
                     </div>
@@ -229,7 +233,7 @@ function Header() {
                             onClick={burgerToX}
                             className={`${styles.header__burger_login}`}
                         >
-                            Войти
+                            {translates[router.locale].menuSignIn}
                         </button>
                     )}
                 </div>
@@ -238,7 +242,7 @@ function Header() {
                         onClick={logout}
                         className={`logout from-1025-to-1900`}
                     >
-                        Выйти
+                        {translates[router.locale].logOut}
                     </button>
                 )}
             </div>

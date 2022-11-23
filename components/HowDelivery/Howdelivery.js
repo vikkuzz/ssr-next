@@ -1,53 +1,58 @@
+import { Router, useRouter } from 'next/router';
 import React, { useEffect, useRef, useState } from 'react';
+import { translates } from '../../locales/locales';
 
 import styles from '../../styles/Howdelivery.module.scss';
 
 const YTPlayer = require('yt-player');
 
-let deliveryData = {
-    easy: {
-        1: {
-            title: 'FILL THE REQUIRED DETAILS',
-            text: "After successful payment of the order you'll be taken to page with two fields: e-mail and password. Please, fulfill these fields with your EA account details.",
-        },
-        2: {
-            title: 'FILL THE BACKUP CODE FIELD',
-            text: 'To start the delivery process fill the corresponding fields with your backup codes, that can be found here: https://myaccount.ea.com/cp-ui/security/index. We only need one unused code, to start delivering your order.',
-        },
-        3: {
-            title: 'WAIT FOR THE COMPLETION OF YOUR ORDER',
-            text: 'Do not enter the game during the delivery. When the process is complete you will be notified by email. Contact the support manager to check the time of the execution of your order.',
-        },
-        4: {
-            title: 'ENJOY YOUR GAME!',
-            text: 'When the order is complete please leave your feedback. Have a great game and we look forward to seeing you again:)',
-        },
-    },
-    manual: {
-        1: {
-            title: 'BUY A PLAYER',
-            text: "After your order is successfully paid you will be redirected to the page where we will ask you to specify your club's balance, then depending on that you will be offered a player to purchase. You will have to buy him for no more than the set price. And after that sell it to us for the price we offer.",
-        },
-        2: {
-            title: 'CONFIRM A PLAYER',
-            text: 'Then you confirm that the player is set to the auction and we ask you which of the player is yours. To understand which of the players is your, you can compare the time until the end of the auction.',
-        },
-        3: {
-            title: 'REPEAT UNTIL THE TRANSFER IS COMPLETE',
-            text: 'First part of the transfer is over and now you have to repeat the previous steps as many times as necessary until your order is complete.',
-        },
-        4: {
-            title: 'ENJOY YOUR GAME!',
-            text: 'When the order is complete please leave your feedback. Have a great game and we look forward to seeing you again:)',
-        },
-    },
-};
 let player = null;
 const Howdelivery = () => {
     const easy = useRef(null);
     const manual = useRef(null);
     let [howDelivery, setHowDelivery] = useState({ easy: true, manual: false });
     let [step, setStep] = useState(1);
+
+    const router = useRouter();
+
+    let deliveryData = {
+        easy: {
+            1: {
+                title: translates[router.locale].pageCoinsFill,
+                text: translates[router.locale].pageCoinsAfter,
+            },
+            2: {
+                title: translates[router.locale].pageCoinsFillBackup,
+                text: translates[router.locale].pageCoinsToStart,
+            },
+            3: {
+                title: translates[router.locale].pageCoinsWaitCompletion,
+                text: translates[router.locale].pageCoinsDoNotEnter,
+            },
+            4: {
+                title: translates[router.locale].pageCoinsEnjoy,
+                text: translates[router.locale].pageCoinsFeedback,
+            },
+        },
+        manual: {
+            1: {
+                title: translates[router.locale].pageCoinsBuyPlayer,
+                text: translates[router.locale].pageCoinsAfterSuccessfully,
+            },
+            2: {
+                title: translates[router.locale].pageCoinsConfirmPlayer,
+                text: translates[router.locale].pageCoinsThenConfirm,
+            },
+            3: {
+                title: translates[router.locale].pageCoinsRepeatUntil,
+                text: translates[router.locale].pageCoinsFirstPart,
+            },
+            4: {
+                title: translates[router.locale].pageCoinsEnjoy,
+                text: translates[router.locale].pageCoinsFeedback,
+            },
+        },
+    };
 
     useEffect(() => {
         function onYouTubeIframeAPIReady() {
@@ -128,7 +133,9 @@ const Howdelivery = () => {
     };
     return (
         <div id="deliveryMain" className={`${styles.how_container}`}>
-            <div className={`${styles.how_title}`}>HOW DOES DELIVERY WORK?</div>
+            <div className={`${styles.how_title}`}>
+                {translates[router.locale].hwd}
+            </div>
             <div className={`${styles.how_container_content}`}>
                 <div className={`${styles.how_tabs_wrapper}`}>
                     <div className={`${styles.how_btn_wrapper}`}>
@@ -140,7 +147,7 @@ const Howdelivery = () => {
                                 howDelivery.easy && styles.how_is_active
                             }`}
                         >
-                            comfort trade
+                            {translates[router.locale].comfortMethodName}
                         </button>
                     </div>
                     <div className={`${styles.how_btn_wrapper}`}>
@@ -152,7 +159,7 @@ const Howdelivery = () => {
                                 !howDelivery.easy && styles.how_is_active
                             }`}
                         >
-                            player auction
+                            {translates[router.locale].marketMethodName}
                         </button>
                     </div>
                 </div>
