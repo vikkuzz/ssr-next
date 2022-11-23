@@ -71,10 +71,6 @@ function MainContainer({
             dispatch(loginModal(false));
         }
     };
-
-    useEffect(() => {
-        //dispatch(order({ ...stateOrder, coins: stateCoins }));
-    }, [stateCoins]);
     useEffect(() => {
         if (error != '') {
             setTimeout(() => dispatch(catcherror('')), 3000);
@@ -89,16 +85,8 @@ function MainContainer({
                 }
             }
             dispatch(stock(result));
-            // let browserLanguage =
-            //     window.navigator.userLanguage || window.navigator.language;
-            // browserLanguage = browserLanguage.split('-')[0];
-            // let lang = flagLangs.filter(
-            //     (el) => el.title === browserLanguage.toLowerCase()
-            // )[0];
-            // if (!stateLocale?.title) {
-            //     dispatch(currentLang(lang.title));
-            // }
         });
+        console.log(router);
     }, []);
 
     useEffect(() => {

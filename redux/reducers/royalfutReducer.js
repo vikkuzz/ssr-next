@@ -5,16 +5,9 @@ import { bodyFixPosition, bodyUnfixPosition } from '../../utils/functions';
 
 const ISSERVER = typeof window === 'undefined'; //чтоб не было ошибки на сервере об отсутствии локалстора
 let ls = null;
-//let browserLanguage;
 
 if (!ISSERVER) {
     ls = new SecureLS();
-    // browserLanguage =
-    //     window.navigator.userLanguage || window.navigator.language;
-    // browserLanguage = browserLanguage.split('-')[0];
-    // browserLanguage = flagLangs.filter(
-    //     (el) => el.title === browserLanguage.toLowerCase()
-    // )[0];
 }
 const initialState = {
     loginModal: false,

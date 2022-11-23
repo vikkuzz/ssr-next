@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import SecureLS from 'secure-ls';
 import { useDispatch, useSelector } from 'react-redux';
 import flagLangs from '../../data-elements/countries';
 import currency from '../../data-elements/currency';
@@ -11,38 +12,49 @@ import {
     currentLang,
     currentCurrency,
 } from '../../redux/actions/royalfutActions';
+import { useRouter } from 'next/router';
+
+const ISSERVER = typeof window === 'undefined'; //чтоб не было ошибки на сервере об отсутствии локалстора
+let ls = null;
+
+if (!ISSERVER) {
+    ls = new SecureLS();
+}
 
 const DropdownContent = ({ data }) => {
     const dispatch = useDispatch();
-
+    const router = useRouter();
+    const { pathname, asPath, query } = router;
     const changeLang = (e) => {
         dispatch(currentLang(e.target.id));
+        console.log(router);
     };
 
     return (
         <div className={`${styles.dropdown__scroll}`}>
             {data.map((el) => {
                 return (
-                    <button
-                        id={el.title}
-                        key={el.id}
-                        className={`${styles.dropdown__content_item}`}
-                        onClick={changeLang}
-                    >
-                        <img
+                    <Link id={el.title} href="/" locale={el.title}>
+                        <button
                             id={el.title}
-                            className={`${styles.dropdown__content_item_img}`}
-                            src={el.url}
-                        />
-                        <Link id={el.title} href="/" locale={el.title}>
+                            key={el.id}
+                            className={`${styles.dropdown__content_item}`}
+                            onClick={changeLang}
+                        >
+                            <img
+                                id={el.title}
+                                className={`${styles.dropdown__content_item_img}`}
+                                src={el.url}
+                            />
+
                             <div
                                 id={el.title}
                                 className={`${styles.dropdown__content_item_title_country}`}
                             >
                                 {el.country}
                             </div>
-                        </Link>
-                    </button>
+                        </button>
+                    </Link>
                 );
             })}
         </div>
@@ -83,21 +95,37 @@ const DropdownCurrencyContent = ({ data }) => {
 const DropdownLang = () => {
     //const stock = useSelector((state) => state.royalfutReducer.stock);
     const lang = useSelector((state) => state.royalfutReducer.locale);
+    const stateUser = useSelector((state) => state.royalfutReducer.user);
     const currentCurrency = useSelector(
         (state) => state.royalfutReducer.currency
     );
+    const router = useRouter();
+    const { pathname, asPath, query } = router;
 
     const dispatch = useDispatch();
+
     useEffect(() => {
+        console.log(router);
+    }, [router]);
+    useEffect(() => {
+        let localState = null;
+
         let browserLanguage =
             window.navigator.userLanguage || window.navigator.language;
         browserLanguage = browserLanguage.split('-')[0];
-        console.log(browserLanguage);
+
         let lang = flagLangs.filter(
             (el) => el.title === browserLanguage.toLowerCase()
         )[0];
 
-        dispatch(currentLang(lang.title));
+        if (!stateUser && router.locale === 'en') {
+            dispatch(currentLang(lang.title));
+            router.push({ pathname, query }, asPath, { locale: lang.title });
+        } else {
+            dispatch(currentLang(router.locale));
+        }
+        //dispatch(currentLang(lang.title));
+        //router.push({ pathname, query }, asPath, { locale: lang.title });
     }, []);
 
     return (
