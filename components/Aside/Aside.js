@@ -1,6 +1,8 @@
+import { useRouter } from 'next/router';
 import React, { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { reviews } from '../../data-elements/reviews';
+import { translates } from '../../locales/locales';
 
 import styles from '../../styles/Aside.module.scss';
 import SvgRating from '../SvgRating';
@@ -9,6 +11,8 @@ let interval = null;
 const Aside = () => {
     const stateStock = useSelector((state) => state.royalfutReducer.stock);
     const stateDir = useSelector((state) => state.royalfutReducer.direction);
+
+    const router = useRouter();
 
     const slideWrapper = useRef();
     const slider = useRef();
@@ -231,7 +235,7 @@ const Aside = () => {
                             TrustScore <b>{stateStock.rate}</b> |{' '}
                             <a
                                 className={`${styles.aside_reviews}`}
-                                href="https://uk.trustpilot.com/review/royalfut.com"
+                                href={translates[router.locale].commentUrl}
                             >
                                 <b className={`${styles.aside_ab}`}>
                                     {stateStock.reviews} reviews
