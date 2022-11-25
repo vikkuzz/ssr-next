@@ -8,6 +8,7 @@ let interval = null;
 
 const Aside = () => {
     const stateStock = useSelector((state) => state.royalfutReducer.stock);
+    const stateDir = useSelector((state) => state.royalfutReducer.direction);
 
     const slideWrapper = useRef();
     const slider = useRef();
@@ -203,7 +204,7 @@ const Aside = () => {
     };
 
     return (
-        <aside className={`${styles.aside}`}>
+        <aside dir={stateDir} className={`${styles.aside}`}>
             <div className={`${styles.aside_wrapper}`}>
                 <div className={`${styles.aside_header_wrapper}`}>
                     <div className={`${styles.aside_content}`}>

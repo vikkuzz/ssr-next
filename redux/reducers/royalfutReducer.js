@@ -10,6 +10,7 @@ if (!ISSERVER) {
     ls = new SecureLS();
 }
 const initialState = {
+    direction: 'ltr',
     loginModal: false,
     loginModalFromMain: false,
     isAuth: false,
@@ -270,7 +271,24 @@ const royalfutReducer = (state = initialState, action) => {
                 ...localState,
                 locale: currentLang,
             });
+            if (action.data.toLowerCase() === 'ar') {
+                document.dir = 'rtl';
+                document.querySelector('body').dir = 'rtl';
+            } else {
+                document.dir = 'ltr';
+                document.querySelector('body').dir = 'ltr';
+            }
             return { ...state, ...localState, locale: currentLang };
+
+        case 'CHANGE_DIR':
+            console.log(action.data);
+
+            ls.set('localState', {
+                ...state,
+                ...localState,
+                direction: action.data,
+            });
+            return { ...state, ...localState, direction: action.data };
 
         case 'LOGIN_MODAL':
             // action.data

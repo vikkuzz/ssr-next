@@ -28,6 +28,8 @@ import { ps4 } from '../../data-svg/ps4';
 import { xbox } from '../../data-svg/xbox';
 import { done } from '../../data-svg/done';
 import Api from '../../Api/Api';
+import { useRouter } from 'next/router';
+import { translates } from '../../locales/locales';
 
 const api = new Api();
 
@@ -309,6 +311,8 @@ const MainOrder = () => {
     }, []);
 
     const dispatch = useDispatch();
+    const router = useRouter();
+    const t = translates[router.locale];
 
     const onClickOption = (obj) => {
         setHide(obj);
@@ -408,7 +412,7 @@ const MainOrder = () => {
                 >
                     <div className={`${styles.mainorder_option_text}`}>
                         <span className={`${styles.mainorder_option_name}`}>
-                            Platform
+                            {t.pageCoinsPlatform}
                         </span>
                         <SvgContainer
                             item={whitearrow}
@@ -592,7 +596,7 @@ const MainOrder = () => {
                             }}
                             className={`${styles.mainorder_continue_btn} `}
                         >
-                            continue
+                            {t.pageOrderNext}
                         </button>
                     </div>
                 </div>
@@ -626,7 +630,7 @@ const MainOrder = () => {
                 >
                     <div className={`${styles.mainorder_option_text}`}>
                         <span className={`${styles.mainorder_option_name}`}>
-                            Coins amount
+                            {t.pageAmountName}
                         </span>
                         <SvgContainer
                             item={whitearrow}
@@ -641,8 +645,8 @@ const MainOrder = () => {
                         }`}
                     >
                         <div className={`${styles.mainorder_current_info}`}>
-                            {currentOrder?.coins?.amount.toLocaleString()} coins
-                            for {currentOrder?.currency?.currency}{' '}
+                            {currentOrder?.coins?.amount.toLocaleString()}{' '}
+                            {t.coinsFor} {currentOrder?.currency?.currency}{' '}
                             {currentOrder?.coins?.price}
                         </div>
                         <div
@@ -697,7 +701,7 @@ const MainOrder = () => {
                             }}
                             className={`${styles.mainorder_continue_btn} `}
                         >
-                            continue
+                            {t.pageOrderNext}
                         </button>
                     </div>
                 </div>
@@ -732,7 +736,7 @@ const MainOrder = () => {
                 >
                     <div className={`${styles.mainorder_option_text}`}>
                         <span className={`${styles.mainorder_option_name}`}>
-                            Delivery method
+                            {t.pageMethodName}
                         </span>
                         <SvgContainer
                             item={whitearrow}
@@ -751,7 +755,7 @@ const MainOrder = () => {
                             className={`${styles.method_info}`}
                         >
                             <span className={`${styles.info_text}`}>
-                                Как это работает?
+                                {t.marketMethodWhat}
                             </span>
                             <img src="/img/what-question.svg" />
                         </a>
@@ -763,8 +767,8 @@ const MainOrder = () => {
                     >
                         <div className={`${styles.mainorder_current_info}`}>
                             {currentOrder?.method === 'easy'
-                                ? 'Comfort trade'
-                                : 'Player auction'}
+                                ? t.comfortMethodName
+                                : t.marketMethodName}
                         </div>
                         <div
                             className={`${
@@ -792,7 +796,7 @@ const MainOrder = () => {
                             className={`${styles.method_info}`}
                         >
                             <span className={`${styles.info_text}`}>
-                                Как это работает?
+                                {t.marketMethodWhat}
                             </span>
                             <img src="/img/what-question.svg" />
                         </a>
@@ -813,7 +817,7 @@ const MainOrder = () => {
                             }}
                         >
                             <div className={`${styles.mainorder_recomend}`}>
-                                recomended
+                                {t.pageMethodRecomend}
                             </div>
                             <div
                                 className={`${styles.mainorder_method_info_wrapper}`}
@@ -821,13 +825,12 @@ const MainOrder = () => {
                                 <div
                                     className={`${styles.mainorder_method_name}`}
                                 >
-                                    comfort trade
+                                    {t.comfortMethodName}
                                 </div>
                                 <div
                                     className={`${styles.mainorder_method_info}`}
                                 >
-                                    Only your FUT 22 account information is
-                                    required. We do the rest for you.
+                                    {t.pageMethodCard1Text}
                                 </div>
                             </div>
                         </button>
@@ -853,16 +856,13 @@ const MainOrder = () => {
                                 <div
                                     className={`${styles.mainorder_method_name}`}
                                 >
-                                    player auction
+                                    {t.marketMethodName}
                                 </div>
                                 <div
                                     className={`${styles.mainorder_method_info}`}
                                 >
-                                    You will need to follow the instructions we
-                                    provide. Fast but manual.{' '}
-                                    <span>
-                                        Doesn't work with orders above 1m coins
-                                    </span>
+                                    {t.pageMethodCard2Text}
+                                    <span>{t.pageMethodCard2Text2}</span>
                                 </div>
                             </div>
                         </button>
@@ -896,7 +896,7 @@ const MainOrder = () => {
                             }}
                             className={`${styles.mainorder_continue_btn} `}
                         >
-                            continue
+                            {t.pageOrderNext}
                         </button>
                     </div>
                 </div>
@@ -934,7 +934,7 @@ const MainOrder = () => {
                 >
                     <div className={`${styles.mainorder_option_text}`}>
                         <span className={`${styles.mainorder_option_name}`}>
-                            Payment
+                            {t.pagePaymentMethodName}
                         </span>
                         <SvgContainer
                             item={whitearrow}
@@ -983,8 +983,7 @@ const MainOrder = () => {
                                             <span
                                                 className={`${styles.info_text1} ${styles.info_text}`}
                                             >
-                                                The minimum order amount to pay
-                                                with{' '}
+                                                {t.cryptoMessage}
                                                 <span
                                                     className={`${styles.info_text2} ${styles.info_text}`}
                                                 >
@@ -1037,12 +1036,10 @@ const MainOrder = () => {
                                             <span
                                                 className={`${styles.info_text1} ${styles.info_text}`}
                                             >
-                                                The minimum order amount to pay
-                                                with{' '}
+                                                {t.cryptoMessage}
                                                 <span
                                                     className={`${styles.info_text2} ${styles.info_text}`}
                                                 >
-                                                    {/* BTC, ETH or USDT are{' '} */}
                                                     {Object.keys(
                                                         crypto.cryptoNameNok
                                                     ).map((el, i) => (
@@ -1080,7 +1077,6 @@ const MainOrder = () => {
                         <div className={`${styles.mainorder_btn_wrapper} `}>
                             <button
                                 onClick={() => {
-                                    //onClickOption({ ...hide, payment: true })
                                     if (stateIsAuth) {
                                         paymentOrder();
                                         localStorage.setItem(
@@ -1093,7 +1089,7 @@ const MainOrder = () => {
                                 }}
                                 className={`${styles.mainorder_continue_btn} `}
                             >
-                                к оплате
+                                {t.pageCoinsToTheCheckout}
                             </button>
                         </div>
                     </div>

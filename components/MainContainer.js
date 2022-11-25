@@ -48,6 +48,7 @@ function MainContainer({
     const currentCurrencyState = useSelector(
         (state) => state.royalfutReducer.currency
     );
+    const stateDir = useSelector((state) => state.royalfutReducer.direction);
     const stateUser = useSelector((state) => state.royalfutReducer.user);
     const stateCoins = useSelector((state) => state.royalfutReducer.coins);
     const stateOrder = useSelector((state) => state.royalfutReducer.order);
@@ -123,7 +124,7 @@ function MainContainer({
                     defer
                 ></script>
             </Head>
-            <div className="body__backgr"></div>
+            <div dir={stateDir} className="body__backgr"></div>
             <div className={`error ${error == '' ? '' : styles.showError}`}>
                 {error}
             </div>

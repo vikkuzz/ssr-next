@@ -1,6 +1,8 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { translates } from '../../locales/locales';
 import { changePlatform, order } from '../../redux/actions/royalfutActions';
 
 import styles from '../../styles/Footer.module.scss';
@@ -8,12 +10,14 @@ import styles from '../../styles/Footer.module.scss';
 const Footer = () => {
     const locale = useSelector((state) => state.royalfutReducer.locale);
     const dispatch = useDispatch();
+    const router = useRouter();
+    const t = translates[router.locale];
 
     return (
         <div className={`${styles.footer}`}>
             <div className={`${styles.footer_firstcolumn}`}>
                 <div className={`${styles.footer_header}`}>
-                    ОБЩАЯ ИНФОРМАЦИЯ
+                    {t.footerContact}
                 </div>
                 <div className={`${styles.footer_infowrapper}`}>
                     <div
@@ -50,7 +54,9 @@ const Footer = () => {
             </div>
             <div className={`${styles.footer_secondcolumn}`}>
                 <div className={`${styles.footer_center_wrapper}`}>
-                    <div className={`${styles.footer_header}`}>ПЛАТФОРМЫ</div>
+                    <div className={`${styles.footer_header}`}>
+                        {t.footerPlatforms}
+                    </div>
                     <div className={`${styles.footer_infowrapper}`}>
                         <div className={`${styles.footer_platform_item}`}>
                             <Link href={`/order/ps4`} locale={locale.title}>
@@ -116,7 +122,7 @@ const Footer = () => {
                     className={`${styles.footer_thirdcolumn} from-375-to-1024`}
                 >
                     <div className={`${styles.footer_header}`}>
-                        ЮРИДИЧЕСКАЯ ИНФОРМАЦИЯ
+                        {t.footerInfo}
                     </div>
                     <div className={`${styles.footer_infowrapper}`}>
                         <div className={`${styles.footer_platform_item}`}>
@@ -124,7 +130,7 @@ const Footer = () => {
                                 <a
                                     className={`${styles.footer_info_font} ${styles.footer_flexstart}`}
                                 >
-                                    Контакты
+                                    {t.footerLinkContact}
                                 </a>
                             </Link>
                         </div>
@@ -133,7 +139,7 @@ const Footer = () => {
                                 <a
                                     className={`${styles.footer_info_font} ${styles.footer_flexstart}`}
                                 >
-                                    Доставка
+                                    {t.footerLinkDelivery}
                                 </a>
                             </Link>
                         </div>
@@ -142,7 +148,7 @@ const Footer = () => {
                                 <a
                                     className={`${styles.footer_info_font} ${styles.footer_flexstart}`}
                                 >
-                                    Платежи
+                                    {t.footerLinkPayment}
                                 </a>
                             </Link>
                         </div>
@@ -151,7 +157,7 @@ const Footer = () => {
                                 <a
                                     className={`${styles.footer_info_font} ${styles.footer_flexstart}`}
                                 >
-                                    Условия и положения
+                                    {t.footerLinkTerms}
                                 </a>
                             </Link>
                         </div>
@@ -163,7 +169,7 @@ const Footer = () => {
                                 <a
                                     className={`${styles.footer_info_font} ${styles.footer_flexstart}`}
                                 >
-                                    Политика конфиденциальности
+                                    {t.footerLinkPrivacyPolicy}
                                 </a>
                             </Link>
                         </div>
@@ -171,16 +177,14 @@ const Footer = () => {
                 </div>
             </div>
             <div className={`${styles.footer_thirdcolumn} from-1025-to-1900`}>
-                <div className={`${styles.footer_header}`}>
-                    ЮРИДИЧЕСКАЯ ИНФОРМАЦИЯ
-                </div>
+                <div className={`${styles.footer_header}`}>{t.footerInfo}</div>
                 <div className={`${styles.footer_infowrapper}`}>
                     <div className={`${styles.footer_platform_item}`}>
                         <Link href={`/contact`} locale={locale.title}>
                             <a
                                 className={`${styles.footer_info_font} ${styles.footer_flexstart}`}
                             >
-                                Контакты
+                                {t.footerLinkContact}
                             </a>
                         </Link>
                     </div>
@@ -189,7 +193,7 @@ const Footer = () => {
                             <a
                                 className={`${styles.footer_info_font} ${styles.footer_flexstart}`}
                             >
-                                Доставка
+                                {t.footerLinkDelivery}
                             </a>
                         </Link>
                     </div>
@@ -198,7 +202,7 @@ const Footer = () => {
                             <a
                                 className={`${styles.footer_info_font} ${styles.footer_flexstart}`}
                             >
-                                Платежи
+                                {t.footerLinkPayment}
                             </a>
                         </Link>
                     </div>
@@ -207,7 +211,7 @@ const Footer = () => {
                             <a
                                 className={`${styles.footer_info_font} ${styles.footer_flexstart}`}
                             >
-                                Условия и положения
+                                {t.footerLinkTerms}
                             </a>
                         </Link>
                     </div>
@@ -216,7 +220,7 @@ const Footer = () => {
                             <a
                                 className={`${styles.footer_info_font} ${styles.footer_flexstart}`}
                             >
-                                Политика конфиденциальности
+                                {t.footerLinkPrivacyPolicy}
                             </a>
                         </Link>
                     </div>

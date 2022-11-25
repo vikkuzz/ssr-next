@@ -18,6 +18,27 @@
         align-self: flex-start;
     }    
 }
+.aside[dir='rtl']{
+    position: relative;
+    //left:-47px;    
+    margin: 0;
+    padding-bottom: 0;
+    width: 100%;
+    max-width: 428px;
+    align-self: center;    
+    background-color: transparent;
+    flex-direction: column;
+    @media (min-width:1025px) {
+        width: auto;
+        position: sticky;
+        left: auto;
+        top: 130px;
+        padding: 0 35px;
+        align-self: flex-start;
+        direction: ltr;    
+        right: 100%;
+    }        
+}
 .aside_content{
     background-color: transparent;
     padding: 29px 0 16px;

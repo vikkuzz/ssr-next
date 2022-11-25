@@ -11,6 +11,7 @@ import {
     stock,
     currentLang,
     currentCurrency,
+    changeDir,
 } from '../../redux/actions/royalfutActions';
 import { useRouter } from 'next/router';
 
@@ -27,17 +28,25 @@ const DropdownContent = ({ data }) => {
     const { pathname, asPath, query } = router;
     const changeLang = (e) => {
         dispatch(currentLang(e.target.id));
-        console.log(router);
+        if (e.target.id === 'ar') {
+            dispatch(changeDir('rtl'));
+        } else {
+            dispatch(changeDir('itr'));
+        }
     };
 
     return (
         <div className={`${styles.dropdown__scroll}`}>
             {data.map((el) => {
                 return (
-                    <Link id={el.title} href="/" locale={el.title}>
-                        <button
+                    <Link
+                        key={el.id}
+                        id={el.title}
+                        href={`${pathname}`}
+                        locale={el.title}
+                    >
+                        <a
                             id={el.title}
-                            key={el.id}
                             className={`${styles.dropdown__content_item}`}
                             onClick={changeLang}
                         >
@@ -53,7 +62,7 @@ const DropdownContent = ({ data }) => {
                             >
                                 {el.country}
                             </div>
-                        </button>
+                        </a>
                     </Link>
                 );
             })}
@@ -120,9 +129,19 @@ const DropdownLang = () => {
 
         if (!stateUser && router.locale === 'en') {
             dispatch(currentLang(lang.title));
+            if (lang.title === 'ar') {
+                dispatch(changeDir('rtl'));
+            } else {
+                dispatch(changeDir('itr'));
+            }
             router.push({ pathname, query }, asPath, { locale: lang.title });
         } else {
             dispatch(currentLang(router.locale));
+            if (router.locale === 'ar') {
+                dispatch(changeDir('rtl'));
+            } else {
+                dispatch(changeDir('itr'));
+            }
         }
         //dispatch(currentLang(lang.title));
         //router.push({ pathname, query }, asPath, { locale: lang.title });

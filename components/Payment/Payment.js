@@ -1,5 +1,7 @@
+import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { translates } from '../../locales/locales';
 
 import { namePaymentMethod } from '../../redux/actions/royalfutActions';
 
@@ -25,6 +27,8 @@ const Payment = ({ deliveryTime }) => {
     const usdt = React.createRef();
 
     const dispatch = useDispatch();
+    const router = useRouter();
+    const t = translates[router.locale];
 
     const stateCrypto = useSelector(
         (state) => state.royalfutReducer.cryptoLimits
@@ -124,8 +128,8 @@ const Payment = ({ deliveryTime }) => {
                                   deliveryTime.type === 'deliveryMinutes'
                                       ? 'm'
                                       : 'h'
-                              } Delivery Time`
-                            : '3-5h Delivery Time'}
+                              } ${t.pageCoinsDelivery}`
+                            : `3-5h ${t.pageCoinsDelivery}`}
                     </span>
                 </div>
                 <div
@@ -134,7 +138,7 @@ const Payment = ({ deliveryTime }) => {
                     <div
                         className={`${styles.payment_star_svg} ${styles.payment_svg}`}
                     ></div>
-                    <span>3 Days Guarantee</span>
+                    <span>{t.pagePaymentMethodGuarantee}</span>
                 </div>
                 <div
                     className={`${styles.payment_method__secure} ${styles.payment_method}`}
@@ -142,7 +146,7 @@ const Payment = ({ deliveryTime }) => {
                     <div
                         className={`${styles.payment_lock_svg} ${styles.payment_svg}`}
                     ></div>
-                    <span>100% secure payments</span>
+                    <span>{t.pagePaymentMethodSafe}</span>
                 </div>
             </div>
             <div className={`${styles.payment_price_wrapper} from-375-to-1024`}>
@@ -150,7 +154,9 @@ const Payment = ({ deliveryTime }) => {
             </div>
             <div className={`${styles.payment_all_methods}`}>
                 <div className={`${styles.payment_method_wrapper}`}>
-                    <div className={`${styles.payment_title}`}>Pay by card</div>
+                    <div className={`${styles.payment_title}`}>
+                        {t.pagePaymentMethodPay}
+                    </div>
                     <div className={`${styles.payment_bycard}`}>
                         <div className={`${styles.payment_method_row}`}>
                             <fieldset
@@ -233,17 +239,12 @@ const Payment = ({ deliveryTime }) => {
                             >
                                 <PriceCoupon />
                             </div>
-                            {/* <div
-                                className={`${styles.price_coupon_wrapper} from-1025-to-1900`}
-                            >
-                                <PriceCoupon />
-                            </div> */}
                         </div>
                     </div>
                 </div>
                 <div className={`${styles.payment_method_wrapper}`}>
                     <div className={`${styles.payment_title}`}>
-                        or with cripto
+                        {t.orWithCrypto}
                     </div>
                     <div className={`${styles.payment_bycard}`}>
                         <div className={`${styles.payment_method_row}`}>

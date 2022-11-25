@@ -1,7 +1,9 @@
+import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Api from '../../Api/Api';
+import { translates } from '../../locales/locales';
 import { userCreateOrder } from '../../redux/actions/royalfutActions';
 
 import styles from '../../styles/PriceCoupon.module.scss';
@@ -87,6 +89,8 @@ const PriceCoupon = () => {
     let [promocode, setPromocode] = useState('');
 
     const dispatch = useDispatch();
+    const router = useRouter();
+    const t = translates[router.locale];
 
     const sendPromo = async () => {
         const currentOrder = await api.updateOrder(
@@ -133,7 +137,7 @@ const PriceCoupon = () => {
                     }`}
                     onClick={() => setHide(!hide)}
                 >
-                    Have a coupon
+                    {t.pageCoinsCoupon}
                 </button>
             </div>
             <div
@@ -143,7 +147,7 @@ const PriceCoupon = () => {
             >
                 <fieldset className={`${styles.coupon_fieldset}`}>
                     <legend className={`${styles.coupon_legend}`}>
-                        Coupon
+                        {t.pagePaymentMethodCoupon}
                     </legend>
                     <input
                         className={`${styles.coupon_input}`}
@@ -155,7 +159,7 @@ const PriceCoupon = () => {
                         className={`${styles.coupon_btn}`}
                         type="button"
                     >
-                        APPLY coupon
+                        {t.pagePaymentMethodCouponApply}
                     </button>
                 </fieldset>
             </div>
@@ -166,7 +170,7 @@ const PriceCoupon = () => {
             >
                 <fieldset className={`${styles.coupon_fieldset}`}>
                     <legend className={`${styles.coupon_legend}`}>
-                        Coupon
+                        {t.pagePaymentMethodCoupon}
                     </legend>
                     <input
                         className={`${styles.coupon_input}`}
@@ -178,7 +182,7 @@ const PriceCoupon = () => {
                         className={`${styles.coupon_btn}`}
                         type="button"
                     >
-                        APPLY coupon
+                        {t.pagePaymentMethodCouponApply}
                     </button>
                 </fieldset>
             </div>

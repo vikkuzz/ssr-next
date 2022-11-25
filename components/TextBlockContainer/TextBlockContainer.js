@@ -1,42 +1,38 @@
+import { useRouter } from 'next/router';
 import React from 'react';
+import { translates } from '../../locales/locales';
 
 import styles from '../../styles/TextBlock.module.scss';
 
 import TextBlock from '../TextBlock/TextBlock';
 
 const TextBlockContainer = () => {
+    const router = useRouter();
+    const t = translates[router.locale];
     return (
         <div className={`${styles.textblock_container}`}>
             <div className={`${styles.textblock_row}`}>
                 <TextBlock
                     img={'/img/purple.svg'}
-                    title={'YOUR FIRST CHOICE'}
-                    text={
-                        'Our main goal is to provide you with the safest way to refill your FUT club balance for low price. Our prices do not contain any commissions or hidden fees. We spent years to develop such service.'
-                    }
+                    title={t.infoBlockTitle1}
+                    text={t.infoBlockText1}
                 />
                 <TextBlock
                     img={'/img/blue.svg'}
-                    title={'SAFEST DELIVERY'}
-                    text={
-                        'We are using Smart ANTI-BAN System 3.0 which works under special rules. For example, our system include manually earned coins for each order. Those rules guarantee 100% safety of your FUT club.'
-                    }
+                    title={t.infoBlockTitle2}
+                    text={t.infoBlockText2}
                 />
             </div>
             <div className={`${styles.textblock_row}`}>
                 <TextBlock
                     img={'/img/red.svg'}
-                    title={'FAST AND SIMPLE'}
-                    text={
-                        "We appreciate your time. Our interface and support are constantly being improved to make your orders run smoothly and quickly. Just a couple of clicks – and we'll do the rest."
-                    }
+                    title={t.infoBlockTitle3}
+                    text={t.infoBlockText3}
                 />
                 <TextBlock
                     img={'/img/yellow.svg'}
-                    title={'REFUND GURANTEE'}
-                    text={
-                        "If, after the purchase, you can't use the coins, or if there is any other reason why you can't get coins for your account, a refund is guaranteed."
-                    }
+                    title={t.infoBlockTitle4}
+                    text={t.infoBlockText4}
                 />
             </div>
         </div>

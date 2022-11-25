@@ -1,5 +1,17 @@
 export const translates = {
     ru: {
+        infoBlockTitle1: 'ВАШ ПЕРВЫЙ ВЫБОР',
+        infoBlockTitle2: 'БЕЗОПАСНАЯ ДОСТАВКА',
+        infoBlockTitle3: 'БЫСТРО И ПРОСТО',
+        infoBlockTitle4: 'ГАРАНТИЯ ВОЗВРАТА',
+        infoBlockText1:
+            'Наша главная миссия - предоставить вам самый безопасную возможность пополнить баланс вашего FUT клуба. Мы потратили годы на разработку нашего сервиса.',
+        infoBlockText2:
+            'Мы обязательно включим в ваш заказ монеты, заработанные вручную игроками FUT 22. Это гарантирует 100 % защиту от санкций со стороны EA.',
+        infoBlockText3:
+            'Мы ценим ваше время. Наш интерфейс и поддержка клиентов постоянно улучшаются, чтобы ваши заказы выполнялись плавно и быстро. Всего пара кликов - все остальное мы сделаем сами.',
+        infoBlockText4:
+            'Если после покупки вы решите, что не можете воспользоваться монетами. Или случилась какая-либо другая причина, по которой вы не можете воспользоваться монетами, возврат средств гарантирован.',
         hwd: 'Как происходит доставка?',
         h1_1: 'Самые безопасные',
         h1_2: 'монеты FIFA 23 тут!',
@@ -43,7 +55,7 @@ export const translates = {
         haveCoupon: 'Есть купон',
         logOut: 'Выйти',
         youLogged: 'Вы успешно вошли как',
-        coinsFor: 'Монет для',
+        coinsFor: 'монет для',
         orderCreationError: 'Ошибка создания заказа',
         orderUpdateError: 'Ошибка обновления заказа',
         invalidPromo: 'Промокод не найден',
@@ -259,7 +271,8 @@ export const translates = {
             'Требуется только информация о вашей учётной записи FUT 22. Всё остальное мы сделаем за вас.',
         pageMethodCard2Name: 'ТРАНСФЕРНЫЙ РЫНОК',
         pageMethodCard2Text:
-            'Вам нужно будет следовать нашим инструкциям. Быстро, но вручную. <strong>Не работатет с заказами свыше 1 млн монет</strong>',
+            'Вам нужно будет следовать нашим инструкциям. Быстро, но вручную. ',
+        pageMethodCard2Text2: 'Не работатет с заказами свыше 1 млн монет.',
         pageMethodCardSoon: 'Скоро',
         pagePaymentMethodName: 'ОПЛАТА',
         pagePaymentMethodAntiBan: 'Anti-Ban system',
@@ -326,6 +339,18 @@ export const translates = {
         backToTop: 'Наверх',
     },
     en: {
+        infoBlockTitle1: 'YOUR FIRST CHOICE',
+        infoBlockTitle2: 'SAFEST DELIVERY',
+        infoBlockTitle3: 'FAST AND SIMPLE',
+        infoBlockTitle4: 'REFUND GURANTEE',
+        infoBlockText1:
+            'Our main goal is to provide you with the safest way to refill your FUT club balance for low price. Our prices do not contain any commissions or hidden fees. We spent years to develop such service.',
+        infoBlockText2:
+            'We are using Smart ANTI-BAN System 3.0 which works under special rules. For example, our system include manually earned coins for each order. Those rules guarantee 100% safety of your FUT club.',
+        infoBlockText3:
+            "We appreciate your time. Our interface and support are constantly being improved to make your orders run smoothly and quickly. Just a couple of clicks – and we'll do the rest.",
+        infoBlockText4:
+            "If, after the purchase, you can't use the coins, or if there is any other reason why you can't get coins for your account, a refund is guaranteed.",
         hwd: 'HOW DOES DELIVERY WORK?',
         h1_1: 'Safest option to ',
         h1_2: 'buy FIFA 23 coins',
@@ -576,7 +601,8 @@ export const translates = {
             'Only your FUT 22 account information is required. We do the rest for you.',
         pageMethodCard2Name: 'Player Auction',
         pageMethodCard2Text:
-            "You will need to follow the instructions we provide. Fast but manual. <strong>Doesn't work with orders above 1m coins</strong>",
+            'You will need to follow the instructions we provide. Fast but manual. ',
+        pageMethodCard2Text2: "Doesn't work with orders above 1m coins.",
         pageMethodCardSoon: 'SOON',
         pagePaymentMethodDelivery: '1-2h delivery time',
         pagePaymentMethodTotalAmount: 'Total amount',
@@ -637,6 +663,18 @@ export const translates = {
         backToTop: 'Back to up',
     },
     de: {
+        infoBlockTitle1: 'IHRE ERSTE WAHL',
+        infoBlockTitle2: 'SICHERSTER VERSAND',
+        infoBlockTitle3: 'SCHNELL UND EINFACH',
+        infoBlockTitle4: 'RÜCKERSTATTUNGSGARANTIE',
+        infoBlockText1:
+            'Unser Ziel ist es, dir die sicherste Möglichkeit zu bieten, dein FUT-Clubguthaben möglichst billig wiederaufzufüllen. Unsere Preise enthalten keine Provisionen oder Gebühren. Die Entwicklung dieses Dienstes hat Jahre gedauert.',
+        infoBlockText2:
+            'Wir benutzen das intelligente ANTI-BAN-System 3.0, das speziellen Regeln folgt. So umfasst unser System beispielsweise manuell verdiente Coins für jede Bestellung. Diese Regeln garantieren die Sicherheit deines FUT-Clubs.',
+        infoBlockText3:
+            'Wir wissen Ihre Zeit zu schätzen. Unsere Oberfläche und unser Support werden ständig verbessert, damit Ihre Bestellungen reibungslos und schnell mit wenigen Klicks abgewickelt werden können. Wir kümmern uns um alles andere.',
+        infoBlockText4:
+            'Wenn du nach dem Kauf die Münzen nicht verwenden kannst oder es einen anderen Grund gibt, warum du keine Münzen für dein Konto bekommst, ist eine Rückerstattung garantiert.',
         hwd: 'WIE FUNKTIONIERT DIE ZUSTELLUNG?',
         h1_1: 'Sicherste Option für ',
         h1_2: 'den Kauf von FIFA 23 Coins',
@@ -893,7 +931,9 @@ export const translates = {
             'Nur Ihre FUT 22 Konto-Informationen sind erforderlich. Wir erledigen den Rest.',
         pageMethodCard2Name: 'Spielerauktion',
         pageMethodCard2Text:
-            'Befolgen Sie unsere Anweisungen. Schnell, sicher, aber nicht automatisch. <strong>Funktioniert nicht bei Bestellungen über 1 Mio. Münzen</strong>',
+            'Befolgen Sie unsere Anweisungen. Schnell, sicher, aber nicht automatisch. ',
+        pageMethodCard2Text2:
+            'Funktioniert nicht bei Bestellungen über 1 Mio. Münzen',
         pageMethodCardSoon: 'Demnächst',
         pagePaymentMethodName: 'ZAHLUNG',
         pagePaymentMethodAntiBan: 'Anti-Ban system',
@@ -960,6 +1000,18 @@ export const translates = {
         backToTop: 'Zurück nach oben',
     },
     fr: {
+        infoBlockTitle1: 'VOTRE MEILLEUR CHOIX',
+        infoBlockTitle2: 'LIVRAISON PLUS SÛRE',
+        infoBlockTitle3: 'RAPIDE ET SIMPLE',
+        infoBlockTitle4: 'GARANTIE DE REMBOURSEMENT',
+        infoBlockText1:
+            "Notre priorité est de vous fournir le moyen le plus sûr pour réapprovisionner votre solde club FUT à bas prix. Nos tarifs n'incluent aucune commission ni frais cachés. Ce service est l'aboutissement d'années de développement.",
+        infoBlockText2:
+            'Nous utilisons le système Smart ANTI-BAN 3.0 qui intègre des règles spéciales. Par exemple, chaque commande comprend des pièces gagnées manuellement. Ces règles vous garantissent une sécurité à 100 % pour votre club FUT.',
+        infoBlockText3:
+            "Nous respectons le temps que vous nous consacrez. Nous apportons sans cesse des améliorations à notre interface et à notre assistance afin d'assurer un déroulement aisé et rapide de vos commandes. Quelques clics suffisent, et nous nous chargeons du reste.",
+        infoBlockText4:
+            "Si, après l'achat, vous ne pouvez pas utiliser les pièces ou n'êtes pas en mesure de récupérer les pièces sur votre compte pour quelque raison que ce soit, le remboursement est garanti.",
         hwd: 'COMMENT SE DÉROULE LA LIVRAISON ?',
         h1_1: 'Le meilleur choix pour ',
         h1_2: 'acheter des pièces FIFA 23',
@@ -1217,7 +1269,9 @@ export const translates = {
             'Seules les informations relatives à votre compte FUT 22 sont requises. Nous nous occupons du reste.',
         pageMethodCard2Name: 'Enchères joueur',
         pageMethodCard2Text:
-            'Vous devrez suivre les instructions fournies. Rapide, sûr, mais manuel. <strong>Ne fonctionne pas avec les commandes supérieures à 1 million de pièces</strong>',
+            'Vous devrez suivre les instructions fournies. Rapide, sûr, mais manuel. ',
+        pageMethodCard2Text2:
+            'Ne fonctionne pas avec les commandes supérieures à 1 million de pièces',
         pageMethodCardSoon: 'Bientôt disponible',
         pagePaymentMethodName: 'PAIEMENT',
         pagePaymentMethodAntiBan: 'Anti-Ban system',
@@ -1284,6 +1338,18 @@ export const translates = {
         backToTop: 'Retour en haut',
     },
     it: {
+        infoBlockTitle1: 'LA TUA PRIMA SCELTA',
+        infoBlockTitle2: 'LA CONSEGNA PIÙ SICURA',
+        infoBlockTitle3: 'VELOCE E SEMPLICE',
+        infoBlockTitle4: 'GARANZIA DI RIMBORSO',
+        infoBlockText1:
+            'Il nostro obiettivo è fornirti il modo più sicuro per fare scorta di Monete FUT a prezzo basso. I nostri prezzi non contengono commissioni nascoste sulle tariffe. Abbiamo impiegato anni per sviluppare questo servizio.',
+        infoBlockText2:
+            'Usiamo un Sistema SMART anti-ban 3.0 che agisce secondo regole speciali. Per esempio, il nostro sistema include monete guadagnate manualmente per ciascun ordine. Queste regole garantiscono al 100% la sicurezza del tuo club FUT.',
+        infoBlockText3:
+            'Sappiamo che il tuo tempo è importante. Miglioriamo costantemente la nostra interfaccia e il supporto fornito per rendere i tuoi ordini fluidi e veloci. Bastano un paio di clic e al resto pensiamo noi.',
+        infoBlockText4:
+            "Se dopo l'acquisto non riesci a usare le monete, o se per qualsiasi altro motivo le monete non arrivano sul tuo account, ti garantiamo un rimborso completo.",
         hwd: 'COME FUNZIONA LA CONSEGNA?',
         h1_1: "L'opzione più sicura per ",
         h1_2: 'comprare Monete FIFA 23',
@@ -1539,7 +1605,9 @@ export const translates = {
             'Sono sufficienti i dati del tuo account FUT 22. Al resto pensiamo noi.',
         pageMethodCard2Name: 'Asta dei giocatori',
         pageMethodCard2Text:
-            'Dovrai seguire le istruzioni fornite. Un metodo manuale veloce e sicuro. <strong>Non funziona con ordini superiori a 1 milione di monete</strong>',
+            'Dovrai seguire le istruzioni fornite. Un metodo manuale veloce e sicuro. ',
+        pageMethodCard2Text2:
+            'Non funziona con ordini superiori a 1 milione di monete',
         pageMethodCardSoon: 'Disponibile a breve',
         pagePaymentMethodName: 'PAGAMENTO',
         pagePaymentMethodAntiBan: 'Anti-Ban system',
@@ -1606,6 +1674,18 @@ export const translates = {
         backToTop: 'Torna in alto',
     },
     ar: {
+        infoBlockTitle1: 'اختيارك الأول',
+        infoBlockTitle2: 'التوصيل الأكثر أمانًا',
+        infoBlockTitle3: 'سريعة وبسيطة',
+        infoBlockTitle4: 'ضمان استرداد',
+        infoBlockText1:
+            'يتمثل هدفنا الرئيسي في تقديم الطريقة الأكثر أمانًا لك لإعادة تعبئة رصيد نادي FUT الخاص بك بسعر منخفض. لا تتضمن أسعارنا أي عمولات أو رسوم خفية. لقد أمضينا أعوامًا لتطوير هذه الخدمة.',
+        infoBlockText2:
+            'نحن نستخدم نظام مكافحة الحظر الذكي 3.0 الذي يعمل وفقًا لقواعد خاصة. على سبيل المثال، يتضمن نظامنا عملات مكتسبة يدويًا لكل طلب. تضمن هذه القواعد توفير الأمان لنادي FUT الخاص بك بنسبة 100%.',
+        infoBlockText3:
+            'نحن نقدّر وقتك. يتم تحسين وجهتنا ودعمنا باستمرار لجعل طلباتك تتم بسهولة وبسرعة. بضع نقرات فحسب – وسنتكفل بالباقي.',
+        infoBlockText4:
+            'إذا لم تتمكن من استخدام العملات بعد الشراء أو إذا كان هناك أي سبب آخر يمنعك من الحصول على العملات لحسابك، فنحن نضمن لك رد أموالك بالكامل.',
         hwd: 'ما آلية التسليم؟',
         h1_1: 'الخيار الأكثر أمانًا ',
         h1_2: 'لشراء عملات FIFA 23',
@@ -1858,7 +1938,9 @@ export const translates = {
             'لا يلزم إلا معلومات حساب FUT 22 الخاص بك. ونحن نتكفل بالباقي نيابةً عنك. (اختر)',
         pageMethodCard2Name: 'مزاد اللاعب',
         pageMethodCard2Text:
-            '<strong>لا يعمل مع الطلبات التي تزيد عن 1 مليون قطعة نقدية </strong>يتعين عليك اتباع التعليمات التي نقدمها. طريقة سريعة وآمنة ولكن يدوية',
+            'ليتعين عليك اتباع التعليمات التي نقدمها. طريقة سريعة وآمنة ولكن يدوية',
+        pageMethodCard2Text2:
+            'لا يعمل مع الطلبات التي تزيد عن 1 مليون قطعة نقدية',
         pageMethodCardSoon: 'قريبًا',
         pagePaymentMethodName: 'الدفع',
         pagePaymentMethodAntiBan: 'Anti-Ban system',
@@ -1924,6 +2006,18 @@ export const translates = {
         backToTop: 'عودة إلى الأعلى',
     },
     nl: {
+        infoBlockTitle1: 'JOUW EERSTE KEUZE',
+        infoBlockTitle2: 'VEILIG BEZORGD',
+        infoBlockTitle3: 'SNEL EN EENVOUDIG',
+        infoBlockTitle4: 'TERUGBETALINGSGARANTIE',
+        infoBlockText1:
+            'We willen dat jij je FUT-clubsaldo op een zo veilig mogelijke manier kunt aanvullen tegen een zacht prijsje. Onze prijzen bevatten geen commissie of verborgen toeslagen. We hebben jaren gewerkt aan het opzetten van deze service.',
+        infoBlockText2:
+            'We gebruiken Smart ANTI-BAN System 3.0, dat werkt volgens speciale regels. Zo bevat ons systeem handmatig verdiende munten voor elke bestelling. Dit garandeert 100% veiligheid voor je FUT-club.',
+        infoBlockText3:
+            'We respecteren je tijd. Onze interface en ondersteuning worden constant verbeterd, zodat je bestellingen snel en probleemloos worden doorgevoerd. Een paar keer klikken en wij doen de rest.',
+        infoBlockText4:
+            'Als je na de aankoop de munten niet kunt gebruiken, of als er een andere reden is waarom je geen munten voor je account kunt krijgen, is een terugbetaling gegarandeerd.',
         hwd: 'HOE VERLOOPT DE LEVERING?',
         h1_1: 'Veiligste optie om ',
         h1_2: 'FIFA 23-munten te kopen',
@@ -2178,7 +2272,9 @@ export const translates = {
             'Alleen je FUT 22-accountgegevens zijn vereist. Wij doen de rest voor je.',
         pageMethodCard2Name: 'Spelersveiling',
         pageMethodCard2Text:
-            'Volg de instructies die wij u geven. Snel, veilig, maar handmatig. <strong>Werkt niet met bestellingen van meer dan 1 miljoen munten</strong>',
+            'Volg de instructies die wij u geven. Snel, veilig, maar handmatig. ',
+        pageMethodCard2Text2:
+            'Werkt niet met bestellingen van meer dan 1 miljoen munten',
         pageMethodCardSoon: 'Binnenkort',
         pagePaymentMethodName: 'BETALING',
         pagePaymentMethodAntiBan: 'Anti-Ban system',
@@ -2245,6 +2341,18 @@ export const translates = {
         backToTop: 'Terug naar boven',
     },
     es: {
+        infoBlockTitle1: 'SU OPCIÓN N.º 1',
+        infoBlockTitle2: 'LA ENTREGA MÁS SEGURA',
+        infoBlockTitle3: 'RÁPIDO Y SENCILLO',
+        infoBlockTitle4: 'GARANTÍA DE REEMBOLSO',
+        infoBlockText1:
+            'Nuestro objetivo principal es proporcionarte la manera más segura de rellenar el saldo de tu club FUT por el menor precio. Nuestros precios no contienen comisiones ni tarifas ocultas. Hemos pasado años desarrollando este servicio.',
+        infoBlockText2:
+            'Usamos un sistema inteligente ANTI-BAN 3.0 que funciona bajo unas reglas especiales. Por ejemplo, nuestro sistema incluye monedas adquiridas manualmente en cada pedido. Esas reglas garantizan al 100 % la seguridad de tu club FUT.',
+        infoBlockText3:
+            'Valoramos su tiempo, por lo que mejoramos constantemente nuestra interfaz y asistencia para que sus pedidos se completen de forma rápida y fluida. Solo tendrá que hacer un par de clics, y nosotros nos ocuparemos del resto.',
+        infoBlockText4:
+            'Si, tras la compra, no puedes usar las monedas o hay otro motivo por el cual las monedas no llegan a tu cuenta, tienes garantizado el reembolso.',
         hwd: '¿CÓMO FUNCIONA LA ENTREGA?',
         h1_1: 'La opción más segura ',
         h1_2: 'para comprar monedas FIFA 23',
@@ -2502,7 +2610,9 @@ export const translates = {
             'Solo tendrá que indicar la información de su cuenta de FUT 22. Nosotros nos encargamos de todo lo demás.',
         pageMethodCard2Name: 'Subasta de jugadores',
         pageMethodCard2Text:
-            'Tendrá que seguir las instrucciones que le proporcionemos. Rápido y seguro, pero manual. <strong>No funciona con pedidos superiores a 1 millón de monedas</strong>',
+            'Tendrá que seguir las instrucciones que le proporcionemos. Rápido y seguro, pero manual. ',
+        pageMethodCard2Text2:
+            'No funciona con pedidos superiores a 1 millón de monedas',
         pageMethodCardSoon: 'Próximamente',
         pagePaymentMethodName: 'PAGO',
         pagePaymentMethodAntiBan: 'Anti-Ban system',
@@ -2571,6 +2681,18 @@ export const translates = {
         backToTop: 'Volver arriba',
     },
     pt: {
+        infoBlockTitle1: 'A TUA PRIMEIRA ESCOLHA',
+        infoBlockTitle2: 'A ENTREGA MAIS SEGURA',
+        infoBlockTitle3: 'RÁPIDO E SIMPLES',
+        infoBlockTitle4: 'GARANTIA DE REEMBOLSO',
+        infoBlockText1:
+            'O nosso objetivo principal é proporcionar-te a forma mais segura de reabastecer o teu saldo do clube FUT por um preço baixo. Os nossos preços não incluem comissões ou taxas ocultas. Passámos anos a desenvolver este serviço.',
+        infoBlockText2:
+            'Estamos a utilizar um Sistema Smart ANTI-Ban 3.0 que funciona com regras especiais. Por exemplo, o nosso sistema inclui moedas ganhas manualmente em cada encomenda. Estas regras garantem 100% de segurança para o teu clube FUT.',
+        infoBlockText3:
+            'Damos valor ao teu tempo. A nossa interface e apoio estão constantemente a ser melhorados para fazer com que os teus pedidos sejam geridos de forma suave e rápida. Apenas alguns cliques - e trataremos do resto.',
+        infoBlockText4:
+            'Se não receberes as moedas na tua conta ou se, depois da compra, não as conseguires usar, garantimos um reembolso.',
         hwd: 'COMO RECEBO AS MOEDAS?',
         h1_1: 'A opção mais segura para ',
         h1_2: 'comprar moedas FIFA 23',
@@ -2826,7 +2948,9 @@ export const translates = {
             'Só é necessária a tua informação de conta FUT 22. Fazemos o resto por ti.',
         pageMethodCard2Name: 'Leilão de Jogador',
         pageMethodCard2Text:
-            'Vais precisar de seguir as instruções que fornecemos. Rápido, seguro, mas manual. <strong>Não funciona com pedidos acima de 1 milhão de moedas</strong>',
+            'Vais precisar de seguir as instruções que fornecemos. Rápido, seguro, mas manual. ',
+        pageMethodCard2Text2:
+            'Não funciona com pedidos acima de 1 milhão de moedas',
         pageMethodCardSoon: 'Em breve',
         pagePaymentMethodName: 'PAGAMENTO',
         pagePaymentMethodAntiBan: 'Anti-Ban system',
@@ -2894,6 +3018,18 @@ export const translates = {
         backToTop: 'Voltar ao topo',
     },
     pl: {
+        infoBlockTitle1: 'TWÓJ PIERWSZY WYBÓR',
+        infoBlockTitle2: 'BEZPIECZNA DOSTAWA',
+        infoBlockTitle3: 'SZYBKI I PROSTY',
+        infoBlockTitle4: 'GWARANCJA ZWROTU PIENIĘDZY',
+        infoBlockText1:
+            'Naszym celem jest umożliwienie ci bezpiecznego sposobu na wypełnienie zasobów klubu FUT w niskiej cenie. Nasze ceny nie zawierają żadnych prowizji ani ukrytych opłat. Poświęciliśmy wiele lat na opracowanie tej usługi.',
+        infoBlockText2:
+            'Używamy systemu zapobiegającego banom SMART 3.0, który działa według specjalnych zasad. Przykładowo, nasz system korzysta z ręcznie zdobytych monet dla każdego zamówienia. Zasady te gwarantują 100% bezpieczeństwo dla twojego klubu FUT.',
+        infoBlockText3:
+            'Cenimy Twój czas. Nieustannie poprawiamy nasz interfejs i naszą pomoc techniczną, aby płynnie i szybko realizować wszystkie zamówienia. Wystarczy kilka kliknięć, a my zajmiemy się resztą.',
+        infoBlockText4:
+            'Jeśli po zakupie nie możesz użyć monet, albo z innego powodu nie otrzymasz monet na swoje konto, gwarantujemy zwrot pieniędzy.',
         hwd: 'JAK DZIAŁA DOSTAWA?',
         h1_1: 'Najbezpieczniejsza opcja ',
         h1_2: 'zakupu monet FIFA 23',
@@ -3150,7 +3286,9 @@ export const translates = {
             'Potrzebne będą jedynie dane twojego konta FUT 22. Resztę załatwimy za ciebie.',
         pageMethodCard2Name: 'Aukcja graczy',
         pageMethodCard2Text:
-            'Musisz wykonać dostarczone przez nas instrukcje. Szybko, pewnie, ale ręcznie. <strong>Nie działa przy zamówieniach powyżej 1 mln monet</strong>',
+            'Musisz wykonać dostarczone przez nas instrukcje. Szybko, pewnie, ale ręcznie. ',
+        pageMethodCard2Text2:
+            'Nie działa przy zamówieniach powyżej 1 mln monet',
         pageMethodCardSoon: 'Wkrótce',
         pagePaymentMethodName: 'PŁATNOŚĆ',
         pagePaymentMethodAntiBan: 'Anti-Ban system',
@@ -3216,6 +3354,18 @@ export const translates = {
         backToTop: 'Powrót na górę',
     },
     ch: {
+        infoBlockTitle1: '您的首选',
+        infoBlockTitle2: '最安全的交付',
+        infoBlockTitle3: '快速简单',
+        infoBlockTitle4: '保证退款',
+        infoBlockText1:
+            '我们的目标是以最优惠的价格为您提供最安全可靠的补充 FUT 资金的方式。我们的价格不包含任何佣金或隐藏收费。我们凭借多年经验打造出如今的服务。',
+        infoBlockText2:
+            '使用 Smart ANTI-BAN System 3.0 ，以特殊规则保障安全。例如，我们系统中的每笔订购都包含手动人力赚取的金币。借助这些规则来 100 % 保障您的 FUT 俱乐部的安全。',
+        infoBlockText3:
+            '我们自 FIFA 17 起便向批发买家销售金币。凭借我们的经验，我们将为 FUT 用户提供最好的产品。',
+        infoBlockText4:
+            '如果在购买后您无法使用金币，或者如果有任何其他原因导致您无法为您的帐户获得金币，我们保证退款。',
         hwd: '交付是如何实现的？',
         h1_1: '购买 FIFA 23 金币的 ',
         h1_2: '最安全的选项',
@@ -3460,7 +3610,8 @@ export const translates = {
         pageMethodCard1Text: '只需您的 FUT 22 帐户信息。剩下的全都交给我们。',
         pageMethodCard2Name: '玩家拍卖',
         pageMethodCard2Text:
-            '您需要按照我们提供的说明操作。快速，安全，但手动。 <strong>超过 100 万金币的订单无效</strong>',
+            '您需要按照我们提供的说明操作。快速，安全，但手动。',
+        pageMethodCard2Text2: '超过 100 万金币的订单无效',
         pageMethodCardSoon: '快速',
         pagePaymentMethodName: '支付',
         pagePaymentMethodAntiBan: 'Anti-Ban system',
@@ -3525,6 +3676,18 @@ export const translates = {
         backToTop: '回到顶部',
     },
     tr: {
+        infoBlockTitle1: 'İLK SEÇİMİNİZ',
+        infoBlockTitle2: 'EN GÜVENLİ TESLİMAT',
+        infoBlockTitle3: 'Hızlı VE BASİT',
+        infoBlockTitle4: 'PARA IADE GARANTISI',
+        infoBlockText1:
+            'Amacımız FUT kulübünüzün bakiyesini en ucuz ve güvenli şekilde doldurmanızı sağlamak. Fiyatlarımızda hiçbir komisyon ya da gizli ücret yok. Böyle bir hizmeti geliştirmek için yıllardır çalışıyoruz.',
+        infoBlockText2:
+            'Özel kurallarla çalışan Smart Anti-Ban 3.0 sistemini kullanıyoruz. Örneğin, sistemimiz her sipariş için manuel olarak edinilmiş jetonlar da sunuyor. Bu kurallar sayesinde FUT kulübünüz %100 güvende.',
+        infoBlockText3:
+            'Zaman ayırdığınız için teşekkür ederiz. Arayüzümüz ve desteğimiz, siparişlerinizin sorunsuz ve hızlı bir şekilde yürütülmesi için sürekli olarak geliştiriliyor. Sadece birkaç tıklama, gerisini biz yapacağız.',
+        infoBlockText4:
+            'Satın aldığınız jetonları kullanamazsanız ya da herhangi bir sebeple jetonlar hesabınıza eklenmezse para iadesi garantidir.',
         hwd: 'TESLİMAT NASIL YAPILIYOR?',
         h1_1: 'FIFA 23 Jetonu için ',
         h1_2: 'en güvenli yöntem',
@@ -3778,7 +3941,8 @@ export const translates = {
             'FUT 22 hesap bilgilerinizi vermeniz yeterlidir. Gerisini biz sizin yerinize hallediyoruz.',
         pageMethodCard2Name: 'Oyuncu açik artirma',
         pageMethodCard2Text:
-            'Verilen talimatları izleyerek işlemi gerçekleştirmeniz gerekir. Hızlı, güvenli fakat manuel. <strong>1 milyon coin üzeri siparişlerle çalışmaz</strong>',
+            'Verilen talimatları izleyerek işlemi gerçekleştirmeniz gerekir. Hızlı, güvenli fakat manuel. ',
+        pageMethodCard2Text2: '1 milyon coin üzeri siparişlerle çalışmaz',
         pageMethodCardSoon: 'Yakında',
         pagePaymentMethodName: 'ÖDEME',
         pagePaymentMethodAntiBan: 'Anti-Ban system',
@@ -3845,6 +4009,18 @@ export const translates = {
         backToTop: 'Başa dön',
     },
     sw: {
+        infoBlockTitle1: 'FÖRSTA VALET',
+        infoBlockTitle2: 'SÄKRASTE LEVERANSERNA',
+        infoBlockTitle3: 'SNABBT OCH ENKELT',
+        infoBlockTitle4: 'GARANTI FÖR ÅTERBETALNING',
+        infoBlockText1:
+            'Vårt mål är att ge dig det säkraste sättet att fylla på FUT-saldot till ett lågt pris. Våra priser är helt avgiftsfria. Vi har lagt flera år på att utveckla tjänsten.',
+        infoBlockText2:
+            'Vi använder version 3.0 av ett smart anti-avstängningssystem som tar särskilda villkor i beaktande, bland annat manuellt intjänade mynt vid varje beställning. Tack vare det systemet är din FUT-klubb 100 % säker.',
+        infoBlockText3:
+            'Vi respekterar din tid. Vi jobbar ständigt på att förbättra gränssnittet och supporten så att det går snabbt och smidigt att lägga beställningar. Allt som krävs av dig är några klick, sen sköter vi resten.',
+        infoBlockText4:
+            'Om du inte kan använda mynt efter köpet, eller om det finns en annan anledning till varför du inte kan använda mynt i ditt konto, garanteras du en återbetalning.',
         hwd: 'HUR FUNGERAR LEVERANSER?',
         h1_1: 'Det säkraste sättet ',
         h1_2: 'att köpa FIFA 23-mynt',
@@ -4098,7 +4274,8 @@ export const translates = {
             'Det enda vi behöver är dina FUT 22-kontouppgifter. Vi sköter resten.',
         pageMethodCard2Name: 'Spelarauktion',
         pageMethodCard2Text:
-            'Följ våra instruktioner. Snabbt och säkert, men manuellt. <strong>Fungerar inte på beställningar över 1m mynt</strong>',
+            'Följ våra instruktioner. Snabbt och säkert, men manuellt. ',
+        pageMethodCard2Text2: 'Fungerar inte på beställningar över 1m mynt',
         pageMethodCardSoon: 'Snart',
         pagePaymentMethodName: 'BETALNING',
         pagePaymentMethodAntiBan: 'Anti-Ban system',
@@ -4165,6 +4342,18 @@ export const translates = {
         backToTop: 'Tillbaka till toppen',
     },
     no: {
+        infoBlockTitle1: 'DITT FØRSTEVALG',
+        infoBlockTitle2: 'DEN TRYGGESTE LEVERINGEN',
+        infoBlockTitle3: 'RASK OG ENKEL',
+        infoBlockTitle4: 'REFUSJONSGARANTI',
+        infoBlockText1:
+            'Målet vårt er å gi deg den tryggeste måten å fylle på FUT-saldoen din på, til en lav pris. Prisene våre er ekskludert provisjon og skjulte gebyrer, og vi har brukt flere år på å utvikle en tjeneste som dette.',
+        infoBlockText2:
+            'Vi bruker SMART anti-utestengingssystem 3.0, som fungerer etter spesielle regler. For eksempel inkluderer systemet mynter som er opptjent manuelt i hver bestilling. Disse reglene garanterer at FUT-klubben din er 100 % sikker.',
+        infoBlockText3:
+            'Vi vet at tiden din er viktig for deg. Vi jobber stadig med å forbedre grensesnittet og støtten, slik at bestillingene skal gå raskere og jevnere. Bare et par klikk – så gjør vi resten.',
+        infoBlockText4:
+            'Hvis du etter kjøpet ikke kan bruke munter, eller hvis det finnes en annen grunn til at du ikke får mynter på kontoen din, garanteres det en full refusjon.',
         hwd: 'HOE VERLOOPT DE LEVERING?',
         h1_1: 'Det tryggeste alternativet for ',
         h1_2: 'kjøp av FIFA 23-mynter',
@@ -4415,7 +4604,9 @@ export const translates = {
             'Krever kun FUT 22-kontoopplysningene dine. Vi gjør resten for deg.',
         pageMethodCard2Name: 'Spillerauksjon',
         pageMethodCard2Text:
-            'Du må følge instruksjonene vi gir deg. Raskt og trygt, men manuelt. <strong>Fungerer ikke med bestillinger på over 1 million mynter</strong>',
+            'Du må følge instruksjonene vi gir deg. Raskt og trygt, men manuelt. ',
+        pageMethodCard2Text2:
+            'Fungerer ikke med bestillinger på over 1 million mynter',
         pageMethodCardSoon: 'Snart',
         pagePaymentMethodName: 'BETALING',
         pagePaymentMethodAntiBan: 'Anti-Ban system',
