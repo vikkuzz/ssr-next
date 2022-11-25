@@ -23,6 +23,7 @@ const Calculator = () => {
     const currency = useSelector((state) => state.royalfutReducer.currency);
     const platform = useSelector((state) => state.royalfutReducer.currency);
     const method = useSelector((state) => state.royalfutReducer.method);
+    const stateDir = useSelector((state) => state.royalfutReducer.direction);
 
     const dispatch = useDispatch();
     const router = useRouter();
@@ -76,6 +77,7 @@ const Calculator = () => {
                 </div>
                 <div className={`${styles.calc_information_wrapper}`}>
                     <img
+                        dir={stateDir}
                         className={`${styles.arrow_info} from-1025-to-1900`}
                         src={'/img/arrowinfogold.svg'}
                         alt="arrow"

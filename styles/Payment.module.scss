@@ -267,3 +267,7 @@
     margin-left: auto;
     align-self: flex-end;
 }
+.payment_price[dir='rtl']{
+    margin-right: auto;
+    margin-left: 0;
+}

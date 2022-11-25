@@ -298,7 +298,13 @@ const Aside = () => {
                                 <div
                                     ref={i == 0 ? slide : null}
                                     key={(count += 1)}
-                                    style={{ left: `${i * 428}px` }}
+                                    style={{
+                                        left: `${
+                                            i *
+                                            slider?.current?.children[children]
+                                                .scrollWidth
+                                        }px`,
+                                    }}
                                     className={`${styles.aside_slide}`}
                                     onMouseDown={isDown}
                                     onMouseMove={isMove}

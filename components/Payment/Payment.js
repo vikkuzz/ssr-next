@@ -35,6 +35,7 @@ const Payment = ({ deliveryTime }) => {
     );
     const stateCoins = useSelector((state) => state.royalfutReducer.coins);
     const stateOrder = useSelector((state) => state.royalfutReducer.order);
+    const stateDir = useSelector((state) => state.royalfutReducer.direction);
 
     let [methodPayment, setMethodPayment] = useState({
         card: true,
@@ -235,6 +236,7 @@ const Payment = ({ deliveryTime }) => {
                                 </label>
                             </fieldset>
                             <div
+                                dir={stateDir}
                                 className={`${styles.payment_price} from-1025-to-1900`}
                             >
                                 <PriceCoupon />

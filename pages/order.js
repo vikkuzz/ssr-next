@@ -9,6 +9,7 @@ import Howdelivery from '../components/HowDelivery';
 import TextBlockContainer from '../components/TextBlockContainer';
 import { useRouter } from 'next/router';
 import { translates } from '../locales/locales';
+import Aside from '../components/Aside';
 
 const Order = () => {
     const router = useRouter();
@@ -24,6 +25,7 @@ const Order = () => {
                 <Howdelivery />
                 <TextBlockContainer />
             </div>
+            <Aside />
         </MainContainer>
     );
 };
