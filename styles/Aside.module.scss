@@ -28,6 +28,8 @@
     align-self: center;    
     background-color: transparent;
     flex-direction: column;
+    direction: ltr; 
+
     @media (min-width:1025px) {
         width: auto;
         position: sticky;
@@ -35,7 +37,7 @@
         top: 130px;
         padding: 0 35px;
         align-self: flex-start;
-        direction: ltr;    
+           
         right: 100%;
     }        
 }
