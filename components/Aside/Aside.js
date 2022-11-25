@@ -466,7 +466,7 @@ const Aside = () => {
                     <img
                         className={`${styles.aside_protect_img}`}
                         alt="google safe"
-                        src="/img/google-safe.png"
+                        src="/img/google-safe.svg"
                     ></img>
                 </a>
             </div>
