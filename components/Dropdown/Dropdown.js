@@ -31,7 +31,7 @@ const DropdownContent = ({ data }) => {
         if (e.target.id === 'ar') {
             dispatch(changeDir('rtl'));
         } else {
-            dispatch(changeDir('itr'));
+            dispatch(changeDir('ltr'));
         }
     };
 
@@ -132,7 +132,7 @@ const DropdownLang = () => {
             if (lang.title === 'ar') {
                 dispatch(changeDir('rtl'));
             } else {
-                dispatch(changeDir('itr'));
+                dispatch(changeDir('ltr'));
             }
             router.push({ pathname, query }, asPath, { locale: lang.title });
         } else {
@@ -140,7 +140,7 @@ const DropdownLang = () => {
             if (router.locale === 'ar') {
                 dispatch(changeDir('rtl'));
             } else {
-                dispatch(changeDir('itr'));
+                dispatch(changeDir('ltr'));
             }
         }
         //dispatch(currentLang(lang.title));
