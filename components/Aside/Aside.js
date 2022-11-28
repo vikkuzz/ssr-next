@@ -41,7 +41,7 @@ const Aside = () => {
         },
     ]);
     let [loop, setLoop] = useState([...reviews]);
-    let [children, setChildren] = useState(0);
+    let [children, setChildren] = useState(2);
     const [down, setDown] = useState(false);
     const [move, setMove] = useState(false);
     const [up, setUp] = useState(false);
@@ -138,27 +138,40 @@ const Aside = () => {
     }, [slideWrapper?.current?.scrollLeft]);
 
     useEffect(() => {
-        console.log(slide.current, slide.current.scrollHeight);
+        console.log(children);
+        //console.log(slide.current, slide.current.scrollHeight);
         slideWrapper.current.style.height = `${slider.current.children[children].scrollHeight}px`;
         slider.current.style.transform = `translateX(-${
             slider.current.children[1].scrollWidth * children
         }px)`;
+        slider.current.style.transition = 'all 0.5s linear';
 
         if (children === 0) {
-            setTimeout(() => {
-                slider.current.style.transition = 'all 0.5s linear';
-                slider.current.style.transform = `translateX(-${
-                    slider.current.children[1].scrollWidth * children
-                }px)`;
-            }, 500);
+            // setTimeout(() => {
+            //     slider.current.style.transition = 'all 0.5s linear';
+            //     slider.current.style.transform = `translateX(-${
+            //         slider.current.children[1].scrollWidth * children
+            //     }px)`;
+            // }, 500);
+            slider.current.style.transition = 'all 0s linear';
+            setChildren(16);
         }
+        // if (children <= 1) {
+        //     slider.current.style.transition = 'all 0s linear';
+        //     setChildren(16);
+        //     setTimeout(
+        //         () => (slider.current.style.transition = 'all 0.5s linear'),
+        //         200
+        //     );
+        //     setTimeout(() => setChildren((prevState) => prevState + 1), 200);
+        // }
 
         if (children === 17) {
             slider.current.style.transition = 'all 0s linear';
-            setChildren(0);
+            setChildren(2);
         }
 
-        console.log(slider);
+        //console.log(slider);
         interval = setInterval(() => {
             setChildren((prevState) => prevState + 1);
         }, 5000);
