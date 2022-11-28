@@ -40,7 +40,6 @@ const Aside = () => {
             color2: 50,
         },
     ]);
-    //let [scroll, setScroll] = useState();
     let [loop, setLoop] = useState([...reviews]);
     let [children, setChildren] = useState(0);
     const [down, setDown] = useState(false);
@@ -48,6 +47,54 @@ const Aside = () => {
     const [up, setUp] = useState(false);
     const [downX, setDownX] = useState(null);
     const [moveX, setMoveX] = useState(null);
+
+    const [touchStart, setTouchStart] = React.useState(0);
+    const [touchEnd, setTouchEnd] = React.useState(0);
+
+    function handleTouchStart(e) {
+        console.log(e.targetTouches[0].clientX);
+        setTouchStart(e.targetTouches[0].clientX);
+    }
+
+    function handleTouchMove(e) {
+        console.log(e.targetTouches[0].clientX);
+        setTouchEnd(e.targetTouches[0].clientX);
+    }
+
+    function handleTouchEnd() {
+        console.log(touchStart, touchEnd);
+        if (touchStart - touchEnd > 100) {
+            setChildren((prev) => prev + 1);
+            if (children <= 1) {
+                slider.current.style.transition = 'all 0s linear';
+                setChildren(16);
+                setTimeout(
+                    () => (slider.current.style.transition = 'all 0.5s linear'),
+                    200
+                );
+                setTimeout(
+                    () => setChildren((prevState) => prevState + 1),
+                    200
+                );
+            }
+        }
+
+        if (touchStart - touchEnd < -100) {
+            setChildren((prev) => prev - 1);
+            if (children >= 16) {
+                slider.current.style.transition = 'all 0s linear';
+                setChildren(0);
+                setTimeout(
+                    () => (slider.current.style.transition = 'all 0.5s linear'),
+                    200
+                );
+                setTimeout(
+                    () => setChildren((prevState) => prevState - 1),
+                    200
+                );
+            }
+        }
+    }
 
     useEffect(() => {
         setTimeout(() => {
@@ -199,7 +246,6 @@ const Aside = () => {
                     );
                 }
             }
-            //setChildren((prev) => prevState + 1);
         }
         console.log('up');
     };
@@ -313,6 +359,12 @@ const Aside = () => {
                                     onMouseDown={isDown}
                                     onMouseMove={isMove}
                                     onMouseUp={isUp}
+                                    onTouchStart={(e) => {
+                                        console.log('starts move');
+                                        handleTouchStart(e);
+                                    }}
+                                    onTouchMove={(e) => handleTouchMove(e)}
+                                    onTouchEnd={(e) => handleTouchEnd(e)}
                                 >
                                     <span
                                         className={`${styles.aside_slide_title}`}
