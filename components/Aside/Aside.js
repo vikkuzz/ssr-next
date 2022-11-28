@@ -416,7 +416,7 @@ const Aside = () => {
                             type={'button'}
                             onClick={() => {
                                 clearInterval(interval);
-                                setChildren((prevState) => prevState - 2);
+
                                 if (children <= 1) {
                                     slider.current.style.transition =
                                         'all 0s linear';
@@ -435,6 +435,7 @@ const Aside = () => {
                                         200
                                     );
                                 }
+                                setChildren((prevState) => prevState - 2);
                             }}
                         ></button>
                     </div>
@@ -442,7 +443,7 @@ const Aside = () => {
                         <button
                             onClick={() => {
                                 clearInterval(interval);
-                                setChildren((prevState) => prevState - 1);
+
                                 if (children <= 1) {
                                     slider.current.style.transition =
                                         'all 0s linear';
@@ -461,6 +462,7 @@ const Aside = () => {
                                         200
                                     );
                                 }
+                                setChildren((prevState) => prevState - 1);
                             }}
                             className={`${styles.aside_bullet}`}
                             type={'button'}
@@ -476,7 +478,7 @@ const Aside = () => {
                         <button
                             onClick={() => {
                                 clearInterval(interval);
-                                setChildren((prevState) => prevState + 1);
+
                                 if (children >= 15) {
                                     slider.current.style.transition =
                                         'all 0s linear';
@@ -495,6 +497,7 @@ const Aside = () => {
                                         200
                                     );
                                 }
+                                setChildren((prevState) => prevState + 1);
                             }}
                             className={`${styles.aside_bullet} `}
                             type={'button'}
@@ -504,7 +507,7 @@ const Aside = () => {
                         <button
                             onClick={() => {
                                 clearInterval(interval);
-                                setChildren((prevState) => prevState + 2);
+
                                 if (children >= 15) {
                                     slider.current.style.transition =
                                         'all 0s linear';
@@ -523,6 +526,7 @@ const Aside = () => {
                                         200
                                     );
                                 }
+                                setChildren((prevState) => prevState + 2);
                             }}
                             className={`${styles.aside_bullet} `}
                             type={'button'}
