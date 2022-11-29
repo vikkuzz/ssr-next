@@ -206,6 +206,20 @@ export default class Api {
         return result;
     };
 
+    getOrders = async (token) => {
+        let urlForStock = 'https://royalfut.com/api/order';
+
+        const res = await fetch(`${urlForStock}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Token ${token}`,
+            },
+        });
+        const result = await res.json();
+        return result;
+    };
+
     registration = async (userEmail, userPass) => {
         console.log('apiapi');
         let headers = {

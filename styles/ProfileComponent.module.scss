@@ -1,0 +1,121 @@
+.prof_comp_wrapper_tabs{
+    border-bottom: 1px solid #fff;
+    margin-bottom: 18px;
+}
+.prof_comp_tab{
+    position: relative;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: .2px;
+    color: rgba(255,255,255, 0.2);
+    transition: all .4s ease-in-out;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    
+}
+.prof_comp_tab::after{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: '';
+    height: 2px;
+    width: 0%;
+    color: white;
+    transition: all .4s ease-in-out;
+}
+.prof_comp_tab_active{
+    color: white;
+}
+.prof_comp_tab_active::after{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: '';
+    height: 2px;
+    width: 100%;
+    color: white;
+    transition: all .4s ease-in-out;
+    background-color: white;
+}
+.prof_comp_fieldset{
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 2px;
+    height: auto;
+    padding-bottom: 12px;
+    padding: 0;
+    background-color: transparent;
+}
+.email_fieldset{
+    margin-bottom: 6.4vmin;
+    background-color: transparent;
+    
+    @media (min-width:1025px) {
+        margin-bottom: 24px;
+    }
+}
+.prof_comp_container{
+    flex-direction: column;
+}
+.prof_comp_legend{
+    font-family: 'Montserrat',helvetica,arial,sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 16px;
+    width: fit-content;
+    padding: 0 8px;
+    position: absolute;
+    top: -10px;
+    left: 30px;
+    height: auto;
+    transition: all linear 0.5s;
+    background-color: transparent;
+}
+.prof_comp_userdata{
+    border: none;
+    background-color: transparent !important;
+    color: white !important;
+    height: 17.0666666667vmin;
+    font-family: 'Oswald',sans-serif;
+    font-size: 6.4vmin;
+    line-height: 6.4vmin;
+    padding: 6.4vmin 3.2vmin 4.2666666667vmin;
+    box-shadow: none !important;
+
+    @media (min-width:1025px) {
+        padding: 24px 12px 16px;
+        height: 64px;
+        font-size: 24px;
+        line-height: 24px;
+    }
+}
+.prof_comp_userdata::placeholder{
+    font-family: 'Oswald';
+}
+.fieldset_pass{
+    padding-right: 50px;
+}
+.prof_comp_view_pass{
+    position: absolute;
+    right: -18px;
+    top: 50%;
+    z-index: 99;
+    width: 45px;
+    height: auto;
+    color: #fff;
+    transform: translate(-50%,-50%);
+    border: none;
+    background-color: transparent;
+}
+.prof_comp_view_pass img{
+    background-color: transparent;
+    color: #fff;
+}
+.prof_comp_container_content{
+    flex-direction: column;
+}
+.prof_acc_container{
+    flex-direction: column;
+}

@@ -18,6 +18,7 @@ const CalcCoins = () => {
     const router = useRouter();
 
     const method = useSelector((state) => state.royalfutReducer.method);
+    const stateDir = useSelector((state) => state.royalfutReducer.direction);
     const minLimit = useSelector(
         (state) => state.royalfutReducer.stock.minLimitSumCoins
     );
@@ -156,7 +157,7 @@ const CalcCoins = () => {
                         maxLength={10}
                     ></input>
                 </fieldset>
-                <div className={`${styles.coins_pack}`}>
+                <div dir={stateDir} className={`${styles.coins_pack}`}>
                     <button
                         onClick={onCoinsButtonClick}
                         id={100000}

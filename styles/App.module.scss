@@ -83,3 +83,51 @@
     align-items: flex-start;
   }
 }
+.app_profile_ava{
+  position: relative;
+  background-color: #36b23b;
+  border-radius: 50%;
+  align-self: flex-start;
+
+  @media (min-width:1025px) {
+    width: 72px;
+    height: 72px;
+    min-width: 72px;
+    min-height: 72px;
+    font-size: 36px;
+    line-height: 43px;
+  }
+}
+.app_profile_char{
+  width: auto;
+  line-height: initial;
+}
+.app_profile_btn_ava{
+  position: absolute;
+  border-radius: 50%;
+  color: rgba(0,0,0,.2);
+  background-color: #fff;
+  cursor: pointer;
+  background-image: url('/img/camera.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  @media (min-width:1025px) {
+    right: 0;
+    bottom: 0;
+    padding: 0 5px;
+    width: 24px;
+    height: 24px;
+  }
+}
+.app_profile_fileinput{
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+}
+.app_profile_wrapper{
+  gap: 16px;
+}
