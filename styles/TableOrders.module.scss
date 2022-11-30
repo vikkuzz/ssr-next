@@ -146,3 +146,15 @@
 .tableorder_content_transfer{
     justify-content: flex-start;
 }
+.tableorder_arrow{
+    width: 16px;
+    height: 14px;
+    background-image: url('../img/whitearrow.svg');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: .3s;
+}
+.tableorder_arrow_trasform{
+    transform: scaleY(-1);
+}

@@ -37,8 +37,25 @@ const TableItem = ({ item }) => {
         setDay(currentDay);
     }, []);
 
-    const handleClickOrder = () => {
+    const handleClickOrder = (e) => {
         setOrdeOpen(!orderOpen);
+        function getCoords(elem) {
+            // crossbrowser version
+            var box = elem.getBoundingClientRect();
+            var body = document.body;
+            var docEl = document.documentElement;
+            var scrollTop =
+                window.pageYOffset || docEl.scrollTop || body.scrollTop;
+            var scrollLeft =
+                window.pageXOffset || docEl.scrollLeft || body.scrollLeft;
+            var clientTop = docEl.clientTop || body.clientTop || 0;
+            var clientLeft = docEl.clientLeft || body.clientLeft || 0;
+            var top = box.top + scrollTop - clientTop;
+            var left = box.left + scrollLeft - clientLeft;
+            return { top: Math.round(top), left: Math.round(left) };
+        }
+        console.log(getCoords(e.target));
+        window.scrollTo(0, getCoords(e.target).top - 200);
     };
 
     return (
@@ -112,6 +129,11 @@ const TableItem = ({ item }) => {
                         {item.status}
                     </div>
                 </div>
+                <div
+                    className={`${styles.tableorder_arrow} ${
+                        orderOpen && styles.tableorder_arrow_trasform
+                    }`}
+                ></div>
             </div>
             <div
                 className={`${styles.tableorder_content} ${
