@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import Api from '../../Api/Api';
 
 import styles from '../../styles/TableOrders.module.scss';
+import TableItem from './TableItem';
 
 const api = new Api();
 
@@ -82,13 +83,41 @@ const TableOrders = () => {
                     orders.length < 0 ? 'hide' : styles.tableorders_container
                 }`}
             >
-                {orders?.map((el) => {
-                    return (
-                        <div className={`${styles.tableorders_order}`}>
-                            {el.id}
-                        </div>
-                    );
-                })}
+                <div className={`${styles.tableorders_header}`}>
+                    <div
+                        className={`${styles.tableorders_header_item} ${styles.tableorders_header_item_id}`}
+                    >
+                        #
+                    </div>
+                    <div
+                        className={`${styles.tableorders_header_item} ${styles.tableorders_header_item_platform}`}
+                    >
+                        Platform / Login
+                    </div>
+                    <div
+                        className={`${styles.tableorders_header_item} ${styles.tableorders_header_item_amount}`}
+                    >
+                        Amount
+                    </div>
+                    <div
+                        className={`${styles.tableorders_header_item} ${styles.tableorders_header_item_price}`}
+                    >
+                        Price
+                    </div>
+                    <div
+                        className={`${styles.tableorders_header_item} ${styles.tableorders_header_item_status}`}
+                    >
+                        Status
+                    </div>
+                </div>
+                <div className={`${styles.tableorders_orders_container}`}>
+                    {orders?.map((el) => {
+                        el.percentTransferred = 50;
+                        if (el.status.toLowerCase() != 'created') {
+                            return <TableItem item={el} key={el.id} />;
+                        }
+                    })}
+                </div>
             </div>
         </div>
     );

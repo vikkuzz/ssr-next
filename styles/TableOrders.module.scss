@@ -1,7 +1,148 @@
 .tableorders_container{
     flex-wrap: wrap;
-    gap: 8px;
+    //gap: 8px;
+    flex-direction: column;
+    padding-top: 32px;
 }
 .tableorders_order{
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    position: relative;
+    transition: .3s;
+}
+.tableorders_order:hover{
+    transition: .3s;
+    //transform: scale(1.05);
+    cursor: pointer;    
+}
+.tableorders_header_item{
+    font-family: 'Montserrat',helvetica,arial,sans-serif;
+    font-size: 12px;
+    line-height: 15px;
+}
+.tableorders_header_item_id{
+    max-width: 45px;
+}
+.tableorders_header_item_platform{
+    min-width: 147px;
+    flex-wrap: nowrap;
+}
+.tableorders_header_item_amount{
+    max-width: 80px;
+}
+.tableorders_header_item_price{
+    max-width: 95px;
+}
+.tableorders_header{
+    padding: 9px 0;
+}
+.tableorder_header_date{
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Montserrat',helvetica,arial,sans-serif;
+    white-space: nowrap;
+    background-color: transparent;
+}
+.tableorder_header_info{
+    justify-content: flex-start;
+}
+.tableorder_item_id{
     width: auto;
+    font-size: 18px;
+}
+.tableorders_orders_container{
+    flex-direction: column;
+    gap: 9px;
+}
+.tableorder_header_day{
+    padding-right: 10px;
+    width: auto;
+    font-family: 'Montserrat',helvetica,arial,sans-serif;
+    color: hsla(0,0%,100%,.6);
+    white-space: nowrap;
+    font-size: 12px;
+    line-height: 15px;
+}
+.tableorder_header_divider{
+    height: 1px;
+    background: hsla(0,0%,100%,.2);
+    transition: .4s;
+}
+.tableorder_body{
+    padding: 9px 0;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: transparent;
+    //max-width: 70%;
+}
+.tableorder_header_id{
+    flex-direction: column;
+    width: auto;
+}
+.tableorder_subheader{
+    justify-content: flex-start;
+    font-family: 'Montserrat',helvetica,arial,sans-serif;
+    opacity: .3;
+    white-space: nowrap;
+    font-size: 12px;
+    line-height: 15px;
+}
+.tableorder_subheader_item{
+    height: 45px;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-grow: 1;
+    padding: 0 4px;
+    width: auto;
+}
+.tableorder_status{
+    width: auto;
+    position: absolute;
+    right: 0;
+    bottom: 9px;
+}
+.tableorder_body_order_open{
+    background-color: rgba(255,255,255,.2);
+    padding: 16px 24px;
+}
+.tableorder_content{
+    flex-direction: column;
+    background-color: transparent;
+    align-items: flex-start;
+    padding-top: 18px;
+}
+.tableorder_content_title{
+    font-family: 'Montserrat',helvetica,arial,sans-serif;
+    font-weight: 600;
+    color: hsla(0,0%,100%,.3);
+    font-size: 12px;
+    line-height: 15px;
+    width: auto;
+}
+.tableorder_content_transfer{
+    padding-top: 14px;
+}
+.tableorder_content_progress{
+    justify-content: flex-end;
+    flex-direction: column;
+}
+.tableorder_content_percent{
+    align-self: flex-end;
+    width: auto;
+}
+.tableorder_content_progressline{
+    height: 15px;
+    background: rgba(121,101,238,.3);
+    border-radius: 100px;
+    justify-content: flex-start;
+}
+.tableorder_line{
+    height: 100%;
+    width: auto;
+    background: rgb(121,101,238);
+    border-radius: 100px;
+}
+.tableorder_content_transfer{
+    justify-content: flex-start;
 }
