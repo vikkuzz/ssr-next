@@ -179,6 +179,9 @@ const royalfutReducer = (state = initialState, action) => {
             });
             return { ...state, ...localState, order: action.data };
 
+        case 'GET_ALL_ORDERS':
+            return { ...state, allOrders: action.data };
+
         case 'NAME_PAYMENT_METHOD':
             ls.set('localState', {
                 ...state,

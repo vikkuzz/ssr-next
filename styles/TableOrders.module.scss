@@ -158,3 +158,192 @@
 .tableorder_arrow_trasform{
     transform: scaleY(-1);
 }
+.prof_comp_fieldset{
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 2px;
+    height: auto;
+    padding-bottom: 12px;
+    padding: 0;
+    background-color: transparent;
+}
+.email_fieldset{
+    margin-bottom: 6.4vmin;
+    background-color: transparent;
+    
+    @media (min-width:1025px) {
+        margin-bottom: 24px;
+    }
+}
+.prof_comp_container{
+    flex-direction: column;
+}
+.prof_comp_legend{
+    font-family: 'Montserrat',helvetica,arial,sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 16px;
+    width: fit-content;
+    padding: 0 8px;
+    position: absolute;
+    top: -10px;
+    left: 30px;
+    height: auto;
+    transition: all linear 0.5s;
+    background-color: transparent;
+}
+.prof_comp_userdata{
+    border: none;
+    background-color: transparent !important;
+    color: white !important;
+    height: 17.0666666667vmin;
+    font-family: 'Oswald',sans-serif;
+    font-size: 6.4vmin;
+    line-height: 6.4vmin;
+    padding: 6.4vmin 3.2vmin 4.2666666667vmin;
+    box-shadow: none !important;
+
+    @media (min-width:1025px) {
+        padding: 24px 12px 16px;
+        height: 64px;
+        font-size: 24px;
+        line-height: 24px;
+    }
+}
+.prof_comp_userdata::placeholder{
+    font-family: 'Oswald';
+}
+.fieldset_pass{
+    padding-right: 50px;
+    margin-bottom: 6.4vmin;
+    background-color: transparent;
+    
+    @media (min-width:1025px) {
+        margin-bottom: 24px;
+    }
+}
+.prof_comp_view_pass{
+    position: absolute;
+    right: -18px;
+    top: 50%;
+    z-index: 99;
+    width: 45px;
+    height: auto;
+    color: #fff;
+    transform: translate(-50%,-50%);
+    border: none;
+    background-color: transparent;
+}
+.prof_comp_view_pass img{
+    background-color: transparent;
+    color: #fff;
+}
+.prof_comp_container_content{
+    flex-direction: column;
+}
+.prof_acc_container{
+    flex-direction: column;
+}
+.wrapper_inputs{
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 40px;
+}
+.tableorder_code_label{
+    background-color: transparent;
+    width: auto;
+}
+.account_inputs{
+    gap: 24px;
+}
+.wrapper_codes{
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: auto;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+.tableorder_code_item{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    padding: 4px 8px;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: .01em;
+    white-space: nowrap;
+    background: rgba(58,66,97,.8);
+    border-radius: 4px;
+    gap: 8px;
+    width: auto;
+}
+.close_img{
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+}
+.close_btn{
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+.code_text{
+    background-color: transparent;
+}
+.code_helper{
+    flex-direction: row;
+    align-items: baseline;
+    gap: 6px;
+    padding-top: 24px;
+    
+}
+.code_helper_text{
+    width: auto;
+    white-space: nowrap;
+    background-color: transparent;
+    font-family: 'Montserrat',helvetica,arial,sans-serif;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 600;
+}
+.code_helper_link{
+    font-family: 'Montserrat',helvetica,arial,sans-serif;
+    border-bottom: 2px dotted rgba(229,183,19,.6);
+    padding-bottom: 0.5333333333vmin;
+    font-weight: 600;
+    color: #e5b713;
+    transition: border-color .4s ease-out;
+    width: auto;
+    font-family: 'Montserrat',helvetica,arial,sans-serif;
+    font-size: 12px;
+    line-height: 15px;
+}
+.form_group{
+    padding-top: 24px;
+    justify-content: flex-end;
+}
+.code_post{
+    padding: 14px 55px;
+    background-color: #ffcf25;
+    font-size: 20px;
+    line-height: 20px;
+    border-radius: 2px;
+    width: auto;
+    border: none;
+}
+.btn_content{
+    font-size: 20px;
+    line-height: 20px;
+    color: white;
+    border: none;
+    background-color: transparent;
+}
+.codes_fieldset{
+    justify-content: flex-start;
+    padding: 10px;
+}
+.codes_input{
+    height: auto;
+    padding: 0;
+    padding-left: 24px;
+}

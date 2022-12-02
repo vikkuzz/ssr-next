@@ -14,6 +14,7 @@ export const order = (data) => ({ type: 'ORDER', data });
 export const getCriptoLimits = (data) => ({ type: 'GET_CRYPTO_LIMITS', data });
 export const userCreateOrder = (data) => ({ type: 'USER_CREATE_ORDER', data });
 export const changeDir = (data) => ({ type: 'CHANGE_DIR', data });
+export const getAllOrders = (data) => ({ type: 'GET_ALL_ORDERS', data });
 export const loginModalFromMain = (data) => ({
     type: 'LOGIN_MODAL_FROM_MAIN',
     data,

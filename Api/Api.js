@@ -9,7 +9,7 @@ export default class Api {
             window.location.origin.indexOf('linestest.com') >= 0 ||
             window.location.origin.indexOf('ngrok.io') >= 0 ||
             window.location.origin.indexOf('bs-local.com') >= 0
-                ? 'https://royalfut.com'
+                ? 'https://test-royalfut.com'
                 : window.location.origin;
 
         const res = await fetch(`${urlForStock}/api/stock`, {
@@ -18,6 +18,21 @@ export default class Api {
                 'Content-Type': 'application/json',
             },
             body: '{"ip": ""}',
+        });
+        const result = await res.json();
+        return result;
+    };
+
+    place = async (id, body, token) => {
+        let urlForPlace = `https://test-royalfut.com/api/order/${id}/place`;
+
+        const res = await fetch(`${urlForPlace}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Token ${token}`,
+            },
+            body: JSON.stringify(body),
         });
         const result = await res.json();
         return result;
@@ -65,7 +80,7 @@ export default class Api {
         email
     ) => {
         console.log(paymentMethod);
-        let urlForOrder = 'https://royalfut.com/api/order';
+        let urlForOrder = 'https://test-royalfut.com/api/order';
         let currentUrl = window.location.href;
         let localeLang = locale;
         const analytic = {
@@ -99,7 +114,7 @@ export default class Api {
             case 'acquiring':
                 suburl = '';
                 settings.data = JSON.stringify({
-                    successUrl: `${window.location.origin}${localeLang}/profile/?id=${orderId}#orders`,
+                    successUrl: `https://test-royalfut.com/${localeLang}/profile/?id=${orderId}#orders`,
                     failUrl: currentUrl + '#from-acquiring',
                 });
                 break;
@@ -175,7 +190,7 @@ export default class Api {
             return null;
         };
 
-        const res = await fetch(`https://royalfut.com/api/order`, {
+        const res = await fetch(`https://test-royalfut.com/api/order`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -194,7 +209,7 @@ export default class Api {
     };
 
     getCriptorates = async (currency) => {
-        let urlForStock = 'https://royalfut.com/api/cryptorates/';
+        let urlForStock = 'https://test-royalfut.com/api/cryptorates/';
 
         const res = await fetch(`${urlForStock}${currency}`, {
             method: 'GET',
@@ -207,7 +222,7 @@ export default class Api {
     };
 
     getOrders = async (token) => {
-        let urlForStock = 'https://royalfut.com/api/order';
+        let urlForStock = 'https://test-royalfut.com/api/order';
 
         const res = await fetch(`${urlForStock}`, {
             method: 'GET',
@@ -225,7 +240,7 @@ export default class Api {
         let headers = {
             'Content-Type': 'application/json',
         };
-        const res = await fetch(`${this.baseAddress}api/users`, {
+        const res = await fetch(`https://test-royalfut.com/api/users`, {
             method: 'POST',
             headers: headers,
             body: JSON.stringify({
@@ -241,12 +256,13 @@ export default class Api {
         const result = await res.json();
         return result;
     };
+
     login = async (userEmail, userPass) => {
         console.log('login');
         let headers = {
             'Content-Type': 'application/json',
         };
-        const res = await fetch(`${this.baseAddress}api/users/login`, {
+        const res = await fetch(`https://test-royalfut.com/api/users/login`, {
             method: 'POST',
             headers: headers,
             body: JSON.stringify({

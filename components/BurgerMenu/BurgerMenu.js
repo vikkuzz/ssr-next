@@ -88,6 +88,8 @@ const BurgerMenu = () => {
         }
     }, [passLength]);
 
+    useEffect(() => {}, []);
+
     const onHandleClickLogin = () => {
         dispatch(loginClick());
     };
@@ -112,7 +114,6 @@ const BurgerMenu = () => {
     async function registration(e) {
         e.stopPropagation();
         e.preventDefault();
-        console.log('apireg');
         await api
             .registration(email.current.value, password.current.value)
             .then((res) => {
@@ -121,8 +122,10 @@ const BurgerMenu = () => {
                         dispatch(catcherror(res.errors.email[0]));
                         return;
                     }
+                } else {
+                    res.user.password = password.current.value;
+                    dispatch(user(res.user));
                 }
-                dispatch(user(res.user));
             });
     }
     async function login(e) {
@@ -131,14 +134,20 @@ const BurgerMenu = () => {
         await api
             .login(email.current.value, password.current.value)
             .then((res) => {
-                dispatch(user(res.user));
-                console.log(modalFromMain);
+                if (res?.errors) {
+                    if (res.errors.email) {
+                        dispatch(catcherror(res.errors.email[0]));
+                        return;
+                    }
+                } else {
+                    res.user.password = password.current.value;
+                    dispatch(user(res.user));
+                }
+
                 if (modalFromMain == true) {
-                    console.log('DONE');
                     router.push('/order');
                 }
-            })
-            .catch((er) => dispatch(catcherror(res.errors)));
+            });
     }
     const logout = () => {
         dispatch(userlogout());

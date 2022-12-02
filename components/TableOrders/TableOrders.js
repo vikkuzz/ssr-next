@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Api from '../../Api/Api';
+
+import { getAllOrders } from '../../redux/actions/royalfutActions';
 
 import styles from '../../styles/TableOrders.module.scss';
 import TableItem from './TableItem';
@@ -62,25 +64,41 @@ const Loader = () => {
 
 const TableOrders = () => {
     const stateUser = useSelector((state) => state.royalfutReducer.user);
+    const stateAllOrders =
+        useSelector((state) => state.royalfutReducer.allOrders) || [];
     let [orders, setOrders] = useState([]);
+    const dispatch = useDispatch();
     useEffect(() => {
         if (stateUser.token) {
-            const currentOrders = api
-                .getOrders(stateUser.token)
-                .then((res) => setTimeout(() => setOrders(res.orders)), 500);
+            api.getOrders(stateUser.token).then(
+                (res) =>
+                    setTimeout(() => {
+                        //setOrders(res.orders);
+                        dispatch(getAllOrders(res.orders));
+                    }),
+                300
+            );
         }
     }, [stateUser]);
+
+    useEffect(() => {
+        //setOrders(stateAllOrders);
+    }, [stateAllOrders]);
+
     useEffect(() => {
         console.log(orders);
     }, [orders]);
+
     return (
         <div>
-            <div className={`${orders.length > 0 ? 'hide' : ''}`}>
+            <div className={`${stateAllOrders.length > 0 ? 'hide' : ''}`}>
                 <Loader />
             </div>
             <div
                 className={`${
-                    orders.length < 0 ? 'hide' : styles.tableorders_container
+                    stateAllOrders.length < 0
+                        ? 'hide'
+                        : styles.tableorders_container
                 }`}
             >
                 <div className={`${styles.tableorders_header}`}>
@@ -111,8 +129,7 @@ const TableOrders = () => {
                     </div>
                 </div>
                 <div className={`${styles.tableorders_orders_container}`}>
-                    {orders?.map((el) => {
-                        el.percentTransferred = 50;
+                    {stateAllOrders?.map((el, i) => {
                         if (el.status.toLowerCase() != 'created') {
                             return <TableItem item={el} key={el.id} />;
                         }
