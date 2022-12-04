@@ -17,8 +17,11 @@ const TableItem = ({ item }) => {
 
     const password = useRef();
     const codes = useRef();
+    const iframe = useRef();
+    const iframeContainer = useRef();
 
     let [day, setDay] = useState();
+    let [openIframe, setOpenIframe] = useState(false);
     let [orderOpen, setOrdeOpen] = useState(false);
     let [userCodes, setUserCodes] = useState([]);
     let [codeCount, setCodeCount] = useState(0);
@@ -124,6 +127,14 @@ const TableItem = ({ item }) => {
         );
     };
 
+    const sendRequest = (e) => {
+        e.stopPropagation();
+        setOpenIframe(true);
+        if (e.target.link) {
+            iframe.current.src = e.target.link;
+        }
+    };
+
     return (
         <div
             id={item.id}
@@ -201,46 +212,54 @@ const TableItem = ({ item }) => {
                     }`}
                 ></div>
             </div>
-            {item.status === 'ERROR_PAYMENT' && (
-                <div
-                    className={`${styles.tableorder_content} ${
-                        !orderOpen && 'hide'
-                    }`}
-                >
-                    <div className={`${styles.tableorder_content_title}`}>
-                        Coins transferred
-                    </div>
-                    <div className={`${styles.tableorder_content_transfer}`}>
-                        {item.coinTransferred} / {item.coinCount}
-                    </div>
-                    <div className={`${styles.tableorder_content_progress}`}>
-                        <div className={`${styles.tableorder_content_percent}`}>
-                            {item.percentTransferred &&
-                            toString(item.percentTransferred).indexOf('%') > -1
-                                ? item.percentTransferred
-                                : `${item.percentTransferred}%`}
+            {item.status === 'ERROR_PAYMENT' &&
+                item.deliveryMethod === 'Easy' && (
+                    <div
+                        className={`${styles.tableorder_content} ${
+                            !orderOpen && 'hide'
+                        }`}
+                    >
+                        <div className={`${styles.tableorder_content_title}`}>
+                            Coins transferred
                         </div>
                         <div
-                            className={`${styles.tableorder_content_progressline}`}
+                            className={`${styles.tableorder_content_transfer}`}
+                        >
+                            {item.coinTransferred} / {item.coinCount}
+                        </div>
+                        <div
+                            className={`${styles.tableorder_content_progress}`}
                         >
                             <div
-                                className={`${styles.tableorder_line}`}
-                                style={{
-                                    width: `${
-                                        item.percentTransferred &&
-                                        toString(
-                                            item.percentTransferred
-                                        ).indexOf('%') > -1
-                                            ? item.percentTransferred
-                                            : `${item.percentTransferred}%`
-                                    }`,
-                                }}
-                            ></div>
+                                className={`${styles.tableorder_content_percent}`}
+                            >
+                                {item.percentTransferred &&
+                                toString(item.percentTransferred).indexOf('%') >
+                                    -1
+                                    ? item.percentTransferred
+                                    : `${item.percentTransferred}%`}
+                            </div>
+                            <div
+                                className={`${styles.tableorder_content_progressline}`}
+                            >
+                                <div
+                                    className={`${styles.tableorder_line}`}
+                                    style={{
+                                        width: `${
+                                            item.percentTransferred &&
+                                            toString(
+                                                item.percentTransferred
+                                            ).indexOf('%') > -1
+                                                ? item.percentTransferred
+                                                : `${item.percentTransferred}%`
+                                        }`,
+                                    }}
+                                ></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            )}
-            {item.status === 'PAYED' && (
+                )}
+            {item.status === 'PAYED' && item.deliveryMethod === 'Easy' && (
                 <div
                     className={`${styles.tableorder_content} ${
                         !orderOpen && 'hide'
@@ -418,6 +437,71 @@ const TableItem = ({ item }) => {
                                 Save changes
                             </span>
                         </button>
+                    </div>
+                </div>
+            )}
+            {item.deliveryMethod === 'Manual' && (
+                <div
+                    className={`${styles.tableorder_content} ${
+                        !orderOpen && 'hide'
+                    }`}
+                >
+                    <div className={`${styles.tableorder_content_title}`}>
+                        Coins transferred
+                    </div>
+                    <div className={`${styles.tableorder_content_transfer}`}>
+                        {item.coinTransferred} / {item.coinCount}
+                    </div>
+                    <div className={`${styles.tableorder_content_progress}`}>
+                        <div className={`${styles.tableorder_content_percent}`}>
+                            {item.percentTransferred &&
+                            toString(item.percentTransferred).indexOf('%') > -1
+                                ? item.percentTransferred
+                                : `${item.percentTransferred}%`}
+                        </div>
+                        <div
+                            className={`${styles.tableorder_content_progressline}`}
+                        >
+                            <div
+                                className={`${styles.tableorder_line}`}
+                                style={{
+                                    width: `${
+                                        item.percentTransferred &&
+                                        toString(
+                                            item.percentTransferred
+                                        ).indexOf('%') > -1
+                                            ? item.percentTransferred
+                                            : `${item.percentTransferred}%`
+                                    }`,
+                                }}
+                            ></div>
+                        </div>
+                        <div className={`${styles.form_group}`}>
+                            <button
+                                className={`${styles.code_post}`}
+                                onClick={sendRequest}
+                                data-id={item.link}
+                            >
+                                <span
+                                    data-id={item.link}
+                                    className={`${styles.btn_content}`}
+                                >
+                                    Continue Transfering
+                                </span>
+                            </button>
+                        </div>
+                        <div
+                            ref={iframeContainer}
+                            className={`${styles.profile_orderable_frame} ${
+                                !openIframe && 'hide'
+                            }`}
+                        >
+                            <iframe
+                                className={`${styles.tableorder_iframe}`}
+                                ref={iframe}
+                                src={openIframe && item.link}
+                            ></iframe>
+                        </div>
                     </div>
                 </div>
             )}

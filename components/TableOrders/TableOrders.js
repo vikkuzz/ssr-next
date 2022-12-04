@@ -130,6 +130,10 @@ const TableOrders = () => {
                 </div>
                 <div className={`${styles.tableorders_orders_container}`}>
                     {stateAllOrders?.map((el, i) => {
+                        if (el.deliveryMethod === 'Manual') {
+                            console.log(el, el.link);
+                        }
+
                         if (el.status.toLowerCase() != 'created') {
                             return <TableItem item={el} key={el.id} />;
                         }

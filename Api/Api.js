@@ -1,6 +1,18 @@
 export default class Api {
     baseAddress = 'https://royalfut.com/';
 
+    getIframe = async (id, token) => {
+        const res = await fetch(`https://test-royalfut.com/${id}/place/pa`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Token ${token}`,
+            },
+        });
+        const result = await res.json();
+        return result;
+    };
+
     getStock = async () => {
         let urlForStock =
             window.location.origin.indexOf('localhost') >= 0 ||
