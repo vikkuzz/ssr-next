@@ -20,6 +20,7 @@ const Profile = () => {
     const changeAva = (e) => {
         let fr = new FileReader();
 
+        console.log(e.currentTarget);
         let oneFile = e.currentTarget.files.item(0);
 
         if (!oneFile) {
@@ -53,16 +54,26 @@ const Profile = () => {
                         <div className={`${styles.app_profile_char}`}>v</div>
                         <img src={ava} className={!ava && 'hide'} />
                         <label className={`${styles.app_profile_btn_ava}`}>
-                            <input
-                                onClick={changeAva}
+                            {/* <input
+                                //onClick={changeAva}
                                 className={`${styles.app_profile_fileinput}`}
                                 type={'image'}
                                 accept=".png, .jpg, .jpeg"
                                 data-size="307200000"
-                            />
+                            /> */}
+                            <input
+                                className={`${styles.app_profile_fileinput}`}
+                                id="profile-file"
+                                type="file"
+                                name="input-video"
+                                accept=".png, .jpg, .jpeg"
+                                data-size="307200000"
+                            ></input>
                         </label>
                     </picture>
-                    <h1>{stateUser.email}</h1>
+                    <h1 className={`${styles.app_profile_h1}`}>
+                        {stateUser.email}
+                    </h1>
                 </div>
                 <ProfileComponent />
             </div>

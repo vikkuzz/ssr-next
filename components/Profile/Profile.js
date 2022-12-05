@@ -13,6 +13,7 @@ const ProfileComponent = () => {
     const password = useRef();
     let [tab, setTab] = useState({ acc: true, orders: false });
     const [svgEye, setSvgEye] = useState(eye);
+    const [changed, setChanged] = useState(false);
 
     const dispatch = useDispatch();
     const router = useRouter();
@@ -29,8 +30,14 @@ const ProfileComponent = () => {
         }
     };
     return (
-        <div className={`${styles.prof_comp_container}`}>
-            <div className={`${styles.prof_comp_wrapper_tabs}`}>
+        <div
+            className={`${styles.prof_comp_container} ${
+                tab.acc && styles.prof_comp_max_width
+            }`}
+        >
+            <div
+                className={`${styles.prof_comp_wrapper_tabs} ${styles.prof_comp_max_width}`}
+            >
                 <button
                     onClick={() => setTab({ acc: true, orders: false })}
                     className={`${styles.prof_comp_tab} ${
@@ -65,7 +72,8 @@ const ProfileComponent = () => {
                                 className={styles.prof_comp_userdata}
                                 type="email"
                                 placeholder={'email@address.com'}
-                                value={stateUser.email}
+                                defaultDalue={stateUser.email}
+                                onChange={() => setChanged(true)}
                             ></input>
                         </fieldset>
                     </div>
@@ -81,6 +89,8 @@ const ProfileComponent = () => {
                                 className={styles.prof_comp_userdata}
                                 type="password"
                                 placeholder={'password'}
+                                defaultValue={stateUser.password}
+                                onChange={() => setChanged(true)}
                             ></input>
                             <button
                                 onClick={onHandleClickViewPass}
@@ -92,6 +102,15 @@ const ProfileComponent = () => {
                             </button>
                         </fieldset>
                     </div>
+                </div>
+                <div
+                    className={`${styles.prof_copm_update_wrapper} ${
+                        !changed && 'hide'
+                    } ${tab.orders && 'hide'}`}
+                >
+                    <button className={`${styles.prof_copm_update_btn}`}>
+                        update
+                    </button>
                 </div>
                 <div
                     className={`${styles.prof_comp_orders_container} ${
