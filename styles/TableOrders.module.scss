@@ -87,6 +87,7 @@
     white-space: nowrap;
     font-size: 12px;
     line-height: 15px;
+    justify-content: center;
 }
 .tableorder_subheader_item{
     height: 45px;
@@ -353,5 +354,12 @@
 }
 .tableorder_iframe{
     height: 665px;
+    
+}
+.tableorder_item_status{
+    align-items: center;
+    @media (min-width:1025px) {
+        min-width: 150px;
+    }
     
 }

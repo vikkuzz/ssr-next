@@ -197,7 +197,7 @@ const TableItem = ({ item }) => {
                     </div>
                 </div>
                 <div
-                    className={`${styles.tableorder_header_id} ${styles.tableorder_subheader_item}`}
+                    className={`${styles.tableorder_header_id} ${styles.tableorder_subheader_item} ${styles.tableorder_item_status}`}
                 >
                     <div className={`${styles.tableorder_subheader}`}>
                         Status
