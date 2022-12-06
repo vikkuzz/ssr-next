@@ -86,6 +86,18 @@ const TableOrders = () => {
     }, [stateUser]);
 
     useEffect(() => {
+        if (stateUser.token) {
+            api.getOrders(stateUser.token).then((res) => {
+                dispatch(getAllOrders([]));
+                setTimeout(() => {
+                    //setOrders(res.orders);
+                    dispatch(getAllOrders(res.orders));
+                }, 300);
+            });
+        }
+    }, [router.locale]);
+
+    useEffect(() => {
         //setOrders(stateAllOrders);
     }, [stateAllOrders]);
 
@@ -94,7 +106,7 @@ const TableOrders = () => {
     }, [orders]);
 
     return (
-        <div>
+        <div className={`${styles.table}`}>
             <div className={`${stateAllOrders.length > 0 ? 'hide' : ''}`}>
                 <Loader />
             </div>

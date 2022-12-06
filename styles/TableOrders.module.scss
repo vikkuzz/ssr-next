@@ -392,6 +392,15 @@
   -o-animation: rotating 2s linear infinite;
   animation: rotating 2s linear infinite;
 }
+
+.table{
+    flex-direction: column;
+}
+
+
+
+
+///////////////////////////////////////////// animation
 @-webkit-keyframes rotating {
   from {
     -webkit-transform: rotate(0deg);
