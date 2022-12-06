@@ -117,7 +117,9 @@ const TableOrders = () => {
                         : styles.tableorders_container
                 }`}
             >
-                <div className={`${styles.tableorders_header}`}>
+                <div
+                    className={`${styles.tableorders_header} from-1025-to-1900`}
+                >
                     <div
                         className={`${styles.tableorders_header_item} ${styles.tableorders_header_item_id}`}
                     >
