@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import React, { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { translates } from '../../locales/locales';
 
 import styles from '../../styles/ProfileComponent.module.scss';
 import TableOrders from '../TableOrders';
@@ -17,6 +18,7 @@ const ProfileComponent = () => {
 
     const dispatch = useDispatch();
     const router = useRouter();
+    const t = translates[router.locale];
 
     const onHandleClickViewPass = (e) => {
         e.stopPropagation();
@@ -44,7 +46,7 @@ const ProfileComponent = () => {
                         tab.acc && styles.prof_comp_tab_active
                     }`}
                 >
-                    Account
+                    {t.account}
                 </button>
                 <button
                     onClick={() => setTab({ acc: false, orders: true })}
@@ -52,7 +54,7 @@ const ProfileComponent = () => {
                         tab.orders && styles.prof_comp_tab_active
                     }`}
                 >
-                    Orders
+                    {t.orders}
                 </button>
             </div>
             <div className={`${styles.prof_comp_container_content}`}>
@@ -66,13 +68,13 @@ const ProfileComponent = () => {
                             className={`${styles.prof_comp_fieldset} ${styles.email_fieldset}`}
                         >
                             <legend className={`${styles.prof_comp_legend}`}>
-                                E-mail
+                                {t.email}
                             </legend>
                             <input
                                 className={styles.prof_comp_userdata}
                                 type="email"
                                 placeholder={'email@address.com'}
-                                defaultDalue={stateUser.email}
+                                defaultValue={stateUser.email}
                                 onChange={() => setChanged(true)}
                             ></input>
                         </fieldset>
@@ -82,13 +84,13 @@ const ProfileComponent = () => {
                             className={`${styles.prof_comp_fieldset} ${styles.fieldset_pass}`}
                         >
                             <legend className={styles.prof_comp_legend}>
-                                Password
+                                {t.password}
                             </legend>
                             <input
                                 ref={password}
                                 className={styles.prof_comp_userdata}
                                 type="password"
-                                placeholder={'password'}
+                                placeholder={t.password}
                                 defaultValue={stateUser.password}
                                 onChange={() => setChanged(true)}
                             ></input>
@@ -96,7 +98,7 @@ const ProfileComponent = () => {
                                 onClick={onHandleClickViewPass}
                                 className={styles.prof_comp_view_pass}
                                 type="button"
-                                title={'see password'}
+                                title={t.seePassword}
                             >
                                 <img src={svgEye} />
                             </button>
@@ -109,7 +111,7 @@ const ProfileComponent = () => {
                     } ${tab.orders && 'hide'}`}
                 >
                     <button className={`${styles.prof_copm_update_btn}`}>
-                        update
+                        {t.update}
                     </button>
                 </div>
                 <div

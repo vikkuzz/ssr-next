@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getCoords } from '../../utils/functions';
 import Api from '../../Api/Api';
 import { getAllOrders } from '../../redux/actions/royalfutActions';
+import { useRouter } from 'next/router';
+import { translates } from '../../locales/locales';
 
 const api = new Api();
 
@@ -30,6 +32,8 @@ const TableItem = ({ item }) => {
     );
     const [svgEye, setSvgEye] = useState(eye);
     const dispatch = useDispatch();
+    const router = useRouter();
+    const t = translates[router.locale];
 
     function AddZero(num) {
         return num >= 0 && num < 10 ? `0${num}` : `${num}`;
@@ -167,7 +171,7 @@ const TableItem = ({ item }) => {
                     className={`${styles.tableorder_header_id} ${styles.tableorder_subheader_item}`}
                 >
                     <div className={`${styles.tableorder_subheader}`}>
-                        Platform / E-mail
+                        {t.platformLogin}
                     </div>
                     <div className={`${styles.tableorder_item_id}`}>
                         {item.platform === 'ps4' || item.platform === 'ps5'
@@ -179,7 +183,7 @@ const TableItem = ({ item }) => {
                     className={`${styles.tableorder_header_id} ${styles.tableorder_subheader_item}`}
                 >
                     <div className={`${styles.tableorder_subheader}`}>
-                        Amount
+                        {t.amount}
                     </div>
                     <div className={`${styles.tableorder_item_id}`}>
                         {item.coinCount}
@@ -189,7 +193,7 @@ const TableItem = ({ item }) => {
                     className={`${styles.tableorder_header_id} ${styles.tableorder_subheader_item}`}
                 >
                     <div className={`${styles.tableorder_subheader}`}>
-                        Price
+                        {t.price}
                     </div>
                     <div className={`${styles.tableorder_item_id}`}>
                         {stateCurrency.currency + ' '}
@@ -199,8 +203,10 @@ const TableItem = ({ item }) => {
                 <div
                     className={`${styles.tableorder_header_id} ${styles.tableorder_subheader_item} ${styles.tableorder_item_status}`}
                 >
-                    <div className={`${styles.tableorder_subheader}`}>
-                        Status
+                    <div
+                        className={`${styles.tableorder_subheader} ${styles.tableorder_subheader_status}`}
+                    >
+                        {t.status}
                     </div>
                     <div className={`${styles.tableorder_item_id}`}>
                         {item.status}
@@ -220,7 +226,7 @@ const TableItem = ({ item }) => {
                         }`}
                     >
                         <div className={`${styles.tableorder_content_title}`}>
-                            Coins transferred
+                            {t.transferred}
                         </div>
                         <div
                             className={`${styles.tableorder_content_transfer}`}
@@ -266,7 +272,7 @@ const TableItem = ({ item }) => {
                     }`}
                 >
                     <div className={`${styles.tableorder_content_title}`}>
-                        Coins transferred
+                        {t.transferred}
                     </div>
                     <div className={`${styles.tableorder_content_transfer}`}>
                         {item.coinTransferred} / {item.coinCount}
@@ -307,7 +313,7 @@ const TableItem = ({ item }) => {
                                     <legend
                                         className={`${styles.prof_comp_legend}`}
                                     >
-                                        E-mail
+                                        {t.email}
                                     </legend>
                                     <input
                                         onClick={(e) => {
@@ -328,7 +334,7 @@ const TableItem = ({ item }) => {
                                     className={`${styles.prof_comp_fieldset} ${styles.fieldset_pass}`}
                                 >
                                     <legend className={styles.prof_comp_legend}>
-                                        Password
+                                        {t.password}
                                     </legend>
                                     <input
                                         onClick={(e) => {
@@ -339,13 +345,13 @@ const TableItem = ({ item }) => {
                                         className={styles.prof_comp_userdata}
                                         value={stateUser.password}
                                         type="password"
-                                        placeholder={'password'}
+                                        placeholder={t.password}
                                     ></input>
                                     <button
                                         onClick={onHandleClickViewPass}
                                         className={styles.prof_comp_view_pass}
                                         type="button"
-                                        title={'see password'}
+                                        title={t.seePassword}
                                     >
                                         <img src={svgEye} />
                                     </button>
@@ -359,7 +365,7 @@ const TableItem = ({ item }) => {
                                 <legend
                                     className={`${styles.prof_comp_legend} ${styles.codes_legend}`}
                                 >
-                                    Backup codes
+                                    {t.backupCode}
                                 </legend>
                                 <div className={`${styles.wrapper_codes}`}>
                                     {userCodes.length > 0 &&
@@ -407,7 +413,7 @@ const TableItem = ({ item }) => {
                                             }}
                                             onChange={handleChangeCodes}
                                             ref={codes}
-                                            placeholder={'Enter code'}
+                                            placeholder={t.enterCode}
                                             className={`${styles.codes_input} ${styles.prof_comp_userdata}`}
                                             type="text"
                                         ></input>
@@ -418,7 +424,7 @@ const TableItem = ({ item }) => {
                     </div>
                     <div className={`${styles.code_helper}`}>
                         <span className={`${styles.code_helper_text}`}>
-                            You can get backup codes here:
+                            {t.backupCodes}
                         </span>
                         <a
                             className={`${styles.code_helper_link}`}
@@ -434,7 +440,7 @@ const TableItem = ({ item }) => {
                             onClick={sendBackUpCodes}
                         >
                             <span className={`${styles.btn_content}`}>
-                                Save changes
+                                {t.saveChanges}
                             </span>
                         </button>
                     </div>
@@ -447,7 +453,7 @@ const TableItem = ({ item }) => {
                     }`}
                 >
                     <div className={`${styles.tableorder_content_title}`}>
-                        Coins transferred
+                        {t.transferred}
                     </div>
                     <div className={`${styles.tableorder_content_transfer}`}>
                         {item.coinTransferred} / {item.coinCount}
@@ -486,7 +492,7 @@ const TableItem = ({ item }) => {
                                     data-id={item.link}
                                     className={`${styles.btn_content}`}
                                 >
-                                    Continue Transfering
+                                    {t.continueTransfering}
                                 </span>
                             </button>
                         </div>

@@ -1,6 +1,8 @@
+import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Api from '../../Api/Api';
+import { translates } from '../../locales/locales';
 
 import { getAllOrders } from '../../redux/actions/royalfutActions';
 
@@ -68,6 +70,8 @@ const TableOrders = () => {
         useSelector((state) => state.royalfutReducer.allOrders) || [];
     let [orders, setOrders] = useState([]);
     const dispatch = useDispatch();
+    const router = useRouter();
+    const t = translates[router.locale];
     useEffect(() => {
         if (stateUser.token) {
             api.getOrders(stateUser.token).then(
@@ -110,22 +114,22 @@ const TableOrders = () => {
                     <div
                         className={`${styles.tableorders_header_item} ${styles.tableorders_header_item_platform}`}
                     >
-                        Platform / Login
+                        {t.platformLogin}
                     </div>
                     <div
                         className={`${styles.tableorders_header_item} ${styles.tableorders_header_item_amount}`}
                     >
-                        Amount
+                        {t.amount}
                     </div>
                     <div
                         className={`${styles.tableorders_header_item} ${styles.tableorders_header_item_price}`}
                     >
-                        Price
+                        {t.price}
                     </div>
                     <div
                         className={`${styles.tableorders_header_item} ${styles.tableorders_header_item_status}`}
                     >
-                        Status
+                        {t.status}
                     </div>
                 </div>
                 <div className={`${styles.tableorders_orders_container}`}>

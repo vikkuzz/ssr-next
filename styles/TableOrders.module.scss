@@ -87,6 +87,9 @@
     white-space: nowrap;
     font-size: 12px;
     line-height: 15px;
+    
+}
+.tableorder_subheader_status{
     justify-content: center;
 }
 .tableorder_subheader_item{
@@ -358,6 +361,7 @@
 }
 .tableorder_item_status{
     align-items: center;
+
     @media (min-width:1025px) {
         min-width: 150px;
     }
