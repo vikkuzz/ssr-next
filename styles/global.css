@@ -417,6 +417,18 @@ input{
 input:-webkit-autofill{
 	-webkit-box-shadow:0 0 0 1000px transparent inset !important;
 }
+.white{
+  color: white;
+}
+.green {
+  color: #49e300;
+}
+.red {
+  color: #f95c52;
+}
+.blue {
+  color: #10a9ff;
+}
 
 @keyframes pulse {
 	0% {

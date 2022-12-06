@@ -113,7 +113,7 @@ function MainContainer({
                     }
                 ></meta>
                 <title>{title || 'Главная страница Royalfut.com'}</title>
-                <script
+                {/* <script
                     src="https://accounts.google.com/gsi/client"
                     async
                     defer
@@ -122,7 +122,7 @@ function MainContainer({
                     src="https://www.youtube.com/iframe_api"
                     async
                     defer
-                ></script>
+                ></script> */}
             </Head>
             <div dir={stateDir} className="body__backgr"></div>
             <div className={`error ${error == '' ? '' : styles.showError}`}>

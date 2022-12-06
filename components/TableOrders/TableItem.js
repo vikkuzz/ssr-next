@@ -27,6 +27,10 @@ const TableItem = ({ item }) => {
     let [orderOpen, setOrdeOpen] = useState(false);
     let [userCodes, setUserCodes] = useState([]);
     let [codeCount, setCodeCount] = useState(0);
+    let [currentStatus, setCurrentStatus] = useState({
+        text: 'created',
+        color: 'white',
+    });
     const stateCurrency = useSelector(
         (state) => state.royalfutReducer.currency
     );
@@ -34,6 +38,7 @@ const TableItem = ({ item }) => {
     const dispatch = useDispatch();
     const router = useRouter();
     const t = translates[router.locale];
+    const tStatus = translates.getStatus[router.locale];
 
     function AddZero(num) {
         return num >= 0 && num < 10 ? `0${num}` : `${num}`;
@@ -64,7 +69,81 @@ const TableItem = ({ item }) => {
             currentDay = 'Yesterday';
         }
         setDay(currentDay);
+
+        function profileTableHeadingStatus(status) {
+            status = status.toLowerCase();
+
+            if (status === 'created' || status === 'accepted') {
+                setCurrentStatus({
+                    text: tStatus[status],
+                    color: 'white',
+                });
+                // } else if (status === 'issued_refund') {
+                //     setCurrentStatus({
+                //         text: tStatus[status],
+                //         color: 'red',
+                //     });
+            } else if (
+                status === 'out_of_stock' ||
+                status === 'warning' ||
+                status === 'wrong_credentials' ||
+                status === 'wrong_backup' ||
+                status === 'no_enough_stock' ||
+                status === 'not_enough_stock' ||
+                status === 'no_enough_coins_to_start' ||
+                status === 'not_enough_coins_to_start' ||
+                status === 'error_fut' ||
+                status === 'waiting_payment' ||
+                status === 'error_payment' ||
+                status === 'no_access_to_fifa_21_webapp' ||
+                status === 'fut_error' ||
+                status === 'transfer-error' ||
+                status === 'customer_online' ||
+                status === 'locked' ||
+                status === 'issued_refund'
+            ) {
+                setCurrentStatus({
+                    text: tStatus[status] || 'Payment failed',
+                    color: 'red',
+                });
+            } else if (
+                status === 'success' ||
+                status === 'finished' ||
+                status === 'payed' ||
+                status === 'transfer-payed'
+            ) {
+                setCurrentStatus({
+                    text: tStatus[status] || 'success',
+                    color: 'green',
+                });
+            }
+
+            // if (status === 'locked') {
+            //     return {
+            //         text: t[status],
+            //         status: 'warning',
+            //     };
+            // }
+            else if (status === 'preorder') {
+                return {
+                    text: 'preorder paid',
+                    status: 'green',
+                };
+            } else {
+                setCurrentStatus({
+                    text:
+                        typeof t[status] === 'undefined'
+                            ? tStatus.progress
+                            : tStatus[status],
+                    color: 'blue',
+                });
+            }
+        }
+
+        profileTableHeadingStatus(item.status);
     }, []);
+
+    useEffect(() => console.log(currentStatus), [currentStatus.text]);
 
     const handleClickOrder = (e) => {
         setOrdeOpen(!orderOpen);
@@ -204,12 +283,32 @@ const TableItem = ({ item }) => {
                     className={`${styles.tableorder_header_id} ${styles.tableorder_subheader_item} ${styles.tableorder_item_status}`}
                 >
                     <div
-                        className={`${styles.tableorder_subheader} ${styles.tableorder_subheader_status}`}
+                        className={`${styles.tableorder_subheader} ${styles.tableorder_subheader_status} `}
                     >
                         {t.status}
                     </div>
-                    <div className={`${styles.tableorder_item_id}`}>
-                        {item.status}
+                    <div
+                        className={`${styles.tableorder_item_id} ${currentStatus.color}`}
+                    >
+                        {currentStatus.text}
+                        {currentStatus.color === 'red' && (
+                            <img
+                                className={`${styles.status_svg} ${styles.status_svg_warning}`}
+                                src="/img/warning.svg"
+                            ></img>
+                        )}
+                        {currentStatus.color === 'blue' && (
+                            <img
+                                className={`${styles.status_svg} ${styles.status_svg_progress}`}
+                                src="/img/progress.svg"
+                            ></img>
+                        )}
+                        {currentStatus.color === 'green' && (
+                            <img
+                                className={`${styles.status_svg} ${styles.status_svg_success}`}
+                                src="/img/success.svg"
+                            ></img>
+                        )}
                     </div>
                 </div>
                 <div
@@ -218,7 +317,8 @@ const TableItem = ({ item }) => {
                     }`}
                 ></div>
             </div>
-            {item.status === 'ERROR_PAYMENT' &&
+            {item.status === 'ACCEPTED' &&
+                item.status === 'FINISHED' &&
                 item.deliveryMethod === 'Easy' && (
                     <div
                         className={`${styles.tableorder_content} ${
@@ -265,187 +365,208 @@ const TableItem = ({ item }) => {
                         </div>
                     </div>
                 )}
-            {item.status === 'PAYED' && item.deliveryMethod === 'Easy' && (
-                <div
-                    className={`${styles.tableorder_content} ${
-                        !orderOpen && 'hide'
-                    }`}
-                >
-                    <div className={`${styles.tableorder_content_title}`}>
-                        {t.transferred}
-                    </div>
-                    <div className={`${styles.tableorder_content_transfer}`}>
-                        {item.coinTransferred} / {item.coinCount}
-                    </div>
-                    <div className={`${styles.tableorder_content_progress}`}>
-                        <div className={`${styles.tableorder_content_percent}`}>
-                            {item.percentTransferred &&
-                            toString(item.percentTransferred).indexOf('%') > -1
-                                ? item.percentTransferred
-                                : `${item.percentTransferred}%`}
+            {item.status != 'ACCEPTED' &&
+                item.status != 'FINISHED' &&
+                item.deliveryMethod === 'Easy' && (
+                    <div
+                        className={`${styles.tableorder_content} ${
+                            !orderOpen && 'hide'
+                        }`}
+                    >
+                        <div className={`${styles.tableorder_content_title}`}>
+                            {t.transferred}
                         </div>
                         <div
-                            className={`${styles.tableorder_content_progressline}`}
+                            className={`${styles.tableorder_content_transfer}`}
+                        >
+                            {item.coinTransferred} / {item.coinCount}
+                        </div>
+                        <div
+                            className={`${styles.tableorder_content_progress}`}
                         >
                             <div
-                                className={`${styles.tableorder_line}`}
-                                style={{
-                                    width: `${
-                                        item.percentTransferred &&
-                                        toString(
-                                            item.percentTransferred
-                                        ).indexOf('%') > -1
-                                            ? item.percentTransferred
-                                            : `${item.percentTransferred}%`
-                                    }`,
-                                }}
-                            ></div>
-                        </div>
-                    </div>
-                    <div className={`${styles.wrapper_inputs}`}>
-                        <div className={`${styles.account_inputs}`}>
-                            <div
-                                className={`${styles.prof_comp_fieldset_wrapper}`}
+                                className={`${styles.tableorder_content_percent}`}
                             >
-                                <fieldset
-                                    className={`${styles.prof_comp_fieldset} ${styles.email_fieldset}`}
-                                >
-                                    <legend
-                                        className={`${styles.prof_comp_legend}`}
-                                    >
-                                        {t.email}
-                                    </legend>
-                                    <input
-                                        onClick={(e) => {
-                                            e.preventDefault();
-                                            e.stopPropagation();
-                                        }}
-                                        className={styles.prof_comp_userdata}
-                                        type="email"
-                                        placeholder={'email@address.com'}
-                                        value={stateUser.email}
-                                    ></input>
-                                </fieldset>
+                                {item.percentTransferred &&
+                                toString(item.percentTransferred).indexOf('%') >
+                                    -1
+                                    ? item.percentTransferred
+                                    : `${item.percentTransferred}%`}
                             </div>
                             <div
-                                className={`${styles.prof_comp_fieldset_wrapper}`}
+                                className={`${styles.tableorder_content_progressline}`}
                             >
-                                <fieldset
-                                    className={`${styles.prof_comp_fieldset} ${styles.fieldset_pass}`}
-                                >
-                                    <legend className={styles.prof_comp_legend}>
-                                        {t.password}
-                                    </legend>
-                                    <input
-                                        onClick={(e) => {
-                                            e.preventDefault();
-                                            e.stopPropagation();
-                                        }}
-                                        ref={password}
-                                        className={styles.prof_comp_userdata}
-                                        value={stateUser.password}
-                                        type="password"
-                                        placeholder={t.password}
-                                    ></input>
-                                    <button
-                                        onClick={onHandleClickViewPass}
-                                        className={styles.prof_comp_view_pass}
-                                        type="button"
-                                        title={t.seePassword}
-                                    >
-                                        <img src={svgEye} />
-                                    </button>
-                                </fieldset>
+                                <div
+                                    className={`${styles.tableorder_line}`}
+                                    style={{
+                                        width: `${
+                                            item.percentTransferred &&
+                                            toString(
+                                                item.percentTransferred
+                                            ).indexOf('%') > -1
+                                                ? item.percentTransferred
+                                                : `${item.percentTransferred}%`
+                                        }`,
+                                    }}
+                                ></div>
                             </div>
                         </div>
-                        <div className={`${styles.tableorder_codes}`}>
-                            <fieldset
-                                className={`${styles.prof_comp_fieldset} ${styles.codes_fieldset}`}
-                            >
-                                <legend
-                                    className={`${styles.prof_comp_legend} ${styles.codes_legend}`}
+                        <div className={`${styles.wrapper_inputs}`}>
+                            <div className={`${styles.account_inputs}`}>
+                                <div
+                                    className={`${styles.prof_comp_fieldset_wrapper}`}
                                 >
-                                    {t.backupCode}
-                                </legend>
-                                <div className={`${styles.wrapper_codes}`}>
-                                    {userCodes.length > 0 &&
-                                        userCodes.map((el) => (
-                                            <div
-                                                onClick={(e) => {
-                                                    e.preventDefault();
-                                                    e.stopPropagation();
-                                                }}
-                                                id={el.id}
-                                                key={el.id}
-                                                className={`${styles.tableorder_code_item}`}
-                                            >
-                                                <span
-                                                    onClick={(e) => {
-                                                        e.preventDefault();
-                                                        e.stopPropagation();
-                                                    }}
-                                                    className={`${styles.code_text}`}
-                                                >
-                                                    {el.text
-                                                        .match(/.{1,4}/g)
-                                                        .join(' ')}
-                                                </span>{' '}
-                                                <button
-                                                    id={el.id}
-                                                    onClick={handleDeleteCode}
-                                                    className={`${styles.close_btn}`}
-                                                >
-                                                    <img
-                                                        id={el.id}
-                                                        className={`${styles.close_img}`}
-                                                        src={'/img/close.svg'}
-                                                    ></img>
-                                                </button>
-                                            </div>
-                                        ))}
-                                    <label
-                                        className={`${styles.tableorder_code_label}`}
+                                    <fieldset
+                                        className={`${styles.prof_comp_fieldset} ${styles.email_fieldset}`}
                                     >
+                                        <legend
+                                            className={`${styles.prof_comp_legend}`}
+                                        >
+                                            {t.email}
+                                        </legend>
                                         <input
                                             onClick={(e) => {
                                                 e.preventDefault();
                                                 e.stopPropagation();
                                             }}
-                                            onChange={handleChangeCodes}
-                                            ref={codes}
-                                            placeholder={t.enterCode}
-                                            className={`${styles.codes_input} ${styles.prof_comp_userdata}`}
-                                            type="text"
+                                            className={
+                                                styles.prof_comp_userdata
+                                            }
+                                            type="email"
+                                            placeholder={'email@address.com'}
+                                            defaultValue={stateUser.email}
                                         ></input>
-                                    </label>
+                                    </fieldset>
                                 </div>
-                            </fieldset>
+                                <div
+                                    className={`${styles.prof_comp_fieldset_wrapper}`}
+                                >
+                                    <fieldset
+                                        className={`${styles.prof_comp_fieldset} ${styles.fieldset_pass}`}
+                                    >
+                                        <legend
+                                            className={styles.prof_comp_legend}
+                                        >
+                                            {t.password}
+                                        </legend>
+                                        <input
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                e.stopPropagation();
+                                            }}
+                                            ref={password}
+                                            className={
+                                                styles.prof_comp_userdata
+                                            }
+                                            defaultValue={stateUser.password}
+                                            type="password"
+                                            placeholder={t.password}
+                                        ></input>
+                                        <button
+                                            onClick={onHandleClickViewPass}
+                                            className={
+                                                styles.prof_comp_view_pass
+                                            }
+                                            type="button"
+                                            title={t.seePassword}
+                                        >
+                                            <img src={svgEye} />
+                                        </button>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div className={`${styles.tableorder_codes}`}>
+                                <fieldset
+                                    className={`${styles.prof_comp_fieldset} ${styles.codes_fieldset}`}
+                                >
+                                    <legend
+                                        className={`${styles.prof_comp_legend} ${styles.codes_legend}`}
+                                    >
+                                        {t.backupCode}
+                                    </legend>
+                                    <div className={`${styles.wrapper_codes}`}>
+                                        {userCodes.length > 0 &&
+                                            userCodes.map((el) => (
+                                                <div
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        e.stopPropagation();
+                                                    }}
+                                                    id={el.id}
+                                                    key={el.id}
+                                                    className={`${styles.tableorder_code_item}`}
+                                                >
+                                                    <span
+                                                        onClick={(e) => {
+                                                            e.preventDefault();
+                                                            e.stopPropagation();
+                                                        }}
+                                                        className={`${styles.code_text}`}
+                                                    >
+                                                        {el.text
+                                                            .match(/.{1,4}/g)
+                                                            .join(' ')}
+                                                    </span>{' '}
+                                                    <button
+                                                        id={el.id}
+                                                        onClick={
+                                                            handleDeleteCode
+                                                        }
+                                                        className={`${styles.close_btn}`}
+                                                    >
+                                                        <img
+                                                            id={el.id}
+                                                            className={`${styles.close_img}`}
+                                                            src={
+                                                                '/img/close.svg'
+                                                            }
+                                                        ></img>
+                                                    </button>
+                                                </div>
+                                            ))}
+                                        <label
+                                            className={`${styles.tableorder_code_label}`}
+                                        >
+                                            <input
+                                                onClick={(e) => {
+                                                    e.preventDefault();
+                                                    e.stopPropagation();
+                                                }}
+                                                onChange={handleChangeCodes}
+                                                ref={codes}
+                                                placeholder={t.enterCode}
+                                                className={`${styles.codes_input} ${styles.prof_comp_userdata}`}
+                                                type="text"
+                                            ></input>
+                                        </label>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div className={`${styles.code_helper}`}>
+                            <span className={`${styles.code_helper_text}`}>
+                                {t.backupCodes}
+                            </span>
+                            <a
+                                className={`${styles.code_helper_link}`}
+                                href="https://myaccount.ea.com/cp-ui/security/index"
+                                target="_blank"
+                            >
+                                myaccount.ea.com/cp-ui/security/index
+                            </a>
+                        </div>
+                        <div className={`${styles.form_group}`}>
+                            <button
+                                className={`${styles.code_post}`}
+                                onClick={sendBackUpCodes}
+                            >
+                                <span className={`${styles.btn_content}`}>
+                                    {t.saveChanges}
+                                </span>
+                            </button>
                         </div>
                     </div>
-                    <div className={`${styles.code_helper}`}>
-                        <span className={`${styles.code_helper_text}`}>
-                            {t.backupCodes}
-                        </span>
-                        <a
-                            className={`${styles.code_helper_link}`}
-                            href="https://myaccount.ea.com/cp-ui/security/index"
-                            target="_blank"
-                        >
-                            myaccount.ea.com/cp-ui/security/index
-                        </a>
-                    </div>
-                    <div className={`${styles.form_group}`}>
-                        <button
-                            className={`${styles.code_post}`}
-                            onClick={sendBackUpCodes}
-                        >
-                            <span className={`${styles.btn_content}`}>
-                                {t.saveChanges}
-                            </span>
-                        </button>
-                    </div>
-                </div>
-            )}
+                )}
             {item.deliveryMethod === 'Manual' && (
                 <div
                     className={`${styles.tableorder_content} ${

@@ -88,8 +88,6 @@ const BurgerMenu = () => {
         }
     }, [passLength]);
 
-    useEffect(() => {}, []);
-
     const onHandleClickLogin = () => {
         dispatch(loginClick());
     };
