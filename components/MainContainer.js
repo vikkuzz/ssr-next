@@ -104,6 +104,11 @@ function MainContainer({
         console.log('Total = ' + (_lsTotal / 1024).toFixed(2) + ' KB');
         if ((_lsTotal / 1024).toFixed(2) > 120) {
             localStorage.clear();
+            localStorage.removeItem('localState');
+            console.log(
+                'Total after clear = ' + (_lsTotal / 1024).toFixed(2) + ' KB'
+            );
+            console.log(localStorage);
         }
     }, []);
 
