@@ -21,10 +21,11 @@ const TableItem = ({ item }) => {
     const codes = useRef();
     const iframe = useRef();
     const iframeContainer = useRef();
+    const order = useRef();
 
     let [day, setDay] = useState();
     let [openIframe, setOpenIframe] = useState(false);
-    let [orderOpen, setOrdeOpen] = useState(false);
+    let [orderOpen, setOrderOpen] = useState(false);
     let [userCodes, setUserCodes] = useState([]);
     let [codeCount, setCodeCount] = useState(0);
     let [currentStatus, setCurrentStatus] = useState({
@@ -146,7 +147,7 @@ const TableItem = ({ item }) => {
     useEffect(() => console.log(currentStatus), [currentStatus.text]);
 
     const handleClickOrder = (e) => {
-        setOrdeOpen(!orderOpen);
+        setOrderOpen(!orderOpen);
 
         console.log(getCoords(e.target));
         window.scrollTo(0, getCoords(e.target).top - 200);
@@ -164,9 +165,10 @@ const TableItem = ({ item }) => {
         }
     };
     const handleChangeCodes = (e) => {
-        console.log(e.target.value);
-        if (e.target.value.length === 8) {
-            let tempCode = e.target.value;
+        const result = e.target.value.replace(/[^0-9]/g, '');
+        e.target.value = result;
+        if (result.length === 8) {
+            let tempCode = result;
             setUserCodes((prev) => [
                 ...prev,
                 { id: codeCount, text: tempCode },
@@ -218,8 +220,25 @@ const TableItem = ({ item }) => {
         }
     };
 
+    function useOutsideAlerter(ref) {
+        useEffect(() => {
+            function handleClickOutside(event) {
+                if (ref.current && !ref.current.contains(event.target)) {
+                    setOrderOpen(false);
+                }
+            }
+            document.addEventListener('mousedown', handleClickOutside);
+            return () => {
+                document.removeEventListener('mousedown', handleClickOutside);
+            };
+        }, [ref]);
+    }
+
+    useOutsideAlerter(order);
+
     return (
         <div
+            ref={order}
             id={item.id}
             className={`${styles.tableorders_order} ${
                 orderOpen && styles.tableorder_body_order_open
@@ -536,7 +555,7 @@ const TableItem = ({ item }) => {
                                                 ref={codes}
                                                 placeholder={t.enterCode}
                                                 className={`${styles.codes_input} ${styles.prof_comp_userdata}`}
-                                                type="text"
+                                                type="tel"
                                             ></input>
                                         </label>
                                     </div>

@@ -11,6 +11,7 @@ import {
     loginModal,
     catcherror,
     loginModalFromMain,
+    getAllOrders,
 } from '../../redux/actions/royalfutActions';
 
 import MenuItem from '../MenuItem';
@@ -171,6 +172,10 @@ const BurgerMenu = () => {
                         <div className={styles.login_mobile}>
                             <Link href="/profile">
                                 <a
+                                    onClick={() => {
+                                        dispatch(getAllOrders([]));
+                                        dispatch(loginModal(false));
+                                    }}
                                     className={`${styles.header_mail} ${styles.burger_mail}`}
                                 >
                                     {userData.email}

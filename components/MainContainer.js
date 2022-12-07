@@ -88,6 +88,23 @@ function MainContainer({
             dispatch(stock(result));
         });
         console.log(router);
+        let _lsTotal = 0,
+            _xLen,
+            _x;
+        for (_x in localStorage) {
+            if (!localStorage.hasOwnProperty(_x)) {
+                continue;
+            }
+            _xLen = (localStorage[_x].length + _x.length) * 2;
+            _lsTotal += _xLen;
+            console.log(
+                _x.substr(0, 50) + ' = ' + (_xLen / 1024).toFixed(2) + ' KB'
+            );
+        }
+        console.log('Total = ' + (_lsTotal / 1024).toFixed(2) + ' KB');
+        if ((_lsTotal / 1024).toFixed(2) > 120) {
+            localStorage.clear();
+        }
     }, []);
 
     useEffect(() => {
@@ -113,7 +130,7 @@ function MainContainer({
                     }
                 ></meta>
                 <title>{title || 'Главная страница Royalfut.com'}</title>
-                {/* <script
+                <script
                     src="https://accounts.google.com/gsi/client"
                     async
                     defer
@@ -122,7 +139,7 @@ function MainContainer({
                     src="https://www.youtube.com/iframe_api"
                     async
                     defer
-                ></script> */}
+                ></script>
             </Head>
             <div dir={stateDir} className="body__backgr"></div>
             <div className={`error ${error == '' ? '' : styles.showError}`}>

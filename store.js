@@ -22,35 +22,33 @@
 // });
 
 import {
-  Action,
-  AnyAction,
-  combineReducers,
-  configureStore,
-  ThunkAction,
+    Action,
+    AnyAction,
+    combineReducers,
+    configureStore,
+    ThunkAction,
 } from '@reduxjs/toolkit';
 import { createWrapper, HYDRATE } from 'next-redux-wrapper';
-import royalfutReducer from './redux/reducers/royalfutReducer'
+import royalfutReducer from './redux/reducers/royalfutReducer';
 const combinedReducer = combineReducers({
-  royalfutReducer: royalfutReducer,
+    royalfutReducer: royalfutReducer,
 });
 
 const reducer = (state, action) => {
-  if (action.type === HYDRATE) {
-    const nextState = {
-      ...state, // use previous state
-      ...action.payload, // apply delta from hydration
-    };
-    return nextState;
-  } else {
-    return combinedReducer(state, action);
-  }
+    if (action.type === HYDRATE) {
+        const nextState = {
+            ...state, // use previous state
+            ...action.payload, // apply delta from hydration
+        };
+        return nextState;
+    } else {
+        return combinedReducer(state, action);
+    }
 };
 
 export const makeStore = () =>
-  configureStore({
-    reducer,
-  });
-
+    configureStore({
+        reducer,
+    });
 
 export const wrapper = createWrapper(makeStore, { debug: true });
-

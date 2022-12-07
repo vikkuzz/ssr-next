@@ -88,7 +88,7 @@ const TableOrders = () => {
     useEffect(() => {
         if (stateUser.token) {
             api.getOrders(stateUser.token).then((res) => {
-                dispatch(getAllOrders([]));
+                //dispatch(getAllOrders([]));
                 setTimeout(() => {
                     //setOrders(res.orders);
                     dispatch(getAllOrders(res.orders));

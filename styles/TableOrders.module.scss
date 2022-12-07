@@ -36,6 +36,7 @@
 }
 .tableorders_header{
     padding: 9px 0;
+    width: 100%;
 }
 .tableorder_header_date{
     justify-content: flex-start;
@@ -114,7 +115,11 @@
 .tableorder_body_order_open{
     background-color: rgba(255,255,255,.2);
     padding: 16px 24px;
-    width: 100vw;
+
+    @media (max-width:1024px) {
+        width: 100vw;
+    }
+    
 }
 .tableorder_content{
     flex-direction: column;

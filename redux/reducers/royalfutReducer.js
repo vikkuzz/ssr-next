@@ -160,6 +160,7 @@ const initialState = {
     order: {},
     cryptoLimits: {},
     createOrder: {},
+    allOrders: [],
 };
 
 const royalfutReducer = (state = initialState, action) => {
