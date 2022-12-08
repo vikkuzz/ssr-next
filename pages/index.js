@@ -7,12 +7,18 @@ import TextBlockContainer from '../components/TextBlockContainer';
 import Aside from '../components/Aside';
 import { translates } from '../locales/locales';
 import { Router, useRouter } from 'next/router';
+import { seoTags } from '../data-elements/seoTags';
 
 const Index = () => {
     const router = useRouter();
+    const seo = seoTags[router.locale];
     return (
         <>
-            <MainContainer keywords={', main page'}>
+            <MainContainer
+                keywords={', main page'}
+                title={seo.title}
+                description={seo.description}
+            >
                 <div className={`${styles.app_main}`}>
                     <h1 className={`${styles.app_h1}`}>
                         {translates[router.locale].h1_1} <br />
