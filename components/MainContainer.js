@@ -121,6 +121,7 @@ function MainContainer({
     return (
         <>
             <Head>
+                <link rel="manifest" href="/manifest.json" />
                 <meta
                     keywords={
                         'royalfut, FIFA 23, FIFA 23 монеты, FIFA 23 игроки' +
@@ -134,7 +135,7 @@ function MainContainer({
                         'Продажа монет ФИФА 22 для PS4, XBOX ONE, PS4, PS5 | Доставка монет FIFA 23 за 15 минут | Максимально низкие цены, быстрые и безопасные платежи, Онлайн поддержка 24/7 | ROYALFUT'
                     }
                 ></meta>
-                <link rel="favicon" href="/img/favicon.ico" />
+                <link rel="favicon" href="/favicon.ico" />
                 <title>{title || 'Главная страница Royalfut.com'}</title>
                 <script
                     src="https://accounts.google.com/gsi/client"
