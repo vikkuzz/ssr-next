@@ -10,12 +10,16 @@ import TextBlockContainer from '../components/TextBlockContainer';
 import { useRouter } from 'next/router';
 import { translates } from '../locales/locales';
 import Aside from '../components/Aside';
+import { seoTags } from '../data-elements/seoTags';
 
 const Order = () => {
     const router = useRouter();
-
+    const seo = seoTags[router.locale];
     return (
-        <MainContainer>
+        <MainContainer
+            title={seo.order.title}
+            description={seo.order.description}
+        >
             <div className={`${styles.app_main}`}>
                 <h1 className={`${styles.app_h1}`}>
                     {translates[router.locale].h1_1} <br />

@@ -124,7 +124,7 @@ function MainContainer({
                 <meta
                     keywords={
                         'royalfut, FIFA 23, FIFA 23 монеты, FIFA 23 игроки' +
-                        keywords
+                        (keywords || '')
                     }
                 ></meta>
                 <meta
