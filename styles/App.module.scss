@@ -83,6 +83,30 @@
     align-items: flex-start;
   }
 }
+.button_to_order{
+  margin-top: 14.9333333333vmin;
+  max-height: 14.4vmin;
+  flex: 1 0 87.2vmin;
+  border-radius: 2px;
+  padding: 4vmin 1.3333333333vmin;
+  font-size: 6.4vmin;
+  line-height: 6.4vmin;
+  text-align: center;
+  color: #fff;
+  background-color: #eab11f;
+  border: none;
+  user-select: none;
+
+  @media (min-width:1025px) {
+    margin-top: 56px;
+    width: 312px;
+    flex: none;
+    padding: 14px 5px;
+    min-width: 47%;
+    font-size: 36px;
+    line-height: 36px;
+  }
+}
 .app_profile_ava{
   position: relative;
   background-color: #36b23b;

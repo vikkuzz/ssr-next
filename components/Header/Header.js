@@ -139,11 +139,11 @@ function Header() {
                         className={`${styles.header__delivery_container} from-1025-to-1900`}
                     >
                         <Link href={'/delivery'} locale={locale.title}>
-                            <span
+                            <a
                                 className={`${styles.header_delivery} ${styles.header__links}`}
                             >
                                 {translates[router.locale].menuLinkDelivery}
-                            </span>
+                            </a>
                         </Link>
                     </div>
                     <div

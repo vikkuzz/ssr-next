@@ -37,6 +37,7 @@ function MainContainer({
     description,
     title,
     customStyle,
+    bodyBackgr = null,
 }) {
     const wrapperModalRef = React.createRef();
     const shadowModalRef = React.createRef();
@@ -87,7 +88,6 @@ function MainContainer({
             }
             dispatch(stock(result));
         });
-        console.log(router);
         let _lsTotal = 0,
             _xLen,
             _x;
@@ -108,7 +108,6 @@ function MainContainer({
             console.log(
                 'Total after clear = ' + (_lsTotal / 1024).toFixed(2) + ' KB'
             );
-            console.log(localStorage);
         }
     }, []);
 
@@ -148,7 +147,35 @@ function MainContainer({
                     defer
                 ></script>
             </Head>
-            <div dir={stateDir} className="body__backgr"></div>
+            {bodyBackgr != '404' ? (
+                <div dir={stateDir} className={'body__backgr'}></div>
+            ) : (
+                <div dir={stateDir} className="not-found__background">
+                    <picture>
+                        <source
+                            srcSet="/img/404/404-bg-mobile.webp 1x, /img/404/404-bg-mobile@2x.webp 2x"
+                            media="(max-width: 1024px)"
+                            type="image/webp"
+                        />
+                        <source
+                            srcSet="/img/404/404-bg-mobile.png 1x, /img/404/404-bg-mobile@2x.png 2x"
+                            media="(max-width: 1024px)"
+                            type="image/png"
+                        />
+                        <source
+                            srcSet="/img/404/404-bg.webp 1x, /img/404/404-bg@2x.webp 2x"
+                            media="(min-width: 1024px)"
+                            type="image/webp"
+                        />
+                        <source
+                            srcSet="/img/404/404-bg.png 1x, /img/404/404-bg@2x.png 2x"
+                            media="(min-width: 1024px)"
+                            type="image/png"
+                        />
+                        <img decoding="async" />
+                    </picture>
+                </div>
+            )}
             <div className={`error ${error == '' ? '' : styles.showError}`}>
                 {error}
             </div>

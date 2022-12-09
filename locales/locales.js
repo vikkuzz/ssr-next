@@ -359,7 +359,17 @@ export const translates = {
             locked: 'låse',
         },
     },
+
     ru: {
+        deliverytitle: 'Доставка',
+        deliverytext:
+            ' - может похвастаться уникальной системой доставки монет FIFA 23. Наш проект сотрудничает с рекордным количеством поставщиков монет. В ходе выполнения вашего заказа, мы используем определнные правила, позволяющие обезопасить аккаунт клиента от санкций EA на 100%. Вот одни из них:',
+        li1: '• Правило о выставлении карточки на трансферный рынок за цену, отличную от максимально допустимой согласно ценовому диапазону этой карточки',
+        li2: '• Правило разбавлять доставку заказов выкупом карточек с аккаунтов, добывающих монеты исключительно ручным трейдингом',
+        li3: '• Имея в распоряжении 7000 клубов FUT, мы в большинстве заказов выкупаем карточку с клуба, не задействованного в переводе монет неделями',
+        p1: 'Благодаря этому мы можем предложить клиенту самый безопасный способ покупки монет для FIFA 23 во всём интернете.',
+        p2: 'Чтобы доставка ваших монет была максимально быстрой, следуйте инструкциям на сайте или в сообщениях оператора чата.',
+
         infoBlockTitle1: 'ВАШ ПЕРВЫЙ ВЫБОР',
         infoBlockTitle2: 'БЕЗОПАСНАЯ ДОСТАВКА',
         infoBlockTitle3: 'БЫСТРО И ПРОСТО',
@@ -702,6 +712,19 @@ export const translates = {
         backToTop: 'Наверх',
     },
     en: {
+        deliverytitle: 'Delivery',
+
+        deliverytext:
+            'offers a unique FIFA 23 coins delivery system. We cooperate with a record number of coins suppliers. When fulfilling your order, we use special rules that guarantee that no sanctions will be ever applied to your account from EA. See some of these rules below:',
+
+        li1: '• Rule of listing the card in the transfer market by the price other than the maximum allowable according to the price range for this card',
+        li2: '• Rule to alternate the coin delivery with the redemption of cards from the accounts that only use manual trading to earn coins',
+        li3: '• With more than 7000 FUT clubs in our disposal, in most orders we redeem a card from a club that was not involved in coins transfer for weeks',
+
+        p1: 'This allows us to offer the safest way to buy FIFA 23 coins on the Internet.',
+
+        p2: 'To get your coins delivered as quickly as possible, follow the instructions published on the website or received from the manager in the live chat.',
+
         infoBlockTitle1: 'YOUR FIRST CHOICE',
         infoBlockTitle2: 'SAFEST DELIVERY',
         infoBlockTitle3: 'FAST AND SIMPLE',
@@ -1029,6 +1052,14 @@ export const translates = {
         backToTop: 'Back to up',
     },
     de: {
+        deliverytitle: 'VERSAND',
+        deliverytext:
+            ' bietet ein einzigartiges Versandsystem. Wir arbeiten mit einer Rekordzahl von Lieferanten zusammen. Für unsere Auftragserfüllung gelten spezielle Regeln, die garantieren, dass Ihrem Konto keine EA-Strafen drohen, unter anderem:',
+        li1: '• Preis-Regel – Preislisting der Karten auf dem Transfermarkt zu einem nderen Preis als dem maximal zulässigen Preis gemäß der Preisspanne dieser Karte',
+        li2: '• Regel Versand--Einlösen– Abwechselnder Versand und Einlösung der Münzen der Kontokarten, die nur für den manuelle Handel verwendet werden, um Münzen zu verdienen',
+        li3: '• Uns stehen mehr als 7.000 FUT-Clubs zur Verfügung. Bei den meisten Bestellungen lösen wir eine Karte ein, die zuvor wochenlang nicht für den Münztransfer verwendet wurde',
+        p1: 'Auf diese Weise können wir FIFA 23-Münzen sicherer als andere anbieten.',
+        p2: 'Befolgen Sie die Anweisungen, die auf der Website veröffentlicht sind oder die Sie von Ihrem Manager im Live-Chat erhalten.',
         infoBlockTitle1: 'IHRE ERSTE WAHL',
         infoBlockTitle2: 'SICHERSTER VERSAND',
         infoBlockTitle3: 'SCHNELL UND EINFACH',
@@ -1369,6 +1400,15 @@ export const translates = {
         backToTop: 'Zurück nach oben',
     },
     fr: {
+        deliverytitle: 'Livraison',
+        deliverytext:
+            " propose un système unique de livraison des crédits FIFA 23. Nous collaborons avec un nombre record de fournisseurs de crédits. Lors de l'exécution de votre commande, nous respectons des règles spéciales qui nous permettent de vous garantir que votre compte ne sera jamais frappé de sanctions de la part de l'EA. Découvrez quelques-unes de ces règles ci-dessous :",
+        li1: "• Règle d'inscription de la carte sur le marché des transferts en fonction du prix autre que le maximum autorisé selon la fourchette de prix de cette carte",
+        li2: "• Règle visant à alterner la livraison de crédits avec le remboursement sur la carte d'un compte sur lequel seul le trading manuel permet de gagner des crédits",
+        li3: "• Avec plus de 7 000 clubs FUT à notre disposition, dans la plupart des commandes, nous compensons une carte d'un club qui n'a pas été impliqué dans le transfert de crédits pendant plusieurs semaines",
+        p1: "Cela nous permet d'offrir le moyen le plus sûr d'acheter des crédits FIFA 23 sur Internet.",
+        p2: ' Pour vous faire livrer vos crédits le plus rapidement possible, suivez les instructions publiées sur le site Web ou fournies par le gestionnaire dans le chat en direct.',
+
         infoBlockTitle1: 'VOTRE MEILLEUR CHOIX',
         infoBlockTitle2: 'LIVRAISON PLUS SÛRE',
         infoBlockTitle3: 'RAPIDE ET SIMPLE',
@@ -1710,6 +1750,15 @@ export const translates = {
         backToTop: 'Retour en haut',
     },
     it: {
+        deliverytitle: 'Consegna',
+        deliverytext:
+            " adotta un sistema esclusivo per la consegna delle crediti FIFA 23. Collaboriamo con un numero enorme di fornitori di crediti. Per l'evasione degli ordini applichiamo regole speciali che garantiscono l'assenza di qualsiasi sanzione per il tuo account da parte di EA. Ecco alcune di queste regole:",
+        li1: '• Indichiamo la scheda nel mercato dei trasferimenti con un prezzo diverso dal prezzo massimo consentito per la fascia di prezzo corrispondente',
+        li2: '• Alterniamo la consegna delle crediti con il rimborso delle card da account che fanno solo scambi manuali per ottenere crediti',
+        li3: '• Potendo contare su oltre 7.000 club FUT, nella maggior parte degli ordini recuperiamo una scheda da un club che da settimane non compie trasferimenti di crediti',
+        p1: "In questo modo possiamo offrire le modalità più sicure per l'acquisto di crediti FIFA 23 su Internet.",
+        p2: 'Per ricevere le crediti più rapidamente possibile, segui le istruzioni pubblicate sul sito web o fornite dal manager nella chat.',
+
         infoBlockTitle1: 'LA TUA PRIMA SCELTA',
         infoBlockTitle2: 'LA CONSEGNA PIÙ SICURA',
         infoBlockTitle3: 'VELOCE E SEMPLICE',
@@ -2049,6 +2098,18 @@ export const translates = {
         backToTop: 'Torna in alto',
     },
     ar: {
+        deliverytitle: 'التسليم',
+
+        deliverytext:
+            'نظام تسليم فريدًا لعملات FIFA 23. فنحن نتعاون مع رقم قياسي من مورّدي العملات. عند الوفاء بطلبك، نتبع قواعد خاصة تضمن عدم تطبيق أي عقوبات مطلقًا على حسابك من قِبل EA. إليك بعض هذه القواعد:',
+        li1: ' قاعدة إدراج البطاقة في سوق التحويل حسب السعر بدلاً من أقصى حد مسموح به وفقًا لنطاق سعر هذه البطاقة',
+        li2: ' قاعدة تبديل عملية تسليم العملات بعملية الحصول على قيمة البطاقات من الحسابات التي تستخدم فقط التبادل اليدوي لربح العملات',
+        li3: ' من خلال وجود أكثر من 7000 نادي FUT تحت إمرتنا، نقوم في معظم الطلبات بالحصول على قيمة البطاقات من الأندية التي لم تشترك في عملية تحويل للعملات خلال أسابيع مضت',
+
+        p1: ' يتيح لنا ذلك توفر الطريقة الأكثر أمانًا لبيع عملات FIFA 23 على الإنترنت.',
+
+        p2: ' لاستلام العملات في أسرع وقت ممكن، الرجاء اتباع التعليمات المنشورة على موقعنا الإلكتروني أو المتلقاة من المدير في الدردشة الفورية."',
+
         infoBlockTitle1: 'اختيارك الأول',
         infoBlockTitle2: 'التوصيل الأكثر أمانًا',
         infoBlockTitle3: 'سريعة وبسيطة',
@@ -2384,6 +2445,15 @@ export const translates = {
         backToTop: 'عودة إلى الأعلى',
     },
     nl: {
+        deliverytitle: 'Rubriek Leveringen',
+        deliverytext:
+            ' biedt een uniek FIFA 23-coin systeem. We werken samen met een breed aanbod aan coinleveranciers. Bij het uitvoeren van je bestelling gebruiken handhaven we speciale regels. Zo garanderen we dat jij nooit last hebt van EA-boetes. Je kan een paar van die regels hieronder lezen:',
+        li1: '• De kaart op de markt te plaatsen tegen een andere prijs dan het toegastane maximum, gebaseerd op de prijsklasse voor deze kaart',
+        li2: '• De levering van munten af te wisselen met het aflossen van kaarten van accounts die alleen handmatige trading voor het verdienen van munten gebruiken.',
+        li3: '• Met meer dan 7000 FUT-clubs tot onze beschikking, verzilveren we in de meeste bestellingen een kaart van een club die wekenlang geen coin tranfer heeft gedaan.',
+        p1: 'Hierdoor kunnen we de veiligste manier bieden om FIFA 23-munten op internet te kopen.',
+        p2: 'Volg de instructies die op de website staan, of die je van de manager via de livechat krijgt, om je munten zo snel mogelijk te ontvangen.',
+
         infoBlockTitle1: 'JOUW EERSTE KEUZE',
         infoBlockTitle2: 'VEILIG BEZORGD',
         infoBlockTitle3: 'SNEL EN EENVOUDIG',
@@ -2722,6 +2792,15 @@ export const translates = {
         backToTop: 'Terug naar boven',
     },
     es: {
+        deliverytitle: 'Entrega',
+        deliverytext:
+            'ofrece un sistema único de entrega de monedas de «FIFA 23». Colaboramos con un número récord de proveedores de monedas. A la hora de atender su pedido, utilizamos reglas especiales que garantizan que EA no aplique en ningún momento sanciones a su cuenta. A continuación figuran algunas de esas normas:',
+        li1: '• Norma de publicar la carta en el mercado de transferencias con un precio distinto del máximo permitido de acuerdo con el intervalo de precios de dicha carta',
+        li2: '• Norma de alternar la entrega de monedas con el canjeo de cartas de las cuentas que solo utilicen tradeo manual para obtener monedas',
+        li3: '• Al tener a nuestra disposición más de 7000 clubes de FUT, en la mayoría de los pedidos canjeamos una carta de un club que lleve semanas sin participar en transferencias de monedas.',
+        p1: 'De este modo, podemos ofrecer la forma más segura de comprar monedas de «FIFA 23» en internet.',
+        p2: 'Para obtener monedas lo antes posible, siga las instrucciones disponibles en el sitio web o las indicaciones que le proporcione su gestor en el chat en directo.',
+
         infoBlockTitle1: 'SU OPCIÓN N.º 1',
         infoBlockTitle2: 'LA ENTREGA MÁS SEGURA',
         infoBlockTitle3: 'RÁPIDO Y SENCILLO',
@@ -3065,6 +3144,15 @@ export const translates = {
         backToTop: 'Volver arriba',
     },
     pt: {
+        deliverytitle: 'Entregas',
+        deliverytext:
+            ' oferece um sistema de entregas de moedas FIFA 23 único. Cooperamos com um número recorde de fornecedores de moedas. Ao tratarmos da tua encomenda, utilizamos regras especiais que garantem que nunca serão aplicadas quaisquer sanções à tua conta da parte da EA. Consulta algumas das regras abaixo:',
+        li1: '• Regra de listar a carta no mercado de transferências pelo preço em vez de pelo máximo permitido, de acordo com a gama de preços para esta carta',
+        li2: '• Regra de alternar a entrega de moedas com o resgate de cartas das contas que só utilizam negociação manual para ganhar moedas',
+        li3: '• Com mais de 7000 clubes FUT à tua disposição, na maioria das encomendas resgatamos uma carta de um clube que não esteve envolvido em transferência de moedas durante semanas',
+        p1: 'Isto permite-nos oferecer a forma mais segura de comprar moedas FIFA 23 na Internet.',
+        p2: 'Para que as tuas moedas sejam entregues o mais rápido possível, segue as instruções publicadas no site ou recebidas do gestor no chat ao vivo.',
+
         infoBlockTitle1: 'A TUA PRIMEIRA ESCOLHA',
         infoBlockTitle2: 'A ENTREGA MAIS SEGURA',
         infoBlockTitle3: 'RÁPIDO E SIMPLES',
@@ -3405,6 +3493,15 @@ export const translates = {
         backToTop: 'Voltar ao topo',
     },
     pl: {
+        deliverytitle: 'Dostaw',
+        deliverytext:
+            ' oferuje unikalny system dostarczania monet FIFA 23. Współpracujemy z rekordową liczbą dostawców monet. Realizując twoje zamówienie, stosujemy specjalne zasady, które gwarantują, że na twoje konto nie zostaną nałożone żadne sankcje ze strony EA. Poniżej są niektóre z tych zasad:',
+        li1: '• Zasada notowania karty na rynku transferowym po cenie innej niż maksymalna dopuszczalna zgodnie z przedziałem cenowym dla tej karty',
+        li2: '• Zasada polegająca na naprzemiennym dostarczaniu monet i wykupie kart z kont, które używają wyłącznie handlu ręcznego do zarabiania monet',
+        li3: '• Z ponad 7000 klubów FUT w naszej dyspozycji, w większości zamówień możemy wykupić kartę z klubu który nie był zaangażowany w transferze monet przez tygodnie',
+        p1: 'To pozwala nam zaoferować najbezpieczniejszy sposób do zakupu monet FIFA 23 w Internecie.',
+        p2: 'Aby otrzymać monety jak najszybciej, postępuj zgodnie z instrukcjami opublikowanymi na stronie internetowej lub otrzymanymi od menedżera na czacie na żywo.',
+
         infoBlockTitle1: 'TWÓJ PIERWSZY WYBÓR',
         infoBlockTitle2: 'BEZPIECZNA DOSTAWA',
         infoBlockTitle3: 'SZYBKI I PROSTY',
@@ -3744,6 +3841,14 @@ export const translates = {
         backToTop: 'Powrót na górę',
     },
     ch: {
+        deliverytitle: '交付区',
+        deliverytext:
+            ' 提供独特的 FIFA 23 金币交付系统。我们与众多金币提供者合作。我们使用特殊规则履行订单，保证您的账户不会受到 EA 的制裁。请参见以下一些规则：',
+        li1: '• 在交易市场列出的卡片不按该卡片价格范围允许的最高价',
+        li2: '• 用从只使用手动交易赢取点数的账户兑换的卡片交替进行卡片交付',
+        li3: '• 我们手中有7000多家 FUT 俱乐部，在大多数订单中，我们从数周不参与金币转手的俱乐部手中兑换卡片,',
+        p1: '这可让我们提供网上最安全的 FIFA 23 金币购买方式。',
+        p2: '为了让金币尽快交付，请按照网站上公布的指示或者在实时聊天中从经理处获得的指示操作',
         infoBlockTitle1: '您的首选',
         infoBlockTitle2: '最安全的交付',
         infoBlockTitle3: '快速简单',
@@ -4069,6 +4174,15 @@ export const translates = {
         backToTop: '回到顶部',
     },
     tr: {
+        deliverytitle: 'Teslimat',
+        deliverytext:
+            ' benzersiz bir FIFA 23 Jetonları dağıtım sistemi sunar. Rekor sayıda Jeton tedarikçisi ile işbirliği yapıyoruz. Siparişinize dair işlemleri gerçekleştirirken, hesabınıza EA tarafından hiçbir zaman yaptırım uygulanmayacağını garanti eden özel kurallar kullanıyoruz. Bu kurallardan basılarını şöyle sıralayabiliriz:',
+        li1: '• Kartın transfer piyasasında, bu kartın fiyat aralığına göre izin verilen maksimum fiyattan farklı bir fiyata listelenmesi kuralı',
+        li2: '• Jeton dağıtımını, Jeton kazanmak için sadece manuel işlemler yapan hesaplardan elde edilen kartların tekrar satın alınması yoluyla değiştirilmesi kuralı',
+        li3: "• Elimizdeki 7000'den fazla FUT kulübü ile çoğu siparişte, haftalarca jeton transferi yapmayan bir kulüpten alınan bir kartı kullanıyoruz.",
+        p1: 'Böylece, İnternet üzerinden FIFA 23 jetonları satın almanın en güvenli yolunu sunuyoruz.',
+        p2: 'FIFA jetonlarını olabildiğince çabuk teslim almak için, web sitesinde yayınlanan veya canlı sohbette yöneticinin verdiği talimatları izleyin.',
+
         infoBlockTitle1: 'İLK SEÇİMİNİZ',
         infoBlockTitle2: 'EN GÜVENLİ TESLİMAT',
         infoBlockTitle3: 'Hızlı VE BASİT',
@@ -4405,6 +4519,14 @@ export const translates = {
         backToTop: 'Başa dön',
     },
     sw: {
+        deliverytitle: 'Leverans',
+        deliverytext:
+            'har ett unikt system för leverans av FIFA 23-mynt. Vi samarbetar med ett stort antal myntleverantörer. När vi behandlar din beställning använder vi specialregler som ser till att ditt konto inte straffas av EA. Här har vi några av de reglerna:',
+        li1: '• En regel om att lägga upp kortet på transfermarknaden med ett pris som skiljer sig från maxpriset i kortets prisklass',
+        li2: '• En regel om att växla mellan myntleveranser och inlösning av kort från konton som bara tjänar mynt på manuell handel',
+        li3: '• Vi har mer än 7 000 FUT-klubbar till vårt förfogande, så för de flesta beställningar löser vi in ett kort från en klubb som inte varit inblandad i mynthandel på flera veckor',
+        p1: 'På så sätt kan vi erbjuda det säkraste sättet att köpa FIFA 23-mynt på internet.',
+        p2: 'Följ instruktionerna som står på webbplatsen eller som skickas till dig via chatten för att få dina mynt så snabbt som möjligt.',
         infoBlockTitle1: 'FÖRSTA VALET',
         infoBlockTitle2: 'SÄKRASTE LEVERANSERNA',
         infoBlockTitle3: 'SNABBT OCH ENKELT',
@@ -4741,6 +4863,15 @@ export const translates = {
         backToTop: 'Tillbaka till toppen',
     },
     no: {
+        deliverytitle: 'Leverings',
+        deliverytext:
+            ' tilbyr et unikt system for levering av FIFA 23-mynter. Vi samarbeider med et rekordstort antall myntforhandlere. Når vi behandler bestillingen din, følger vi spesielle regler som garanterer kontoen din mot sanksjoner fra EA. Du finner noen av disse reglene nedenfor:',
+        li1: '• Regelen om å oppføre kortet på overføringsmarkedet med en annen pris enn tillatte makspris i henhold til prisområdet for kortet.',
+        li2: '• Regelen om å bytte levering av mynter med innløsing av kortr fra kontoer som bare bruker manuell handel for å tjene mynter.',
+        li3: '• Vi har over 7000 FUT-klubber til disposisjon, og i de fleste bestillingene innløser vi et kort fra en klubb som ikke har deltatt i myntoverføringer på flere uker.',
+        p1: 'Dette gjør at vi kan tilby den sikreste måten å kjøpe FIFA 23-mynter på på hele internett.',
+        p2: 'Følg instruksjonene på nettstedet, eller instruksjonene du får fra manageren i live-chat, for å motta myntene så raskt som mulig.',
+
         infoBlockTitle1: 'DITT FØRSTEVALG',
         infoBlockTitle2: 'DEN TRYGGESTE LEVERINGEN',
         infoBlockTitle3: 'RASK OG ENKEL',

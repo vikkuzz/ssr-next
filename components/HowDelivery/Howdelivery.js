@@ -61,7 +61,7 @@ const Howdelivery = () => {
                     videoId: 'tYVjCOjLlZQ',
                     playerVars: {
                         playsinline: 1,
-                        autoplay: 1,
+                        //autoplay: 1,
                     },
                 });
             }

@@ -1,13 +1,15 @@
-import MainContainer from "../components/MainContainer";
+import MainContainer from '../components/MainContainer';
+import NotFound from '../components/NotFound';
 
 export default function Error() {
-  return (
-    <MainContainer
-      keywords={", 404, Такой страницы не существует"}
-      description={"Такой страницы не существует"}
-      title={"404"}
-    >
-      <h1 className={`error_page`}>МОЯ КАСТОМНАЯ СТРАНИЦА С ОШИБКОЙ</h1>
-    </MainContainer>
-  );
+    return (
+        <MainContainer
+            keywords={', 404, Такой страницы не существует'}
+            description={'Такой страницы не существует'}
+            title={'404'}
+            bodyBackgr={'404'}
+        >
+            <NotFound />
+        </MainContainer>
+    );
 }
