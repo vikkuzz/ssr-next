@@ -176,3 +176,24 @@
     line-height: 48px;
   }
 }
+.faq_h2{
+  padding: 0 0 5.3333333333vmin;
+  font-size: 10.8vmin;
+  line-height: 10.8vmin;
+  background-color: transparent;
+  justify-content: flex-start;
+
+  @media (min-width:1025px) {
+    padding-bottom: 20px;
+    font-size: 72px;
+    line-height: 72px;
+  }
+}
+.faq_main{
+  padding-top: 14.6666666667vmin;
+
+  @media (min-width:1025px) {
+    padding-left: 12px;
+    padding-top: 90px;
+  }
+}

@@ -1,0 +1,46 @@
+.acc_container{
+    flex-direction: column;
+    background-color: transparent;
+}
+.acc_item{
+    flex-direction: column;
+    align-items: flex-start;
+}
+.item_title{
+    background-color: transparent;
+    width: auto;
+}
+.item_arrow{
+    background-color: transparent;
+}
+.item_content{
+    background-color: transparent;
+}
+.item_title_container{
+    width: auto;
+}
+.faq_blocktext{
+    flex-direction: column;
+}
+.p_text{
+    display: block;
+}
+.p_link{
+    font-family: 'Montserrat',helvetica,arial,sans-serif;
+    display: inline-block;
+    width: auto;
+    text-decoration: underline;
+    color: hsla(0,0%,100%,.8);
+    font-size: 3.7333333333vmin;
+    line-height: 4.8vmin;
+    letter-spacing: -.02em;
+
+    @media (min-width:1025px) {
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+.p_link:hover{
+    text-decoration: none;
+    color: #fff;
+}

@@ -361,6 +361,7 @@ export const translates = {
     },
 
     ru: {
+        faqtitle: 'ОСТАЛИСЬ ВОПРОСЫ?',
         deliverytitle: 'Доставка',
         deliverytext:
             ' - может похвастаться уникальной системой доставки монет FIFA 23. Наш проект сотрудничает с рекордным количеством поставщиков монет. В ходе выполнения вашего заказа, мы используем определнные правила, позволяющие обезопасить аккаунт клиента от санкций EA на 100%. Вот одни из них:',
@@ -712,6 +713,7 @@ export const translates = {
         backToTop: 'Наверх',
     },
     en: {
+        faqtitle: 'STILL HAVE QUESTIONS?',
         deliverytitle: 'Delivery',
 
         deliverytext:
@@ -1052,6 +1054,7 @@ export const translates = {
         backToTop: 'Back to up',
     },
     de: {
+        faqtitle: 'HABEN SIE FRAGEN?',
         deliverytitle: 'VERSAND',
         deliverytext:
             ' bietet ein einzigartiges Versandsystem. Wir arbeiten mit einer Rekordzahl von Lieferanten zusammen. Für unsere Auftragserfüllung gelten spezielle Regeln, die garantieren, dass Ihrem Konto keine EA-Strafen drohen, unter anderem:',
@@ -1400,6 +1403,7 @@ export const translates = {
         backToTop: 'Zurück nach oben',
     },
     fr: {
+        faqtitle: "D'AUTRES QUESTIONS ?",
         deliverytitle: 'Livraison',
         deliverytext:
             " propose un système unique de livraison des crédits FIFA 23. Nous collaborons avec un nombre record de fournisseurs de crédits. Lors de l'exécution de votre commande, nous respectons des règles spéciales qui nous permettent de vous garantir que votre compte ne sera jamais frappé de sanctions de la part de l'EA. Découvrez quelques-unes de ces règles ci-dessous :",
@@ -1750,6 +1754,7 @@ export const translates = {
         backToTop: 'Retour en haut',
     },
     it: {
+        faqtitle: 'QUALCHE DOMANDA?',
         deliverytitle: 'Consegna',
         deliverytext:
             " adotta un sistema esclusivo per la consegna delle crediti FIFA 23. Collaboriamo con un numero enorme di fornitori di crediti. Per l'evasione degli ordini applichiamo regole speciali che garantiscono l'assenza di qualsiasi sanzione per il tuo account da parte di EA. Ecco alcune di queste regole:",
@@ -2098,6 +2103,7 @@ export const translates = {
         backToTop: 'Torna in alto',
     },
     ar: {
+        faqtitle: 'لا تزال لديك أسئلة؟',
         deliverytitle: 'التسليم',
 
         deliverytext:
@@ -2445,6 +2451,7 @@ export const translates = {
         backToTop: 'عودة إلى الأعلى',
     },
     nl: {
+        faqtitle: 'HEB JE VRAGEN?',
         deliverytitle: 'Rubriek Leveringen',
         deliverytext:
             ' biedt een uniek FIFA 23-coin systeem. We werken samen met een breed aanbod aan coinleveranciers. Bij het uitvoeren van je bestelling gebruiken handhaven we speciale regels. Zo garanderen we dat jij nooit last hebt van EA-boetes. Je kan een paar van die regels hieronder lezen:',
@@ -2792,6 +2799,7 @@ export const translates = {
         backToTop: 'Terug naar boven',
     },
     es: {
+        faqtitle: '¿SIGUE TENIENDO PREGUNTAS?',
         deliverytitle: 'Entrega',
         deliverytext:
             'ofrece un sistema único de entrega de monedas de «FIFA 23». Colaboramos con un número récord de proveedores de monedas. A la hora de atender su pedido, utilizamos reglas especiales que garantizan que EA no aplique en ningún momento sanciones a su cuenta. A continuación figuran algunas de esas normas:',
@@ -3144,6 +3152,7 @@ export const translates = {
         backToTop: 'Volver arriba',
     },
     pt: {
+        faqtitle: 'AINDA TENS PERGUNTAS?',
         deliverytitle: 'Entregas',
         deliverytext:
             ' oferece um sistema de entregas de moedas FIFA 23 único. Cooperamos com um número recorde de fornecedores de moedas. Ao tratarmos da tua encomenda, utilizamos regras especiais que garantem que nunca serão aplicadas quaisquer sanções à tua conta da parte da EA. Consulta algumas das regras abaixo:',
@@ -3493,6 +3502,7 @@ export const translates = {
         backToTop: 'Voltar ao topo',
     },
     pl: {
+        faqtitle: 'NADAL MASZ PYTANIA?',
         deliverytitle: 'Dostaw',
         deliverytext:
             ' oferuje unikalny system dostarczania monet FIFA 23. Współpracujemy z rekordową liczbą dostawców monet. Realizując twoje zamówienie, stosujemy specjalne zasady, które gwarantują, że na twoje konto nie zostaną nałożone żadne sankcje ze strony EA. Poniżej są niektóre z tych zasad:',
@@ -3841,6 +3851,7 @@ export const translates = {
         backToTop: 'Powrót na górę',
     },
     ch: {
+        faqtitle: '还有问题？',
         deliverytitle: '交付区',
         deliverytext:
             ' 提供独特的 FIFA 23 金币交付系统。我们与众多金币提供者合作。我们使用特殊规则履行订单，保证您的账户不会受到 EA 的制裁。请参见以下一些规则：',
@@ -4174,6 +4185,7 @@ export const translates = {
         backToTop: '回到顶部',
     },
     tr: {
+        faqtitle: 'HALA SORULARINIZ MI VAR?',
         deliverytitle: 'Teslimat',
         deliverytext:
             ' benzersiz bir FIFA 23 Jetonları dağıtım sistemi sunar. Rekor sayıda Jeton tedarikçisi ile işbirliği yapıyoruz. Siparişinize dair işlemleri gerçekleştirirken, hesabınıza EA tarafından hiçbir zaman yaptırım uygulanmayacağını garanti eden özel kurallar kullanıyoruz. Bu kurallardan basılarını şöyle sıralayabiliriz:',
@@ -4519,6 +4531,7 @@ export const translates = {
         backToTop: 'Başa dön',
     },
     sw: {
+        faqtitle: 'HAR DU FLER FRÅGOR?',
         deliverytitle: 'Leverans',
         deliverytext:
             'har ett unikt system för leverans av FIFA 23-mynt. Vi samarbetar med ett stort antal myntleverantörer. När vi behandlar din beställning använder vi specialregler som ser till att ditt konto inte straffas av EA. Här har vi några av de reglerna:',
@@ -4863,6 +4876,7 @@ export const translates = {
         backToTop: 'Tillbaka till toppen',
     },
     no: {
+        faqtitle: 'ER DET NOE ANNET DU LURER PÅ?',
         deliverytitle: 'Leverings',
         deliverytext:
             ' tilbyr et unikt system for levering av FIFA 23-mynter. Vi samarbeider med et rekordstort antall myntforhandlere. Når vi behandler bestillingen din, følger vi spesielle regler som garanterer kontoen din mot sanksjoner fra EA. Du finner noen av disse reglene nedenfor:',
