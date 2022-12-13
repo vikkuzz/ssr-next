@@ -1,5 +1,18 @@
 export const faq_translates = {
     ru: {
+        notrade:
+            'На данный момент - нет. Обновим этот топик, если что-то изменится.',
+        tradecoins: 'Скупаете ли вы монеты?',
+        peace: 'Мы доступны по всему миру.',
+        countries: 'В каких странах вы доступны?',
+        issafetyp1:
+            'Да. Используя наши алгоритмы доставки монет, мы не допустили ни одного бана или обнуления клуба FUT за более чем 5000 заказов.',
+        issafetyp2:
+            'Также мы используем надёжных сторонних партнёров для организации платежей на сайте. Текущие партнёры, такие как PayPal и PayApp используют шифрование, защищающие ваши платежи на 100 %.',
+
+        issafety: 'Покупка монет на сайте ROYALFUT.COM безопасна?',
+        couponpayment:
+            'Применить купон можно на этапе оплаты. Каждый купон предлагает свою скидку. После применения сумма вашего заказа будет автоматически пересчитана.',
         coupon: 'Как воспользоваться купоном ROYALFUT?',
         attention:
             '. Обратите внимание, что данные входа на портал EA вы должны использовать те, которые указываете на сайте',
@@ -30,6 +43,18 @@ export const faq_translates = {
         desc: 'С десктоп-устройства:',
     },
     en: {
+        notrade:
+            'Not at the moment. We will update the topic if the situation changes.',
+        tradecoins: 'Do you buy coins from users?',
+        peace: 'We deliver the coins to FUT players worldwide.',
+        countries: 'Which countries ROYALFUT operates in?',
+        issafetyp1:
+            'Yes, it is completely safe. After more than 5000 orders successfully completed using our delivery algorithms, no user has ever encountered a FUT club ban or reset.',
+        issafetyp2:
+            'We also use reliable third-party payment systems to accept payments on the website. Our current partners like PayPal or PayApp use encryption to guarantee 100% safety of your payments.',
+        issafety: 'Is purchasing coins at ROYALFUT.COM safe?',
+        couponpayment:
+            'You can apply the coupon at the checkout stage. Each coupon offers a different discount. After you apply the coupon, the cost of your purchase will be adjusted automatically.',
         coupon: 'How do I use the ROYALFUT coupon?',
         attention:
             '. Please keep in mind that you should use the same login details for both EA portal and ',
@@ -60,6 +85,18 @@ export const faq_translates = {
         desc: 'Using the desktop device:',
     },
     de: {
+        notrade:
+            'Nein, im Moment nicht. Wir informieren Sie zu diesem Thema, wenn sich die Situation ändert.',
+        tradecoins: 'Kaufen Sie Münzen von den Benutzern?',
+        peace: 'Wir senden Münzen an FUT-Spieler überall auf der Welt.',
+        countries: 'In welchen Ländern ist ROYALFUT tätig?',
+        issafetyp1:
+            'Ja, der Kauf ist absolut sicher. Auch nach 5.000 erfolgreich abgeschlossenen Bestellungen mit unserem Versandalgorithmus wurden die FUT-Clubs unserer Benutzer noch nie gesperrt oder zurückgesetzt.',
+        issafetyp2:
+            'Wer nutzen auf unserer Website darüber hinaus zuverlässige Zahlungssysteme von Drittanbietern für Annahme der Zahlungen. Unsere Partner wie PayPal oder PayApp verschlüsseln die Zahlungen, um 100 % Sicherheit garantieren zu können.',
+        issafety: 'Ist der Kauf von Münzen bei ROYALFUT.com sicher?',
+        couponpayment:
+            'Sie können die Gutscheine an der Kasse einlösen. Jeder einzelne Gutschein bietet einen anderen Rabatt. Wenn Sie den Gutschein einlösen, wird der Preis Ihres Einkaufs automatisch angepasst.',
         coupon: 'Wie verwende ich die ROYALFUT-Gutscheine?',
         attention: '. Bitte denk daran, dass du für EA-Portal und die Website ',
         codes: '• Du findest deine Backup-Codes unter folgendem Link: ',
@@ -90,6 +127,18 @@ export const faq_translates = {
         desc: 'Mit dem Desktop-Computer:',
     },
     fr: {
+        notrade:
+            'Pas actuellement. Si à ce propos, la situation change, nous procéderons à une mise à jour.',
+        tradecoins: 'Achetez-vous des crédits à des utilisateurs ?',
+        peace: 'Nous livrons des crédits aux joueurs FUT du monde entier.',
+        countries: 'Quels sont les pays dans lesquels ROYALFUT opère ?',
+        issafetyp1:
+            "Oui, tout à fait sûr. Après plus de 5 000 commandes finalisées sans problème à l'aide de nos algorithmes de livraison, aucun utilisateur n'a jamais été confronté à une interdiction ou à une réinitialisation du club FUT.",
+        issafetyp2:
+            'De plus, pour accepter les paiements sur le site Web, nous avons recours à des systèmes de paiement tiers fiables. Nos partenaires actuels, comme PayPal ou PayApp, garantissent une sécurité de vos paiements à 100 % grâce au cryptage.',
+        issafety: "L'achat de crédits sur ROYALFUT.COM est-il sûr ?",
+        couponpayment:
+            "Vous pouvez utiliser le coupon à l'étape du paiement. Chaque coupon offre une réduction différente. Après l'activation du coupon, le coût de votre achat sera automatiquement ajusté.",
         coupon: 'Comment utiliser le coupon ROYALFUT ?',
         attention:
             ". N'oubliez pas que vous devriez utiliser les mêmes identifiants de connexion pour le portail EA et pour le site Web ",
@@ -121,6 +170,18 @@ export const faq_translates = {
         desc: 'Sur un ordinateur de bureau :',
     },
     it: {
+        notrade:
+            'Al momento no; pubblicheremo un aggiorneremo se la situazione dovesse cambiare.',
+        tradecoins: 'Comprate crediti dagli utenti?',
+        peace: 'Le consegne di crediti sono disponibili per i giocatori di FUT in tutto il mondo.',
+        countries: 'In quali Paesi è disponibile ROYALFUT?',
+        issafetyp1:
+            'Sì, è completamente sicuro. Dopo più di 5.000 ordini completati utilizzando i nostri algoritmi di consegna, nessun utente ha mai avuto un ban o un reset del club FUT.',
+        issafetyp2:
+            'Inoltre utilizziamo affidabili sistemi di pagamento di terzi per ricevere i pagamenti sul sito web. I nostri partner attuali, come PayPal o PayApp, utilizzano la crittografia per garantire la sicurezza dei pagamenti al 100%.',
+        issafety: "L'acquisto di crediti su ROYALFUT.COM è sicuro?",
+        couponpayment:
+            'Puoi applicare il coupon in fase del pagamento. Ogni coupon offre uno sconto diverso. Dopo aver applicato il coupon, il prezzo del tuo acquisto verrà automaticamente aggiornato.',
         coupon: 'Come posso utilizzare il mio coupon ROYALFUT?',
         attention:
             '. Ricorda che dovrai utilizzare gli stessi dati di accesso per il portale EA e per il sito ',
@@ -152,6 +213,17 @@ export const faq_translates = {
         desc: 'Su un computer fisso:',
     },
     ar: {
+        notrade: 'لا، ليس في الوقت الحالي. سنُحدِّث هذا الأمر إذا تغير موقفنا.',
+        tradecoins: 'هل تشترون العملات من مستخدمين؟',
+        peace: 'نستطيع تسليم العملات إلى لاعبي FUT في جميع أنحاء العالم.',
+        countries: 'ما الدول التي يعمل بها ROYALFUT؟',
+        issafetyp1:
+            'نعم، إنها عملية آمنة تمامًا. بعد إتمام أكثر من 5000 طلب شراء بنجاح باستخدام أنظمة التسليم لدينا، لم يتعرض مطلقًا أي مستخدم لحظر أو تصفير رصيد في نادي FUT.',
+        issafetyp2:
+            'نستخدم أيضًا أنظمة دفع خارجية موثوقًا بها لقبول المدفوعات على موقعنا الإلكتروني. ويستخدم شركاؤنا الحاليون، مثل PayPal أو PayApp، أنظمة تشفير لضمان أمان مدفوعاتك بنسبة 100%.',
+        issafety: 'هل شراء العملات من ROYALFUT.COM آمن؟',
+        couponpayment:
+            'يمكنك ستخدام القسيمة في مرحلة إتمام الشراء. توفر كل قسيمة خصمًا مختلفًا. بعد استخدام القسيمة، سيتم تعديل تكلفة الشراء تلقائيًا.',
         coupon: 'كيف أستخدم قسيمة ROYALFUT؟',
         attention:
             '. الرجاء العلم أنه يجب عليك استخدام نفس بيانات تسجيل الدخول لكل من بوابة EA والموقع الإلكتروني ',
@@ -181,6 +253,18 @@ export const faq_translates = {
         desc: 'باستخدام جهاز مكتبي:',
     },
     nl: {
+        notrade:
+            'Momenteel niet. We zullen jullie updaten indien dit verandert.',
+        tradecoins: 'Kopene jullie munten van gebruikers?',
+        peace: 'We bezorgen munten aan FUT-spelers over de hele wereld.',
+        countries: 'In welke landen is ROYALFUT actief?',
+        issafetyp1:
+            'Ja, het is volkomen veilig. Al meer dan 5000 bestellingen zijn succesvol voltooid dankzij onze bezorgalgoritmen. Geen enkele gebruiker heeft ooit een FUT-clubverbod of reset ontvangen.',
+        issafetyp2:
+            'We gebruiken ook betrouwbare betalingssystemen van derden om betalingen op de website te accepteren. Onze huidige partners zoals PayPal of PayApp gebruiken encryptie om je betalingen 100% te garanderen.',
+        issafety: 'Is de aankoop van munten via ROYALFUT.COM wel veilig?',
+        couponpayment:
+            'Je kan de kortingsbon tijdens het afrekenen invoeren. Elke bon biedt een andere korting. Nadat je de kortingsbon hebt ingevoerd, worden de kosten van je aankoop automatisch aangepast.',
         coupon: 'Hoe gebruik ik een ROYALFUT bon?',
         attention:
             '. Onthoud dat je dezelfde login nodig hebt voor de EA-portal en de website ',
@@ -211,6 +295,18 @@ export const faq_translates = {
         desc: 'Via je desktop:',
     },
     es: {
+        notrade:
+            'Por el momento, no. Anunciaremos cualquier novedad en este sentido.',
+        tradecoins: '¿Compráis monedas de usuarios?',
+        peace: 'Entregamos monedas a jugadores de FUT de todo el mundo.',
+        countries: '¿En qué países opera ROYALFUT?',
+        issafetyp1:
+            'Sí, totalmente seguro. Después de haber completado más de 5000 pedidos usando nuestros algoritmos de entrega, ningún usuario ha visto bloqueado o reiniciado su club de FUT.',
+        issafetyp2:
+            'También utilizamos sistemas de pago de terceros para aceptar pagos en el sitio web. Nuestros socios actuales, como PayPal o PayApp, utilizan cifrado para garantizar al 100 % la seguridad de sus pagos.',
+        issafety: '¿Es seguro comprar monedas en ROYALFUT.COM?',
+        couponpayment:
+            'Puede aplicar el cupón en la fase de confirmación del pago. Cada cupón ofrece un descuento diferente. Una vez aplicado, el coste de la compra se modificará automáticamente.',
         coupon: '¿Cómo utilizó el cupón de ROYALFUT?',
         attention:
             '. Ten en cuenta que deberás usar los mismos detalles de inicio de sesión en el portal de EA y el sitio web ',
@@ -243,6 +339,18 @@ export const faq_translates = {
         desc: 'En un dispositivo de escritorio:',
     },
     pt: {
+        notrade:
+            'Não de momento. Iremos atualizar este tema se a situação se alterar.',
+        tradecoins: 'Compram moedas dos utilizadores?',
+        peace: 'Fornecemos as moedas a jogadores FUT de todo o mundo.',
+        countries: 'Em que países é que o ROYALFUT opera?',
+        issafetyp1:
+            'Sim, é completamente seguro. Depois de mais de 5000 encomendas concluídas com sucesso utilizando os nossos algoritmos de entregar, nenhuma vez algum utilizador teve um clube FUT reiniciado ou banido.',
+        issafetyp2:
+            'Também utilizados sistemas de pagamentos de terceiros fiáveis para aceitar pagamentos no site. Os nossos parceiros atuais, como o PayPal ou o PayApp utilizam encriptação para garantir a 100% a segurança dos teus pagamentos.',
+        issafety: 'Comprar moedas no ROYALFUT.COM é seguro?',
+        couponpayment:
+            'Podes aplicar o cupão na fase do checkout. Cada cupão oferece um desconto diferente. Depois de aplicares o cupão, o custo da tua compra irá ser ajustado automaticamente.',
         coupon: 'Como utilizo o cupão ROYALFUT?',
         attention:
             '. Lembra-te, deves usar os mesmos dados de início de sessão tanto no portal da EA como no website ',
@@ -273,6 +381,18 @@ export const faq_translates = {
         desc: 'Utilizando um computador pessoal:',
     },
     pl: {
+        notrade:
+            'W tej chwili nie. Zaktualizujemy temat, jeśli sytuacja się zmieni.',
+        tradecoins: 'Kupujesz monety od użytkowników?',
+        peace: 'Dostarczamy monety do FUT graczy na całym świecie.',
+        countries: 'W jakich krajach działa ROYALFUT?',
+        issafetyp1:
+            'Tak, jest to całkowicie bezpieczne. Zrealizowano ponad 5000 zamówień przy użyciu naszych algorytmów dostawy, żaden użytkownik nigdy nie spotkał się z blokadą lub resetem klubu FUT.',
+        issafetyp2:
+            'Korzystamy również z niezawodnych zewnętrznych systemów płatności, aby przyjmować płatności na stronie internetowej. Nasi obecni partnerzy, tacy jak PayPal czy PayApp, używają szyfrowania, aby zagwarantować 100% bezpieczeństwo twoich płatności.',
+        issafety: 'Czy kupowanie monet na ROYALFUT.COM jest bezpieczne?',
+        couponpayment:
+            'Można zastosować kupon na etapie płatności. Każdy kupon oferuje różne zniżkę. Po zastosowaniu kuponu koszt zakupu zostanie automatycznie dostosowany.',
         coupon: 'Jak mogę wykorzystać kupon ROYALFUT?',
         attention:
             '. Pamiętaj, że powinieneś używać tych samych danych logowania zarówno do portalu EA, jak i strony ',
@@ -304,6 +424,17 @@ export const faq_translates = {
         desc: 'Korzystając z urządzenia stacjonarnego:',
     },
     ch: {
+        notrade: '目前没有。如果情况改变的话，我们将更新标题。',
+        tradecoins: '你们从用户手里购买金币吗？',
+        peace: '我们向全世界的 FUT 玩家交付金币。',
+        countries: 'ROYALFUT 在哪些国家运营？',
+        issafetyp1:
+            '是的，完全安全。用户已经使用我们的交付算法成功完成了5000多个订单，没有人遇到过 FUT 俱乐部禁止或重置。',
+        issafetyp2:
+            '我们也用第三方支付系统接受网上支付。我们当前的合作伙伴，如 PayPal 或 PayApp，使用加密以保证您的支付100%安全。',
+        issafety: '在 ROYALFUT.COM 购买金币安全吗？',
+        couponpayment:
+            '您可以在结账阶段使用优惠券。每张优惠券提供不同的折扣。使用优惠券后，您的购买费用将自动调整。',
         coupon: '如何使用 ROYALFUT 优惠券？',
         attention: '',
         codes: '',
@@ -331,6 +462,17 @@ export const faq_translates = {
         desc: '使用桌面设备：',
     },
     tr: {
+        notrade: 'Şu an için hayır. Bu değişirse konuyu güncelleyeceğiz.',
+        tradecoins: 'Jetonları kullanıcılardan mı satın alıyorum?',
+        peace: 'Tüm dünyadaki FUT oyuncularına hizmet veriyoruz.',
+        countries: 'ROYALFUT hangi ülkelerde faaliyet gösteriyor?',
+        issafetyp1:
+            "Evet, tamamen güvenlidir. Teslimat algoritmalarımız kullanılarak 5000'den fazla sipariş başarıyla tamamlandık ve hiçbir kullanıcı FUT kulüp yasaklaması veya sıfırlama ile karşılaşmadı.",
+        issafetyp2:
+            'Ayrıca web sitesinde ödemeleri almak için güvenilir üçüncü taraf ödeme sistemleri kullanıyoruz. PayPal veya PayApp gibi ortaklarımız, ödemelerinizin %100 güvenliğini garanti etmek için şifreleme teknolojileri kullanır.',
+        issafety: 'ROYALFUT.COM üzerinden jeton satın almak güvenli midir?',
+        couponpayment:
+            'Kuponu ödeme aşamasında uygulayabilirsiniz. Her kupon farklı bir indirim sunar. Kuponu uyguladıktan sonra, satın alma fiyatınız otomatik olarak ayarlanacaktır.',
         coupon: 'ROYALFUT kuponu nasıl kullanılır?',
         attention: '',
         codes: '',
@@ -361,6 +503,17 @@ export const faq_translates = {
         desc: 'Masaüstü cihazı kullanarak:',
     },
     sw: {
+        notrade: 'Köper ni mynt av användare?',
+        tradecoins: 'Köper ni mynt av användare?',
+        peace: 'Vi levererar mynt till FUT-spelare världen över.',
+        countries: 'Vilka länder kan man använda ROYALFUT i?',
+        issafetyp1:
+            'Ja, det är helt säkert. Vi har fullföljt mer än 5 000 beställningar, och ingen av våra kunder har blivit avstängda eller fått sina FUT-klubbar nollställda.',
+        issafetyp2:
+            'Vi använder pålitliga betalningssystem från tredje part på vår webbplats. Tjänster som PayPal och PayApp krypterar betalningarna och gör dem 100 % säkra.',
+        issafety: 'Är det säkert att köpa mynt på ROYALFUT.COM?',
+        couponpayment:
+            'Du kan använda kupongen vid utcheckning. Olika kuponger ger olika rabatt. När du har använt kupongen justeras köpesumman därefter.',
         coupon: 'Hur använder jag ROYALFUT-kupongen?',
         attention:
             '. Tänk på att använda samma inloggningsuppgifter på EA-portalen och ',
@@ -391,6 +544,18 @@ export const faq_translates = {
         desc: 'Via dator:',
     },
     no: {
+        notrade:
+            'Ikke for øyeblikket. Vi kommer til å oppdatere emnet hvis dette endrer seg.',
+        tradecoins: 'Kjøper dere mynter fra brukere?',
+        peace: 'Vi leverer mynter til FUT-spillere verden over.',
+        countries: 'Hvilke land er ROYALFUT tilgjengelig i?',
+        issafetyp1:
+            'Ja, det er helt trygt. Ingen av våre brukere har fått kontoen sin utestengt fra eller nullstilt i en FUT-klubb etter over 5000 bestillinger.',
+        issafetyp2:
+            'Vi bruker også pålitelige tredjeparts betalingssystemer for å ta imot betaling på nettstedet. Partnere som PayPal og PayApp bruker kryptering for å garantere at betalingene er helt sikre.',
+        issafety: 'Er det trygt å kjøpe mynter på ROYALFUT.COM?',
+        couponpayment:
+            'Du kan bruke kupongen når du betaler. De ulike kupongene gir forskjellige rabatter. Når du har brukt kupongen, blir kostnaden justert automatisk.',
         coupon: 'Hvordan bruker jeg ROYALFUT-kupongen?',
         attention:
             '. Husk at du bør bruke de samme innloggingsdetaljene på EA-portalen som ',

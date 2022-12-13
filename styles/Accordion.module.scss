@@ -21,6 +21,8 @@
 }
 .faq_blocktext{
     flex-direction: column;
+    transition: all .3s;
+    align-items: flex-start;
 }
 .p_text{
     display: block;

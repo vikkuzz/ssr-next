@@ -5,6 +5,8 @@ import { useRouter } from 'next/router';
 import { translates } from '../../locales/locales';
 import { faq_translates } from '../../locales/faq_translates';
 import Link from 'next/link';
+import ButtonToOrder from '../ButtonToOrder';
+import { getCoords } from '../../utils/functions';
 const { Panel } = Collapse;
 
 const text = `text`;
@@ -123,43 +125,94 @@ const CustomAccordion = () => {
                 </div>
             );
     };
+
+    const handleClickQuestion = (e) => {
+        setTimeout(
+            () => window.scrollTo(0, getCoords(e.target).top - 150),
+            500
+        );
+        //setTimeout(() => e.target.scrollIntoView(top), 2000);
+    };
     return (
-        <Collapse
-            accordion
-            bordered={false}
-            className="site-collapse-custom-collapse"
-        >
-            <Panel
-                className="site-collapse-custom-panel"
-                header={faq.whytitle}
-                key="1"
-                showArrow={false}
+        <div className={`${styles.faq_blocktext}`}>
+            <Collapse
+                accordion
+                bordered={false}
+                className="site-collapse-custom-collapse"
             >
-                <p>
+                <Panel
+                    className="site-collapse-custom-panel"
+                    header={faq.whytitle}
+                    key="1"
+                    showArrow={false}
+                    onClick={handleClickQuestion}
+                >
                     <WhyRoyalfut />
-                </p>
-            </Panel>
-            <Panel
-                className="site-collapse-custom-panel"
-                header={faq.howchange}
-                key="2"
-                showArrow={false}
-            >
-                <p>
+                </Panel>
+                <Panel
+                    className="site-collapse-custom-panel"
+                    header={faq.howchange}
+                    key="2"
+                    showArrow={false}
+                    onClick={handleClickQuestion}
+                >
                     <HowChange />
-                </p>
-            </Panel>
-            <Panel
-                className="site-collapse-custom-panel"
-                header={faq.club}
-                key="3"
-                showArrow={false}
-            >
-                <p>
+                </Panel>
+                <Panel
+                    className="site-collapse-custom-panel"
+                    header={faq.club}
+                    key="3"
+                    showArrow={false}
+                    onClick={handleClickQuestion}
+                >
                     <Club />
-                </p>
-            </Panel>
-        </Collapse>
+                </Panel>
+                <Panel
+                    className="site-collapse-custom-panel"
+                    header={faq.coupon}
+                    key="4"
+                    showArrow={false}
+                    onClick={handleClickQuestion}
+                >
+                    <p>{faq.couponpayment}</p>
+                </Panel>
+                <Panel
+                    className="site-collapse-custom-panel"
+                    header={faq.issafety}
+                    key="5"
+                    showArrow={false}
+                    onClick={handleClickQuestion}
+                >
+                    <div className={`${styles.faq_blocktext}`}>
+                        <p>{faq.couponpayment}</p>
+                        <p>{faq.couponpayment}</p>
+                    </div>
+                </Panel>
+                <Panel
+                    className="site-collapse-custom-panel"
+                    header={faq.countries}
+                    key="6"
+                    showArrow={false}
+                    onClick={handleClickQuestion}
+                >
+                    <div className={`${styles.faq_blocktext}`}>
+                        <p>{faq.peace}</p>
+                    </div>
+                </Panel>
+                <Panel
+                    className="site-collapse-custom-panel"
+                    header={faq.tradecoins}
+                    key="7"
+                    showArrow={false}
+                    onClick={handleClickQuestion}
+                >
+                    <div className={`${styles.faq_blocktext}`}>
+                        <p>{faq.notrade}</p>
+                    </div>
+                </Panel>
+            </Collapse>
+            <ButtonToOrder />
+        </div>
     );
 };
 
