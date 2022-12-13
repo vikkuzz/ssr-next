@@ -1,0 +1,123 @@
+.contact_container{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6.4vmin;
+
+    @media (min-width:1025px) {
+        gap: 32px;
+    }
+}
+.contacts_svg{
+    transition: .3s;
+    max-width: 12.8vmin;
+    height: 12.8vmin;
+    background-color: transparent;
+    cursor: pointer;
+
+    @media (min-width:1025px) {
+        width: 48px;
+        height: 48px;
+    }
+}
+.whatsapp_link{
+    background-color: transparent;
+    width: auto;
+
+}
+.whatsapp_wrapper{
+    flex-direction: column;
+    align-items: flex-start;
+
+    @media (min-width:1025px) {
+        width: auto;
+    }
+    
+}
+.whatsapp_wrapper span {
+    margin: 4.2666666667vmin 0;
+    background-color: transparent;
+    font-family: 'Montserrat',helvetica,arial,sans-serif;
+    font-weight: 400;
+    font-size: 3.7333333333vmin;
+    line-height: 4.8vmin;
+    letter-spacing: -.02em;
+    justify-content: flex-start;
+
+    @media (min-width:1025px) {
+        margin: 16px 0;
+        font-size: 14px;
+        line-height: 18px;
+        white-space: nowrap;
+    }
+}
+.social_wrapper span {
+    margin: 4.2666666667vmin 0;
+    background-color: transparent;
+    font-family: 'Montserrat',helvetica,arial,sans-serif;
+    font-weight: 400;
+    font-size: 3.7333333333vmin;
+    line-height: 4.8vmin;
+    letter-spacing: -.02em;
+    justify-content: flex-start;
+
+    @media (min-width:1025px) {
+        margin: 16px 0;
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+.social_wrapper{
+    flex-direction: column;
+}
+.contacts{
+    flex-direction: column;
+    gap: 20px;
+
+    @media (min-width:1025px) {
+        flex-direction: row;
+        align-items: flex-end;
+    }
+}
+.links_svg{
+    gap: 6.4vmin;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    max-width: 100%;
+
+    @media (min-width:1025px) {
+        gap: 48px;
+    }
+}
+.email_wrapper{
+    flex-direction: column;
+}
+.email_wrapper span{
+    margin: 4.2666666667vmin 0;
+    background-color: transparent;
+    font-family: 'Montserrat',helvetica,arial,sans-serif;
+    font-weight: 400;
+    font-size: 3.7333333333vmin;
+    line-height: 4.8vmin;
+    letter-spacing: -.02em;
+    justify-content: flex-start;
+    @media (min-width:1025px) {
+        margin: 16px 0;
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+.contact__email{
+    justify-content: flex-start;
+    font-size: 8.5333333333vmin;
+    line-height: 8.5333333333vmin;
+    letter-spacing: -.02em;
+    text-transform: uppercase;
+    color: #eab11f;
+    font-weight: 500;
+    text-decoration: underline;
+
+    @media (min-width:1025px) {
+        font-size: 48px;
+        line-height: 48px;
+    }
+}

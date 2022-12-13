@@ -361,6 +361,15 @@ export const translates = {
     },
 
     ru: {
+        p4: 'Вы не можете вернуть или отменить оплаченный заказ.',
+        p3: 'Совершив оплату, вы можете быть уверены, что ваши деньги в безопасности.',
+        payment_p2_3:
+            '. Наша система работает со всеми платежами, совершёнными с помощью банковских карт, независимо от вашей страны или банка, в котором вам была выдана карта. При оплате заказа вы можете выбрать наиболее подходящий для вас способ оплаты.',
+        payment_p2_2: ' и ',
+        payment_p2_1:
+            'Оплата осуществляется через международные платёжные системы ',
+        payment_p1:
+            ' принимает платежи в евро. Оплату может совершить только зарегистрированный пользователь.',
         faqtitle: 'ОСТАЛИСЬ ВОПРОСЫ?',
         deliverytitle: 'Доставка',
         deliverytext:
@@ -713,6 +722,14 @@ export const translates = {
         backToTop: 'Наверх',
     },
     en: {
+        p4: 'You can’t return or cancel a paid order.',
+        p3: 'When purchasing our digital product, you can be sure your money is safe.',
+        payment_p2_3:
+            ' international payment systems. Our system works with all payments made through bank cards, regardless of your country or the bank where the card was issued to you. When paying an order, you can choose the most suitable payment method for you.',
+        payment_p2_2: ' and ',
+        payment_p2_1: 'The payments are organized through the ',
+        payment_p1:
+            ' accepts payments in euros. Only registered users can make payments on the website.',
         faqtitle: 'STILL HAVE QUESTIONS?',
         deliverytitle: 'Delivery',
 
@@ -1054,6 +1071,15 @@ export const translates = {
         backToTop: 'Back to up',
     },
     de: {
+        p4: 'Bestellungen können nicht storniert oder rückerstattet werden.',
+        p3: 'Wenn Sie Ihr digitales Produkt kaufen, können Sie davon überzeugt sein, dass es sicher ist.',
+        payment_p2_3:
+            ' abgewickelt. Sie können in unserem System mit Bankkarte bezahlen, egal in welchem Land oder von welcher Bank die Karte ausgestellt wurde. Wählen Sie bei der Zahlung die für Sie bequemste Zahlungsmethode aus.',
+        payment_p2_2: ' und ',
+        payment_p2_1:
+            'Die Zahlungen werden über die internationale Zahlungssysteme ',
+        payment_p1:
+            ' akzeptiert Zahlungen in Euro. Sie müssen sich beim System registrieren, um auf der Website bezahlen zu können.',
         faqtitle: 'HABEN SIE FRAGEN?',
         deliverytitle: 'VERSAND',
         deliverytext:
@@ -1403,6 +1429,15 @@ export const translates = {
         backToTop: 'Zurück nach oben',
     },
     fr: {
+        p4: "Le retour ou l'annulation d'une commande payée est impossible.",
+        p3: 'En achetant notre produit numérique, vous pouvez être assuré que votre argent est en sécurité.',
+        payment_p2_3:
+            ". Notre système accepte tous les paiements effectués par carte bancaire, quel que soit votre pays ou la banque d'émission de la votre carte. Lors du paiement d'une commande, vous êtes à même de choisir le mode de paiement qui vous convient le mieux.",
+        payment_p2_2: ' et ',
+        payment_p2_1:
+            'Les paiements sont effectués par le biais du systèmes de paiement internationaux ',
+        payment_p1:
+            ' accepte les paiements en euros. Seuls les utilisateurs enregistrés peuvent effectuer des paiements sur le site.',
         faqtitle: "D'AUTRES QUESTIONS ?",
         deliverytitle: 'Livraison',
         deliverytext:
@@ -1754,6 +1789,15 @@ export const translates = {
         backToTop: 'Retour en haut',
     },
     it: {
+        p4: 'Non sono possibili resi o annullamenti degli ordini pagati.',
+        p3: 'Acquistando il nostro prodotto digitale hai la tranquillità di sapere che i tuoi soldi sono al sicuro.',
+        payment_p2_3:
+            ', che supportano tutti i pagamenti con carte bancarie indipendentemente dal Paese e dalla banca emittente. Per il pagamento degli ordini puoi scegliere il metodo che preferisci.',
+        payment_p2_2: ' e ',
+        payment_p2_1:
+            'I pagamenti sono gestiti attraverso i sistemi di pagamento internazionali ',
+        payment_p1:
+            ' accetta pagamenti in euro. Solo gli utenti registrati possono eseguire pagamenti sul sito web.',
         faqtitle: 'QUALCHE DOMANDA?',
         deliverytitle: 'Consegna',
         deliverytext:
@@ -2103,6 +2147,14 @@ export const translates = {
         backToTop: 'Torna in alto',
     },
     ar: {
+        p4: 'لا يمكنك إرجاع أو إلغاء طلب مدفوع.',
+        p3: 'عند شراء منتجنا الرقمي، يمكنك أن تثق أن أموالك في أمان.',
+        payment_p2_3:
+            '. يعمل نظامنا مع جميع المدفوعات التي تم إجراؤها باستخدام البطاقات المصرفية، بغض النظر عن بلدك أو البنك الذي تم إصدار البطاقة منه. عند الدفع مقابل طلب، يمكنك اختيار طريقة الدفع الأنسب لك.',
+        payment_p2_2: ' و',
+        payment_p2_1: 'يتم تنظيم المدفوعات عبر نظامي الدفع الدوليين ',
+        payment_p1:
+            'يقبل الدفع باليورو. وحدهم المستخدمون المسجلون من يمكنهم الدفع على الموقع الإلكتروني.',
         faqtitle: 'لا تزال لديك أسئلة؟',
         deliverytitle: 'التسليم',
 
@@ -2451,6 +2503,15 @@ export const translates = {
         backToTop: 'عودة إلى الأعلى',
     },
     nl: {
+        p4: 'Je kan een betaalde bestelling niet retourneren of annuleren.',
+        p3: 'Wanneer je ons digitale product koopt, garanderen we dat jouw geld veilig behandelt wordt.',
+        payment_p2_3:
+            '. Ons systeem aanvaard alle betaalmethodes die standaard met bankkaarten gedaan worden, ongeacht het land of de bank. Bij het afrekenen van een bestelling kan je voor de gewenste betaalmethode kiezen.',
+        payment_p2_2: ' en ',
+        payment_p2_1:
+            'De betalingen worden georganiseerd via het internationale betalingssysteemen ',
+        payment_p1:
+            " accepteert betalingen in euro's. Alleen geregistreerde gebruikers kunnen betalingen op de website doen.",
         faqtitle: 'HEB JE VRAGEN?',
         deliverytitle: 'Rubriek Leveringen',
         deliverytext:
@@ -2799,6 +2860,15 @@ export const translates = {
         backToTop: 'Terug naar boven',
     },
     es: {
+        p4: 'No es posible devolver ni cancelar pedidos pagados.',
+        p3: 'Puede tener la certeza de que su dinero estará seguro cuando adquiera nuestro producto digital.',
+        payment_p2_3:
+            '. En nuestro sistema, todos los pagos se realizan con tarjeta bancaria, con independencia de su país o del banco en el que se haya emitido la tarjeta. Puede elegir la forma de pago que mejor le venga.',
+        payment_p2_2: ' y ',
+        payment_p2_1:
+            'Los pagos se organizan a través del sistemas internacionales ',
+        payment_p1:
+            ' acepta pagos en euros. Para realizar pagos en el sitio web es necesario haberse registrado.',
         faqtitle: '¿SIGUE TENIENDO PREGUNTAS?',
         deliverytitle: 'Entrega',
         deliverytext:
@@ -3152,6 +3222,15 @@ export const translates = {
         backToTop: 'Volver arriba',
     },
     pt: {
+        p4: 'Não podes devolver ou cancelar uma encomenda paga.',
+        p3: 'Ao adquirires o nosso produto digital, podes ter a certeza de que o teu dinheiro está seguro.',
+        payment_p2_3:
+            '. O nosso sistema funciona através de cartões bancários, independentemente do teu país ou banco onde o cartão te foi emitido. Ao pagares um pedido, podes escolher o método de pagamento mais conveniente para ti.',
+        payment_p2_2: ' e ',
+        payment_p2_1:
+            'Os pagamentos são organizados através dos sistemas de pagamento internacional ',
+        payment_p1:
+            ' aceita pagamentos em euros. Apenas os utilizadores registados podem fazer pagamentos no site.',
         faqtitle: 'AINDA TENS PERGUNTAS?',
         deliverytitle: 'Entregas',
         deliverytext:
@@ -3502,6 +3581,14 @@ export const translates = {
         backToTop: 'Voltar ao topo',
     },
     pl: {
+        p4: 'Opłaconego zamówienia nie możesz zwrócić ani anulować.',
+        p3: 'Podczas zakupu naszego produktu cyfrowego możesz mieć pewność, że twoje pieniądze są bezpieczne.',
+        payment_p2_3:
+            ' międzynarodowe systemy płatności . Działa on ze wszystkimi płatnościami kartami bankowymi, niezależnie od kraju ani banku wystawiającego kartę. Podczas opłacania zamówienia możesz wybrać najbardziej dogodną formę płatności.',
+        payment_p2_2: ' oraz ',
+        payment_p2_1: 'Płatności dokonywane są poprzez ',
+        payment_p1:
+            ' przyjmuje płatności w euro. Tylko zarejestrowani użytkownicy mogą dokonywać płatności na stronie.',
         faqtitle: 'NADAL MASZ PYTANIA?',
         deliverytitle: 'Dostaw',
         deliverytext:
@@ -3851,6 +3938,13 @@ export const translates = {
         backToTop: 'Powrót na górę',
     },
     ch: {
+        p4: '您不能撤回或取消已支付的订单。',
+        p3: '当您购买我们的数字产品时，您可以完全放心，您的钱是绝对安全的。',
+        payment_p2_3:
+            ' 国际支付系统组织的。我们的系统适用于通过银行卡进行的所有支付，无论您来自哪个国家以及您采用哪家银行的银行卡。支付订单时，您可以选择最适合您的付款方式。',
+        payment_p2_2: ' 和 ',
+        payment_p2_1: '支付是由 ',
+        payment_p1: ' 接受欧元支付。只有已注册用户才能在网站上进行支付。',
         faqtitle: '还有问题？',
         deliverytitle: '交付区',
         deliverytext:
@@ -4185,6 +4279,14 @@ export const translates = {
         backToTop: '回到顶部',
     },
     tr: {
+        p4: 'Ödemesi tamamlanmış bir sipariş iade veya iptal edilemez.',
+        p3: 'Bizden dijital ürün satın alırken paranızın güvende olduğundan emin olabilirsiniz.',
+        payment_p2_3:
+            ' uluslararası ödeme sistemleri üzerinden gerçekleştirilir. Sistemimiz, bulunduğunuz ülke veya kartınızı veren banka fark etmeksizin tüm ülkelerden ve tüm kartlarla ödemeler kabul etmektedir. Ödeme yaparken kendinize en uygun ödeme yöntemini seçebilirsiniz.',
+        payment_p2_2: ' ve ',
+        payment_p2_1: 'Ödemeler ',
+        payment_p1:
+            "'da avro cinsinden ödeme kabul edilir. Web sitemizde sadece kayıtlı kullanıcılar ödeme yapabilirler.",
         faqtitle: 'HALA SORULARINIZ MI VAR?',
         deliverytitle: 'Teslimat',
         deliverytext:
@@ -4531,6 +4633,14 @@ export const translates = {
         backToTop: 'Başa dön',
     },
     sw: {
+        p4: 'Det går inte att ångra eller avbryta betalda beställningar.',
+        p3: 'Du kan lita på att dina pengar är i trygga händer när du handlar hos oss.',
+        payment_p2_3:
+            ', som är internationella betalningssystemen. Det tar emot alla betalningar från bankkort, oavsett vilket land du bor i eller vilken bank som utfärdade kortet. Du kan välja det betalsätt som passar dig bäst när du betalar för din beställning.',
+        payment_p2_2: ' och ',
+        payment_p2_1: 'Alla betalningar görs via ',
+        payment_p1:
+            ' accepterar betalningar i euro. Det krävs ett konto för att göra betalningar på webbplatsen.',
         faqtitle: 'HAR DU FLER FRÅGOR?',
         deliverytitle: 'Leverans',
         deliverytext:
@@ -4876,6 +4986,15 @@ export const translates = {
         backToTop: 'Tillbaka till toppen',
     },
     no: {
+        p4: 'Du kan ikke returnere eller avbryte en bestilling du har betalt for.',
+        p3: 'Når du kjøper det digitale produktet vårt, kan du være trygg på at pengene dine er trygge.',
+        payment_p2_3:
+            '. Systemet vårt fungerer med alle betalinger som blir gjort med bankkort, uavhengig av hvilket land du bor i eller hvilken bank kortet ble utstedt fra. Når du betaler for en bestilling, kan du velge den betalingsmetoden som passer best for deg.',
+        payment_p2_2: ' og ',
+        payment_p2_1:
+            'Betalingene organiseres gjennom det internasjonale betalingssystemer ',
+        payment_p1:
+            ' tar imot betaling i euro. Det er bare registrerte brukere som kan utføre betalinger på nettstedet.',
         faqtitle: 'ER DET NOE ANNET DU LURER PÅ?',
         deliverytitle: 'Leverings',
         deliverytext:
