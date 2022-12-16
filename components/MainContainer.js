@@ -134,6 +134,10 @@ function MainContainer({
                         'Продажа монет ФИФА 22 для PS4, XBOX ONE, PS4, PS5 | Доставка монет FIFA 23 за 15 минут | Максимально низкие цены, быстрые и безопасные платежи, Онлайн поддержка 24/7 | ROYALFUT'
                     }
                 ></meta>
+                <meta
+                    name="google-site-verification"
+                    content="5E2v-HBKpEQQ-7RVK_addvB2xZb5kG3CqKM7KKu-5jE"
+                />
                 <link rel="favicon" href="/favicon.ico" />
                 <title>{title || 'Главная страница Royalfut.com'}</title>
                 <script

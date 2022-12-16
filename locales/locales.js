@@ -361,6 +361,18 @@ export const translates = {
     },
 
     ru: {
+        privacya1:
+            'Настоящее согласие действует с момента регистрации субъекта персональных данных на сайте ',
+        privacya2:
+            'Если вы хотите удалить свою учётную запись на сайте royalfut.com, обратитесь с соответсвующим запросом на ',
+        termsa1:
+            'Пользовательское соглашение от 01.10.2020 (01.10.2020 - 07.02.2021)',
+        termsa2:
+            'Пользовательское соглашение от 08.02.2021 (08.02.2021 - 03.06.2021)',
+        termsa3: 'Политика приватности от 01.10.2020 (01.10.2020 - 07.02.2021)',
+        user_agreement: 'Пользовательское Соглашение',
+        terms_text:
+            'Пожалуйста, внимательно прочтите это Пользовательское соглашение. Если вы не согласны с каким-либо из вопросов настоящего Пользовательского соглашения, вы не имеете права подтверждать свою регистрацию, использовать какие-либо услуги, предоставляемые текущим ресурсом https://royalfut.com, продавать, покупать или обменивать товары через функциональные возможности этой торговой платформы.',
         p4: 'Вы не можете вернуть или отменить оплаченный заказ.',
         p3: 'Совершив оплату, вы можете быть уверены, что ваши деньги в безопасности.',
         payment_p2_3:
@@ -722,6 +734,18 @@ export const translates = {
         backToTop: 'Наверх',
     },
     en: {
+        privacya1:
+            'Consent is valid from the moment the personal data subject is registered at ',
+        privacya2:
+            'If you want to delete your RoyalFUT account please send the request at ',
+        termsa1:
+            'Terms and conditions from 01.10.2020 (01.10.2020 - 07.02.2021)',
+        termsa2:
+            'Terms and conditions from 08.02.2021 (08.02.2021 - 03.06.2021)',
+        termsa3: 'Privacy Policy from 01.10.2020 (01.10.2020 - 07.02.2021)',
+        user_agreement: 'User Agreement',
+        terms_text:
+            'Please read the following User Agreement carefully. If you do not accept any of the items in this User Agreement, you do not have the right to confirm your registration, use any services provided by https://royalfut.com, or sell, buy or exchange goods via this trading platform.',
         p4: 'You can’t return or cancel a paid order.',
         p3: 'When purchasing our digital product, you can be sure your money is safe.',
         payment_p2_3:
@@ -1071,6 +1095,17 @@ export const translates = {
         backToTop: 'Back to up',
     },
     de: {
+        privacya1:
+            'Die Einwilligung ist ab dem Zeitpunkt gültig, an dem die betroffene Person unter ',
+        privacya2:
+            'Wenn Sie Ihr RoyalFUT-Konto löschen möchten, senden Sie bitte eine Anfrage an ',
+        termsa1: 'Nutzungsbedingungen vom 01.10.2020 (01.10.2020 - 07.02.2021)',
+        termsa2: 'Nutzungsbedingungen vom 08.02.2021 (08.02.2021 - 03.06.2021)',
+        termsa3:
+            'Datenschutzerklärung vom 01.10.2020 (01.10.2020 - 07.02.2021)',
+        user_agreement: 'Benutzervereinbarung',
+        terms_text:
+            'Bitte lesen Sie die folgende Benutzervereinbarung sorgfältig durch. Wenn Sie einen der Punkte in dieser Benutzervereinbarung nicht akzeptieren, haben Sie nicht das Recht, Ihre Registrierung zu bestätigen, die von https://royalfut.com angebotenen Dienstleistungen zu nutzen oder Waren über diese Handelsplattform zu verkaufen, zu kaufen oder zu tauschen.',
         p4: 'Bestellungen können nicht storniert oder rückerstattet werden.',
         p3: 'Wenn Sie Ihr digitales Produkt kaufen, können Sie davon überzeugt sein, dass es sicher ist.',
         payment_p2_3:
@@ -1429,6 +1464,17 @@ export const translates = {
         backToTop: 'Zurück nach oben',
     },
     fr: {
+        privacya1:
+            'Le consentement est donné dès le moment où le Détenteur des données personnelles est inscrit sur ',
+        privacya2:
+            'Si vous souhaitez supprimer votre compte RoyalFUT, veuillez envoyer la demande à ',
+        termsa1: 'Conditions générales du 01.10.2020 (01.10.2020 - 07.02.2021)',
+        termsa2: 'Conditions générales du 08.02.2021 (08.02.2021 - 03.06.2021)',
+        termsa3:
+            'Politique de confidentialité du 01.10.2020 (01.10.2020 - 07.02.2021)',
+        user_agreement: 'Accord utilisateur',
+        terms_text:
+            'Veuillez lire attentivement l’Accord utilisateur qui suit. Si vous n’acceptez pas l’un des articles du présent Accord utilisateur, vous n’êtes pas autorisé à confirmer votre inscription, utiliser tout service fourni par https://royalfut.com, ni vendre, acheter ou échanger des biens par l’intermédiaire de cette plateforme d’échanges.',
         p4: "Le retour ou l'annulation d'une commande payée est impossible.",
         p3: 'En achetant notre produit numérique, vous pouvez être assuré que votre argent est en sécurité.',
         payment_p2_3:
@@ -1789,6 +1835,19 @@ export const translates = {
         backToTop: 'Retour en haut',
     },
     it: {
+        privacya1:
+            'Il consenso è valido dal momento in cui i dati personali vengono registrati su ',
+        privacya2:
+            "Per eminare il tuo account dlii RoyalFUT, invia una richiesta all'indirizzo ",
+        termsa1:
+            'Termini e condizioni dal 01.10.2020 (01.10.2020 - 07.02.2021)',
+        termsa2:
+            'Termini e condizioni dal 08.02.2021 (08.02.2021 - 03.06.2021)',
+        termsa3:
+            'Informativa sulla privacy dal 01.10.2020 (01.10.2020 - 07.02.2021)',
+        user_agreement: 'Condizioni d’uso',
+        terms_text:
+            'Leggere attentamente le seguenti Condizioni d’uso. In caso di non accettazione di uno qualsiasi degli elementi delle presenti Condizioni d’uso, l’utente non ha il diritto di confermare la propria registrazione, di usare i servizi forniti da https://royalfut.com, né di vendere, comprare o scambiare beni tramite questa piattaforma commerciale.',
         p4: 'Non sono possibili resi o annullamenti degli ordini pagati.',
         p3: 'Acquistando il nostro prodotto digitale hai la tranquillità di sapere che i tuoi soldi sono al sicuro.',
         payment_p2_3:
@@ -2147,6 +2206,16 @@ export const translates = {
         backToTop: 'Torna in alto',
     },
     ar: {
+        privacya1:
+            'تكون الموافقة سارية المفعول من لحظة قيام الشخص المالك للبيانات الشخصية بالتسجيل في موقع ',
+        privacya2:
+            'إذا كنت تريد حذف حساب RoyalFUT الخاص بك، فالرجاء إرسال طلبك إلى ',
+        termsa1: 'الشروط والأحكام من 01.10.2020 (01.10.2020 - 07.02.2021)',
+        termsa2: 'الشروط والأحكام من 08.02.2021 (08.02.2021 - 03.06.2021)',
+        termsa3: 'سياسة الخصوصية من 01.10.2020 (01.10.2020 - 07.02.2021)',
+        user_agreement: 'اتفاقية المستخدم',
+        terms_text:
+            'تُرجى قراءة اتفاقية المستخدم التالية بعناية. إذا لم تقبل أيًّا من البنود الواردة في اتفاقية المستخدم هذه، فليس لديك الحق في تأكيد تسجيلك أو استخدام أيّ خدمات يتم تقديمها عن طريق موقع https://royalfut.com أو بيع البضائع أو شرائها أو تبادلها عن طريق هذه المنصة التجارية.',
         p4: 'لا يمكنك إرجاع أو إلغاء طلب مدفوع.',
         p3: 'عند شراء منتجنا الرقمي، يمكنك أن تثق أن أموالك في أمان.',
         payment_p2_3:
@@ -2503,6 +2572,18 @@ export const translates = {
         backToTop: 'عودة إلى الأعلى',
     },
     nl: {
+        privacya1:
+            'De toestemming is geldig vanaf het moment dat de Persoonlijke Data zijn geregistreerd op ',
+        privacya2:
+            'Wil je je RoyalFUT-account verwijderen? Stuur dan een e-mail naar ',
+        termsa1:
+            'Algemene voorwaarden vanaf 01.10.2020 (01.10.2020 - 07.02.2021)',
+        termsa2:
+            'Algemene voorwaarden vanaf 08.02.2021 (08.02.2021 - 03.06.2021)',
+        termsa3: 'Privacybeleid van 01.10.2020 (01.10.2020 - 07.02.2021)',
+        user_agreement: 'Gebruikersovereenkomst',
+        terms_text:
+            'Lees de volgende Gebruikersovereenkomst goed. Als je niet akkoord gaat met een van de voorwaarden uit deze Gebruikersovereenkomst, heb je niet het recht om je registratie te bevestigen, diensten van https://royalfut.com te gebruiken, of goederen verkopen, kopen of ruilen via dit ruilplatform.',
         p4: 'Je kan een betaalde bestelling niet retourneren of annuleren.',
         p3: 'Wanneer je ons digitale product koopt, garanderen we dat jouw geld veilig behandelt wordt.',
         payment_p2_3:
@@ -2860,6 +2941,19 @@ export const translates = {
         backToTop: 'Terug naar boven',
     },
     es: {
+        privacya1:
+            'El consentimiento se oficializa en el momento en que el interesado complete su registro en ',
+        privacya2:
+            'Si quieres eliminar tu cuenta de ROYALFUT, envía una solicitud a ',
+        termsa1:
+            'Términos y condiciones del 01.10.2020 (01.10.2020 - 07.02.2021)',
+        termsa2:
+            'Términos y condiciones del 08.02.2021 (08.02.2021 - 03.06.2021)',
+        termsa3:
+            'Política de privacidad del 01.10.2020 (01.10.2020 - 07.02.2021)',
+        user_agreement: 'Acuerdo de Usuario',
+        terms_text:
+            'Lea detenidamente el siguiente Acuerdo de Usuario. Si no acepta alguno de los puntos del siguiente Acuerdo de Usuario, no podrá confirmar su registro, usar ninguno de los servicios proporcionados por https://royalfut.com, ni vender, comprar o intercambiar bienes a través de esta plataforma de mercado.',
         p4: 'No es posible devolver ni cancelar pedidos pagados.',
         p3: 'Puede tener la certeza de que su dinero estará seguro cuando adquiera nuestro producto digital.',
         payment_p2_3:
@@ -3222,6 +3316,17 @@ export const translates = {
         backToTop: 'Volver arriba',
     },
     pt: {
+        privacya1:
+            'O consentimento é válido a partir do momento em que o titular dos dados pessoais efetuar o registo em ',
+        privacya2:
+            'Se quiseres eliminar a tua conta RoyalFUT, envia um pedido para ',
+        termsa1: 'Termos e condições de 01.10.2020 (01.10.2020 - 07.02.2021)',
+        termsa2: 'Termos e condições de 08.02.2021 (08.02.2021 - 03.06.2021)',
+        termsa3:
+            'Política de privacidade de 01.10.2020 (01.10.2020 - 07.02.2021)',
+        user_agreement: 'Acordo de Utilizador',
+        terms_text:
+            'Leia o seguinte Acordo de Utilizador com atenção. Se não aceitar algum dos itens neste Acordo de Utilizador, não tem o direito de confirmar o seu registo, utilizar qualquer um dos serviços fornecidos pelo https://royalfut.com ou vender, comprar ou trocar bens através desta plataforma de trocas.',
         p4: 'Não podes devolver ou cancelar uma encomenda paga.',
         p3: 'Ao adquirires o nosso produto digital, podes ter a certeza de que o teu dinheiro está seguro.',
         payment_p2_3:
@@ -3581,6 +3686,16 @@ export const translates = {
         backToTop: 'Voltar ao topo',
     },
     pl: {
+        privacya1:
+            'Zgoda wchodzi w życie w momencie przesłania danych osobowych na ',
+        privacya2:
+            'Jeśli chcesz usunąć swoje konto RoyalFUT, wyślij prośbę na adres ',
+        termsa1: 'Zasady i warunki od 01.10.2020 (01.10.2020 - 07.02.2021)',
+        termsa2: 'Zasady i warunki od 08.02.2021 (08.02.2021 - 03.06.2021)',
+        termsa3: 'Polityka Prywatności od 01.10.2020 (01.10.2020 - 07.02.2021)',
+        user_agreement: 'Umowa Użytkownika',
+        terms_text:
+            'Prosimy o uważne przeczytanie poniższej Umowy Użytkownika. Jeśli nie akceptujesz jakichkolwiek zapisów Umowy Użytkownika, nie masz prawa potwierdzać swojej rejestracji, użytkować żadnych usług świadczonych przez https://royalfut.com, sprzedawać, kupować ani wymieniać towarów poprzez tę platformę handlową.',
         p4: 'Opłaconego zamówienia nie możesz zwrócić ani anulować.',
         p3: 'Podczas zakupu naszego produktu cyfrowego możesz mieć pewność, że twoje pieniądze są bezpieczne.',
         payment_p2_3:
@@ -3938,6 +4053,14 @@ export const translates = {
         backToTop: 'Powrót na górę',
     },
     ch: {
+        privacya1: '同意书自本人个人资料在 ',
+        privacya2: '如果想要删除RoyalFUT帐户，请发送请求到 ',
+        termsa1: '2020年10月1日条款和条件从 (2020年10月1日-2021年2月7日）',
+        termsa2: '2021年02月8日条款和条件从 (2020年02月8日-2021年06月3日）',
+        termsa3: '2020年10月1日起的隐私政策（2020年10月1日-2021年2月7日）',
+        user_agreement: '用户协议',
+        terms_text:
+            '请仔细阅读以下用户协议。如果您不同意一下协议中的任何条款，则无权在https://royalfut.com确认注册、使用任何服务或通过此交易平台买卖、交换物品。',
         p4: '您不能撤回或取消已支付的订单。',
         p3: '当您购买我们的数字产品时，您可以完全放心，您的钱是绝对安全的。',
         payment_p2_3:
@@ -4279,6 +4402,18 @@ export const translates = {
         backToTop: '回到顶部',
     },
     tr: {
+        privacya1: 'Onay, kişisel veri öznesinin ',
+        privacya2:
+            'Om du vill ta bort ditt ROYALFUT-konto, skicka förfrågan på ',
+        termsa1:
+            '01.10.2020 (01.10.2020 - 07.02.2021) arası Hüküm ve Koşulları',
+        termsa2:
+            '08.02.2021 (08.02.2021 - 03.06.2021) arası Hüküm ve Koşulları',
+        termsa3:
+            '01.10.2020 tarihinden itibaren Gizlilik Politikası (01.10.2020 - 07.02.2021)',
+        user_agreement: 'Kullanıcı Sözleşmesi',
+        terms_text:
+            'Lütfen aşağıdaki Kullanıcı sözleşmesini dikkatlice okuyun. Bu Kullanıcı Sözleşmesinde yer alan herhangi bir hükmü kabul etmiyorsanız kaydınızı onaylayamaz, https://royalfut.com tarafından sağlanan hizmetleri kullanamaz ve bu işlem platformunda ürün alıp satamaz veya takas edemezsiniz.',
         p4: 'Ödemesi tamamlanmış bir sipariş iade veya iptal edilemez.',
         p3: 'Bizden dijital ürün satın alırken paranızın güvende olduğundan emin olabilirsiniz.',
         payment_p2_3:
@@ -4633,6 +4768,16 @@ export const translates = {
         backToTop: 'Başa dön',
     },
     sw: {
+        privacya1:
+            'Samtycket börjar gälla så fort användarens personuppgifter registreras på ',
+        privacya2:
+            'Om du vill ta bort ditt ROYALFUT-konto, skicka förfrågan på ',
+        termsa1: 'Villkor från 01.10.2020 (01.10.2020 - 07.02.2021)',
+        termsa2: 'Villkor från 08.02.2021 (08.02.2021 - 03.06.2021)',
+        termsa3: 'Integritetspolicy. från 01.10.2020 (01.10.2020 - 07.02.2021)',
+        user_agreement: 'Användaravtal',
+        terms_text:
+            'Läs följande användaravtal noggrant. Om du inte accepterar alla punkter i det här användaravtalet har du inte rätt att bekräfta din registrering, använda några av tjänsterna som tillhandahålls av https://royalfut.com eller sälja, köpa eller byta varor via den här plattformen.',
         p4: 'Det går inte att ångra eller avbryta betalda beställningar.',
         p3: 'Du kan lita på att dina pengar är i trygga händer när du handlar hos oss.',
         payment_p2_3:
@@ -4986,6 +5131,17 @@ export const translates = {
         backToTop: 'Tillbaka till toppen',
     },
     no: {
+        privacya1:
+            'Samtykket gjelder fra det øyeblikk personopplysningene registreres på ',
+        privacya2: 'Hvis du vil annullere din RoyalFUT-profilen skriv oss til ',
+        termsa1:
+            'Vilkår og betingelser fra 01.10.2020 (01.10.2020 - 07.02.2021)',
+        termsa2:
+            'Vilkår og betingelser fra 08.02.2021 (08.02.2021 - 03.06.2021)',
+        termsa3: 'Personvernregler fra 01.10.2020 (01.10.2020 - 07.02.2021)',
+        user_agreement: 'Brukeravtale',
+        terms_text:
+            'Les denne brukeravtalen nøye. Hvis det er noen deler av denne brukeravtalen du ikke samtykker i, har du ikke rett til å bekrefte registreringen din, bruke noen av tjenestene på https://royalfut.com, eller selge, kjøpe eller utveksle varer via denne utvekslingsplattformen.',
         p4: 'Du kan ikke returnere eller avbryte en bestilling du har betalt for.',
         p3: 'Når du kjøper det digitale produktet vårt, kan du være trygg på at pengene dine er trygge.',
         payment_p2_3:

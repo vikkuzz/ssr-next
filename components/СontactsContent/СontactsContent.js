@@ -104,7 +104,7 @@ const СontactsContent = () => {
             </div>
             <div className={`${styles.email_wrapper}`}>
                 <span>Почта</span>
-                <div>
+                <div className={`${styles.contact__email_wrapper}`}>
                     <a
                         className={`${styles.contact__email}`}
                         href="mailto:support@royalfut.com"
