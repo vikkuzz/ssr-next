@@ -15,8 +15,8 @@ const Contacts = () => {
     const seo = seoTags[router.locale];
     return (
         <MainContainer
-        //title={seo.order.title}
-        //description={seo.order.description}
+            title={seo.contact.title}
+            description={seo.contact.description}
         >
             <div className={`${styles.app_main} ${styles.app_contact_main}`}>
                 <h2 className={`${styles.app_h1} ${styles.faq_h2}`}>

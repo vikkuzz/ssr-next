@@ -3,13 +3,37 @@ export const seoTags = {
         description:
             'Buy cheap FIFA 23 coins for PS4, XBOX ONE, PS5 on ROYALFUT shop at lowest price with fast and secure payment/s. Our shop offers safe FUT 23 coins delivery/ in 15 minutes and 24/7 online support | Get your Ultimate team now! ROYALFUT',
         title: 'Buy FIFA 23 coins | Cheap & Safe FUT 23 coins for Sale | ROYALFUT',
-
+        'privacy-policy': {
+            description: 'Personal data processing agreement | ROYALFUT',
+            title: 'Privacy Policy | ROYALFUT',
+        },
+        faq: {
+            description: 'Frequently Asked Questions | ROYALFUT',
+            title: 'FAQ | ROYALFUT',
+        },
+        contact: {
+            description: 'How to contact our company | ROYALFUT',
+            title: 'Contacts | ROYALFUT',
+        },
+        payment: {
+            description:
+                'Information about possible payment methods for FUT 23 Coins in your area | ROYALFUT',
+            title: 'FIFA 23 Coin Payment Methods | ROYALFUT',
+        },
+        terms: {
+            description:
+                'Terms and Conditions for using the service | ROYALFUT',
+            title: 'User Agreement | ROYALFUT',
+        },
         order: {
             description:
                 'To complete a purchase, select your platform, the required amount of currency and the payment/ method. We will deliver FIFA 23 Coins in 15 minutes! ROYALFUT',
             title: 'FIFA 23 Coin Purchase Checkout | ROYALFUT',
         },
-
+        delivery: {
+            description: 'How to get FIFA 23 Coins | ROYALFUT',
+            title: 'FIFA 23 Coin Delivery | ROYALFUT',
+        },
         ps4: {
             title: 'Buy Cheap & Safe PS4 FIFA 23 Coins | PS4 FUT 23 Coins | ROYALFUT',
             description:
@@ -36,13 +60,38 @@ export const seoTags = {
         description:
             'Продажа монет ФИФА 23 для PS4, XBOX ONE, PS4, PS5 | Доставка монет FIFA 23 за 15 минут | Максимально низкие цены, быстрые и безопасные платежи, Онлайн поддержка 24/7 | ROYALFUT',
         title: 'Купить монеты ФИФА 23 | Продажа монет FIFA 23 для Ultimate Team | ROYALFUT',
-
+        'privacy-policy': {
+            description:
+                'Соглашение об обработке персональных данных | ROYALFUT',
+            title: 'Политика конфиденциальности | ROYALFUT',
+        },
+        faq: {
+            description: 'Часто задаваемые вопросы | ROYALFUT',
+            title: 'FAQ | ROYALFUT',
+        },
+        contact: {
+            description: 'Способы связи с нашей компанией | ROYALFUT',
+            title: 'Контакты | ROYALFUT',
+        },
+        payment: {
+            description:
+                'Информация о возможных способах оплаты монет FUT 23 в вашем регионе | ROYALFUT',
+            title: 'Способы оплаты монет FIFA 23 | ROYALFUT',
+        },
+        terms: {
+            description: 'Условия использования сервиса | ROYALFUT',
+            title: 'Пользовательское соглашение | ROYALFUT',
+        },
         order: {
             description:
                 'Для оформления покупки выберите свою платформу, необходимое количество валюты и способ оплаты. Мы доставим монеты FIFA 23 за 15 минут! ROYALFUT',
             title: 'Оформление покупки монет FIFA 23 | ROYALFUT',
         },
-
+        delivery: {
+            description:
+                'Информация о способах получения монет FIFA 23 | ROYALFUT',
+            title: 'Доставка монет FIFA 23 | ROYALFUT',
+        },
         ps4: {
             title: 'Купить монеты FIFA Ultimate Team 23 для PlayStation 4',
             description:
@@ -69,13 +118,38 @@ export const seoTags = {
         description:
             'Kaufe FIFA 23 Münzen für PS4, XBOX ONE, PS5 im ROYALFUT Shop zum niedrigsten Preis mit schnellen und sicheren Zahlungen. Unser Shop bietet sichere Lieferung von FUT 23 Münzen innerhalb von 15 Minuten und 24/7 Online-Support | Hol dir jetzt dein Ultimate Team!',
         title: 'Kaufen sie FIFA 23 münzen| Günstig & Sicher FUT 23 Coins zu verkaufen | ROYALFUT',
-
+        'privacy-policy': {
+            description:
+                'Vereinbarung über die Verarbeitung personenbezogener Daten | ROYALFUT',
+            title: 'Datenschutzerklärung | ROYALFUT',
+        },
+        faq: {
+            description: 'Häufig gestellte Fragen | ROYALFUT',
+            title: 'FAQ | ROYALFUT',
+        },
+        contact: {
+            description: 'So kontaktieren Sie unser Unternehmen | ROYALFUT',
+            title: 'Kontakte | ROYALFUT',
+        },
+        payment: {
+            description:
+                'Informationen zu möglichen Zahlungsmethoden für FUT 23-Münzen in Ihrer Nähe | ROYALFUT',
+            title: 'FIFA 23 Münzzahlungsmethoden | ROYALFUT',
+        },
+        terms: {
+            description: 'Bedingungen für die Nutzung des Dienstes | ROYALFUT',
+            title: 'Nutzervereinbarung | ROYALFUT',
+        },
         order: {
             description:
                 'Wählen Sie eine Plattform, die benötigte Menge Geld und die Zahlungsmethode, um einen Kauf abzuschließen. Sie werden Ihre FIFA 23-Münzen in 15 Minuten erhalten! | ROYALFUT',
             title: 'FIFA 23-Münzkauf-Checkout | ROYALFUT',
         },
-
+        delivery: {
+            description:
+                'Informationen zum Erhalt von FIFA 23-Münzen | ROYALFUT',
+            title: 'FIFA 23-Münzlieferung | ROYALFUT',
+        },
         ps4: {
             title: 'PS4 FIFA 23 Münzen günstig & sicher kaufen | PS4 FUT 23 Münzen | ROYALFUT',
             description:
@@ -102,13 +176,38 @@ export const seoTags = {
         description:
             'Achetez des crédits FIFA 23 pour PS4, XBOX ONE et PS5 au meilleur prix sur ROYALFUT. Paiements rapides et sécurisés garantis. Notre boutique livre les crédits FUT 23 en 15 minutes et propose une assistance en ligne 24 h / 24, 7 j / 7. | Formez dès maintenant votre équipe ultime !',
         title: 'Acheter de crédits FIFA 23 | Pièces FUT 23 pas chères et 100 % sûres | ROYALFUT',
-
+        'privacy-policy': {
+            description:
+                'Accord de traitement des données personnelles | ROYALFUT',
+            title: 'Charte de confidentialité | ROYALFUT',
+        },
+        faq: {
+            description: 'Foire aux questions | ROYALFUT',
+            title: 'FAQ | ROYALFUT',
+        },
+        contact: {
+            description: 'Comment contact/er notre société | ROYALFUT',
+            title: 'Contacts | ROYALFUT',
+        },
+        payment: {
+            description:
+                'Informations sur les modes de paiement possibles pour les pièces FUT 23 dans votre région | ROYALFUT',
+            title: 'Modes de paiement FIFA 23 | ROYALFUT',
+        },
+        terms: {
+            description:
+                "Conditions générales d'utilisation du service | ROYALFUT",
+            title: 'Accord utilisateur | ROYALFUT',
+        },
         order: {
             description:
                 'Pour effectuer un achat, sélectionnez votre plateforme, la quantité de devises voulue et le mode de paiement. Vos pièces FIFA 23 vous seront livrées en 15 minutes ! | ROYALFUT',
             title: 'Règlement des achats de pièces FIFA 23 | ROYALFUT',
         },
-
+        delivery: {
+            description: 'Comment obtenir des pièces FIFA 23 | ROYALFUT',
+            title: 'Livraison de pièces FIFA 23 | ROYALFUT',
+        },
         ps4: {
             title: 'Achat économique et sécurisé de crédits FIFA 23 PS4 | Crédits FUT 23 PS4 | ROYALFUT',
             description:
@@ -135,13 +234,37 @@ export const seoTags = {
         description:
             'Compra crediti FIFA 23 per sistema PS4™, XBOX ONE e sistema PS5™ nel negozio ROYALFUT ai prezzi più bassi, con pagamenti sicuri e veloci. Il nostro negozio offre consegna sicura di crediti FUT 23 in 15 minuti e assistenza online 24/7 | Crea subito una squadra imbattibile!',
         title: 'Acquista di crediti FIFA 23| Monete FUT 23 in vendita! È sicuro ed economico | ROYALFUT',
-
+        'privacy-policy': {
+            description:
+                "Consenso all'elaborazione dei dati personali | ROYALFUT",
+            title: 'Informativa sulla privacy | ROYALFUT',
+        },
+        faq: {
+            description: 'Domande frequenti | ROYALFUT',
+            title: 'FAQ | ROYALFUT',
+        },
+        contact: {
+            description: 'Come contattare la nostra azienda | ROYALFUT',
+            title: 'Contatti | ROYALFUT',
+        },
+        payment: {
+            description:
+                'Informazioni sui possibili metodi di pagamento per le monete FUT 23 nella tua zona | ROYALFUT',
+            title: 'Metodi di pagamento con monete FIFA 23 | ROYALFUT',
+        },
+        terms: {
+            description: "Termini e condizioni d'uso del servizio | ROYALFUT",
+            title: "Condizioni d'uso | ROYALFUT",
+        },
         order: {
             description:
                 'Per completare un acquisto, seleziona la tua piattaforma, la quantità di valuta desiderata e il metodo di pagamento. Ti consegneremo le monete FIFA 23 in 15 minuti! ROYALFUT',
             title: 'Finalizzazione acquisto monete FIFA 23 | ROYALFUT',
         },
-
+        delivery: {
+            description: 'Come ottenere crediti FIFA 23 | ROYALFUT',
+            title: 'Consegna di monete FIFA 23 | ROYALFUT',
+        },
         ps4: {
             title: 'Compra crediti FIFA 23 per PS4! È sicuro ed economico | Crediti FUT 23 PS4 | ROYALFUT',
             description:
@@ -168,13 +291,36 @@ export const seoTags = {
         description:
             'اشتر عملات FIFA 23 رخيصة لأجهزة PS4 وXBOX ONE وPS5 من متجر ROYALFUT بأقل سعر مع مدفوعات سريعة وآمنة. يضمن متجرنا تسليم عملات FUT 23 بأمان في غضون 15 دقيقة ويوفر دعمًا على الإنترنت على مدار الساعة | احصل على فريقك الفائق الآن!',
         title: 'عملات 23 FIFA المعدنية| تتوفر للبيع عملات FUT 23 رخيصة وآمنة | ROYALFUT',
-
+        'privacy-policy': {
+            description: 'اتفاقية معالجة البيانات الشخصية | ROYALFUT',
+            title: 'سياسة الخصوصية | ROYALFUT',
+        },
+        faq: {
+            description: 'الأسئلة الشائعة | ROYALFUT',
+            title: 'الأسئلة الشائعة | ROYALFUT',
+        },
+        contact: {
+            description: 'كيفية الاتصال بشركتنا | ROYALFUT',
+            title: 'جهات الاتصال | ROYALFUT',
+        },
+        payment: {
+            description:
+                'معلومات عن طرق الدفع الممكنة نظير عملات FUT 23 في منطقتك | ROYALFUT',
+            title: 'طرق الدفع نظير عملة FIFA 23‏ | ROYALFUT',
+        },
+        terms: {
+            description: 'شروط وأحكام استخدام الخدمة | ROYALFUT',
+            title: 'اتفاقية المستخدم | ROYALFUT',
+        },
         order: {
             description:
                 'لإكمال عملية شراء، حدد جهازك والمقدار المطلوب من العملة وطريقة الدفع. سنسلمك عملات FIFA 23 في غضون 15 دقيقة! ROYALFUT',
             title: 'سداد قيمة عملية شراء عملة FIFA 23‏ | ROYALFUT',
         },
-
+        delivery: {
+            description: 'كيفية الحصول على عملات FIFA 23 | ROYALFUT',
+            title: 'تسليم عملة FIFA 23‏ | ROYALFUT',
+        },
         ps4: {
             title: 'اشتر عملات FIFA 23 لجهاز PS4 رخيصة بمنتهى الأمان | عملات FUT 23 لجهاز PS4 | ROYALFUT',
             description:
@@ -201,13 +347,38 @@ export const seoTags = {
         description:
             'Koop FIFA 23-munten voor PS4, XBOX ONE en PS5 in de ROYALFUT-shop tegen de laagste prijzen op een snelle en veilige manier. Onze shop verstuurt FUT 23-munten veilig binnen 15 minutes en biedt 24 uur per dag online ondersteuning| Stel nu je Ultimate Team samen!',
         title: 'Jouw FIFA 23 munten aankopen| Goedkoop en veilig! FUT 23-munten te koop | ROYALFUT',
-
+        'privacy-policy': {
+            description:
+                'Overeenkomst voor het verwerken van persoonlijke gegevens | ROYALFUT',
+            title: 'Privacybeleid | ROYALFUT',
+        },
+        faq: {
+            description: 'Veelgestelde vragen | ROYALFUT',
+            title: 'FAQ | ROYALFUT',
+        },
+        contact: {
+            description: 'Zo neem je contact/ op met ons bedrijf | ROYALFUT',
+            title: 'Contact | ROYALFUT',
+        },
+        payment: {
+            description:
+                'Informatie over mogelijke betaalmethoden voor FUT 23-munten in jouw land | ROYALFUT',
+            title: 'Betaalmethoden FIFA 23-munten | ROYALFUT',
+        },
+        terms: {
+            description:
+                'Voorwaarden en bepalingen voor het gebruik van de service | ROYALFUT',
+            title: 'Gebruikersovereenkomst | ROYALFUT',
+        },
         order: {
             description:
                 'Om een aankoop af te ronden selecteer je je platform, het benodigde bedrag en de betaalmethode. Je ontvangt de FIFA 23-munten binnen 15 minuten! ROYALFUT',
             title: 'Aankoop FIFA 23-munten afronden | ROYALFUT',
         },
-
+        delivery: {
+            description: 'Zo schaf je FIFA 23-munten aan | ROYALFUT',
+            title: 'Versturen van FIFA 23-munten | ROYALFUT',
+        },
         ps4: {
             title: 'Koop PS4 FIFA 23-munten, goedkoop en veilig | PS4 FUT 23-munten | ROYALFUT',
             description:
@@ -234,13 +405,39 @@ export const seoTags = {
         description:
             'Compra monedas de FIFA 23 para PS4, XBOX ONE y PS5 en la tienda de ROYALFUT a un precio reducido y con pagos rápidos y seguros. Entregamos las monedas de FUT 23 en 15 minutos y la atención al cliente está disponible 24/7 | ¡Forma el equipo definitivo!',
         title: 'Compra las monedas FIFA 23| Monedas FUT 23 a buen precio y fiables |ROYALFUT',
-
+        'privacy-policy': {
+            description:
+                'Acuerdo de procesamiento de datos personales | ROYALFUT',
+            title: 'Política de privacidad | ROYALFUT',
+        },
+        faq: {
+            description: 'Preguntas frecuentes | ROYALFUT',
+            title: 'PREGUNTAS FRECUENTES | ROYALFUT',
+        },
+        contact: {
+            description: 'Cómo contact/ar con nuestra empresa | ROYALFUT',
+            title: 'Contacto | ROYALFUT',
+        },
+        payment: {
+            description:
+                'Información sobre los posibles métodos de pago de las monedas FUT 23 en tu zona | ROYALFUT',
+            title: 'Métodos de pago de las monedas de FIFA 23 | ROYALFUT',
+        },
+        terms: {
+            description:
+                'Términos y condiciones para usar el servicio | ROYALFUT',
+            title: 'Acuerdo de usuario | ROYALFUT',
+        },
         order: {
             description:
                 'Para terminar la compra, elige tu plataforma, la cantidad de monedas solicitada y el método de pago. ¡Te entregaremos las monedas de FIFA 23 en 15 minutos! ROYALFUT',
             title: 'Proceso de compra de las monedas de FIFA 23 | ROYALFUT',
         },
-
+        delivery: {
+            description:
+                'Información sobre cómo obtener monedas de FIFA 23 | ROYALFUT',
+            title: 'Entrega de monedas de FIFA 23 | ROYALFUT',
+        },
         ps4: {
             title: 'Compra monedas de FIFA 23 económicas y seguras para PS4 | Monedas FUT 23 PS4 | ROYALFUT',
             description:
@@ -267,13 +464,37 @@ export const seoTags = {
         description:
             'Compra as moedas FIFA 23 mais baratas para PS4, XBOX ONE e PS5 na loja ROYALFUT com pagamentos rápidos e seguros. A nossa loja entrega moedas FUT 23 baratas e de forma segura num prazo de 15 minutos e com suporte permanente. | Cria já a tua Ultimate Team!',
         title: 'Compra as moedas FIFA 23 | Vendemos moedas FUT 23 baratas e seguras |ROYALFUT',
-
+        'privacy-policy': {
+            description: 'Acordo de processamento de dados pessoais | ROYALFUT',
+            title: 'Política de Privacidade | ROYALFUT',
+        },
+        faq: {
+            description: 'Perguntas mais frequentes | ROYALFUT',
+            title: 'Perguntas frequentes | ROYALFUT',
+        },
+        contact: {
+            description:
+                'Como entrar em contato com a nossa empresa | ROYALFUT',
+            title: 'Contactos | ROYALFUT',
+        },
+        payment: {
+            description:
+                'Informações sobre os métodos de pagamento possíveis para moedas FUT 23 no teu território | ROYALFUT',
+            title: 'Métodos de pagamento de moedas do FIFA 23 | ROYALFUT',
+        },
+        terms: {
+            description: 'Termos e Condições do serviço | ROYALFUT',
+            title: 'Acordo de Utilizador | ROYALFUT',
+        },
         order: {
             description:
                 'Para finalizar a compra, escolha a plataforma, a quantidade de moedas e o método de pagamento. Entregaremos as moedas do FIFA 23 em 15 minutos! ROYALFUT',
             title: 'Finalização de compra de moedas do FIFA 23 | ROYALFUT',
         },
-
+        delivery: {
+            description: 'Como obter moedas do FIFA 23 | ROYALFUT',
+            title: 'Entrega de moedas do FIFA 23 | ROYALFUT',
+        },
         ps4: {
             title: 'Compra moedas do FIFA 23 baratas e seguras para a PS4 | Moedas FUT 23 para a PS4 | ROYALFUT',
             description:
@@ -300,13 +521,36 @@ export const seoTags = {
         description:
             '以最实惠的价格在 ROYALFUT 商店购买用于 PS4、XBOX ONE 以及 PS5 平台的 FIFA 23 金币，安全高效，付款无忧。我们商店所售的 FUT 23 金币保证安全，15分钟内到账，全天候在线客服支持 | 快来组建你的 Ultimate Team 吧！',
         title: '购买FIFA 23金币| 实惠又安全， FUT 23 金币有售 |ROYALFUT',
-
+        'privacy-policy': {
+            description: '个人数据处理协议 | ROYALFUT',
+            title: '隐私政策 | ROYALFUT',
+        },
+        faq: {
+            description: '常见问题 | ROYALFUT',
+            title: '常见问题 | ROYALFUT',
+        },
+        contact: {
+            description: '如何联系我们公司 | ROYALFUT',
+            title: '联系方式 | ROYALFUT',
+        },
+        payment: {
+            description:
+                '有关您所在地区FUT 23硬币可能的付款方式的信息 | 富丽堂皇',
+            title: 'FIFA 23硬币支付方式 | ROYALFUT',
+        },
+        terms: {
+            description: '使用服务的条款和条件 | ROYALFUT',
+            title: '用户协议 | ROYALFUT',
+        },
         order: {
             description:
                 '要完成购买，请选择你的平台、所要购买的货币数量以及支付方式。我们会在15分钟内将FIFA 23金币送达给您！ROYALFUT',
             title: 'FIFA 23硬币购买结算 | ROYALFUT',
         },
-
+        delivery: {
+            description: '如何获得FIFA 23金币 | ROYALFUT',
+            title: 'FIFA 23金币交付 | ROYALFUT',
+        },
         ps4: {
             title: '实惠又安全地购买PS4 FIFA 23金币 | PS4 FUT 23金币 | ROYALFUT',
             description:
@@ -333,13 +577,37 @@ export const seoTags = {
         description:
             'PS4, XBOX ONE ve PS5 için FIFA 23 jetonlarını ROYALFUT mağazasından hızlı, güvenli ve uygun fiyata satın alabilirsiniz. Mağazamız, 15 dakika içinde güvenli FUT 23 jetonu teslimatı gerçekleştiriyor ve 7/24 online destek sunuyor. | Rüya takımınızı kurmaya hemen başlayın!',
         title: 'Jeton FIFA 23 al | Ucuz ve Güvenli FUT 23 jetonu satışı |ROYALFUT',
-
+        'privacy-policy': {
+            description: 'Kişisel veri kullanımı sözleşmesi | ROYALFUT',
+            title: 'Gizlilik Politikası | ROYALFUT',
+        },
+        faq: {
+            description: 'Sık Sorulan Sorular | ROYALFUT',
+            title: 'SSS | ROYALFUT',
+        },
+        contact: {
+            description: 'Şirketimizle nasıl iletişime geçilir | ROYALFUT',
+            title: 'İletişim | ROYALFUT',
+        },
+        payment: {
+            description:
+                'Bölgenizde FUT 23 Jetonu için kullanılabilir ödeme yöntemleri hakkında bilgi | ROYALFUT',
+            title: 'FIFA 23 Jetonu Ödeme Yöntemleri | ROYALFUT',
+        },
+        terms: {
+            description:
+                'Hizmetin kullanımına ilişkin Hüküm ve Şartlar | ROYALFUT',
+            title: 'Kullanıcı Sözleşmesi | ROYALFUT',
+        },
         order: {
             description:
                 'Satın alımı tamamlamak için, platformunuzu, gereken miktarı ve ödeme yönteminizi seçin. FIFA 23 Jetonlarınız 15 dakika içinde teslim edilecektir. | ROYALFUT',
             title: 'FIFA 23 Jeton Satın Alım Ödemesi | ROYALFUT',
         },
-
+        delivery: {
+            description: 'FIFA 23 Jetonu nasıl alınır | ROYALFUT',
+            title: 'FIFA 23 Jetonu Teslimatı | ROYALFUT',
+        },
         ps4: {
             title: 'Ucuz ve güvenli PS4 FIFA 23 Jetonu | PS4 FUT 23 Jetonu | ROYALFUT',
             description:
@@ -366,13 +634,36 @@ export const seoTags = {
         description:
             'Kupuj tanie monety FIFA 23 na PS4, XBOX ONE i PS5 w sklepie ROYALFUT, w najniższej cenie, z szybkimi i bezpiecznymi płatnościami. Nasz sklep oferuje bezpieczną dostawę monet FUT 23 w 15 minut, z obsługą klienta online 24/7 | Stwórz swoją drużynę Ultimate już dziś!',
         title: 'Kupuj monety FIFA 23| Monety FUT 23 na sprzedaż – tanio i bezpiecznie |ROYALFUT',
-
+        'privacy-policy': {
+            description: 'Umowa o przetwarzaniu danych osobowych | ROYALFUT',
+            title: 'Polityka prywatności | ROYALFUT',
+        },
+        faq: {
+            description: 'Często zadawane pytania | ROYALFUT',
+            title: 'FAQ | ROYALFUT',
+        },
+        contact: {
+            description: 'Jak skontaktować się z naszą firmą | ROYALFUT',
+            title: 'Kontakt | ROYALFUT',
+        },
+        payment: {
+            description:
+                'Informacje o możliwych metodach płatności za monety FUT 23 w twojej okolicy | ROYALFUT',
+            title: 'Płatności monetami w grze FIFA 23 | ROYALFUT',
+        },
+        terms: {
+            description: 'Zasady i warunki użytkowania usługi | ROYALFUT',
+            title: 'Umowa użytkownika | ROYALFUT',
+        },
         order: {
             description:
                 'Aby dokończyć zakup, wybierz platformę, ilość waluty i metodę płatności. Dostarczamy monety FIFA 23 w 15 minut! ROYALFUT',
             title: 'Realizacja zakupu monet FIFA 23 | ROYALFUT',
         },
-
+        delivery: {
+            description: 'Jak zdobyć monety FIFA 23 | ROYALFUT',
+            title: 'Dostawa monet FIFA 23 | ROYALFUT',
+        },
         ps4: {
             title: 'Kup monety FIFA 23 na PS4 tanio i bezpiecznie| Monety FUT 23 na PS4 | ROYALFUT',
             description:
@@ -399,13 +690,37 @@ export const seoTags = {
         description:
             'Köp billiga FIFA 23-mynt till PS4, XBOX ONE och PS5 i ROYALFUT-butiken till lägsta pris med snabba och säkra betalningar. Vår butik erbjuder säker leverans av FUT 23-mynt inom 15 minuter samt onlinesupport dygnet runt | Skaffa ditt Ultimate-team nu!',
         title: 'Köp fifa 23 mynt | Billiga och säkra FUT 23-mynt till salu | ROYALFUT',
-
+        'privacy-policy': {
+            description: 'Avtal för behandling av personuppgifter | ROYALFUT',
+            title: 'Sekretesspolicy | ROYALFUT',
+        },
+        faq: {
+            description: 'Vanliga frågor | ROYALFUT',
+            title: 'Frågor | ROYALFUT',
+        },
+        contact: {
+            description: 'Kontakta oss | ROYALFUT',
+            title: 'Kontakt | ROYALFUT',
+        },
+        payment: {
+            description:
+                'Information om tillgängliga betalningsmetoder för FUT 23-mynt i ditt område | ROYALFUT',
+            title: 'Betalningsmetoder för FIFA 23-mynt | ROYALFUT',
+        },
+        terms: {
+            description:
+                'Allmänna villkor för användning av tjänsten | ROYALFUT',
+            title: 'Användaravtal | ROYALFUT',
+        },
         order: {
             description:
                 'Välj plattform, summa och betalningsmetod så levererar vi FIFA 23-mynt inom 15 minuter! ROYALFUT',
             title: 'Utcheckning | ROYALFUT',
         },
-
+        delivery: {
+            description: 'Så skaffar man FIFA 23-mynt | ROYALFUT',
+            title: 'Leverans av FIFA 23-mynt | ROYALFUT',
+        },
         ps4: {
             title: 'Köp billiga och säkra PS4 FIFA 23-mynt | PS4 FUT 23-mynt | ROYALFUT',
             description:
@@ -432,13 +747,38 @@ export const seoTags = {
         description:
             'Kjøp billige FIFA 23-mynter for PS4, XBOX ONE, PS5 fra ROYALFUT-butikken til den laveste prisen med rask og sikker betaling. Vår butikk tilbyr trygge FUT 23-mynter levert innen 15 minutter og gir kundestøtte 24/7 | Få tak i ditt Ultimate team nå!',
         title: 'Kjøp FIFA 23-mynter| Billige og trygge FUT 23-mynter til salgs | ROYALFUT',
-
+        'privacy-policy': {
+            description:
+                'Avtale for behandling av personopplysninger | ROYALFUT',
+            title: 'Personvernerklæring | ROYALFUT',
+        },
+        faq: {
+            description: 'Vanlige spørsmål | ROYALFUT',
+            title: 'Vanlige spørsmål | ROYALFUT',
+        },
+        contact: {
+            description: 'Slik tar du kontakt med oss | ROYALFUT',
+            title: 'Kontakt | ROYALFUT',
+        },
+        payment: {
+            description:
+                'Informasjon om mulige betalingsmetoder for FUT 23-mynter i ditt område | ROYALFUT',
+            title: 'Betalingsmetoder for FIFA 23-mynter | ROYALFUT',
+        },
+        terms: {
+            description:
+                'Vilkår og betingelser for bruk av tjenesten | ROYALFUT',
+            title: 'Brukeravtale | ROYALFUT',
+        },
         order: {
             description:
                 'Velg plattform, antall mynter og betalingsmetode for å fullføre kjøpet. Vi leverer FIFA 23-mynter på 15 minutter! ROYALFUT',
             title: 'Utsjekking av FIFA 23-myntkjøp | ROYALFUT',
         },
-
+        delivery: {
+            description: 'Slik skaffer du deg FIFA 23-mynter | ROYALFUT',
+            title: 'Levering av FIFA 23-mynter | ROYALFUT',
+        },
         ps4: {
             title: 'Kjøp rimelige og trygge PS4 FIFA 23-mynter | PS4 FUT 23-mynter | ROYALFUT',
             description:

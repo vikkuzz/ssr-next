@@ -15,8 +15,8 @@ const Terms = () => {
     const seo = seoTags[router.locale];
     return (
         <MainContainer
-        //title={seo.order.title}
-        //description={seo.order.description}
+            title={seo.terms.title}
+            description={seo.terms.description}
         >
             <div className={`${styles.app_main}`}>
                 <h2 className={`${styles.app_h1}`}>

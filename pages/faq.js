@@ -17,10 +17,7 @@ const Delivery = () => {
     const router = useRouter();
     const seo = seoTags[router.locale];
     return (
-        <MainContainer
-        //title={seo.order.title}
-        //description={seo.order.description}
-        >
+        <MainContainer title={seo.faq.title} description={seo.faq.description}>
             <div className={`${styles.app_main} ${styles.faq_main}`}>
                 <h2 className={`${styles.app_h1} ${styles.faq_h2}`}>
                     {translates[router.locale].faqtitle}

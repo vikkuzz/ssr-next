@@ -123,7 +123,7 @@ function MainContainer({
                 <link rel="manifest" href="/manifest.json" />
                 <meta
                     keywords={
-                        'royalfut, FIFA 23, FIFA 23 монеты, FIFA 23 игроки' +
+                        'royalfut, FIFA 23, FIFA 23 coins, FIFA 23 players' +
                         (keywords || '')
                     }
                 ></meta>

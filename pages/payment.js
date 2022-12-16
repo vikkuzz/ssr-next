@@ -18,8 +18,8 @@ const Payment = () => {
     const seo = seoTags[router.locale];
     return (
         <MainContainer
-        //title={seo.order.title}
-        //description={seo.order.description}
+            title={seo.payment.title}
+            description={seo.payment.description}
         >
             <div className={`${styles.app_main}`}>
                 <h1 className={`${styles.app_h1} ${styles.app_payment_h}`}>

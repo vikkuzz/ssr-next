@@ -15,8 +15,8 @@ const Privacy = () => {
     const seo = seoTags[router.locale];
     return (
         <MainContainer
-        //title={seo.order.title}
-        //description={seo.order.description}
+            title={seo['privacy-policy'].title}
+            description={seo['privacy-policy'].description}
         >
             <div className={`${styles.app_main}`}>
                 <h2 className={`${styles.app_h1}`}>

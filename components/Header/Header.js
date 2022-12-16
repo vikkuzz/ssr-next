@@ -150,11 +150,11 @@ function Header() {
                         className={`${styles.header__faq_container} from-1025-to-1900`}
                     >
                         <Link href={'/faq'} locale={locale.title}>
-                            <span
+                            <a
                                 className={`${styles.header_faq} ${styles.header__links}`}
                             >
                                 {translates[router.locale].menuLinkFaq}
-                            </span>
+                            </a>
                         </Link>
                     </div>
                     <div
