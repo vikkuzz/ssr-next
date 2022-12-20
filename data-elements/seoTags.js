@@ -108,7 +108,7 @@ export const seoTags = {
                 'Купить монеты FIFA 23 для XBOX ONE по низкой цене! Монеты FIFA 23 Ultimate Team для XBOX ONE с быстрой доставкой и гарантией безопасности аккаунта | ROYALFUT',
         },
         xboxSx: {
-            title: 'Купить монеты FIFA Ultimate Team 23 для PlayStation 4',
+            title: 'Купить монеты FIFA Ultimate Team 23 для XBOX Series X',
             description:
                 'Купить монеты FIFA 23 для XBOX Series X по низкой цене! Монеты FIFA 23 Ultimate Team для XBOX Series X с быстрой доставкой и гарантией безопасности аккаунта | ROYALFUT',
         },

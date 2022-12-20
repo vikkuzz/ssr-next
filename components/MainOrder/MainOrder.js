@@ -33,7 +33,7 @@ import { translates } from '../../locales/locales';
 
 const api = new Api();
 
-const MainOrder = () => {
+const MainOrder = ({ havePlatform = true }) => {
     const deliveryOption = React.useRef();
     const paymentOption = React.useRef();
     const platformOption = React.useRef();
@@ -92,6 +92,23 @@ const MainOrder = () => {
     );
 
     let [scrolltop, setScrolltop] = useState();
+
+    useEffect(() => {
+        console.log('HAVE_PLATFORM!', havePlatform);
+        if (!havePlatform) {
+            console.log('HAVE_PLATFORM');
+            setTimeout(
+                () =>
+                    setHide({
+                        platform: false,
+                        coins: true,
+                        delivery: true,
+                        payment: true,
+                    }),
+                500
+            );
+        }
+    }, [havePlatform]);
 
     useEffect(() => {
         if (stateOrder.coins) {

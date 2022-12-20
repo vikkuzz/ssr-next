@@ -28,8 +28,10 @@ import currency from '../data-elements/currency';
 import Footer from './Footer';
 import flagLangs from '../data-elements/countries';
 import Aside from './Aside';
+import Breadcrumbs from './Breadcrumbs/Breadcrumbs';
 
 const api = new Api();
+let ls = null;
 
 function MainContainer({
     children,
@@ -73,6 +75,7 @@ function MainContainer({
             dispatch(loginModal(false));
         }
     };
+
     useEffect(() => {
         if (error != '') {
             setTimeout(() => dispatch(catcherror('')), 3000);
@@ -88,6 +91,7 @@ function MainContainer({
             }
             dispatch(stock(result));
         });
+        ls = new SecureLS();
         let _lsTotal = 0,
             _xLen,
             _x;
@@ -103,8 +107,11 @@ function MainContainer({
         }
         console.log('Total = ' + (_lsTotal / 1024).toFixed(2) + ' KB');
         if ((_lsTotal / 1024).toFixed(2) > 120) {
-            localStorage.clear();
-            localStorage.removeItem('localState');
+            // localStorage.clear();
+            // localStorage.removeItem('localState');
+            ls.removeAll();
+            window.location.reload();
+            //localStorage.setItem('localState', {});
             console.log(
                 'Total after clear = ' + (_lsTotal / 1024).toFixed(2) + ' KB'
             );
@@ -196,6 +203,7 @@ function MainContainer({
           {translates[t]?.title || translates.en.title}
           Next.js!
         </h1> */}
+                <Breadcrumbs />
                 <div
                     className={styles.app__burgerwrapper}
                     ref={wrapperModalRef}

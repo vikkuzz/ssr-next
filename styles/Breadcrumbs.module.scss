@@ -1,0 +1,23 @@
+.breadcrumbs_container{
+    background-color: transparent;
+    width: auto;
+    justify-content: flex-start;
+    align-self: flex-start;
+    gap: 8px;
+}
+.breadcrumbs_separator{
+    background-color: transparent;
+    padding-left: 8px;
+    opacity: 0.6;
+}
+.breadcrumbs_link{
+    background-color: transparent;
+    white-space: nowrap;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 14px;
+    line-height: 17px;
+}
+.breadcrumbs_disable{
+    color: rgba(255,255,255,0.6);
+}

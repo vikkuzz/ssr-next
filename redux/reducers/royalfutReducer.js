@@ -167,6 +167,14 @@ const royalfutReducer = (state = initialState, action) => {
     console.log(action);
 
     let localState = null;
+    // if (ls) {
+    //     try {
+    //         localState = ls?.get('localState');
+    //     } catch {
+    //         localState = initialState;
+    //     }
+    // }
+
     if (ls?.get('localState')) {
         localState = ls.get('localState');
     }
