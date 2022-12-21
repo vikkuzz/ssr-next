@@ -21,7 +21,7 @@ const PriceCoupon = () => {
     );
     const stateMethod = useSelector((state) => state.royalfutReducer.method);
     const stateOrder = useSelector(
-        (state) => state.royalfutReducer.createOrder.order
+        (state) => state.royalfutReducer.createOrder
     );
 
     let [textError, setTextError] = useState('');
@@ -102,7 +102,7 @@ const PriceCoupon = () => {
             stateCurrency.title,
             promocode
         );
-        dispatch(userCreateOrder({ order: currentOrder }));
+        dispatch(userCreateOrder(currentOrder));
         setHide(true);
     };
     const handleChangePromo = (e) => {
@@ -119,7 +119,7 @@ const PriceCoupon = () => {
             stateCoins.amount,
             stateCurrency.title
         );
-        dispatch(userCreateOrder({ order: currentOrder }));
+        dispatch(userCreateOrder(currentOrder));
     };
 
     return (

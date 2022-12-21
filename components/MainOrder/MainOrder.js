@@ -30,6 +30,7 @@ import { done } from '../../data-svg/done';
 import Api from '../../Api/Api';
 import { useRouter } from 'next/router';
 import { translates } from '../../locales/locales';
+import { useApplePayButton } from '../../utils/hooks';
 
 const api = new Api();
 
@@ -37,6 +38,7 @@ const MainOrder = ({ havePlatform = true }) => {
     const deliveryOption = React.useRef();
     const paymentOption = React.useRef();
     const platformOption = React.useRef();
+    const paymentBtn = React.useRef();
     const data = useSelector(
         (state) => state.royalfutReducer.stock.deliveryMethods
     );
@@ -354,30 +356,36 @@ const MainOrder = ({ havePlatform = true }) => {
     const paymentOrder = async () => {
         console.log(namePaymentMethod);
         const currentOrder = await api.updateOrder(
-            stateCreateOrder.order.id,
+            stateCreateOrder.id,
             stateUser.token,
             platform.ps ? 'ps4' : 'xbox',
             method.easy ? 'Easy' : 'Manual',
             stateCoins.amount,
             currency.title,
-            stateCreateOrder.order.promoCode || null
+            stateCreateOrder.promoCode || null
         );
+
         dispatch(userCreateOrder(currentOrder));
-        await api
-            .prePay(
-                namePaymentMethod,
-                stateUser.token,
-                stateCreateOrder?.order?.id,
-                stateUser.userLocale,
-                platform.ps ? 'ps4' : 'xbox',
-                method.easy ? 'Easy' : 'Manual',
-                data[platform === 'Easy' ? 0 : 1].data[1].pricePerCurrencyMap
-                    .EUR,
-                stateCoins.amount,
-                stateCreateOrder?.order?.promoCode || null,
-                stateUser.email
-            )
-            .then((res) => (document.location.href = res.acquiringLink));
+
+        if (namePaymentMethod === 'apple') {
+            console.log('yes, its apple');
+        } else {
+            await api
+                .prePay(
+                    namePaymentMethod,
+                    stateUser.token,
+                    stateCreateOrder?.id,
+                    stateUser.userLocale,
+                    platform.ps ? 'ps4' : 'xbox',
+                    method.easy ? 'Easy' : 'Manual',
+                    data[platform === 'Easy' ? 0 : 1].data[1]
+                        .pricePerCurrencyMap.EUR,
+                    stateCoins.amount,
+                    stateCreateOrder?.promoCode || null,
+                    stateUser.email
+                )
+                .then((res) => (document.location.href = res.acquiringLink));
+        }
     };
 
     const timeoutOption = async (
@@ -401,6 +409,13 @@ const MainOrder = ({ havePlatform = true }) => {
             setAllSteps(checkedStep);
         }, 200);
     };
+
+    useApplePayButton(
+        stateCreateOrder.id,
+        currency.title,
+        stateCreateOrder.overallPrice,
+        paymentBtn
+    );
 
     return (
         <div className={`${styles.mainorder}`}>
@@ -1093,6 +1108,7 @@ const MainOrder = ({ havePlatform = true }) => {
                         </div>
                         <div className={`${styles.mainorder_btn_wrapper} `}>
                             <button
+                                ref={paymentBtn}
                                 onClick={() => {
                                     if (stateIsAuth) {
                                         paymentOrder();

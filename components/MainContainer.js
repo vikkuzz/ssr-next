@@ -116,6 +116,13 @@ function MainContainer({
                 'Total after clear = ' + (_lsTotal / 1024).toFixed(2) + ' KB'
             );
         }
+
+        const url = 'https://applepay.cdn-apple.com/jsapi/v1/apple-pay-sdk.js';
+
+        const script = document.createElement('script');
+        script.src = url;
+
+        document.body.appendChild(script);
     }, []);
 
     useEffect(() => {

@@ -59,7 +59,7 @@ export default class Api {
         currency,
         promoCode = null
     ) => {
-        let urlForCoupon = 'https://royalfut.com';
+        let urlForCoupon = 'https://test-royalfut.com';
 
         const res = await fetch(`${urlForCoupon}/api/order/${orderId}`, {
             method: 'PUT',

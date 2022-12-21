@@ -65,7 +65,7 @@ function Header() {
                     currentCurrencyState.title,
                     stateCoins.amount
                 );
-                dispatch(userCreateOrder(createOrder));
+                dispatch(userCreateOrder(createOrder.order));
             }, 1000);
         }
     }, [stateIsAuth]);

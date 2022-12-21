@@ -41,7 +41,7 @@ const Breadcrumbs = () => {
                         });
                         console.log(link);
                         return (
-                            <div>
+                            <div key={i}>
                                 <Link href={link}>
                                     <a className={`${styles.breadcrumbs_link}`}>
                                         {t[elem]}
