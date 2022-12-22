@@ -109,14 +109,17 @@ function Header() {
                 <Link href="/">
                     <a className={styles.header__logo}>
                         ROYALFUT
-                        <div className={styles.header__sublogo}>
+                        {/* <div className={styles.header__sublogo}>
                             {translates[router.locale].sublogo2}
-                        </div>
+                        </div> */}
                     </a>
                 </Link>
             </div>
             <div className={styles.header__center}>
-                <Dropdown />
+                <div className="from-1025-to-1900">
+                    <Dropdown />
+                </div>
+
                 <div className={`${styles.header_links_wrapper}`}>
                     <div
                         className={`${styles.header__preset_orders} from-1025-to-1900`}

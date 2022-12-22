@@ -2,10 +2,15 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { insta } from '../../data-svg/insta';
+import { twitter } from '../../data-svg/twitter';
+import { youtube } from '../../data-svg/youtube';
 import { translates } from '../../locales/locales';
 import { changePlatform, order } from '../../redux/actions/royalfutActions';
 
 import styles from '../../styles/Footer.module.scss';
+import Dropdown from '../Dropdown';
+import SvgContainer from '../SvgContainer';
 
 const Footer = () => {
     const locale = useSelector((state) => state.royalfutReducer.locale);
@@ -26,30 +31,40 @@ const Footer = () => {
                         Yasha Limited, Office 908H Nicolaou Pentadromos Center,
                         Limassol, Cyprus
                     </div>
-                    <div className={`${styles.footer__svg_wrapper}`}>
-                        <div
-                            className={`${styles.footer__mastercard} ${styles.footer_svg}`}
-                        ></div>
-                        <div
-                            className={`${styles.footer__veryvisa} ${styles.footer_svg}`}
-                        ></div>
-                        <div
-                            className={`${styles.footer__visa} ${styles.footer_svg}`}
-                        ></div>
-                        <div
-                            className={`${styles.footer__master} ${styles.footer_svg}`}
-                        ></div>
-                        <div
-                            className={`${styles.footer__apple} ${styles.footer_svg}`}
-                        ></div>
+                    <div
+                        className={
+                            `${styles.footer_icons_container}` +
+                            ' from-375-to-1024'
+                        }
+                    >
+                        <Dropdown />
                     </div>
-                    <Link href={'/'} locale={locale.title}>
-                        <a
-                            className={`${styles.footer_info_font} ${styles.footer_flexstart}`}
-                        >
-                            ROYALFUT 2020-2023
-                        </a>
-                    </Link>
+                    <div className="from-1025-to-1900 column">
+                        <div className={`${styles.footer__svg_wrapper}`}>
+                            <div
+                                className={`${styles.footer__mastercard} ${styles.footer_svg}`}
+                            ></div>
+                            <div
+                                className={`${styles.footer__veryvisa} ${styles.footer_svg}`}
+                            ></div>
+                            <div
+                                className={`${styles.footer__visa} ${styles.footer_svg}`}
+                            ></div>
+                            <div
+                                className={`${styles.footer__master} ${styles.footer_svg}`}
+                            ></div>
+                            <div
+                                className={`${styles.footer__apple} ${styles.footer_svg}`}
+                            ></div>
+                        </div>
+                        <Link href={'/'} locale={locale.title}>
+                            <a
+                                className={`${styles.footer_info_font} ${styles.footer_flexstart}`}
+                            >
+                                ROYALFUT 2020-2023
+                            </a>
+                        </Link>
+                    </div>
                 </div>
             </div>
             <div className={`${styles.footer_secondcolumn}`}>
@@ -175,6 +190,57 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className={'row from-375-to-1024'}>
+                <SvgContainer
+                    item={insta}
+                    color="white"
+                    hover="gold"
+                    classStyle={'width25'}
+                />
+                <SvgContainer
+                    item={twitter}
+                    color="white"
+                    hover="gold"
+                    classStyle={'width25'}
+                />
+                <SvgContainer
+                    item={youtube}
+                    color="white"
+                    hover="gold"
+                    classStyle={'width25'}
+                />
+            </div>
+            <div
+                className={
+                    `${styles.footer_icons_container}` +
+                    ' from-375-to-1024 column'
+                }
+            >
+                <div className={`${styles.footer__svg_wrapper}`}>
+                    <div
+                        className={`${styles.footer__mastercard} ${styles.footer_svg}`}
+                    ></div>
+                    <div
+                        className={`${styles.footer__veryvisa} ${styles.footer_svg}`}
+                    ></div>
+                    <div
+                        className={`${styles.footer__visa} ${styles.footer_svg}`}
+                    ></div>
+                    <div
+                        className={`${styles.footer__master} ${styles.footer_svg}`}
+                    ></div>
+                    <div
+                        className={`${styles.footer__apple} ${styles.footer_svg}`}
+                    ></div>
+                </div>
+                <Link href={'/'} locale={locale.title}>
+                    <a
+                        className={`${styles.footer_info_font} ${styles.footer_flexstart}`}
+                    >
+                        ROYALFUT 2020-2023
+                    </a>
+                </Link>
             </div>
             <div className={`${styles.footer_thirdcolumn} from-1025-to-1900`}>
                 <div className={`${styles.footer_header}`}>{t.footerInfo}</div>

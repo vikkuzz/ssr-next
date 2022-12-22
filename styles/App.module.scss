@@ -1,10 +1,11 @@
 .App {
   display:flex;
   flex-direction: column;
-  padding: 24px;
+  padding: 16px;
   z-index: 1;
   width: 100vw;
-  padding-top: 23vmin;  
+  padding-top: 72px;  
+  //padding-top: 23vmin;  
   min-height: 100%;
   justify-content: space-between;
 
@@ -227,4 +228,44 @@
     font-size: 14px;
     line-height: 18px;
   }
+}
+.buy_btn{
+  justify-content: center;
+  align-items: center;
+  padding: 20px 64px;
+  gap: 8px;
+  width: 343px;
+  height: 56px;
+  background: linear-gradient(265.73deg, #A82DF9 0%, #6678E9 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: capitalize;
+}
+.calc_btn{
+  position: relative;
+  background: #12142b;
+  padding:16px 60px;
+}
+.calc_btn:before{
+  
+    content: '';
+    position: absolute;
+    top: -2px; right: -2px; bottom: -2px; left: -2px;
+    z-index: -1;
+    border-radius: 12px;
+    background: linear-gradient(265.73deg, #A82DF9 0%, #6678E9 100%);
+  
+}
+.wrapper_btns{
+  padding: 28px 0;
+  gap: 16px;
+  flex-direction: column;
 }

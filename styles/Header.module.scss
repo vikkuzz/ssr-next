@@ -2,7 +2,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    padding: 22px 24px 0;
+    padding: 32px 27px 0 16px;
     height: auto;
     background: transparent;
     z-index: 10;
@@ -39,9 +39,10 @@
     align-items: flex-start;
     font-family: 'BebasNeue';
     font-style: normal;
-    font-size: 24px;
-    line-height: 24px;
+    font-size: 34px;
+    line-height: 30px;
     width: auto;
+    letter-spacing: 0.5px;
     @media(min-width: 1024px){
         font-family: 'BebasNeue';
         font-style: normal;
@@ -99,8 +100,9 @@
 }
 .header__divider{
     width:30px;
-    height: 2px;
+    height: 3px;
     background: white;
+    border-radius: 33px;
 }
 .header__burger_center{
     margin: 4px 0;
@@ -208,6 +210,10 @@
     flex-direction: column;
     gap: 6px;
     top: 0;
+}
+.header__header_bottom{
+    width: 18px;
+    align-self: flex-start;
 }
 @media(min-width:1025px){
     .header{

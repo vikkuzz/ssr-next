@@ -165,7 +165,7 @@ function MainContainer({
                     defer
                 ></script>
             </Head>
-            {bodyBackgr != '404' ? (
+            {/* {bodyBackgr != '404' ? (
                 <div dir={stateDir} className={'body__backgr'}></div>
             ) : (
                 <div dir={stateDir} className="not-found__background">
@@ -193,7 +193,7 @@ function MainContainer({
                         <img decoding="async" />
                     </picture>
                 </div>
-            )}
+            )} */}
             <div className={`error ${error == '' ? '' : styles.showError}`}>
                 {error}
             </div>

@@ -43,14 +43,15 @@
 }
 .aside_content{
     background-color: transparent;
-    padding: 29px 0 16px;
+    //padding: 29px 0 16px;
+    padding: 12px 0;
     display: block;
     @media (min-width:1025px) {
         //width: 428px;
     }
 }
 .aside_logo{
-    width: 102px;
+    width: 25px;
     height: 25px;
     background-color: transparent;
 }
@@ -72,14 +73,15 @@
     white-space: nowrap;
     font-family: 'Helvetica Neue',arial,sans-serif;
     font-size: 4vmin;
-    line-height: 4.5333333333vmin;
-    letter-spacing: -.02em;
+    //line-height: 4.5333333333vmin;
+    //letter-spacing: -.02em;
     text-align: center;
     gap: 4px;
-    padding-bottom: 3vmin;
-    border-bottom: 1px solid rgba(129,129,148,.2);
+    //padding-bottom: 3vmin;
+    //border-bottom: 1px solid rgba(129,129,148,.2);
     font-size: 18px;
-    line-height: 18px;
+    line-height: 20px;
+    align-items: center;
 
     @media (min-width: 1024px) {
         font-size: 15px;
@@ -90,6 +92,7 @@
 .aside_rate_text b{
     width: auto;
     background-color: transparent;
+    
 }
 .aside_reviews{
     width: auto;
@@ -211,8 +214,10 @@
     flex-direction: column;
     width: 100%;
     //background-color: rgba(255, 255, 255, 0.2);
-    background-color: rgb(65 67 85);
-    padding-bottom: 16px;
+    //background-color: rgb(65 67 85);
+    //padding-bottom: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
 
     @media (min-width:1025px) {
         width: 428px;

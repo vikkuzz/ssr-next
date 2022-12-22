@@ -96,13 +96,13 @@ const Aside = () => {
         }
     }
 
-    useEffect(() => {
-        setTimeout(() => {
-            slideWrapper.current.style.height = `${
-                slider.current.children[0].scrollHeight + 24
-            }px`;
-        }, 500);
-    }, []);
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         slideWrapper.current.style.height = `${
+    //             slider.current.children[0].scrollHeight + 24
+    //         }px`;
+    //     }, 500);
+    // }, []);
 
     useEffect(() => {
         let result = [];
@@ -134,57 +134,57 @@ const Aside = () => {
     }, [stateStock.rate]);
 
     useEffect(() => {
-        console.log(slide.current.scrollLeft);
+        //console.log(slide.current.scrollLeft);
     }, [slideWrapper?.current?.scrollLeft]);
 
-    useEffect(() => {
-        console.log(children);
-        //console.log(slide.current, slide.current.scrollHeight);
-        slideWrapper.current.style.height = `${slider.current.children[children].scrollHeight}px`;
-        slider.current.style.transform = `translateX(-${
-            slider.current.children[1].scrollWidth * children
-        }px)`;
-        slider.current.style.transition = 'all 0.5s linear';
+    // useEffect(() => {
+    //     console.log(children);
+    //     //console.log(slide.current, slide.current.scrollHeight);
+    //     slideWrapper.current.style.height = `${slider.current.children[children].scrollHeight}px`;
+    //     slider.current.style.transform = `translateX(-${
+    //         slider.current.children[1].scrollWidth * children
+    //     }px)`;
+    //     slider.current.style.transition = 'all 0.5s linear';
 
-        if (children === 0) {
-            // setTimeout(() => {
-            //     slider.current.style.transition = 'all 0.5s linear';
-            //     slider.current.style.transform = `translateX(-${
-            //         slider.current.children[1].scrollWidth * children
-            //     }px)`;
-            // }, 500);
-            slider.current.style.transition = 'all 0s linear';
-            setChildren(16);
-        }
-        // if (children <= 1) {
-        //     slider.current.style.transition = 'all 0s linear';
-        //     setChildren(16);
-        //     setTimeout(
-        //         () => (slider.current.style.transition = 'all 0.5s linear'),
-        //         200
-        //     );
-        //     setTimeout(() => setChildren((prevState) => prevState + 1), 200);
-        // }
+    //     if (children === 0) {
+    //         // setTimeout(() => {
+    //         //     slider.current.style.transition = 'all 0.5s linear';
+    //         //     slider.current.style.transform = `translateX(-${
+    //         //         slider.current.children[1].scrollWidth * children
+    //         //     }px)`;
+    //         // }, 500);
+    //         slider.current.style.transition = 'all 0s linear';
+    //         setChildren(16);
+    //     }
+    //     // if (children <= 1) {
+    //     //     slider.current.style.transition = 'all 0s linear';
+    //     //     setChildren(16);
+    //     //     setTimeout(
+    //     //         () => (slider.current.style.transition = 'all 0.5s linear'),
+    //     //         200
+    //     //     );
+    //     //     setTimeout(() => setChildren((prevState) => prevState + 1), 200);
+    //     // }
 
-        if (children === 17) {
-            slider.current.style.transition = 'all 0s linear';
-            setChildren(2);
-        }
+    //     if (children === 17) {
+    //         slider.current.style.transition = 'all 0s linear';
+    //         setChildren(2);
+    //     }
 
-        //console.log(slider);
-        interval = setInterval(() => {
-            setChildren((prevState) => prevState + 1);
-        }, 5000);
-        return () => {
-            clearInterval(interval);
-        };
-    }, [children]);
+    //     //console.log(slider);
+    //     interval = setInterval(() => {
+    //         setChildren((prevState) => prevState + 1);
+    //     }, 5000);
+    //     return () => {
+    //         clearInterval(interval);
+    //     };
+    // }, [children]);
 
-    useEffect(() => {
-        console.log(loop);
+    // useEffect(() => {
+    //     console.log(loop);
 
-        console.log(slider.current.children[0].scrollHeight);
-    }, [loop]);
+    //     console.log(slider.current.children[0].scrollHeight);
+    // }, [loop]);
     let count = 0;
 
     const clickLeft = () => {
@@ -271,7 +271,7 @@ const Aside = () => {
             <div className={`${styles.aside_wrapper}`}>
                 <div className={`${styles.aside_header_wrapper}`}>
                     <div className={`${styles.aside_content}`}>
-                        <div className={`${styles.aside_title}`}>
+                        {/* <div className={`${styles.aside_title}`}>
                             <img
                                 className={`${styles.aside_logo}`}
                                 src={'/img/trustpilot-logo.svg'}
@@ -289,8 +289,12 @@ const Aside = () => {
                                     />
                                 );
                             })}
-                        </div>
+                        </div> */}
                         <div className={`${styles.aside_rate_text}`}>
+                            <img
+                                className={`${styles.aside_logo}`}
+                                src={'/img/tpstar-logo.svg'}
+                            ></img>
                             TrustScore <b>{stateStock.rate}</b> |{' '}
                             <a
                                 className={`${styles.aside_reviews}`}
@@ -303,7 +307,7 @@ const Aside = () => {
                         </div>
                     </div>
                 </div>
-                <div ref={slideWrapper} className={`${styles.aside_slider}`}>
+                {/* <div ref={slideWrapper} className={`${styles.aside_slider}`}>
                     {/* <div
                         onMouseDown={isDown}
                         onMouseMove={isMove}
@@ -350,7 +354,7 @@ const Aside = () => {
                                 </div>
                             );
                         })}
-                    </div> */}
+                    </div> }
                     <div
                         ref={slider}
                         id={'slider'}
@@ -532,9 +536,9 @@ const Aside = () => {
                             type={'button'}
                         ></button>
                     </div>
-                </div>
+                </div> */}
             </div>
-            <div className={`${styles.aside_protect}`}>
+            {/* <div className={`${styles.aside_protect}`}>
                 <a href="https://transparencyreport.google.com/safe-browsing/search?url=https:%2F%2Fwww.royalfut.com">
                     <img
                         className={`${styles.aside_protect_img}`}
@@ -542,7 +546,7 @@ const Aside = () => {
                         src="/img/google-safe.svg"
                     ></img>
                 </a>
-            </div>
+            </div> */}
         </aside>
     );
 };

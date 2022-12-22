@@ -131,10 +131,10 @@
     padding: 0px 8px;
 }
 .dropdown__country_img{
-    padding: 6px;
+   // padding: 6px;
     background: transparent;
-    width: 60px;
-    padding-right: 12px;
+    width: 34px;
+   // padding-right: 12px;
 }
 .dropdown__country_name{
     padding: 6px;
@@ -152,7 +152,7 @@
     background: transparent;
 }
 .dropdown__arrow{
-    background: url('../img/whitearrow.svg');
+    background: url('../img/arrow_drop_down.svg');
     width: 15px;
     height: 15px;
     background-position: center;
@@ -212,6 +212,7 @@
 }
 .locale{
     width: auto;
+    gap: 10px;
 }
 .locale span{
     white-space: nowrap;
@@ -227,6 +228,7 @@
     cursor: pointer;
     max-width: 270px;
     justify-content: flex-end;
+    width: auto;
 }
 .dropdown__links{
     font-size: 18px;
@@ -259,11 +261,11 @@
     padding-right: 10px;
 }
 
-@media(max-width:600px){
-    .dropdown_container{
-        justify-content: center;
-    }
-}
+// @media(max-width:600px){
+//     .dropdown_container{
+//         justify-content: center;
+//     }
+// }
 
 @media(min-width:1025px){
     .locale{
@@ -277,9 +279,19 @@
         justify-content: space-around;
     }
 }
-@media(min-width:1025), (max-width:1250px){
-    .dropdown_container{
-        padding: 0 0 0 20px;
-        justify-content: center;
-    }
+// @media(min-width:1025), (max-width:1250px){
+//     .dropdown_container{
+//         padding: 0 0 0 20px;
+//         justify-content: center;
+//     }
+// }
+.circle{
+    width:25px;
+    height: 25px;
+    max-width: 25px;
+    max-height: 25px;
+    min-width: 25px;
+    min-height: 25px;
+    overflow: hidden;
+    border-radius: 50%;
 }

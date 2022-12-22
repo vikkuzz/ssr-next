@@ -151,25 +151,25 @@ const DropdownLang = () => {
         <div className={`${styles.countries}`}>
             {console.log(lang)}
             <div className={`${styles.locale}`}>
-                <img
-                    className={`${styles.dropdown__country_img}`}
-                    src={`${lang.url}` || localeIcon}
-                />
-                <span className={`from-375-to-1024 bcgr-transparent`}>
+                <div className={`${styles.circle}`}>
+                    <img
+                        className={`${styles.dropdown__country_img}`}
+                        src={`${lang.url}` || localeIcon}
+                    />
+                </div>
+                {/* <span className={`from-375-to-1024 bcgr-transparent`}>
                     {lang.title || 'EN'}
-                </span>
-                <span className={`from-1025-to-1900 bcgr-transparent`}>
+                </span> */}
+                <span className={`bcgr-transparent`}>
                     {lang.country || 'ENGLISH'}
                 </span>
-                <div
-                    className={`${styles.dropdown__arrow} from-1025-to-1900`}
-                />
-            </div>
-            <div className={`${styles.divider} from-375-to-1024`}>|</div>
-            <div className={`${styles.currency} from-375-to-1024`}>
-                {currentCurrency.currency || 'USD'}
                 <div className={`${styles.dropdown__arrow}`} />
             </div>
+            {/* <div className={`${styles.divider} from-375-to-1024`}>|</div> */}
+            {/* <div className={`${styles.currency} from-375-to-1024`}>
+                {currentCurrency.title || 'USD'}
+                <div className={`${styles.dropdown__arrow}`} />
+            </div> */}
         </div>
     );
 };
@@ -314,9 +314,7 @@ const Dropdown = () => {
                 }}
                 onClick={(e) => {
                     e.stopPropagation();
-                    window.innerWidth < 1024
-                        ? onClickBlock(e, countryCurrencyRef)
-                        : null;
+                    onMouseEnterBlock(e, countryRef);
                 }}
                 className={`${styles.dropdown_selects}`}
             >
@@ -329,12 +327,12 @@ const Dropdown = () => {
                 >
                     <DropdownContent data={flagLangs} container={countryRef} />
                 </div>
-                <div
+                {/* <div
                     className={`${styles.dropdown__content} ${styles.remove_back} hide`}
                     ref={countryCurrencyRef}
                 >
                     <DropdownMobile />
-                </div>
+                </div> */}
             </div>
             <div
                 onMouseEnter={(e) => {
@@ -349,9 +347,14 @@ const Dropdown = () => {
                         ? onMouseLeaveBlock(e, currencyRef)
                         : null;
                 }}
-                className={`${styles.dropdown_currency} from-1025-to-1900`}
+                onClick={(e) => {
+                    e.stopPropagation();
+                    onMouseEnterBlock(e, currencyRef);
+                }}
+                className={`${styles.dropdown_currency}`}
+                //className={`${styles.dropdown_currency} from-1025-to-1900`}
             >
-                {currentCurrency.currency || '$'}
+                {currentCurrency.title || 'USD'}
                 <div className={`${styles.dropdown__arrow}`} />
                 <div
                     className={`${styles.dropdown__content} hide`}

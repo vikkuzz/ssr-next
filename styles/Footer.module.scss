@@ -16,18 +16,18 @@
 }
 .footer_firstcolumn{
     flex-direction: column;
-    padding-bottom: 50px;
+    //padding-bottom: 50px;
     height: auto;
 }
 .footer_secondcolumn{
     flex-direction: row;
-    padding-bottom: 24px;
+    //padding-bottom: 24px;
     align-items: flex-start;
     height: auto;
 }
 .footer_thirdcolumn{
     flex-direction: column;
-    padding-bottom: 24px;
+    //padding-bottom: 24px;
     height: auto;
 }   
 .footer_info_font{
@@ -45,7 +45,7 @@
     flex-direction: column;
 }
 .footer_info_item{
-    padding-bottom: 12px;
+    //padding-bottom: 12px;
     justify-content: flex-start;
 }
 .footer__mastercard{
@@ -103,6 +103,20 @@
 .footer_platform_item{
     height: auto;
 }
+.footer_icons_container{
+    padding: 50px 0;
+    //width: auto;
+    justify-content: flex-start;
+    align-self: flex-start;
+    gap: 3vmin;
+
+}
+
+@media (max-width:1024px) {
+    .footer_secondcolumn{
+        padding-bottom: 50px;
+    }
+}
 @media(min-width:1025px){
   
   .footer_firstcolumn{
@@ -113,9 +127,11 @@
     max-width: 340px;
     align-items: center;
     flex-direction: column;
+    padding-bottom: 24px;
   }
   .footer_thirdcolumn{
     max-width: 340px;
+    padding-bottom: 24px;
   }
   .footer__svg_wrapper{
     margin-bottom: 62px;

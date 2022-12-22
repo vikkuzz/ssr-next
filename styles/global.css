@@ -33,15 +33,14 @@
     font-weight: 700;
   }
   
-  
   body, * {
     margin: 0;
-    font-family: 'BebasNeue', 'BebasRu';
+    font-family: 'Montserrat';
     color: white;
     background-color: #12142b;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /*justify-content: center;
+    align-items: center;*/
     width: 100%;
     height: auto;
     box-sizing: border-box;
@@ -72,7 +71,7 @@
     display: none;
   
   }
-  .body__backgr{
+  /* .body__backgr{
     position: fixed;
     background:  url('/img/bg-.jpg') center;
     background-repeat: no-repeat;
@@ -85,10 +84,10 @@
     left: 0;
     height: 100%;
     /* width: 375px;
-    left: -100px; */
-  }
+    left: -100px; 
+  } */
   
-  .body__backgr[dir='rtl']{
+  /* .body__backgr[dir='rtl']{
     position: fixed;
     background:  url('/img/bg-.jpg') center;
     background-repeat: no-repeat;
@@ -100,8 +99,8 @@
     top: 0;
     height: 100%;
     transform: scale(-1,1);
-  }
-  .not-found__background {
+  } */
+  /* .not-found__background {
     position: absolute;
     left: 0;
     top: -12.5333333333vmin;
@@ -128,7 +127,7 @@
       background-size: contain;
       background-repeat: no-repeat;
       pointer-events: none;
-  }
+  } */
   h1{
     font-weight: 400;
     font-size: 10.8vmin;
@@ -374,7 +373,17 @@ input{
       animation-delay: -0.125s;
     }
 
-
+.column{
+  flex-direction: column;
+}
+.width25{
+  width: 25px;
+}
+.row{
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 30px;
+}
 
 /* accordion */
 .site-collapse-custom-collapse{

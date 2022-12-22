@@ -1,0 +1,36 @@
+.h1_white_text{
+    font-family: 'Montserrat';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 110%;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background-color: transparent;
+}
+.h1_container{
+    position: relative;
+    margin-bottom: 80px;
+}
+.h1{
+    position: absolute;
+    bottom: -25px;
+    font-weight: 800;
+    font-size: 52px;
+    line-height: 54px;
+    background-image: linear-gradient(265.73deg, #A82DF9 0%, #6678E9 100%);
+    color: transparent;
+    background-clip: text;    
+    font-style: italic;
+    text-transform: uppercase;
+}
+.under_h1{
+    font-family: 'Montserrat';
+    font-style: italic;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    bottom: -67px;
+}

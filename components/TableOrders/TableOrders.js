@@ -11,7 +11,7 @@ import TableItem from './TableItem';
 
 const api = new Api();
 
-const Loader = () => {
+export const Loader = () => {
     return (
         //<svg viewBox="0 0 866 866" xmlns="http://www.w3.org/2000/svg">
         <svg
