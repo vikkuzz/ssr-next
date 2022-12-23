@@ -780,7 +780,7 @@ export const translates = {
             "We appreciate your time. Our interface and support are constantly being improved to make your orders run smoothly and quickly. Just a couple of clicks – and we'll do the rest.",
         infoBlockText4:
             "If, after the purchase, you can't use the coins, or if there is any other reason why you can't get coins for your account, a refund is guaranteed.",
-        hwd: 'HOW DOES DELIVERY WORK?',
+        hwd: 'How does delivery work?',
         h1_1: 'Safest option to ',
         h1_2: 'buy FIFA 23 coins',
         cryptoWith: '',
@@ -865,7 +865,7 @@ export const translates = {
         pageCoinsFillBackup: 'FILL THE BACKUP CODE FIELD',
         pageCoinsAfter:
             "After successful payment of the order you'll be taken to page with two fields: e-mail and password. Please, fulfill these fields with your EA account details.",
-        pageCoinsFill: 'FILL THE REQUIRED DETAILS',
+        pageCoinsFill: 'Fill the required details',
         pagePaymentMethodTitle: 'PACKAGE OFFERS',
         pageCoinsYourPlatform: 'Your platform:',
         platformName: 'Your platform:',

@@ -310,10 +310,11 @@ input{
 }
 #player{
   margin-top: 2.6666666667vmin;
-    padding: 10px;
+    /* padding: 10px; */
     width: 100%;
     height: 53.3333333333vmin;
-    background: #414355;
+    /* background: #414355; */
+    border-radius: 28px;
 }
   .body__backgr[dir='rtl']{
     transform: scale(-1,1);

@@ -136,6 +136,13 @@ const Howdelivery = () => {
             <div className={`${styles.how_title}`}>
                 {translates[router.locale].hwd}
             </div>
+
+            <div
+                id="player"
+                ref={easy}
+                className={`${styles.how_yt_wrapper}`}
+                autoPlay={1}
+            ></div>
             <div className={`${styles.how_container_content}`}>
                 <div className={`${styles.how_tabs_wrapper}`}>
                     <div className={`${styles.how_btn_wrapper}`}>
@@ -208,12 +215,6 @@ const Howdelivery = () => {
                         </button>
                     </div>
                 </div>
-                <div
-                    id="player"
-                    ref={easy}
-                    className={`${styles.how_yt_wrapper}`}
-                    autoPlay={1}
-                ></div>
             </div>
         </div>
     );
