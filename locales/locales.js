@@ -1087,7 +1087,7 @@ export const translates = {
         commentUrl: 'https://uk.trustpilot.com/review/royalfut.com',
         comfortMethodName: 'Comfort trade',
         marketMethodName: 'Player Auction',
-        marketMethodWhat: 'HOW DOES IT WORK?',
+        marketMethodWhat: 'How it works',
         blackFriday:
             'Team of the Year - <span class="color">20% off</span> for deals price - use the promo code: <span class="color">TOTY</span>',
         totsPromoText:

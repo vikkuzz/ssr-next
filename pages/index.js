@@ -10,6 +10,7 @@ import { Router, useRouter } from 'next/router';
 import { seoTags } from '../data-elements/seoTags';
 import MainCover from '../components/MainCover/MainCover';
 import H1 from '../components/H1/H1';
+import SpecialOffer from '../components/SpecialOffer/SpecialOffer';
 
 const Index = () => {
     const router = useRouter();
@@ -40,8 +41,25 @@ const Index = () => {
                             className={`${styles.calc_btn} ${styles.buy_btn}`}
                         >
                             calculator
+                            <img
+                                className={`${styles.calc_icon}`}
+                                src="/img/calc.svg"
+                            />
                         </button>
                     </div>
+                    <div className={`${styles.info_method}`}>
+                        <a
+                            href="#deliveryMain"
+                            className={`${styles.method_info}`}
+                        >
+                            <span className={`${styles.info_text}`}>
+                                {translates[router.locale].marketMethodWhat}
+                            </span>
+                            <img src="/img/what-question.svg" />
+                        </a>
+                    </div>
+                    <SpecialOffer />
+                    <Howdelivery />
                 </div>
 
                 {/* <Aside /> */}

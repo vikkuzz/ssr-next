@@ -1,0 +1,98 @@
+.offer_container{
+    flex-direction: column;
+    gap: 24px;
+}
+.offer_content{
+    position: relative;
+    flex-direction: column;
+    background: #2B2D43;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4);
+    border-radius: 28px;
+    overflow: hidden;
+}
+.offer_h{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+    background: inherit;
+}
+.offer_content_text{
+    flex-direction: column;
+    background: #2B2D43;
+    padding: 28px 20px;
+    z-index: 1;
+}
+.offer_title{
+    background: inherit;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    padding-bottom: 8px;
+}
+.offer_text{
+    background: inherit;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.6);
+}
+.goto{
+    margin: 16px 0;
+}
+.buy_btn{
+    justify-content: center;
+    align-items: center;
+    padding: 20px 64px;
+    gap: 8px;
+    height: 56px;
+    background: linear-gradient(265.73deg, #A82DF9 0%, #6678E9 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: capitalize;
+  }
+  .calc_btn{
+    position: relative;
+    background: #2B2D43    ;
+    padding:16px 24px;
+  }
+  .calc_btn:before{  
+      content: '';
+      position: absolute;
+      top: -2px; right: -2px; bottom: -2px; left: -2px;
+      z-index: -1;
+      border-radius: 12px;
+      background: linear-gradient(265.73deg, #A82DF9 0%, #6678E9 100%);  
+  }
+  .copy_icon{
+    background-color: transparent;
+    width: auto;
+    align-self: flex-end;
+  }
+  .promocode_text{
+    background-color: transparent;
+    justify-content: center;
+  }
+.offer_timer{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: #349F5E;
+    padding: 6px;
+    width: auto;
+    border-radius: 50%;
+    
+}
