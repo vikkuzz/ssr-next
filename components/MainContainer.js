@@ -135,6 +135,11 @@ function MainContainer({
         <>
             <Head>
                 <link rel="manifest" href="/manifest.json" />
+                <link
+                    rel="preload"
+                    as="image"
+                    href="/img/footballer_cover.png"
+                ></link>
                 <meta
                     keywords={
                         'royalfut, FIFA 23, FIFA 23 coins, FIFA 23 players' +
