@@ -196,10 +196,24 @@ const Howdelivery = () => {
                                 id="-"
                                 className={`${styles.how_step_img}`}
                                 alt="back"
-                                src="/img/arrow-left.svg"
+                                src="/img/arrow_circle_right.svg"
                             ></img>
                         </button>
-                        {step + '/' + 4}
+                        <span
+                            className={`${styles.how_step_num} ${styles.how_text}`}
+                        >
+                            {step}
+                        </span>
+                        <span
+                            className={`${styles.how_step_slash} ${styles.how_text}`}
+                        >
+                            /
+                        </span>
+                        <span
+                            className={`${styles.how_after_slash} ${styles.how_text}`}
+                        >
+                            4
+                        </span>
                         <button
                             className={`${styles.how_step_btn}`}
                             id="+"
@@ -208,9 +222,9 @@ const Howdelivery = () => {
                         >
                             <img
                                 id="+"
-                                className={`${styles.how_step_img}`}
+                                className={`${styles.how_step_img} ${styles.how_step_img_transform}`}
                                 alt="front"
-                                src="/img/arrow-right-white.svg"
+                                src="/img/arrow_circle_right.svg"
                             ></img>
                         </button>
                     </div>

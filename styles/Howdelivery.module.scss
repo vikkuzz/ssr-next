@@ -106,7 +106,8 @@
 .how_step_img{
     background-color: transparent;
     border: none;
-    width: 6.4vmin;
+    //width: 6.4vmin;
+    width: 40px;
 
     @media (min-width:1025px) {
         width: 28px;
@@ -116,7 +117,8 @@
     background-color: transparent;
     border: none;
     width: auto;
-    padding: 0 5vmin;
+    padding: 0 28px;
+    //padding: 0 5vmin;
     user-select: none;
 
     @media (min-width:1025px) {
@@ -159,9 +161,23 @@
     //padding-top: 6.6vmin;
     padding-top: 64px;
     justify-content: center;
+    gap: 8px;
+    align-items: center;
 
     @media (min-width:1025px) {
         font-size: 24px;
         padding-top: 25px;
     }
+}
+.how_text{
+    background-color: transparent;
+    width: auto;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+}
+.how_step_img_transform{
+    transform: rotate(180deg);
 }
