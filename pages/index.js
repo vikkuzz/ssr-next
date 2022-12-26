@@ -60,6 +60,7 @@ const Index = () => {
                     </div>
                     <SpecialOffer />
                     <Howdelivery />
+                    <TextBlockContainer />
                 </div>
 
                 {/* <Aside /> */}
