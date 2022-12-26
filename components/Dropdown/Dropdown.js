@@ -79,7 +79,7 @@ const DropdownCurrencyContent = ({ data }) => {
     };
 
     return (
-        <div className={`${styles.dropdown__scroll}`}>
+        <div className={`${styles.dropdown__scroll} ${styles.drop_currency}`}>
             {data.map((el) => {
                 return (
                     <button
@@ -88,11 +88,17 @@ const DropdownCurrencyContent = ({ data }) => {
                         className={`${styles.dropdown__content_item}`}
                         onClick={changeCurrency}
                     >
+                        <img
+                            id={el.title}
+                            className={`${styles.dropdown__content_item_img}`}
+                            src={el.url}
+                        />
                         <div
                             id={el.title}
                             className={`${styles.dropdown__content_item_title_country}`}
                         >
-                            {`${el.title} ${el.currency}`}
+                            {`${el.title}`}
+                            {/* {`${el.title} ${el.currency}`} */}
                         </div>
                     </button>
                 );
