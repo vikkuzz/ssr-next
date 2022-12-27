@@ -203,7 +203,8 @@ const BurgerMenu = () => {
                             </a>
                         </Link>
                     )}
-                    <MenuItem
+                    <Menu />
+                    {/* <MenuItem
                         text={translates[router.locale].pageCoinsOffers}
                         color={'burger_orange_'}
                     />
@@ -214,9 +215,9 @@ const BurgerMenu = () => {
                     <MenuItem
                         text={translates[router.locale].menuLinkDelivery}
                     />
-                    <MenuItem text={translates[router.locale].menuLinkFaq} />
+                    <MenuItem text={translates[router.locale].menuLinkFaq} /> */}
                 </div>
-                <div className={styles.burger_menu__footer}>
+                {/* <div className={styles.burger_menu__footer}>
                     <div className={styles.burger_menu__icon_wrapper}>
                         <SvgContainer
                             item={twitter}
@@ -249,7 +250,7 @@ const BurgerMenu = () => {
                             classStyle={styles.burger_menu__icon}
                         />
                     </div>
-                </div>
+                </div> */}
             </div>
         );
         // } else if (modal === true && auth !== true && menuContent == 'mobile') {
