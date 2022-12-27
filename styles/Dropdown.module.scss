@@ -22,6 +22,7 @@
     padding: 12px 0;
     align-items: flex-start;
     //height: 300px;
+    z-index: 1;
 }
 .dropdown__scroll{
     //max-height: 260px;
@@ -85,6 +86,11 @@
     position: relative;
     cursor: pointer;
     padding: 0 6px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 20px;
+    line-height: 24px;
+    align-items: center;
 }
 .dropdown__wrapper_content{
     position: absolute;
@@ -221,6 +227,7 @@
 .locale{
     width: auto;
     gap: 10px;
+    align-items: center;
 }
 .locale span{
     white-space: nowrap;
@@ -306,4 +313,11 @@
 }
 .drop_currency{
     width: 200px;
+}
+.burger_drop_lang{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-size: 20px;
+    line-height: 24px;
+    align-items: center;
 }

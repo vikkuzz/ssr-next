@@ -107,7 +107,7 @@ const DropdownCurrencyContent = ({ data }) => {
     );
 };
 
-const DropdownLang = () => {
+const DropdownLang = ({ burger = false }) => {
     //const stock = useSelector((state) => state.royalfutReducer.stock);
     const lang = useSelector((state) => state.royalfutReducer.locale);
     const stateUser = useSelector((state) => state.royalfutReducer.user);
@@ -166,7 +166,11 @@ const DropdownLang = () => {
                 {/* <span className={`from-375-to-1024 bcgr-transparent`}>
                     {lang.title || 'EN'}
                 </span> */}
-                <span className={`bcgr-transparent`}>
+                <span
+                    className={`${
+                        burger && styles.burger_drop_lang
+                    } bcgr-transparent`}
+                >
                     {lang.country || 'ENGLISH'}
                 </span>
                 <div className={`${styles.dropdown__arrow}`} />
@@ -271,7 +275,7 @@ const DropdownMobile = () => {
     );
 };
 
-const Dropdown = () => {
+const Dropdown = ({ burger = false }) => {
     const stock = useSelector((state) => state.royalfutReducer.stock);
     const currentCurrency = useSelector(
         (state) => state.royalfutReducer.currency
@@ -325,7 +329,7 @@ const Dropdown = () => {
                 className={`${styles.dropdown_selects}`}
             >
                 <div className={`${styles.dropdown_countries}`}>
-                    <DropdownLang />
+                    <DropdownLang burger={burger} />
                 </div>
                 <div
                     className={`${styles.dropdown__content} hide`}

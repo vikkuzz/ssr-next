@@ -232,6 +232,8 @@
   padding-left: 0;
   padding-top: 24px;
   padding-bottom: 0;
+  background:transparent;
+  align-items: center;
 }
 
 .signUpCheck{
@@ -258,13 +260,14 @@
   width: auto;
   white-space: nowrap;
   cursor: pointer;
+  background-color: transparent;
 }
 .checkbox_area{
-  border: 1px solid #eab11f;
+  border: 1px solid white;
   width: 25px;
   height: 25px;
   background-color: transparent;
-  border-radius: 2px;
+  border-radius: 6px;
   cursor: pointer;
 }
 .approove{

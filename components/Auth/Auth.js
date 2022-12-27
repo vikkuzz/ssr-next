@@ -45,7 +45,9 @@ const Auth = ({ login }) => {
         <div className={styles.auth}>
             <div className={`${styles.auth_text} ${styles.reg_text}`}>
                 {!login
-                    ? translates[router.locale].modalSocialSigin
+                    ? translates[router.locale].modalSocialOr +
+                      ' ' +
+                      translates[router.locale].modalSocialSigin
                     : translates[router.locale].modalSocialLogin}
             </div>
             <div className={styles.auth_btns_wrapper}>

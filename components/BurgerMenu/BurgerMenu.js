@@ -27,6 +27,8 @@ import { youtube } from '../../data-svg/youtube';
 import Auth from '../Auth';
 import Api from '../../Api/Api';
 import { translates } from '../../locales/locales';
+import Dropdown from '../Dropdown';
+import Menu from '../Menu/Menu';
 const api = new Api();
 
 const BurgerMenu = () => {
@@ -161,6 +163,10 @@ const BurgerMenu = () => {
     if (modal === true && auth === true) {
         menu = (
             <div className={styles.burger_menu} ref={menu}>
+                <div className={`${styles.burger_drop_container}`}>
+                    <Dropdown burger={true} />
+                </div>
+
                 <button
                     onClick={() => dispatch(loginModal(false))}
                     className={`${styles.close_menu}`}
@@ -246,74 +252,80 @@ const BurgerMenu = () => {
                 </div>
             </div>
         );
-    } else if (modal === true && auth !== true && menuContent == 'mobile') {
-        menu = (
-            <div className={styles.burger_menu}>
-                <button
-                    onClick={() => dispatch(loginModal(false))}
-                    className={`${styles.close_menu}`}
-                ></button>
-                <div
-                    className={`${styles.burger_menu__wrapper} ${styles.burger_menu_mobile}`}
-                >
-                    <div onClick={() => setMenuContent('desktop')}>
-                        <MenuItem text={translates[router.locale].menuSignIn} />
-                    </div>
-                    <MenuItem
-                        text={translates[router.locale].pageCoinsOffers}
-                        color={'burger_orange_'}
-                    />
-                    <MenuItem
-                        text={translates[router.locale].menuLinkOrder}
-                        color={'burger_yellow_'}
-                    />
-                    <MenuItem
-                        text={translates[router.locale].menuLinkDelivery}
-                    />
-                    <MenuItem text={translates[router.locale].menuLinkFaq} />
-                </div>
-                <div className={styles.burger_menu__footer}>
-                    <div className={styles.burger_menu__icon_wrapper}>
-                        <SvgContainer
-                            item={twitter}
-                            color={'white'}
-                            hover={'gold'}
-                            classStyle={styles.burger_menu__icon}
-                        />
-                    </div>
-                    <div className={styles.burger_menu__icon_wrapper}>
-                        <SvgContainer
-                            item={whatsapp}
-                            color={'white'}
-                            hover={'gold'}
-                            classStyle={styles.burger_menu__icon}
-                        />
-                    </div>
-                    <div className={styles.burger_menu__icon_wrapper}>
-                        <SvgContainer
-                            item={insta}
-                            color={'white'}
-                            hover={'gold'}
-                            classStyle={styles.burger_menu__icon}
-                        />
-                    </div>
-                    <div className={styles.burger_menu__icon_wrapper}>
-                        <SvgContainer
-                            item={youtube}
-                            color={'white'}
-                            hover={'gold'}
-                            classStyle={styles.burger_menu__icon}
-                        />
-                    </div>
-                </div>
-            </div>
-        );
-        //} else if (modal === true && auth !== true) {
-    } else if (modal === true && auth !== true && menuContent == 'desktop') {
+        // } else if (modal === true && auth !== true && menuContent == 'mobile') {
+        //     menu = (
+        //         <div className={styles.burger_menu}>
+        //             <div className={`${styles.burger_drop_container}`}>
+        //                 <Dropdown burger={true} />
+        //             </div>
+        //             <button
+        //                 onClick={() => dispatch(loginModal(false))}
+        //                 className={`${styles.close_menu}`}
+        //             ></button>
+        //             <div
+        //                 className={`${styles.burger_menu__wrapper} ${styles.burger_menu_mobile}`}
+        //             >
+        //                 <div onClick={() => setMenuContent('desktop')}>
+        //                     <MenuItem text={translates[router.locale].menuSignIn} />
+        //                 </div>
+        //                 <MenuItem
+        //                     text={translates[router.locale].pageCoinsOffers}
+        //                     color={'burger_orange_'}
+        //                 />
+        //                 <MenuItem
+        //                     text={translates[router.locale].menuLinkOrder}
+        //                     color={'burger_yellow_'}
+        //                 />
+        //                 <MenuItem
+        //                     text={translates[router.locale].menuLinkDelivery}
+        //                 />
+        //                 <MenuItem text={translates[router.locale].menuLinkFaq} />
+        //             </div>
+        //             <div className={styles.burger_menu__footer}>
+        //                 <div className={styles.burger_menu__icon_wrapper}>
+        //                     <SvgContainer
+        //                         item={twitter}
+        //                         color={'white'}
+        //                         hover={'gold'}
+        //                         classStyle={styles.burger_menu__icon}
+        //                     />
+        //                 </div>
+        //                 <div className={styles.burger_menu__icon_wrapper}>
+        //                     <SvgContainer
+        //                         item={whatsapp}
+        //                         color={'white'}
+        //                         hover={'gold'}
+        //                         classStyle={styles.burger_menu__icon}
+        //                     />
+        //                 </div>
+        //                 <div className={styles.burger_menu__icon_wrapper}>
+        //                     <SvgContainer
+        //                         item={insta}
+        //                         color={'white'}
+        //                         hover={'gold'}
+        //                         classStyle={styles.burger_menu__icon}
+        //                     />
+        //                 </div>
+        //                 <div className={styles.burger_menu__icon_wrapper}>
+        //                     <SvgContainer
+        //                         item={youtube}
+        //                         color={'white'}
+        //                         hover={'gold'}
+        //                         classStyle={styles.burger_menu__icon}
+        //                     />
+        //                 </div>
+        //             </div>
+        //         </div>
+        //     );
+    } else if (modal === true && auth !== true) {
+        // } else if (modal === true && auth !== true && menuContent == 'desktop') {
         menu = (
             <div
                 className={`${styles.burger_menu_desk} ${animate && 'right_0'}`}
             >
+                <div className={`${styles.burger_drop_container}`}>
+                    <Dropdown burger={true} />
+                </div>
                 <button
                     onClick={() => dispatch(loginModal(false))}
                     className={`${styles.close_menu}`}
@@ -321,43 +333,48 @@ const BurgerMenu = () => {
                 <div className={styles.burger_menu__wrapper}>
                     <div className={styles.auth_container}>
                         <div className={styles.burger_auth_wrapper}>
-                            <div className={styles.burger_btn_wrapper}>
-                                <button
-                                    onClick={onHandleClickRegistration}
-                                    className={`${styles.auth_tab} ${
-                                        loginMenu.registration
-                                            ? ''
-                                            : 'color_gray'
-                                    }`}
-                                    type="button"
-                                >
-                                    {translates[router.locale].modalTabSignUp}
-                                </button>
-                            </div>
-                            <div className={styles.burger_btn_wrapper}>
-                                <button
-                                    onClick={onHandleClickLogin}
-                                    className={`${styles.auth_tab} ${
-                                        !loginMenu.registration
-                                            ? ''
-                                            : 'color_gray'
-                                    }`}
-                                    type="button"
-                                >
-                                    {translates[router.locale].modalTabSignIn}
-                                </button>
+                            <div
+                                className={`${styles.burger_auth_btns_wrapper}`}
+                            >
+                                <div className={styles.burger_btn_wrapper}>
+                                    <button
+                                        onClick={onHandleClickLogin}
+                                        className={`${styles.auth_tab} ${
+                                            loginMenu.registration &&
+                                            'color_gray'
+                                        } ${
+                                            !loginMenu.registration &&
+                                            styles.psevdo
+                                        }`}
+                                        type="button"
+                                    >
+                                        {
+                                            translates[router.locale]
+                                                .modalTabSignIn
+                                        }
+                                    </button>
+                                </div>
+                                <div className={styles.burger_btn_wrapper}>
+                                    <button
+                                        onClick={onHandleClickRegistration}
+                                        className={`${styles.auth_tab} ${
+                                            !loginMenu.registration &&
+                                            'color_gray'
+                                        } ${
+                                            loginMenu.registration &&
+                                            styles.psevdo
+                                        }`}
+                                        type="button"
+                                    >
+                                        {
+                                            translates[router.locale]
+                                                .modalTabSignUp
+                                        }
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        {loginMenu.registration && (
-                            <div className={styles.auth_content_wrapper}>
-                                <Auth />
-                            </div>
-                        )}
-                        {loginMenu.registration && (
-                            <div className={styles.auth_or}>
-                                {translates[router.locale].modalSocialOr}
-                            </div>
-                        )}
+
                         <div className={styles.fieldset_wrapper}>
                             <form className={styles.auth_form}>
                                 <fieldset
@@ -466,6 +483,9 @@ const BurgerMenu = () => {
                                                 className={`social-login__link-check ${
                                                     isChecked && 'gold_font'
                                                 }`}
+                                                onClick={() =>
+                                                    dispatch(loginModal(false))
+                                                }
                                             >
                                                 {
                                                     translates[router.locale]
@@ -521,7 +541,13 @@ const BurgerMenu = () => {
                                 </div>
                             </div>
                         )}
+                        {loginMenu.registration && (
+                            <div className={styles.auth_content_wrapper}>
+                                <Auth />
+                            </div>
+                        )}
                     </div>
+                    <Menu />
                 </div>
             </div>
         );

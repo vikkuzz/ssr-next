@@ -2,7 +2,7 @@
     position: fixed;
     display: flex;
     z-index: 10;
-    background-color: #12142b;
+    //background-color: #12142b;
     width: 100%;
     //height: 100vh;
     flex-direction: column;
@@ -13,13 +13,15 @@
     bottom: 0;
     left: 0;
     justify-content: flex-start;
+    background: rgba(18, 20, 42, 0.8);
+    backdrop-filter: blur(16px);
 }
 .burger_menu_desk{
     justify-content: flex-start;
     position: fixed;
     display: flex;
     z-index: 10;
-    background-color: #12142b;
+    //background-color: #12142b;
     width: 100%;
     //height: 100vh;
     flex-direction: column;    
@@ -27,12 +29,14 @@
     transition: all .3s linear;
     top: 0;
     bottom: 0;
+    background: transparent;
 
     @media (min-width:1025px) {
         max-width: 520px;
     }
 }
 .burger_menu__wrapper{
+    background: transparent;
     display: flex;
     flex-direction: column;
     font-size: 50px;
@@ -50,11 +54,13 @@
 .burger_menu__footer{
     border-top: 1px solid hsla(0,0%,76.9%,.2);
     height: 100px;
+    background: transparent;
 }
 .burger_menu__icon{
     width: 35px;
     fill: white;
     cursor: pointer;
+    background: transparent;
 
     &:hover{
         fill: gold;
@@ -62,15 +68,22 @@
 }
 .burger_btn_wrapper{
     justify-content: flex-start;
+    width: auto;
 }
 .auth_tab{
     border: none;
     height: auto;
-    font-size: 9.6vmin;
+    //font-size: 9.6vmin;
     //font-size: 40px;
     //line-height: 48px;
-    line-height: 12.8vmin;
+    //line-height: 12.8vmin;
     width: auto;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    white-space: nowrap;
 
     @media (min-width:1025px) {
         font-size: 48px;
@@ -79,11 +92,19 @@
 }
 .burger_auth_wrapper{
     height: auto;
-    padding-bottom: 48px;
+    padding-bottom: 28px;
     gap: 20px;
+    justify-content: center;
+}
+.burger_auth_btns_wrapper{
+    justify-content: center;
+    width: 100%;
+    gap: 30px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);;
 }
 .auth_container{
-    padding: 37.3vmin 24px 48px;
+    padding: 92px 24px 48px;
     flex-direction: column;
     overflow: auto;
     justify-content: flex-start;
@@ -114,12 +135,18 @@
     flex-direction: column;
 }
 .auth_text{
-    font-family: 'Montserrat',helvetica,arial,sans-serif;
-    font-weight: 600;
-    font-size: 13px;
-    line-height: 16px;
-    justify-content: flex-start;
+    // font-family: 'Montserrat',helvetica,arial,sans-serif;
+    // font-weight: 600;
+    // font-size: 13px;
+    // line-height: 16px;
+    justify-content: center;
     padding-bottom: 30px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.6);
 
     @media (min-width:1025px) {
         padding-bottom: 16px;
@@ -159,6 +186,7 @@
 .auth_form{
     flex-direction: column;
     display: block;
+    background: transparent;
 }
 .auth_legend{
     font-family: 'Montserrat',helvetica,arial,sans-serif;
@@ -178,10 +206,12 @@
 .auth_fieldset{
     position: relative;
     border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 2px;
+    border-radius: 14px;
     height: auto;
     padding-bottom: 12px;
     padding: 0;
+    background: transparent;
+    background-color: transparent;
 }
 .auth_fieldset:hover legend{
    opacity: 1;
@@ -234,6 +264,7 @@
     justify-content: flex-start;
     height: auto;
     padding-top:20px;
+    background: transparent;
 }
 .ok_pic{
     width: auto;
@@ -268,13 +299,16 @@
     justify-content: flex-start;
     padding-left: 12px;
     color: hsla(0,0%,100%,.8);
+    background-color: transparent;
+    align-items: center;
 }
 .submit_wrapper{
     height: auto;
-    padding-top: 12vmin;
+    padding-top: 34px;
     //padding-top: 50px;
     padding-bottom: 6.4vmin;
     //padding-bottom: 40;
+    background: transparent;
 
     @media (min-width:1025px) {
         padding-top: 24px;
@@ -285,15 +319,30 @@
     border: none;
     border-radius: 2px;
     color: white;
-    font-family: 'BebasRu';
-    font-weight: 600;
+    // font-family: 'BebasRu';
+    // font-weight: 600;
     //font-size: 30px;
-    background-color: #eab11f;
-    padding: 20px;
-	width: 100%;
-	font-size: 24px;
-	line-height: 28px;
-	letter-spacing: 0.6px;
+    // background-color: #eab11f;
+    // padding: 20px;
+	// width: 100%;
+	// font-size: 24px;
+	// line-height: 28px;
+	// letter-spacing: 0.6px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    //font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+
+    justify-content: center;
+    align-items: center;
+    padding: 20px 64px;
+    gap: 8px;
+    height: 56px;
+    background: linear-gradient(265.73deg, #A82DF9 0%, #6678E9 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
 }
 .disabled{
     pointer-events: none;
@@ -316,22 +365,23 @@
 }
 .close_menu{
     cursor: pointer;
-    width: 38px;
-    height: 38px;
+    width: 28px;
+    height: 28px;
+    padding: 0;
     position: absolute;
-    top: 12px;
-    right: 12px;
-    border: 1px solid #e5b713;
-    border-radius: 50%;
-    background-image: url('/img/close-alt.svg');
-    background-size: 25px;
+    top: 27px;
+    right: 21px;
+    border: none;
+    background-image: url(/img/cross_white.svg);
+    background-size: 40px;
     background-repeat: no-repeat;
-    background-position: center;
     background-color: transparent;
+    background-position: -6px -8px;
+
 }
-.close_menu:hover{
-    background-color: #e5b713;
-}
+// .close_menu:hover{
+//     background-color: #e5b713;
+// }
 .burger_mail{
     font-size: 6.4vmin;
 }
@@ -373,4 +423,23 @@
         padding: 252px 32px 48px;
 
     }
+}
+.burger_drop_container{
+    position: absolute;
+    left: 16px;
+    top: 27px;
+    background: transparent;
+}
+.psevdo{
+    position: relative;
+    transition: all .3s;
+}
+.psevdo::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: white;
+    bottom: -12px;
 }
