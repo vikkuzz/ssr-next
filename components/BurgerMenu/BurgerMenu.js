@@ -547,8 +547,10 @@ const BurgerMenu = () => {
                                 <Auth />
                             </div>
                         )}
+                        <div className={`${styles.menu_wrapper}`}>
+                            <Menu />
+                        </div>
                     </div>
-                    <Menu />
                 </div>
             </div>
         );
