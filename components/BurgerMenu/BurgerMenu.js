@@ -29,6 +29,8 @@ import Api from '../../Api/Api';
 import { translates } from '../../locales/locales';
 import Dropdown from '../Dropdown';
 import Menu from '../Menu/Menu';
+import { menuItems, profileItems } from '../../data-elements/menuItems';
+import OptionWithItems from '../OptionWithItems/OptionWithItems';
 const api = new Api();
 
 const BurgerMenu = () => {
@@ -176,6 +178,12 @@ const BurgerMenu = () => {
                 >
                     {auth ? (
                         <div className={styles.login_mobile}>
+                            <div className={`${styles.user_ava_wrapper}`}>
+                                <img
+                                    className={`${styles.user_ava}`}
+                                    src="/img/Mbappe.png"
+                                />
+                            </div>
                             <Link href="/profile">
                                 <a
                                     onClick={() => {
@@ -187,11 +195,20 @@ const BurgerMenu = () => {
                                     {userData.email}
                                 </a>
                             </Link>
-                            <button
+                            {/* <button
                                 onClick={logout}
                                 className={`logout ${styles.logout_menu}`}
                             >
                                 {translates[router.locale].logOut}
+                            </button> */}
+                            <button
+                                className={`${styles.logout_btn} calc_btn buy_btn`}
+                            >
+                                Log Out
+                                <img
+                                    class={`${styles.logout_icon} calc_icon`}
+                                    src="/img/logout.svg"
+                                />
                             </button>
                         </div>
                     ) : (
@@ -203,7 +220,11 @@ const BurgerMenu = () => {
                             </a>
                         </Link>
                     )}
-                    <Menu />
+                    <Menu title={'Profile'} menuItems={profileItems}></Menu>
+                    <Menu title={'Menu'} menuItems={menuItems}>
+                        <OptionWithItems />
+                    </Menu>
+
                     {/* <MenuItem
                         text={translates[router.locale].pageCoinsOffers}
                         color={'burger_orange_'}
