@@ -202,6 +202,7 @@ const BurgerMenu = () => {
                                 {translates[router.locale].logOut}
                             </button> */}
                             <button
+                                onClick={logout}
                                 className={`${styles.logout_btn} calc_btn buy_btn`}
                             >
                                 Log Out

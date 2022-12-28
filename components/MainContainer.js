@@ -1,7 +1,7 @@
 import A from './A';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
 import { translates } from '../locales/locales';
@@ -29,6 +29,7 @@ import Footer from './Footer';
 import flagLangs from '../data-elements/countries';
 import Aside from './Aside';
 import Breadcrumbs from './Breadcrumbs/Breadcrumbs';
+import ScrollToTop from './ScrollToTop/ScrollToTop';
 
 const api = new Api();
 let ls = null;
@@ -41,8 +42,9 @@ function MainContainer({
     customStyle,
     bodyBackgr = null,
 }) {
-    const wrapperModalRef = React.createRef();
-    const shadowModalRef = React.createRef();
+    const wrapperModalRef = useRef();
+    const shadowModalRef = useRef();
+    const scrolltop = useRef();
     const modal = useSelector((state) => state.royalfutReducer.loginModal);
     const error = useSelector((state) => state.royalfutReducer.errorMessage);
     const currentStock = useSelector((state) => state.royalfutReducer.stock);
@@ -118,11 +120,34 @@ function MainContainer({
         }
 
         const url = 'https://applepay.cdn-apple.com/jsapi/v1/apple-pay-sdk.js';
-
         const script = document.createElement('script');
         script.src = url;
-
         document.body.appendChild(script);
+        setTimeout(() => {
+            window.addEventListener('scroll', function () {
+                if (scrollY < 800 && scrolltop.current) {
+                    scrolltop.current.style.opacity = '0';
+                    scrolltop.current.style.width = '0';
+                } else if (scrollY > 800 && scrolltop.current) {
+                    scrolltop.current.style.opacity = '1';
+                    scrolltop.current.style.width = '48px';
+                }
+                // console.log(scrollY, scrolltop);
+                // if (scrolltop.current != null) {
+                //     console.log(scrolltop.current);
+                // }
+            });
+        }, 1000);
+
+        return () => {
+            // window.removeEventListener('scroll', function () {
+            //     if (scrollY < 800 && scrolltop.current) {
+            //         scrolltop.current.style.display = 'none';
+            //     } else if (scrollY >= 800 && scrolltop.current) {
+            //         scrolltop.current.style.display = 'flex';
+            //     }
+            // });
+        };
     }, []);
 
     useEffect(() => {
@@ -229,6 +254,9 @@ function MainContainer({
                     <BurgerMenu />
                 </div>
                 <div className={styles.app_container_content}>{children}</div>
+                <div ref={scrolltop} className={`${styles.scroll_wrapper}`}>
+                    <ScrollToTop />
+                </div>
 
                 <Footer />
             </div>

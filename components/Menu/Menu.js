@@ -20,11 +20,13 @@ const Menu = ({ children, title, menuItems }) => {
             </div>
             <menu className={`${styles.menu}`}>
                 {children}
-                {menuItems.map((el) => (
-                    <Link href={el.url}>
-                        <a className={`${styles.option_btn}`}>{el.name}</a>
-                    </Link>
-                ))}
+
+                {menuItems &&
+                    menuItems.map((el) => (
+                        <Link href={el.url}>
+                            <a className={`${styles.option_btn}`}>{el.name}</a>
+                        </Link>
+                    ))}
             </menu>
         </div>
     );

@@ -19,7 +19,7 @@ const Breadcrumbs = () => {
     console.log(router);
     return (
         <div className={`${styles.breadcrumbs_container}`}>
-            {router.asPath != '/' && (
+            {router.route != '/' && (
                 <Link href={'/'}>
                     <a className={`${styles.breadcrumbs_link}`}>
                         {t.home}

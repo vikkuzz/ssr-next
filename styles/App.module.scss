@@ -317,3 +317,13 @@
 .info_text:hover{
   color: rgb(255, 255, 255);
 }
+.scroll_wrapper{
+  background-color: transparent;
+  width: 0;
+  position: fixed;
+  bottom: 144px;
+  right: 20px;
+  z-index: 2;
+  transition: all 0.5s;
+  opacity: 0;
+}
