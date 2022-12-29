@@ -288,7 +288,8 @@ const Dropdown = ({ burger = false }) => {
         ref.current.classList.toggle('hide');
     }
 
-    useOutsideClick(countryCurrencyRef, 'hide');
+    useOutsideClick(countryRef, 'hide');
+    useOutsideClick(currencyRef, 'hide');
 
     const onClickBlock = (e, ref) => {
         e.stopPropagation();

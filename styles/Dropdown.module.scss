@@ -12,10 +12,12 @@
     width: auto;
 }
 .dropdown__content{
-    width: 100%;
+    width: auto;
     min-width: max-content;
-    position: absolute;
-    top: 100%;
+    //position: absolute;
+    position: fixed;
+    top: 60px;
+    right: 10%;
     background: #545666;
     border: 1px solid #989aa3;
     border-radius: 4px;
@@ -58,8 +60,9 @@
     display: flex;
     border: none;
     align-items: center;
-    min-height: 40px;
-    padding: 0 12px;
+    //min-height: 40px;
+    gap: 12px;
+    padding: 6px 20px;
     justify-content: flex-start;
     max-width: 50%;
     &:hover{
@@ -67,20 +70,20 @@
     }
 }
 .dropdown__content_item_img{
-    margin-right: 20px;
+    //margin-right: 20px;
     width: auto;
     height: auto;
     background-color: transparent;
 }
 .dropdown__content_item_title_country{
     font-family: 'Montserrat';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 12px;
-        line-height: 15px;
-        color: rgba(255, 255, 255, 1);
-        text-transform: none;
-        background: transparent;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 1);
+    text-transform: none;
+    background: transparent;
 }
 .dropdown_currency{
     position: relative;

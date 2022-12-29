@@ -456,13 +456,25 @@ const BurgerMenu = () => {
                                     </button>
                                 </fieldset>
                                 <div className={styles.num_simbols_wrapper}>
-                                    <div
-                                        className={`${styles.ok_pic} ${
-                                            passLength <= 7
-                                                ? styles.cancel
-                                                : styles.ok
-                                        }`}
-                                    ></div>
+                                    <div className={`${styles.ok_pic}`}>
+                                        {' '}
+                                        {
+                                            passLength <= 7 ? (
+                                                <img
+                                                    className="bcgr-transparent"
+                                                    src="/img/cancel.svg"
+                                                />
+                                            ) : (
+                                                <img
+                                                    className="bcgr-transparent"
+                                                    src="/img/okay.svg"
+                                                />
+                                            )
+                                            // passLength <= 7
+                                            //     ? styles.cancel
+                                            //     : styles.ok
+                                        }
+                                    </div>
                                     <span className={styles.simbols_text}>
                                         {
                                             translates[router.locale]

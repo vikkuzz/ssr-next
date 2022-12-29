@@ -1010,7 +1010,7 @@ export const translates = {
         modalSignEmail1: 'email@address.com',
         modalSignPassword: 'Password',
         modalSignSeePassword: 'See password',
-        modalSignSymbols8: 'at least 8 letters',
+        modalSignSymbols8: 'at least 8 characters',
         modalSignSymbols3: 'at least 3 characters long',
         modalSignBtnIn: 'Log in',
         modalSignBtnUp: 'Sign up',
