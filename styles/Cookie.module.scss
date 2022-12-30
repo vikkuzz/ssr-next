@@ -1,0 +1,58 @@
+.cookie{
+    width: 100%;
+    background: #35374B;
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    align-items: flex-start;
+
+}
+.img_wrapper{
+    background-color: transparent;
+    min-width: 47px;
+    max-width: 47px;
+}
+.img{
+    background-color: transparent;
+}
+.cookie_text_wrapper{
+    flex-direction: column;
+    background-color: transparent;
+    align-items: center;
+    text-align: center;
+}
+.cookie_close{
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
+.cookie_close_img{
+    background-color: transparent;
+}
+.cookie_close_img:hover{
+    
+}
+.cookie_text_title{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    justify-content: center;
+    background-color: transparent;
+    padding-bottom: 8px;
+}
+.cookie_text{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    background-color: transparent;
+}

@@ -30,6 +30,7 @@ import flagLangs from '../data-elements/countries';
 import Aside from './Aside';
 import Breadcrumbs from './Breadcrumbs/Breadcrumbs';
 import ScrollToTop from './ScrollToTop/ScrollToTop';
+import Cookie from './Cookie/Cookie';
 
 const api = new Api();
 let ls = null;
@@ -256,6 +257,9 @@ function MainContainer({
                 <div className={styles.app_container_content}>{children}</div>
                 <div ref={scrolltop} className={`${styles.scroll_wrapper}`}>
                     <ScrollToTop />
+                </div>
+                <div className={`${styles.cookie_wrapper}`}>
+                    <Cookie />
                 </div>
 
                 <Footer />

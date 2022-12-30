@@ -327,3 +327,11 @@
   transition: all 0.5s;
   opacity: 0;
 }
+.cookie_wrapper{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  z-index: 2;
+}
