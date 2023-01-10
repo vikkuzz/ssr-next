@@ -1,0 +1,47 @@
+.price_wrapper{
+    padding: 16px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    flex-direction: column;
+    gap: 8px;
+}
+.h_wrapper{
+    justify-content: space-between;
+    background-color: transparent;
+}
+.h{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 0.4);
+    background-color: transparent;
+    width: auto;
+    background-color: transparent;
+}
+.coins_input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px 24px;
+    gap: 8px;
+    width: 190px;
+    height: 56px;
+    background: #1B1D33;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+}
+.coins_input:focus{
+    background: #282B4A;
+    border: 1px solid #8852F2;
+}
+.value_wrapper{
+    background-color: transparent;
+}

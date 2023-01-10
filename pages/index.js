@@ -11,10 +11,15 @@ import { seoTags } from '../data-elements/seoTags';
 import MainCover from '../components/MainCover/MainCover';
 import H1 from '../components/H1/H1';
 import SpecialOffer from '../components/SpecialOffer/SpecialOffer';
+import { useDispatch } from 'react-redux';
+
+import { modalCalc } from '../redux/actions/royalfutActions';
 
 const Index = () => {
     const router = useRouter();
     const seo = seoTags[router.locale];
+    const dispatch = useDispatch();
+
     return (
         <>
             <MainContainer
@@ -38,6 +43,7 @@ const Index = () => {
                             buy coins
                         </button>
                         <button
+                            onClick={() => dispatch(modalCalc(true))}
                             className={`${styles.calc_btn} ${styles.buy_btn}`}
                         >
                             calculator

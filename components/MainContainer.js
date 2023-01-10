@@ -17,6 +17,7 @@ import {
     order,
     userCreateOrder,
     currentLang,
+    modalCalc,
 } from '../redux/actions/royalfutActions';
 
 import styles from '../styles/App.module.scss';
@@ -31,6 +32,7 @@ import Aside from './Aside';
 import Breadcrumbs from './Breadcrumbs/Breadcrumbs';
 import ScrollToTop from './ScrollToTop/ScrollToTop';
 import Cookie from './Cookie/Cookie';
+import ModalCalc from './ModalCalc/ModalCalc';
 
 const api = new Api();
 let ls = null;
@@ -55,6 +57,9 @@ function MainContainer({
         (state) => state.royalfutReducer.currency
     );
     const stateDir = useSelector((state) => state.royalfutReducer.direction);
+    const stateModalCalc = useSelector(
+        (state) => state.royalfutReducer.modalCalc
+    );
     const stateUser = useSelector((state) => state.royalfutReducer.user);
     const stateCoins = useSelector((state) => state.royalfutReducer.coins);
     const stateOrder = useSelector((state) => state.royalfutReducer.order);
@@ -227,6 +232,25 @@ function MainContainer({
             )} */}
             <div className={`error ${error == '' ? '' : styles.showError}`}>
                 {error}
+            </div>
+            <div
+                className={`${styles.modal_calc_wrapper} ${
+                    stateModalCalc === true
+                        ? styles.modal_calc_true
+                        : styles.modal_calc_false
+                }`}
+            >
+                <div className={`${styles.btn_close_wrapper}`}>
+                    <button
+                        onClick={() => dispatch(modalCalc(false))}
+                        className={`${styles.modal_calc_btn_close}`}
+                    ></button>
+                </div>
+
+                <ModalCalc />
+                <div className={`${styles.buy_btn_wrapper}`}>
+                    <button class={`${styles.buy_btn}`}>buy coins</button>
+                </div>
             </div>
 
             <div

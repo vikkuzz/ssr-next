@@ -1,6 +1,7 @@
 .method{
     width: 100%;
-    padding-top: 32px;
+    padding-top: 24px;
+    //padding-top: 32px;
     gap: 10px;
     max-width: 100%;
     flex-direction: column;
@@ -23,36 +24,74 @@
     width: 0;
 }
 .method_label{
-    background-color: transparent;
+    //background-color: transparent;
     cursor: pointer;
     width: auto;
-    padding: 0 16px;
+    padding: 16px;
     user-select: none;
     gap: 12px;
+    align-items: center;
+    background: transparent;
+    border-radius: 16px;
+    //border: 2px solid rgba(255, 255, 255, 0.05);
+}
+.label_checked{
+    background-color: rgba(255, 255, 255, 0.05);
+}
+.label_not_checked{
+    //border: 2px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0px 0px 0px 0.5px #404157 inset;
 }
 .method_label span{
     background-color: transparent;
     width: auto;
     //padding-left: 12px;
     font-size: 18px;
-    white-space: nowrap;
+    //white-space: nowrap;
+    font-family: 'Montserrat';
+    font-style: normal;
+    //font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 0.6);
+}
+.label_checked span{
+    color: white;
 }
 .method_check{
-    width: 12px;
-    height: 12px;
+    width: 25px;
+    height: 25px;
+    min-width: 25px;
+    min-height: 25px;
     border-radius: 50%;
-    box-shadow:  0 0 0 1px inset white;
+    padding: 2px;
+    overflow: hidden;;
+    //box-shadow:  0 0 0 1px inset white;
     transition: all 0.3s linear;
+    border: 1px solid white;
+    align-items: center;
+    justify-content: center;
 }
 .method_radio:checked + .method_check{
-    box-shadow: 0 0 0 1px inset #eab11f, 0 0 0 2px inset black;
-    background-color: #eab11f;
+    //box-shadow: 0 0 0 1px inset #eab11f, 0 0 0 2px inset black;
+    //background-color: #eab11f;
+    border: 1px solid #8852F2;
 }
 .method_radio:hover + .method_check{
-    box-shadow: 0 0 0 1px inset #eab11f, 0 0 0 2px inset black;
+    //box-shadow: 0 0 0 1px inset #eab11f, 0 0 0 2px inset black;
+}
+.bullet{
+    display: block;
+    border-radius: 50%;
+    background: #8852F2;
+    height: 14px;
+    width: 14px;
+    min-width: 14px;
+    min-height: 14px;
 }
 .wrapper_radiogroup{
     justify-content: flex-start;
+    gap: 16px;
 }
 .info_svg{
     width: auto;

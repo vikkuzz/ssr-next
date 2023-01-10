@@ -13,6 +13,7 @@ const initialState = {
     direction: 'ltr',
     loginModal: false,
     loginModalFromMain: false,
+    modalCalc: false,
     isAuth: false,
     loginMenu: {
         registration: true,
@@ -320,6 +321,21 @@ const royalfutReducer = (state = initialState, action) => {
                 loginModal: action.data,
             });
             return { ...state, loginModal: action.data };
+
+        case 'MODAL_CALC':
+            if (action.data) {
+                document.querySelector('body').style.overflowY = 'hidden';
+                bodyFixPosition();
+            } else {
+                document.querySelector('body').style.overflowY = 'auto';
+                bodyUnfixPosition();
+            }
+            ls.set('localState', {
+                ...state,
+                ...localState,
+                modalCalc: action.data,
+            });
+            return { ...state, ...localState, modalCalc: action.data };
 
         case 'COINS':
             ls.set('localState', {

@@ -24,7 +24,14 @@ const MethodChanger = () => {
     return (
         <div className={`${styles.method}`}>
             <div className={`${styles.wrapper_radiogroup}`}>
-                <label data-id={'easy'} className={`${styles.method_label}`}>
+                <label
+                    data-id={'easy'}
+                    className={`${styles.method_label} ${
+                        method.easy
+                            ? styles.label_checked
+                            : styles.label_not_checked
+                    }`}
+                >
                     <input
                         onChange={userChangeMethod}
                         data-id={'easy'}
@@ -34,15 +41,25 @@ const MethodChanger = () => {
                         value="easy"
                         checked={method.easy ? true : false}
                     ></input>
-                    <div
-                        data-id={'easy'}
-                        className={`${styles.method_check}`}
-                    ></div>
+                    <div data-id={'easy'} className={`${styles.method_check}`}>
+                        <div
+                            className={`${method.easy && 'hide'} ${
+                                method.easy && styles.bullet
+                            }`}
+                        ></div>
+                    </div>
                     <span data-id={'easy'}>
                         {translates[router.locale].comfortMethodName}
                     </span>
                 </label>
-                <label data-id={'manual'} className={`${styles.method_label}`}>
+                <label
+                    data-id={'manual'}
+                    className={`${styles.method_label} ${
+                        !method.easy
+                            ? styles.label_checked
+                            : styles.label_not_checked
+                    }`}
+                >
                     <input
                         onChange={userChangeMethod}
                         data-id={'manual'}
@@ -55,20 +72,26 @@ const MethodChanger = () => {
                     <div
                         data-id={'manual'}
                         className={`${styles.method_check}`}
-                    ></div>
+                    >
+                        <div
+                            className={`${!method.easy && 'hide'} ${
+                                !method.easy && styles.bullet
+                            }`}
+                        ></div>
+                    </div>
                     <span data-id={'manual'}>
                         {translates[router.locale].marketMethodName}
                     </span>
                 </label>
             </div>
-            <div className={`${styles.info_method}`}>
+            {/* <div className={`${styles.info_method}`}>
                 <a href="#deliveryMain" className={`${styles.method_info}`}>
                     <span className={`${styles.info_text}`}>
                         {translates[router.locale].marketMethodWhat}
                     </span>
                     <img src="/img/what-question.svg" />
                 </a>
-            </div>
+            </div> */}
         </div>
     );
 };
