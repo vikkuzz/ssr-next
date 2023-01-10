@@ -63,7 +63,7 @@ function Header() {
                     statePlatform.ps ? 'ps4' : 'xbox',
                     stateMethod.easy ? 'Easy' : 'Manual',
                     currentCurrencyState.title,
-                    stateCoins.amount
+                    stateCoins.amount || 100000
                 );
                 dispatch(userCreateOrder(createOrder.order));
             }, 1000);

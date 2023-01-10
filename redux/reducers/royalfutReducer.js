@@ -154,7 +154,7 @@ const initialState = {
     },
     coins: {
         coef: '',
-        amount: '',
+        amount: 100000,
         price: '',
         fullprice: '',
     },
