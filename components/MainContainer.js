@@ -72,6 +72,7 @@ function MainContainer({
     const dispatch = useDispatch();
 
     const router = useRouter();
+    const { pathname, asPath, query } = router;
 
     const isOutsideClick = (event, ref) => {
         if (!ref.current.contains(event.target) && modal) {
@@ -155,6 +156,10 @@ function MainContainer({
             // });
         };
     }, []);
+
+    useEffect(() => {
+        router.push({ pathname, query }, asPath, { locale: stateLocale.title });
+    }, [stateLocale]);
 
     useEffect(() => {
         api.getCriptorates(currentCurrencyState.title).then((res) =>

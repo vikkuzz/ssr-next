@@ -1,7 +1,13 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import styles from '../../styles/Price.module.scss';
+import DropdownList from '../DropdownList/DropdownList';
+import currency from '../../data-elements/currency';
 
 const Price = () => {
+    const stateCurrency = useSelector(
+        (state) => state.royalfutReducer.currency
+    );
     return (
         <div className={`${styles.price_wrapper}`}>
             <div className={`${styles.h_wrapper}`}>
@@ -10,6 +16,7 @@ const Price = () => {
             </div>
             <div className={`${styles.value_wrapper}`}>
                 <input className={`${styles.coins_input}`} type={'tel'}></input>
+                <DropdownList title={stateCurrency.title} value={currency} />
             </div>
         </div>
     );

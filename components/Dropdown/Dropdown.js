@@ -111,6 +111,7 @@ const DropdownLang = ({ burger = false }) => {
     //const stock = useSelector((state) => state.royalfutReducer.stock);
     const lang = useSelector((state) => state.royalfutReducer.locale);
     const stateUser = useSelector((state) => state.royalfutReducer.user);
+
     const currentCurrency = useSelector(
         (state) => state.royalfutReducer.currency
     );
@@ -133,25 +134,47 @@ const DropdownLang = ({ burger = false }) => {
             (el) => el.title === browserLanguage.toLowerCase()
         )[0];
 
-        if (!stateUser && router.locale === 'en') {
-            dispatch(currentLang(lang.title));
-            if (lang.title === 'ar') {
-                dispatch(changeDir('rtl'));
-            } else {
-                dispatch(changeDir('ltr'));
-            }
-            router.push({ pathname, query }, asPath, { locale: lang.title });
-        } else {
-            dispatch(currentLang(router.locale));
-            if (router.locale === 'ar') {
-                dispatch(changeDir('rtl'));
-            } else {
-                dispatch(changeDir('ltr'));
-            }
-        }
+        // if (!stateUser && router.locale === 'en') {
+        //     dispatch(currentLang('en'));
+        //     if (lang.title === 'ar') {
+        //         dispatch(changeDir('rtl'));
+        //     } else {
+        //         dispatch(changeDir('ltr'));
+        //     }
+        //     router.push({ pathname, query }, asPath, { locale: lang.title });
+        // } else if (stateUser.token) {
+        //     console.log('2');
+        //     dispatch(currentLang(lang.title));
+        //     if (router.locale === 'ar') {
+        //         dispatch(changeDir('rtl'));
+        //     } else {
+        //         dispatch(changeDir('ltr'));
+        //     }
+        // } else {
+        //     console.log('3');
+        //     dispatch(currentLang(router.locale));
+        //     if (router.locale === 'ar') {
+        //         dispatch(changeDir('rtl'));
+        //     } else {
+        //         dispatch(changeDir('ltr'));
+        //     }
+        // }
         //dispatch(currentLang(lang.title));
         //router.push({ pathname, query }, asPath, { locale: lang.title });
     }, []);
+
+    // useEffect(() => {
+    //     if (stateUser.token) {
+    //         console.log('2');
+    //         dispatch(currentLang(lang.title));
+    //         if (router.locale === 'ar') {
+    //             dispatch(changeDir('rtl'));
+    //         } else {
+    //             dispatch(changeDir('ltr'));
+    //         }
+    //     }
+    //     //router.push({ pathname, query }, asPath, { locale: lang.title });
+    // }, [stateUser]);
 
     return (
         <div className={`${styles.countries}`}>
