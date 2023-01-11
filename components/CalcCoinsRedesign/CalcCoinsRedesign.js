@@ -159,6 +159,13 @@ const CalcCoinsRedesign = () => {
             dispatch(calcCoins(0));
         }
     }, [stateCalcCoins]);
+
+    const handleChangeCoins = (e) => {
+        const result = e.target.value.replace(/[^0-9]/g, '');
+        console.log(result);
+        dispatch(calcCoins(result));
+    };
+
     return (
         <div className={`${styles.coins_wrapper}`}>
             <h4 className={`${styles.h}`}>Coins</h4>
@@ -176,10 +183,11 @@ const CalcCoinsRedesign = () => {
                     -
                 </button>
                 <input
+                    onChange={handleChangeCoins}
                     ref={inputCoins}
                     value={Math.round(+currentCoins).toLocaleString()}
                     className={`${styles.coins_input}`}
-                    type={'tel'}
+                    type={'text'}
                 ></input>
                 <button
                     id={'+'}
