@@ -13,7 +13,9 @@ const Price = () => {
         (state) => state.royalfutReducer.platform
     );
     const stateMethod = useSelector((state) => state.royalfutReducer.method);
-    const stateCoins = useSelector((state) => state.royalfutReducer.coins);
+    const stateCalcCoins = useSelector(
+        (state) => state.royalfutReducer.calcCoins
+    );
     const data = useSelector(
         (state) => state.royalfutReducer.stock.deliveryMethods
     );
@@ -23,7 +25,6 @@ const Price = () => {
     function getPrice(platform, method, coins, currency) {
         let currentPlatform = platform.ps === true ? 'ps4' : 'xbox';
         let currentMethod = method.easy === true ? 'easy' : 'manual';
-        let currentCoins = coins.amount || 100000;
         let currentCurrency = currency.title;
 
         let currentDisc = getCoef(
@@ -32,9 +33,7 @@ const Price = () => {
             currentPlatform,
             data
         );
-        let currentPrice = currentCoins * currentDisc;
-
-        console.log(currentDisc, currentPrice);
+        let currentPrice = stateCalcCoins * currentDisc;
 
         return currentPrice;
     }
@@ -43,11 +42,11 @@ const Price = () => {
         let price = getPrice(
             statePlatform,
             stateMethod,
-            stateCoins,
+            stateCalcCoins,
             stateCurrency
         );
         setCurrentPrice(price);
-    }, [stateCurrency.title]);
+    }, [stateCurrency.title, stateCalcCoins, stateMethod, statePlatform]);
 
     return (
         <div className={`${styles.price_wrapper}`}>

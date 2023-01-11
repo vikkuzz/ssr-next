@@ -152,6 +152,7 @@ const initialState = {
         easy: true,
         manual: false,
     },
+    calcCoins: 100000,
     coins: {
         coef: '',
         amount: 100000,
@@ -348,6 +349,18 @@ const royalfutReducer = (state = initialState, action) => {
                 ...localState,
                 coins: action.data,
                 order: { ...state.order, coins: action.data },
+            };
+
+        case 'COINS_FROM_CALCULATOR':
+            ls.set('localState', {
+                ...state,
+                ...localState,
+                calcCoins: action.data,
+            });
+            return {
+                ...state,
+                ...localState,
+                calcCoins: action.data,
             };
 
         case 'GET_STOCK':

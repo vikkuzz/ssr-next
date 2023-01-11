@@ -11,6 +11,7 @@ export const currentLang = (data) => ({ type: 'CURRENT_LANG', data });
 export const changePlatform = (data) => ({ type: 'CHANGE_PLATFORM', data });
 export const changeMethod = (data) => ({ type: 'CHANGE_METHOD', data });
 export const coins = (data) => ({ type: 'COINS', data });
+export const calcCoins = (data) => ({ type: 'COINS_FROM_CALCULATOR', data });
 export const order = (data) => ({ type: 'ORDER', data });
 export const getCriptoLimits = (data) => ({ type: 'GET_CRYPTO_LIMITS', data });
 export const userCreateOrder = (data) => ({ type: 'USER_CREATE_ORDER', data });
