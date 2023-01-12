@@ -18,8 +18,10 @@ export function getDiscCoef(coef, percentDiscount) {
 }
 
 export function getDiscount(arr, value) {
+    console.log(value);
     let percentDisc = 1;
     let result = arr.filter((el) => el.limitSumCoins <= value);
+    console.log(result);
     result = result[result.length - 1];
     if (value >= 20000000) {
         percentDisc = 15;

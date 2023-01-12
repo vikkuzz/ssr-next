@@ -21,6 +21,7 @@
     background-color: transparent;
 }
 .coins_input{
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,6 +38,9 @@
     font-weight: 700;
     font-size: 24px;
     line-height: 29px;
+    display: flex;
+    align-items: flex-end;    
+    color: #EAB11F;
 }
 .coins_input:focus{
     background: #282B4A;
@@ -45,4 +49,38 @@
 .value_wrapper{
     background-color: transparent;
     align-items: center;
+}
+.discount{
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    border-radius: 4px;
+    padding: 3px 5px 3px 4px;
+    width: 28px;
+    height: 18px;
+    font-family: 'Montserrat',helvetica,arial,sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 10px;
+    line-height: 12px;
+    color: black;
+    background: #eab11f;
+    transform: rotate(-15deg);
+    z-index: 1;
+    direction: ltr;
+}
+.input_price_wrapper{
+    position: relative;
+    gap: 8px;
+    flex-direction: column;
+}
+.price_line_through{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    text-decoration-line: line-through;
+    color: #757688;
+    background-color: transparent;
 }

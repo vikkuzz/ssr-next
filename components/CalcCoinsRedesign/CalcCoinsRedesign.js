@@ -163,6 +163,7 @@ const CalcCoinsRedesign = () => {
     const handleChangeCoins = (e) => {
         const result = e.target.value.replace(/[^0-9]/g, '');
         console.log(result);
+
         dispatch(calcCoins(result));
     };
 
