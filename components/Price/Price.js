@@ -67,9 +67,11 @@ const Price = () => {
         if (document.activeElement) {
             if (document.activeElement != inputPrice) {
                 if (percentDisc > 1) {
-                    setCurrentPrice(price - (price / 100) * percentDisc);
+                    setCurrentPrice(
+                        (price - (price / 100) * percentDisc).toFixed(2)
+                    );
                 } else {
-                    setCurrentPrice(price);
+                    setCurrentPrice((+price).toFixed(2));
                 }
             }
         }
