@@ -1,6 +1,8 @@
 .container{
     flex-direction: column;
     position: relative;
+    align-self: flex-start;
+    margin-top: 15px;
 }
 .value_container{
     //flex-direction: column;
@@ -13,7 +15,8 @@
     padding: 8px;
     background: #35374B;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4);
+    //box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 13px -12px 20px rgb(0 0 0 / 40%);
     border-radius: 12px;
     opacity: 0;
     height: 0;
@@ -41,6 +44,7 @@
     width: 13px;
     height: 7.5px;
     background-color: transparent;
+    transition: all 0.5s;
 }
 .value_wrapper{
     align-items: center;
@@ -68,4 +72,8 @@
 }
 .value_img_wrapper{
     width: auto;
+}
+.rotate{
+    transform: rotate(180deg);
+    transition: all 0.5s;
 }

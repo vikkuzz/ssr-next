@@ -60,6 +60,9 @@ const CalcCoinsRedesign = () => {
                 dispatch(calcCoins(pr - 1000));
             }
         }
+        if (sum < 100000) {
+            dispatch(calcCoins(100000));
+        }
         if (sum >= 100000 && sum <= 299999) {
             if (action == '+') {
                 dispatch(calcCoins(pr + 10000));
@@ -108,6 +111,9 @@ const CalcCoinsRedesign = () => {
                 dispatch(calcCoins(pr - 1000000));
             }
         }
+        if (sum > 20000000) {
+            dispatch(calcCoins(20000000));
+        }
     }
 
     const startCounter = (e) => {
@@ -154,15 +160,35 @@ const CalcCoinsRedesign = () => {
     }, []);
 
     useEffect(() => {
+        if (+stateCalcCoins < 100000) {
+            dispatch(calcCoins(100000));
+        }
+        if (+stateCalcCoins > 20000000) {
+            dispatch(calcCoins(20000000));
+        }
         setCurrentCoins(Number(stateCalcCoins));
         if (stateCalcCoins < 0) {
             dispatch(calcCoins(0));
         }
     }, [stateCalcCoins]);
+    useEffect(() => {
+        if (+currentCoins < 100000) {
+            setCurrentCoins(100000);
+        }
+        if (+currentCoins > 20000000) {
+            setCurrentCoins(20000000);
+        }
+    }, [currentCoins]);
 
     const handleChangeCoins = (e) => {
         const result = e.target.value.replace(/[^0-9]/g, '');
         console.log(result);
+        if (+result < 100000) {
+            result = 100000;
+        }
+        if (+result > 20000000) {
+            result = 20000000;
+        }
 
         dispatch(calcCoins(result));
     };

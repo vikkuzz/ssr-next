@@ -3,6 +3,7 @@
     background: rgba(255, 255, 255, 0.05);
     border-radius: 16px;
     flex-direction: column;
+    overflow: hidden;
 }
 .h{
     background-color: transparent;
@@ -67,16 +68,20 @@
 }
 .pack{
     position: relative;
-    width: 13.8vw;
-    min-width: 13.8vw;
-    height: 9.333vw;
+    //width: 13.8vw;
+    //min-width: 13.8vw;
+    //height: 9.333vw;
     font-size: 3.2vw;
-    background-color: hsla(0,0%,100%,.1);
+    background: rgba(255, 255, 255, 0.1);
     border: none;
-    border-radius: 4px;
-    padding: 10px 0;
+    border-radius: 8px;
+    padding: 8px 12px;
     font-family: 'Montserrat';
-    font-weight: 600;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.6);
     justify-content: center;
     align-items: center;
 

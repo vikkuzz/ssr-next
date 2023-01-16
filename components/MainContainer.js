@@ -18,6 +18,7 @@ import {
     userCreateOrder,
     currentLang,
     modalCalc,
+    showMessage,
 } from '../redux/actions/royalfutActions';
 
 import styles from '../styles/App.module.scss';
@@ -50,6 +51,7 @@ function MainContainer({
     const scrolltop = useRef();
     const modal = useSelector((state) => state.royalfutReducer.loginModal);
     const error = useSelector((state) => state.royalfutReducer.errorMessage);
+
     const currentStock = useSelector((state) => state.royalfutReducer.stock);
     const t =
         useSelector((state) => state.royalfutReducer.locale.title) || 'en';
@@ -61,6 +63,9 @@ function MainContainer({
         (state) => state.royalfutReducer.modalCalc
     );
     const stateUser = useSelector((state) => state.royalfutReducer.user);
+    const stateShowMessage = useSelector(
+        (state) => state.royalfutReducer.showMessage
+    );
     const stateCoins = useSelector((state) => state.royalfutReducer.coins);
     const stateOrder = useSelector((state) => state.royalfutReducer.order);
     const stateLocale = useSelector((state) => state.royalfutReducer.locale);
@@ -90,6 +95,11 @@ function MainContainer({
             setTimeout(() => dispatch(catcherror('')), 3000);
         }
     }, [error]);
+    useEffect(() => {
+        if (stateShowMessage) {
+            setTimeout(() => dispatch(showMessage(false)), 5000);
+        }
+    }, [stateShowMessage]);
     useEffect(async () => {
         await api.getStock().then((result) => {
             if (result?.errors) {
@@ -237,6 +247,27 @@ function MainContainer({
             )} */}
             <div className={`error ${error == '' ? '' : styles.showError}`}>
                 {error}
+            </div>
+            <div
+                className={`${
+                    stateShowMessage ? styles.show_message : styles.hide_message
+                } ${styles.login_message}`}
+            >
+                <img
+                    className={`${styles.info_pic}`}
+                    src="../../img/info.svg"
+                ></img>
+                {'You are logged in as '}
+                {stateUser.email}
+                <button
+                    onClick={() => dispatch(showMessage(false))}
+                    className={`${styles.close_btn}`}
+                >
+                    <img
+                        className={`${styles.close_btn_pic}`}
+                        src="../../img/whitecross.svg"
+                    ></img>
+                </button>
             </div>
             <div
                 className={`${styles.modal_calc_wrapper} ${

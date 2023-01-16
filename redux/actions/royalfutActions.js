@@ -5,6 +5,7 @@ export const registrationClick = () => ({ type: 'REGISTRATION' });
 export const user = (data) => ({ type: 'USER', data });
 export const userlogout = () => ({ type: 'USER_LOGOUT' });
 export const catcherror = (data) => ({ type: 'CATCH_ERROR', data });
+export const showMessage = (data) => ({ type: 'SHOW_MESSAGE', data });
 export const stock = (data) => ({ type: 'GET_STOCK', data });
 export const currentCurrency = (data) => ({ type: 'CURRENT_CURRENCY', data });
 export const currentLang = (data) => ({ type: 'CURRENT_LANG', data });

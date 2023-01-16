@@ -128,6 +128,32 @@ const Price = () => {
         }
     };
 
+    const onBlurPrice = () => {
+        let price = getPrice(
+            statePlatform,
+            stateMethod,
+            stateCalcCoins,
+            stateCurrency,
+            data
+        ).toFixed(2);
+        let currentCurrency = stateCurrency.title;
+        let currentPlatform = statePlatform.ps === true ? 'ps4' : 'xbox';
+        let currentMethod = stateMethod.easy === true ? 'easy' : 'manual';
+        let currentCoef = getCoef(
+            currentCurrency,
+            currentMethod,
+            currentPlatform,
+            data
+        );
+
+        if (currentPrice < (100000 * currentCoef).toFixed(2)) {
+            setCurrentPrice(price);
+        }
+        if (currentPrice > (20000000 * currentCoef).toFixed(2)) {
+            setCurrentPrice(price);
+        }
+    };
+
     return (
         <div className={`${styles.price_wrapper}`}>
             <div className={`${styles.h_wrapper}`}>
@@ -140,6 +166,7 @@ const Price = () => {
                         ref={price}
                         id="price"
                         onChange={onChangePrice}
+                        onBlur={onBlurPrice}
                         value={`${currentPrice}`}
                         // value={`${stateCurrency.currency}${
                         //     currentPrice

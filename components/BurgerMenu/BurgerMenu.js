@@ -12,6 +12,7 @@ import {
     catcherror,
     loginModalFromMain,
     getAllOrders,
+    showMessage,
 } from '../../redux/actions/royalfutActions';
 
 import MenuItem from '../MenuItem';
@@ -128,6 +129,7 @@ const BurgerMenu = () => {
                 } else {
                     res.user.password = password.current.value;
                     dispatch(user(res.user));
+                    setTimeout(() => dispatch(showMessage(true)), 500);
                 }
             });
     }
@@ -145,6 +147,7 @@ const BurgerMenu = () => {
                 } else {
                     res.user.password = password.current.value;
                     dispatch(user(res.user));
+                    setTimeout(() => dispatch(showMessage(true)), 500);
                 }
 
                 if (modalFromMain == true) {

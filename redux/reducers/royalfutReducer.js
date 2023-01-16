@@ -21,6 +21,7 @@ const initialState = {
     },
     user: {},
     errorMessage: '',
+    showMessage: false,
     locale: {},
     currency: {
         currency: '$',
@@ -454,6 +455,13 @@ const royalfutReducer = (state = initialState, action) => {
 
         case 'CATCH_ERROR':
             return { ...state, errorMessage: action.data };
+
+        case 'SHOW_MESSAGE':
+            ls.set('localState', {
+                ...state,
+                showMessage: action.data,
+            });
+            return { ...state, showMessage: action.data };
 
         default:
             return { ...state };

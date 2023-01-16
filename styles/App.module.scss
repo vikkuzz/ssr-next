@@ -63,6 +63,64 @@
   transition: all 0.5s;
   width: fit-content;
 }
+
+.login_message{
+  position: absolute;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px 24px;
+  gap: 16px;
+  //width: auto;
+  
+
+  
+  //width: 343px;
+  //height: 136px;
+
+  background: rgba(66, 133, 244, 0.2);
+  transition: all 0.5s;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(24px);
+ 
+
+  border-radius: 12px;
+}
+.hide_message{
+  display: none;
+  transition: all .7s;
+  opacity: 0;
+  width: 0;
+  z-index: -2;
+  right: -100%;
+}
+.show_message{
+  width: auto;
+  top: 25px;
+  left: 16px; 
+  right: 16px;
+  opacity: 1;
+  z-index: 2;
+  transition: all .5s;
+}
+.info_pic{
+  width: 20px;
+  background-color: transparent;
+}
+.close_btn{
+  width: auto;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+}
+.close_btn_pic{
+  background-color: transparent;
+  border: none;
+  width: 12px;
+  height: 12px;
+  padding: 0;
+
+}
 .app__burger_bckgr{
   position: absolute;
   //background-color: rgba(0,0,0,0.4);

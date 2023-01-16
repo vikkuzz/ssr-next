@@ -35,7 +35,7 @@ const DropdownList = ({ title, value }) => {
             container.current.style.display = 'flex';
             container.current.style.opacity = '1';
             container.current.style.height = 'auto';
-            container.current.style.top = '35px';
+            container.current.style.top = '-193px';
             container.current.style.zIndex = '1';
         } else {
             container.current.style.opacity = '0';
@@ -54,7 +54,7 @@ const DropdownList = ({ title, value }) => {
             <button className={`${styles.title_wrapper}`} onClick={dropOn}>
                 <span className={`${styles.title}`}>{title}</span>
                 <img
-                    className={`${styles.title_arrow}`}
+                    className={`${styles.title_arrow} ${open && styles.rotate}`}
                     src={'../../img/arrow_drop_down.svg'}
                 ></img>
             </button>
