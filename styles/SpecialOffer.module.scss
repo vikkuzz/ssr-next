@@ -51,7 +51,7 @@
     align-items: center;
     padding: 20px 64px;
     gap: 8px;
-    height: 56px;
+    height: 64px;
     background: linear-gradient(265.73deg, #A82DF9 0%, #6678E9 100%);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 12px;
@@ -68,15 +68,18 @@
     position: relative;
     background: #2B2D43    ;
     padding:16px 24px;
+    border: 1px solid #6678E9;
+    border-radius: 12px;
+
   }
-  .calc_btn:before{  
-      content: '';
-      position: absolute;
-      top: -2px; right: -2px; bottom: -2px; left: -2px;
-      z-index: -1;
-      border-radius: 12px;
-      background: linear-gradient(265.73deg, #A82DF9 0%, #6678E9 100%);  
-  }
+//   .calc_btn:before{  
+//       content: '';
+//       position: absolute;
+//       top: -2px; right: -2px; bottom: -2px; left: -2px;
+//       z-index: -1;
+//       border-radius: 12px;
+//       background: linear-gradient(265.73deg, #A82DF9 0%, #6678E9 100%);  
+//   }
   .copy_icon{
     background-color: transparent;
     width: auto;
@@ -85,6 +88,8 @@
   .promocode_text{
     background-color: transparent;
     justify-content: center;
+    border: none;
+    text-align: center;
   }
 .offer_timer{
     position: absolute;
@@ -96,3 +101,22 @@
     border-radius: 50%;
     
 }
+.green{
+    background: rgba(21, 188, 38, 0.2);
+    border: 1px solid #15BC26;
+    border-radius: 12px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgb(44 204 60 / 40%);
+    }
+    
+    70% {
+        box-shadow: 0 0 0 10px rgb(44 204 59 / 0%);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgb(44 204 73 / 0%);
+    }
+  }

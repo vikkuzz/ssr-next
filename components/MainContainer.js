@@ -48,6 +48,7 @@ function MainContainer({
 }) {
     const wrapperModalRef = useRef();
     const shadowModalRef = useRef();
+    const message = useRef();
     const scrolltop = useRef();
     const modal = useSelector((state) => state.royalfutReducer.loginModal);
     const error = useSelector((state) => state.royalfutReducer.errorMessage);
@@ -98,6 +99,27 @@ function MainContainer({
     useEffect(() => {
         if (stateShowMessage) {
             setTimeout(() => dispatch(showMessage(false)), 5000);
+        }
+        if (!stateShowMessage && scrolltop.current) {
+            message.current.style.opacity = '0';
+            message.current.style.position = 'absolute';
+            message.current.style.maxWidth = '343px';
+            message.current.style.zIndex = '-2';
+            message.current.style.top = '-16px';
+            message.current.style.transition = 'all .3s';
+
+            message.current.style.transform = 'translate(8px,-100%)';
+        }
+        if (stateShowMessage && scrolltop.current) {
+            message.current.style.opacity = '1';
+            message.current.style.transition = 'all .3s';
+
+            message.current.style.zIndex = '2';
+            message.current.style.transform = 'translate(16px,16px)';
+            message.current.style.top = '0';
+            message.current.style.width = 'auto';
+
+            message.current.style.maxWidth = '343px';
         }
     }, [stateShowMessage]);
     useEffect(async () => {
@@ -249,10 +271,14 @@ function MainContainer({
                 {error}
             </div>
             <div
-                className={`${
-                    stateShowMessage ? styles.show_message : styles.hide_message
-                } ${styles.login_message}`}
+                ref={message}
+                className={`
+               
+                ${styles.login_message}`}
             >
+                {/* ${
+                    stateShowMessage ? styles.show_message : styles.hide_message
+                }  */}
                 <img
                     className={`${styles.info_pic}`}
                     src="../../img/info.svg"
@@ -285,7 +311,7 @@ function MainContainer({
 
                 <ModalCalc />
                 <div className={`${styles.buy_btn_wrapper}`}>
-                    <button class={`${styles.buy_btn}`}>buy coins</button>
+                    <button className={`${styles.buy_btn}`}>buy coins</button>
                 </div>
             </div>
 

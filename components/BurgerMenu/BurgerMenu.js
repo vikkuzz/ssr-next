@@ -585,7 +585,9 @@ const BurgerMenu = () => {
                             </div>
                         )}
                         <div className={`${styles.menu_wrapper}`}>
-                            <Menu />
+                            <Menu title={'Menu'} menuItems={menuItems}>
+                                <OptionWithItems />
+                            </Menu>
                         </div>
                     </div>
                 </div>

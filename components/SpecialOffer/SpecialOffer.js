@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import styles from '../../styles/SpecialOffer.module.scss';
 
 const SpecialOffer = () => {
+    const promocode = useRef();
     const offer_img = '/img/offer.png';
+
+    let [copyText, setCopyText] = useState(false);
+
+    const copy = () => {
+        let copyText = promocode.current;
+        copyText.select();
+        document.execCommand('copy');
+        setCopyText(true);
+    };
     return (
         <div className={`${styles.offer_container}`}>
             <h2 className={`${styles.offer_h}`}>
@@ -29,11 +39,23 @@ const SpecialOffer = () => {
                     </button>
                     <button
                         type="button"
-                        className={`${styles.buy_btn} ${styles.calc_btn}`}
+                        className={`${styles.buy_btn} ${styles.calc_btn} ${
+                            copyText && styles.green
+                        }`}
+                        onClick={copy}
                     >
-                        <span className={`${styles.promocode_text}`}>XMAS</span>
+                        <input
+                            ref={promocode}
+                            value={'XMAS'}
+                            readOnly
+                            className={`${styles.promocode_text}`}
+                        ></input>
                         <img
-                            src="/img/content_copy.svg"
+                            src={`${
+                                !copyText
+                                    ? `/img/content_copy.svg`
+                                    : `/img/done_green.svg`
+                            }`}
                             className={`${styles.copy_icon}`}
                         />
                     </button>
