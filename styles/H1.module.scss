@@ -9,7 +9,9 @@
     background-color: transparent;
 
     @media (min-width:1025px) {
-        font-size: 36px;
+        font-size: 50px;
+        letter-spacing: 0.8px;
+        //font-size: 36px;
     }
 }
 .h1_container{
@@ -41,6 +43,8 @@
         position: static;
         padding: 0;
         gap: 8px;
+        font-size: 76px;
+        line-height: 78px;
     }
 }
 .under_h1{
@@ -55,7 +59,10 @@
     background-color: transparent;
 
     @media (min-width:1025px) {
+        width: 635px;
         position: static;
-
+        font-size: 24px;
+        line-height: 31px;
+        letter-spacing: 0.4px;
     }
 }

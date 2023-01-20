@@ -163,7 +163,12 @@ const Price = () => {
     };
 
     function changeWidth() {
-        price.current.style.width = `${price.current.value.length * 24}px`;
+        if (window.innerWidth < 1025) {
+            price.current.style.width = `${price.current.value.length * 16}px`;
+        }
+        if (window.innerWidth >= 1025) {
+            price.current.style.width = `${price.current.value.length * 24}px`;
+        }
     }
 
     return (
@@ -181,9 +186,7 @@ const Price = () => {
             <div className={`${styles.value_wrapper}`}>
                 <div className={`${styles.input_price_wrapper}`}>
                     <fieldset className={`${styles.coins_fieldset}`}>
-                        <span
-                            className={`${styles.coins_input} ${styles.price_currency}`}
-                        >
+                        <span className={` ${styles.price_currency}`}>
                             {stateCurrency.currency}
                         </span>
                         <input

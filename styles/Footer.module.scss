@@ -5,11 +5,36 @@
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
+    position: relative;
+    background: #1B1D33;
 
     @media (min-width:1025px) {
         justify-content: flex-start;
     }
 }
+.footer::before{
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    left: -75px;
+    top: -1px;
+    background: #1B1D33;
+    border-top: 1px solid rgba(196, 196, 196, 0.2);
+}
+.footer::after{
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    right: -75px;
+    top: -1px;
+    background: #1B1D33;
+    border-top: 1px solid rgba(196, 196, 196, 0.2);
+}
+
 .footer_header{
     font-family: 'Montserrat';
     font-weight: 700;
