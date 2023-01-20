@@ -239,25 +239,35 @@ function Header() {
                         </button>
                     )}
                 </div> */}
-                {isAuth && (
-                    // <button
+
+                {/* // <button
                     //     onClick={logout}
                     //     className={`logout from-1025-to-1900`}
                     // >
                     //     {translates[router.locale].logOut}
-                    // </button>
-                    <button
-                        onClick={() => {
-                            burgerToX();
-                        }}
-                        className={`${styles.user_auth} from-1025-to-1900`}
-                    >
-                        <img
-                            className={`${styles.header_ava}`}
-                            src="/img/Mbappe.png"
-                        ></img>
-                    </button>
-                )}
+                    // </button> */}
+                <div className={`from-1025-to-1900`}>
+                    {isAuth ? (
+                        <button
+                            onClick={() => {
+                                burgerToX();
+                            }}
+                            className={`${styles.user_auth}`}
+                        >
+                            <img
+                                className={`${styles.header_ava}`}
+                                src="/img/Mbappe.png"
+                            ></img>
+                        </button>
+                    ) : (
+                        <button
+                            onClick={burgerToX}
+                            className={`${styles.header__burger_login}`}
+                        >
+                            {translates[router.locale].menuSignIn}
+                        </button>
+                    )}
+                </div>
             </div>
         </div>
     );
