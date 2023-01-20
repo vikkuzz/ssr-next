@@ -419,6 +419,11 @@
   right: 0;
   padding: 15px;
   z-index: 2;
+
+  @media (min-width:1025px) {
+    padding: 32px;
+    width: 689px;
+  }
 }
 .modal_calc_wrapper{
   position: fixed;

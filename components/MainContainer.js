@@ -116,7 +116,8 @@ function MainContainer({
 
             message.current.style.zIndex = '2';
             message.current.style.transform = 'translate(16px,16px)';
-            message.current.style.top = '0';
+            message.current.style.top = '130px';
+            message.current.style.right = '32px';
             message.current.style.width = 'auto';
 
             message.current.style.maxWidth = '343px';
