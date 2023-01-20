@@ -14,10 +14,10 @@
 .dropdown__content{
     width: auto;
     min-width: max-content;
-    //position: absolute;
-    position: fixed;
-    top: 60px;
-    right: 10%;
+    position: absolute;
+    //position: fixed;
+    top: 25px;
+    //right: 10%;
     background: #545666;
     border: 1px solid #989aa3;
     border-radius: 4px;
@@ -237,7 +237,8 @@
 }
 .countries{
     width: auto;
-    gap: 12px;
+    //gap: 12px;
+    align-items: center;
 }
 .currency{gap: 4px;}
 .dropdown_container{
@@ -247,6 +248,7 @@
     max-width: 270px;
     justify-content: flex-end;
     width: auto;
+    //align-items: baseline;
 }
 .dropdown__links{
     font-size: 18px;
@@ -261,7 +263,19 @@
 .dropdown__buycoins_content{
     min-width: max-content;
     position: absolute;
-    top: 100%;
+    top: 0%;
+    background: transparent;
+    //border: 1px solid #989aa3;
+    //border-radius: 4px;
+    padding: 25px 0;
+    align-items: flex-start;
+    height: auto;
+    flex-direction: column;
+    left: calc(50% - 200px/2);
+}
+
+.content_wrap{
+    min-width: max-content;
     background: #545666;
     border: 1px solid #989aa3;
     border-radius: 4px;
@@ -269,7 +283,15 @@
     align-items: flex-start;
     height: auto;
     flex-direction: column;
+    padding: 20px 24px;
+    //left: calc(50% - 171px/2 - 110.5px);
+    background: #35374B;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    gap: 12px;
 }
+
 .buycoins_item:hover{
     background-color: rgba(255, 255, 255, 0.2);
 }
@@ -277,6 +299,12 @@
     padding-left: 10px;
     justify-content: flex-start;
     padding-right: 10px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.6);
 }
 
 // @media(max-width:600px){
@@ -284,14 +312,20 @@
 //         justify-content: center;
 //     }
 // }
+.drop_wrap{
+    align-items: center;
+}
+.drop_cont{
+    align-items: baseline;
+}
 
 @media(min-width:1025px){
     .locale{
-        width: 110px;
+        //width: 110px;
     }
     .dropdown_container{
         flex:1;
-        gap:12px;
+        gap:30px;
         cursor: pointer;
         max-width: 270px;
         justify-content: space-around;

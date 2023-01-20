@@ -4,6 +4,10 @@
     border-radius: 16px;
     flex-direction: column;
     gap: 8px;
+
+    @media (min-width:1025px) {
+        padding: 20px;
+    }
 }
 .h_wrapper{
     justify-content: space-between;
@@ -41,10 +45,43 @@
     display: flex;
     align-items: flex-end;    
     color: #EAB11F;
+
+    @media (min-width:1025px) {
+        border: none;
+        background: transparent;
+        height: auto;
+        width: 100%;
+        line-height: 40px;
+        padding: 0;
+
+    }
 }
-.coins_input:focus{
-    background: #282B4A;
-    border: 1px solid #8852F2;
+// .coins_input:focus{
+//     background: #282B4A;
+//     border: 1px solid #8852F2;
+// }
+.coins_fieldset{
+    display: flex;
+    //flex-direction: column;
+    //justify-content: center;
+    align-items: center;
+    padding: 10px 24px;
+    gap: 8px;
+    width: 190px;
+    height: 64px;
+    background: #1B1D33;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+
+    @media (min-width:1025px) {
+        background: transparent;
+        width: 100%;
+    }
 }
 .value_wrapper{
     background-color: transparent;
@@ -53,7 +90,7 @@
 .discount{
     position: absolute;
     top: -14px;
-    left: 50%;
+    left: 30%;
     border-radius: 4px;
     padding: 3px 5px 3px 4px;
     width: 28px;
@@ -83,4 +120,8 @@
     text-decoration-line: line-through;
     color: #757688;
     background-color: transparent;
+    white-space: nowrap;
+}
+.price_currency{
+    width: auto;
 }

@@ -14,6 +14,7 @@ import SpecialOffer from '../components/SpecialOffer/SpecialOffer';
 import { useDispatch } from 'react-redux';
 
 import { modalCalc } from '../redux/actions/royalfutActions';
+import Product from '../components/Products/Products';
 
 const Index = () => {
     const router = useRouter();
@@ -35,36 +36,70 @@ const Index = () => {
                     <Calculator />
                     <Howdelivery />
                     <TextBlockContainer /> */}
-                    <MainCover />
-                    <H1 />
-                    <Aside />
-                    <div className={`${styles.wrapper_btns}`}>
-                        <button className={` ${styles.buy_btn}`}>
-                            buy coins
-                        </button>
-                        <button
-                            onClick={() => dispatch(modalCalc(true))}
-                            className={`${styles.calc_btn} ${styles.buy_btn}`}
-                        >
-                            calculator
-                            <img
-                                className={`${styles.calc_icon}`}
-                                src="/img/calc.svg"
-                            />
-                        </button>
+                    <div className={`${'from-375-to-1024'}`}>
+                        <MainCover />
                     </div>
-                    <div className={`${styles.info_method}`}>
-                        <a
-                            href="#deliveryMain"
-                            className={`${styles.method_info}`}
-                        >
-                            <span className={`${styles.info_text}`}>
-                                {translates[router.locale].marketMethodWhat}
-                            </span>
-                            <img src="/img/what-question.svg" />
-                        </a>
+                    <div className={styles.wrapper_desk}>
+                        <H1 />
+                        <Aside />
+                        <div className={`${styles.wrapper_desk_btns}`}>
+                            <div className={`${styles.wrapper_btns}`}>
+                                <button className={` ${styles.buy_btn}`}>
+                                    buy coins
+                                </button>
+                                <button
+                                    onClick={() => dispatch(modalCalc(true))}
+                                    className={`${styles.calc_btn} ${styles.buy_btn}`}
+                                >
+                                    calculator
+                                    <img
+                                        className={`${styles.calc_icon}`}
+                                        src="/img/calc.svg"
+                                    />
+                                </button>
+                            </div>
+                            <div className={`${styles.info_method}`}>
+                                <a
+                                    href="#deliveryMain"
+                                    className={`${styles.method_info}`}
+                                >
+                                    <span className={`${styles.info_text}`}>
+                                        {
+                                            translates[router.locale]
+                                                .marketMethodWhat
+                                        }
+                                    </span>
+                                    <img src="/img/what-question.svg" />
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <SpecialOffer />
+                    <div className={`${styles.offer_wrapper}`}>
+                        <div
+                            className={`${styles.offer_wrapper} ${styles.app_column}`}
+                        >
+                            <h2 className={`${styles.h2}`}>
+                                Try also these products
+                            </h2>
+                            <div className={`${styles.offer_wrapper}`}>
+                                <Product
+                                    h3={'Preset orders'}
+                                    text={
+                                        'Our coin transfer methods are not at risk from the EA'
+                                    }
+                                />
+                                <Product
+                                    h3={'Buy any player'}
+                                    text={
+                                        'Our coin transfer methods are not at risk from the EA'
+                                    }
+                                />
+                            </div>
+                        </div>
+                        <div className={`${styles.offer_wrapper}`}>
+                            <SpecialOffer />
+                        </div>
+                    </div>
                     <Howdelivery />
                     <TextBlockContainer />
                 </div>

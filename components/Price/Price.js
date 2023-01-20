@@ -4,7 +4,10 @@ import styles from '../../styles/Price.module.scss';
 import DropdownList from '../DropdownList/DropdownList';
 import currency from '../../data-elements/currency';
 import { getCoef, getDiscount } from '../../utils/functions';
-import { calcCoins } from '../../redux/actions/royalfutActions';
+import {
+    calcCoins,
+    currentCurrency,
+} from '../../redux/actions/royalfutActions';
 
 const Price = () => {
     const price = useRef();
@@ -75,7 +78,12 @@ const Price = () => {
                 }
             }
         }
+        changeWidth();
     }, [stateCurrency.title, stateCalcCoins, stateMethod, statePlatform]);
+
+    useEffect(() => {
+        changeWidth();
+    }, []);
 
     const onChangePrice = (e) => {
         let text = e.target.value.split('').reverse();
@@ -154,30 +162,66 @@ const Price = () => {
         }
     };
 
+    function changeWidth() {
+        price.current.style.width = `${price.current.value.length * 24}px`;
+    }
+
     return (
         <div className={`${styles.price_wrapper}`}>
             <div className={`${styles.h_wrapper}`}>
                 <h4 className={`${styles.h}`}>Price</h4>
-                <h4 className={`${styles.h}`}>Currency</h4>
+                <h4 className={`${styles.h} from-375-to-1024`}>Currency</h4>
+                <div className="from-1025-to-1900">
+                    <DropdownList
+                        title={stateCurrency.title}
+                        value={currency}
+                    />
+                </div>
             </div>
             <div className={`${styles.value_wrapper}`}>
                 <div className={`${styles.input_price_wrapper}`}>
-                    <input
-                        ref={price}
-                        id="price"
-                        onChange={onChangePrice}
-                        onBlur={onBlurPrice}
-                        value={`${currentPrice}`}
-                        // value={`${stateCurrency.currency}${
-                        //     currentPrice
-                        //     // .toFixed(2)
-                        //     // .toLocaleString()
-                        // }
-                        //     `}
-                        className={`${styles.coins_input}`}
-                        type={'text'}
-                        step="any"
-                    ></input>
+                    <fieldset className={`${styles.coins_fieldset}`}>
+                        <span
+                            className={`${styles.coins_input} ${styles.price_currency}`}
+                        >
+                            {stateCurrency.currency}
+                        </span>
+                        <input
+                            onKeyDown={changeWidth}
+                            maxLength={12}
+                            ref={price}
+                            id="price"
+                            onChange={onChangePrice}
+                            onBlur={onBlurPrice}
+                            value={`${currentPrice}`}
+                            // value={`${stateCurrency.currency}${
+                            //     currentPrice
+                            //     // .toFixed(2)
+                            //     // .toLocaleString()
+                            // }
+                            //     `}
+                            className={`${styles.coins_input}`}
+                            type={'text'}
+                            step="any"
+                        ></input>
+
+                        <span
+                            className={`${styles.price_line_through} ${
+                                percentDisc < 3 && 'hide'
+                            } from-1025-to-1900`}
+                        >
+                            {stateCurrency.currency}{' '}
+                            {getPrice(
+                                statePlatform,
+                                stateMethod,
+                                stateCalcCoins,
+                                stateCurrency,
+                                data
+                            )
+                                .toFixed(2)
+                                .toLocaleString()}
+                        </span>
+                    </fieldset>
                     <div
                         className={`${styles.discount} ${
                             percentDisc < 3 && 'hide'
@@ -188,7 +232,7 @@ const Price = () => {
                     <span
                         className={`${styles.price_line_through} ${
                             percentDisc < 3 && 'hide'
-                        }`}
+                        } from-375-to-1024`}
                     >
                         {getPrice(
                             statePlatform,
@@ -201,7 +245,12 @@ const Price = () => {
                             .toLocaleString()}
                     </span>
                 </div>
-                <DropdownList title={stateCurrency.title} value={currency} />
+                <div className="from-375-to-1024">
+                    <DropdownList
+                        title={stateCurrency.title}
+                        value={currency}
+                    />
+                </div>
             </div>
         </div>
     );

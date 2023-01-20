@@ -31,34 +31,36 @@ const SpecialOffer = () => {
                         Use this promocode to get discount when you will buy
                         coins
                     </span>
-                    <button
-                        type="button"
-                        className={`${styles.goto}` + ' violet_btn'}
-                    >
-                        go to shopping
-                    </button>
-                    <button
-                        type="button"
-                        className={`${styles.buy_btn} ${styles.calc_btn} ${
-                            copyText && styles.green
-                        }`}
-                        onClick={copy}
-                    >
-                        <input
-                            ref={promocode}
-                            value={'XMAS'}
-                            readOnly
-                            className={`${styles.promocode_text}`}
-                        ></input>
-                        <img
-                            src={`${
-                                !copyText
-                                    ? `/img/content_copy.svg`
-                                    : `/img/done_green.svg`
+                    <div className={styles.wrapper_btns}>
+                        <button
+                            type="button"
+                            className={`${styles.goto}` + ' violet_btn'}
+                        >
+                            go to shopping
+                        </button>
+                        <button
+                            type="button"
+                            className={`${styles.buy_btn} ${styles.calc_btn} ${
+                                copyText && styles.green
                             }`}
-                            className={`${styles.copy_icon}`}
-                        />
-                    </button>
+                            onClick={copy}
+                        >
+                            <input
+                                ref={promocode}
+                                value={'XMAS'}
+                                readOnly
+                                className={`${styles.promocode_text}`}
+                            ></input>
+                            <img
+                                src={`${
+                                    !copyText
+                                        ? `/img/content_copy.svg`
+                                        : `/img/done_green.svg`
+                                }`}
+                                className={`${styles.copy_icon}`}
+                            />
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

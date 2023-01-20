@@ -122,6 +122,11 @@ function Header() {
 
                 <div className={`${styles.header_links_wrapper}`}>
                     <div
+                        className={`${styles.header__buy_coins} from-1025-to-1900`}
+                    >
+                        <BuyCoinsDropdown />
+                    </div>
+                    <div
                         className={`${styles.header__preset_orders} from-1025-to-1900`}
                     >
                         <Link href={'/coins'} locale={locale.title}>
@@ -131,12 +136,6 @@ function Header() {
                                 {translates[router.locale].pageCoinsOffers}
                             </span>
                         </Link>
-                    </div>
-                    <div
-                        className={`${styles.header__buy_coins} from-1025-to-1900`}
-                    >
-                        <BuyCoinsDropdown />
-                        <div className={`dropdown__arrow`} />
                     </div>
                     <div
                         className={`${styles.header__delivery_container} from-1025-to-1900`}
@@ -160,7 +159,7 @@ function Header() {
                             </a>
                         </Link>
                     </div>
-                    <div
+                    {/* <div
                         className={`${styles.header__social_container} from-1025-to-1900`}
                     >
                         <div className={styles.header_menu__icon_wrapper}>
@@ -196,7 +195,7 @@ function Header() {
                                 classStyle={styles.header_menu__icon}
                             />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div className={styles.header__right}>
@@ -224,7 +223,7 @@ function Header() {
                     ></div>
                 </button>
 
-                <div className={`from-1025-to-1900`}>
+                {/* <div className={`from-1025-to-1900`}>
                     {isAuth ? (
                         <Link href="/profile">
                             <a className={styles.header_mail}>
@@ -239,13 +238,24 @@ function Header() {
                             {translates[router.locale].menuSignIn}
                         </button>
                     )}
-                </div>
+                </div> */}
                 {isAuth && (
+                    // <button
+                    //     onClick={logout}
+                    //     className={`logout from-1025-to-1900`}
+                    // >
+                    //     {translates[router.locale].logOut}
+                    // </button>
                     <button
-                        onClick={logout}
-                        className={`logout from-1025-to-1900`}
+                        onClick={() => {
+                            burgerToX();
+                        }}
+                        className={`${styles.user_auth} from-1025-to-1900`}
                     >
-                        {translates[router.locale].logOut}
+                        <img
+                            className={`${styles.header_ava}`}
+                            src="/img/Mbappe.png"
+                        ></img>
                     </button>
                 )}
             </div>

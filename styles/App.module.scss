@@ -20,7 +20,7 @@
   @media(min-width:1025px) {
     padding-left: 48px;
     padding-right: 48px;
-    padding-top: 137px;
+    padding-top: 154px;
   }
 }
 .App h1{
@@ -28,7 +28,7 @@
   background-color: transparent;
   align-items: flex-start;
   @media (min-width:1025px) {
-    padding-bottom: 51px;
+    //padding-bottom: 51px;
   }
 }
 .app__burgerwrapper{
@@ -47,7 +47,7 @@
   }
 
   @media (min-width:1440px) {
-    padding-left: 8.5%;
+    //padding-left: 8.5%;
   }
 }
 .showError{
@@ -137,10 +137,10 @@
 .app_main{
   flex-direction: column;
   @media(min-width:1025px) {
-    max-width: 58%;
+    //max-width: 58%;
   }
   @media(min-width:1440px) {
-    max-width: 50%;
+    //max-width: 50%;
     align-items: flex-start;
   }
 }
@@ -295,7 +295,7 @@
   align-items: center;
   padding: 20px 64px;
   gap: 8px;
-  //width: 343px;
+  //width: 343px;  
   height: 64px;
   background: linear-gradient(265.73deg, #A82DF9 0%, #6678E9 100%);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -309,6 +309,12 @@
   align-items: center;
   text-align: center;
   text-transform: capitalize;
+
+  @media (min-width:1025px) {
+    min-width: 284px;
+    width: 260px;
+    height: 64px;
+  }
 }
 .calc_btn{
   position: relative;
@@ -330,6 +336,22 @@
   padding: 28px 0;
   gap: 16px;
   flex-direction: column;
+
+  @media (min-width:1025px) {
+    flex-direction: row;
+    //padding-top: 0;
+    padding: 0;
+  }
+}
+.wrapper_desk_btns{
+  flex-direction: column;
+
+  @media (min-width:1025px) {
+    flex-direction: row;
+    padding-top: 52px;
+    padding-bottom: 28px;
+  }
+  
 }
 .method_info{
   color: inherit;
@@ -349,6 +371,10 @@
   margin:4vmin auto 4.5vmin;
   color: hsla(0,0%,100%,.5);
   justify-content: center;
+
+  @media (min-width:1025px) {
+    margin: 0 12px;
+  }
 }
 .info_method_title{
   margin-left: auto;
@@ -405,11 +431,34 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(22px);
   border-radius: 28px 28px 0px 0px;
-  z-index: 2;
+  z-index: 3;
   //padding:16px;
   flex-direction: column;
   overflow: hidden;
+
+  @media (min-width:1025px) {
+    position: fixed;
+    width: 672px;
+    height: 752px;
+    left: calc(50% - 672px/2);
+    top: 121px;
+    background: #2B2D43;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 28px;
+  }
 }
+.blur{
+  content: '';
+  position: absolute;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(18, 20, 42, 0.8);
+  backdrop-filter: blur(22px);
+  z-index: 2;
+}
+
 .modal_calc_true{
   display: flex;
 }
@@ -439,4 +488,53 @@
   margin-top: auto;
   padding: 16px;
   padding-bottom: 32px;
+
+  @media (min-width:1025px) {
+    justify-content: center;
+  }
+}
+.custom_style::after{
+  display: none;
+  content: '';
+  position: absolute;
+  width: 670px;
+  height: 506px;
+  z-index: -2;
+
+  @media (min-width:1025px) {
+    display: block;
+    right: 0;
+    background-image: url('../img/cover_desk.png');
+    background-size: 670px;
+    background-repeat: no-repeat;
+    
+  }
+}
+.wrapper_desk{
+  flex-direction: column;
+  
+  @media (min-width:1025px) {
+    width: 770px;
+    padding-bottom: 120px;
+  }
+}
+.offer_wrapper{
+  flex-direction: column;
+  gap: 16px;
+  @media (min-width:1025px) {
+    flex-direction: row;
+  }
+  
+}
+.h2{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+    background: inherit;
+    padding-bottom: 8px;
+}
+.app_column{
+  flex-direction: column;
 }

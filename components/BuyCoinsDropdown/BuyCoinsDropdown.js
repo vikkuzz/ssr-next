@@ -30,8 +30,9 @@ const BuyCoinsDropdown = () => {
     };
 
     return (
-        <div className={`${styles.dropdown_container}`}>
+        <div className={`${styles.dropdown_container} ${styles.drop_cont}`}>
             <div
+                className={`${styles.drop_wrap}`}
                 onMouseEnter={(e) => {
                     e.stopPropagation();
                     window.innerWidth > 1024
@@ -50,61 +51,65 @@ const BuyCoinsDropdown = () => {
                 >
                     {translates[router.locale].menuLinkOrder}
                 </div>
+
+                <div className={`dropdown__arrow`} />
                 <div
                     className={`${styles.dropdown__buycoins_content} hide`}
                     ref={buycoinsRef}
                 >
-                    <div className={`${styles.buycoins_item}`}>
-                        <Link href={`/order/ps4`} locale={locale}>
-                            <a
-                                className={`${styles.buycoins_link}`}
-                                onClick={() => {
-                                    dispatch(changePlatform('ps'));
-                                    dispatch(order({}));
-                                }}
-                            >
-                                ps4
-                            </a>
-                        </Link>
-                    </div>
-                    <div className={`${styles.buycoins_item}`}>
-                        <Link href={`/order/ps5`} locale={locale}>
-                            <a
-                                className={`${styles.buycoins_link}`}
-                                onClick={() => {
-                                    dispatch(order({}));
-                                    dispatch(changePlatform('ps'));
-                                }}
-                            >
-                                ps5
-                            </a>
-                        </Link>
-                    </div>
-                    <div className={`${styles.buycoins_item}`}>
-                        <Link href={`/order/xbox_one`} locale={locale}>
-                            <a
-                                className={`${styles.buycoins_link}`}
-                                onClick={() => {
-                                    dispatch(order({}));
-                                    dispatch(changePlatform('xbox'));
-                                }}
-                            >
-                                Xbox One
-                            </a>
-                        </Link>
-                    </div>
-                    <div className={`${styles.buycoins_item}`}>
-                        <Link href={`/order/xbox_series_x`} locale={locale}>
-                            <a
-                                className={`${styles.buycoins_link}`}
-                                onClick={() => {
-                                    dispatch(order({}));
-                                    dispatch(changePlatform('xbox'));
-                                }}
-                            >
-                                Xbox Series X|S
-                            </a>
-                        </Link>
+                    <div className={`${styles.content_wrap}`}>
+                        <div className={`${styles.buycoins_item}`}>
+                            <Link href={`/order/ps4`} locale={locale}>
+                                <a
+                                    className={`${styles.buycoins_link}`}
+                                    onClick={() => {
+                                        dispatch(changePlatform('ps'));
+                                        dispatch(order({}));
+                                    }}
+                                >
+                                    PlayStation 4
+                                </a>
+                            </Link>
+                        </div>
+                        <div className={`${styles.buycoins_item}`}>
+                            <Link href={`/order/ps5`} locale={locale}>
+                                <a
+                                    className={`${styles.buycoins_link}`}
+                                    onClick={() => {
+                                        dispatch(order({}));
+                                        dispatch(changePlatform('ps'));
+                                    }}
+                                >
+                                    PlayStation 5
+                                </a>
+                            </Link>
+                        </div>
+                        <div className={`${styles.buycoins_item}`}>
+                            <Link href={`/order/xbox_one`} locale={locale}>
+                                <a
+                                    className={`${styles.buycoins_link}`}
+                                    onClick={() => {
+                                        dispatch(order({}));
+                                        dispatch(changePlatform('xbox'));
+                                    }}
+                                >
+                                    Xbox One
+                                </a>
+                            </Link>
+                        </div>
+                        <div className={`${styles.buycoins_item}`}>
+                            <Link href={`/order/xbox_series_x`} locale={locale}>
+                                <a
+                                    className={`${styles.buycoins_link}`}
+                                    onClick={() => {
+                                        dispatch(order({}));
+                                        dispatch(changePlatform('xbox'));
+                                    }}
+                                >
+                                    Xbox Series X|S
+                                </a>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>

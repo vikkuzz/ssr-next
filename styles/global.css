@@ -217,9 +217,9 @@
   background-color: transparent;
 }
 .dropdown__arrow{
-  background: url('../img/whitearrow.svg');
-  width: 15px;
-  height: 15px;
+  background: url('../img/arrow_drop_down.svg');
+  width: 13px;
+  height: 6.5px;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;

@@ -27,6 +27,7 @@ const DropdownContent = ({ data }) => {
     const router = useRouter();
     const { pathname, asPath, query } = router;
     const changeLang = (e) => {
+        e.stopPropagation();
         dispatch(currentLang(e.target.id));
         if (e.target.id === 'ar') {
             dispatch(changeDir('rtl'));
@@ -74,7 +75,7 @@ const DropdownCurrencyContent = ({ data }) => {
     const dispatch = useDispatch();
 
     const changeCurrency = (e) => {
-        //e.stopPropagation();
+        e.stopPropagation();
         dispatch(currentCurrency(e.target.id));
     };
 
@@ -196,8 +197,10 @@ const DropdownLang = ({ burger = false }) => {
                 >
                     {lang.country || 'ENGLISH'}
                 </span>
-                <div className={`${styles.dropdown__arrow}`} />
+
+                {/* <div className={`${styles.dropdown__arrow}`} /> */}
             </div>
+            <div className="dropdown__arrow" />
             {/* <div className={`${styles.divider} from-375-to-1024`}>|</div> */}
             {/* <div className={`${styles.currency} from-375-to-1024`}>
                 {currentCurrency.title || 'USD'}

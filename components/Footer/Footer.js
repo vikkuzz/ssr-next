@@ -31,6 +31,26 @@ const Footer = () => {
                         Yasha Limited, Office 908H Nicolaou Pentadromos Center,
                         Limassol, Cyprus
                     </div>
+                    <div className={'row from-1025-to-1900'}>
+                        <SvgContainer
+                            item={insta}
+                            color="white"
+                            hover="gold"
+                            classStyle={'width25'}
+                        />
+                        <SvgContainer
+                            item={twitter}
+                            color="white"
+                            hover="gold"
+                            classStyle={'width25'}
+                        />
+                        <SvgContainer
+                            item={youtube}
+                            color="white"
+                            hover="gold"
+                            classStyle={'width25'}
+                        />
+                    </div>
                     <div
                         className={
                             `${styles.footer_icons_container}` +
@@ -59,7 +79,7 @@ const Footer = () => {
                         </div>
                         <Link href={'/'} locale={locale.title}>
                             <a
-                                className={`${styles.footer_info_font} ${styles.footer_flexstart}`}
+                                className={`${styles.footer_info_font} ${styles.footer_flexstart} ${styles.royalfut}`}
                             >
                                 ROYALFUT 2020-2023
                             </a>
@@ -176,7 +196,7 @@ const Footer = () => {
                                 </a>
                             </Link>
                         </div>
-                        <div className={`${styles.footer_platform_item}`}>
+                        {/* <div className={`${styles.footer_platform_item}`}>
                             <Link
                                 href={`/privacy-policy`}
                                 locale={locale.title}
@@ -187,7 +207,7 @@ const Footer = () => {
                                     {t.footerLinkPrivacyPolicy}
                                 </a>
                             </Link>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
@@ -236,7 +256,7 @@ const Footer = () => {
                 </div>
                 <Link href={'/'} locale={locale.title}>
                     <a
-                        className={`${styles.footer_info_font} ${styles.footer_flexstart}`}
+                        className={`${styles.footer_info_font} ${styles.footer_flexstart} ${styles.royalfut}`}
                     >
                         ROYALFUT 2020-2023
                     </a>
@@ -281,7 +301,7 @@ const Footer = () => {
                             </a>
                         </Link>
                     </div>
-                    <div className={`${styles.footer_platform_item}`}>
+                    {/* <div className={`${styles.footer_platform_item}`}>
                         <Link href={`/privacy-policy`} locale={locale.title}>
                             <a
                                 className={`${styles.footer_info_font} ${styles.footer_flexstart}`}
@@ -289,7 +309,7 @@ const Footer = () => {
                                 {t.footerLinkPrivacyPolicy}
                             </a>
                         </Link>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

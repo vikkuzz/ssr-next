@@ -7,10 +7,23 @@
     text-transform: uppercase;
     color: #FFFFFF;
     background-color: transparent;
+
+    @media (min-width:1025px) {
+        font-size: 36px;
+    }
 }
 .h1_container{
     position: relative;
     margin-bottom: 80px;
+    
+
+    @media (min-width:1025px) {
+        margin: 0;
+        padding-top: 76px;
+        flex-direction: column;
+        gap: 8px;
+        padding-bottom: 24px;
+    }
 }
 .h1{
     position: absolute;
@@ -23,6 +36,12 @@
     background-clip: text;    
     font-style: italic;
     text-transform: uppercase;
+
+    @media (min-width:1025px) {
+        position: static;
+        padding: 0;
+        gap: 8px;
+    }
 }
 .under_h1{
     font-family: 'Montserrat';
@@ -33,4 +52,10 @@
     color: rgba(255, 255, 255, 0.6);
     position: absolute;
     bottom: -67px;
+    background-color: transparent;
+
+    @media (min-width:1025px) {
+        position: static;
+
+    }
 }

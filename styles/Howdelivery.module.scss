@@ -81,12 +81,14 @@
     background-color: #2B2D43;
 }
 .how_container_content{
-    padding-top: 16px;
+    padding-top: 20px;
     flex-direction: column;
     align-self: flex-start;
 
     @media (min-width:1025px) {
-        max-width: 540px;
+        max-width: 50%;
+        height: 100%;
+        //max-width: 540px;
     }
 }
 .how_container_text{
@@ -133,7 +135,8 @@
     font-size: 24px;
     line-height: 29px;
     @media (min-width:1025px) {
-        font-size: 36px;
+        font-size: 24px;
+        line-height: 29px;
     }
 }
 .how_step_text{
@@ -180,4 +183,12 @@
 }
 .how_step_img_transform{
     transform: rotate(180deg);
+}
+.wrapper{
+    flex-direction: column;
+    @media (min-width:1025px) {
+        flex-direction: row;
+        gap: 16px;
+        min-height: 340px;
+    }
 }

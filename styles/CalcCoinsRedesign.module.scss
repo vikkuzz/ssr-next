@@ -32,11 +32,17 @@
     font-weight: 700;
     font-size: 24px;
     line-height: 29px;
+
+    @media (min-width:1025px) {
+        background: transparent;
+        width: 100%;
+    }
 }
 .coins_input:focus{
     background: #282B4A;
     border: 1px solid #8852F2;
 }
+
 .coins_btn{
     width: 32px;
     height: 32px;
@@ -65,6 +71,11 @@
     left: -24px;
     width: 100vw;
     background-color: transparent;
+
+    @media (min-width:1025px) {
+        width: 107%;
+        padding-top: 38px;
+    }
 }
 .pack{
     position: relative;
@@ -86,8 +97,13 @@
     align-items: center;
 
     @media (min-width:1025px) {
-        width: 44px;
-        min-width: auto;
+        width: 68px;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        min-width: 68px;
         font-size: 11px;
         height: auto;
     }

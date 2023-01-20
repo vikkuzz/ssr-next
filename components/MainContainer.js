@@ -267,6 +267,9 @@ function MainContainer({
                     </picture>
                 </div>
             )} */}
+            <div
+                className={`${stateModalCalc === true ? styles.blur : 'hide'}`}
+            ></div>
             <div className={`error ${error == '' ? '' : styles.showError}`}>
                 {error}
             </div>
@@ -316,7 +319,7 @@ function MainContainer({
             </div>
 
             <div
-                className={`${styles.App} ${customStyle}`}
+                className={`${styles.App} ${styles.custom_style}`}
                 onClick={(e) => {
                     isOutsideClick(e, wrapperModalRef);
                     isOutsideClickContains(e, shadowModalRef);

@@ -136,97 +136,98 @@ const Howdelivery = () => {
             <div className={`${styles.how_title}`}>
                 {translates[router.locale].hwd}
             </div>
-
-            <div
-                id="player"
-                ref={easy}
-                className={`${styles.how_yt_wrapper}`}
-                autoPlay={1}
-            ></div>
-            <div className={`${styles.how_container_content}`}>
-                <div className={`${styles.how_tabs_wrapper}`}>
-                    <div className={`${styles.how_btn_wrapper}`}>
-                        <button
-                            onClick={onHandleClickTab}
-                            id={'easy'}
-                            type="button"
-                            className={`${styles.how_tab} ${
-                                howDelivery.easy && styles.how_is_active
-                            }`}
-                        >
-                            {translates[router.locale].comfortMethodName}
-                        </button>
+            <div className={`${styles.wrapper}`}>
+                <div
+                    id="player"
+                    ref={easy}
+                    className={`${styles.how_yt_wrapper}`}
+                    autoPlay={1}
+                ></div>
+                <div className={`${styles.how_container_content}`}>
+                    <div className={`${styles.how_tabs_wrapper}`}>
+                        <div className={`${styles.how_btn_wrapper}`}>
+                            <button
+                                onClick={onHandleClickTab}
+                                id={'easy'}
+                                type="button"
+                                className={`${styles.how_tab} ${
+                                    howDelivery.easy && styles.how_is_active
+                                }`}
+                            >
+                                {translates[router.locale].comfortMethodName}
+                            </button>
+                        </div>
+                        <div className={`${styles.how_btn_wrapper}`}>
+                            <button
+                                onClick={onHandleClickTab}
+                                id={'manual'}
+                                type="button"
+                                className={`${styles.how_tab} ${
+                                    !howDelivery.easy && styles.how_is_active
+                                }`}
+                            >
+                                {translates[router.locale].marketMethodName}
+                            </button>
+                        </div>
                     </div>
-                    <div className={`${styles.how_btn_wrapper}`}>
-                        <button
-                            onClick={onHandleClickTab}
-                            id={'manual'}
-                            type="button"
-                            className={`${styles.how_tab} ${
-                                !howDelivery.easy && styles.how_is_active
-                            }`}
-                        >
-                            {translates[router.locale].marketMethodName}
-                        </button>
-                    </div>
-                </div>
-                <div className={`${styles.how_container_text}`}>
-                    <h2 className={`${styles.how_subtitle}`}>
-                        {
-                            deliveryData[howDelivery.easy ? 'easy' : 'manual'][
-                                step
-                            ].title
-                        }
-                    </h2>
-                    <div className={`${styles.how_step_text}`}>
-                        {
-                            deliveryData[howDelivery.easy ? 'easy' : 'manual'][
-                                step
-                            ].text
-                        }
-                    </div>
-                    <div className={`${styles.how_btns_wrapper}`}>
-                        <button
-                            className={`${styles.how_step_btn}`}
-                            id="-"
-                            type="button"
-                            onClick={onHandleChangeStep}
-                        >
-                            <img
+                    <div className={`${styles.how_container_text}`}>
+                        <h2 className={`${styles.how_subtitle}`}>
+                            {
+                                deliveryData[
+                                    howDelivery.easy ? 'easy' : 'manual'
+                                ][step].title
+                            }
+                        </h2>
+                        <div className={`${styles.how_step_text}`}>
+                            {
+                                deliveryData[
+                                    howDelivery.easy ? 'easy' : 'manual'
+                                ][step].text
+                            }
+                        </div>
+                        <div className={`${styles.how_btns_wrapper}`}>
+                            <button
+                                className={`${styles.how_step_btn}`}
                                 id="-"
-                                className={`${styles.how_step_img}`}
-                                alt="back"
-                                src="/img/arrow_circle_right.svg"
-                            ></img>
-                        </button>
-                        <span
-                            className={`${styles.how_step_num} ${styles.how_text}`}
-                        >
-                            {step}
-                        </span>
-                        <span
-                            className={`${styles.how_step_slash} ${styles.how_text}`}
-                        >
-                            /
-                        </span>
-                        <span
-                            className={`${styles.how_after_slash} ${styles.how_text}`}
-                        >
-                            4
-                        </span>
-                        <button
-                            className={`${styles.how_step_btn}`}
-                            id="+"
-                            type="button"
-                            onClick={onHandleChangeStep}
-                        >
-                            <img
+                                type="button"
+                                onClick={onHandleChangeStep}
+                            >
+                                <img
+                                    id="-"
+                                    className={`${styles.how_step_img}`}
+                                    alt="back"
+                                    src="/img/arrow_circle_right.svg"
+                                ></img>
+                            </button>
+                            <span
+                                className={`${styles.how_step_num} ${styles.how_text}`}
+                            >
+                                {step}
+                            </span>
+                            <span
+                                className={`${styles.how_step_slash} ${styles.how_text}`}
+                            >
+                                /
+                            </span>
+                            <span
+                                className={`${styles.how_after_slash} ${styles.how_text}`}
+                            >
+                                4
+                            </span>
+                            <button
+                                className={`${styles.how_step_btn}`}
                                 id="+"
-                                className={`${styles.how_step_img} ${styles.how_step_img_transform}`}
-                                alt="front"
-                                src="/img/arrow_circle_right.svg"
-                            ></img>
-                        </button>
+                                type="button"
+                                onClick={onHandleChangeStep}
+                            >
+                                <img
+                                    id="+"
+                                    className={`${styles.how_step_img} ${styles.how_step_img_transform}`}
+                                    alt="front"
+                                    src="/img/arrow_circle_right.svg"
+                                ></img>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

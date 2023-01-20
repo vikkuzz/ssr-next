@@ -5,6 +5,10 @@
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
+
+    @media (min-width:1025px) {
+        justify-content: flex-start;
+    }
 }
 .footer_header{
     font-family: 'Montserrat';
@@ -13,6 +17,11 @@
     padding-bottom: 24px;
     height: auto;
     justify-content: flex-start;
+    text-transform: lowercase;
+    display: block;
+}
+.footer_header::first-letter{
+    text-transform: uppercase;
 }
 .footer_firstcolumn{
     flex-direction: column;
@@ -40,13 +49,27 @@
     font-size: 12px;
     line-height: 15px;
 
+    @media (min-width:1025px) {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
 }
 .footer_infowrapper{
     flex-direction: column;
+    gap: 8px;
 }
 .footer_info_item{
     //padding-bottom: 12px;
     justify-content: flex-start;
+
+    @media (min-width:1025px) {
+        padding-bottom: 41px;
+    }
 }
 .footer__mastercard{
     background-image: url('/img/mastercardgray.svg');
@@ -112,6 +135,20 @@
 
 }
 
+.royalfut{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: lowercase;
+    display: block;
+}
+.royalfut::first-letter{
+    text-transform: uppercase;
+}
+
 @media (max-width:1024px) {
     .footer_secondcolumn{
         padding-bottom: 50px;
@@ -134,7 +171,8 @@
     padding-bottom: 24px;
   }
   .footer__svg_wrapper{
-    margin-bottom: 62px;
+    margin-bottom: 46px;
+    padding-top: 80px;
   }
   .footer_header{
     font-size: 24px;

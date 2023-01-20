@@ -3,6 +3,10 @@
     position: relative;
     align-self: flex-start;
     margin-top: 15px;
+    
+    @media (min-width:1025px) {
+        width: auto;
+    }
 }
 .value_container{
     //flex-direction: column;

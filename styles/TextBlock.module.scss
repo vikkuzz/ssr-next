@@ -1,7 +1,14 @@
 .textblock{
     position: relative;
     flex-direction: column;
-    padding: 0 2vmin;
+    padding: 0 2vmin 2vmin;
+
+    @media (min-width:1025px) {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 28px;
+        height: 100%;
+    }
 }
 .textblock_decor{
     //position: absolute;
@@ -25,6 +32,7 @@
 
     @media (min-width:1025px) {
         padding-top: 60px;
+        flex-direction: row;
     }
 }
 .textblock_text{
@@ -67,6 +75,16 @@
     @media (min-width:1025px) {
         font-size: 36px;
         line-height: 36px;
+        flex-direction: column;
+        align-items: flex-start;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29px;
+        display: flex;
+
+        color: #FFFFFF;
     }
 }
 .textblock_row{
@@ -77,5 +95,6 @@
 
     @media (min-width:1025px) {
         padding-bottom: 60px;
+        flex-direction: row;
     }
 }
