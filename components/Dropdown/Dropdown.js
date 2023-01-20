@@ -134,6 +134,7 @@ const DropdownLang = ({ burger = false }) => {
         let lang = flagLangs.filter(
             (el) => el.title === browserLanguage.toLowerCase()
         )[0];
+        dispatch(currentLang(lang.title));
 
         // if (!stateUser && router.locale === 'en') {
         //     dispatch(currentLang('en'));
@@ -179,7 +180,6 @@ const DropdownLang = ({ burger = false }) => {
 
     return (
         <div className={`${styles.countries}`}>
-            {console.log(lang)}
             <div className={`${styles.locale}`}>
                 <div className={`${styles.circle}`}>
                     <img
