@@ -6,6 +6,8 @@ import styles from '../../styles/Menu.module.scss';
 import OptionWithItems from '../OptionWithItems/OptionWithItems';
 import Link from 'next/link';
 
+let counter = 0;
+
 const Menu = ({ children, title, menuItems }) => {
     return (
         <div className={`${styles.menu_container}`}>
@@ -23,7 +25,7 @@ const Menu = ({ children, title, menuItems }) => {
 
                 {menuItems &&
                     menuItems.map((el) => (
-                        <Link href={el.url}>
+                        <Link key={(counter += 1)} href={el.url}>
                             <a className={`${styles.option_btn}`}>{el.name}</a>
                         </Link>
                     ))}

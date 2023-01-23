@@ -193,7 +193,12 @@ function MainContainer({
     }, []);
 
     useEffect(() => {
-        router.push({ pathname, query }, asPath, { locale: stateLocale.title });
+        console.log({ pathname, query }, asPath, {
+            locale: stateLocale.title || 'en',
+        });
+        router.push({ pathname, query }, asPath, {
+            locale: stateLocale.title || 'en',
+        });
     }, [stateLocale]);
 
     useEffect(() => {

@@ -22,7 +22,12 @@ const initialState = {
     user: {},
     errorMessage: '',
     showMessage: false,
-    locale: {},
+    locale: {
+        url: '/img/flag/en_circle.svg',
+        title: 'en',
+        id: '0',
+        country: 'English',
+    },
     currency: {
         currency: '$',
         title: 'USD',

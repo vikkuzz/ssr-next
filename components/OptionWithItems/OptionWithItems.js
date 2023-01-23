@@ -5,6 +5,8 @@ import { platforms } from '../../data-elements/platforms';
 
 import styles from '../../styles/OptionWithItems.module.scss';
 
+let count = 0;
+
 const OptionWithItems = () => {
     const content = useRef();
 
@@ -36,7 +38,7 @@ const OptionWithItems = () => {
             </button>
             <div ref={content} className={`${styles.hidden_container}`}>
                 {platforms.map((el) => (
-                    <Link href={el.url}>
+                    <Link key={(count += 1)} href={el.url}>
                         <a className={`${styles.option_item}`}>{el.name}</a>
                     </Link>
                 ))}

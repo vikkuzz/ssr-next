@@ -184,7 +184,7 @@ const DropdownLang = ({ burger = false }) => {
                 <div className={`${styles.circle}`}>
                     <img
                         className={`${styles.dropdown__country_img}`}
-                        src={`${lang.url}` || localeIcon}
+                        src={`${lang.url}` || '/img/flag/en_circle.svg'}
                     />
                 </div>
                 {/* <span className={`from-375-to-1024 bcgr-transparent`}>
