@@ -134,7 +134,8 @@ const DropdownLang = ({ burger = false }) => {
         let lang = flagLangs.filter(
             (el) => el.title === browserLanguage.toLowerCase()
         )[0];
-        dispatch(currentLang(lang.title));
+        console.log(lang, browserLanguage);
+        dispatch(currentLang(lang?.title || 'en'));
 
         // if (!stateUser && router.locale === 'en') {
         //     dispatch(currentLang('en'));
