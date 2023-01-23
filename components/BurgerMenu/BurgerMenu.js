@@ -167,8 +167,12 @@ const BurgerMenu = () => {
     let menu = null;
     if (modal === true && auth === true) {
         menu = (
-            <div className={styles.burger_menu} ref={menu}>
-                <div className={`${styles.burger_drop_container}`}>
+            <div className={`${styles.burger_menu}`} ref={menu}>
+                <div
+                    className={`${styles.burger_drop_container} ${
+                        window.innerWidth > 1024 && 'hide'
+                    }`}
+                >
                     <Dropdown burger={true} />
                 </div>
 
@@ -225,9 +229,11 @@ const BurgerMenu = () => {
                         </Link>
                     )}
                     <Menu title={'Profile'} menuItems={profileItems}></Menu>
-                    <Menu title={'Menu'} menuItems={menuItems}>
-                        <OptionWithItems />
-                    </Menu>
+                    <div className={`${window.innerWidth > 1024 && 'hide'}`}>
+                        <Menu title={'Menu'} menuItems={menuItems}>
+                            <OptionWithItems />
+                        </Menu>
+                    </div>
 
                     {/* <MenuItem
                         text={translates[router.locale].pageCoinsOffers}
@@ -346,10 +352,12 @@ const BurgerMenu = () => {
     } else if (modal === true && auth !== true) {
         // } else if (modal === true && auth !== true && menuContent == 'desktop') {
         menu = (
-            <div
-                className={`${styles.burger_menu_desk} ${animate && 'right_0'}`}
-            >
-                <div className={`${styles.burger_drop_container}`}>
+            <div className={`${styles.burger_menu_desk}`}>
+                <div
+                    className={`${styles.burger_drop_container} ${
+                        window.innerWidth > 1024 && 'hide'
+                    }`}
+                >
                     <Dropdown burger={true} />
                 </div>
                 <button
@@ -584,7 +592,11 @@ const BurgerMenu = () => {
                                 <Auth />
                             </div>
                         )}
-                        <div className={`${styles.menu_wrapper}`}>
+                        <div
+                            className={`${styles.menu_wrapper} ${
+                                window.innerWidth > 1024 && 'hide'
+                            }`}
+                        >
                             <Menu title={'Menu'} menuItems={menuItems}>
                                 <OptionWithItems />
                             </Menu>

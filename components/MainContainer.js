@@ -86,8 +86,10 @@ function MainContainer({
         }
     };
     const isOutsideClickContains = (event, ref) => {
-        if (ref.current.contains(event.target) && modal) {
-            dispatch(loginModal(false));
+        if (ref?.current) {
+            if (ref.current.contains(event.target) && modal) {
+                dispatch(loginModal(false));
+            }
         }
     };
 
@@ -333,15 +335,18 @@ function MainContainer({
         </h1> */}
                 <Breadcrumbs />
                 <div
-                    className={styles.app__burgerwrapper}
+                    className={`${styles.app__burgerwrapper} ${
+                        modal && styles.show_container
+                    }`}
                     ref={wrapperModalRef}
                 >
-                    <div
+                    {/* <div
                         ref={shadowModalRef}
                         className={`${styles.app__burger_bckgr} ${
                             modal ? '' : 'hide'
                         }`}
-                    ></div>
+                    ></div> */}
+
                     <BurgerMenu />
                 </div>
                 <div className={styles.app_container_content}>{children}</div>

@@ -18,10 +18,15 @@
     //position: fixed;
     top: 25px;
     //right: 10%;
-    background: #545666;
-    border: 1px solid #989aa3;
-    border-radius: 4px;
-    padding: 12px 0;
+    // background: #545666;
+    // border: 1px solid #989aa3;
+    // border-radius: 4px;
+
+    background: #35374B;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 12px 20px rgb(0 0 0 / 40%);
+    border-radius: 12px;
+    padding: 14px 0;
     align-items: flex-start;
     //height: 300px;
     z-index: 1;
@@ -84,6 +89,13 @@
     color: rgba(255, 255, 255, 1);
     text-transform: none;
     background: transparent;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.6);
 }
 .dropdown_currency{
     position: relative;
@@ -349,7 +361,7 @@
     justify-content: center;
 }
 .drop_currency{
-    width: 200px;
+    width: 215px;
 }
 .burger_drop_lang{
     font-family: "Montserrat";

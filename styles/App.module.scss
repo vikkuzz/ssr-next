@@ -9,6 +9,7 @@
   min-height: 100%;
   justify-content: space-between;
   overflow: hidden;
+  position: relative;
 
   
   &__title{
@@ -32,9 +33,46 @@
     //padding-bottom: 51px;
   }
 }
+// .app__burgerwrapper{
+//   //width: fit-content;
+//   height: 100%;
+//   background-color: gold;
+//   position: absolute;
+//   width: 375px;
+//   top: 0;
+//   //right: -580px;
+//   right: 0;
+//   transform: translate(-580px);
+//   border: 2px solid red;
+//   transition: all;
+//   z-index: 10;
+
+//   @media (min-width:1025px) {
+//     width: 580px;
+//   }
+// }
+// .show_container{
+//   transform: translate(0);
+//   transition: all .5s;
+//   //right: 0;
+// }
 .app__burgerwrapper{
-  width: fit-content;
-  height: 0;
+  position: absolute;
+  width: 375px;
+  height: 100%;
+  right: -100%;
+  transition: all .4s;
+  top: 0;
+  z-index: 10;
+  background: rgba(18, 20, 42, 0.8);
+  backdrop-filter: blur(24px);
+
+  @media (min-width:1025px) {
+    width: 455px;
+  }
+}
+.show_container{
+  right: 0;
 }
 .app_container_content{
   position: relative;
@@ -391,6 +429,7 @@
 .info_text{
   color: inherit;
   align-items: center;
+  background-color: transparent;
   //padding: 0 8px;
   @media (max-width:1024px) {
       // font-size: 3.2vmin;
@@ -422,7 +461,7 @@
 
   @media (min-width:1025px) {
     padding: 32px;
-    width: 689px;
+    width: 375px;
   }
 }
 .modal_calc_wrapper{

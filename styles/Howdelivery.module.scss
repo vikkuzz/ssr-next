@@ -21,6 +21,10 @@
 .how_container{
     flex-direction: column;
     padding-top: 56px;
+
+    @media (min-width:1025px) {
+        padding-top: 100px;
+    }
 }
 .how_tab{
     position: relative;
