@@ -1,6 +1,6 @@
 .h1_white_text{
     font-family: 'Montserrat';
-    font-style: italic;
+    //font-style: italic;
     font-weight: 700;
     font-size: 28px;
     line-height: 110%;
@@ -36,7 +36,7 @@
     background-image: linear-gradient(265.73deg, #A82DF9 0%, #6678E9 100%);
     color: transparent;
     background-clip: text;    
-    font-style: italic;
+    //font-style: italic;
     text-transform: uppercase;
 
     @media (min-width:1025px) {
@@ -45,6 +45,8 @@
         gap: 8px;
         font-size: 76px;
         line-height: 78px;
+        transform: skew(-10deg);
+        letter-spacing: -0.35px;
     }
 }
 .under_h1{

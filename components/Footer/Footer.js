@@ -36,19 +36,19 @@ const Footer = () => {
                             item={insta}
                             color="white"
                             hover="gold"
-                            classStyle={'width25'}
+                            classStyle={'width32'}
                         />
                         <SvgContainer
                             item={twitter}
                             color="white"
                             hover="gold"
-                            classStyle={'width25'}
+                            classStyle={'width32'}
                         />
                         <SvgContainer
                             item={youtube}
                             color="white"
                             hover="gold"
-                            classStyle={'width25'}
+                            classStyle={'width32'}
                         />
                     </div>
                     <div
@@ -216,19 +216,19 @@ const Footer = () => {
                     item={insta}
                     color="white"
                     hover="gold"
-                    classStyle={'width25'}
+                    classStyle={'width32'}
                 />
                 <SvgContainer
                     item={twitter}
                     color="white"
                     hover="gold"
-                    classStyle={'width25'}
+                    classStyle={'width32'}
                 />
                 <SvgContainer
                     item={youtube}
                     color="white"
                     hover="gold"
-                    classStyle={'width25'}
+                    classStyle={'width32'}
                 />
             </div>
             <div

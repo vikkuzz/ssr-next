@@ -10,17 +10,20 @@
     cursor: pointer;
     max-width: 250px;
     width: auto;
+    flex-direction: column;
 }
 .dropdown__content{
     width: auto;
     min-width: max-content;
     position: absolute;
     //position: fixed;
-    top: 25px;
+    //top: 25px;
     //right: 10%;
     // background: #545666;
     // border: 1px solid #989aa3;
     // border-radius: 4px;
+    left: 50%;
+    transform: translate(-50%, 0%);
 
     background: #35374B;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -106,6 +109,7 @@
     font-size: 20px;
     line-height: 24px;
     align-items: center;
+    flex-direction: column;
 }
 .dropdown__wrapper_content{
     position: absolute;
@@ -188,8 +192,10 @@
     background-size: contain;
     background-repeat: no-repeat;
     margin-left: auto;   
-    min-width: 15px;     
+    //min-width: 15px;     
     margin: 0 8px;
+    width: 13px;
+    height: 6.5px;
 }
 .dropdown__wrapper_mobile_dropdown{
     position: relative;
@@ -261,6 +267,7 @@
     justify-content: flex-end;
     width: auto;
     //align-items: baseline;
+    position: relative;
 }
 .dropdown__links{
     font-size: 18px;
@@ -274,16 +281,17 @@
 }
 .dropdown__buycoins_content{
     min-width: max-content;
-    position: absolute;
+    //position: absolute;
     top: 0%;
     background: transparent;
     //border: 1px solid #989aa3;
     //border-radius: 4px;
-    padding: 25px 0;
+    //padding: 25px 0;
     align-items: flex-start;
     height: auto;
     flex-direction: column;
-    left: calc(50% - 200px/2);
+    padding-top: 8px;
+    //left: calc(50% - 200px/2);
 }
 
 .content_wrap{
@@ -302,6 +310,7 @@
     box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4);
     border-radius: 12px;
     gap: 12px;
+    position: absolute;
 }
 
 .buycoins_item:hover{
@@ -326,9 +335,14 @@
 // }
 .drop_wrap{
     align-items: center;
+    flex-direction: column;
 }
 .drop_cont{
     align-items: baseline;
+}
+.mobile_drop_container{
+    flex-direction: column;
+    gap: 0;
 }
 
 @media(min-width:1025px){
@@ -369,4 +383,26 @@
     font-size: 20px;
     line-height: 24px;
     align-items: center;
+}
+.drop_px{
+    
+    padding: 0;
+    @media (min-width:1025px) {
+        padding: 8px 0;
+    }
+}
+.wrapper_arrow{
+    align-items: center;
+}
+.mobile_container{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 340px;
+    padding-top: 8px;
+
+    @media (min-width:1025px) {
+        display: none;
+        padding: 0;
+    }
 }

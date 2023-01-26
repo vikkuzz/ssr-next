@@ -237,6 +237,9 @@
     background: transparent;
     background-color: transparent;
 }
+.auth_fieldset:focus-within{
+    border:1px solid #A82DF9;
+}
 .auth_fieldset:hover legend{
    opacity: 1;
 }
@@ -266,7 +269,12 @@
     }
 }
 .auth_userdata::placeholder{
-    font-family: 'Oswald';
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.6);
 }
 .auth_view_pass{
     position: absolute;
@@ -295,6 +303,8 @@
     height: auto;
     height: 25px;
     width: 25px;
+    min-height: 25px;
+    min-width: 25px;
 }
 .email_fieldset{
     margin-bottom: 6.4vmin;
@@ -325,6 +335,17 @@
     color: hsla(0,0%,100%,.8);
     background-color: transparent;
     align-items: center;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgba(255, 255, 255, 0.4);
+    display: initial;
+}
+.simbols_text::first-letter{
+    text-transform: capitalize!important;
 }
 .submit_wrapper{
     height: auto;
@@ -534,7 +555,7 @@
     border-radius: 12px;
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 16px;
     line-height: 20px;
     padding: 0;

@@ -101,18 +101,20 @@
     left: 30%;
     border-radius: 4px;
     padding: 3px 5px 3px 4px;
-    width: 28px;
-    height: 18px;
+    width: auto;
+    //height: 18px;
     font-family: 'Montserrat',helvetica,arial,sans-serif;
     font-weight: 600;
     font-style: italic;
-    font-size: 10px;
+    font-size: 12px;
     line-height: 12px;
     color: black;
     background: #eab11f;
     transform: rotate(-15deg);
     z-index: 1;
     direction: ltr;
+    padding: 4px 8px;
+    border-radius: 8px;
 }
 .input_price_wrapper{
     position: relative;

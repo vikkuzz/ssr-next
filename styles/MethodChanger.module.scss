@@ -83,7 +83,7 @@
     height: 25px;
     min-width: 25px;
     min-height: 25px;
-    border-radius: 50%;
+    border-radius: 100%;
     padding: 2px;
     overflow: hidden;;
     //box-shadow:  0 0 0 1px inset white;
@@ -91,6 +91,7 @@
     border: 1px solid white;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 .method_radio:checked + .method_check{
     //box-shadow: 0 0 0 1px inset #eab11f, 0 0 0 2px inset black;
@@ -108,6 +109,10 @@
     width: 14px;
     min-width: 14px;
     min-height: 14px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 .wrapper_radiogroup{
     justify-content: flex-start;

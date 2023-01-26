@@ -167,7 +167,7 @@ const Price = () => {
             price.current.style.width = `${price.current.value.length * 16}px`;
         }
         if (window.innerWidth >= 1025) {
-            price.current.style.width = `${price.current.value.length * 24}px`;
+            price.current.style.width = `${price.current.value.length * 17}px`;
         }
     }
 

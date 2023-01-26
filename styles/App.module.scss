@@ -155,8 +155,8 @@
 .close_btn_pic{
   background-color: transparent;
   border: none;
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
   padding: 0;
 
 }
@@ -370,6 +370,11 @@
 }
 .calc_icon{
   width: auto;
+
+  @media (min-width:1025px) {
+    width: 16px;
+
+  }
 }
 .wrapper_btns{
   padding: 28px 0;
@@ -396,6 +401,10 @@
   color: inherit;
   width: auto;
   gap: 12px;
+
+  @media (min-width:1025px) {
+    text-align: center;
+  }
 }
 .method_info img{
   background-color: transparent;
@@ -412,7 +421,7 @@
   justify-content: center;
 
   @media (min-width:1025px) {
-    margin: 0 12px;
+    margin: 0 16px;
   }
 }
 .info_method_title{

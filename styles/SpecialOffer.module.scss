@@ -47,6 +47,7 @@
 .goto{
     margin: 16px 0;
     height: 64px;
+    font-weight: 600;
     @media (min-width:1025px) {
         margin: 0;
         
@@ -96,6 +97,7 @@
     justify-content: center;
     border: none;
     text-align: center;
+    font-weight: 600;
   }
 .offer_timer{
     position: absolute;

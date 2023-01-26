@@ -481,14 +481,16 @@ export const translates = {
         pageCoinsAfterSuccessfully:
             'После успешной оплаты заказа вы попадете на страницу, где мы вас попросим уточнить баланс клуба, затем исходя из баланса клуба будет предложен игрок к покупке. Вам надо будет купить его не дороже установленной цены. А затем тут же его продать по тем ценовым параметрам, которые мы предложим.',
         pageCoinsBuyPlayer: 'КУПИТЕ ИГРОКА',
-        pageCoinsFeedback:
-            'По завершению заказа не забудьте оставить <a href="https://www.trustpilot.com/evaluate/royalfut.com" target="_blank">отзыв о нас</a>. Приятной игры и ждём вас снова :)',
+        pageCoinsFeedback: 'По завершению заказа не забудьте оставить ',
+        trustcom: 'отзыв о нас.',
+        enjoy: 'Приятной игры и ждём вас снова :)',
         pageCoinsEnjoy: 'НАСЛАЖДАЙТЕСЬ ИГРОЙ!',
         pageCoinsDoNotEnter:
             'Не заходите в игру во время выполнения заказа. Как заказ будет завершён, на почту придёт уведомление. Время исполнения заказа вы всегда можете уточнить у менеджера поддержки.',
         pageCoinsWaitCompletion: 'ОЖИДАЙТЕ ОКОНЧАНИЕ ИСПОЛЕНИЯ ВАШЕГО ЗАКАЗА',
         pageCoinsToStart:
-            'Для начала доставки заказа заполните соответствующее поле кодами резервной копии, которые вы найдёте тут: <a href="https://myaccount.ea.com/cp-ui/security/index" target="_blank"> https://myaccount.ea.com/cp-ui/security/index</a>. Нам достаточно одного неиспользованного кода, чтобы начать доставку вашего заказа.',
+            'Для начала доставки заказа заполните соответствующее поле кодами резервной копии, которые вы найдёте тут: ',
+        unused: ' Нам достаточно одного неиспользованного кода, чтобы начать доставку вашего заказа.',
         pageCoinsFillBackup: 'ЗАПОЛНИТЕ ПОЛЕ С КОДОМ РЕЗЕРВНОЙ КОПИИ',
         pageCoinsAfter:
             'После успешной оплаты заказа вы попадете на форму с двумя полями: адрес электронной почты и пароль. Пожалуйста, заполните эти поля данными своей учетной записи EA.',
@@ -854,14 +856,16 @@ export const translates = {
         pageCoinsAfterSuccessfully:
             "After your order is successfully paid you will be redirected to the page where we will ask you to specify your club's balance, then depending on that you will be offered a player to purchase. You will have to buy him for no more than the set price. And after that sell it to us for the price we offer.",
         pageCoinsBuyPlayer: 'BUY A PLAYER',
-        pageCoinsFeedback:
-            'When the order is complete please leave <a href="https://www.trustpilot.com/evaluate/royalfut.com" target="_blank"> your feedback</a>. Have a great game and we look forward to seeing you again:)',
+        pageCoinsFeedback: 'When the order is complete please leave ',
+        trustcom: 'your feedback. ',
+        enjoy: 'Have a great game and we look forward to seeing you again:)',
         pageCoinsEnjoy: 'ENJOY YOUR GAME!',
         pageCoinsDoNotEnter:
             'Do not enter the game during the delivery. When the process is complete you will be notified by email. Contact the support manager to check the time of the execution of your order.',
         pageCoinsWaitCompletion: 'WAIT FOR THE COMPLETION OF YOUR ORDER',
         pageCoinsToStart:
-            'To start the delivery process fill the corresponding fields with your backup codes, that can be found here: <a href="https://myaccount.ea.com/cp-ui/security/index" target="_blank"> https://myaccount.ea.com/cp-ui/security/index</a>. We only need one unused code, to start delivering your order.',
+            'To start the delivery process fill the corresponding fields with your backup codes, that can be found here: ',
+        unused: ' We only need one unused code, to start delivering your order.',
         pageCoinsFillBackup: 'FILL THE BACKUP CODE FIELD',
         pageCoinsAfter:
             "After successful payment of the order you'll be taken to page with two fields: e-mail and password. Please, fulfill these fields with your EA account details.",
@@ -1211,13 +1215,16 @@ export const translates = {
             'Nachdem du deine Bestellung bezahlt hast, wirst du auf eine Seite weitergeleitet, auf der wir dich erst darum bitten, deinen Club-Kontostand bekanntzugeben. Basierend auf deinen Angaben wird dir anschließend ein Spieler zum Kauf angeboten. Du musst diesen zum festgelegten Preis kaufen und ihn danach zum von uns gebotenen Preis an uns weiterverkaufen.',
         pageCoinsBuyPlayer: 'SPIELER KAUFEN',
         pageCoinsFeedback:
-            'Sobald die Bestellung abgeschlossen ist, hinterlasse uns bitte <a href="https://www.trustpilot.com/evaluate/royalfut.com" target="_blank"> dein Feedback</a>. Wir wünschen dir ein gutes Spiel und freuen uns auf unser nächstes Wiedersehen :)',
+            'Sobald die Bestellung abgeschlossen ist, hinterlasse uns bitte ',
+        trustcom: 'dein Feedback. ',
+        enjoy: 'Wir wünschen dir ein gutes Spiel und freuen uns auf unser nächstes Wiedersehen :)',
         pageCoinsEnjoy: 'VIEL SPASS BEIM SPIELEN!',
         pageCoinsDoNotEnter:
             'Starte das Spiel erst, wenn die Zustellung abgeschlossen ist. Du wirst per E-Mail benachrichtigt, wenn der Prozess vollzogen ist. Kontaktiere den Kundendienst-Manager, um die Durchführungszeit deiner Bestellung zu überprüfen.',
         pageCoinsWaitCompletion: 'WARTE AUF DEN ABSCHLUSS DEINER BESTELLUNG',
         pageCoinsToStart:
-            'Fülle die entsprechenden Felder mit deinen Backup-Codes aus, damit die Zustellung beginnen kann. Diese findest du hier: <a href="https://myaccount.ea.com/cp-ui/security/index" target="_blank"> https://myaccount.ea.com/cp-ui/security/index</a> Wir benötigen lediglich einen nicht verwendeten Code, damit deine Bestellung ausgeliefert werden kann.',
+            'Fülle die entsprechenden Felder mit deinen Backup-Codes aus, damit die Zustellung beginnen kann. Diese findest du hier: ',
+        unused: '  Wir benötigen lediglich einen nicht verwendeten Code, damit deine Bestellung ausgeliefert werden kann.',
         pageCoinsFillBackup: 'EINGABE DES BACKUP-CODES',
         pageCoinsAfter:
             'Nach der erfolgreichen Zahlung deiner Bestellung musst du auf einer Seite mit zwei Feldern E-Mail und Passwort eingeben. Bitte gib hier deine EA-Kontoinformationen ein.',
@@ -1582,13 +1589,16 @@ export const translates = {
             "Une fois votre commande payée, vous serez redirigé vers une page où nous vous demanderons de spécifier le solde de votre club, ensuite de quoi nous vous proposerons un joueur à l'achat. Vous devrez l'acheter sans dépasser le prix fixé, puis nous le vendre pour le prix que nous proposons.",
         pageCoinsBuyPlayer: 'ACHETEZ UN JOUEUR',
         pageCoinsFeedback:
-            'Une fois la commande terminée, merci de bien vouloir nous laisser <a href="https://www.trustpilot.com/evaluate/royalfut.com" target="_blank"> une évaluation</a>. Amusez-vous bien et à bientôt on espère :)',
+            'Une fois la commande terminée, merci de bien vouloir nous laisser ',
+        trustcom: 'une évaluation. ',
+        enjoy: 'Amusez-vous bien et à bientôt on espère :)',
         pageCoinsEnjoy: 'BON JEU !',
         pageCoinsDoNotEnter:
             "N'accédez pas au jeu pendant la livraison. Une fois le processus terminé, vous en serez notifié par e-mail. Contactez notre assistance pour toute question sur la durée d'exécution de votre commande.",
         pageCoinsWaitCompletion: 'ATTENDEZ QUE VOTRE COMMANDE ABOUTISSE',
         pageCoinsToStart:
-            'Pour lancer le processus de livraison, remplissez les champs correspondants avec vos codes de sauvegarde disponibles ici : <a href="https://myaccount.ea.com/cp-ui/security/index" target="_blank"> https://myaccount.ea.com/cp-ui/security/index</a>. Nous n\'avons besoin que d\'un seul code inutilisé pour activer la livraison de votre commande.',
+            'Pour lancer le processus de livraison, remplissez les champs correspondants avec vos codes de sauvegarde disponibles ici : ',
+        unused: " . Nous n'avons besoin que d'un seul code inutilisé pour activer la livraison de votre commande.",
         pageCoinsFillBackup: 'REMPLISSEZ LE CHAMP CODE DE SAUVEGARDE',
         pageCoinsAfter:
             'Une fois la commande payée, vous accéderez à une page avec deux champs : adresse e-mail et mot de passe. Veuillez y renseigner vos identifiants de connexion à votre compte EA.',
@@ -1953,14 +1963,16 @@ export const translates = {
         pageCoinsAfterSuccessfully:
             "Dopo il pagamento dell'ordine, nella pagina successiva ti chiederemo di specificare il saldo del tuo club e, in base a quello, ti verrà offerto un giocatore per l'acquisto. Dovrai acquistarlo a un prezzo non maggiore rispetto a quello stabilito. Dopo averlo fatto, vendilo a noi al prezzo che offriamo.",
         pageCoinsBuyPlayer: 'ACQUISTA UN GIOCATORE',
-        pageCoinsFeedback:
-            'Una volta completato l\'ordine, lascia il <a href="https://www.trustpilot.com/evaluate/royalfut.com" target="_blank"> tuo feedback</a>. Goditi il gioco! Non vediamo l\'ora di rivederti :)',
+        pageCoinsFeedback: "Una volta completato l'ordine, lascia il ",
+        trustcom: 'tuo feedback. ',
+        enjoy: "Goditi il gioco! Non vediamo l'ora di rivederti :)",
         pageCoinsEnjoy: 'DIVERTITI A GIOCARE!',
         pageCoinsDoNotEnter:
             "Non entrare nel gioco durante la consegna. Una volta completata la procedura, ti verrà inviata una mail di conferma. Contatta il responsabile dell'assistenza per verificare l'ora di esecuzione dell'ordine.",
         pageCoinsWaitCompletion: 'ATTENDI IL COMPLETAMENTO DEL TUO ORDINE',
         pageCoinsToStart:
-            'Per avviare la procedura di consegna, compila i campi corrispondenti con i codici di backup che puoi trovare qui: <a href="https://myaccount.ea.com/cp-ui/security/index" target="_blank"> https://myaccount.ea.com/cp-ui/security/index</a>.Per avviare l\'ordine di consegna ci serve solo un codice non utilizzato.',
+            'Per avviare la procedura di consegna, compila i campi corrispondenti con i codici di backup che puoi trovare qui: ',
+        unused: " .Per avviare l'ordine di consegna ci serve solo un codice non utilizzato.",
         pageCoinsFillBackup: 'INSERISCI IL CODICE DI BACKUP.',
         pageCoinsAfter:
             "Dopo il pagamento dell'ordine, raggiungerai una pagina con due campi: e-mail e password. Compila i campi con i dati del tuo account EA.",
@@ -2321,14 +2333,16 @@ export const translates = {
         pageCoinsAfterSuccessfully:
             'بعد سداد المبلغ اللازم لطلبك، ستتم إعادة توجيهك إلى صفحة سنطلب منك فيها تحديد رصيد ناديك، ثم بناءً على ذلك سنعرض عليك لاعبًا لشرائه. وسيتعين عليك شراؤه بما لا يزيد عن السعر المحدد. وبعد ذلك تقوم ببيعه لنا بالسعر الذي نعرضه.',
         pageCoinsBuyPlayer: 'شراء لاعب',
-        pageCoinsFeedback:
-            'عند اكتمال الطلب، الرجاء كتابة <a href="https://www.trustpilot.com/evaluate/royalfut.com" target="_blank">ملاحظاتك </a> . استمتع بلعبتك الرائعة ونتطلع إلى رؤيتك مجددًا:)',
+        pageCoinsFeedback: 'عند اكتمال الطلب، الرجاء كتابة ',
+        trustcom: ' ملاحظاتك .',
+        enjoy: ' استمتع بلعبتك الرائعة ونتطلع إلى رؤيتك مجددًا:)',
         pageCoinsEnjoy: 'استمتع بلعبتك!',
         pageCoinsDoNotEnter:
             'لا تدخل إلى اللعبة أثناء التسليم. سيتم إعلامك عن طريق البريد الإلكتروني عند اكتمال العملية. اتصل بمدير الدعم للتحقق من وقت تنفيذ طلبك.',
         pageCoinsWaitCompletion: 'انتظر اكتمال طلبك',
         pageCoinsToStart:
-            'لبدء عملية التسليم، املأ الحقول ذات الصلة بالأكواد الاحتياطية، والتي يمكن العثور عليها هنا: <a href="https://myaccount.ea.com/cp-ui/security/index" target="_blank"> https://myaccount.ea.com/cp-ui/security/index</a>. لا نحتاج إلا إلى رمز واحد غير مستخدم لبدء عملية تسليم طلبك.',
+            'لبدء عملية التسليم، املأ الحقول ذات الصلة بالأكواد الاحتياطية، والتي يمكن العثور عليها هنا: ',
+        unused: ' . لا نحتاج إلا إلى رمز واحد غير مستخدم لبدء عملية تسليم طلبك.',
         pageCoinsFillBackup: 'املأ حقل الكود الاحتياطي',
         pageCoinsAfter:
             'بعد تسديد المبلغ اللازم للطلب بنجاح، سيتم توجيهك إلى صفحة تتضمن حقلين: البريد الإلكتروني وكلمة المرور. الرجاء كتابة بيانات حساب EA في هذين الحقلين.',
@@ -2689,14 +2703,16 @@ export const translates = {
         pageCoinsAfterSuccessfully:
             'Nadat je bestelling is afgerond, ga je naar een pagina waar we je vragen naar het saldo van je club. Op basis daarvan bieden we je een speler aan die je kunt kopen. Je hoeft niet meer te betalen dan de vastgestelde prijs. Daarna kun je hem verkopen voor het bedrag dat wij bieden.',
         pageCoinsBuyPlayer: 'EEN SPELER KOPEN',
-        pageCoinsFeedback:
-            'Laat <a href="https://www.trustpilot.com/evaluate/royalfut.com" target="_blank"> je feedback</a> achter als je bestelling is afgerond. Veel plezier met de game en we zien je graag terug :)',
+        pageCoinsFeedback: 'Laat ',
+        trustcom: '  je feedback',
+        enjoy: 'achter als je bestelling is afgerond. Veel plezier met de game en we zien je graag terug :)',
         pageCoinsEnjoy: 'GENIET VAN DE GAME!',
         pageCoinsDoNotEnter:
             'Speel niet tijdens het leveringsproces. Als het proces is afgerond, ontvang je een e-mail. Neem contact op met de klantenmanager om het tijdstip te controleren waarop je bestelling is uitgevoerd.',
         pageCoinsWaitCompletion: 'WACHT TOT JE BESTELLING IS AFGEROND',
         pageCoinsToStart:
-            'Om te beginnen met het leveringsproces moet je de juiste velden invullen met back-upcodes die je hier kunt vinden:<a href="https://myaccount.ea.com/cp-ui/security/index" target="_blank"> https://myaccount.ea.com/cp-ui/security/index</a>. We hebben maar één ongebruikte code nodig om je bestelling te leveren.',
+            'Om te beginnen met het leveringsproces moet je de juiste velden invullen met back-upcodes die je hier kunt vinden:',
+        unused: ' . We hebben maar één ongebruikte code nodig om je bestelling te leveren.',
         pageCoinsFillBackup: 'VUL HET VELD VOOR BACK-UPCODES IN',
         pageCoinsAfter:
             'Als je bestelling is betaald, ga je naar een pagina met twee velden: e-mail en wachtwoord. Voer je EA-account gegevens in deze velden in.',
@@ -3060,14 +3076,16 @@ export const translates = {
         pageCoinsAfterSuccessfully:
             'Tras pagar tu pedido, te redirigiremos a una página en la que te pediremos que indiques el balance de tu club. En función del mismo, te ofreceremos un jugador que comprar. Tendrás que comprarlo por un máximo del precio indicado y después vendérnoslo por el precio que ofrecemos.',
         pageCoinsBuyPlayer: 'COMPRA UN JUGADOR',
-        pageCoinsFeedback:
-            'Al terminar el pedido, déjanos <a href="https://www.trustpilot.com/evaluate/royalfut.com" target="_blank"> tus comentarios</a> . ¡Disfruta del juego, esperamos volver a verte pronto! :)',
+        pageCoinsFeedback: 'Al terminar el pedido, déjanos ',
+        trustcom: '  tus comentarios. ',
+        enjoy: '¡Disfruta del juego, esperamos volver a verte pronto! :)',
         pageCoinsEnjoy: '¡DISFRUTA DEL JUEGO!',
         pageCoinsDoNotEnter:
             'No entres al juego durante el período de entrega. Al terminar el proceso, se te notificará mediante e-mail. Contacta con el gestor de asistencia para consultar el período de ejecución de tu pedido.',
         pageCoinsWaitCompletion: 'ESPERA A QUE SE COMPLETE EL PEDIDO',
         pageCoinsToStart:
-            'Para iniciar el proceso de entrega, rellena los campos correspondientes con tus códigos de copia de seguridad, disponibles aquí: <a href="https://myaccount.ea.com/cp-ui/security/index" target="_blank"> https://myaccount.ea.com/cp-ui/security/index</a>. Solo necesitamos un código sin usar para empezar a entregar tu pedido.',
+            'Para iniciar el proceso de entrega, rellena los campos correspondientes con tus códigos de copia de seguridad, disponibles aquí: ',
+        unused: ' . Solo necesitamos un código sin usar para empezar a entregar tu pedido.',
         pageCoinsFillBackup: 'ESCRIBE LOS CÓDIGOS DE COPIA DE SEGURIDAD',
         pageCoinsAfter:
             'Al completar el pago de tu pedido, se te redirigirá a una página con dos campos: e-mail y contraseña. Cumplimenta estos campos con los detalles de tu cuenta de EA.',
@@ -3431,14 +3449,16 @@ export const translates = {
         pageCoinsAfterSuccessfully:
             'Após teres pago o teu pedido, iremos redirecionar-te para uma página onde terás de especificar o saldo do teu clube. Consoante o saldo, indicamos um jogador para comprares. Terás de o comprar por um preço igual ou inferior ao definido. E, depois disso, vendê-lo a nós pelo valor que oferecemos.',
         pageCoinsBuyPlayer: 'COMPRAR UM JOGADOR',
-        pageCoinsFeedback:
-            'Assim que o pedido estiver concluído, deixa <a href="https://www.trustpilot.com/evaluate/royalfut.com" target="_blank">um comentário</a>. Diverte-te a jogar, esperamos ver-te novamente :)',
+        pageCoinsFeedback: 'Assim que o pedido estiver concluído, deixa ',
+        trustcom: ' um comentário. ',
+        enjoy: 'Diverte-te a jogar, esperamos ver-te novamente :)',
         pageCoinsEnjoy: 'DESFRUTA DO JOGO!',
         pageCoinsDoNotEnter:
             'No entres al juego durante el período de entrega. Al terminar el proceso, se te notificará mediante e-mail. Contacta con el gestor de asistencia para consultar el período de ejecución de tu pedido.',
         pageCoinsWaitCompletion: 'ESPERA QUE O PEDIDO SEJA CONCLUÍDO',
         pageCoinsToStart:
-            'Para iniciar o processo de transferência, preenche os seguintes campos com os teus códigos de segurança, os quais podes encontrar aqui: <a href="https://myaccount.ea.com/cp-ui/security/index" target="_blank"> https://myaccount.ea.com/cp-ui/security/index</a>. Só precisamos de um código por usar para iniciar o teu pedido.',
+            'Para iniciar o processo de transferência, preenche os seguintes campos com os teus códigos de segurança, os quais podes encontrar aqui: ',
+        unused: ' . Só precisamos de um código por usar para iniciar o teu pedido.',
         pageCoinsFillBackup: 'PREENCHE O CAMPO COM O CÓDIGO DE SEGURANÇA',
         pageCoinsAfter:
             'Após o pagamento, vamos redirecionar-te para uma página com os seguintes campos: e-mail e palavra-passe. Preenche os campos com os dados da tua conta EA.',
@@ -3800,14 +3820,16 @@ export const translates = {
         pageCoinsAfterSuccessfully:
             'Po pomyślnym opłaceniu zamówienia zostaniesz przekierowany na stronę, na której poprosimy cię o podanie salda twojego klubu, a następnie w zależności od tego zostanie ci zaproponowany zakup zawodnika. Będziesz musiał go kupić za cenę nie wyższą niż ustalona. A potem sprzedaj go nam za cenę, którą oferujemy.',
         pageCoinsBuyPlayer: 'KUP GRACZA',
-        pageCoinsFeedback:
-            'Po zakończeniu zamówienia zostaw <a href="https://www.trustpilot.com/evaluate/royalfut.com" target="_blank">swoją opinię</a>. Miłej gry i czekamy na ciebie ponownie:)',
+        pageCoinsFeedback: 'Po zakończeniu zamówienia zostaw ',
+        trustcom: ' swoją opinię. ',
+        enjoy: 'Miłej gry i czekamy na ciebie ponownie:)',
         pageCoinsEnjoy: 'CIESZ SIĘ GRĘ!',
         pageCoinsDoNotEnter:
             'Nie wchodź do gry podczas dostawy. Po zakończeniu procesu otrzymasz powiadomienie e-mailem. Skontaktuj się z menedżerem pomocy technicznej, aby sprawdzić czas realizacji zamówienia.',
         pageCoinsWaitCompletion: 'POCZEKAJ NA ZREALIZOWANIE ZAMÓWIENIA',
         pageCoinsToStart:
-            'Aby rozpocząć proces dostawy, wypełnij odpowiednie pola swoimi kodami zapasowymi, które można znaleźć tutaj: <a href="https://myaccount.ea.com/cp-ui/security/index" target="_blank"> https://myaccount.ea.com/cp-ui/security/index</a>. Potrzebujemy tylko jednego niewykorzystanego kodu, aby rozpocząć dostawę тwojego zamówienia.',
+            'Aby rozpocząć proces dostawy, wypełnij odpowiednie pola swoimi kodami zapasowymi, które można znaleźć tutaj: ',
+        unused: ' . Potrzebujemy tylko jednego niewykorzystanego kodu, aby rozpocząć dostawę тwojego zamówienia.',
         pageCoinsFillBackup: 'WYPEŁNIJ POLE KODU ZAPASOWEGO',
         pageCoinsAfter:
             'Po opłaceniu zamówienia zostaniesz przeniesiony na stronę z dwoma polami: e-mail i hasło. Wypełnij te pola danymi swojego konta EA.',
@@ -4160,14 +4182,16 @@ export const translates = {
         pageCoinsAfterSuccessfully:
             '在您的订单成功支付后，您将跳转至一个新页面，我们将要求您具体说明您的俱乐部余额，然后根据情况向您提供可购买的球员。您必须以不超过预定价格的价格买下他。然后按我们提供的价格卖给我们。',
         pageCoinsBuyPlayer: '购买球员',
-        pageCoinsFeedback:
-            '订单完成后，请留下 <a href="https://www.trustpilot.com/evaluate/royalfut.com" target="_blank">您的反馈</a>。祝您玩得愉快，我们期待再次与您相见^_^',
+        pageCoinsFeedback: '订单完成后，请留下 ',
+        trustcom: ' 您的反馈。',
+        enjoy: '祝您玩得愉快，我们期待再次与您相见^_^',
         pageCoinsEnjoy: '尽情享受您的游戏！',
         pageCoinsDoNotEnter:
             '交付期间请勿进入游戏。 流程完成后，您将收到电子邮件通知。请与客服经理联系，检查订单的执行时间。',
         pageCoinsWaitCompletion: '等待您的订单完成',
         pageCoinsToStart:
-            '若要开始交付过程，请在相应栏中填写备份代码，该代码可通过 <a href="https://myaccount.ea.com/cp-ui/security/index" target="_blank"> https://myaccount.ea.com/cp-ui/security/index</a> 找到。我们只需要一个未使用过的代码，便可以开始交付您的订单。',
+            '若要开始交付过程，请在相应栏中填写备份代码，该代码可通过 ',
+        unused: '  找到。我们只需要一个未使用过的代码，便可以开始交付您的订单。',
         pageCoinsFillBackup: '填写备份代码栏',
         pageCoinsAfter:
             '成功支付订单后，您将跳转至一个新页面，上面有两个输入栏：电子邮件和密码。请在栏中填写您的 EA 帐户登录信息。',
@@ -4518,14 +4542,16 @@ export const translates = {
         pageCoinsAfterSuccessfully:
             'Siparişinizin ödemesi tamamlandıktan sonra yönlendirileceğiniz sayfada kulübünüzün bakiyesi hakkında bilgi vermeniz istenecek ve buna bağlı olarak alabileceğiniz bir oyuncu önerilecektir. Bu oyuncuyu belirlenen fiyattan satın almanız gerekir. Ardından, vereceğimiz fiyattan bize geri satabilirsiniz.',
         pageCoinsBuyPlayer: 'OYUNCU SATIN AL',
-        pageCoinsFeedback:
-            'Siparişiniz teslim edildiğinde lütfen <a href="https://www.trustpilot.com/evaluate/royalfut.com" target="_blank">geri bildirimde</a> bulunun ve oyunun keyfini çıkarın. Tekrar görüşmeyi iple çekiyoruz :)',
+        pageCoinsFeedback: 'Siparişiniz teslim edildiğinde lütfen ',
+        trustcom: ' geri bildirimde ',
+        enjoy: 'bulunun ve oyunun keyfini çıkarın. Tekrar görüşmeyi iple çekiyoruz :)',
         pageCoinsEnjoy: 'OYUNUN KEYFİNİ ÇIKARIN',
         pageCoinsDoNotEnter:
             'Teslimat sırasında lütfen oyuna girmeyin. Teslimatı tamamlandığında e-posta ile bilgilendirilirsiniz. Siparişinizin teslimat zamanı ile ilgili sorularınız için destek yöneticisi ile iletişime geçin.',
         pageCoinsWaitCompletion: 'SİPARİŞİNİZİN TAMAMLANMASINI BEKLEYİN',
         pageCoinsToStart:
-            'Teslimatın başlayabilmesi için yedekleme kodunuzu şu ardeste bulunan ilgili alana girin: <a href="https://myaccount.ea.com/cp-ui/security/index" target="_blank"> https://myaccount.ea.com/cp-ui/security/index</a>. Teslimatın başlaması için, kullanılmamış tek bir kod girmeniz yeterli olacaktır.',
+            'Teslimatın başlayabilmesi için yedekleme kodunuzu şu ardeste bulunan ilgili alana girin: ',
+        unused: ' . Teslimatın başlaması için, kullanılmamış tek bir kod girmeniz yeterli olacaktır.',
         pageCoinsFillBackup: 'YEDEKLEME KODUNU GİRİN',
         pageCoinsAfter:
             'Ödeme işlemi başarıyla tamamlandıktan sonra yönlendirileceğiniz sayfada, e-posta ve parola alanları bulunacaktır. Bu alanları EA hesap bilgileriniz ile doldurun.',
@@ -4879,14 +4905,16 @@ export const translates = {
         pageCoinsAfterSuccessfully:
             'Efter att du har betalat för din beställning blir du omdirigerad till en sida där vi ber dig ange din klubbs saldo. Efter det blir du erbjuden en spelare att köpa, och du får inte köpa honom för ett högre pris än det angivna. Efter det säljer du spelaren till oss för vårt erbjudna pris.',
         pageCoinsBuyPlayer: 'KÖP EN SPELARE',
-        pageCoinsFeedback:
-            'Lämna gärna <a href="https://www.trustpilot.com/evaluate/royalfut.com" target="_blank">feedback </a> när beställningen är klar. Ha det så roligt så ses vi igen! :)',
+        pageCoinsFeedback: 'Lämna gärna ',
+        trustcom: ' feedback ',
+        enjoy: 'när beställningen är klar. Ha det så roligt så ses vi igen! :)',
         pageCoinsEnjoy: 'HA DET SÅ ROLIGT!',
         pageCoinsDoNotEnter:
             'Logga inte in i spelet under leveransen. Du får ett e-postmeddelande när processen är färdig. Kontakta kundtjänst för att höra hur lång tid det kommer ta att slutföra din beställning.',
         pageCoinsWaitCompletion: 'VÄNTA PÅ ATT DIN ORDER FULLBORDAS',
         pageCoinsToStart:
-            'Påbörja leveransprocessen genom att fylla i fälten med dina reservkoder, som finns här:<a href="https://myaccount.ea.com/cp-ui/security/index" target="_blank"> https://myaccount.ea.com/cp-ui/security/index</a>.Vi behöver bara en oanvänd kod för att börja leverera din beställning.',
+            'Påbörja leveransprocessen genom att fylla i fälten med dina reservkoder, som finns här:',
+        unused: ' .Vi behöver bara en oanvänd kod för att börja leverera din beställning.',
         pageCoinsFillBackup: 'FYLL I RESERVKODSFÄLTET',
         pageCoinsAfter:
             'När du har betalat för beställningen kommer du till en sida med två fält: e-post och lösenord. Fyll i dem med inloggningsuppgifterna till ditt EA-konto.',
@@ -5244,14 +5272,16 @@ export const translates = {
         pageCoinsAfterSuccessfully:
             'Etter at bestillingen din er betalt, blir du sendt videre til siden der vi ber deg om å spesifisere saldoen til klubben din. Så blir du tilbudt en spiller å kjøpe. Du må ikke betale mer enn fastsatt pris. Etter det selger du ham til oss for prisen vi tilbyr.',
         pageCoinsBuyPlayer: 'KJØP EN SPILLER',
-        pageCoinsFeedback:
-            'Når bestillingen er levert, kan du legge igjen <a href="https://www.trustpilot.com/evaluate/royalfut.com" target="_blank">en tilbakemelding</a> . Ha det gøy med spillet, vi håper vi ses igjen snart :-)',
+        pageCoinsFeedback: 'Når bestillingen er levert, kan du legge igjen ',
+        trustcom: ' en tilbakemelding. ',
+        enjoy: 'Ha det gøy med spillet, vi håper vi ses igjen snart :-)',
         pageCoinsEnjoy: 'KOS DEG MED SPILLET!',
         pageCoinsDoNotEnter:
             'Ikke gå inn i spillet under leveringen. Når prosessen er fullført, får du beskjed med e-post. Kontakt brukerstøtte for å sjekke når bestillingen din blir levert.',
         pageCoinsWaitCompletion: 'VENT TIL BESTILLINGEN DIN ER FULLFØRT',
         pageCoinsToStart:
-            'For å starte leveringsprosessen fyller du ut feltene med reservekodene dine, som du finner her: <a href="https://myaccount.ea.com/cp-ui/security/index" target="_blank"> https://myaccount.ea.com/cp-ui/security/index</a>. Vi trengre bare én ubrukt kode for å levere bestillingen din.',
+            'For å starte leveringsprosessen fyller du ut feltene med reservekodene dine, som du finner her: ',
+        unused: ' . Vi trengre bare én ubrukt kode for å levere bestillingen din.',
         pageCoinsFillBackup: 'FYLL UT FELTET FOR RESERVEKODE',
         pageCoinsAfter:
             'Etter betalingen er gjennomført, blir du tatt med til en side med to felter: e-post og passord. Her fyller du ut EA-kontodetaljene dine.',

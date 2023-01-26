@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
 import Router, { useRouter } from 'next/router';
@@ -49,14 +49,18 @@ const BurgerMenu = () => {
     const email = React.createRef();
     const submit = React.createRef();
     const signUpCheck = React.createRef();
+    const authpass = useRef(null);
+    const message = useRef(null);
 
     const eye = '/img/eye.svg';
     const eyeClosed = '/img/eye-close.svg';
+    let eyeRd = '/img/eyeRd.svg';
+    let eyeClosedRd = '/img/eye-closedRd.svg';
 
     const dispatch = useDispatch();
     const router = useRouter();
 
-    const [svgEye, setSvgEye] = useState(eye);
+    const [svgEye, setSvgEye] = useState(eyeRd);
     const [passLength, setPassLength] = useState('');
     const [menuContent, setMenuContent] = useState('mobile');
     const [isChecked, setIsChecked] = useState(false);
@@ -90,6 +94,17 @@ const BurgerMenu = () => {
                 passLength <= 7
                     ? (submit.current.disabled = true)
                     : (submit.current.disabled = false);
+
+                if (passLength <= 7) {
+                    authpass.current.style.border = '1px solid #E84545';
+                    message.current.style.color = '#E84545';
+
+                    setSvgEye('/img/warning-circle.svg');
+                } else {
+                    authpass.current.style.border = '1px solid white';
+                    setSvgEye(eyeRd);
+                    message.current.style.color = 'rgba(255, 255, 255, 0.4)';
+                }
             }
         }
     }, [passLength]);
@@ -105,10 +120,10 @@ const BurgerMenu = () => {
         e.preventDefault();
         if (password.current.type == 'text') {
             password.current.type = 'password';
-            setSvgEye(eye);
+            setSvgEye(eyeRd);
         } else {
             password.current.type = 'text';
-            setSvgEye(eyeClosed);
+            setSvgEye(eyeClosedRd);
         }
     };
     const onHandleChangePass = () => {
@@ -414,17 +429,17 @@ const BurgerMenu = () => {
                                 <fieldset
                                     className={`${styles.auth_fieldset} ${styles.email_fieldset}`}
                                 >
-                                    <legend className={styles.auth_legend}>
+                                    {/* <legend className={styles.auth_legend}>
                                         {
                                             translates[router.locale]
                                                 .modalSignEmail
                                         }
-                                    </legend>
+                                    </legend> */}
                                     <input
                                         ref={email}
                                         className={styles.auth_userdata}
                                         type="email"
-                                        placeholder={'email@address.com'}
+                                        placeholder={'Email'}
                                         onChange={() =>
                                             setValidate(
                                                 validateEmail(
@@ -436,13 +451,14 @@ const BurgerMenu = () => {
                                 </fieldset>
                                 <fieldset
                                     className={`${styles.auth_fieldset} ${styles.fieldset_pass}`}
+                                    ref={authpass}
                                 >
-                                    <legend className={styles.auth_legend}>
+                                    {/* <legend className={styles.auth_legend}>
                                         {
                                             translates[router.locale]
                                                 .modalSignPassword
                                         }
-                                    </legend>
+                                    </legend> */}
                                     <input
                                         onChange={onHandleChangePass}
                                         ref={password}
@@ -467,7 +483,7 @@ const BurgerMenu = () => {
                                     </button>
                                 </fieldset>
                                 <div className={styles.num_simbols_wrapper}>
-                                    <div className={`${styles.ok_pic}`}>
+                                    {/* <div className={`${styles.ok_pic}`}>
                                         {' '}
                                         {
                                             passLength <= 7 ? (
@@ -485,8 +501,11 @@ const BurgerMenu = () => {
                                             //     ? styles.cancel
                                             //     : styles.ok
                                         }
-                                    </div>
-                                    <span className={styles.simbols_text}>
+                                    </div> */}
+                                    <span
+                                        className={styles.simbols_text}
+                                        ref={message}
+                                    >
                                         {
                                             translates[router.locale]
                                                 .modalSignSymbols8
@@ -508,9 +527,9 @@ const BurgerMenu = () => {
                                             onClick={() =>
                                                 setIsChecked(!isChecked)
                                             }
-                                            className={`social-login__label ${
-                                                isChecked && 'gold_font'
-                                            }`}
+                                            className={`social-login__label 
+                                            
+                                            `}
                                             htmlFor="signUpCheck"
                                         >
                                             {
@@ -519,16 +538,12 @@ const BurgerMenu = () => {
                                             }
                                         </label>
                                         <Link
-                                            className={`social-login__link-check ${
-                                                isChecked && 'gold_font'
-                                            }`}
+                                            className={`social-login__link-check `}
                                             href="/terms/"
                                             locale={locale.title}
                                         >
                                             <a
-                                                className={`social-login__link-check ${
-                                                    isChecked && 'gold_font'
-                                                }`}
+                                                className={`social-login__link-check `}
                                                 onClick={() =>
                                                     dispatch(loginModal(false))
                                                 }

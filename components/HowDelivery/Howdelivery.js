@@ -15,6 +15,22 @@ const Howdelivery = () => {
 
     const router = useRouter();
 
+    const a = () => {
+        return (
+            <div>
+                <span>{translates[router.locale].pageCoinsToStart} </span>
+                <a
+                    href="https://myaccount.ea.com/cp-ui/security/index"
+                    target="_blank"
+                >
+                    {' '}
+                    myaccount.ea.com.{' '}
+                </a>
+                <span>{translates[router.locale].unused}</span>
+            </div>
+        );
+    };
+
     let deliveryData = {
         easy: {
             1: {
@@ -23,7 +39,24 @@ const Howdelivery = () => {
             },
             2: {
                 title: translates[router.locale].pageCoinsFillBackup,
-                text: translates[router.locale].pageCoinsToStart,
+                text: (
+                    <div className={`${styles.txt_block}`}>
+                        <span className={`${styles.span}`}>
+                            {translates[router.locale].pageCoinsToStart}{' '}
+                        </span>
+                        <a
+                            className={`${styles.ahref}`}
+                            href="https://myaccount.ea.com/cp-ui/security/index"
+                            target="_blank"
+                        >
+                            {' '}
+                            myaccount.ea.com.{' '}
+                        </a>
+                        <span className={`${styles.span}`}>
+                            {translates[router.locale].unused}
+                        </span>
+                    </div>
+                ),
             },
             3: {
                 title: translates[router.locale].pageCoinsWaitCompletion,
@@ -31,7 +64,23 @@ const Howdelivery = () => {
             },
             4: {
                 title: translates[router.locale].pageCoinsEnjoy,
-                text: translates[router.locale].pageCoinsFeedback,
+                text: (
+                    <div className={`${styles.txt_block}`}>
+                        <span className={`${styles.span}`}>
+                            {translates[router.locale].pageCoinsFeedback}{' '}
+                        </span>
+                        <a
+                            className={`${styles.ahref}`}
+                            href="https://trustpilot.com/evaluate/royalfut.com"
+                            target="_blank"
+                        >
+                            {translates[router.locale].trustcom}
+                        </a>
+                        <span className={`${styles.span}`}>
+                            {translates[router.locale].enjoy}
+                        </span>
+                    </div>
+                ),
             },
         },
         manual: {
@@ -49,7 +98,23 @@ const Howdelivery = () => {
             },
             4: {
                 title: translates[router.locale].pageCoinsEnjoy,
-                text: translates[router.locale].pageCoinsFeedback,
+                text: (
+                    <div className={`${styles.txt_block}`}>
+                        <span className={`${styles.span}`}>
+                            {translates[router.locale].pageCoinsFeedback}{' '}
+                        </span>
+                        <a
+                            className={`${styles.ahref}`}
+                            href="https://trustpilot.com/evaluate/royalfut.com"
+                            target="_blank"
+                        >
+                            {translates[router.locale].trustcom}
+                        </a>
+                        <span className={`${styles.span}`}>
+                            {translates[router.locale].enjoy}
+                        </span>
+                    </div>
+                ),
             },
         },
     };

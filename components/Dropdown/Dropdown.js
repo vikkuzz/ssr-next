@@ -308,7 +308,9 @@ const Dropdown = ({ burger = false }) => {
         (state) => state.royalfutReducer.currency
     );
     const countryRef = React.createRef();
+    const countryRefMobile = React.createRef();
     const currencyRef = React.createRef();
+    const currencyRefMobile = React.createRef();
     const countryCurrencyRef = React.createRef();
 
     function hideContent(ref) {
@@ -317,6 +319,8 @@ const Dropdown = ({ burger = false }) => {
 
     useOutsideClick(countryRef, 'hide');
     useOutsideClick(currencyRef, 'hide');
+    useOutsideClick(countryRefMobile, 'hide');
+    useOutsideClick(currencyRefMobile, 'hide');
 
     const onClickBlock = (e, ref) => {
         e.stopPropagation();
@@ -337,68 +341,105 @@ const Dropdown = ({ burger = false }) => {
 
     return (
         <div className={`${styles.dropdown_container}`}>
-            <div
-                onMouseEnter={(e) => {
-                    e.stopPropagation();
-                    window.innerWidth > 1024
-                        ? onMouseEnterBlock(e, countryRef)
-                        : null;
-                }}
-                onMouseLeave={(e) => {
-                    e.stopPropagation();
-                    window.innerWidth > 1024
-                        ? onMouseLeaveBlock(e, countryRef)
-                        : null;
-                }}
-                onClick={(e) => {
-                    e.stopPropagation();
-                    onMouseEnterBlock(e, countryRef);
-                }}
-                className={`${styles.dropdown_selects}`}
-            >
-                <div className={`${styles.dropdown_countries}`}>
-                    <DropdownLang burger={burger} />
-                </div>
-                <div
-                    className={`${styles.dropdown__content} hide`}
-                    ref={countryRef}
-                >
-                    <DropdownContent data={flagLangs} container={countryRef} />
-                </div>
-                {/* <div
+            <div className={styles.mobile_drop_container}>
+                <div className={`${styles.row}`}>
+                    <div
+                        onMouseEnter={(e) => {
+                            e.stopPropagation();
+                            window.innerWidth > 1024
+                                ? onMouseEnterBlock(e, countryRef)
+                                : null;
+                        }}
+                        onMouseLeave={(e) => {
+                            e.stopPropagation();
+                            window.innerWidth > 1024
+                                ? onMouseLeaveBlock(e, countryRef)
+                                : null;
+                        }}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            //onMouseEnterBlock(e, countryRef);
+                            window.innerWidth > 1024
+                                ? onMouseEnterBlock(e, countryRef)
+                                : onMouseEnterBlock(e, countryRefMobile);
+                        }}
+                        className={`${styles.dropdown_selects}`}
+                    >
+                        <div className={`${styles.dropdown_countries}`}>
+                            <DropdownLang burger={burger} />
+                        </div>
+                        <div className={`${styles.drop_px}`}>
+                            <div
+                                className={`${styles.dropdown__content}  hide`}
+                                ref={countryRef}
+                            >
+                                <DropdownContent
+                                    data={flagLangs}
+                                    container={countryRef}
+                                />
+                            </div>
+                        </div>
+                        {/* <div
                     className={`${styles.dropdown__content} ${styles.remove_back} hide`}
                     ref={countryCurrencyRef}
                 >
                     <DropdownMobile />
                 </div> */}
-            </div>
-            <div
-                onMouseEnter={(e) => {
-                    e.stopPropagation();
-                    window.innerWidth > 1024
-                        ? onMouseEnterBlock(e, currencyRef)
-                        : null;
-                }}
-                onMouseLeave={(e) => {
-                    e.stopPropagation();
-                    window.innerWidth > 1024
-                        ? onMouseLeaveBlock(e, currencyRef)
-                        : null;
-                }}
-                onClick={(e) => {
-                    e.stopPropagation();
-                    onMouseEnterBlock(e, currencyRef);
-                }}
-                className={`${styles.dropdown_currency}`}
-                //className={`${styles.dropdown_currency} from-1025-to-1900`}
-            >
-                {currentCurrency.title || 'USD'}
-                <div className={`${styles.dropdown__arrow}`} />
-                <div
-                    className={`${styles.dropdown__content} hide`}
-                    ref={currencyRef}
-                >
-                    <DropdownCurrencyContent data={currency} />
+                    </div>
+                    <div
+                        onMouseEnter={(e) => {
+                            e.stopPropagation();
+                            window.innerWidth > 1024
+                                ? onMouseEnterBlock(e, currencyRef)
+                                : null;
+                        }}
+                        onMouseLeave={(e) => {
+                            e.stopPropagation();
+                            window.innerWidth > 1024
+                                ? onMouseLeaveBlock(e, currencyRef)
+                                : null;
+                        }}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            //onMouseEnterBlock(e, currencyRef);
+                            window.innerWidth > 1024
+                                ? onMouseEnterBlock(e, currencyRef)
+                                : onMouseEnterBlock(e, currencyRefMobile);
+                        }}
+                        className={`${styles.dropdown_currency}`}
+                        //className={`${styles.dropdown_currency} from-1025-to-1900`}
+                    >
+                        <div className={`${styles.wrapper_arrow}`}>
+                            {currentCurrency.title || 'USD'}
+                            <div className={`${styles.dropdown__arrow}`} />
+                        </div>
+                        <div className={`${styles.drop_px}`}>
+                            <div
+                                className={`${styles.dropdown__content} hide`}
+                                ref={currencyRef}
+                            >
+                                <DropdownCurrencyContent data={currency} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className={`${styles.mobile_container}`}>
+                    <div
+                        className={`${styles.dropdown__content}  hide`}
+                        ref={countryRefMobile}
+                    >
+                        <DropdownContent
+                            data={flagLangs}
+                            container={countryRefMobile}
+                        />
+                    </div>
+                    <div
+                        className={`${styles.dropdown__content} hide`}
+                        ref={currencyRefMobile}
+                    >
+                        <DropdownCurrencyContent data={currency} />
+                    </div>
                 </div>
             </div>
         </div>

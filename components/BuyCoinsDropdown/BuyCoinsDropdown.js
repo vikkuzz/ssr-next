@@ -46,13 +46,15 @@ const BuyCoinsDropdown = () => {
                         : null;
                 }}
             >
-                <div
-                    className={`${styles.dropdown_countries} ${styles.dropdown__links}`}
-                >
-                    {translates[router.locale].menuLinkOrder}
-                </div>
+                <div className={`${styles.wrapper_arrow}`}>
+                    <div
+                        className={`${styles.dropdown_countries} ${styles.dropdown__links}`}
+                    >
+                        {translates[router.locale].menuLinkOrder}
+                    </div>
 
-                <div className={`dropdown__arrow`} />
+                    <div className={`dropdown__arrow`} />
+                </div>
                 <div
                     className={`${styles.dropdown__buycoins_content} hide`}
                     ref={buycoinsRef}

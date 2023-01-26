@@ -1,3 +1,12 @@
+.calc_page{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: rgba(18, 20, 42, 0.8);
+    backdrop-filter: blur(22px);
+    top: 0;
+    left: 0;
+}
 .modal_calc{
     display: flex;
     height: 100%;

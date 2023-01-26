@@ -51,8 +51,15 @@
     user-select: none;
 
     @media (min-width:1025px) {
-        font-size: 24px;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
         line-height: 24px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        text-transform: capitalize;
     }
 }
 .how_tab::after{
@@ -68,6 +75,10 @@
     // padding-bottom: 4.2vmin;
     // border-bottom: 1px solid hsla(0,0%,76.9%,.2);
     gap: 8px;
+
+    @media (min-width:1025px) {
+        width: 375px;
+    }
 }
 .how_is_active{
     color: white;
@@ -93,6 +104,9 @@
         max-width: 50%;
         height: 100%;
         //max-width: 540px;
+        aspect-ratio: 16 / 9;
+        height: auto;
+        width: 100%;
     }
 }
 .how_container_text{
@@ -176,6 +190,7 @@
         font-size: 24px;
         padding-top: 25px;
         margin-top: auto;
+        justify-content: flex-start;
     }
 }
 .how_text{
@@ -195,7 +210,24 @@
     @media (min-width:1025px) {
         flex-direction: row;
         gap: 16px;
-        min-height: 340px;
-        height: 340px;
+        //min-height: 340px;
+        //height: 340px;
     }
+}
+.span{
+    display: inline;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.6);
+}
+.ahref{
+    display: inline;
+    background-color: transparent;
+    text-decoration: underline;
+    color: rgba(255, 255, 255, 0.6);
+}
+.ahref:hover{
+    color: gold;
+}
+.txt_block{
+    display: block;
 }

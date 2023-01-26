@@ -206,9 +206,7 @@ const CalcCoinsRedesign = () => {
                     onMouseLeave={stopCounter}
                     onClick={onMinus}
                     className={`${styles.coins_btn}`}
-                >
-                    -
-                </button>
+                ></button>
                 <input
                     onChange={handleChangeCoins}
                     ref={inputCoins}
@@ -224,12 +222,10 @@ const CalcCoinsRedesign = () => {
                     onTouchStart={startCounter}
                     onTouchEnd={stopCounter}
                     onClick={onPlus}
-                    className={`${styles.coins_btn} ${styles.plus}`}
-                >
-                    +
-                </button>
+                    className={`${styles.coins_btn_plus} ${styles.plus}`}
+                ></button>
             </div>
-            <div dir={stateDir} className={`${styles.coins_pack}`}>
+            <div dir={stateDir} className={`${styles.coins_pack} scroll`}>
                 <button
                     onClick={onCoinsButtonClick}
                     id={100000}
