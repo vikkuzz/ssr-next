@@ -443,6 +443,7 @@ input{
 }
 .width32{
   width: 32px;
+  background-color: transparent;
 }
 .row{
   flex-direction: row;
