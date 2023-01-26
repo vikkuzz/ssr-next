@@ -83,20 +83,21 @@
     height: 25px;
     min-width: 25px;
     min-height: 25px;
-    border-radius: 100%;
-    padding: 2px;
+    //border-radius: 100%;
+    //padding: 2px;
     overflow: hidden;;
     //box-shadow:  0 0 0 1px inset white;
     transition: all 0.3s linear;
-    border: 1px solid white;
+    border:none;
     align-items: center;
     justify-content: center;
     position: relative;
+    background-color: transparent;
 }
 .method_radio:checked + .method_check{
     //box-shadow: 0 0 0 1px inset #eab11f, 0 0 0 2px inset black;
     //background-color: #eab11f;
-    border: 1px solid #8852F2;
+    //border: 1px solid #8852F2;
 }
 .method_radio:hover + .method_check{
     //box-shadow: 0 0 0 1px inset #eab11f, 0 0 0 2px inset black;
@@ -144,4 +145,18 @@
 .method_info:hover .info_text{
     color: white;
     transition: all 0.3s linear;
+}
+.fake_input_false{
+    min-width: 24px;
+    min-height: 24px;
+    background:url('../img/radio_not_active.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.fake_input_true{
+    min-width: 24px;
+    min-height: 24px;
+    background:url('../img/radio_active.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
 }

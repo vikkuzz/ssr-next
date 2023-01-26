@@ -307,22 +307,30 @@ function MainContainer({
                 </button>
             </div>
             <div
-                className={`${styles.modal_calc_wrapper} ${
-                    stateModalCalc === true
-                        ? styles.modal_calc_true
-                        : styles.modal_calc_false
+                className={`${styles.calc_page} ${
+                    stateModalCalc === true && 'zindex'
                 }`}
             >
-                <div className={`${styles.btn_close_wrapper}`}>
-                    <button
-                        onClick={() => dispatch(modalCalc(false))}
-                        className={`${styles.modal_calc_btn_close}`}
-                    ></button>
-                </div>
+                <div
+                    className={`${styles.modal_calc_wrapper} ${
+                        stateModalCalc === true
+                            ? styles.modal_calc_true
+                            : styles.modal_calc_false
+                    }`}
+                >
+                    <div className={`${styles.btn_close_wrapper}`}>
+                        <button
+                            onClick={() => dispatch(modalCalc(false))}
+                            className={`${styles.modal_calc_btn_close}`}
+                        ></button>
+                    </div>
 
-                <ModalCalc />
-                <div className={`${styles.buy_btn_wrapper}`}>
-                    <button className={`${styles.buy_btn}`}>buy coins</button>
+                    <ModalCalc />
+                    <div className={`${styles.buy_btn_wrapper}`}>
+                        <button className={`${styles.buy_btn}`}>
+                            buy coins
+                        </button>
+                    </div>
                 </div>
             </div>
 

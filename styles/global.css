@@ -673,6 +673,9 @@ input{
 .scroll::-webkit-scrollbar-track {
     background-color: transparent;
 }
+.zindex{
+  z-index: 2!important;
+}
 
 input:-webkit-autofill{
 	-webkit-box-shadow:0 0 0 1000px transparent inset !important;

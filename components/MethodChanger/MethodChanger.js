@@ -43,8 +43,10 @@ const MethodChanger = () => {
                     ></input>
                     <div data-id={'easy'} className={`${styles.method_check}`}>
                         <div
-                            className={`${method.easy && 'hide'} ${
-                                method.easy && styles.bullet
+                            className={`${
+                                method.manual
+                                    ? styles.fake_input_false
+                                    : styles.fake_input_true
                             }`}
                         ></div>
                     </div>
@@ -74,8 +76,10 @@ const MethodChanger = () => {
                         className={`${styles.method_check}`}
                     >
                         <div
-                            className={`${!method.easy && 'hide'} ${
-                                !method.easy && styles.bullet
+                            className={`${
+                                !method.manual
+                                    ? styles.fake_input_false
+                                    : styles.fake_input_true
                             }`}
                         ></div>
                     </div>
