@@ -10,7 +10,12 @@
     box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4);
     border-radius: 28px;
     overflow: hidden;
-    min-height: 433px;
+    min-height: 373px;
+
+    @media (min-width:1025px) {
+        min-height: 433px;
+    }
+    
 }
 .offer_h{
     font-family: 'Montserrat';
@@ -129,6 +134,7 @@
         object-fit: cover;
         
         @media (min-width:1025px) {
+            height: auto;
             height: auto;
         }
         
