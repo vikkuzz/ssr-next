@@ -3,7 +3,7 @@ import styles from '../../styles/SpecialOffer.module.scss';
 
 const SpecialOffer = () => {
     const promocode = useRef();
-    const offer_img = '/img/offer.png';
+    const offer_img = '/img/cover_desc_offer.png';
 
     let [copyText, setCopyText] = useState(false);
 

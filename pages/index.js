@@ -83,12 +83,14 @@ const Index = () => {
                             </h2>
                             <div className={`${styles.offer_wrapper}`}>
                                 <Product
+                                    img={'/img/buy_coins.png'}
                                     h3={'Preset orders'}
                                     text={
                                         'Our coin transfer methods are not at risk from the EA'
                                     }
                                 />
                                 <Product
+                                    img={'/img/buy_players.png'}
                                     h3={'Buy any player'}
                                     text={
                                         'Our coin transfer methods are not at risk from the EA'
