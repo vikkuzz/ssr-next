@@ -52,6 +52,7 @@
         font-style: normal;
         font-size: 48px;
         letter-spacing: -0.1px;
+        padding-top: 5px;
         //line-height: 36px;
     }    
 
@@ -167,6 +168,8 @@
 .header__links{
     font-size: 18px;
     font-weight: 400;
+    padding: 0;
+    //padding-left: 12px;
     //color:#ff5c00;
     cursor: pointer;
     background-color: transparent;
@@ -184,6 +187,10 @@
 .header__center{
     width: 1000px;
     //gap: 6px;
+
+    @media (min-width:1025px) {
+        padding-top: 16px;
+    }
 }
 .header_buycoins{
     color: #FFFFFF;
@@ -205,7 +212,7 @@
 .header_faq{
     white-space: nowrap;
     color: #FFFFFF;
-    padding: 0 6px;
+    padding: 0;
 }
 .header_menu__icon{
     width: 18px;
@@ -220,7 +227,7 @@
     flex: 2;
     gap: 20px;
     justify-content: flex-start;
-    padding: 0 0 0 58px;
+    padding: 0 0 0 69px;
 }
 .header__buy_coins{
     position: relative;
@@ -258,6 +265,6 @@
 }
 @media(min-width: 1250px)and(max-width: 1400px){
     .header__center{
-        padding-left: 100px;
+        //padding-left: 100px;
     }
 }

@@ -247,8 +247,8 @@
   background-size: contain;
   background-repeat: no-repeat;
   margin-left: auto;   
-  min-width: 15px;     
-  margin: 0 8px;
+  min-width: 13px;     
+  margin: 0 12px;
   cursor: pointer;
 }
 .divider{

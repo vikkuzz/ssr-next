@@ -53,7 +53,9 @@ const BuyCoinsDropdown = () => {
                         {translates[router.locale].menuLinkOrder}
                     </div>
 
-                    <div className={`dropdown__arrow`} />
+                    <div
+                        className={`${styles.buy_coins_drop} dropdown__arrow`}
+                    />
                 </div>
                 <div
                     className={`${styles.dropdown__buycoins_content} hide`}

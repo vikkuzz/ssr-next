@@ -12,6 +12,9 @@
     width: auto;
     flex-direction: column;
 }
+.row{
+    gap: 12px;
+}
 .dropdown__content{
     width: auto;
     min-width: max-content;
@@ -103,7 +106,7 @@
 .dropdown_currency{
     position: relative;
     cursor: pointer;
-    padding: 0 6px;
+    //padding: 0 6px;
     font-family: 'Montserrat';
     font-style: normal;
     font-size: 20px;
@@ -186,15 +189,15 @@
 }
 .dropdown__arrow{
     background: url('../img/arrow_drop_down.svg');
-    width: 15px;
-    height: 15px;
+    
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
     margin-left: auto;   
     //min-width: 15px;     
-    margin: 0 8px;
+    margin: 0 12px;
     width: 13px;
+    min-width: 13px;
     height: 6.5px;
 }
 .dropdown__wrapper_mobile_dropdown{
@@ -278,6 +281,10 @@
 }
 .dropdown__links:hover{
     color: #e5b713;
+}
+
+.buy_coins_drop{
+    margin-right: 0;
 }
 .dropdown__buycoins_content{
     min-width: max-content;
