@@ -125,7 +125,13 @@
     }
 
     img{
+        height: 240px;
         object-fit: cover;
+        
+        @media (min-width:1025px) {
+            height: auto;
+        }
+        
     }
     
 }
