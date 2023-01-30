@@ -132,6 +132,7 @@
     img{
         height: 240px;
         object-fit: cover;
+        object-position: 57%;
         
         @media (min-width:1025px) {
             height: auto;
