@@ -14,14 +14,17 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
                     {String(days).split('').length > 1 ? days : '0' + days}d
                 </span>
                 <span className={`${styles.countdown_timer}`}>
-                    {String(hours).split('').length > 1 ? hours : '0' + hours}:
-                    {String(minutes).split('').length > 1
-                        ? minutes
-                        : '0' + minutes}
-                    :
-                    {String(seconds).split('').length > 1
-                        ? seconds
-                        : '0' + seconds}
+                    {`${
+                        String(hours).split('').length > 1 ? hours : '0' + hours
+                    }:${
+                        String(minutes).split('').length > 1
+                            ? minutes
+                            : '0' + minutes
+                    }:${
+                        String(seconds).split('').length > 1
+                            ? seconds
+                            : '0' + seconds
+                    } `}
                 </span>
             </span>
         );
@@ -52,7 +55,7 @@ const SpecialOffer = () => {
                         src={'/img/Subtract.svg'}
                     />
                     <Countdown
-                        date={Date.now() + 518400000}
+                        date={Date.now() + 1018400000}
                         renderer={renderer}
                     />
                 </div>

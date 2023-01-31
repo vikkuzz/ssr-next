@@ -114,7 +114,7 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0px 8px 20px rgb(0 0 0 / 40%);
     border-radius: 100px;
-    padding: 8px 16px 8px 12px;
+    padding: 8px 0px 8px 12px;
     gap: 8px;
 }
 .green{
@@ -185,6 +185,7 @@
     align-items: flex-end;
     text-align: right;
     background-color: transparent;
+    min-width: 30px;
 }
 .countdown_timer{
     font-family: 'Montserrat';
@@ -197,8 +198,11 @@
     //align-items: flex-end;
     //text-align: right;
     background-color: transparent;
+    display: initial;
+    white-space: nowrap;
+    text-align: left;
 
-    min-width: 94px;
+    min-width: 104px;
 }
 .countdown_seconds{
     min-width: 30px;
