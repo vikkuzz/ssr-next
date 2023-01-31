@@ -694,6 +694,11 @@ input:-webkit-autofill{
   color: #10a9ff;
 }
 
+button, input{
+  -webkit-appearance: none;
+}
+
+
 @keyframes pulse {
 	0% {
 		opacity: 0.1;

@@ -14,7 +14,9 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
                 <span className={`${styles.countdown_timer}`}>
                     {hours}:{minutes}:
                     <span className={`${styles.countdown_seconds}`}>
-                        {seconds}
+                        {String(seconds).split('').length > 1
+                            ? seconds
+                            : '0' + seconds}
                     </span>
                 </span>
             </span>
