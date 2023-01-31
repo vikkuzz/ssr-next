@@ -1,5 +1,26 @@
 import React, { useRef, useState } from 'react';
+import Countdown from 'react-countdown';
 import styles from '../../styles/SpecialOffer.module.scss';
+
+const renderer = ({ days, hours, minutes, seconds, completed }) => {
+    if (completed) {
+        // Render a complete state
+        return 'Offer off';
+    } else {
+        // Render a countdown
+        return (
+            <span className={`${styles.countdown}`}>
+                <span className={`${styles.countdown_days}`}>{days}d</span>
+                <span className={`${styles.countdown_timer}`}>
+                    {hours}:{minutes}:
+                    <span className={`${styles.countdown_seconds}`}>
+                        {seconds}
+                    </span>
+                </span>
+            </span>
+        );
+    }
+};
 
 const SpecialOffer = () => {
     const promocode = useRef();
@@ -19,7 +40,16 @@ const SpecialOffer = () => {
                 Don't miss our special offer
             </h2>
             <div className={`${styles.offer_content}`}>
-                <div className={`${styles.offer_timer}`}></div>
+                <div className={`${styles.offer_timer}`}>
+                    <img
+                        className={`${styles.timer_icon}`}
+                        src={'/img/Subtract.svg'}
+                    />
+                    <Countdown
+                        date={Date.now() + 518400000}
+                        renderer={renderer}
+                    />
+                </div>
                 <div className={`${styles.offer_cover}`}>
                     <img src={offer_img} alt="cover" />
                 </div>

@@ -111,8 +111,11 @@
     background-color: #349F5E;
     padding: 6px;
     width: auto;
-    border-radius: 50%;
-    
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 8px 20px rgb(0 0 0 / 40%);
+    border-radius: 100px;
+    padding: 8px 16px 8px 12px;
+    gap: 8px;
 }
 .green{
     background: rgba(21, 188, 38, 0.2);
@@ -152,6 +155,51 @@
 }
 .cover{
     object-fit: cover;
+}
+
+.timer_icon{
+    width: 21px;
+    background-color: transparent;
+}
+
+.countdown{
+    background-color: transparent;
+    gap: 8px;
+    font-family: 'Montserrat';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: flex-end;
+    text-align: right;
+    background-color: transparent;
+}
+.countdown_days{
+    font-family: 'Montserrat';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: flex-end;
+    text-align: right;
+    background-color: transparent;
+}
+.countdown_timer{
+    font-family: 'Montserrat';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: flex-end;
+    text-align: right;
+    background-color: transparent;
+}
+.countdown_seconds{
+    min-width: 24px;
+    background-color: transparent;
 }
 
 @keyframes pulse {
