@@ -164,7 +164,7 @@
 
 .countdown{
     background-color: transparent;
-    gap: 8px;
+    //gap: 8px;
     font-family: 'Montserrat';
     font-style: italic;
     font-weight: 700;
@@ -193,6 +193,7 @@
     font-size: 20px;
     line-height: 24px;
     display: flex;
+    padding: 0 8px;
     //align-items: flex-end;
     //text-align: right;
     background-color: transparent;
